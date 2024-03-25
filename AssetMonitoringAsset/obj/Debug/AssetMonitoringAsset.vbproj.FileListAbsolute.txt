@@ -1,0 +1,783 @@
+C:\Users\HSDP_SYS_DEV\source\repos\AssetMonitoringAsset\AssetMonitoringAsset\bin\Debug\AssetMonitoringAsset.exe.config
+C:\Users\HSDP_SYS_DEV\source\repos\AssetMonitoringAsset\AssetMonitoringAsset\bin\Debug\AssetMonitoringAsset.exe
+C:\Users\HSDP_SYS_DEV\source\repos\AssetMonitoringAsset\AssetMonitoringAsset\bin\Debug\AssetMonitoringAsset.pdb
+C:\Users\HSDP_SYS_DEV\source\repos\AssetMonitoringAsset\AssetMonitoringAsset\bin\Debug\DevExpress.BonusSkins.v21.2.dll
+C:\Users\HSDP_SYS_DEV\source\repos\AssetMonitoringAsset\AssetMonitoringAsset\bin\Debug\DevExpress.Data.Desktop.v21.2.dll
+C:\Users\HSDP_SYS_DEV\source\repos\AssetMonitoringAsset\AssetMonitoringAsset\bin\Debug\DevExpress.Data.v21.2.dll
+C:\Users\HSDP_SYS_DEV\source\repos\AssetMonitoringAsset\AssetMonitoringAsset\bin\Debug\DevExpress.Printing.v21.2.Core.dll
+C:\Users\HSDP_SYS_DEV\source\repos\AssetMonitoringAsset\AssetMonitoringAsset\bin\Debug\DevExpress.Sparkline.v21.2.Core.dll
+C:\Users\HSDP_SYS_DEV\source\repos\AssetMonitoringAsset\AssetMonitoringAsset\bin\Debug\DevExpress.Utils.v21.2.dll
+C:\Users\HSDP_SYS_DEV\source\repos\AssetMonitoringAsset\AssetMonitoringAsset\bin\Debug\DevExpress.XtraEditors.v21.2.dll
+C:\Users\HSDP_SYS_DEV\source\repos\AssetMonitoringAsset\AssetMonitoringAsset\bin\Debug\DevExpress.Pdf.v21.2.Core.dll
+C:\Users\HSDP_SYS_DEV\source\repos\AssetMonitoringAsset\AssetMonitoringAsset\bin\Debug\DevExpress.Pdf.v21.2.Drawing.dll
+C:\Users\HSDP_SYS_DEV\source\repos\AssetMonitoringAsset\AssetMonitoringAsset\bin\Debug\DevExpress.Data.v21.2.xml
+C:\Users\HSDP_SYS_DEV\source\repos\AssetMonitoringAsset\AssetMonitoringAsset\bin\Debug\DevExpress.Data.Desktop.v21.2.xml
+C:\Users\HSDP_SYS_DEV\source\repos\AssetMonitoringAsset\AssetMonitoringAsset\bin\Debug\DevExpress.Utils.v21.2.xml
+C:\Users\HSDP_SYS_DEV\source\repos\AssetMonitoringAsset\AssetMonitoringAsset\bin\Debug\DevExpress.Sparkline.v21.2.Core.xml
+C:\Users\HSDP_SYS_DEV\source\repos\AssetMonitoringAsset\AssetMonitoringAsset\bin\Debug\DevExpress.XtraEditors.v21.2.xml
+C:\Users\HSDP_SYS_DEV\source\repos\AssetMonitoringAsset\AssetMonitoringAsset\bin\Debug\DevExpress.Printing.v21.2.Core.xml
+C:\Users\HSDP_SYS_DEV\source\repos\AssetMonitoringAsset\AssetMonitoringAsset\bin\Debug\DevExpress.Pdf.v21.2.Core.xml
+C:\Users\HSDP_SYS_DEV\source\repos\AssetMonitoringAsset\AssetMonitoringAsset\bin\Debug\DevExpress.Pdf.v21.2.Drawing.xml
+C:\Users\HSDP_SYS_DEV\source\repos\AssetMonitoringAsset\AssetMonitoringAsset\bin\Debug\de\DevExpress.Data.v21.2.resources.dll
+C:\Users\HSDP_SYS_DEV\source\repos\AssetMonitoringAsset\AssetMonitoringAsset\bin\Debug\es\DevExpress.Data.v21.2.resources.dll
+C:\Users\HSDP_SYS_DEV\source\repos\AssetMonitoringAsset\AssetMonitoringAsset\bin\Debug\ja\DevExpress.Data.v21.2.resources.dll
+C:\Users\HSDP_SYS_DEV\source\repos\AssetMonitoringAsset\AssetMonitoringAsset\bin\Debug\ru\DevExpress.Data.v21.2.resources.dll
+C:\Users\HSDP_SYS_DEV\source\repos\AssetMonitoringAsset\AssetMonitoringAsset\bin\Debug\de\DevExpress.Utils.v21.2.resources.dll
+C:\Users\HSDP_SYS_DEV\source\repos\AssetMonitoringAsset\AssetMonitoringAsset\bin\Debug\es\DevExpress.Utils.v21.2.resources.dll
+C:\Users\HSDP_SYS_DEV\source\repos\AssetMonitoringAsset\AssetMonitoringAsset\bin\Debug\ja\DevExpress.Utils.v21.2.resources.dll
+C:\Users\HSDP_SYS_DEV\source\repos\AssetMonitoringAsset\AssetMonitoringAsset\bin\Debug\ru\DevExpress.Utils.v21.2.resources.dll
+C:\Users\HSDP_SYS_DEV\source\repos\AssetMonitoringAsset\AssetMonitoringAsset\bin\Debug\de\DevExpress.Sparkline.v21.2.Core.resources.dll
+C:\Users\HSDP_SYS_DEV\source\repos\AssetMonitoringAsset\AssetMonitoringAsset\bin\Debug\es\DevExpress.Sparkline.v21.2.Core.resources.dll
+C:\Users\HSDP_SYS_DEV\source\repos\AssetMonitoringAsset\AssetMonitoringAsset\bin\Debug\ja\DevExpress.Sparkline.v21.2.Core.resources.dll
+C:\Users\HSDP_SYS_DEV\source\repos\AssetMonitoringAsset\AssetMonitoringAsset\bin\Debug\ru\DevExpress.Sparkline.v21.2.Core.resources.dll
+C:\Users\HSDP_SYS_DEV\source\repos\AssetMonitoringAsset\AssetMonitoringAsset\bin\Debug\de\DevExpress.XtraEditors.v21.2.resources.dll
+C:\Users\HSDP_SYS_DEV\source\repos\AssetMonitoringAsset\AssetMonitoringAsset\bin\Debug\es\DevExpress.XtraEditors.v21.2.resources.dll
+C:\Users\HSDP_SYS_DEV\source\repos\AssetMonitoringAsset\AssetMonitoringAsset\bin\Debug\ja\DevExpress.XtraEditors.v21.2.resources.dll
+C:\Users\HSDP_SYS_DEV\source\repos\AssetMonitoringAsset\AssetMonitoringAsset\bin\Debug\ru\DevExpress.XtraEditors.v21.2.resources.dll
+C:\Users\HSDP_SYS_DEV\source\repos\AssetMonitoringAsset\AssetMonitoringAsset\bin\Debug\de\DevExpress.Printing.v21.2.Core.resources.dll
+C:\Users\HSDP_SYS_DEV\source\repos\AssetMonitoringAsset\AssetMonitoringAsset\bin\Debug\es\DevExpress.Printing.v21.2.Core.resources.dll
+C:\Users\HSDP_SYS_DEV\source\repos\AssetMonitoringAsset\AssetMonitoringAsset\bin\Debug\ja\DevExpress.Printing.v21.2.Core.resources.dll
+C:\Users\HSDP_SYS_DEV\source\repos\AssetMonitoringAsset\AssetMonitoringAsset\bin\Debug\ru\DevExpress.Printing.v21.2.Core.resources.dll
+C:\Users\HSDP_SYS_DEV\source\repos\AssetMonitoringAsset\AssetMonitoringAsset\bin\Debug\de\DevExpress.Pdf.v21.2.Core.resources.dll
+C:\Users\HSDP_SYS_DEV\source\repos\AssetMonitoringAsset\AssetMonitoringAsset\bin\Debug\es\DevExpress.Pdf.v21.2.Core.resources.dll
+C:\Users\HSDP_SYS_DEV\source\repos\AssetMonitoringAsset\AssetMonitoringAsset\bin\Debug\ja\DevExpress.Pdf.v21.2.Core.resources.dll
+C:\Users\HSDP_SYS_DEV\source\repos\AssetMonitoringAsset\AssetMonitoringAsset\bin\Debug\ru\DevExpress.Pdf.v21.2.Core.resources.dll
+C:\Users\HSDP_SYS_DEV\source\repos\AssetMonitoringAsset\AssetMonitoringAsset\obj\Debug\AssetMonitoringAsset.Resources.resources
+C:\Users\HSDP_SYS_DEV\source\repos\AssetMonitoringAsset\AssetMonitoringAsset\obj\Debug\AssetMonitoringAsset.vbproj.GenerateResource.cache
+C:\Users\HSDP_SYS_DEV\source\repos\AssetMonitoringAsset\AssetMonitoringAsset\obj\Debug\AssetMonitoringAsset.vbproj.CoreCompileInputs.cache
+C:\Users\HSDP_SYS_DEV\source\repos\AssetMonitoringAsset\AssetMonitoringAsset\obj\Debug\AssetMonitoringAsset.vbproj.CopyComplete
+C:\Users\HSDP_SYS_DEV\source\repos\AssetMonitoringAsset\AssetMonitoringAsset\obj\Debug\AssetMonitoringAsset.exe
+C:\Users\HSDP_SYS_DEV\source\repos\AssetMonitoringAsset\AssetMonitoringAsset\obj\Debug\AssetMonitoringAsset.pdb
+C:\Users\HSDP_SYS_DEV\source\repos\AssetMonitoringAsset\AssetMonitoringAsset\obj\Debug\AssetMonitoringAsset.Home.resources
+C:\Users\HSDP_SYS_DEV\source\repos\AssetMonitoringAsset\AssetMonitoringAsset\bin\Debug\DevExpress.XtraBars.v21.2.dll
+C:\Users\HSDP_SYS_DEV\source\repos\AssetMonitoringAsset\AssetMonitoringAsset\bin\Debug\DevExpress.XtraBars.v21.2.xml
+C:\Users\HSDP_SYS_DEV\source\repos\AssetMonitoringAsset\AssetMonitoringAsset\bin\Debug\de\DevExpress.XtraBars.v21.2.resources.dll
+C:\Users\HSDP_SYS_DEV\source\repos\AssetMonitoringAsset\AssetMonitoringAsset\bin\Debug\es\DevExpress.XtraBars.v21.2.resources.dll
+C:\Users\HSDP_SYS_DEV\source\repos\AssetMonitoringAsset\AssetMonitoringAsset\bin\Debug\ja\DevExpress.XtraBars.v21.2.resources.dll
+C:\Users\HSDP_SYS_DEV\source\repos\AssetMonitoringAsset\AssetMonitoringAsset\bin\Debug\ru\DevExpress.XtraBars.v21.2.resources.dll
+C:\Users\HSDP_SYS_DEV\source\repos\AssetMonitoringAsset\AssetMonitoringAsset\obj\Debug\AssetMonitoringAsset.AssetType.resources
+C:\Users\HSDP_SYS_DEV\source\repos\AssetMonitoringAsset\AssetMonitoringAsset\obj\Debug\AssetMonitoringAsset.AssetTypeAddandUpdate.resources
+C:\Users\HSDP_SYS_DEV\source\repos\AssetMonitoringAsset\AssetMonitoringAsset\obj\Debug\AssetMonitoringAsset.AssetCategory.resources
+C:\Users\HSDP_SYS_DEV\source\repos\AssetMonitoringAsset\AssetMonitoringAsset\obj\Debug\AssetMonitoringAsset.AssetCategoryAddandUpdate1.resources
+C:\Users\HSDP_SYS_DEV\source\repos\AssetMonitoringAsset\AssetMonitoringAsset\obj\Debug\AssetMonitoringAsset.AssetCondition.resources
+C:\Users\HSDP_SYS_DEV\source\repos\AssetMonitoringAsset\AssetMonitoringAsset\obj\Debug\AssetMonitoringAsset.AssetConditionAddandUpdate.resources
+C:\Users\HSDP_SYS_DEV\source\repos\AssetMonitoringAsset\AssetMonitoringAsset\obj\Debug\AssetMonitoringAsset.AssetSection.resources
+C:\Users\HSDP_SYS_DEV\source\repos\AssetMonitoringAsset\AssetMonitoringAsset\obj\Debug\AssetMonitoringAsset.AssetSectionAddandUpdate1.resources
+C:\Users\HSDP_SYS_DEV\source\repos\AssetMonitoringAsset\AssetMonitoringAsset\obj\Debug\AssetMonitoringAsset.AssetDepartment.resources
+C:\Users\HSDP_SYS_DEV\source\repos\AssetMonitoringAsset\AssetMonitoringAsset\obj\Debug\AssetMonitoringAsset.AssetDepartmentAddandUpdate.resources
+C:\Users\HSDP_SYS_DEV\source\repos\AssetMonitoringAsset\AssetMonitoringAsset\obj\Debug\AssetMonitoringAsset.AssetBranch.resources
+C:\Users\HSDP_SYS_DEV\source\repos\AssetMonitoringAsset\AssetMonitoringAsset\obj\Debug\AssetMonitoringAsset.AssetBranchAddandUpdate1.resources
+C:\Users\HSDP_SYS_DEV\source\repos\AssetMonitoringAsset\AssetMonitoringAsset\obj\Debug\AssetMonitoringAsset.AssetPositionAddandUpdate.resources
+C:\Users\HSDP_SYS_DEV\source\repos\AssetMonitoringAsset\AssetMonitoringAsset\obj\Debug\AssetMonitoringAsset.AssetPosition.resources
+C:\Users\HSDP_SYS_DEV\source\repos\AssetMonitoringAsset\AssetMonitoringAsset\obj\Debug\AssetMonitoringAsset.AssetDocumentType.resources
+C:\Users\HSDP_SYS_DEV\source\repos\AssetMonitoringAsset\AssetMonitoringAsset\obj\Debug\AssetMonitoringAsset.AssetDocTypeAddandUpdate.resources
+C:\Users\HSDP_SYS_DEV\source\repos\AssetMonitoringAsset\AssetMonitoringAsset\obj\Debug\AssetMonitoringAsset.Employee.resources
+C:\Users\HSDP_SYS_DEV\source\repos\AssetMonitoringAsset\AssetMonitoringAsset\obj\Debug\AssetMonitoringAsset.Vendor.resources
+C:\Users\HSDP_SYS_DEV\source\repos\AssetMonitoringAsset\AssetMonitoringAsset\obj\Debug\AssetMonitoringAsset.VendorAddandUpdate.resources
+C:\Users\HSDP_SYS_DEV\source\repos\AssetMonitoringAsset\AssetMonitoringAsset\obj\Debug\AssetMonitoringAsset.EmployeeAddandUpdate.resources
+C:\Users\HSDP_SYS_DEV\source\repos\AssetMonitoringAsset\AssetMonitoringAsset\obj\Debug\AssetMonitoringAsset.User.resources
+C:\Users\HSDP_SYS_DEV\source\repos\AssetMonitoringAsset\AssetMonitoringAsset\obj\Debug\AssetMonitoringAsset.EmployeeList.resources
+C:\Users\HSDP_SYS_DEV\source\repos\AssetMonitoringAsset\AssetMonitoringAsset\obj\Debug\AssetMonitoringAsset.UpdateSelection.resources
+C:\Users\HSDP_SYS_DEV\source\repos\AssetMonitoringAsset\AssetMonitoringAsset\obj\Debug\AssetMonitoringAsset.UserAdd.resources
+C:\Users\HSDP_SYS_DEV\source\repos\AssetMonitoringAsset\AssetMonitoringAsset\obj\Debug\AssetMonitoringAsset.UserUpdate.resources
+C:\Users\HSDP_SYS_DEV\source\repos\AssetMonitoringAsset\AssetMonitoringAsset\obj\Debug\AssetMonitoringAsset.UserChangePass.resources
+C:\Users\HSDP_SYS_DEV\source\repos\AssetMonitoringAsset\AssetMonitoringAsset\bin\Debug\DevExpress.SpellChecker.v21.2.Core.dll
+C:\Users\HSDP_SYS_DEV\source\repos\AssetMonitoringAsset\AssetMonitoringAsset\bin\Debug\DevExpress.XtraSpellChecker.v21.2.dll
+C:\Users\HSDP_SYS_DEV\source\repos\AssetMonitoringAsset\AssetMonitoringAsset\bin\Debug\DevExpress.SpellChecker.v21.2.Core.xml
+C:\Users\HSDP_SYS_DEV\source\repos\AssetMonitoringAsset\AssetMonitoringAsset\bin\Debug\DevExpress.XtraSpellChecker.v21.2.xml
+C:\Users\HSDP_SYS_DEV\source\repos\AssetMonitoringAsset\AssetMonitoringAsset\bin\Debug\de\DevExpress.XtraSpellChecker.v21.2.resources.dll
+C:\Users\HSDP_SYS_DEV\source\repos\AssetMonitoringAsset\AssetMonitoringAsset\bin\Debug\es\DevExpress.XtraSpellChecker.v21.2.resources.dll
+C:\Users\HSDP_SYS_DEV\source\repos\AssetMonitoringAsset\AssetMonitoringAsset\bin\Debug\ja\DevExpress.XtraSpellChecker.v21.2.resources.dll
+C:\Users\HSDP_SYS_DEV\source\repos\AssetMonitoringAsset\AssetMonitoringAsset\bin\Debug\ru\DevExpress.XtraSpellChecker.v21.2.resources.dll
+C:\Users\HSDP_SYS_DEV\source\repos\AssetMonitoringAsset\AssetMonitoringAsset\obj\Debug\AssetMonitoringAsset.exe.licenses
+C:\Users\HSDP_SYS_DEV\source\repos\AssetMonitoringAsset\AssetMonitoringAsset\obj\Debug\AssetMonitoringAsset.NAcategory.resources
+C:\Users\HSDP_SYS_DEV\source\repos\AssetMonitoringAsset\AssetMonitoringAsset\obj\Debug\AssetMonitoringAsset.NewAsset.resources
+C:\Users\HSDP_SYS_DEV\source\repos\AssetMonitoringAsset\AssetMonitoringAsset\obj\Debug\AssetMonitoringAsset.NATypeh.resources
+C:\Users\HSDP_SYS_DEV\source\repos\AssetMonitoringAsset\AssetMonitoringAsset\obj\Debug\AssetMonitoringAsset.NACondition.resources
+C:\Users\HSDP_SYS_DEV\source\repos\AssetMonitoringAsset\AssetMonitoringAsset\obj\Debug\AssetMonitoringAsset.Login.resources
+C:\Users\HSDP_SYS_DEV\source\repos\AssetMonitoringAsset\AssetMonitoringAsset\obj\Debug\AssetMonitoringAsset.BuildAssetRegister.resources
+C:\Users\HSDP_SYS_DEV\source\repos\AssetMonitoringAsset\AssetMonitoringAsset\obj\Debug\AssetMonitoringAsset.BuildAsset.resources
+C:\Users\HSDP_SYS_DEV\source\repos\AssetMonitoringAsset\AssetMonitoringAsset\obj\Debug\AssetMonitoringAsset.AssetList.resources
+C:\Users\HSDP_SYS_DEV\source\repos\AssetMonitoringAsset\AssetMonitoringAsset\obj\Debug\AssetMonitoringAsset.RegisterDetails.resources
+C:\Users\HSDP_SYS_DEV\source\repos\AssetMonitoringAsset\AssetMonitoringAsset\obj\Debug\AssetMonitoringAsset.NewAssetRegister.resources
+C:\Users\HSDP_SYS_DEV\source\repos\AssetMonitoringAsset\AssetMonitoringAsset\obj\Debug\AssetMonitoringAsset.BuildRegisterDetail.resources
+C:\Users\HSDP_SYS_DEV\source\repos\AssetMonitoringAsset\AssetMonitoringAsset\bin\Debug\Microsoft.ReportViewer.WinForms.dll
+C:\Users\HSDP_SYS_DEV\source\repos\AssetMonitoringAsset\AssetMonitoringAsset\bin\Debug\SqlServerTypes\x64\msvcr120.dll
+C:\Users\HSDP_SYS_DEV\source\repos\AssetMonitoringAsset\AssetMonitoringAsset\bin\Debug\SqlServerTypes\x64\SqlServerSpatial140.dll
+C:\Users\HSDP_SYS_DEV\source\repos\AssetMonitoringAsset\AssetMonitoringAsset\bin\Debug\SqlServerTypes\x86\msvcr120.dll
+C:\Users\HSDP_SYS_DEV\source\repos\AssetMonitoringAsset\AssetMonitoringAsset\bin\Debug\SqlServerTypes\x86\SqlServerSpatial140.dll
+C:\Users\HSDP_SYS_DEV\source\repos\AssetMonitoringAsset\AssetMonitoringAsset\bin\Debug\Microsoft.ReportViewer.Common.dll
+C:\Users\HSDP_SYS_DEV\source\repos\AssetMonitoringAsset\AssetMonitoringAsset\bin\Debug\Microsoft.ReportViewer.DataVisualization.dll
+C:\Users\HSDP_SYS_DEV\source\repos\AssetMonitoringAsset\AssetMonitoringAsset\bin\Debug\Microsoft.ReportViewer.Design.dll
+C:\Users\HSDP_SYS_DEV\source\repos\AssetMonitoringAsset\AssetMonitoringAsset\bin\Debug\Microsoft.ReportViewer.ProcessingObjectModel.DLL
+C:\Users\HSDP_SYS_DEV\source\repos\AssetMonitoringAsset\AssetMonitoringAsset\bin\Debug\Microsoft.SqlServer.Types.dll
+C:\Users\HSDP_SYS_DEV\source\repos\AssetMonitoringAsset\AssetMonitoringAsset\bin\Debug\EnvDTE.dll
+C:\Users\HSDP_SYS_DEV\source\repos\AssetMonitoringAsset\AssetMonitoringAsset\bin\Debug\Microsoft.VisualStudio.Shell.Interop.dll
+C:\Users\HSDP_SYS_DEV\source\repos\AssetMonitoringAsset\AssetMonitoringAsset\bin\Debug\Microsoft.VisualStudio.Shell.Interop.8.0.dll
+C:\Users\HSDP_SYS_DEV\source\repos\AssetMonitoringAsset\AssetMonitoringAsset\bin\Debug\stdole.dll
+C:\Users\HSDP_SYS_DEV\source\repos\AssetMonitoringAsset\AssetMonitoringAsset\bin\Debug\Microsoft.VisualStudio.OLE.Interop.dll
+C:\Users\HSDP_SYS_DEV\source\repos\AssetMonitoringAsset\AssetMonitoringAsset\bin\Debug\Microsoft.VisualStudio.TextManager.Interop.dll
+C:\Users\HSDP_SYS_DEV\source\repos\AssetMonitoringAsset\AssetMonitoringAsset\bin\Debug\Microsoft.VisualStudio.TextManager.Interop.8.0.dll
+C:\Users\HSDP_SYS_DEV\source\repos\AssetMonitoringAsset\AssetMonitoringAsset\bin\Debug\Microsoft.MSXML.dll
+C:\Users\HSDP_SYS_DEV\source\repos\AssetMonitoringAsset\AssetMonitoringAsset\bin\Debug\de\Microsoft.ReportViewer.DataVisualization.resources.dll
+C:\Users\HSDP_SYS_DEV\source\repos\AssetMonitoringAsset\AssetMonitoringAsset\bin\Debug\es\Microsoft.ReportViewer.DataVisualization.resources.dll
+C:\Users\HSDP_SYS_DEV\source\repos\AssetMonitoringAsset\AssetMonitoringAsset\bin\Debug\fr\Microsoft.ReportViewer.DataVisualization.resources.dll
+C:\Users\HSDP_SYS_DEV\source\repos\AssetMonitoringAsset\AssetMonitoringAsset\bin\Debug\it\Microsoft.ReportViewer.DataVisualization.resources.dll
+C:\Users\HSDP_SYS_DEV\source\repos\AssetMonitoringAsset\AssetMonitoringAsset\bin\Debug\ja\Microsoft.ReportViewer.DataVisualization.resources.dll
+C:\Users\HSDP_SYS_DEV\source\repos\AssetMonitoringAsset\AssetMonitoringAsset\bin\Debug\ko\Microsoft.ReportViewer.DataVisualization.resources.dll
+C:\Users\HSDP_SYS_DEV\source\repos\AssetMonitoringAsset\AssetMonitoringAsset\bin\Debug\pt\Microsoft.ReportViewer.DataVisualization.resources.dll
+C:\Users\HSDP_SYS_DEV\source\repos\AssetMonitoringAsset\AssetMonitoringAsset\bin\Debug\ru\Microsoft.ReportViewer.DataVisualization.resources.dll
+C:\Users\HSDP_SYS_DEV\source\repos\AssetMonitoringAsset\AssetMonitoringAsset\bin\Debug\zh-CHS\Microsoft.ReportViewer.DataVisualization.resources.dll
+C:\Users\HSDP_SYS_DEV\source\repos\AssetMonitoringAsset\AssetMonitoringAsset\bin\Debug\zh-CHT\Microsoft.ReportViewer.DataVisualization.resources.dll
+C:\Users\HSDP_SYS_DEV\source\repos\AssetMonitoringAsset\AssetMonitoringAsset\bin\Debug\de\Microsoft.ReportViewer.Design.resources.dll
+C:\Users\HSDP_SYS_DEV\source\repos\AssetMonitoringAsset\AssetMonitoringAsset\bin\Debug\es\Microsoft.ReportViewer.Design.resources.dll
+C:\Users\HSDP_SYS_DEV\source\repos\AssetMonitoringAsset\AssetMonitoringAsset\bin\Debug\fr\Microsoft.ReportViewer.Design.resources.dll
+C:\Users\HSDP_SYS_DEV\source\repos\AssetMonitoringAsset\AssetMonitoringAsset\bin\Debug\it\Microsoft.ReportViewer.Design.resources.dll
+C:\Users\HSDP_SYS_DEV\source\repos\AssetMonitoringAsset\AssetMonitoringAsset\bin\Debug\ja\Microsoft.ReportViewer.Design.resources.dll
+C:\Users\HSDP_SYS_DEV\source\repos\AssetMonitoringAsset\AssetMonitoringAsset\bin\Debug\ko\Microsoft.ReportViewer.Design.resources.dll
+C:\Users\HSDP_SYS_DEV\source\repos\AssetMonitoringAsset\AssetMonitoringAsset\bin\Debug\pt\Microsoft.ReportViewer.Design.resources.dll
+C:\Users\HSDP_SYS_DEV\source\repos\AssetMonitoringAsset\AssetMonitoringAsset\bin\Debug\ru\Microsoft.ReportViewer.Design.resources.dll
+C:\Users\HSDP_SYS_DEV\source\repos\AssetMonitoringAsset\AssetMonitoringAsset\bin\Debug\zh-CHS\Microsoft.ReportViewer.Design.resources.dll
+C:\Users\HSDP_SYS_DEV\source\repos\AssetMonitoringAsset\AssetMonitoringAsset\bin\Debug\zh-CHT\Microsoft.ReportViewer.Design.resources.dll
+C:\Users\HSDP_SYS_DEV\source\repos\AssetMonitoringAsset\AssetMonitoringAsset\bin\Debug\de\Microsoft.ReportViewer.WinForms.resources.dll
+C:\Users\HSDP_SYS_DEV\source\repos\AssetMonitoringAsset\AssetMonitoringAsset\bin\Debug\es\Microsoft.ReportViewer.WinForms.resources.dll
+C:\Users\HSDP_SYS_DEV\source\repos\AssetMonitoringAsset\AssetMonitoringAsset\bin\Debug\fr\Microsoft.ReportViewer.WinForms.resources.dll
+C:\Users\HSDP_SYS_DEV\source\repos\AssetMonitoringAsset\AssetMonitoringAsset\bin\Debug\it\Microsoft.ReportViewer.WinForms.resources.dll
+C:\Users\HSDP_SYS_DEV\source\repos\AssetMonitoringAsset\AssetMonitoringAsset\bin\Debug\ja\Microsoft.ReportViewer.WinForms.resources.dll
+C:\Users\HSDP_SYS_DEV\source\repos\AssetMonitoringAsset\AssetMonitoringAsset\bin\Debug\ko\Microsoft.ReportViewer.WinForms.resources.dll
+C:\Users\HSDP_SYS_DEV\source\repos\AssetMonitoringAsset\AssetMonitoringAsset\bin\Debug\pt\Microsoft.ReportViewer.WinForms.resources.dll
+C:\Users\HSDP_SYS_DEV\source\repos\AssetMonitoringAsset\AssetMonitoringAsset\bin\Debug\ru\Microsoft.ReportViewer.WinForms.resources.dll
+C:\Users\HSDP_SYS_DEV\source\repos\AssetMonitoringAsset\AssetMonitoringAsset\bin\Debug\zh-CHS\Microsoft.ReportViewer.WinForms.resources.dll
+C:\Users\HSDP_SYS_DEV\source\repos\AssetMonitoringAsset\AssetMonitoringAsset\bin\Debug\zh-CHT\Microsoft.ReportViewer.WinForms.resources.dll
+C:\Users\HSDP_SYS_DEV\source\repos\AssetMonitoringAsset\AssetMonitoringAsset\bin\Debug\de\Microsoft.ReportViewer.Common.resources.dll
+C:\Users\HSDP_SYS_DEV\source\repos\AssetMonitoringAsset\AssetMonitoringAsset\bin\Debug\es\Microsoft.ReportViewer.Common.resources.dll
+C:\Users\HSDP_SYS_DEV\source\repos\AssetMonitoringAsset\AssetMonitoringAsset\bin\Debug\fr\Microsoft.ReportViewer.Common.resources.dll
+C:\Users\HSDP_SYS_DEV\source\repos\AssetMonitoringAsset\AssetMonitoringAsset\bin\Debug\it\Microsoft.ReportViewer.Common.resources.dll
+C:\Users\HSDP_SYS_DEV\source\repos\AssetMonitoringAsset\AssetMonitoringAsset\bin\Debug\ja\Microsoft.ReportViewer.Common.resources.dll
+C:\Users\HSDP_SYS_DEV\source\repos\AssetMonitoringAsset\AssetMonitoringAsset\bin\Debug\ko\Microsoft.ReportViewer.Common.resources.dll
+C:\Users\HSDP_SYS_DEV\source\repos\AssetMonitoringAsset\AssetMonitoringAsset\bin\Debug\pt\Microsoft.ReportViewer.Common.resources.dll
+C:\Users\HSDP_SYS_DEV\source\repos\AssetMonitoringAsset\AssetMonitoringAsset\bin\Debug\ru\Microsoft.ReportViewer.Common.resources.dll
+C:\Users\HSDP_SYS_DEV\source\repos\AssetMonitoringAsset\AssetMonitoringAsset\bin\Debug\zh-CHS\Microsoft.ReportViewer.Common.resources.dll
+C:\Users\HSDP_SYS_DEV\source\repos\AssetMonitoringAsset\AssetMonitoringAsset\bin\Debug\zh-CHT\Microsoft.ReportViewer.Common.resources.dll
+C:\Users\HSDP_SYS_DEV\source\repos\AssetMonitoringAsset\AssetMonitoringAsset\obj\Debug\AssetMonitoringAsset.vbproj.AssemblyReference.cache
+C:\Users\HSDP_SYS_DEV\source\repos\AssetMonitoringAsset\AssetMonitoringAsset\obj\Debug\AssetMonitoringAsset.view.resources
+C:\Users\HSDP_SYS_DEV\source\repos\AssetMonitoringAsset\AssetMonitoringAsset\obj\Debug\RdlCompile.cache
+C:\Users\HSDP_SYS_DEV\source\repos\AssetMonitoringAsset\AssetMonitoringAsset\obj\Debug\RdlCompile.compiled
+C:\Users\HSDP_SYS_DEV\source\repos\AssetMonitoringAsset\AssetMonitoringAsset\obj\Debug\AssetMonitoringAsset.MasterDataList.resources
+C:\Users\HSDP_SYS_DEV\source\repos\AssetMonitoringAsset\AssetMonitoringAsset\obj\Debug\AssetMonitoringAsset.AssetAcquisition.resources
+C:\Users\HSDP_SYS_DEV\source\repos\AssetMonitoringAsset\AssetMonitoringAsset\obj\Debug\AssetMonitoringAsset.Reference.resources
+C:\Users\HSDP_SYS_DEV\source\repos\AssetMonitoringAsset\AssetMonitoringAsset\obj\Debug\AssetMonitoringAsset.ReferenceList.resources
+C:\Users\HSDP_SYS_DEV\source\repos\AssetMonitoringAsset\AssetMonitoringAsset\obj\Debug\AssetMonitoringAsset.InventoryList.resources
+C:\Users\HSDP_SYS_DEV\source\repos\AssetMonitoringAsset\AssetMonitoringAsset\obj\Debug\AssetMonitoringAsset.AAdetail.resources
+C:\Users\HSDP_SYS_DEV\source\repos\AssetMonitoringAsset\AssetMonitoringAsset\obj\Debug\AssetMonitoringAsset.AARegister.resources
+C:\Users\HSDP_SYS_DEV\source\repos\AssetMonitoringAsset\AssetMonitoringAsset\obj\Debug\AssetMonitoringAsset.Details.resources
+C:\Users\HSDP_SYS_DEV\source\repos\AssetMonitoringAsset\AssetMonitoringAsset\obj\Debug\AssetMonitoringAsset.Allocation.resources
+C:\Users\HSDP_SYS_DEV\source\repos\AssetMonitoringAsset\AssetMonitoringAsset\obj\Debug\AssetMonitoringAsset.AssetList2.resources
+C:\Users\HSDP_SYS_DEV\source\repos\AssetMonitoringAsset\AssetMonitoringAsset\obj\Debug\AssetMonitoringAsset.AllocatedItems.resources
+C:\Users\HSDP_SYS_DEV\source\repos\AssetMonitoringAsset\AssetMonitoringAsset\obj\Debug\AssetMonitoringAsset.AllocatedAssetDetails.resources
+C:\Users\HSDP_SYS_DEV\source\repos\AssetMonitoringAsset\AssetMonitoringAsset\obj\Debug\AssetMonitoringAsset.AllocationRegister.resources
+C:\Users\HSDP_SYS_DEV\source\repos\AssetMonitoringAsset\AssetMonitoringAsset\obj\Debug\AssetMonitoringAsset.RegisterDetail.resources
+C:\Users\HSDP_SYS_DEV\source\repos\AssetMonitoringAsset\AssetMonitoringAsset\obj\Debug\AssetMonitoringAsset.TransferRequest.resources
+C:\Users\HSDP_SYS_DEV\source\repos\AssetMonitoringAsset\AssetMonitoringAsset\obj\Debug\AssetMonitoringAsset.AssetStatus.resources
+C:\Users\HSDP_SYS_DEV\source\repos\AssetMonitoringAsset\AssetMonitoringAsset\obj\Debug\AssetMonitoringAsset.Assets1.resources
+C:\Users\HSDP_SYS_DEV\source\repos\AssetMonitoringAsset\AssetMonitoringAsset\obj\Debug\AssetMonitoringAsset.AllocationUpdate.resources
+C:\Users\HSDP_SYS_DEV\source\repos\AssetMonitoringAsset\AssetMonitoringAsset\obj\Debug\AssetMonitoringAsset.CreateRequest.resources
+C:\Users\HSDP_SYS_DEV\source\repos\AssetMonitoringAsset\AssetMonitoringAsset\obj\Debug\AssetMonitoringAsset.AssetList3.resources
+C:\Users\HSDP_SYS_DEV\source\repos\AssetMonitoringAsset\AssetMonitoringAsset\obj\Debug\AssetMonitoringAsset.Request2.resources
+C:\Users\HSDP_SYS_DEV\source\repos\AssetMonitoringAsset\AssetMonitoringAsset\obj\Debug\AssetMonitoringAsset.importmasterlist.resources
+C:\Users\HSDP_SYS_DEV\source\repos\AssetMonitoringAsset\AssetMonitoringAsset\bin\Debug\EPPlus.dll
+C:\Users\HSDP_SYS_DEV\source\repos\AssetMonitoringAsset\AssetMonitoringAsset\bin\Debug\EPPlus.Interfaces.dll
+C:\Users\HSDP_SYS_DEV\source\repos\AssetMonitoringAsset\AssetMonitoringAsset\bin\Debug\EPPlus.System.Drawing.dll
+C:\Users\HSDP_SYS_DEV\source\repos\AssetMonitoringAsset\AssetMonitoringAsset\bin\Debug\Microsoft.IO.RecyclableMemoryStream.dll
+C:\Users\HSDP_SYS_DEV\source\repos\AssetMonitoringAsset\AssetMonitoringAsset\bin\Debug\System.ComponentModel.Annotations.dll
+C:\Users\HSDP_SYS_DEV\source\repos\AssetMonitoringAsset\AssetMonitoringAsset\bin\Debug\EPPlus.xml
+C:\Users\HSDP_SYS_DEV\source\repos\AssetMonitoringAsset\AssetMonitoringAsset\bin\Debug\Microsoft.IO.RecyclableMemoryStream.xml
+C:\Users\HSDP_SYS_DEV\source\repos\AssetMonitoringAsset\AssetMonitoringAsset\obj\Debug\AssetMonitoringAsset.RequestRegister.resources
+C:\Users\HSDP_SYS_DEV\source\repos\AssetMonitoringAsset\AssetMonitoringAsset\obj\Debug\AssetMonitoringAsset.Request.resources
+C:\Users\HSDP_SYS_DEV\source\repos\AssetMonitoringAsset\AssetMonitoringAsset\obj\Debug\AssetMonitoringAsset.empllist.resources
+C:\Users\HSDP_SYS_DEV\source\repos\AssetMonitoringAsset\AssetMonitoringAsset\obj\Debug\AssetMonitoringAsset.EmployeeList4.resources
+C:\Users\HSDP_SYS_DEV\source\repos\AssetMonitoringAsset\AssetMonitoringAsset\obj\Debug\AssetMonitoringAsset.date1.resources
+C:\Users\HSDP_SYS_DEV\source\repos\AssetMonitoringAsset\AssetMonitoringAsset\obj\Debug\AssetMonitoringAsset.Approval.resources
+C:\Users\HSDP_SYS_DEV\source\repos\AssetMonitoringAsset\AssetMonitoringAsset\obj\Debug\AssetMonitoringAsset.RequestForApproval.resources
+C:\Users\HSDP_SYS_DEV\source\repos\AssetMonitoringAsset\AssetMonitoringAsset\obj\Debug\AssetMonitoringAsset.Rqregister.resources
+D:\DEV SYSTEM\WORK AREA\AssetMonitoringAsset\AssetMonitoringAsset\bin\Debug\SqlServerTypes\x64\msvcr120.dll
+D:\DEV SYSTEM\WORK AREA\AssetMonitoringAsset\AssetMonitoringAsset\bin\Debug\SqlServerTypes\x64\SqlServerSpatial140.dll
+D:\DEV SYSTEM\WORK AREA\AssetMonitoringAsset\AssetMonitoringAsset\bin\Debug\SqlServerTypes\x86\msvcr120.dll
+D:\DEV SYSTEM\WORK AREA\AssetMonitoringAsset\AssetMonitoringAsset\bin\Debug\SqlServerTypes\x86\SqlServerSpatial140.dll
+D:\DEV SYSTEM\WORK AREA\AssetMonitoringAsset\AssetMonitoringAsset\bin\Debug\AssetMonitoringAsset.exe.config
+D:\DEV SYSTEM\WORK AREA\AssetMonitoringAsset\AssetMonitoringAsset\bin\Debug\AssetMonitoringAsset.exe
+D:\DEV SYSTEM\WORK AREA\AssetMonitoringAsset\AssetMonitoringAsset\bin\Debug\AssetMonitoringAsset.pdb
+D:\DEV SYSTEM\WORK AREA\AssetMonitoringAsset\AssetMonitoringAsset\bin\Debug\DevExpress.BonusSkins.v21.2.dll
+D:\DEV SYSTEM\WORK AREA\AssetMonitoringAsset\AssetMonitoringAsset\bin\Debug\DevExpress.Data.Desktop.v21.2.dll
+D:\DEV SYSTEM\WORK AREA\AssetMonitoringAsset\AssetMonitoringAsset\bin\Debug\DevExpress.Data.v21.2.dll
+D:\DEV SYSTEM\WORK AREA\AssetMonitoringAsset\AssetMonitoringAsset\bin\Debug\DevExpress.Printing.v21.2.Core.dll
+D:\DEV SYSTEM\WORK AREA\AssetMonitoringAsset\AssetMonitoringAsset\bin\Debug\DevExpress.Sparkline.v21.2.Core.dll
+D:\DEV SYSTEM\WORK AREA\AssetMonitoringAsset\AssetMonitoringAsset\bin\Debug\DevExpress.SpellChecker.v21.2.Core.dll
+D:\DEV SYSTEM\WORK AREA\AssetMonitoringAsset\AssetMonitoringAsset\bin\Debug\DevExpress.Utils.v21.2.dll
+D:\DEV SYSTEM\WORK AREA\AssetMonitoringAsset\AssetMonitoringAsset\bin\Debug\DevExpress.XtraBars.v21.2.dll
+D:\DEV SYSTEM\WORK AREA\AssetMonitoringAsset\AssetMonitoringAsset\bin\Debug\DevExpress.XtraEditors.v21.2.dll
+D:\DEV SYSTEM\WORK AREA\AssetMonitoringAsset\AssetMonitoringAsset\bin\Debug\DevExpress.XtraSpellChecker.v21.2.dll
+D:\DEV SYSTEM\WORK AREA\AssetMonitoringAsset\AssetMonitoringAsset\bin\Debug\EPPlus.dll
+D:\DEV SYSTEM\WORK AREA\AssetMonitoringAsset\AssetMonitoringAsset\bin\Debug\EPPlus.Interfaces.dll
+D:\DEV SYSTEM\WORK AREA\AssetMonitoringAsset\AssetMonitoringAsset\bin\Debug\EPPlus.System.Drawing.dll
+D:\DEV SYSTEM\WORK AREA\AssetMonitoringAsset\AssetMonitoringAsset\bin\Debug\Microsoft.IO.RecyclableMemoryStream.dll
+D:\DEV SYSTEM\WORK AREA\AssetMonitoringAsset\AssetMonitoringAsset\bin\Debug\Microsoft.ReportViewer.Common.dll
+D:\DEV SYSTEM\WORK AREA\AssetMonitoringAsset\AssetMonitoringAsset\bin\Debug\Microsoft.ReportViewer.DataVisualization.dll
+D:\DEV SYSTEM\WORK AREA\AssetMonitoringAsset\AssetMonitoringAsset\bin\Debug\Microsoft.ReportViewer.Design.dll
+D:\DEV SYSTEM\WORK AREA\AssetMonitoringAsset\AssetMonitoringAsset\bin\Debug\Microsoft.ReportViewer.ProcessingObjectModel.dll
+D:\DEV SYSTEM\WORK AREA\AssetMonitoringAsset\AssetMonitoringAsset\bin\Debug\Microsoft.ReportViewer.WinForms.dll
+D:\DEV SYSTEM\WORK AREA\AssetMonitoringAsset\AssetMonitoringAsset\bin\Debug\Microsoft.SqlServer.Types.dll
+D:\DEV SYSTEM\WORK AREA\AssetMonitoringAsset\AssetMonitoringAsset\bin\Debug\System.ComponentModel.Annotations.dll
+D:\DEV SYSTEM\WORK AREA\AssetMonitoringAsset\AssetMonitoringAsset\bin\Debug\DevExpress.Pdf.v21.2.Core.dll
+D:\DEV SYSTEM\WORK AREA\AssetMonitoringAsset\AssetMonitoringAsset\bin\Debug\DevExpress.Pdf.v21.2.Drawing.dll
+D:\DEV SYSTEM\WORK AREA\AssetMonitoringAsset\AssetMonitoringAsset\bin\Debug\EnvDTE.dll
+D:\DEV SYSTEM\WORK AREA\AssetMonitoringAsset\AssetMonitoringAsset\bin\Debug\Microsoft.VisualStudio.Shell.Interop.dll
+D:\DEV SYSTEM\WORK AREA\AssetMonitoringAsset\AssetMonitoringAsset\bin\Debug\Microsoft.VisualStudio.Shell.Interop.8.0.dll
+D:\DEV SYSTEM\WORK AREA\AssetMonitoringAsset\AssetMonitoringAsset\bin\Debug\stdole.dll
+D:\DEV SYSTEM\WORK AREA\AssetMonitoringAsset\AssetMonitoringAsset\bin\Debug\Microsoft.VisualStudio.OLE.Interop.dll
+D:\DEV SYSTEM\WORK AREA\AssetMonitoringAsset\AssetMonitoringAsset\bin\Debug\Microsoft.VisualStudio.TextManager.Interop.dll
+D:\DEV SYSTEM\WORK AREA\AssetMonitoringAsset\AssetMonitoringAsset\bin\Debug\Microsoft.VisualStudio.TextManager.Interop.8.0.dll
+D:\DEV SYSTEM\WORK AREA\AssetMonitoringAsset\AssetMonitoringAsset\bin\Debug\Microsoft.MSXML.dll
+D:\DEV SYSTEM\WORK AREA\AssetMonitoringAsset\AssetMonitoringAsset\bin\Debug\DevExpress.Data.v21.2.xml
+D:\DEV SYSTEM\WORK AREA\AssetMonitoringAsset\AssetMonitoringAsset\bin\Debug\DevExpress.Data.Desktop.v21.2.xml
+D:\DEV SYSTEM\WORK AREA\AssetMonitoringAsset\AssetMonitoringAsset\bin\Debug\DevExpress.SpellChecker.v21.2.Core.xml
+D:\DEV SYSTEM\WORK AREA\AssetMonitoringAsset\AssetMonitoringAsset\bin\Debug\DevExpress.Utils.v21.2.xml
+D:\DEV SYSTEM\WORK AREA\AssetMonitoringAsset\AssetMonitoringAsset\bin\Debug\DevExpress.Sparkline.v21.2.Core.xml
+D:\DEV SYSTEM\WORK AREA\AssetMonitoringAsset\AssetMonitoringAsset\bin\Debug\DevExpress.XtraBars.v21.2.xml
+D:\DEV SYSTEM\WORK AREA\AssetMonitoringAsset\AssetMonitoringAsset\bin\Debug\DevExpress.XtraEditors.v21.2.xml
+D:\DEV SYSTEM\WORK AREA\AssetMonitoringAsset\AssetMonitoringAsset\bin\Debug\DevExpress.Printing.v21.2.Core.xml
+D:\DEV SYSTEM\WORK AREA\AssetMonitoringAsset\AssetMonitoringAsset\bin\Debug\DevExpress.XtraSpellChecker.v21.2.xml
+D:\DEV SYSTEM\WORK AREA\AssetMonitoringAsset\AssetMonitoringAsset\bin\Debug\EPPlus.xml
+D:\DEV SYSTEM\WORK AREA\AssetMonitoringAsset\AssetMonitoringAsset\bin\Debug\Microsoft.IO.RecyclableMemoryStream.xml
+D:\DEV SYSTEM\WORK AREA\AssetMonitoringAsset\AssetMonitoringAsset\bin\Debug\DevExpress.Pdf.v21.2.Core.xml
+D:\DEV SYSTEM\WORK AREA\AssetMonitoringAsset\AssetMonitoringAsset\bin\Debug\DevExpress.Pdf.v21.2.Drawing.xml
+D:\DEV SYSTEM\WORK AREA\AssetMonitoringAsset\AssetMonitoringAsset\bin\Debug\de\DevExpress.Data.v21.2.resources.dll
+D:\DEV SYSTEM\WORK AREA\AssetMonitoringAsset\AssetMonitoringAsset\bin\Debug\es\DevExpress.Data.v21.2.resources.dll
+D:\DEV SYSTEM\WORK AREA\AssetMonitoringAsset\AssetMonitoringAsset\bin\Debug\ja\DevExpress.Data.v21.2.resources.dll
+D:\DEV SYSTEM\WORK AREA\AssetMonitoringAsset\AssetMonitoringAsset\bin\Debug\ru\DevExpress.Data.v21.2.resources.dll
+D:\DEV SYSTEM\WORK AREA\AssetMonitoringAsset\AssetMonitoringAsset\bin\Debug\de\DevExpress.Utils.v21.2.resources.dll
+D:\DEV SYSTEM\WORK AREA\AssetMonitoringAsset\AssetMonitoringAsset\bin\Debug\es\DevExpress.Utils.v21.2.resources.dll
+D:\DEV SYSTEM\WORK AREA\AssetMonitoringAsset\AssetMonitoringAsset\bin\Debug\ja\DevExpress.Utils.v21.2.resources.dll
+D:\DEV SYSTEM\WORK AREA\AssetMonitoringAsset\AssetMonitoringAsset\bin\Debug\ru\DevExpress.Utils.v21.2.resources.dll
+D:\DEV SYSTEM\WORK AREA\AssetMonitoringAsset\AssetMonitoringAsset\bin\Debug\de\DevExpress.Sparkline.v21.2.Core.resources.dll
+D:\DEV SYSTEM\WORK AREA\AssetMonitoringAsset\AssetMonitoringAsset\bin\Debug\es\DevExpress.Sparkline.v21.2.Core.resources.dll
+D:\DEV SYSTEM\WORK AREA\AssetMonitoringAsset\AssetMonitoringAsset\bin\Debug\ja\DevExpress.Sparkline.v21.2.Core.resources.dll
+D:\DEV SYSTEM\WORK AREA\AssetMonitoringAsset\AssetMonitoringAsset\bin\Debug\ru\DevExpress.Sparkline.v21.2.Core.resources.dll
+D:\DEV SYSTEM\WORK AREA\AssetMonitoringAsset\AssetMonitoringAsset\bin\Debug\de\DevExpress.XtraBars.v21.2.resources.dll
+D:\DEV SYSTEM\WORK AREA\AssetMonitoringAsset\AssetMonitoringAsset\bin\Debug\es\DevExpress.XtraBars.v21.2.resources.dll
+D:\DEV SYSTEM\WORK AREA\AssetMonitoringAsset\AssetMonitoringAsset\bin\Debug\ja\DevExpress.XtraBars.v21.2.resources.dll
+D:\DEV SYSTEM\WORK AREA\AssetMonitoringAsset\AssetMonitoringAsset\bin\Debug\ru\DevExpress.XtraBars.v21.2.resources.dll
+D:\DEV SYSTEM\WORK AREA\AssetMonitoringAsset\AssetMonitoringAsset\bin\Debug\de\DevExpress.XtraEditors.v21.2.resources.dll
+D:\DEV SYSTEM\WORK AREA\AssetMonitoringAsset\AssetMonitoringAsset\bin\Debug\es\DevExpress.XtraEditors.v21.2.resources.dll
+D:\DEV SYSTEM\WORK AREA\AssetMonitoringAsset\AssetMonitoringAsset\bin\Debug\ja\DevExpress.XtraEditors.v21.2.resources.dll
+D:\DEV SYSTEM\WORK AREA\AssetMonitoringAsset\AssetMonitoringAsset\bin\Debug\ru\DevExpress.XtraEditors.v21.2.resources.dll
+D:\DEV SYSTEM\WORK AREA\AssetMonitoringAsset\AssetMonitoringAsset\bin\Debug\de\DevExpress.Printing.v21.2.Core.resources.dll
+D:\DEV SYSTEM\WORK AREA\AssetMonitoringAsset\AssetMonitoringAsset\bin\Debug\es\DevExpress.Printing.v21.2.Core.resources.dll
+D:\DEV SYSTEM\WORK AREA\AssetMonitoringAsset\AssetMonitoringAsset\bin\Debug\ja\DevExpress.Printing.v21.2.Core.resources.dll
+D:\DEV SYSTEM\WORK AREA\AssetMonitoringAsset\AssetMonitoringAsset\bin\Debug\ru\DevExpress.Printing.v21.2.Core.resources.dll
+D:\DEV SYSTEM\WORK AREA\AssetMonitoringAsset\AssetMonitoringAsset\bin\Debug\de\DevExpress.XtraSpellChecker.v21.2.resources.dll
+D:\DEV SYSTEM\WORK AREA\AssetMonitoringAsset\AssetMonitoringAsset\bin\Debug\es\DevExpress.XtraSpellChecker.v21.2.resources.dll
+D:\DEV SYSTEM\WORK AREA\AssetMonitoringAsset\AssetMonitoringAsset\bin\Debug\ja\DevExpress.XtraSpellChecker.v21.2.resources.dll
+D:\DEV SYSTEM\WORK AREA\AssetMonitoringAsset\AssetMonitoringAsset\bin\Debug\ru\DevExpress.XtraSpellChecker.v21.2.resources.dll
+D:\DEV SYSTEM\WORK AREA\AssetMonitoringAsset\AssetMonitoringAsset\bin\Debug\de\Microsoft.ReportViewer.Common.resources.dll
+D:\DEV SYSTEM\WORK AREA\AssetMonitoringAsset\AssetMonitoringAsset\bin\Debug\es\Microsoft.ReportViewer.Common.resources.dll
+D:\DEV SYSTEM\WORK AREA\AssetMonitoringAsset\AssetMonitoringAsset\bin\Debug\fr\Microsoft.ReportViewer.Common.resources.dll
+D:\DEV SYSTEM\WORK AREA\AssetMonitoringAsset\AssetMonitoringAsset\bin\Debug\it\Microsoft.ReportViewer.Common.resources.dll
+D:\DEV SYSTEM\WORK AREA\AssetMonitoringAsset\AssetMonitoringAsset\bin\Debug\ja\Microsoft.ReportViewer.Common.resources.dll
+D:\DEV SYSTEM\WORK AREA\AssetMonitoringAsset\AssetMonitoringAsset\bin\Debug\ko\Microsoft.ReportViewer.Common.resources.dll
+D:\DEV SYSTEM\WORK AREA\AssetMonitoringAsset\AssetMonitoringAsset\bin\Debug\pt\Microsoft.ReportViewer.Common.resources.dll
+D:\DEV SYSTEM\WORK AREA\AssetMonitoringAsset\AssetMonitoringAsset\bin\Debug\ru\Microsoft.ReportViewer.Common.resources.dll
+D:\DEV SYSTEM\WORK AREA\AssetMonitoringAsset\AssetMonitoringAsset\bin\Debug\zh-CHS\Microsoft.ReportViewer.Common.resources.dll
+D:\DEV SYSTEM\WORK AREA\AssetMonitoringAsset\AssetMonitoringAsset\bin\Debug\zh-CHT\Microsoft.ReportViewer.Common.resources.dll
+D:\DEV SYSTEM\WORK AREA\AssetMonitoringAsset\AssetMonitoringAsset\bin\Debug\de\Microsoft.ReportViewer.DataVisualization.resources.dll
+D:\DEV SYSTEM\WORK AREA\AssetMonitoringAsset\AssetMonitoringAsset\bin\Debug\es\Microsoft.ReportViewer.DataVisualization.resources.dll
+D:\DEV SYSTEM\WORK AREA\AssetMonitoringAsset\AssetMonitoringAsset\bin\Debug\fr\Microsoft.ReportViewer.DataVisualization.resources.dll
+D:\DEV SYSTEM\WORK AREA\AssetMonitoringAsset\AssetMonitoringAsset\bin\Debug\it\Microsoft.ReportViewer.DataVisualization.resources.dll
+D:\DEV SYSTEM\WORK AREA\AssetMonitoringAsset\AssetMonitoringAsset\bin\Debug\ja\Microsoft.ReportViewer.DataVisualization.resources.dll
+D:\DEV SYSTEM\WORK AREA\AssetMonitoringAsset\AssetMonitoringAsset\bin\Debug\ko\Microsoft.ReportViewer.DataVisualization.resources.dll
+D:\DEV SYSTEM\WORK AREA\AssetMonitoringAsset\AssetMonitoringAsset\bin\Debug\pt\Microsoft.ReportViewer.DataVisualization.resources.dll
+D:\DEV SYSTEM\WORK AREA\AssetMonitoringAsset\AssetMonitoringAsset\bin\Debug\ru\Microsoft.ReportViewer.DataVisualization.resources.dll
+D:\DEV SYSTEM\WORK AREA\AssetMonitoringAsset\AssetMonitoringAsset\bin\Debug\zh-CHS\Microsoft.ReportViewer.DataVisualization.resources.dll
+D:\DEV SYSTEM\WORK AREA\AssetMonitoringAsset\AssetMonitoringAsset\bin\Debug\zh-CHT\Microsoft.ReportViewer.DataVisualization.resources.dll
+D:\DEV SYSTEM\WORK AREA\AssetMonitoringAsset\AssetMonitoringAsset\bin\Debug\de\Microsoft.ReportViewer.Design.resources.dll
+D:\DEV SYSTEM\WORK AREA\AssetMonitoringAsset\AssetMonitoringAsset\bin\Debug\es\Microsoft.ReportViewer.Design.resources.dll
+D:\DEV SYSTEM\WORK AREA\AssetMonitoringAsset\AssetMonitoringAsset\bin\Debug\fr\Microsoft.ReportViewer.Design.resources.dll
+D:\DEV SYSTEM\WORK AREA\AssetMonitoringAsset\AssetMonitoringAsset\bin\Debug\it\Microsoft.ReportViewer.Design.resources.dll
+D:\DEV SYSTEM\WORK AREA\AssetMonitoringAsset\AssetMonitoringAsset\bin\Debug\ja\Microsoft.ReportViewer.Design.resources.dll
+D:\DEV SYSTEM\WORK AREA\AssetMonitoringAsset\AssetMonitoringAsset\bin\Debug\ko\Microsoft.ReportViewer.Design.resources.dll
+D:\DEV SYSTEM\WORK AREA\AssetMonitoringAsset\AssetMonitoringAsset\bin\Debug\pt\Microsoft.ReportViewer.Design.resources.dll
+D:\DEV SYSTEM\WORK AREA\AssetMonitoringAsset\AssetMonitoringAsset\bin\Debug\ru\Microsoft.ReportViewer.Design.resources.dll
+D:\DEV SYSTEM\WORK AREA\AssetMonitoringAsset\AssetMonitoringAsset\bin\Debug\zh-CHS\Microsoft.ReportViewer.Design.resources.dll
+D:\DEV SYSTEM\WORK AREA\AssetMonitoringAsset\AssetMonitoringAsset\bin\Debug\zh-CHT\Microsoft.ReportViewer.Design.resources.dll
+D:\DEV SYSTEM\WORK AREA\AssetMonitoringAsset\AssetMonitoringAsset\bin\Debug\de\Microsoft.ReportViewer.WinForms.resources.dll
+D:\DEV SYSTEM\WORK AREA\AssetMonitoringAsset\AssetMonitoringAsset\bin\Debug\es\Microsoft.ReportViewer.WinForms.resources.dll
+D:\DEV SYSTEM\WORK AREA\AssetMonitoringAsset\AssetMonitoringAsset\bin\Debug\fr\Microsoft.ReportViewer.WinForms.resources.dll
+D:\DEV SYSTEM\WORK AREA\AssetMonitoringAsset\AssetMonitoringAsset\bin\Debug\it\Microsoft.ReportViewer.WinForms.resources.dll
+D:\DEV SYSTEM\WORK AREA\AssetMonitoringAsset\AssetMonitoringAsset\bin\Debug\ja\Microsoft.ReportViewer.WinForms.resources.dll
+D:\DEV SYSTEM\WORK AREA\AssetMonitoringAsset\AssetMonitoringAsset\bin\Debug\ko\Microsoft.ReportViewer.WinForms.resources.dll
+D:\DEV SYSTEM\WORK AREA\AssetMonitoringAsset\AssetMonitoringAsset\bin\Debug\pt\Microsoft.ReportViewer.WinForms.resources.dll
+D:\DEV SYSTEM\WORK AREA\AssetMonitoringAsset\AssetMonitoringAsset\bin\Debug\ru\Microsoft.ReportViewer.WinForms.resources.dll
+D:\DEV SYSTEM\WORK AREA\AssetMonitoringAsset\AssetMonitoringAsset\bin\Debug\zh-CHS\Microsoft.ReportViewer.WinForms.resources.dll
+D:\DEV SYSTEM\WORK AREA\AssetMonitoringAsset\AssetMonitoringAsset\bin\Debug\zh-CHT\Microsoft.ReportViewer.WinForms.resources.dll
+D:\DEV SYSTEM\WORK AREA\AssetMonitoringAsset\AssetMonitoringAsset\bin\Debug\de\DevExpress.Pdf.v21.2.Core.resources.dll
+D:\DEV SYSTEM\WORK AREA\AssetMonitoringAsset\AssetMonitoringAsset\bin\Debug\es\DevExpress.Pdf.v21.2.Core.resources.dll
+D:\DEV SYSTEM\WORK AREA\AssetMonitoringAsset\AssetMonitoringAsset\bin\Debug\ja\DevExpress.Pdf.v21.2.Core.resources.dll
+D:\DEV SYSTEM\WORK AREA\AssetMonitoringAsset\AssetMonitoringAsset\bin\Debug\ru\DevExpress.Pdf.v21.2.Core.resources.dll
+D:\DEV SYSTEM\WORK AREA\AssetMonitoringAsset\AssetMonitoringAsset\obj\Debug\AssetMonitoringAsset.vbproj.AssemblyReference.cache
+D:\DEV SYSTEM\WORK AREA\AssetMonitoringAsset\AssetMonitoringAsset\obj\Debug\AssetMonitoringAsset.Approval.resources
+D:\DEV SYSTEM\WORK AREA\AssetMonitoringAsset\AssetMonitoringAsset\obj\Debug\AssetMonitoringAsset.RequestForApproval.resources
+D:\DEV SYSTEM\WORK AREA\AssetMonitoringAsset\AssetMonitoringAsset\obj\Debug\AssetMonitoringAsset.AssetAcquisition.resources
+D:\DEV SYSTEM\WORK AREA\AssetMonitoringAsset\AssetMonitoringAsset\obj\Debug\AssetMonitoringAsset.AAdetail.resources
+D:\DEV SYSTEM\WORK AREA\AssetMonitoringAsset\AssetMonitoringAsset\obj\Debug\AssetMonitoringAsset.AARegister.resources
+D:\DEV SYSTEM\WORK AREA\AssetMonitoringAsset\AssetMonitoringAsset\obj\Debug\AssetMonitoringAsset.date1.resources
+D:\DEV SYSTEM\WORK AREA\AssetMonitoringAsset\AssetMonitoringAsset\obj\Debug\AssetMonitoringAsset.empllist.resources
+D:\DEV SYSTEM\WORK AREA\AssetMonitoringAsset\AssetMonitoringAsset\obj\Debug\AssetMonitoringAsset.Rqregister.resources
+D:\DEV SYSTEM\WORK AREA\AssetMonitoringAsset\AssetMonitoringAsset\obj\Debug\AssetMonitoringAsset.Request.resources
+D:\DEV SYSTEM\WORK AREA\AssetMonitoringAsset\AssetMonitoringAsset\obj\Debug\AssetMonitoringAsset.AssetList3.resources
+D:\DEV SYSTEM\WORK AREA\AssetMonitoringAsset\AssetMonitoringAsset\obj\Debug\AssetMonitoringAsset.Request2.resources
+D:\DEV SYSTEM\WORK AREA\AssetMonitoringAsset\AssetMonitoringAsset\obj\Debug\AssetMonitoringAsset.RequestRegister.resources
+D:\DEV SYSTEM\WORK AREA\AssetMonitoringAsset\AssetMonitoringAsset\obj\Debug\AssetMonitoringAsset.CreateRequest.resources
+D:\DEV SYSTEM\WORK AREA\AssetMonitoringAsset\AssetMonitoringAsset\obj\Debug\AssetMonitoringAsset.AllocationUpdate.resources
+D:\DEV SYSTEM\WORK AREA\AssetMonitoringAsset\AssetMonitoringAsset\obj\Debug\AssetMonitoringAsset.AssetStatus.resources
+D:\DEV SYSTEM\WORK AREA\AssetMonitoringAsset\AssetMonitoringAsset\obj\Debug\AssetMonitoringAsset.Assets1.resources
+D:\DEV SYSTEM\WORK AREA\AssetMonitoringAsset\AssetMonitoringAsset\obj\Debug\AssetMonitoringAsset.TransferRequest.resources
+D:\DEV SYSTEM\WORK AREA\AssetMonitoringAsset\AssetMonitoringAsset\obj\Debug\AssetMonitoringAsset.AssetList.resources
+D:\DEV SYSTEM\WORK AREA\AssetMonitoringAsset\AssetMonitoringAsset\obj\Debug\AssetMonitoringAsset.BuildAsset.resources
+D:\DEV SYSTEM\WORK AREA\AssetMonitoringAsset\AssetMonitoringAsset\obj\Debug\AssetMonitoringAsset.ReferenceList.resources
+D:\DEV SYSTEM\WORK AREA\AssetMonitoringAsset\AssetMonitoringAsset\obj\Debug\AssetMonitoringAsset.BuildRegisterDetail.resources
+D:\DEV SYSTEM\WORK AREA\AssetMonitoringAsset\AssetMonitoringAsset\obj\Debug\AssetMonitoringAsset.NewAssetRegister.resources
+D:\DEV SYSTEM\WORK AREA\AssetMonitoringAsset\AssetMonitoringAsset\obj\Debug\AssetMonitoringAsset.Details.resources
+D:\DEV SYSTEM\WORK AREA\AssetMonitoringAsset\AssetMonitoringAsset\obj\Debug\AssetMonitoringAsset.InventoryList.resources
+D:\DEV SYSTEM\WORK AREA\AssetMonitoringAsset\AssetMonitoringAsset\obj\Debug\AssetMonitoringAsset.MasterDataList.resources
+D:\DEV SYSTEM\WORK AREA\AssetMonitoringAsset\AssetMonitoringAsset\obj\Debug\AssetMonitoringAsset.NACondition.resources
+D:\DEV SYSTEM\WORK AREA\AssetMonitoringAsset\AssetMonitoringAsset\obj\Debug\AssetMonitoringAsset.NATypeh.resources
+D:\DEV SYSTEM\WORK AREA\AssetMonitoringAsset\AssetMonitoringAsset\obj\Debug\AssetMonitoringAsset.NAcategory.resources
+D:\DEV SYSTEM\WORK AREA\AssetMonitoringAsset\AssetMonitoringAsset\obj\Debug\AssetMonitoringAsset.NewAsset.resources
+D:\DEV SYSTEM\WORK AREA\AssetMonitoringAsset\AssetMonitoringAsset\obj\Debug\AssetMonitoringAsset.BuildAssetRegister.resources
+D:\DEV SYSTEM\WORK AREA\AssetMonitoringAsset\AssetMonitoringAsset\obj\Debug\AssetMonitoringAsset.RegisterDetails.resources
+D:\DEV SYSTEM\WORK AREA\AssetMonitoringAsset\AssetMonitoringAsset\obj\Debug\AssetMonitoringAsset.view.resources
+D:\DEV SYSTEM\WORK AREA\AssetMonitoringAsset\AssetMonitoringAsset\obj\Debug\AssetMonitoringAsset.AllocatedAssetDetails.resources
+D:\DEV SYSTEM\WORK AREA\AssetMonitoringAsset\AssetMonitoringAsset\obj\Debug\AssetMonitoringAsset.AllocatedItems.resources
+D:\DEV SYSTEM\WORK AREA\AssetMonitoringAsset\AssetMonitoringAsset\obj\Debug\AssetMonitoringAsset.Allocation.resources
+D:\DEV SYSTEM\WORK AREA\AssetMonitoringAsset\AssetMonitoringAsset\obj\Debug\AssetMonitoringAsset.AllocationRegister.resources
+D:\DEV SYSTEM\WORK AREA\AssetMonitoringAsset\AssetMonitoringAsset\obj\Debug\AssetMonitoringAsset.EmployeeList4.resources
+D:\DEV SYSTEM\WORK AREA\AssetMonitoringAsset\AssetMonitoringAsset\obj\Debug\AssetMonitoringAsset.AssetList2.resources
+D:\DEV SYSTEM\WORK AREA\AssetMonitoringAsset\AssetMonitoringAsset\obj\Debug\AssetMonitoringAsset.RegisterDetail.resources
+D:\DEV SYSTEM\WORK AREA\AssetMonitoringAsset\AssetMonitoringAsset\obj\Debug\AssetMonitoringAsset.importmasterlist.resources
+D:\DEV SYSTEM\WORK AREA\AssetMonitoringAsset\AssetMonitoringAsset\obj\Debug\AssetMonitoringAsset.Login.resources
+D:\DEV SYSTEM\WORK AREA\AssetMonitoringAsset\AssetMonitoringAsset\obj\Debug\AssetMonitoringAsset.AssetBranch.resources
+D:\DEV SYSTEM\WORK AREA\AssetMonitoringAsset\AssetMonitoringAsset\obj\Debug\AssetMonitoringAsset.AssetBranchAddandUpdate1.resources
+D:\DEV SYSTEM\WORK AREA\AssetMonitoringAsset\AssetMonitoringAsset\obj\Debug\AssetMonitoringAsset.AssetCategory.resources
+D:\DEV SYSTEM\WORK AREA\AssetMonitoringAsset\AssetMonitoringAsset\obj\Debug\AssetMonitoringAsset.AssetCategoryAddandUpdate1.resources
+D:\DEV SYSTEM\WORK AREA\AssetMonitoringAsset\AssetMonitoringAsset\obj\Debug\AssetMonitoringAsset.AssetConditionAddandUpdate.resources
+D:\DEV SYSTEM\WORK AREA\AssetMonitoringAsset\AssetMonitoringAsset\obj\Debug\AssetMonitoringAsset.AssetCondition.resources
+D:\DEV SYSTEM\WORK AREA\AssetMonitoringAsset\AssetMonitoringAsset\obj\Debug\AssetMonitoringAsset.AssetDepartment.resources
+D:\DEV SYSTEM\WORK AREA\AssetMonitoringAsset\AssetMonitoringAsset\obj\Debug\AssetMonitoringAsset.AssetDepartmentAddandUpdate.resources
+D:\DEV SYSTEM\WORK AREA\AssetMonitoringAsset\AssetMonitoringAsset\obj\Debug\AssetMonitoringAsset.AssetDocTypeAddandUpdate.resources
+D:\DEV SYSTEM\WORK AREA\AssetMonitoringAsset\AssetMonitoringAsset\obj\Debug\AssetMonitoringAsset.AssetDocumentType.resources
+D:\DEV SYSTEM\WORK AREA\AssetMonitoringAsset\AssetMonitoringAsset\obj\Debug\AssetMonitoringAsset.AssetPositionAddandUpdate.resources
+D:\DEV SYSTEM\WORK AREA\AssetMonitoringAsset\AssetMonitoringAsset\obj\Debug\AssetMonitoringAsset.AssetPosition.resources
+D:\DEV SYSTEM\WORK AREA\AssetMonitoringAsset\AssetMonitoringAsset\obj\Debug\AssetMonitoringAsset.AssetSection.resources
+D:\DEV SYSTEM\WORK AREA\AssetMonitoringAsset\AssetMonitoringAsset\obj\Debug\AssetMonitoringAsset.AssetSectionAddandUpdate1.resources
+D:\DEV SYSTEM\WORK AREA\AssetMonitoringAsset\AssetMonitoringAsset\obj\Debug\AssetMonitoringAsset.AssetType.resources
+D:\DEV SYSTEM\WORK AREA\AssetMonitoringAsset\AssetMonitoringAsset\obj\Debug\AssetMonitoringAsset.AssetTypeAddandUpdate.resources
+D:\DEV SYSTEM\WORK AREA\AssetMonitoringAsset\AssetMonitoringAsset\obj\Debug\AssetMonitoringAsset.Home.resources
+D:\DEV SYSTEM\WORK AREA\AssetMonitoringAsset\AssetMonitoringAsset\obj\Debug\AssetMonitoringAsset.Employee.resources
+D:\DEV SYSTEM\WORK AREA\AssetMonitoringAsset\AssetMonitoringAsset\obj\Debug\AssetMonitoringAsset.EmployeeAddandUpdate.resources
+D:\DEV SYSTEM\WORK AREA\AssetMonitoringAsset\AssetMonitoringAsset\obj\Debug\AssetMonitoringAsset.Reference.resources
+D:\DEV SYSTEM\WORK AREA\AssetMonitoringAsset\AssetMonitoringAsset\obj\Debug\AssetMonitoringAsset.EmployeeList.resources
+D:\DEV SYSTEM\WORK AREA\AssetMonitoringAsset\AssetMonitoringAsset\obj\Debug\AssetMonitoringAsset.UpdateSelection.resources
+D:\DEV SYSTEM\WORK AREA\AssetMonitoringAsset\AssetMonitoringAsset\obj\Debug\AssetMonitoringAsset.UserChangePass.resources
+D:\DEV SYSTEM\WORK AREA\AssetMonitoringAsset\AssetMonitoringAsset\obj\Debug\AssetMonitoringAsset.User.resources
+D:\DEV SYSTEM\WORK AREA\AssetMonitoringAsset\AssetMonitoringAsset\obj\Debug\AssetMonitoringAsset.UserAdd.resources
+D:\DEV SYSTEM\WORK AREA\AssetMonitoringAsset\AssetMonitoringAsset\obj\Debug\AssetMonitoringAsset.UserUpdate.resources
+D:\DEV SYSTEM\WORK AREA\AssetMonitoringAsset\AssetMonitoringAsset\obj\Debug\AssetMonitoringAsset.Vendor.resources
+D:\DEV SYSTEM\WORK AREA\AssetMonitoringAsset\AssetMonitoringAsset\obj\Debug\AssetMonitoringAsset.VendorAddandUpdate.resources
+D:\DEV SYSTEM\WORK AREA\AssetMonitoringAsset\AssetMonitoringAsset\obj\Debug\AssetMonitoringAsset.Resources.resources
+D:\DEV SYSTEM\WORK AREA\AssetMonitoringAsset\AssetMonitoringAsset\obj\Debug\AssetMonitoringAsset.vbproj.GenerateResource.cache
+D:\DEV SYSTEM\WORK AREA\AssetMonitoringAsset\AssetMonitoringAsset\obj\Debug\AssetMonitoringAsset.exe.licenses
+D:\DEV SYSTEM\WORK AREA\AssetMonitoringAsset\AssetMonitoringAsset\obj\Debug\RdlCompile.cache
+D:\DEV SYSTEM\WORK AREA\AssetMonitoringAsset\AssetMonitoringAsset\obj\Debug\RdlCompile.compiled
+D:\DEV SYSTEM\WORK AREA\AssetMonitoringAsset\AssetMonitoringAsset\obj\Debug\AssetMonitoringAsset.vbproj.CoreCompileInputs.cache
+D:\DEV SYSTEM\WORK AREA\AssetMonitoringAsset\AssetMonitoringAsset\obj\Debug\AssetMonitoringAsset.vbproj.CopyComplete
+D:\DEV SYSTEM\WORK AREA\AssetMonitoringAsset\AssetMonitoringAsset\obj\Debug\AssetMonitoringAsset.exe
+D:\DEV SYSTEM\WORK AREA\AssetMonitoringAsset\AssetMonitoringAsset\obj\Debug\AssetMonitoringAsset.pdb
+C:\Users\HSDP_SYS_DEV\Desktop\AMS\AssetMonitoringAsset\AssetMonitoringAsset\obj\Debug\AssetMonitoringAsset.vbproj.AssemblyReference.cache
+C:\Users\HSDP_SYS_DEV\Desktop\AMS\AssetMonitoringAsset\AssetMonitoringAsset\obj\Debug\AssetMonitoringAsset.Approval.resources
+C:\Users\HSDP_SYS_DEV\Desktop\AMS\AssetMonitoringAsset\AssetMonitoringAsset\obj\Debug\AssetMonitoringAsset.RequestForApproval.resources
+C:\Users\HSDP_SYS_DEV\Desktop\AMS\AssetMonitoringAsset\AssetMonitoringAsset\obj\Debug\AssetMonitoringAsset.AssetAcquisition.resources
+C:\Users\HSDP_SYS_DEV\Desktop\AMS\AssetMonitoringAsset\AssetMonitoringAsset\obj\Debug\AssetMonitoringAsset.AAdetail.resources
+C:\Users\HSDP_SYS_DEV\Desktop\AMS\AssetMonitoringAsset\AssetMonitoringAsset\obj\Debug\AssetMonitoringAsset.AARegister.resources
+C:\Users\HSDP_SYS_DEV\Desktop\AMS\AssetMonitoringAsset\AssetMonitoringAsset\obj\Debug\AssetMonitoringAsset.date1.resources
+C:\Users\HSDP_SYS_DEV\Desktop\AMS\AssetMonitoringAsset\AssetMonitoringAsset\obj\Debug\AssetMonitoringAsset.empllist.resources
+C:\Users\HSDP_SYS_DEV\Desktop\AMS\AssetMonitoringAsset\AssetMonitoringAsset\obj\Debug\AssetMonitoringAsset.Rqregister.resources
+C:\Users\HSDP_SYS_DEV\Desktop\AMS\AssetMonitoringAsset\AssetMonitoringAsset\obj\Debug\AssetMonitoringAsset.Request.resources
+C:\Users\HSDP_SYS_DEV\Desktop\AMS\AssetMonitoringAsset\AssetMonitoringAsset\obj\Debug\AssetMonitoringAsset.AssetList3.resources
+C:\Users\HSDP_SYS_DEV\Desktop\AMS\AssetMonitoringAsset\AssetMonitoringAsset\obj\Debug\AssetMonitoringAsset.Request2.resources
+C:\Users\HSDP_SYS_DEV\Desktop\AMS\AssetMonitoringAsset\AssetMonitoringAsset\obj\Debug\AssetMonitoringAsset.RequestRegister.resources
+C:\Users\HSDP_SYS_DEV\Desktop\AMS\AssetMonitoringAsset\AssetMonitoringAsset\obj\Debug\AssetMonitoringAsset.CreateRequest.resources
+C:\Users\HSDP_SYS_DEV\Desktop\AMS\AssetMonitoringAsset\AssetMonitoringAsset\obj\Debug\AssetMonitoringAsset.AllocationUpdate.resources
+C:\Users\HSDP_SYS_DEV\Desktop\AMS\AssetMonitoringAsset\AssetMonitoringAsset\obj\Debug\AssetMonitoringAsset.AssetStatus.resources
+C:\Users\HSDP_SYS_DEV\Desktop\AMS\AssetMonitoringAsset\AssetMonitoringAsset\obj\Debug\AssetMonitoringAsset.Assets1.resources
+C:\Users\HSDP_SYS_DEV\Desktop\AMS\AssetMonitoringAsset\AssetMonitoringAsset\obj\Debug\AssetMonitoringAsset.TransferRequest.resources
+C:\Users\HSDP_SYS_DEV\Desktop\AMS\AssetMonitoringAsset\AssetMonitoringAsset\obj\Debug\AssetMonitoringAsset.AssetList.resources
+C:\Users\HSDP_SYS_DEV\Desktop\AMS\AssetMonitoringAsset\AssetMonitoringAsset\obj\Debug\AssetMonitoringAsset.BuildAsset.resources
+C:\Users\HSDP_SYS_DEV\Desktop\AMS\AssetMonitoringAsset\AssetMonitoringAsset\obj\Debug\AssetMonitoringAsset.ReferenceList.resources
+C:\Users\HSDP_SYS_DEV\Desktop\AMS\AssetMonitoringAsset\AssetMonitoringAsset\obj\Debug\AssetMonitoringAsset.BuildRegisterDetail.resources
+C:\Users\HSDP_SYS_DEV\Desktop\AMS\AssetMonitoringAsset\AssetMonitoringAsset\obj\Debug\AssetMonitoringAsset.NewAssetRegister.resources
+C:\Users\HSDP_SYS_DEV\Desktop\AMS\AssetMonitoringAsset\AssetMonitoringAsset\obj\Debug\AssetMonitoringAsset.Details.resources
+C:\Users\HSDP_SYS_DEV\Desktop\AMS\AssetMonitoringAsset\AssetMonitoringAsset\obj\Debug\AssetMonitoringAsset.InventoryList.resources
+C:\Users\HSDP_SYS_DEV\Desktop\AMS\AssetMonitoringAsset\AssetMonitoringAsset\obj\Debug\AssetMonitoringAsset.MasterDataList.resources
+C:\Users\HSDP_SYS_DEV\Desktop\AMS\AssetMonitoringAsset\AssetMonitoringAsset\obj\Debug\AssetMonitoringAsset.NACondition.resources
+C:\Users\HSDP_SYS_DEV\Desktop\AMS\AssetMonitoringAsset\AssetMonitoringAsset\obj\Debug\AssetMonitoringAsset.NATypeh.resources
+C:\Users\HSDP_SYS_DEV\Desktop\AMS\AssetMonitoringAsset\AssetMonitoringAsset\obj\Debug\AssetMonitoringAsset.NAcategory.resources
+C:\Users\HSDP_SYS_DEV\Desktop\AMS\AssetMonitoringAsset\AssetMonitoringAsset\obj\Debug\AssetMonitoringAsset.NewAsset.resources
+C:\Users\HSDP_SYS_DEV\Desktop\AMS\AssetMonitoringAsset\AssetMonitoringAsset\obj\Debug\AssetMonitoringAsset.AllocatedAssetDetails.resources
+C:\Users\HSDP_SYS_DEV\Desktop\AMS\AssetMonitoringAsset\AssetMonitoringAsset\obj\Debug\AssetMonitoringAsset.AllocatedItems.resources
+C:\Users\HSDP_SYS_DEV\Desktop\AMS\AssetMonitoringAsset\AssetMonitoringAsset\obj\Debug\AssetMonitoringAsset.Allocation.resources
+C:\Users\HSDP_SYS_DEV\Desktop\AMS\AssetMonitoringAsset\AssetMonitoringAsset\obj\Debug\AssetMonitoringAsset.AllocationRegister.resources
+C:\Users\HSDP_SYS_DEV\Desktop\AMS\AssetMonitoringAsset\AssetMonitoringAsset\obj\Debug\AssetMonitoringAsset.EmployeeList4.resources
+C:\Users\HSDP_SYS_DEV\Desktop\AMS\AssetMonitoringAsset\AssetMonitoringAsset\obj\Debug\AssetMonitoringAsset.AssetList2.resources
+C:\Users\HSDP_SYS_DEV\Desktop\AMS\AssetMonitoringAsset\AssetMonitoringAsset\obj\Debug\AssetMonitoringAsset.RegisterDetail.resources
+C:\Users\HSDP_SYS_DEV\Desktop\AMS\AssetMonitoringAsset\AssetMonitoringAsset\obj\Debug\AssetMonitoringAsset.importmasterlist.resources
+C:\Users\HSDP_SYS_DEV\Desktop\AMS\AssetMonitoringAsset\AssetMonitoringAsset\obj\Debug\AssetMonitoringAsset.Login.resources
+C:\Users\HSDP_SYS_DEV\Desktop\AMS\AssetMonitoringAsset\AssetMonitoringAsset\obj\Debug\AssetMonitoringAsset.AssetBranch.resources
+C:\Users\HSDP_SYS_DEV\Desktop\AMS\AssetMonitoringAsset\AssetMonitoringAsset\obj\Debug\AssetMonitoringAsset.AssetBranchAddandUpdate1.resources
+C:\Users\HSDP_SYS_DEV\Desktop\AMS\AssetMonitoringAsset\AssetMonitoringAsset\obj\Debug\AssetMonitoringAsset.AssetCategory.resources
+C:\Users\HSDP_SYS_DEV\Desktop\AMS\AssetMonitoringAsset\AssetMonitoringAsset\obj\Debug\AssetMonitoringAsset.AssetCategoryAddandUpdate1.resources
+C:\Users\HSDP_SYS_DEV\Desktop\AMS\AssetMonitoringAsset\AssetMonitoringAsset\obj\Debug\AssetMonitoringAsset.AssetConditionAddandUpdate.resources
+C:\Users\HSDP_SYS_DEV\Desktop\AMS\AssetMonitoringAsset\AssetMonitoringAsset\obj\Debug\AssetMonitoringAsset.AssetCondition.resources
+C:\Users\HSDP_SYS_DEV\Desktop\AMS\AssetMonitoringAsset\AssetMonitoringAsset\obj\Debug\AssetMonitoringAsset.AssetDepartment.resources
+C:\Users\HSDP_SYS_DEV\Desktop\AMS\AssetMonitoringAsset\AssetMonitoringAsset\obj\Debug\AssetMonitoringAsset.AssetDepartmentAddandUpdate.resources
+C:\Users\HSDP_SYS_DEV\Desktop\AMS\AssetMonitoringAsset\AssetMonitoringAsset\obj\Debug\AssetMonitoringAsset.AssetDocTypeAddandUpdate.resources
+C:\Users\HSDP_SYS_DEV\Desktop\AMS\AssetMonitoringAsset\AssetMonitoringAsset\obj\Debug\AssetMonitoringAsset.AssetDocumentType.resources
+C:\Users\HSDP_SYS_DEV\Desktop\AMS\AssetMonitoringAsset\AssetMonitoringAsset\obj\Debug\AssetMonitoringAsset.AssetPositionAddandUpdate.resources
+C:\Users\HSDP_SYS_DEV\Desktop\AMS\AssetMonitoringAsset\AssetMonitoringAsset\obj\Debug\AssetMonitoringAsset.AssetPosition.resources
+C:\Users\HSDP_SYS_DEV\Desktop\AMS\AssetMonitoringAsset\AssetMonitoringAsset\obj\Debug\AssetMonitoringAsset.AssetSection.resources
+C:\Users\HSDP_SYS_DEV\Desktop\AMS\AssetMonitoringAsset\AssetMonitoringAsset\obj\Debug\AssetMonitoringAsset.AssetSectionAddandUpdate1.resources
+C:\Users\HSDP_SYS_DEV\Desktop\AMS\AssetMonitoringAsset\AssetMonitoringAsset\obj\Debug\AssetMonitoringAsset.AssetType.resources
+C:\Users\HSDP_SYS_DEV\Desktop\AMS\AssetMonitoringAsset\AssetMonitoringAsset\obj\Debug\AssetMonitoringAsset.AssetTypeAddandUpdate.resources
+C:\Users\HSDP_SYS_DEV\Desktop\AMS\AssetMonitoringAsset\AssetMonitoringAsset\obj\Debug\AssetMonitoringAsset.Home.resources
+C:\Users\HSDP_SYS_DEV\Desktop\AMS\AssetMonitoringAsset\AssetMonitoringAsset\obj\Debug\AssetMonitoringAsset.Employee.resources
+C:\Users\HSDP_SYS_DEV\Desktop\AMS\AssetMonitoringAsset\AssetMonitoringAsset\obj\Debug\AssetMonitoringAsset.EmployeeAddandUpdate.resources
+C:\Users\HSDP_SYS_DEV\Desktop\AMS\AssetMonitoringAsset\AssetMonitoringAsset\obj\Debug\AssetMonitoringAsset.Reference.resources
+C:\Users\HSDP_SYS_DEV\Desktop\AMS\AssetMonitoringAsset\AssetMonitoringAsset\obj\Debug\AssetMonitoringAsset.EmployeeList.resources
+C:\Users\HSDP_SYS_DEV\Desktop\AMS\AssetMonitoringAsset\AssetMonitoringAsset\obj\Debug\AssetMonitoringAsset.UpdateSelection.resources
+C:\Users\HSDP_SYS_DEV\Desktop\AMS\AssetMonitoringAsset\AssetMonitoringAsset\obj\Debug\AssetMonitoringAsset.UserChangePass.resources
+C:\Users\HSDP_SYS_DEV\Desktop\AMS\AssetMonitoringAsset\AssetMonitoringAsset\obj\Debug\AssetMonitoringAsset.User.resources
+C:\Users\HSDP_SYS_DEV\Desktop\AMS\AssetMonitoringAsset\AssetMonitoringAsset\obj\Debug\AssetMonitoringAsset.UserAdd.resources
+C:\Users\HSDP_SYS_DEV\Desktop\AMS\AssetMonitoringAsset\AssetMonitoringAsset\obj\Debug\AssetMonitoringAsset.UserUpdate.resources
+C:\Users\HSDP_SYS_DEV\Desktop\AMS\AssetMonitoringAsset\AssetMonitoringAsset\obj\Debug\AssetMonitoringAsset.Vendor.resources
+C:\Users\HSDP_SYS_DEV\Desktop\AMS\AssetMonitoringAsset\AssetMonitoringAsset\obj\Debug\AssetMonitoringAsset.VendorAddandUpdate.resources
+C:\Users\HSDP_SYS_DEV\Desktop\AMS\AssetMonitoringAsset\AssetMonitoringAsset\obj\Debug\AssetMonitoringAsset.Resources.resources
+C:\Users\HSDP_SYS_DEV\Desktop\AMS\AssetMonitoringAsset\AssetMonitoringAsset\obj\Debug\AssetMonitoringAsset.vbproj.GenerateResource.cache
+C:\Users\HSDP_SYS_DEV\Desktop\AMS\AssetMonitoringAsset\AssetMonitoringAsset\obj\Debug\AssetMonitoringAsset.exe.licenses
+C:\Users\HSDP_SYS_DEV\Desktop\AMS\AssetMonitoringAsset\AssetMonitoringAsset\obj\Debug\AssetMonitoringAsset.vbproj.CoreCompileInputs.cache
+C:\Users\HSDP_SYS_DEV\Desktop\AMS\AssetMonitoringAsset\AssetMonitoringAsset\obj\Debug\AssetMonitoringAsset.exe
+C:\Users\HSDP_SYS_DEV\Desktop\AMS\AssetMonitoringAsset\AssetMonitoringAsset\obj\Debug\AssetMonitoringAsset.pdb
+C:\Users\HSDP_SYS_DEV\Desktop\AMS\AssetMonitoringAsset\AssetMonitoringAsset\bin\Debug\SqlServerTypes\x64\msvcr120.dll
+C:\Users\HSDP_SYS_DEV\Desktop\AMS\AssetMonitoringAsset\AssetMonitoringAsset\bin\Debug\SqlServerTypes\x64\SqlServerSpatial140.dll
+C:\Users\HSDP_SYS_DEV\Desktop\AMS\AssetMonitoringAsset\AssetMonitoringAsset\bin\Debug\SqlServerTypes\x86\msvcr120.dll
+C:\Users\HSDP_SYS_DEV\Desktop\AMS\AssetMonitoringAsset\AssetMonitoringAsset\bin\Debug\SqlServerTypes\x86\SqlServerSpatial140.dll
+C:\Users\HSDP_SYS_DEV\Desktop\AMS\AssetMonitoringAsset\AssetMonitoringAsset\bin\Debug\AssetMonitoringAsset.exe.config
+C:\Users\HSDP_SYS_DEV\Desktop\AMS\AssetMonitoringAsset\AssetMonitoringAsset\bin\Debug\AssetMonitoringAsset.exe
+C:\Users\HSDP_SYS_DEV\Desktop\AMS\AssetMonitoringAsset\AssetMonitoringAsset\bin\Debug\AssetMonitoringAsset.pdb
+C:\Users\HSDP_SYS_DEV\Desktop\AMS\AssetMonitoringAsset\AssetMonitoringAsset\bin\Debug\DevExpress.BonusSkins.v21.2.dll
+C:\Users\HSDP_SYS_DEV\Desktop\AMS\AssetMonitoringAsset\AssetMonitoringAsset\bin\Debug\DevExpress.Data.Desktop.v21.2.dll
+C:\Users\HSDP_SYS_DEV\Desktop\AMS\AssetMonitoringAsset\AssetMonitoringAsset\bin\Debug\DevExpress.Data.v21.2.dll
+C:\Users\HSDP_SYS_DEV\Desktop\AMS\AssetMonitoringAsset\AssetMonitoringAsset\bin\Debug\DevExpress.Printing.v21.2.Core.dll
+C:\Users\HSDP_SYS_DEV\Desktop\AMS\AssetMonitoringAsset\AssetMonitoringAsset\bin\Debug\DevExpress.Sparkline.v21.2.Core.dll
+C:\Users\HSDP_SYS_DEV\Desktop\AMS\AssetMonitoringAsset\AssetMonitoringAsset\bin\Debug\DevExpress.SpellChecker.v21.2.Core.dll
+C:\Users\HSDP_SYS_DEV\Desktop\AMS\AssetMonitoringAsset\AssetMonitoringAsset\bin\Debug\DevExpress.Utils.v21.2.dll
+C:\Users\HSDP_SYS_DEV\Desktop\AMS\AssetMonitoringAsset\AssetMonitoringAsset\bin\Debug\DevExpress.XtraBars.v21.2.dll
+C:\Users\HSDP_SYS_DEV\Desktop\AMS\AssetMonitoringAsset\AssetMonitoringAsset\bin\Debug\DevExpress.XtraEditors.v21.2.dll
+C:\Users\HSDP_SYS_DEV\Desktop\AMS\AssetMonitoringAsset\AssetMonitoringAsset\bin\Debug\DevExpress.XtraSpellChecker.v21.2.dll
+C:\Users\HSDP_SYS_DEV\Desktop\AMS\AssetMonitoringAsset\AssetMonitoringAsset\bin\Debug\EPPlus.dll
+C:\Users\HSDP_SYS_DEV\Desktop\AMS\AssetMonitoringAsset\AssetMonitoringAsset\bin\Debug\EPPlus.Interfaces.dll
+C:\Users\HSDP_SYS_DEV\Desktop\AMS\AssetMonitoringAsset\AssetMonitoringAsset\bin\Debug\EPPlus.System.Drawing.dll
+C:\Users\HSDP_SYS_DEV\Desktop\AMS\AssetMonitoringAsset\AssetMonitoringAsset\bin\Debug\Microsoft.IO.RecyclableMemoryStream.dll
+C:\Users\HSDP_SYS_DEV\Desktop\AMS\AssetMonitoringAsset\AssetMonitoringAsset\bin\Debug\Microsoft.ReportViewer.Common.dll
+C:\Users\HSDP_SYS_DEV\Desktop\AMS\AssetMonitoringAsset\AssetMonitoringAsset\bin\Debug\Microsoft.ReportViewer.DataVisualization.dll
+C:\Users\HSDP_SYS_DEV\Desktop\AMS\AssetMonitoringAsset\AssetMonitoringAsset\bin\Debug\Microsoft.ReportViewer.Design.dll
+C:\Users\HSDP_SYS_DEV\Desktop\AMS\AssetMonitoringAsset\AssetMonitoringAsset\bin\Debug\Microsoft.ReportViewer.ProcessingObjectModel.dll
+C:\Users\HSDP_SYS_DEV\Desktop\AMS\AssetMonitoringAsset\AssetMonitoringAsset\bin\Debug\Microsoft.ReportViewer.WinForms.dll
+C:\Users\HSDP_SYS_DEV\Desktop\AMS\AssetMonitoringAsset\AssetMonitoringAsset\bin\Debug\Microsoft.SqlServer.Types.dll
+C:\Users\HSDP_SYS_DEV\Desktop\AMS\AssetMonitoringAsset\AssetMonitoringAsset\bin\Debug\System.ComponentModel.Annotations.dll
+C:\Users\HSDP_SYS_DEV\Desktop\AMS\AssetMonitoringAsset\AssetMonitoringAsset\bin\Debug\DevExpress.Pdf.v21.2.Core.dll
+C:\Users\HSDP_SYS_DEV\Desktop\AMS\AssetMonitoringAsset\AssetMonitoringAsset\bin\Debug\DevExpress.Pdf.v21.2.Drawing.dll
+C:\Users\HSDP_SYS_DEV\Desktop\AMS\AssetMonitoringAsset\AssetMonitoringAsset\bin\Debug\EnvDTE.dll
+C:\Users\HSDP_SYS_DEV\Desktop\AMS\AssetMonitoringAsset\AssetMonitoringAsset\bin\Debug\Microsoft.VisualStudio.Shell.Interop.dll
+C:\Users\HSDP_SYS_DEV\Desktop\AMS\AssetMonitoringAsset\AssetMonitoringAsset\bin\Debug\Microsoft.VisualStudio.Shell.Interop.8.0.dll
+C:\Users\HSDP_SYS_DEV\Desktop\AMS\AssetMonitoringAsset\AssetMonitoringAsset\bin\Debug\stdole.dll
+C:\Users\HSDP_SYS_DEV\Desktop\AMS\AssetMonitoringAsset\AssetMonitoringAsset\bin\Debug\Microsoft.VisualStudio.OLE.Interop.dll
+C:\Users\HSDP_SYS_DEV\Desktop\AMS\AssetMonitoringAsset\AssetMonitoringAsset\bin\Debug\Microsoft.VisualStudio.TextManager.Interop.dll
+C:\Users\HSDP_SYS_DEV\Desktop\AMS\AssetMonitoringAsset\AssetMonitoringAsset\bin\Debug\Microsoft.VisualStudio.TextManager.Interop.8.0.dll
+C:\Users\HSDP_SYS_DEV\Desktop\AMS\AssetMonitoringAsset\AssetMonitoringAsset\bin\Debug\Microsoft.MSXML.dll
+C:\Users\HSDP_SYS_DEV\Desktop\AMS\AssetMonitoringAsset\AssetMonitoringAsset\bin\Debug\DevExpress.Data.v21.2.xml
+C:\Users\HSDP_SYS_DEV\Desktop\AMS\AssetMonitoringAsset\AssetMonitoringAsset\bin\Debug\DevExpress.Data.Desktop.v21.2.xml
+C:\Users\HSDP_SYS_DEV\Desktop\AMS\AssetMonitoringAsset\AssetMonitoringAsset\bin\Debug\DevExpress.SpellChecker.v21.2.Core.xml
+C:\Users\HSDP_SYS_DEV\Desktop\AMS\AssetMonitoringAsset\AssetMonitoringAsset\bin\Debug\DevExpress.Utils.v21.2.xml
+C:\Users\HSDP_SYS_DEV\Desktop\AMS\AssetMonitoringAsset\AssetMonitoringAsset\bin\Debug\DevExpress.Sparkline.v21.2.Core.xml
+C:\Users\HSDP_SYS_DEV\Desktop\AMS\AssetMonitoringAsset\AssetMonitoringAsset\bin\Debug\DevExpress.XtraBars.v21.2.xml
+C:\Users\HSDP_SYS_DEV\Desktop\AMS\AssetMonitoringAsset\AssetMonitoringAsset\bin\Debug\DevExpress.XtraEditors.v21.2.xml
+C:\Users\HSDP_SYS_DEV\Desktop\AMS\AssetMonitoringAsset\AssetMonitoringAsset\bin\Debug\DevExpress.Printing.v21.2.Core.xml
+C:\Users\HSDP_SYS_DEV\Desktop\AMS\AssetMonitoringAsset\AssetMonitoringAsset\bin\Debug\DevExpress.XtraSpellChecker.v21.2.xml
+C:\Users\HSDP_SYS_DEV\Desktop\AMS\AssetMonitoringAsset\AssetMonitoringAsset\bin\Debug\EPPlus.xml
+C:\Users\HSDP_SYS_DEV\Desktop\AMS\AssetMonitoringAsset\AssetMonitoringAsset\bin\Debug\Microsoft.IO.RecyclableMemoryStream.xml
+C:\Users\HSDP_SYS_DEV\Desktop\AMS\AssetMonitoringAsset\AssetMonitoringAsset\bin\Debug\DevExpress.Pdf.v21.2.Core.xml
+C:\Users\HSDP_SYS_DEV\Desktop\AMS\AssetMonitoringAsset\AssetMonitoringAsset\bin\Debug\DevExpress.Pdf.v21.2.Drawing.xml
+C:\Users\HSDP_SYS_DEV\Desktop\AMS\AssetMonitoringAsset\AssetMonitoringAsset\bin\Debug\de\DevExpress.Data.v21.2.resources.dll
+C:\Users\HSDP_SYS_DEV\Desktop\AMS\AssetMonitoringAsset\AssetMonitoringAsset\bin\Debug\es\DevExpress.Data.v21.2.resources.dll
+C:\Users\HSDP_SYS_DEV\Desktop\AMS\AssetMonitoringAsset\AssetMonitoringAsset\bin\Debug\ja\DevExpress.Data.v21.2.resources.dll
+C:\Users\HSDP_SYS_DEV\Desktop\AMS\AssetMonitoringAsset\AssetMonitoringAsset\bin\Debug\ru\DevExpress.Data.v21.2.resources.dll
+C:\Users\HSDP_SYS_DEV\Desktop\AMS\AssetMonitoringAsset\AssetMonitoringAsset\bin\Debug\de\DevExpress.Utils.v21.2.resources.dll
+C:\Users\HSDP_SYS_DEV\Desktop\AMS\AssetMonitoringAsset\AssetMonitoringAsset\bin\Debug\es\DevExpress.Utils.v21.2.resources.dll
+C:\Users\HSDP_SYS_DEV\Desktop\AMS\AssetMonitoringAsset\AssetMonitoringAsset\bin\Debug\ja\DevExpress.Utils.v21.2.resources.dll
+C:\Users\HSDP_SYS_DEV\Desktop\AMS\AssetMonitoringAsset\AssetMonitoringAsset\bin\Debug\ru\DevExpress.Utils.v21.2.resources.dll
+C:\Users\HSDP_SYS_DEV\Desktop\AMS\AssetMonitoringAsset\AssetMonitoringAsset\bin\Debug\de\DevExpress.Sparkline.v21.2.Core.resources.dll
+C:\Users\HSDP_SYS_DEV\Desktop\AMS\AssetMonitoringAsset\AssetMonitoringAsset\bin\Debug\es\DevExpress.Sparkline.v21.2.Core.resources.dll
+C:\Users\HSDP_SYS_DEV\Desktop\AMS\AssetMonitoringAsset\AssetMonitoringAsset\bin\Debug\ja\DevExpress.Sparkline.v21.2.Core.resources.dll
+C:\Users\HSDP_SYS_DEV\Desktop\AMS\AssetMonitoringAsset\AssetMonitoringAsset\bin\Debug\ru\DevExpress.Sparkline.v21.2.Core.resources.dll
+C:\Users\HSDP_SYS_DEV\Desktop\AMS\AssetMonitoringAsset\AssetMonitoringAsset\bin\Debug\de\DevExpress.XtraBars.v21.2.resources.dll
+C:\Users\HSDP_SYS_DEV\Desktop\AMS\AssetMonitoringAsset\AssetMonitoringAsset\bin\Debug\es\DevExpress.XtraBars.v21.2.resources.dll
+C:\Users\HSDP_SYS_DEV\Desktop\AMS\AssetMonitoringAsset\AssetMonitoringAsset\bin\Debug\ja\DevExpress.XtraBars.v21.2.resources.dll
+C:\Users\HSDP_SYS_DEV\Desktop\AMS\AssetMonitoringAsset\AssetMonitoringAsset\bin\Debug\ru\DevExpress.XtraBars.v21.2.resources.dll
+C:\Users\HSDP_SYS_DEV\Desktop\AMS\AssetMonitoringAsset\AssetMonitoringAsset\bin\Debug\de\DevExpress.XtraEditors.v21.2.resources.dll
+C:\Users\HSDP_SYS_DEV\Desktop\AMS\AssetMonitoringAsset\AssetMonitoringAsset\bin\Debug\es\DevExpress.XtraEditors.v21.2.resources.dll
+C:\Users\HSDP_SYS_DEV\Desktop\AMS\AssetMonitoringAsset\AssetMonitoringAsset\bin\Debug\ja\DevExpress.XtraEditors.v21.2.resources.dll
+C:\Users\HSDP_SYS_DEV\Desktop\AMS\AssetMonitoringAsset\AssetMonitoringAsset\bin\Debug\ru\DevExpress.XtraEditors.v21.2.resources.dll
+C:\Users\HSDP_SYS_DEV\Desktop\AMS\AssetMonitoringAsset\AssetMonitoringAsset\bin\Debug\de\DevExpress.Printing.v21.2.Core.resources.dll
+C:\Users\HSDP_SYS_DEV\Desktop\AMS\AssetMonitoringAsset\AssetMonitoringAsset\bin\Debug\es\DevExpress.Printing.v21.2.Core.resources.dll
+C:\Users\HSDP_SYS_DEV\Desktop\AMS\AssetMonitoringAsset\AssetMonitoringAsset\bin\Debug\ja\DevExpress.Printing.v21.2.Core.resources.dll
+C:\Users\HSDP_SYS_DEV\Desktop\AMS\AssetMonitoringAsset\AssetMonitoringAsset\bin\Debug\ru\DevExpress.Printing.v21.2.Core.resources.dll
+C:\Users\HSDP_SYS_DEV\Desktop\AMS\AssetMonitoringAsset\AssetMonitoringAsset\bin\Debug\de\DevExpress.XtraSpellChecker.v21.2.resources.dll
+C:\Users\HSDP_SYS_DEV\Desktop\AMS\AssetMonitoringAsset\AssetMonitoringAsset\bin\Debug\es\DevExpress.XtraSpellChecker.v21.2.resources.dll
+C:\Users\HSDP_SYS_DEV\Desktop\AMS\AssetMonitoringAsset\AssetMonitoringAsset\bin\Debug\ja\DevExpress.XtraSpellChecker.v21.2.resources.dll
+C:\Users\HSDP_SYS_DEV\Desktop\AMS\AssetMonitoringAsset\AssetMonitoringAsset\bin\Debug\ru\DevExpress.XtraSpellChecker.v21.2.resources.dll
+C:\Users\HSDP_SYS_DEV\Desktop\AMS\AssetMonitoringAsset\AssetMonitoringAsset\bin\Debug\de\Microsoft.ReportViewer.Common.resources.dll
+C:\Users\HSDP_SYS_DEV\Desktop\AMS\AssetMonitoringAsset\AssetMonitoringAsset\bin\Debug\es\Microsoft.ReportViewer.Common.resources.dll
+C:\Users\HSDP_SYS_DEV\Desktop\AMS\AssetMonitoringAsset\AssetMonitoringAsset\bin\Debug\fr\Microsoft.ReportViewer.Common.resources.dll
+C:\Users\HSDP_SYS_DEV\Desktop\AMS\AssetMonitoringAsset\AssetMonitoringAsset\bin\Debug\it\Microsoft.ReportViewer.Common.resources.dll
+C:\Users\HSDP_SYS_DEV\Desktop\AMS\AssetMonitoringAsset\AssetMonitoringAsset\bin\Debug\ja\Microsoft.ReportViewer.Common.resources.dll
+C:\Users\HSDP_SYS_DEV\Desktop\AMS\AssetMonitoringAsset\AssetMonitoringAsset\bin\Debug\ko\Microsoft.ReportViewer.Common.resources.dll
+C:\Users\HSDP_SYS_DEV\Desktop\AMS\AssetMonitoringAsset\AssetMonitoringAsset\bin\Debug\pt\Microsoft.ReportViewer.Common.resources.dll
+C:\Users\HSDP_SYS_DEV\Desktop\AMS\AssetMonitoringAsset\AssetMonitoringAsset\bin\Debug\ru\Microsoft.ReportViewer.Common.resources.dll
+C:\Users\HSDP_SYS_DEV\Desktop\AMS\AssetMonitoringAsset\AssetMonitoringAsset\bin\Debug\zh-CHS\Microsoft.ReportViewer.Common.resources.dll
+C:\Users\HSDP_SYS_DEV\Desktop\AMS\AssetMonitoringAsset\AssetMonitoringAsset\bin\Debug\zh-CHT\Microsoft.ReportViewer.Common.resources.dll
+C:\Users\HSDP_SYS_DEV\Desktop\AMS\AssetMonitoringAsset\AssetMonitoringAsset\bin\Debug\de\Microsoft.ReportViewer.DataVisualization.resources.dll
+C:\Users\HSDP_SYS_DEV\Desktop\AMS\AssetMonitoringAsset\AssetMonitoringAsset\bin\Debug\es\Microsoft.ReportViewer.DataVisualization.resources.dll
+C:\Users\HSDP_SYS_DEV\Desktop\AMS\AssetMonitoringAsset\AssetMonitoringAsset\bin\Debug\fr\Microsoft.ReportViewer.DataVisualization.resources.dll
+C:\Users\HSDP_SYS_DEV\Desktop\AMS\AssetMonitoringAsset\AssetMonitoringAsset\bin\Debug\it\Microsoft.ReportViewer.DataVisualization.resources.dll
+C:\Users\HSDP_SYS_DEV\Desktop\AMS\AssetMonitoringAsset\AssetMonitoringAsset\bin\Debug\ja\Microsoft.ReportViewer.DataVisualization.resources.dll
+C:\Users\HSDP_SYS_DEV\Desktop\AMS\AssetMonitoringAsset\AssetMonitoringAsset\bin\Debug\ko\Microsoft.ReportViewer.DataVisualization.resources.dll
+C:\Users\HSDP_SYS_DEV\Desktop\AMS\AssetMonitoringAsset\AssetMonitoringAsset\bin\Debug\pt\Microsoft.ReportViewer.DataVisualization.resources.dll
+C:\Users\HSDP_SYS_DEV\Desktop\AMS\AssetMonitoringAsset\AssetMonitoringAsset\bin\Debug\ru\Microsoft.ReportViewer.DataVisualization.resources.dll
+C:\Users\HSDP_SYS_DEV\Desktop\AMS\AssetMonitoringAsset\AssetMonitoringAsset\bin\Debug\zh-CHS\Microsoft.ReportViewer.DataVisualization.resources.dll
+C:\Users\HSDP_SYS_DEV\Desktop\AMS\AssetMonitoringAsset\AssetMonitoringAsset\bin\Debug\zh-CHT\Microsoft.ReportViewer.DataVisualization.resources.dll
+C:\Users\HSDP_SYS_DEV\Desktop\AMS\AssetMonitoringAsset\AssetMonitoringAsset\bin\Debug\de\Microsoft.ReportViewer.Design.resources.dll
+C:\Users\HSDP_SYS_DEV\Desktop\AMS\AssetMonitoringAsset\AssetMonitoringAsset\bin\Debug\es\Microsoft.ReportViewer.Design.resources.dll
+C:\Users\HSDP_SYS_DEV\Desktop\AMS\AssetMonitoringAsset\AssetMonitoringAsset\bin\Debug\fr\Microsoft.ReportViewer.Design.resources.dll
+C:\Users\HSDP_SYS_DEV\Desktop\AMS\AssetMonitoringAsset\AssetMonitoringAsset\bin\Debug\it\Microsoft.ReportViewer.Design.resources.dll
+C:\Users\HSDP_SYS_DEV\Desktop\AMS\AssetMonitoringAsset\AssetMonitoringAsset\bin\Debug\ja\Microsoft.ReportViewer.Design.resources.dll
+C:\Users\HSDP_SYS_DEV\Desktop\AMS\AssetMonitoringAsset\AssetMonitoringAsset\bin\Debug\ko\Microsoft.ReportViewer.Design.resources.dll
+C:\Users\HSDP_SYS_DEV\Desktop\AMS\AssetMonitoringAsset\AssetMonitoringAsset\bin\Debug\pt\Microsoft.ReportViewer.Design.resources.dll
+C:\Users\HSDP_SYS_DEV\Desktop\AMS\AssetMonitoringAsset\AssetMonitoringAsset\bin\Debug\ru\Microsoft.ReportViewer.Design.resources.dll
+C:\Users\HSDP_SYS_DEV\Desktop\AMS\AssetMonitoringAsset\AssetMonitoringAsset\bin\Debug\zh-CHS\Microsoft.ReportViewer.Design.resources.dll
+C:\Users\HSDP_SYS_DEV\Desktop\AMS\AssetMonitoringAsset\AssetMonitoringAsset\bin\Debug\zh-CHT\Microsoft.ReportViewer.Design.resources.dll
+C:\Users\HSDP_SYS_DEV\Desktop\AMS\AssetMonitoringAsset\AssetMonitoringAsset\bin\Debug\de\Microsoft.ReportViewer.WinForms.resources.dll
+C:\Users\HSDP_SYS_DEV\Desktop\AMS\AssetMonitoringAsset\AssetMonitoringAsset\bin\Debug\es\Microsoft.ReportViewer.WinForms.resources.dll
+C:\Users\HSDP_SYS_DEV\Desktop\AMS\AssetMonitoringAsset\AssetMonitoringAsset\bin\Debug\fr\Microsoft.ReportViewer.WinForms.resources.dll
+C:\Users\HSDP_SYS_DEV\Desktop\AMS\AssetMonitoringAsset\AssetMonitoringAsset\bin\Debug\it\Microsoft.ReportViewer.WinForms.resources.dll
+C:\Users\HSDP_SYS_DEV\Desktop\AMS\AssetMonitoringAsset\AssetMonitoringAsset\bin\Debug\ja\Microsoft.ReportViewer.WinForms.resources.dll
+C:\Users\HSDP_SYS_DEV\Desktop\AMS\AssetMonitoringAsset\AssetMonitoringAsset\bin\Debug\ko\Microsoft.ReportViewer.WinForms.resources.dll
+C:\Users\HSDP_SYS_DEV\Desktop\AMS\AssetMonitoringAsset\AssetMonitoringAsset\bin\Debug\pt\Microsoft.ReportViewer.WinForms.resources.dll
+C:\Users\HSDP_SYS_DEV\Desktop\AMS\AssetMonitoringAsset\AssetMonitoringAsset\bin\Debug\ru\Microsoft.ReportViewer.WinForms.resources.dll
+C:\Users\HSDP_SYS_DEV\Desktop\AMS\AssetMonitoringAsset\AssetMonitoringAsset\bin\Debug\zh-CHS\Microsoft.ReportViewer.WinForms.resources.dll
+C:\Users\HSDP_SYS_DEV\Desktop\AMS\AssetMonitoringAsset\AssetMonitoringAsset\bin\Debug\zh-CHT\Microsoft.ReportViewer.WinForms.resources.dll
+C:\Users\HSDP_SYS_DEV\Desktop\AMS\AssetMonitoringAsset\AssetMonitoringAsset\bin\Debug\de\DevExpress.Pdf.v21.2.Core.resources.dll
+C:\Users\HSDP_SYS_DEV\Desktop\AMS\AssetMonitoringAsset\AssetMonitoringAsset\bin\Debug\es\DevExpress.Pdf.v21.2.Core.resources.dll
+C:\Users\HSDP_SYS_DEV\Desktop\AMS\AssetMonitoringAsset\AssetMonitoringAsset\bin\Debug\ja\DevExpress.Pdf.v21.2.Core.resources.dll
+C:\Users\HSDP_SYS_DEV\Desktop\AMS\AssetMonitoringAsset\AssetMonitoringAsset\bin\Debug\ru\DevExpress.Pdf.v21.2.Core.resources.dll
+C:\Users\HSDP_SYS_DEV\Desktop\AMS\AssetMonitoringAsset\AssetMonitoringAsset\obj\Debug\AssetMonitoringAsset.vbproj.CopyComplete
+C:\Users\HSDP_SYS_DEV\Desktop\AMS\AssetMonitoringAsset\AssetMonitoringAsset\obj\Debug\AssetMonitoringAsset.ChngState.resources
+C:\Users\HSDP_SYS_DEV\Desktop\AMS\AssetMonitoringAsset\AssetMonitoringAsset\obj\Debug\AssetMonitoringAsset.Assignment1.resources
+C:\Users\HSDP_SYS_DEV\Desktop\WORK\AMS\AssetMonitoringAsset\AssetMonitoringAsset\bin\Debug\SqlServerTypes\x64\msvcr120.dll
+C:\Users\HSDP_SYS_DEV\Desktop\WORK\AMS\AssetMonitoringAsset\AssetMonitoringAsset\bin\Debug\SqlServerTypes\x64\SqlServerSpatial140.dll
+C:\Users\HSDP_SYS_DEV\Desktop\WORK\AMS\AssetMonitoringAsset\AssetMonitoringAsset\bin\Debug\SqlServerTypes\x86\msvcr120.dll
+C:\Users\HSDP_SYS_DEV\Desktop\WORK\AMS\AssetMonitoringAsset\AssetMonitoringAsset\bin\Debug\SqlServerTypes\x86\SqlServerSpatial140.dll
+C:\Users\HSDP_SYS_DEV\Desktop\WORK\AMS\AssetMonitoringAsset\AssetMonitoringAsset\bin\Debug\AssetMonitoringAsset.exe.config
+C:\Users\HSDP_SYS_DEV\Desktop\WORK\AMS\AssetMonitoringAsset\AssetMonitoringAsset\bin\Debug\AssetMonitoringAsset.exe
+C:\Users\HSDP_SYS_DEV\Desktop\WORK\AMS\AssetMonitoringAsset\AssetMonitoringAsset\bin\Debug\AssetMonitoringAsset.pdb
+C:\Users\HSDP_SYS_DEV\Desktop\WORK\AMS\AssetMonitoringAsset\AssetMonitoringAsset\bin\Debug\DevExpress.BonusSkins.v21.2.dll
+C:\Users\HSDP_SYS_DEV\Desktop\WORK\AMS\AssetMonitoringAsset\AssetMonitoringAsset\bin\Debug\DevExpress.Data.Desktop.v21.2.dll
+C:\Users\HSDP_SYS_DEV\Desktop\WORK\AMS\AssetMonitoringAsset\AssetMonitoringAsset\bin\Debug\DevExpress.Data.v21.2.dll
+C:\Users\HSDP_SYS_DEV\Desktop\WORK\AMS\AssetMonitoringAsset\AssetMonitoringAsset\bin\Debug\DevExpress.Printing.v21.2.Core.dll
+C:\Users\HSDP_SYS_DEV\Desktop\WORK\AMS\AssetMonitoringAsset\AssetMonitoringAsset\bin\Debug\DevExpress.Sparkline.v21.2.Core.dll
+C:\Users\HSDP_SYS_DEV\Desktop\WORK\AMS\AssetMonitoringAsset\AssetMonitoringAsset\bin\Debug\DevExpress.SpellChecker.v21.2.Core.dll
+C:\Users\HSDP_SYS_DEV\Desktop\WORK\AMS\AssetMonitoringAsset\AssetMonitoringAsset\bin\Debug\DevExpress.Utils.v21.2.dll
+C:\Users\HSDP_SYS_DEV\Desktop\WORK\AMS\AssetMonitoringAsset\AssetMonitoringAsset\bin\Debug\DevExpress.XtraBars.v21.2.dll
+C:\Users\HSDP_SYS_DEV\Desktop\WORK\AMS\AssetMonitoringAsset\AssetMonitoringAsset\bin\Debug\DevExpress.XtraEditors.v21.2.dll
+C:\Users\HSDP_SYS_DEV\Desktop\WORK\AMS\AssetMonitoringAsset\AssetMonitoringAsset\bin\Debug\DevExpress.XtraSpellChecker.v21.2.dll
+C:\Users\HSDP_SYS_DEV\Desktop\WORK\AMS\AssetMonitoringAsset\AssetMonitoringAsset\bin\Debug\EPPlus.dll
+C:\Users\HSDP_SYS_DEV\Desktop\WORK\AMS\AssetMonitoringAsset\AssetMonitoringAsset\bin\Debug\EPPlus.Interfaces.dll
+C:\Users\HSDP_SYS_DEV\Desktop\WORK\AMS\AssetMonitoringAsset\AssetMonitoringAsset\bin\Debug\EPPlus.System.Drawing.dll
+C:\Users\HSDP_SYS_DEV\Desktop\WORK\AMS\AssetMonitoringAsset\AssetMonitoringAsset\bin\Debug\Microsoft.IO.RecyclableMemoryStream.dll
+C:\Users\HSDP_SYS_DEV\Desktop\WORK\AMS\AssetMonitoringAsset\AssetMonitoringAsset\bin\Debug\Microsoft.ReportViewer.Common.dll
+C:\Users\HSDP_SYS_DEV\Desktop\WORK\AMS\AssetMonitoringAsset\AssetMonitoringAsset\bin\Debug\Microsoft.ReportViewer.DataVisualization.dll
+C:\Users\HSDP_SYS_DEV\Desktop\WORK\AMS\AssetMonitoringAsset\AssetMonitoringAsset\bin\Debug\Microsoft.ReportViewer.Design.dll
+C:\Users\HSDP_SYS_DEV\Desktop\WORK\AMS\AssetMonitoringAsset\AssetMonitoringAsset\bin\Debug\Microsoft.ReportViewer.ProcessingObjectModel.dll
+C:\Users\HSDP_SYS_DEV\Desktop\WORK\AMS\AssetMonitoringAsset\AssetMonitoringAsset\bin\Debug\Microsoft.ReportViewer.WinForms.dll
+C:\Users\HSDP_SYS_DEV\Desktop\WORK\AMS\AssetMonitoringAsset\AssetMonitoringAsset\bin\Debug\Microsoft.SqlServer.Types.dll
+C:\Users\HSDP_SYS_DEV\Desktop\WORK\AMS\AssetMonitoringAsset\AssetMonitoringAsset\bin\Debug\System.ComponentModel.Annotations.dll
+C:\Users\HSDP_SYS_DEV\Desktop\WORK\AMS\AssetMonitoringAsset\AssetMonitoringAsset\bin\Debug\DevExpress.Pdf.v21.2.Core.dll
+C:\Users\HSDP_SYS_DEV\Desktop\WORK\AMS\AssetMonitoringAsset\AssetMonitoringAsset\bin\Debug\DevExpress.Pdf.v21.2.Drawing.dll
+C:\Users\HSDP_SYS_DEV\Desktop\WORK\AMS\AssetMonitoringAsset\AssetMonitoringAsset\bin\Debug\EnvDTE.dll
+C:\Users\HSDP_SYS_DEV\Desktop\WORK\AMS\AssetMonitoringAsset\AssetMonitoringAsset\bin\Debug\Microsoft.VisualStudio.Shell.Interop.dll
+C:\Users\HSDP_SYS_DEV\Desktop\WORK\AMS\AssetMonitoringAsset\AssetMonitoringAsset\bin\Debug\Microsoft.VisualStudio.Shell.Interop.8.0.dll
+C:\Users\HSDP_SYS_DEV\Desktop\WORK\AMS\AssetMonitoringAsset\AssetMonitoringAsset\bin\Debug\stdole.dll
+C:\Users\HSDP_SYS_DEV\Desktop\WORK\AMS\AssetMonitoringAsset\AssetMonitoringAsset\bin\Debug\Microsoft.VisualStudio.OLE.Interop.dll
+C:\Users\HSDP_SYS_DEV\Desktop\WORK\AMS\AssetMonitoringAsset\AssetMonitoringAsset\bin\Debug\Microsoft.VisualStudio.TextManager.Interop.dll
+C:\Users\HSDP_SYS_DEV\Desktop\WORK\AMS\AssetMonitoringAsset\AssetMonitoringAsset\bin\Debug\Microsoft.VisualStudio.TextManager.Interop.8.0.dll
+C:\Users\HSDP_SYS_DEV\Desktop\WORK\AMS\AssetMonitoringAsset\AssetMonitoringAsset\bin\Debug\Microsoft.MSXML.dll
+C:\Users\HSDP_SYS_DEV\Desktop\WORK\AMS\AssetMonitoringAsset\AssetMonitoringAsset\bin\Debug\DevExpress.Data.v21.2.xml
+C:\Users\HSDP_SYS_DEV\Desktop\WORK\AMS\AssetMonitoringAsset\AssetMonitoringAsset\bin\Debug\DevExpress.Data.Desktop.v21.2.xml
+C:\Users\HSDP_SYS_DEV\Desktop\WORK\AMS\AssetMonitoringAsset\AssetMonitoringAsset\bin\Debug\DevExpress.SpellChecker.v21.2.Core.xml
+C:\Users\HSDP_SYS_DEV\Desktop\WORK\AMS\AssetMonitoringAsset\AssetMonitoringAsset\bin\Debug\DevExpress.Utils.v21.2.xml
+C:\Users\HSDP_SYS_DEV\Desktop\WORK\AMS\AssetMonitoringAsset\AssetMonitoringAsset\bin\Debug\DevExpress.Sparkline.v21.2.Core.xml
+C:\Users\HSDP_SYS_DEV\Desktop\WORK\AMS\AssetMonitoringAsset\AssetMonitoringAsset\bin\Debug\DevExpress.XtraBars.v21.2.xml
+C:\Users\HSDP_SYS_DEV\Desktop\WORK\AMS\AssetMonitoringAsset\AssetMonitoringAsset\bin\Debug\DevExpress.XtraEditors.v21.2.xml
+C:\Users\HSDP_SYS_DEV\Desktop\WORK\AMS\AssetMonitoringAsset\AssetMonitoringAsset\bin\Debug\DevExpress.Printing.v21.2.Core.xml
+C:\Users\HSDP_SYS_DEV\Desktop\WORK\AMS\AssetMonitoringAsset\AssetMonitoringAsset\bin\Debug\DevExpress.XtraSpellChecker.v21.2.xml
+C:\Users\HSDP_SYS_DEV\Desktop\WORK\AMS\AssetMonitoringAsset\AssetMonitoringAsset\bin\Debug\EPPlus.xml
+C:\Users\HSDP_SYS_DEV\Desktop\WORK\AMS\AssetMonitoringAsset\AssetMonitoringAsset\bin\Debug\Microsoft.IO.RecyclableMemoryStream.xml
+C:\Users\HSDP_SYS_DEV\Desktop\WORK\AMS\AssetMonitoringAsset\AssetMonitoringAsset\bin\Debug\DevExpress.Pdf.v21.2.Core.xml
+C:\Users\HSDP_SYS_DEV\Desktop\WORK\AMS\AssetMonitoringAsset\AssetMonitoringAsset\bin\Debug\DevExpress.Pdf.v21.2.Drawing.xml
+C:\Users\HSDP_SYS_DEV\Desktop\WORK\AMS\AssetMonitoringAsset\AssetMonitoringAsset\bin\Debug\de\DevExpress.Data.v21.2.resources.dll
+C:\Users\HSDP_SYS_DEV\Desktop\WORK\AMS\AssetMonitoringAsset\AssetMonitoringAsset\bin\Debug\es\DevExpress.Data.v21.2.resources.dll
+C:\Users\HSDP_SYS_DEV\Desktop\WORK\AMS\AssetMonitoringAsset\AssetMonitoringAsset\bin\Debug\ja\DevExpress.Data.v21.2.resources.dll
+C:\Users\HSDP_SYS_DEV\Desktop\WORK\AMS\AssetMonitoringAsset\AssetMonitoringAsset\bin\Debug\ru\DevExpress.Data.v21.2.resources.dll
+C:\Users\HSDP_SYS_DEV\Desktop\WORK\AMS\AssetMonitoringAsset\AssetMonitoringAsset\bin\Debug\de\DevExpress.Utils.v21.2.resources.dll
+C:\Users\HSDP_SYS_DEV\Desktop\WORK\AMS\AssetMonitoringAsset\AssetMonitoringAsset\bin\Debug\es\DevExpress.Utils.v21.2.resources.dll
+C:\Users\HSDP_SYS_DEV\Desktop\WORK\AMS\AssetMonitoringAsset\AssetMonitoringAsset\bin\Debug\ja\DevExpress.Utils.v21.2.resources.dll
+C:\Users\HSDP_SYS_DEV\Desktop\WORK\AMS\AssetMonitoringAsset\AssetMonitoringAsset\bin\Debug\ru\DevExpress.Utils.v21.2.resources.dll
+C:\Users\HSDP_SYS_DEV\Desktop\WORK\AMS\AssetMonitoringAsset\AssetMonitoringAsset\bin\Debug\de\DevExpress.Sparkline.v21.2.Core.resources.dll
+C:\Users\HSDP_SYS_DEV\Desktop\WORK\AMS\AssetMonitoringAsset\AssetMonitoringAsset\bin\Debug\es\DevExpress.Sparkline.v21.2.Core.resources.dll
+C:\Users\HSDP_SYS_DEV\Desktop\WORK\AMS\AssetMonitoringAsset\AssetMonitoringAsset\bin\Debug\ja\DevExpress.Sparkline.v21.2.Core.resources.dll
+C:\Users\HSDP_SYS_DEV\Desktop\WORK\AMS\AssetMonitoringAsset\AssetMonitoringAsset\bin\Debug\ru\DevExpress.Sparkline.v21.2.Core.resources.dll
+C:\Users\HSDP_SYS_DEV\Desktop\WORK\AMS\AssetMonitoringAsset\AssetMonitoringAsset\bin\Debug\de\DevExpress.XtraBars.v21.2.resources.dll
+C:\Users\HSDP_SYS_DEV\Desktop\WORK\AMS\AssetMonitoringAsset\AssetMonitoringAsset\bin\Debug\es\DevExpress.XtraBars.v21.2.resources.dll
+C:\Users\HSDP_SYS_DEV\Desktop\WORK\AMS\AssetMonitoringAsset\AssetMonitoringAsset\bin\Debug\ja\DevExpress.XtraBars.v21.2.resources.dll
+C:\Users\HSDP_SYS_DEV\Desktop\WORK\AMS\AssetMonitoringAsset\AssetMonitoringAsset\bin\Debug\ru\DevExpress.XtraBars.v21.2.resources.dll
+C:\Users\HSDP_SYS_DEV\Desktop\WORK\AMS\AssetMonitoringAsset\AssetMonitoringAsset\bin\Debug\de\DevExpress.XtraEditors.v21.2.resources.dll
+C:\Users\HSDP_SYS_DEV\Desktop\WORK\AMS\AssetMonitoringAsset\AssetMonitoringAsset\bin\Debug\es\DevExpress.XtraEditors.v21.2.resources.dll
+C:\Users\HSDP_SYS_DEV\Desktop\WORK\AMS\AssetMonitoringAsset\AssetMonitoringAsset\bin\Debug\ja\DevExpress.XtraEditors.v21.2.resources.dll
+C:\Users\HSDP_SYS_DEV\Desktop\WORK\AMS\AssetMonitoringAsset\AssetMonitoringAsset\bin\Debug\ru\DevExpress.XtraEditors.v21.2.resources.dll
+C:\Users\HSDP_SYS_DEV\Desktop\WORK\AMS\AssetMonitoringAsset\AssetMonitoringAsset\bin\Debug\de\DevExpress.Printing.v21.2.Core.resources.dll
+C:\Users\HSDP_SYS_DEV\Desktop\WORK\AMS\AssetMonitoringAsset\AssetMonitoringAsset\bin\Debug\es\DevExpress.Printing.v21.2.Core.resources.dll
+C:\Users\HSDP_SYS_DEV\Desktop\WORK\AMS\AssetMonitoringAsset\AssetMonitoringAsset\bin\Debug\ja\DevExpress.Printing.v21.2.Core.resources.dll
+C:\Users\HSDP_SYS_DEV\Desktop\WORK\AMS\AssetMonitoringAsset\AssetMonitoringAsset\bin\Debug\ru\DevExpress.Printing.v21.2.Core.resources.dll
+C:\Users\HSDP_SYS_DEV\Desktop\WORK\AMS\AssetMonitoringAsset\AssetMonitoringAsset\bin\Debug\de\DevExpress.XtraSpellChecker.v21.2.resources.dll
+C:\Users\HSDP_SYS_DEV\Desktop\WORK\AMS\AssetMonitoringAsset\AssetMonitoringAsset\bin\Debug\es\DevExpress.XtraSpellChecker.v21.2.resources.dll
+C:\Users\HSDP_SYS_DEV\Desktop\WORK\AMS\AssetMonitoringAsset\AssetMonitoringAsset\bin\Debug\ja\DevExpress.XtraSpellChecker.v21.2.resources.dll
+C:\Users\HSDP_SYS_DEV\Desktop\WORK\AMS\AssetMonitoringAsset\AssetMonitoringAsset\bin\Debug\ru\DevExpress.XtraSpellChecker.v21.2.resources.dll
+C:\Users\HSDP_SYS_DEV\Desktop\WORK\AMS\AssetMonitoringAsset\AssetMonitoringAsset\bin\Debug\de\Microsoft.ReportViewer.Common.resources.dll
+C:\Users\HSDP_SYS_DEV\Desktop\WORK\AMS\AssetMonitoringAsset\AssetMonitoringAsset\bin\Debug\es\Microsoft.ReportViewer.Common.resources.dll
+C:\Users\HSDP_SYS_DEV\Desktop\WORK\AMS\AssetMonitoringAsset\AssetMonitoringAsset\bin\Debug\fr\Microsoft.ReportViewer.Common.resources.dll
+C:\Users\HSDP_SYS_DEV\Desktop\WORK\AMS\AssetMonitoringAsset\AssetMonitoringAsset\bin\Debug\it\Microsoft.ReportViewer.Common.resources.dll
+C:\Users\HSDP_SYS_DEV\Desktop\WORK\AMS\AssetMonitoringAsset\AssetMonitoringAsset\bin\Debug\ja\Microsoft.ReportViewer.Common.resources.dll
+C:\Users\HSDP_SYS_DEV\Desktop\WORK\AMS\AssetMonitoringAsset\AssetMonitoringAsset\bin\Debug\ko\Microsoft.ReportViewer.Common.resources.dll
+C:\Users\HSDP_SYS_DEV\Desktop\WORK\AMS\AssetMonitoringAsset\AssetMonitoringAsset\bin\Debug\pt\Microsoft.ReportViewer.Common.resources.dll
+C:\Users\HSDP_SYS_DEV\Desktop\WORK\AMS\AssetMonitoringAsset\AssetMonitoringAsset\bin\Debug\ru\Microsoft.ReportViewer.Common.resources.dll
+C:\Users\HSDP_SYS_DEV\Desktop\WORK\AMS\AssetMonitoringAsset\AssetMonitoringAsset\bin\Debug\zh-CHS\Microsoft.ReportViewer.Common.resources.dll
+C:\Users\HSDP_SYS_DEV\Desktop\WORK\AMS\AssetMonitoringAsset\AssetMonitoringAsset\bin\Debug\zh-CHT\Microsoft.ReportViewer.Common.resources.dll
+C:\Users\HSDP_SYS_DEV\Desktop\WORK\AMS\AssetMonitoringAsset\AssetMonitoringAsset\bin\Debug\de\Microsoft.ReportViewer.DataVisualization.resources.dll
+C:\Users\HSDP_SYS_DEV\Desktop\WORK\AMS\AssetMonitoringAsset\AssetMonitoringAsset\bin\Debug\es\Microsoft.ReportViewer.DataVisualization.resources.dll
+C:\Users\HSDP_SYS_DEV\Desktop\WORK\AMS\AssetMonitoringAsset\AssetMonitoringAsset\bin\Debug\fr\Microsoft.ReportViewer.DataVisualization.resources.dll
+C:\Users\HSDP_SYS_DEV\Desktop\WORK\AMS\AssetMonitoringAsset\AssetMonitoringAsset\bin\Debug\it\Microsoft.ReportViewer.DataVisualization.resources.dll
+C:\Users\HSDP_SYS_DEV\Desktop\WORK\AMS\AssetMonitoringAsset\AssetMonitoringAsset\bin\Debug\ja\Microsoft.ReportViewer.DataVisualization.resources.dll
+C:\Users\HSDP_SYS_DEV\Desktop\WORK\AMS\AssetMonitoringAsset\AssetMonitoringAsset\bin\Debug\ko\Microsoft.ReportViewer.DataVisualization.resources.dll
+C:\Users\HSDP_SYS_DEV\Desktop\WORK\AMS\AssetMonitoringAsset\AssetMonitoringAsset\bin\Debug\pt\Microsoft.ReportViewer.DataVisualization.resources.dll
+C:\Users\HSDP_SYS_DEV\Desktop\WORK\AMS\AssetMonitoringAsset\AssetMonitoringAsset\bin\Debug\ru\Microsoft.ReportViewer.DataVisualization.resources.dll
+C:\Users\HSDP_SYS_DEV\Desktop\WORK\AMS\AssetMonitoringAsset\AssetMonitoringAsset\bin\Debug\zh-CHS\Microsoft.ReportViewer.DataVisualization.resources.dll
+C:\Users\HSDP_SYS_DEV\Desktop\WORK\AMS\AssetMonitoringAsset\AssetMonitoringAsset\bin\Debug\zh-CHT\Microsoft.ReportViewer.DataVisualization.resources.dll
+C:\Users\HSDP_SYS_DEV\Desktop\WORK\AMS\AssetMonitoringAsset\AssetMonitoringAsset\bin\Debug\de\Microsoft.ReportViewer.Design.resources.dll
+C:\Users\HSDP_SYS_DEV\Desktop\WORK\AMS\AssetMonitoringAsset\AssetMonitoringAsset\bin\Debug\es\Microsoft.ReportViewer.Design.resources.dll
+C:\Users\HSDP_SYS_DEV\Desktop\WORK\AMS\AssetMonitoringAsset\AssetMonitoringAsset\bin\Debug\fr\Microsoft.ReportViewer.Design.resources.dll
+C:\Users\HSDP_SYS_DEV\Desktop\WORK\AMS\AssetMonitoringAsset\AssetMonitoringAsset\bin\Debug\it\Microsoft.ReportViewer.Design.resources.dll
+C:\Users\HSDP_SYS_DEV\Desktop\WORK\AMS\AssetMonitoringAsset\AssetMonitoringAsset\bin\Debug\ja\Microsoft.ReportViewer.Design.resources.dll
+C:\Users\HSDP_SYS_DEV\Desktop\WORK\AMS\AssetMonitoringAsset\AssetMonitoringAsset\bin\Debug\ko\Microsoft.ReportViewer.Design.resources.dll
+C:\Users\HSDP_SYS_DEV\Desktop\WORK\AMS\AssetMonitoringAsset\AssetMonitoringAsset\bin\Debug\pt\Microsoft.ReportViewer.Design.resources.dll
+C:\Users\HSDP_SYS_DEV\Desktop\WORK\AMS\AssetMonitoringAsset\AssetMonitoringAsset\bin\Debug\ru\Microsoft.ReportViewer.Design.resources.dll
+C:\Users\HSDP_SYS_DEV\Desktop\WORK\AMS\AssetMonitoringAsset\AssetMonitoringAsset\bin\Debug\zh-CHS\Microsoft.ReportViewer.Design.resources.dll
+C:\Users\HSDP_SYS_DEV\Desktop\WORK\AMS\AssetMonitoringAsset\AssetMonitoringAsset\bin\Debug\zh-CHT\Microsoft.ReportViewer.Design.resources.dll
+C:\Users\HSDP_SYS_DEV\Desktop\WORK\AMS\AssetMonitoringAsset\AssetMonitoringAsset\bin\Debug\de\Microsoft.ReportViewer.WinForms.resources.dll
+C:\Users\HSDP_SYS_DEV\Desktop\WORK\AMS\AssetMonitoringAsset\AssetMonitoringAsset\bin\Debug\es\Microsoft.ReportViewer.WinForms.resources.dll
+C:\Users\HSDP_SYS_DEV\Desktop\WORK\AMS\AssetMonitoringAsset\AssetMonitoringAsset\bin\Debug\fr\Microsoft.ReportViewer.WinForms.resources.dll
+C:\Users\HSDP_SYS_DEV\Desktop\WORK\AMS\AssetMonitoringAsset\AssetMonitoringAsset\bin\Debug\it\Microsoft.ReportViewer.WinForms.resources.dll
+C:\Users\HSDP_SYS_DEV\Desktop\WORK\AMS\AssetMonitoringAsset\AssetMonitoringAsset\bin\Debug\ja\Microsoft.ReportViewer.WinForms.resources.dll
+C:\Users\HSDP_SYS_DEV\Desktop\WORK\AMS\AssetMonitoringAsset\AssetMonitoringAsset\bin\Debug\ko\Microsoft.ReportViewer.WinForms.resources.dll
+C:\Users\HSDP_SYS_DEV\Desktop\WORK\AMS\AssetMonitoringAsset\AssetMonitoringAsset\bin\Debug\pt\Microsoft.ReportViewer.WinForms.resources.dll
+C:\Users\HSDP_SYS_DEV\Desktop\WORK\AMS\AssetMonitoringAsset\AssetMonitoringAsset\bin\Debug\ru\Microsoft.ReportViewer.WinForms.resources.dll
+C:\Users\HSDP_SYS_DEV\Desktop\WORK\AMS\AssetMonitoringAsset\AssetMonitoringAsset\bin\Debug\zh-CHS\Microsoft.ReportViewer.WinForms.resources.dll
+C:\Users\HSDP_SYS_DEV\Desktop\WORK\AMS\AssetMonitoringAsset\AssetMonitoringAsset\bin\Debug\zh-CHT\Microsoft.ReportViewer.WinForms.resources.dll
+C:\Users\HSDP_SYS_DEV\Desktop\WORK\AMS\AssetMonitoringAsset\AssetMonitoringAsset\bin\Debug\de\DevExpress.Pdf.v21.2.Core.resources.dll
+C:\Users\HSDP_SYS_DEV\Desktop\WORK\AMS\AssetMonitoringAsset\AssetMonitoringAsset\bin\Debug\es\DevExpress.Pdf.v21.2.Core.resources.dll
+C:\Users\HSDP_SYS_DEV\Desktop\WORK\AMS\AssetMonitoringAsset\AssetMonitoringAsset\bin\Debug\ja\DevExpress.Pdf.v21.2.Core.resources.dll
+C:\Users\HSDP_SYS_DEV\Desktop\WORK\AMS\AssetMonitoringAsset\AssetMonitoringAsset\bin\Debug\ru\DevExpress.Pdf.v21.2.Core.resources.dll
+C:\Users\HSDP_SYS_DEV\Desktop\WORK\AMS\AssetMonitoringAsset\AssetMonitoringAsset\obj\Debug\AssetMonitoringAsset.vbproj.AssemblyReference.cache
+C:\Users\HSDP_SYS_DEV\Desktop\WORK\AMS\AssetMonitoringAsset\AssetMonitoringAsset\obj\Debug\AssetMonitoringAsset.Assignment1.resources
+C:\Users\HSDP_SYS_DEV\Desktop\WORK\AMS\AssetMonitoringAsset\AssetMonitoringAsset\obj\Debug\AssetMonitoringAsset.date1.resources
+C:\Users\HSDP_SYS_DEV\Desktop\WORK\AMS\AssetMonitoringAsset\AssetMonitoringAsset\obj\Debug\AssetMonitoringAsset.empllist.resources
+C:\Users\HSDP_SYS_DEV\Desktop\WORK\AMS\AssetMonitoringAsset\AssetMonitoringAsset\obj\Debug\AssetMonitoringAsset.ChngState.resources
+C:\Users\HSDP_SYS_DEV\Desktop\WORK\AMS\AssetMonitoringAsset\AssetMonitoringAsset\obj\Debug\AssetMonitoringAsset.Rqregister.resources
+C:\Users\HSDP_SYS_DEV\Desktop\WORK\AMS\AssetMonitoringAsset\AssetMonitoringAsset\obj\Debug\AssetMonitoringAsset.Request.resources
+C:\Users\HSDP_SYS_DEV\Desktop\WORK\AMS\AssetMonitoringAsset\AssetMonitoringAsset\obj\Debug\AssetMonitoringAsset.AssetList3.resources
+C:\Users\HSDP_SYS_DEV\Desktop\WORK\AMS\AssetMonitoringAsset\AssetMonitoringAsset\obj\Debug\AssetMonitoringAsset.RequestRegister.resources
+C:\Users\HSDP_SYS_DEV\Desktop\WORK\AMS\AssetMonitoringAsset\AssetMonitoringAsset\obj\Debug\AssetMonitoringAsset.BuildAsset.resources
+C:\Users\HSDP_SYS_DEV\Desktop\WORK\AMS\AssetMonitoringAsset\AssetMonitoringAsset\obj\Debug\AssetMonitoringAsset.ReferenceList.resources
+C:\Users\HSDP_SYS_DEV\Desktop\WORK\AMS\AssetMonitoringAsset\AssetMonitoringAsset\obj\Debug\AssetMonitoringAsset.BuildRegisterDetail.resources
+C:\Users\HSDP_SYS_DEV\Desktop\WORK\AMS\AssetMonitoringAsset\AssetMonitoringAsset\obj\Debug\AssetMonitoringAsset.NewAssetRegister.resources
+C:\Users\HSDP_SYS_DEV\Desktop\WORK\AMS\AssetMonitoringAsset\AssetMonitoringAsset\obj\Debug\AssetMonitoringAsset.Details.resources
+C:\Users\HSDP_SYS_DEV\Desktop\WORK\AMS\AssetMonitoringAsset\AssetMonitoringAsset\obj\Debug\AssetMonitoringAsset.InventoryList.resources
+C:\Users\HSDP_SYS_DEV\Desktop\WORK\AMS\AssetMonitoringAsset\AssetMonitoringAsset\obj\Debug\AssetMonitoringAsset.MasterDataList.resources
+C:\Users\HSDP_SYS_DEV\Desktop\WORK\AMS\AssetMonitoringAsset\AssetMonitoringAsset\obj\Debug\AssetMonitoringAsset.NACondition.resources
+C:\Users\HSDP_SYS_DEV\Desktop\WORK\AMS\AssetMonitoringAsset\AssetMonitoringAsset\obj\Debug\AssetMonitoringAsset.NATypeh.resources
+C:\Users\HSDP_SYS_DEV\Desktop\WORK\AMS\AssetMonitoringAsset\AssetMonitoringAsset\obj\Debug\AssetMonitoringAsset.NAcategory.resources
+C:\Users\HSDP_SYS_DEV\Desktop\WORK\AMS\AssetMonitoringAsset\AssetMonitoringAsset\obj\Debug\AssetMonitoringAsset.NewAsset.resources
+C:\Users\HSDP_SYS_DEV\Desktop\WORK\AMS\AssetMonitoringAsset\AssetMonitoringAsset\obj\Debug\AssetMonitoringAsset.importmasterlist.resources
+C:\Users\HSDP_SYS_DEV\Desktop\WORK\AMS\AssetMonitoringAsset\AssetMonitoringAsset\obj\Debug\AssetMonitoringAsset.Login.resources
+C:\Users\HSDP_SYS_DEV\Desktop\WORK\AMS\AssetMonitoringAsset\AssetMonitoringAsset\obj\Debug\AssetMonitoringAsset.AssetBranch.resources
+C:\Users\HSDP_SYS_DEV\Desktop\WORK\AMS\AssetMonitoringAsset\AssetMonitoringAsset\obj\Debug\AssetMonitoringAsset.AssetBranchAddandUpdate1.resources
+C:\Users\HSDP_SYS_DEV\Desktop\WORK\AMS\AssetMonitoringAsset\AssetMonitoringAsset\obj\Debug\AssetMonitoringAsset.AssetCategory.resources
+C:\Users\HSDP_SYS_DEV\Desktop\WORK\AMS\AssetMonitoringAsset\AssetMonitoringAsset\obj\Debug\AssetMonitoringAsset.AssetCategoryAddandUpdate1.resources
+C:\Users\HSDP_SYS_DEV\Desktop\WORK\AMS\AssetMonitoringAsset\AssetMonitoringAsset\obj\Debug\AssetMonitoringAsset.AssetConditionAddandUpdate.resources
+C:\Users\HSDP_SYS_DEV\Desktop\WORK\AMS\AssetMonitoringAsset\AssetMonitoringAsset\obj\Debug\AssetMonitoringAsset.AssetCondition.resources
+C:\Users\HSDP_SYS_DEV\Desktop\WORK\AMS\AssetMonitoringAsset\AssetMonitoringAsset\obj\Debug\AssetMonitoringAsset.AssetDepartment.resources
+C:\Users\HSDP_SYS_DEV\Desktop\WORK\AMS\AssetMonitoringAsset\AssetMonitoringAsset\obj\Debug\AssetMonitoringAsset.AssetDepartmentAddandUpdate.resources
+C:\Users\HSDP_SYS_DEV\Desktop\WORK\AMS\AssetMonitoringAsset\AssetMonitoringAsset\obj\Debug\AssetMonitoringAsset.AssetDocTypeAddandUpdate.resources
+C:\Users\HSDP_SYS_DEV\Desktop\WORK\AMS\AssetMonitoringAsset\AssetMonitoringAsset\obj\Debug\AssetMonitoringAsset.AssetDocumentType.resources
+C:\Users\HSDP_SYS_DEV\Desktop\WORK\AMS\AssetMonitoringAsset\AssetMonitoringAsset\obj\Debug\AssetMonitoringAsset.AssetPositionAddandUpdate.resources
+C:\Users\HSDP_SYS_DEV\Desktop\WORK\AMS\AssetMonitoringAsset\AssetMonitoringAsset\obj\Debug\AssetMonitoringAsset.AssetPosition.resources
+C:\Users\HSDP_SYS_DEV\Desktop\WORK\AMS\AssetMonitoringAsset\AssetMonitoringAsset\obj\Debug\AssetMonitoringAsset.AssetSection.resources
+C:\Users\HSDP_SYS_DEV\Desktop\WORK\AMS\AssetMonitoringAsset\AssetMonitoringAsset\obj\Debug\AssetMonitoringAsset.AssetSectionAddandUpdate1.resources
+C:\Users\HSDP_SYS_DEV\Desktop\WORK\AMS\AssetMonitoringAsset\AssetMonitoringAsset\obj\Debug\AssetMonitoringAsset.AssetType.resources
+C:\Users\HSDP_SYS_DEV\Desktop\WORK\AMS\AssetMonitoringAsset\AssetMonitoringAsset\obj\Debug\AssetMonitoringAsset.AssetTypeAddandUpdate.resources
+C:\Users\HSDP_SYS_DEV\Desktop\WORK\AMS\AssetMonitoringAsset\AssetMonitoringAsset\obj\Debug\AssetMonitoringAsset.Home.resources
+C:\Users\HSDP_SYS_DEV\Desktop\WORK\AMS\AssetMonitoringAsset\AssetMonitoringAsset\obj\Debug\AssetMonitoringAsset.Employee.resources
+C:\Users\HSDP_SYS_DEV\Desktop\WORK\AMS\AssetMonitoringAsset\AssetMonitoringAsset\obj\Debug\AssetMonitoringAsset.EmployeeAddandUpdate.resources
+C:\Users\HSDP_SYS_DEV\Desktop\WORK\AMS\AssetMonitoringAsset\AssetMonitoringAsset\obj\Debug\AssetMonitoringAsset.Reference.resources
+C:\Users\HSDP_SYS_DEV\Desktop\WORK\AMS\AssetMonitoringAsset\AssetMonitoringAsset\obj\Debug\AssetMonitoringAsset.EmployeeList.resources
+C:\Users\HSDP_SYS_DEV\Desktop\WORK\AMS\AssetMonitoringAsset\AssetMonitoringAsset\obj\Debug\AssetMonitoringAsset.UpdateSelection.resources
+C:\Users\HSDP_SYS_DEV\Desktop\WORK\AMS\AssetMonitoringAsset\AssetMonitoringAsset\obj\Debug\AssetMonitoringAsset.UserChangePass.resources
+C:\Users\HSDP_SYS_DEV\Desktop\WORK\AMS\AssetMonitoringAsset\AssetMonitoringAsset\obj\Debug\AssetMonitoringAsset.User.resources
+C:\Users\HSDP_SYS_DEV\Desktop\WORK\AMS\AssetMonitoringAsset\AssetMonitoringAsset\obj\Debug\AssetMonitoringAsset.UserAdd.resources
+C:\Users\HSDP_SYS_DEV\Desktop\WORK\AMS\AssetMonitoringAsset\AssetMonitoringAsset\obj\Debug\AssetMonitoringAsset.UserUpdate.resources
+C:\Users\HSDP_SYS_DEV\Desktop\WORK\AMS\AssetMonitoringAsset\AssetMonitoringAsset\obj\Debug\AssetMonitoringAsset.Vendor.resources
+C:\Users\HSDP_SYS_DEV\Desktop\WORK\AMS\AssetMonitoringAsset\AssetMonitoringAsset\obj\Debug\AssetMonitoringAsset.VendorAddandUpdate.resources
+C:\Users\HSDP_SYS_DEV\Desktop\WORK\AMS\AssetMonitoringAsset\AssetMonitoringAsset\obj\Debug\AssetMonitoringAsset.Resources.resources
+C:\Users\HSDP_SYS_DEV\Desktop\WORK\AMS\AssetMonitoringAsset\AssetMonitoringAsset\obj\Debug\AssetMonitoringAsset.vbproj.GenerateResource.cache
+C:\Users\HSDP_SYS_DEV\Desktop\WORK\AMS\AssetMonitoringAsset\AssetMonitoringAsset\obj\Debug\AssetMonitoringAsset.exe.licenses
+C:\Users\HSDP_SYS_DEV\Desktop\WORK\AMS\AssetMonitoringAsset\AssetMonitoringAsset\obj\Debug\AssetMonitoringAsset.vbproj.CoreCompileInputs.cache
+C:\Users\HSDP_SYS_DEV\Desktop\WORK\AMS\AssetMonitoringAsset\AssetMonitoringAsset\obj\Debug\AssetMonitoringAsset.vbproj.CopyComplete
+C:\Users\HSDP_SYS_DEV\Desktop\WORK\AMS\AssetMonitoringAsset\AssetMonitoringAsset\obj\Debug\AssetMonitoringAsset.exe
+C:\Users\HSDP_SYS_DEV\Desktop\WORK\AMS\AssetMonitoringAsset\AssetMonitoringAsset\obj\Debug\AssetMonitoringAsset.pdb

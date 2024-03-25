@@ -1,0 +1,781 @@
+﻿<?xml version="1.0" encoding="utf-8"?><Database Name="AMSdb" Class="DataClasses1DataContext" xmlns="http://schemas.microsoft.com/linqtosql/dbml/2007">
+  <Connection Mode="AppSettings" ConnectionString="Data Source=172.16.10.218;Initial Catalog=AMSdb;Persist Security Info=True;User ID=HSDPI" SettingsObjectName="AssetMonitoringAsset.Settings" SettingsPropertyName="AMSdbConnectionString3" Provider="System.Data.SqlClient" />
+  <Table Name="dbo.tblVendor" Member="tblVendors">
+    <Type Name="tblVendor">
+      <Column Name="VendorID" Type="System.Int32" DbType="Int NOT NULL IDENTITY" IsPrimaryKey="true" IsDbGenerated="true" CanBeNull="false" />
+      <Column Name="VendorCode" Type="System.String" DbType="VarChar(200)" CanBeNull="true" />
+      <Column Name="VendorDescription" Type="System.String" DbType="VarChar(200)" CanBeNull="true" />
+      <Column Name="DateCreated" Type="System.DateTime" DbType="Date" CanBeNull="true" />
+      <Column Name="DateModified" Type="System.DateTime" DbType="Date" CanBeNull="true" />
+      <Column Name="UserID" Type="System.Int32" DbType="Int" CanBeNull="true" />
+      <Column Name="UserIDModified" Type="System.Int32" DbType="Int" CanBeNull="true" />
+      <Association Name="tblVendor_tblAssetDetail" Member="tblAssetDetails" ThisKey="VendorID" OtherKey="VendorID" Type="tblAssetDetail" />
+      <Association Name="tblVendor_tblAssetHeader" Member="tblAssetHeaders" ThisKey="VendorID" OtherKey="VendorID" Type="tblAssetHeader" />
+      <Association Name="tblUser_tblVendor" Member="tblUser" ThisKey="VendorID" OtherKey="UserID" Type="tblUser" IsForeignKey="true" />
+    </Type>
+  </Table>
+  <Table Name="dbo.tblAssetCondition" Member="tblAssetConditions">
+    <Type Name="tblAssetCondition">
+      <Column Name="AssetConditionID" Type="System.Int32" DbType="Int NOT NULL IDENTITY" IsPrimaryKey="true" IsDbGenerated="true" CanBeNull="false" />
+      <Column Name="AssetConditionCode" Type="System.String" DbType="VarChar(200)" CanBeNull="true" />
+      <Column Name="AssetConditionDescription" Type="System.String" DbType="VarChar(200)" CanBeNull="true" />
+      <Column Name="DateCreated" Type="System.DateTime" DbType="Date" CanBeNull="true" />
+      <Column Name="DateModified" Type="System.DateTime" DbType="Date" CanBeNull="true" />
+      <Column Name="UserID" Type="System.Int32" DbType="Int" CanBeNull="true" />
+      <Column Name="UserIDModified" Type="System.Int32" DbType="Int" CanBeNull="true" />
+      <Association Name="tblUser_tblAssetCondition" Member="tblUser" ThisKey="UserID" OtherKey="UserID" Type="tblUser" IsForeignKey="true" />
+    </Type>
+  </Table>
+  <Table Name="dbo.tblAssetDetails" Member="tblAssetDetails">
+    <Type Name="tblAssetDetail">
+      <Column Name="ID" Type="System.Int32" DbType="Int NOT NULL IDENTITY" IsPrimaryKey="true" IsDbGenerated="true" CanBeNull="false" />
+      <Column Name="assetID" Type="System.Int32" DbType="Int" CanBeNull="true" />
+      <Column Name="AssetCode" Type="System.String" DbType="VarChar(MAX)" CanBeNull="true" />
+      <Column Name="Reference" Type="System.String" DbType="VarChar(MAX)" CanBeNull="true" />
+      <Column Name="Refno" Type="System.String" DbType="VarChar(MAX)" CanBeNull="true" />
+      <Column Name="Quantity" Type="System.Double" DbType="Float" CanBeNull="true" />
+      <Column Name="DateCreated" Type="System.DateTime" DbType="Date" CanBeNull="true" />
+      <Column Name="UserID" Type="System.Int32" DbType="Int" CanBeNull="true" />
+      <Column Name="TransHeaderID" Type="System.Int32" DbType="Int" CanBeNull="true" />
+      <Column Name="VendorID" Type="System.Int32" DbType="Int" CanBeNull="true" />
+      <Column Name="module1" Type="System.Int32" DbType="Int" CanBeNull="true" />
+      <Association Name="tblVendor_tblAssetDetail" Member="tblVendor" ThisKey="VendorID" OtherKey="VendorID" Type="tblVendor" IsForeignKey="true" />
+      <Association Name="tblAssetHeader_tblAssetDetail" Member="tblAssetHeader" ThisKey="TransHeaderID" OtherKey="AssetHeaderID" Type="tblAssetHeader" IsForeignKey="true" />
+      <Association Name="tblUser_tblAssetDetail" Member="tblUser" ThisKey="UserID" OtherKey="UserID" Type="tblUser" IsForeignKey="true" />
+      <Association Name="tblmasterlistdetail_tblAssetDetail" Member="tblmasterlistdetail" ThisKey="assetID" OtherKey="ItemID" Type="tblmasterlistdetail" IsForeignKey="true" />
+    </Type>
+  </Table>
+  <Table Name="dbo.tblAssetHeader" Member="tblAssetHeaders">
+    <Type Name="tblAssetHeader">
+      <Column Name="AssetHeaderID" Type="System.Int32" DbType="Int NOT NULL IDENTITY" IsPrimaryKey="true" IsDbGenerated="true" CanBeNull="false" />
+      <Column Name="UserID" Type="System.Int32" DbType="Int" CanBeNull="true" />
+      <Column Name="EntryNumber" Type="System.String" DbType="VarChar(MAX)" CanBeNull="true" />
+      <Column Name="TransDate" Type="System.DateTime" DbType="Date" CanBeNull="true" />
+      <Column Name="Remarks" Type="System.String" DbType="VarChar(MAX)" CanBeNull="true" />
+      <Column Name="VendorID" Type="System.Int32" DbType="Int" CanBeNull="true" />
+      <Column Name="Docno" Type="System.String" DbType="VarChar(MAX)" CanBeNull="true" />
+      <Column Name="DocTypeID" Type="System.Int32" DbType="Int" CanBeNull="true" />
+      <Column Name="module1" Type="System.Int32" DbType="Int" CanBeNull="true" />
+      <Association Name="tblAssetHeader_tblAssetDetail" Member="tblAssetDetails" ThisKey="AssetHeaderID" OtherKey="TransHeaderID" Type="tblAssetDetail" />
+      <Association Name="tblVendor_tblAssetHeader" Member="tblVendor" ThisKey="VendorID" OtherKey="VendorID" Type="tblVendor" IsForeignKey="true" />
+      <Association Name="tblDocumentType_tblAssetHeader" Member="tblDocumentType" ThisKey="DocTypeID" OtherKey="DocumentID" Type="tblDocumentType" IsForeignKey="true" />
+      <Association Name="tblUser_tblAssetHeader" Member="tblUser" ThisKey="UserID" OtherKey="UserID" Type="tblUser" IsForeignKey="true" />
+    </Type>
+  </Table>
+  <Table Name="dbo.tblAssetInventory" Member="tblAssetInventories">
+    <Type Name="tblAssetInventory">
+      <Column Name="InvID" Type="System.Int32" DbType="Int NOT NULL IDENTITY" IsPrimaryKey="true" IsDbGenerated="true" CanBeNull="false" />
+      <Column Name="AssetCode" Type="System.Int32" DbType="Int" CanBeNull="true" />
+      <Column Name="Class" Type="System.String" DbType="VarChar(MAX)" CanBeNull="true" />
+      <Column Name="PropertyCode" Type="System.String" DbType="VarChar(MAX)" CanBeNull="true" />
+      <Column Name="Des" Type="System.String" DbType="VarChar(MAX)" CanBeNull="true" />
+      <Column Name="Qty" Type="System.Double" DbType="Float" CanBeNull="true" />
+      <Column Name="Keeper" Type="System.Int32" DbType="Int" CanBeNull="true" />
+      <Column Name="Owner" Type="System.Int32" DbType="Int" CanBeNull="true" />
+      <Column Name="Borrower" Type="System.Int32" DbType="Int" CanBeNull="true" />
+      <Column Name="Reference" Type="System.String" DbType="VarChar(MAX)" CanBeNull="true" />
+      <Column Name="Referenceno" Type="System.String" DbType="VarChar(MAX)" CanBeNull="true" />
+      <Column Name="borrowerStat" Type="System.String" DbType="VarChar(MAX)" CanBeNull="true" />
+      <Column Name="Status1" Type="System.String" DbType="VarChar(MAX)" CanBeNull="true" />
+      <Column Name="Status2" Type="System.String" DbType="VarChar(MAX)" CanBeNull="true" />
+      <Column Name="Condition" Type="System.String" DbType="VarChar(MAX)" CanBeNull="true" />
+      <Association Name="tblAssetInventory_tblTransferDetail" Member="tblTransferDetails" ThisKey="InvID" OtherKey="InvId" Type="tblTransferDetail" />
+      <Association Name="tblmasterlistdetail_tblAssetInventory" Member="tblmasterlistdetail" ThisKey="AssetCode" OtherKey="ItemID" Type="tblmasterlistdetail" IsForeignKey="true" />
+    </Type>
+  </Table>
+  <Table Name="dbo.tblAssetType" Member="tblAssetTypes">
+    <Type Name="tblAssetType">
+      <Column Name="AssetTypeID" Type="System.Int32" DbType="Int NOT NULL IDENTITY" IsPrimaryKey="true" IsDbGenerated="true" CanBeNull="false" />
+      <Column Name="AssetTypeCode" Type="System.String" DbType="VarChar(200)" CanBeNull="true" />
+      <Column Name="AssetTypeDescription" Type="System.String" DbType="VarChar(200)" CanBeNull="true" />
+      <Column Name="DateCreated" Type="System.DateTime" DbType="Date" CanBeNull="true" />
+      <Column Name="DateModified" Type="System.DateTime" DbType="Date" CanBeNull="true" />
+      <Column Name="UserID" Type="System.Int32" DbType="Int" CanBeNull="true" />
+      <Column Name="UserIDModified" Type="System.Int32" DbType="Int" CanBeNull="true" />
+      <Association Name="tblUser_tblAssetType" Member="tblUser" ThisKey="UserID" OtherKey="UserID" Type="tblUser" IsForeignKey="true" />
+    </Type>
+  </Table>
+  <Table Name="dbo.tblBranch" Member="tblBranches">
+    <Type Name="tblBranch">
+      <Column Name="BranchID" Type="System.Int32" DbType="Int NOT NULL IDENTITY" IsPrimaryKey="true" IsDbGenerated="true" CanBeNull="false" />
+      <Column Name="BranchCode" Type="System.String" DbType="VarChar(200)" CanBeNull="true" />
+      <Column Name="BranchDescription" Type="System.String" DbType="VarChar(200)" CanBeNull="true" />
+      <Column Name="DateCreated" Type="System.DateTime" DbType="Date" CanBeNull="true" />
+      <Column Name="DateModified" Type="System.DateTime" DbType="Date" CanBeNull="true" />
+      <Column Name="UserID" Type="System.Int32" DbType="Int" CanBeNull="true" />
+      <Column Name="UserIDModified" Type="System.Int32" DbType="Int" CanBeNull="true" />
+      <Association Name="tblBranch_tblEmployee" Member="tblEmployees" ThisKey="BranchID" OtherKey="BranchID" Type="tblEmployee" />
+      <Association Name="tblUser_tblBranch" Member="tblUser" ThisKey="BranchID" OtherKey="UserID" Type="tblUser" IsForeignKey="true" />
+    </Type>
+  </Table>
+  <Table Name="dbo.tblBuildDetail" Member="tblBuildDetails">
+    <Type Name="tblBuildDetail">
+      <Column Name="Id" Type="System.Int32" DbType="Int NOT NULL IDENTITY" IsPrimaryKey="true" IsDbGenerated="true" CanBeNull="false" />
+      <Column Name="AssetCode" Type="System.Int32" DbType="Int" CanBeNull="true" />
+      <Column Name="Class" Type="System.String" DbType="VarChar(MAX)" CanBeNull="true" />
+      <Column Name="PropertyCode" Type="System.String" DbType="VarChar(MAX)" CanBeNull="true" />
+      <Column Name="Des" Type="System.String" DbType="VarChar(MAX)" CanBeNull="true" />
+      <Column Name="Qty" Type="System.Double" DbType="Float" CanBeNull="true" />
+      <Column Name="Keeper" Type="System.Int32" DbType="Int" CanBeNull="true" />
+      <Column Name="Owner" Type="System.Int32" DbType="Int" CanBeNull="true" />
+      <Column Name="Borrower" Type="System.Int32" DbType="Int" CanBeNull="true" />
+      <Column Name="Reference" Type="System.String" DbType="VarChar(MAX)" CanBeNull="true" />
+      <Column Name="Referenceno" Type="System.String" DbType="VarChar(MAX)" CanBeNull="true" />
+      <Column Name="borrowerStat" Type="System.String" DbType="VarChar(MAX)" CanBeNull="true" />
+      <Column Name="Status1" Type="System.String" DbType="VarChar(MAX)" CanBeNull="true" />
+      <Column Name="Status2" Type="System.String" DbType="VarChar(MAX)" CanBeNull="true" />
+      <Column Name="Condition" Type="System.String" DbType="VarChar(MAX)" CanBeNull="true" />
+      <Column Name="headerid" Type="System.Int32" DbType="Int" CanBeNull="true" />
+    </Type>
+  </Table>
+  <Table Name="dbo.tblBuildHeader" Member="tblBuildHeaders">
+    <Type Name="tblBuildHeader">
+      <Column Name="id" Type="System.Int32" DbType="Int NOT NULL IDENTITY" IsPrimaryKey="true" IsDbGenerated="true" CanBeNull="false" />
+      <Column Name="EntryNumber" Type="System.String" DbType="VarChar(MAX)" CanBeNull="true" />
+      <Column Name="TransDate" Type="System.DateTime" DbType="Date" CanBeNull="true" />
+      <Column Name="Remarks" Type="System.String" DbType="VarChar(MAX)" CanBeNull="true" />
+      <Column Name="UserID" Type="System.Int32" DbType="Int" CanBeNull="true" />
+    </Type>
+  </Table>
+  <Table Name="dbo.tblCategory" Member="tblCategories">
+    <Type Name="tblCategory">
+      <Column Name="CategoryID" Type="System.Int32" DbType="Int NOT NULL IDENTITY" IsPrimaryKey="true" IsDbGenerated="true" CanBeNull="false" />
+      <Column Name="CategoryCode" Type="System.String" DbType="VarChar(200)" CanBeNull="true" />
+      <Column Name="CategoryDescription" Type="System.String" DbType="VarChar(200)" CanBeNull="true" />
+      <Column Name="DateCreated" Type="System.DateTime" DbType="Date" CanBeNull="true" />
+      <Column Name="DateModified" Type="System.DateTime" DbType="Date" CanBeNull="true" />
+      <Column Name="UserID" Type="System.Int32" DbType="Int" CanBeNull="true" />
+      <Column Name="UserIDModified" Type="System.Int32" DbType="Int" CanBeNull="true" />
+      <Association Name="tblUser_tblCategory" Member="tblUser" ThisKey="UserID" OtherKey="UserID" Type="tblUser" IsForeignKey="true" />
+    </Type>
+  </Table>
+  <Table Name="dbo.tblDepartment" Member="tblDepartments">
+    <Type Name="tblDepartment">
+      <Column Name="DepartmentID" Type="System.Int32" DbType="Int NOT NULL IDENTITY" IsPrimaryKey="true" IsDbGenerated="true" CanBeNull="false" />
+      <Column Name="DepartmentCode" Type="System.String" DbType="VarChar(200)" CanBeNull="true" />
+      <Column Name="DepartmentDescription" Type="System.String" DbType="VarChar(200)" CanBeNull="true" />
+      <Column Name="DateCreated" Type="System.DateTime" DbType="Date" CanBeNull="true" />
+      <Column Name="DateModified" Type="System.DateTime" DbType="Date" CanBeNull="true" />
+      <Column Name="UserID" Type="System.Int32" DbType="Int" CanBeNull="true" />
+      <Column Name="UserIDModified" Type="System.Int32" DbType="Int" CanBeNull="true" />
+      <Column Name="location" Type="System.String" DbType="VarChar(200)" CanBeNull="true" />
+      <Association Name="tblDepartment_tblEmployee" Member="tblEmployees" ThisKey="DepartmentID" OtherKey="DepartmentID" Type="tblEmployee" />
+      <Association Name="tblUser_tblDepartment" Member="tblUser" ThisKey="DepartmentID" OtherKey="UserID" Type="tblUser" IsForeignKey="true" />
+    </Type>
+  </Table>
+  <Table Name="dbo.tblDocumentType" Member="tblDocumentTypes">
+    <Type Name="tblDocumentType">
+      <Column Name="DocumentID" Type="System.Int32" DbType="Int NOT NULL IDENTITY" IsPrimaryKey="true" IsDbGenerated="true" CanBeNull="false" />
+      <Column Name="DocumentCode" Type="System.String" DbType="VarChar(200)" CanBeNull="true" />
+      <Column Name="DocumentDescription" Type="System.String" DbType="VarChar(200)" CanBeNull="true" />
+      <Column Name="DateCreated" Type="System.DateTime" DbType="Date" CanBeNull="true" />
+      <Column Name="DateModified" Type="System.DateTime" DbType="Date" CanBeNull="true" />
+      <Column Name="UserID" Type="System.Int32" DbType="Int" CanBeNull="true" />
+      <Column Name="UserIDModified" Type="System.Int32" DbType="Int" CanBeNull="true" />
+      <Association Name="tblDocumentType_tblAssetHeader" Member="tblAssetHeaders" ThisKey="DocumentID" OtherKey="DocTypeID" Type="tblAssetHeader" />
+      <Association Name="tblUser_tblDocumentType" Member="tblUser" ThisKey="UserID" OtherKey="UserID" Type="tblUser" IsForeignKey="true" />
+    </Type>
+  </Table>
+  <Table Name="dbo.tblEmployee" Member="tblEmployees">
+    <Type Name="tblEmployee">
+      <Column Name="EmployeeID" Type="System.Int32" DbType="Int NOT NULL IDENTITY" IsPrimaryKey="true" IsDbGenerated="true" CanBeNull="false" />
+      <Column Name="FirstName" Type="System.String" DbType="VarChar(200)" CanBeNull="true" />
+      <Column Name="LastName" Type="System.String" DbType="VarChar(200)" CanBeNull="true" />
+      <Column Name="BranchID" Type="System.Int32" DbType="Int" CanBeNull="true" />
+      <Column Name="DepartmentID" Type="System.Int32" DbType="Int" CanBeNull="true" />
+      <Column Name="PositionID" Type="System.Int32" DbType="Int" CanBeNull="true" />
+      <Column Name="SectionID" Type="System.Int32" DbType="Int" CanBeNull="true" />
+      <Column Name="AddbyUserID" Type="System.Int32" DbType="Int" CanBeNull="true" />
+      <Column Name="Datecreated" Type="System.DateTime" DbType="Date" CanBeNull="true" />
+      <Column Name="Manager" Type="System.Int32" DbType="Int" CanBeNull="true" />
+      <Column Name="Company" Type="System.String" DbType="VarChar(200)" CanBeNull="true" />
+      <Association Name="tblEmployee_tblRequestHeader" Member="tblRequestHeaders" ThisKey="EmployeeID" OtherKey="RequestBy" Type="tblRequestHeader" />
+      <Association Name="tblEmployee_tblTransferHeader" Member="tblTransferHeaders" ThisKey="EmployeeID" OtherKey="RequestBy" Type="tblTransferHeader" />
+      <Association Name="tblEmployee_tblTransferHeader1" Member="tblTransferHeaders1" ThisKey="EmployeeID" OtherKey="RequestFor" Type="tblTransferHeader" />
+      <Association Name="tblBranch_tblEmployee" Member="tblBranch" ThisKey="BranchID" OtherKey="BranchID" Type="tblBranch" IsForeignKey="true" />
+      <Association Name="tblDepartment_tblEmployee" Member="tblDepartment" ThisKey="DepartmentID" OtherKey="DepartmentID" Type="tblDepartment" IsForeignKey="true" />
+      <Association Name="tblPosition_tblEmployee" Member="tblPosition" ThisKey="PositionID" OtherKey="PositionID" Type="tblPosition" IsForeignKey="true" />
+      <Association Name="tblSection_tblEmployee" Member="tblSection" ThisKey="SectionID" OtherKey="SectionID" Type="tblSection" IsForeignKey="true" />
+      <Association Name="tblUser_tblEmployee" Member="tblUser" ThisKey="AddbyUserID" OtherKey="UserID" Type="tblUser" IsForeignKey="true" />
+    </Type>
+  </Table>
+  <Table Name="dbo.tblPosition" Member="tblPositions">
+    <Type Name="tblPosition">
+      <Column Name="PositionID" Type="System.Int32" DbType="Int NOT NULL IDENTITY" IsPrimaryKey="true" IsDbGenerated="true" CanBeNull="false" />
+      <Column Name="PositionCode" Type="System.String" DbType="VarChar(200)" CanBeNull="true" />
+      <Column Name="PositionDescription" Type="System.String" DbType="VarChar(200)" CanBeNull="true" />
+      <Column Name="DateCreated" Type="System.DateTime" DbType="Date" CanBeNull="true" />
+      <Column Name="DateModified" Type="System.DateTime" DbType="Date" CanBeNull="true" />
+      <Column Name="UserID" Type="System.Int32" DbType="Int" CanBeNull="true" />
+      <Column Name="UserIDModified" Type="System.Int32" DbType="Int" CanBeNull="true" />
+      <Association Name="tblPosition_tblEmployee" Member="tblEmployees" ThisKey="PositionID" OtherKey="PositionID" Type="tblEmployee" />
+      <Association Name="tblUser_tblPosition" Member="tblUser" ThisKey="UserID" OtherKey="UserID" Type="tblUser" IsForeignKey="true" />
+    </Type>
+  </Table>
+  <Table Name="dbo.tblPropertyCodeSeries" Member="tblPropertyCodeSeries">
+    <Type Name="tblPropertyCodeSery">
+      <Column Name="id" Type="System.Int32" DbType="Int NOT NULL IDENTITY" IsPrimaryKey="true" IsDbGenerated="true" CanBeNull="false" />
+      <Column Name="cat" Type="System.String" DbType="VarChar(50)" CanBeNull="true" />
+      <Column Name="type" Type="System.String" DbType="VarChar(50)" CanBeNull="true" />
+      <Column Name="series" Type="System.String" DbType="VarChar(50)" CanBeNull="true" />
+    </Type>
+  </Table>
+  <Table Name="dbo.tblReference" Member="tblReferences">
+    <Type Name="tblReference">
+      <Column Name="Refid" Type="System.Int32" DbType="Int NOT NULL IDENTITY" IsPrimaryKey="true" IsDbGenerated="true" CanBeNull="false" />
+      <Column Name="Reference" Type="System.String" DbType="VarChar(MAX)" CanBeNull="true" />
+    </Type>
+  </Table>
+  <Table Name="dbo.tblRequestDetail" Member="tblRequestDetails">
+    <Type Name="tblRequestDetail">
+      <Column Name="id" Type="System.Int32" DbType="Int NOT NULL IDENTITY" IsPrimaryKey="true" IsDbGenerated="true" CanBeNull="false" />
+      <Column Name="AssetCode" Type="System.Int32" DbType="Int" CanBeNull="true" />
+      <Column Name="PropertyCode" Type="System.String" DbType="VarChar(MAX)" CanBeNull="true" />
+      <Column Name="Class" Type="System.String" DbType="VarChar(MAX)" CanBeNull="true" />
+      <Column Name="Description" Type="System.String" DbType="VarChar(MAX)" CanBeNull="true" />
+      <Column Name="Borrowee" Type="System.Int32" DbType="Int" CanBeNull="true" />
+      <Column Name="Owner" Type="System.Int32" DbType="Int" CanBeNull="true" />
+      <Column Name="Qty" Type="System.Double" DbType="Float" CanBeNull="true" />
+      <Column Name="DateFrom" Type="System.DateTime" DbType="Date" CanBeNull="true" />
+      <Column Name="DateTo" Type="System.DateTime" DbType="Date" CanBeNull="true" />
+      <Column Name="Time" Type="System.String" DbType="VarChar(MAX)" CanBeNull="true" />
+      <Column Name="Remarks" Type="System.String" DbType="VarChar(MAX)" CanBeNull="true" />
+      <Column Name="NewOwner" Type="System.Int32" DbType="Int" CanBeNull="true" />
+      <Column Name="Status" Type="System.String" DbType="VarChar(MAX)" CanBeNull="true" />
+      <Column Name="State" Type="System.String" DbType="VarChar(MAX)" CanBeNull="true" />
+      <Column Name="Status2" Type="System.String" DbType="VarChar(MAX)" CanBeNull="true" />
+      <Column Name="HeaderID" Type="System.Int32" DbType="Int" CanBeNull="true" />
+      <Column Name="Approve1" Type="System.Int32" DbType="Int" CanBeNull="true" />
+      <Column Name="Approve2" Type="System.Int32" DbType="Int" CanBeNull="true" />
+      <Column Name="Approve3" Type="System.Int32" DbType="Int" CanBeNull="true" />
+      <Column Name="Approve4" Type="System.Int32" DbType="Int" CanBeNull="true" />
+    </Type>
+  </Table>
+  <Table Name="dbo.tblRequestHeader" Member="tblRequestHeaders">
+    <Type Name="tblRequestHeader">
+      <Column Name="HeaderId" Type="System.Int32" DbType="Int NOT NULL IDENTITY" IsPrimaryKey="true" IsDbGenerated="true" CanBeNull="false" />
+      <Column Name="RequestNo" Type="System.String" DbType="VarChar(MAX)" CanBeNull="true" />
+      <Column Name="RequestBy" Type="System.Int32" DbType="Int" CanBeNull="true" />
+      <Column Name="Date" Type="System.DateTime" DbType="Date" CanBeNull="true" />
+      <Column Name="Stat" Type="System.String" DbType="VarChar(MAX)" CanBeNull="true" />
+      <Column Name="RequestType" Type="System.String" DbType="VarChar(MAX)" CanBeNull="true" />
+      <Column Name="Stat1" Type="System.Int32" DbType="Int" CanBeNull="true" />
+      <Column Name="Stat2" Type="System.Int32" DbType="Int" CanBeNull="true" />
+      <Column Name="Stat3" Type="System.Int32" DbType="Int" CanBeNull="true" />
+      <Column Name="Stat4" Type="System.Int32" DbType="Int" CanBeNull="true" />
+      <Association Name="tblEmployee_tblRequestHeader" Member="tblEmployee" ThisKey="RequestBy" OtherKey="EmployeeID" Type="tblEmployee" IsForeignKey="true" />
+    </Type>
+  </Table>
+  <Table Name="dbo.tblSection" Member="tblSections">
+    <Type Name="tblSection">
+      <Column Name="SectionID" Type="System.Int32" DbType="Int NOT NULL IDENTITY" IsPrimaryKey="true" IsDbGenerated="true" CanBeNull="false" />
+      <Column Name="SectionCode" Type="System.String" DbType="VarChar(200)" CanBeNull="true" />
+      <Column Name="SectionDecription" Type="System.String" DbType="VarChar(200)" CanBeNull="true" />
+      <Column Name="DateCreated" Type="System.DateTime" DbType="Date" CanBeNull="true" />
+      <Column Name="DateModified" Type="System.DateTime" DbType="Date" CanBeNull="true" />
+      <Column Name="UserID" Type="System.Int32" DbType="Int" CanBeNull="true" />
+      <Column Name="UserIDModified" Type="System.Int32" DbType="Int" CanBeNull="true" />
+      <Association Name="tblSection_tblEmployee" Member="tblEmployees" ThisKey="SectionID" OtherKey="SectionID" Type="tblEmployee" />
+      <Association Name="tblUser_tblSection" Member="tblUser" ThisKey="UserID" OtherKey="UserID" Type="tblUser" IsForeignKey="true" />
+    </Type>
+  </Table>
+  <Table Name="dbo.tblTransferDetails" Member="tblTransferDetails">
+    <Type Name="tblTransferDetail">
+      <Column Name="TransferId" Type="System.Int32" DbType="Int NOT NULL" IsPrimaryKey="true" CanBeNull="false" />
+      <Column Name="AssetCode" Type="System.String" DbType="VarChar(MAX)" CanBeNull="true" />
+      <Column Name="AssetId" Type="System.Int32" DbType="Int" CanBeNull="true" />
+      <Column Name="InvId" Type="System.Int32" DbType="Int" CanBeNull="true" />
+      <Column Name="TranStatus" Type="System.String" DbType="VarChar(MAX)" CanBeNull="true" />
+      <Column Name="TransferHeaderId" Type="System.Int32" DbType="Int" CanBeNull="true" />
+      <Column Name="Owner" Type="System.String" DbType="VarChar(MAX)" CanBeNull="true" />
+      <Association Name="tblAssetInventory_tblTransferDetail" Member="tblAssetInventory" ThisKey="InvId" OtherKey="InvID" Type="tblAssetInventory" IsForeignKey="true" />
+      <Association Name="tblTransferHeader_tblTransferDetail" Member="tblTransferHeader" ThisKey="TransferHeaderId" OtherKey="TransferHeaderId" Type="tblTransferHeader" IsForeignKey="true" />
+      <Association Name="tblmasterlistdetail_tblTransferDetail" Member="tblmasterlistdetail" ThisKey="AssetId" OtherKey="ItemID" Type="tblmasterlistdetail" IsForeignKey="true" />
+    </Type>
+  </Table>
+  <Table Name="dbo.tblTransferHeader" Member="tblTransferHeaders">
+    <Type Name="tblTransferHeader">
+      <Column Name="TransferHeaderId" Type="System.Int32" DbType="Int NOT NULL IDENTITY" IsPrimaryKey="true" IsDbGenerated="true" CanBeNull="false" />
+      <Column Name="RequaestType" Type="System.String" DbType="VarChar(MAX) NOT NULL" CanBeNull="false" />
+      <Column Name="RequestBy" Type="System.Int32" DbType="Int" CanBeNull="true" />
+      <Column Name="RequestFor" Type="System.Int32" DbType="Int" CanBeNull="true" />
+      <Column Name="Date" Type="System.DateTime" DbType="Date" CanBeNull="true" />
+      <Column Name="Status" Type="System.String" DbType="VarChar(MAX)" CanBeNull="true" />
+      <Association Name="tblTransferHeader_tblTransferDetail" Member="tblTransferDetails" ThisKey="TransferHeaderId" OtherKey="TransferHeaderId" Type="tblTransferDetail" />
+      <Association Name="tblEmployee_tblTransferHeader" Member="tblEmployee" ThisKey="RequestBy" OtherKey="EmployeeID" Type="tblEmployee" IsForeignKey="true" />
+      <Association Name="tblEmployee_tblTransferHeader1" Member="tblEmployee1" ThisKey="RequestFor" OtherKey="EmployeeID" Type="tblEmployee" IsForeignKey="true" />
+    </Type>
+  </Table>
+  <Table Name="dbo.tblUser" Member="tblUsers">
+    <Type Name="tblUser">
+      <Column Name="UserID" Type="System.Int32" DbType="Int NOT NULL IDENTITY" IsPrimaryKey="true" IsDbGenerated="true" CanBeNull="false" />
+      <Column Name="EmployeeID" Type="System.Int32" DbType="Int" CanBeNull="true" />
+      <Column Name="Username" Type="System.String" DbType="VarChar(200)" CanBeNull="true" />
+      <Column Name="Password" Type="System.String" DbType="VarChar(200)" CanBeNull="true" />
+      <Column Name="Status" Type="System.String" DbType="VarChar(200)" CanBeNull="true" />
+      <Column Name="UserType" Type="System.String" DbType="VarChar(200)" CanBeNull="true" />
+      <Column Name="UserCat" Type="System.String" DbType="VarChar(200)" CanBeNull="true" />
+      <Association Name="tblUser_tblVendor" Member="tblVendor" ThisKey="UserID" OtherKey="VendorID" Type="tblVendor" Cardinality="One" />
+      <Association Name="tblUser_tblAssetCondition" Member="tblAssetConditions" ThisKey="UserID" OtherKey="UserID" Type="tblAssetCondition" />
+      <Association Name="tblUser_tblAssetDetail" Member="tblAssetDetails" ThisKey="UserID" OtherKey="UserID" Type="tblAssetDetail" />
+      <Association Name="tblUser_tblAssetHeader" Member="tblAssetHeaders" ThisKey="UserID" OtherKey="UserID" Type="tblAssetHeader" />
+      <Association Name="tblUser_tblAssetType" Member="tblAssetTypes" ThisKey="UserID" OtherKey="UserID" Type="tblAssetType" />
+      <Association Name="tblUser_tblBranch" Member="tblBranch" ThisKey="UserID" OtherKey="BranchID" Type="tblBranch" Cardinality="One" />
+      <Association Name="tblUser_tblCategory" Member="tblCategories" ThisKey="UserID" OtherKey="UserID" Type="tblCategory" />
+      <Association Name="tblUser_tblDepartment" Member="tblDepartment" ThisKey="UserID" OtherKey="DepartmentID" Type="tblDepartment" Cardinality="One" />
+      <Association Name="tblUser_tblDocumentType" Member="tblDocumentTypes" ThisKey="UserID" OtherKey="UserID" Type="tblDocumentType" />
+      <Association Name="tblUser_tblEmployee" Member="tblEmployees" ThisKey="UserID" OtherKey="AddbyUserID" Type="tblEmployee" />
+      <Association Name="tblUser_tblPosition" Member="tblPositions" ThisKey="UserID" OtherKey="UserID" Type="tblPosition" />
+      <Association Name="tblUser_tblSection" Member="tblSections" ThisKey="UserID" OtherKey="UserID" Type="tblSection" />
+      <Association Name="tblUser_tblmasterlisheader" Member="tblmasterlisheaders" ThisKey="UserID" OtherKey="UserID" Type="tblmasterlisheader" />
+    </Type>
+  </Table>
+  <Table Name="dbo.tblAllocationHeader" Member="tblAllocationHeaders">
+    <Type Name="tblAllocationHeader">
+      <Column Name="ID" Type="System.Int32" DbType="Int NOT NULL IDENTITY" IsPrimaryKey="true" IsDbGenerated="true" CanBeNull="false" />
+      <Column Name="EntryNumber" Type="System.String" DbType="VarChar(MAX)" CanBeNull="true" />
+      <Column Name="Requestor" Type="System.Int32" DbType="Int" CanBeNull="true" />
+      <Column Name="Date" Type="System.DateTime" DbType="DateTime" CanBeNull="true" />
+      <Column Name="RequestID" Type="System.Int32" DbType="Int" CanBeNull="true" />
+    </Type>
+  </Table>
+  <Table Name="dbo.tblAllocationDetail" Member="tblAllocationDetails">
+    <Type Name="tblAllocationDetail">
+      <Column Name="id" Type="System.Int32" DbType="Int NOT NULL IDENTITY" IsPrimaryKey="true" IsDbGenerated="true" CanBeNull="false" />
+      <Column Name="Qty" Type="System.Int32" DbType="Int" CanBeNull="true" />
+      <Column Name="PropertyCode" Type="System.String" DbType="VarChar(MAX)" CanBeNull="true" />
+      <Column Name="HeaderID" Type="System.Int32" DbType="Int" CanBeNull="true" />
+      <Column Name="Employee" Type="System.Int32" DbType="Int" CanBeNull="true" />
+      <Column Name="ItemCode" Type="System.Int32" DbType="Int" CanBeNull="true" />
+    </Type>
+  </Table>
+  <Table Name="dbo.tblmasterlisheader" Member="tblmasterlisheaders">
+    <Type Name="tblmasterlisheader">
+      <Column Name="AssetHeaderID" Type="System.Int32" DbType="Int NOT NULL IDENTITY" IsPrimaryKey="true" IsDbGenerated="true" CanBeNull="false" />
+      <Column Name="UserID" Type="System.Int32" DbType="Int" CanBeNull="true" />
+      <Column Name="EntryNumber" Type="System.String" DbType="VarChar(MAX)" CanBeNull="true" />
+      <Column Name="TransDate" Type="System.DateTime" DbType="Date" CanBeNull="true" />
+      <Column Name="Remarks" Type="System.String" DbType="VarChar(MAX)" CanBeNull="true" />
+      <Association Name="tblUser_tblmasterlisheader" Member="tblUser" ThisKey="UserID" OtherKey="UserID" Type="tblUser" IsForeignKey="true" />
+    </Type>
+  </Table>
+  <Table Name="dbo.tblmasterlistdetail" Member="tblmasterlistdetails">
+    <Type Name="tblmasterlistdetail">
+      <Column Name="ItemID" Type="System.Int32" DbType="Int NOT NULL IDENTITY" IsPrimaryKey="true" IsDbGenerated="true" CanBeNull="false" />
+      <Column Name="ItemCode" Type="System.String" DbType="VarChar(MAX)" CanBeNull="true" />
+      <Column Name="AssetDescription" Type="System.String" DbType="VarChar(MAX)" CanBeNull="true" />
+      <Column Name="CategoryID" Type="System.Int32" DbType="Int" CanBeNull="true" />
+      <Column Name="AssetTypeID" Type="System.Int32" DbType="Int" CanBeNull="true" />
+      <Column Name="DateCreated" Type="System.DateTime" DbType="Date" CanBeNull="true" />
+      <Column Name="DateModified" Type="System.DateTime" DbType="Date" CanBeNull="true" />
+      <Column Name="UserID" Type="System.Int32" DbType="Int" CanBeNull="true" />
+      <Column Name="UserIDModified" Type="System.Int32" DbType="Int" CanBeNull="true" />
+      <Column Name="AssetHeaderID" Type="System.Int32" DbType="Int" CanBeNull="true" />
+      <Association Name="tblmasterlistdetail_tblAssetDetail" Member="tblAssetDetails" ThisKey="ItemID" OtherKey="assetID" Type="tblAssetDetail" />
+      <Association Name="tblmasterlistdetail_tblAssetInventory" Member="tblAssetInventories" ThisKey="ItemID" OtherKey="AssetCode" Type="tblAssetInventory" />
+      <Association Name="tblmasterlistdetail_tblTransferDetail" Member="tblTransferDetails" ThisKey="ItemID" OtherKey="AssetId" Type="tblTransferDetail" />
+    </Type>
+  </Table>
+  <Function Name="dbo.spNewAsset" Method="spNewAsset">
+    <Parameter Name="Description" Parameter="description" Type="System.String" DbType="VarChar(200)" />
+    <Parameter Name="category" Type="System.Int32" DbType="Int" />
+    <Parameter Name="serial" Type="System.String" DbType="VarChar(200)" />
+    <Parameter Name="type" Type="System.Int32" DbType="Int" />
+    <Parameter Name="assetCondition" Type="System.Int32" DbType="Int" />
+    <Parameter Name="dateCreated" Type="System.DateTime" DbType="Date" />
+    <Parameter Name="dateModified" Type="System.DateTime" DbType="Date" />
+    <Parameter Name="userID" Type="System.Int32" DbType="Int" />
+    <Parameter Name="userModified" Type="System.Int32" DbType="Int" />
+    <Return Type="System.Int32" />
+  </Function>
+  <Function Name="dbo.spNewBranch" Method="spNewBranch">
+    <Parameter Name="BranchCode" Parameter="branchCode" Type="System.String" DbType="VarChar(50)" />
+    <Parameter Name="BranchDescription" Parameter="branchDescription" Type="System.String" DbType="VarChar(200)" />
+    <Parameter Name="DateCreated" Parameter="dateCreated" Type="System.DateTime" DbType="Date" />
+    <Parameter Name="DateModified" Parameter="dateModified" Type="System.DateTime" DbType="Date" />
+    <Parameter Name="UserID" Parameter="userID" Type="System.Int32" DbType="Int" />
+    <Parameter Name="UserIDModified" Parameter="userIDModified" Type="System.Int32" DbType="Int" />
+    <Return Type="System.Int32" />
+  </Function>
+  <Function Name="dbo.spNewCategory" Method="spNewCategory">
+    <Parameter Name="CategoryCode" Parameter="categoryCode" Type="System.String" DbType="VarChar(50)" />
+    <Parameter Name="CategoryDescription" Parameter="categoryDescription" Type="System.String" DbType="VarChar(200)" />
+    <Parameter Name="DateCreated" Parameter="dateCreated" Type="System.DateTime" DbType="Date" />
+    <Parameter Name="DateModified" Parameter="dateModified" Type="System.DateTime" DbType="Date" />
+    <Parameter Name="UserID" Parameter="userID" Type="System.Int32" DbType="Int" />
+    <Parameter Name="UserIDModified" Parameter="userIDModified" Type="System.Int32" DbType="Int" />
+    <Return Type="System.Int32" />
+  </Function>
+  <Function Name="dbo.spNewCondition" Method="spNewCondition">
+    <Parameter Name="AssetConditionCode" Parameter="assetConditionCode" Type="System.String" DbType="VarChar(50)" />
+    <Parameter Name="AssetConditionDescription" Parameter="assetConditionDescription" Type="System.String" DbType="VarChar(200)" />
+    <Parameter Name="DateCreated" Parameter="dateCreated" Type="System.DateTime" DbType="Date" />
+    <Parameter Name="DateModified" Parameter="dateModified" Type="System.DateTime" DbType="Date" />
+    <Parameter Name="UserID" Parameter="userID" Type="System.Int32" DbType="Int" />
+    <Parameter Name="UserIDModified" Parameter="userIDModified" Type="System.Int32" DbType="Int" />
+    <Return Type="System.Int32" />
+  </Function>
+  <Function Name="dbo.spNewDocumentType" Method="spNewDocumentType">
+    <Parameter Name="DocumentCode" Parameter="documentCode" Type="System.String" DbType="VarChar(50)" />
+    <Parameter Name="DocumentDescription" Parameter="documentDescription" Type="System.String" DbType="VarChar(200)" />
+    <Parameter Name="DateCreated" Parameter="dateCreated" Type="System.DateTime" DbType="Date" />
+    <Parameter Name="DateModified" Parameter="dateModified" Type="System.DateTime" DbType="Date" />
+    <Parameter Name="UserID" Parameter="userID" Type="System.Int32" DbType="Int" />
+    <Parameter Name="UserIDModified" Parameter="userIDModified" Type="System.Int32" DbType="Int" />
+    <Return Type="System.Int32" />
+  </Function>
+  <Function Name="dbo.spNewPosition" Method="spNewPosition">
+    <Parameter Name="PositionCode" Parameter="positionCode" Type="System.String" DbType="VarChar(50)" />
+    <Parameter Name="PositionDescription" Parameter="positionDescription" Type="System.String" DbType="VarChar(200)" />
+    <Parameter Name="DateCreated" Parameter="dateCreated" Type="System.DateTime" DbType="Date" />
+    <Parameter Name="DateModified" Parameter="dateModified" Type="System.DateTime" DbType="Date" />
+    <Parameter Name="UserID" Parameter="userID" Type="System.Int32" DbType="Int" />
+    <Parameter Name="UserIDModified" Parameter="userIDModified" Type="System.Int32" DbType="Int" />
+    <Return Type="System.Int32" />
+  </Function>
+  <Function Name="dbo.spNewSection" Method="spNewSection">
+    <Parameter Name="SectionCode" Parameter="sectionCode" Type="System.String" DbType="VarChar(50)" />
+    <Parameter Name="SectionDecription" Parameter="sectionDecription" Type="System.String" DbType="VarChar(200)" />
+    <Parameter Name="DateCreated" Parameter="dateCreated" Type="System.DateTime" DbType="Date" />
+    <Parameter Name="DateModified" Parameter="dateModified" Type="System.DateTime" DbType="Date" />
+    <Parameter Name="UserID" Parameter="userID" Type="System.Int32" DbType="Int" />
+    <Parameter Name="UserIDModified" Parameter="userIDModified" Type="System.Int32" DbType="Int" />
+    <Return Type="System.Int32" />
+  </Function>
+  <Function Name="dbo.spNewType" Method="spNewType">
+    <Parameter Name="AssetTypeCode" Parameter="assetTypeCode" Type="System.String" DbType="VarChar(50)" />
+    <Parameter Name="AssetTypeDescription" Parameter="assetTypeDescription" Type="System.String" DbType="VarChar(200)" />
+    <Parameter Name="DateCreated" Parameter="dateCreated" Type="System.DateTime" DbType="Date" />
+    <Parameter Name="DateModified" Parameter="dateModified" Type="System.DateTime" DbType="Date" />
+    <Parameter Name="UserID" Parameter="userID" Type="System.Int32" DbType="Int" />
+    <Parameter Name="UserIDModified" Parameter="userIDModified" Type="System.Int32" DbType="Int" />
+    <Return Type="System.Int32" />
+  </Function>
+  <Function Name="dbo.spNewVendor" Method="spNewVendor">
+    <Parameter Name="VendorCode" Parameter="vendorCode" Type="System.String" DbType="VarChar(50)" />
+    <Parameter Name="VendorDescription" Parameter="vendorDescription" Type="System.String" DbType="VarChar(200)" />
+    <Parameter Name="DateCreated" Parameter="dateCreated" Type="System.DateTime" DbType="Date" />
+    <Parameter Name="DateModified" Parameter="dateModified" Type="System.DateTime" DbType="Date" />
+    <Parameter Name="UserID" Parameter="userID" Type="System.Int32" DbType="Int" />
+    <Parameter Name="UserIDModified" Parameter="userIDModified" Type="System.Int32" DbType="Int" />
+    <Return Type="System.Int32" />
+  </Function>
+  <Function Name="dbo.spUpdateCategory" Method="spUpdateCategory">
+    <Parameter Name="CategoryID" Parameter="categoryID" Type="System.Int32" DbType="Int" />
+    <Parameter Name="CategoryDescription" Parameter="categoryDescription" Type="System.String" DbType="VarChar(200)" />
+    <Parameter Name="DateModified" Parameter="dateModified" Type="System.DateTime" DbType="Date" />
+    <Parameter Name="UserIDModified" Parameter="userIDModified" Type="System.Int32" DbType="Int" />
+    <Parameter Name="CategoryCode" Parameter="categoryCode" Type="System.String" DbType="VarChar(200)" />
+    <ElementType Name="spUpdateCategoryResult">
+      <Column Name="CategoryID" Type="System.Int32" DbType="Int NOT NULL" CanBeNull="false" />
+      <Column Name="CategoryCode" Type="System.String" DbType="VarChar(200)" CanBeNull="true" />
+      <Column Name="CategoryDescription" Type="System.String" DbType="VarChar(200)" CanBeNull="true" />
+      <Column Name="DateCreated" Type="System.DateTime" DbType="Date" CanBeNull="true" />
+      <Column Name="DateModified" Type="System.DateTime" DbType="Date" CanBeNull="true" />
+      <Column Name="UserID" Type="System.Int32" DbType="Int" CanBeNull="true" />
+      <Column Name="UserIDModified" Type="System.Int32" DbType="Int" CanBeNull="true" />
+    </ElementType>
+  </Function>
+  <Function Name="dbo.spUpdateCondition" Method="spUpdateCondition">
+    <Parameter Name="ConditionID" Parameter="conditionID" Type="System.Int32" DbType="Int" />
+    <Parameter Name="ConditionDescription" Parameter="conditionDescription" Type="System.String" DbType="VarChar(200)" />
+    <Parameter Name="DateModified" Parameter="dateModified" Type="System.DateTime" DbType="Date" />
+    <Parameter Name="UserIDModified" Parameter="userIDModified" Type="System.Int32" DbType="Int" />
+    <Parameter Name="ConditionCode" Parameter="conditionCode" Type="System.String" DbType="VarChar(200)" />
+    <Return Type="System.Int32" />
+  </Function>
+  <Function Name="dbo.spUpdateType" Method="spUpdateType">
+    <Parameter Name="AssetTypeID" Parameter="assetTypeID" Type="System.Int32" DbType="Int" />
+    <Parameter Name="AssetTypeCode" Parameter="assetTypeCode" Type="System.String" DbType="VarChar(50)" />
+    <Parameter Name="AssetTypeDescription" Parameter="assetTypeDescription" Type="System.String" DbType="VarChar(200)" />
+    <Parameter Name="DateModified" Parameter="dateModified" Type="System.DateTime" DbType="Date" />
+    <Parameter Name="UserIDModified" Parameter="userIDModified" Type="System.Int32" DbType="Int" />
+    <Return Type="System.Int32" />
+  </Function>
+  <Function Name="dbo.spViewAsset" Method="spViewAsset">
+    <ElementType Name="spViewAssetResult">
+      <Column Name="AssetCode" Type="System.String" DbType="VarChar(200)" CanBeNull="true" />
+      <Column Name="AssetDescription" Type="System.String" DbType="VarChar(200)" CanBeNull="true" />
+      <Column Name="CategoryDescription" Type="System.String" DbType="VarChar(200)" CanBeNull="true" />
+      <Column Name="AssetTypeDescription" Type="System.String" DbType="VarChar(200)" CanBeNull="true" />
+      <Column Name="SerialNumber" Type="System.String" DbType="VarChar(200)" CanBeNull="true" />
+      <Column Name="AssetConditionDescription" Type="System.String" DbType="VarChar(200)" CanBeNull="true" />
+      <Column Name="DateCreated" Type="System.DateTime" DbType="Date" CanBeNull="true" />
+      <Column Name="UserID" Type="System.Int32" DbType="Int" CanBeNull="true" />
+    </ElementType>
+  </Function>
+  <Function Name="dbo.spViewVendor" Method="spViewVendor">
+    <Parameter Name="search" Type="System.String" DbType="VarChar(200)" />
+    <ElementType Name="spViewVendorResult">
+      <Column Name="VendorID" Type="System.Int32" DbType="Int NOT NULL" CanBeNull="false" />
+      <Column Name="VendorCode" Type="System.String" DbType="VarChar(200)" CanBeNull="true" />
+      <Column Name="VendorDescription" Type="System.String" DbType="VarChar(200)" CanBeNull="true" />
+      <Column Name="DateModified" Type="System.DateTime" DbType="Date" CanBeNull="true" />
+    </ElementType>
+  </Function>
+  <Function Name="dbo.spViewBranch" Method="spViewBranch">
+    <Parameter Name="search" Type="System.String" DbType="VarChar(200)" />
+    <ElementType Name="spViewBranchResult">
+      <Column Name="BranchID" Type="System.Int32" DbType="Int NOT NULL" CanBeNull="false" />
+      <Column Name="BranchCode" Type="System.String" DbType="VarChar(200)" CanBeNull="true" />
+      <Column Name="BranchDescription" Type="System.String" DbType="VarChar(200)" CanBeNull="true" />
+      <Column Name="DateModified" Type="System.DateTime" DbType="Date" CanBeNull="true" />
+    </ElementType>
+  </Function>
+  <Function Name="dbo.spViewCategory" Method="spViewCategory">
+    <Parameter Name="search" Type="System.String" DbType="VarChar(200)" />
+    <ElementType Name="spViewCategoryResult">
+      <Column Name="CategoryID" Type="System.Int32" DbType="Int NOT NULL" CanBeNull="false" />
+      <Column Name="CategoryCode" Type="System.String" DbType="VarChar(200)" CanBeNull="true" />
+      <Column Name="CategoryDescription" Type="System.String" DbType="VarChar(200)" CanBeNull="true" />
+      <Column Name="DateModified" Type="System.DateTime" DbType="Date" CanBeNull="true" />
+    </ElementType>
+  </Function>
+  <Function Name="dbo.spViewCondition" Method="spViewCondition">
+    <Parameter Name="search" Type="System.String" DbType="VarChar(200)" />
+    <ElementType Name="spViewConditionResult">
+      <Column Name="AssetConditionID" Type="System.Int32" DbType="Int NOT NULL" CanBeNull="false" />
+      <Column Name="AssetConditionCode" Type="System.String" DbType="VarChar(200)" CanBeNull="true" />
+      <Column Name="AssetConditionDescription" Type="System.String" DbType="VarChar(200)" CanBeNull="true" />
+      <Column Name="DateModified" Type="System.DateTime" DbType="Date" CanBeNull="true" />
+    </ElementType>
+  </Function>
+  <Function Name="dbo.spViewDepartment" Method="spViewDepartment">
+    <Parameter Name="search" Type="System.String" DbType="VarChar(200)" />
+    <ElementType Name="spViewDepartmentResult">
+      <Column Name="DepartmentID" Type="System.Int32" DbType="Int NOT NULL" CanBeNull="false" />
+      <Column Name="DepartmentCode" Type="System.String" DbType="VarChar(200)" CanBeNull="true" />
+      <Column Name="DepartmentDescription" Type="System.String" DbType="VarChar(200)" CanBeNull="true" />
+      <Column Name="DateModified" Type="System.DateTime" DbType="Date" CanBeNull="true" />
+    </ElementType>
+  </Function>
+  <Function Name="dbo.spViewDocumentType" Method="spViewDocumentType">
+    <Parameter Name="search" Type="System.String" DbType="VarChar(200)" />
+    <ElementType Name="spViewDocumentTypeResult">
+      <Column Name="DocumentID" Type="System.Int32" DbType="Int NOT NULL" CanBeNull="false" />
+      <Column Name="DocumentCode" Type="System.String" DbType="VarChar(200)" CanBeNull="true" />
+      <Column Name="DocumentDescription" Type="System.String" DbType="VarChar(200)" CanBeNull="true" />
+      <Column Name="DateModified" Type="System.DateTime" DbType="Date" CanBeNull="true" />
+    </ElementType>
+  </Function>
+  <Function Name="dbo.spViewPosition" Method="spViewPosition">
+    <Parameter Name="search" Type="System.String" DbType="VarChar(200)" />
+    <ElementType Name="spViewPositionResult">
+      <Column Name="PositionID" Type="System.Int32" DbType="Int NOT NULL" CanBeNull="false" />
+      <Column Name="PositionCode" Type="System.String" DbType="VarChar(200)" CanBeNull="true" />
+      <Column Name="PositionDescription" Type="System.String" DbType="VarChar(200)" CanBeNull="true" />
+      <Column Name="DateModified" Type="System.DateTime" DbType="Date" CanBeNull="true" />
+    </ElementType>
+  </Function>
+  <Function Name="dbo.spViewSection" Method="spViewSection">
+    <Parameter Name="search" Type="System.String" DbType="VarChar(200)" />
+    <ElementType Name="spViewSectionResult">
+      <Column Name="SectionID" Type="System.Int32" DbType="Int NOT NULL" CanBeNull="false" />
+      <Column Name="SectionCode" Type="System.String" DbType="VarChar(200)" CanBeNull="true" />
+      <Column Name="SectionDecription" Type="System.String" DbType="VarChar(200)" CanBeNull="true" />
+      <Column Name="DateModified" Type="System.DateTime" DbType="Date" CanBeNull="true" />
+    </ElementType>
+  </Function>
+  <Function Name="dbo.spViewType" Method="spViewType">
+    <Parameter Name="search" Type="System.String" DbType="VarChar(200)" />
+    <ElementType Name="spViewTypeResult">
+      <Column Name="AssetTypeID" Type="System.Int32" DbType="Int NOT NULL" CanBeNull="false" />
+      <Column Name="AssetTypeCode" Type="System.String" DbType="VarChar(200)" CanBeNull="true" />
+      <Column Name="AssetTypeDescription" Type="System.String" DbType="VarChar(200)" CanBeNull="true" />
+      <Column Name="DateCreated" Type="System.DateTime" DbType="Date" CanBeNull="true" />
+    </ElementType>
+  </Function>
+  <Function Name="dbo.spViewData" Method="spViewData">
+    <Parameter Name="OB" Parameter="oB" Type="System.Int32" DbType="Int" />
+    <Parameter Name="Search" Parameter="search" Type="System.String" DbType="VarChar(200)" />
+    <ElementType Name="spViewDataResult">
+      <Column Name="AssetTypeID" Type="System.Int32" DbType="Int NOT NULL" CanBeNull="false" />
+      <Column Name="AssetTypeCode" Type="System.String" DbType="VarChar(200)" CanBeNull="true" />
+      <Column Name="AssetTypeDescription" Type="System.String" DbType="VarChar(200)" CanBeNull="true" />
+      <Column Name="DateCreated" Type="System.DateTime" DbType="Date" CanBeNull="true" />
+    </ElementType>
+  </Function>
+  <Function Name="dbo.spUpdateSection" Method="spUpdateSection">
+    <Parameter Name="SectionID" Parameter="sectionID" Type="System.Int32" DbType="Int" />
+    <Parameter Name="SectionDescription" Parameter="sectionDescription" Type="System.String" DbType="VarChar(200)" />
+    <Parameter Name="DateModified" Parameter="dateModified" Type="System.DateTime" DbType="Date" />
+    <Parameter Name="UserIDModified" Parameter="userIDModified" Type="System.Int32" DbType="Int" />
+    <Parameter Name="SectionCode" Parameter="sectionCode" Type="System.String" DbType="VarChar(200)" />
+    <ElementType Name="spUpdateSectionResult">
+      <Column Name="CategoryID" Type="System.Int32" DbType="Int NOT NULL" CanBeNull="false" />
+      <Column Name="CategoryCode" Type="System.String" DbType="VarChar(200)" CanBeNull="true" />
+      <Column Name="CategoryDescription" Type="System.String" DbType="VarChar(200)" CanBeNull="true" />
+      <Column Name="DateCreated" Type="System.DateTime" DbType="Date" CanBeNull="true" />
+      <Column Name="DateModified" Type="System.DateTime" DbType="Date" CanBeNull="true" />
+      <Column Name="UserID" Type="System.Int32" DbType="Int" CanBeNull="true" />
+      <Column Name="UserIDModified" Type="System.Int32" DbType="Int" CanBeNull="true" />
+    </ElementType>
+  </Function>
+  <Function Name="dbo.spUpdateBranch" Method="spUpdateBranch">
+    <Parameter Name="BranchID" Parameter="branchID" Type="System.Int32" DbType="Int" />
+    <Parameter Name="BranchDescription" Parameter="branchDescription" Type="System.String" DbType="VarChar(200)" />
+    <Parameter Name="DateModified" Parameter="dateModified" Type="System.DateTime" DbType="Date" />
+    <Parameter Name="UserIDModified" Parameter="userIDModified" Type="System.Int32" DbType="Int" />
+    <Parameter Name="BranchCode" Parameter="branchCode" Type="System.String" DbType="VarChar(200)" />
+    <ElementType Name="spUpdateBranchResult">
+      <Column Name="CategoryID" Type="System.Int32" DbType="Int NOT NULL" CanBeNull="false" />
+      <Column Name="CategoryCode" Type="System.String" DbType="VarChar(200)" CanBeNull="true" />
+      <Column Name="CategoryDescription" Type="System.String" DbType="VarChar(200)" CanBeNull="true" />
+      <Column Name="DateCreated" Type="System.DateTime" DbType="Date" CanBeNull="true" />
+      <Column Name="DateModified" Type="System.DateTime" DbType="Date" CanBeNull="true" />
+      <Column Name="UserID" Type="System.Int32" DbType="Int" CanBeNull="true" />
+      <Column Name="UserIDModified" Type="System.Int32" DbType="Int" CanBeNull="true" />
+    </ElementType>
+  </Function>
+  <Function Name="dbo.spUpdatePosition" Method="spUpdatePosition">
+    <Parameter Name="PositionCodeID" Parameter="positionCodeID" Type="System.Int32" DbType="Int" />
+    <Parameter Name="PositionCodeDescription" Parameter="positionCodeDescription" Type="System.String" DbType="VarChar(200)" />
+    <Parameter Name="DateModified" Parameter="dateModified" Type="System.DateTime" DbType="Date" />
+    <Parameter Name="UserIDModified" Parameter="userIDModified" Type="System.Int32" DbType="Int" />
+    <Parameter Name="PositionCode" Parameter="positionCode" Type="System.String" DbType="VarChar(200)" />
+    <Return Type="System.Int32" />
+  </Function>
+  <Function Name="dbo.spUpdateDocType" Method="spUpdateDocType">
+    <Parameter Name="DocumentID" Parameter="documentID" Type="System.Int32" DbType="Int" />
+    <Parameter Name="DocumentDescription" Parameter="documentDescription" Type="System.String" DbType="VarChar(200)" />
+    <Parameter Name="DateModified" Parameter="dateModified" Type="System.DateTime" DbType="Date" />
+    <Parameter Name="UserIDModified" Parameter="userIDModified" Type="System.Int32" DbType="Int" />
+    <Parameter Name="DocumentCode" Parameter="documentCode" Type="System.String" DbType="VarChar(200)" />
+    <Return Type="System.Int32" />
+  </Function>
+  <Function Name="dbo.spUpdateVendor" Method="spUpdateVendor">
+    <Parameter Name="VendorID" Parameter="vendorID" Type="System.Int32" DbType="Int" />
+    <Parameter Name="VendorDescription" Parameter="vendorDescription" Type="System.String" DbType="VarChar(200)" />
+    <Parameter Name="DateModified" Parameter="dateModified" Type="System.DateTime" DbType="Date" />
+    <Parameter Name="UserIDModified" Parameter="userIDModified" Type="System.Int32" DbType="Int" />
+    <Parameter Name="VendorCode" Parameter="vendorCode" Type="System.String" DbType="VarChar(200)" />
+    <ElementType Name="spUpdateVendorResult">
+      <Column Name="CategoryID" Type="System.Int32" DbType="Int NOT NULL" CanBeNull="false" />
+      <Column Name="CategoryCode" Type="System.String" DbType="VarChar(200)" CanBeNull="true" />
+      <Column Name="CategoryDescription" Type="System.String" DbType="VarChar(200)" CanBeNull="true" />
+      <Column Name="DateCreated" Type="System.DateTime" DbType="Date" CanBeNull="true" />
+      <Column Name="DateModified" Type="System.DateTime" DbType="Date" CanBeNull="true" />
+      <Column Name="UserID" Type="System.Int32" DbType="Int" CanBeNull="true" />
+      <Column Name="UserIDModified" Type="System.Int32" DbType="Int" CanBeNull="true" />
+    </ElementType>
+  </Function>
+  <Function Name="dbo.spViewUser" Method="spViewUser">
+    <ElementType Name="spViewUserResult">
+      <Column Name="UserID" Type="System.Int32" DbType="Int NOT NULL" CanBeNull="false" />
+      <Column Name="" Member="Column1" Type="System.String" DbType="VarChar(401)" CanBeNull="true" />
+      <Column Name="PositionDescription" Type="System.String" DbType="VarChar(200)" CanBeNull="true" />
+      <Column Name="Status" Type="System.Int32" DbType="Int" CanBeNull="true" />
+    </ElementType>
+  </Function>
+  <Function Name="dbo.spUpdateUser" Method="spUpdateUser">
+    <Parameter Name="UserID" Parameter="userID" Type="System.Int32" DbType="Int" />
+    <Parameter Name="Pass" Parameter="pass" Type="System.String" DbType="VarChar(200)" />
+    <Return Type="System.Int32" />
+  </Function>
+  <Function Name="dbo.spViewAllocatedItems" Method="spViewAllocatedItems">
+    <Parameter Name="search" Type="System.String" DbType="VarChar(MAX)" />
+    <ElementType Name="spViewAllocatedItemsResult">
+      <Column Name="Owner" Type="System.Int32" DbType="Int" CanBeNull="true" />
+      <Column Name="employeename" Type="System.String" DbType="VarChar(401)" CanBeNull="true" />
+      <Column Name="COUNT" Type="System.Int32" DbType="Int" CanBeNull="true" />
+      <Column Name="BranchDescription" Type="System.String" DbType="VarChar(200)" CanBeNull="true" />
+      <Column Name="DepartmentDescription" Type="System.String" DbType="VarChar(200)" CanBeNull="true" />
+      <Column Name="SectionDecription" Type="System.String" DbType="VarChar(200)" CanBeNull="true" />
+    </ElementType>
+  </Function>
+  <Function Name="dbo.spViewArequest" Method="spViewArequest">
+    <Parameter Name="headerid" Type="System.Int32" DbType="Int" />
+    <ElementType Name="spViewArequestResult">
+      <Column Name="AssetCode" Type="System.String" DbType="VarChar(MAX)" CanBeNull="true" />
+      <Column Name="AssetDescription" Type="System.String" DbType="VarChar(200)" CanBeNull="true" />
+      <Column Name="blank1" Type="System.String" DbType="VarChar(1) NOT NULL" CanBeNull="false" />
+      <Column Name="blank2" Type="System.String" DbType="VarChar(1) NOT NULL" CanBeNull="false" />
+      <Column Name="qty" Type="System.Double" DbType="Float" CanBeNull="true" />
+      <Column Name="AssetID" Type="System.Int32" DbType="Int NOT NULL" CanBeNull="false" />
+    </ElementType>
+  </Function>
+  <Function Name="dbo.spNewDepartment" Method="spNewDepartment">
+    <Parameter Name="DepartmentCode" Parameter="departmentCode" Type="System.String" DbType="VarChar(50)" />
+    <Parameter Name="DepartmentDescription" Parameter="departmentDescription" Type="System.String" DbType="VarChar(200)" />
+    <Parameter Name="DateCreated" Parameter="dateCreated" Type="System.DateTime" DbType="Date" />
+    <Parameter Name="DateModified" Parameter="dateModified" Type="System.DateTime" DbType="Date" />
+    <Parameter Name="UserID" Parameter="userID" Type="System.Int32" DbType="Int" />
+    <Parameter Name="UserIDModified" Parameter="userIDModified" Type="System.Int32" DbType="Int" />
+    <Parameter Name="loc" Type="System.String" DbType="VarChar(200)" />
+    <Return Type="System.Int32" />
+  </Function>
+  <Function Name="dbo.spUpdateDepartment" Method="spUpdateDepartment">
+    <Parameter Name="DepartmentID" Parameter="departmentID" Type="System.Int32" DbType="Int" />
+    <Parameter Name="DepartmentDescription" Parameter="departmentDescription" Type="System.String" DbType="VarChar(200)" />
+    <Parameter Name="DateModified" Parameter="dateModified" Type="System.DateTime" DbType="Date" />
+    <Parameter Name="UserIDModified" Parameter="userIDModified" Type="System.Int32" DbType="Int" />
+    <Parameter Name="DepartmentCode" Parameter="departmentCode" Type="System.String" DbType="VarChar(200)" />
+    <Parameter Name="loc" Type="System.String" DbType="VarChar(200)" />
+    <Return Type="System.Int32" />
+  </Function>
+  <Function Name="dbo.spUpdateEmployee" Method="spUpdateEmployee">
+    <Parameter Name="E0" Parameter="e0" Type="System.Int32" DbType="Int" />
+    <Parameter Name="E1" Parameter="e1" Type="System.String" DbType="VarChar(200)" />
+    <Parameter Name="E2" Parameter="e2" Type="System.String" DbType="VarChar(200)" />
+    <Parameter Name="E3" Parameter="e3" Type="System.Int32" DbType="Int" />
+    <Parameter Name="E4" Parameter="e4" Type="System.Int32" DbType="Int" />
+    <Parameter Name="E5" Parameter="e5" Type="System.Int32" DbType="Int" />
+    <Parameter Name="E6" Parameter="e6" Type="System.Int32" DbType="Int" />
+    <Parameter Name="E7" Parameter="e7" Type="System.Int32" DbType="Int" />
+    <Parameter Name="E8" Parameter="e8" Type="System.String" DbType="VarChar(200)" />
+    <Return Type="System.Int32" />
+  </Function>
+  <Function Name="dbo.spViewEmployee" Method="spViewEmployee">
+    <Parameter Name="search" Type="System.String" DbType="VarChar(200)" />
+    <Parameter Name="bra" Type="System.String" DbType="VarChar(200)" />
+    <Parameter Name="Dep" Parameter="dep" Type="System.String" DbType="VarChar(200)" />
+    <Parameter Name="pos" Type="System.String" DbType="VarChar(200)" />
+    <Parameter Name="sec" Type="System.String" DbType="VarChar(200)" />
+    <ElementType Name="spViewEmployeeResult">
+      <Column Name="EmployeeID" Type="System.Int32" DbType="Int NOT NULL" CanBeNull="false" />
+      <Column Name="FirstName" Type="System.String" DbType="VarChar(200)" CanBeNull="true" />
+      <Column Name="LastName" Type="System.String" DbType="VarChar(200)" CanBeNull="true" />
+      <Column Name="DEPARTMENT" Type="System.String" DbType="VarChar(200)" CanBeNull="true" />
+      <Column Name="BRANCH" Type="System.String" DbType="VarChar(200)" CanBeNull="true" />
+      <Column Name="SECTION" Type="System.String" DbType="VarChar(200)" CanBeNull="true" />
+      <Column Name="POSITION" Type="System.String" DbType="VarChar(200)" CanBeNull="true" />
+      <Column Name="MANAGER" Type="System.String" DbType="VarChar(602) NOT NULL" CanBeNull="false" />
+      <Column Name="COMPANY" Type="System.String" DbType="VarChar(200)" CanBeNull="true" />
+      <Column Name="[DATE ADDED]" Member="DATE_ADDED" Type="System.DateTime" DbType="Date" CanBeNull="true" />
+    </ElementType>
+  </Function>
+  <Function Name="dbo.spViewInventory" Method="spViewInventory">
+    <ElementType Name="spViewInventoryResult">
+      <Column Name="AssetCode" Type="System.Int32" DbType="Int" CanBeNull="true" />
+      <Column Name="Class" Type="System.String" DbType="VarChar(MAX)" CanBeNull="true" />
+      <Column Name="qty" Type="System.Double" DbType="Float" CanBeNull="true" />
+    </ElementType>
+  </Function>
+  <Function Name="dbo.ShowAssetAvailability" Method="ShowAssetAvailability">
+    <Parameter Name="headerid" Type="System.Int32" DbType="Int" />
+    <ElementType Name="ShowAssetAvailabilityResult">
+      <Column Name="id" Type="System.Int32" DbType="Int NOT NULL" CanBeNull="false" />
+      <Column Name="AssetCode" Type="System.Int32" DbType="Int" CanBeNull="true" />
+      <Column Name="Class" Type="System.String" DbType="VarChar(MAX)" CanBeNull="true" />
+      <Column Name="name" Type="System.String" DbType="VarChar(401)" CanBeNull="true" />
+      <Column Name="Qty" Type="System.Double" DbType="Float" CanBeNull="true" />
+      <Column Name="Remarks" Type="System.String" DbType="VarChar(MAX)" CanBeNull="true" />
+      <Column Name="State" Type="System.String" DbType="VarChar(MAX)" CanBeNull="true" />
+      <Column Name="vqty" Type="System.Int32" DbType="Int" CanBeNull="true" />
+    </ElementType>
+  </Function>
+  <Function Name="dbo.ShowAssetAvailability2" Method="ShowAssetAvailability2">
+    <Parameter Name="headerid" Type="System.Int32" DbType="Int" />
+    <ElementType Name="ShowAssetAvailability2Result">
+      <Column Name="id" Type="System.Int32" DbType="Int NOT NULL" CanBeNull="false" />
+      <Column Name="AssetCode" Type="System.Int32" DbType="Int" CanBeNull="true" />
+      <Column Name="Class" Type="System.String" DbType="VarChar(MAX)" CanBeNull="true" />
+      <Column Name="name" Type="System.String" DbType="VarChar(401)" CanBeNull="true" />
+      <Column Name="Qty" Type="System.Double" DbType="Float" CanBeNull="true" />
+      <Column Name="Remarks" Type="System.String" DbType="VarChar(MAX)" CanBeNull="true" />
+      <Column Name="State" Type="System.String" DbType="VarChar(MAX)" CanBeNull="true" />
+      <Column Name="vqty" Type="System.Int32" DbType="Int" CanBeNull="true" />
+      <Column Name="Owner" Type="System.Int32" DbType="Int" CanBeNull="true" />
+    </ElementType>
+  </Function>
+</Database>

@@ -1,0 +1,10 @@
+﻿[*.vb]
+
+# BC42016: Implicit conversion
+dotnet_diagnostic.BC42016.severity = none
+
+# Default severity for all analyzer diagnostics
+dotnet_analyzer_diagnostic.severity = silent
+
+# BC42105: Function doesn't return a value on all code paths
+dotnet_diagnostic.BC42105.severity = none

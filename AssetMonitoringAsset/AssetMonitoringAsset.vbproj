@@ -1,0 +1,693 @@
+﻿<Project ToolsVersion="4.0" DefaultTargets="Build" xmlns="http://schemas.microsoft.com/developer/msbuild/2003">
+  <PropertyGroup>
+    <Configuration Condition=" '$(Configuration)' == '' ">Debug</Configuration>
+    <Platform Condition=" '$(Platform)' == '' ">x86</Platform>
+    <ProductVersion>8.0.30703</ProductVersion>
+    <SchemaVersion>2.0</SchemaVersion>
+    <ProjectGuid>{F17F70AB-D1CC-41F0-99D7-47B25F3B65D7}</ProjectGuid>
+    <OutputType>WinExe</OutputType>
+    <RootNamespace>AssetMonitoringAsset</RootNamespace>
+    <AssemblyName>AssetMonitoringAsset</AssemblyName>
+    <TargetFrameworkVersion>v4.7.2</TargetFrameworkVersion>
+    <FileAlignment>512</FileAlignment>
+    <OptionExplicit>On</OptionExplicit>
+    <OptionCompare>Binary</OptionCompare>
+    <OptionStrict>Off</OptionStrict>
+    <OptionInfer>On</OptionInfer>
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Debug|AnyCPU' ">
+    <PlatformTarget>AnyCPU</PlatformTarget>
+    <DebugSymbols>true</DebugSymbols>
+    <DebugType>full</DebugType>
+    <Optimize>false</Optimize>
+    <OutputPath>bin\Debug\</OutputPath>
+    <DefineDebug>true</DefineDebug>
+    <DefineTrace>true</DefineTrace>
+    <ErrorReport>prompt</ErrorReport>
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Release|AnyCPU' ">
+    <PlatformTarget>AnyCPU</PlatformTarget>
+    <DebugType>pdbonly</DebugType>
+    <Optimize>true</Optimize>
+    <OutputPath>bin\Release\</OutputPath>
+    <DefineDebug>false</DefineDebug>
+    <DefineTrace>true</DefineTrace>
+    <ErrorReport>prompt</ErrorReport>
+  </PropertyGroup>
+  <PropertyGroup>
+    <MyType>WindowsForms</MyType>
+  </PropertyGroup>
+  <PropertyGroup>
+    <StartupObject>AssetMonitoringAsset.My.MyApplication</StartupObject>
+  </PropertyGroup>
+  <PropertyGroup>
+    <ApplicationIcon>Connection and Module\completed-task.ico</ApplicationIcon>
+  </PropertyGroup>
+  <ItemGroup>
+    <Reference Include="DevExpress.BonusSkins.v21.2" />
+    <Reference Include="DevExpress.Data.v21.2" />
+    <Reference Include="DevExpress.Data.Desktop.v21.2" />
+    <Reference Include="DevExpress.SpellChecker.v21.2.Core, Version=21.2.5.0, Culture=neutral, PublicKeyToken=b88d1754d700e49a" />
+    <Reference Include="DevExpress.Utils.v21.2" />
+    <Reference Include="DevExpress.Sparkline.v21.2.Core" />
+    <Reference Include="DevExpress.XtraBars.v21.2, Version=21.2.5.0, Culture=neutral, PublicKeyToken=b88d1754d700e49a, processorArchitecture=MSIL" />
+    <Reference Include="DevExpress.XtraEditors.v21.2" />
+    <Reference Include="DevExpress.Printing.v21.2.Core" />
+    <Reference Include="DevExpress.XtraSpellChecker.v21.2, Version=21.2.5.0, Culture=neutral, PublicKeyToken=b88d1754d700e49a, processorArchitecture=MSIL" />
+    <Reference Include="EPPlus, Version=7.0.4.0, Culture=neutral, PublicKeyToken=ea159fdaa78159a1, processorArchitecture=MSIL">
+      <HintPath>..\packages\EPPlus.7.0.4\lib\net462\EPPlus.dll</HintPath>
+    </Reference>
+    <Reference Include="EPPlus.Interfaces, Version=6.1.1.0, Culture=neutral, PublicKeyToken=a694d7f3b0907a61, processorArchitecture=MSIL">
+      <HintPath>..\packages\EPPlus.Interfaces.6.1.1\lib\net462\EPPlus.Interfaces.dll</HintPath>
+    </Reference>
+    <Reference Include="EPPlus.System.Drawing, Version=6.1.1.0, Culture=neutral, PublicKeyToken=2308d35469c9bac0, processorArchitecture=MSIL">
+      <HintPath>..\packages\EPPlus.System.Drawing.6.1.1\lib\net462\EPPlus.System.Drawing.dll</HintPath>
+    </Reference>
+    <Reference Include="Microsoft.IO.RecyclableMemoryStream, Version=1.4.1.0, Culture=neutral, PublicKeyToken=31bf3856ad364e35, processorArchitecture=MSIL">
+      <HintPath>..\packages\Microsoft.IO.RecyclableMemoryStream.1.4.1\lib\net46\Microsoft.IO.RecyclableMemoryStream.dll</HintPath>
+    </Reference>
+    <Reference Include="Microsoft.ReportViewer.Common, Version=15.0.0.0, Culture=neutral, PublicKeyToken=89845dcd8080cc91, processorArchitecture=MSIL">
+      <HintPath>..\packages\Microsoft.ReportingServices.ReportViewerControl.Winforms.150.1586.0\lib\net40\Microsoft.ReportViewer.Common.dll</HintPath>
+    </Reference>
+    <Reference Include="Microsoft.ReportViewer.DataVisualization, Version=15.0.0.0, Culture=neutral, PublicKeyToken=89845dcd8080cc91, processorArchitecture=MSIL">
+      <HintPath>..\packages\Microsoft.ReportingServices.ReportViewerControl.Winforms.150.1586.0\lib\net40\Microsoft.ReportViewer.DataVisualization.dll</HintPath>
+    </Reference>
+    <Reference Include="Microsoft.ReportViewer.Design, Version=15.0.0.0, Culture=neutral, PublicKeyToken=89845dcd8080cc91, processorArchitecture=MSIL">
+      <HintPath>..\packages\Microsoft.ReportingServices.ReportViewerControl.Winforms.150.1586.0\lib\net40\Microsoft.ReportViewer.Design.dll</HintPath>
+    </Reference>
+    <Reference Include="Microsoft.ReportViewer.ProcessingObjectModel, Version=15.0.0.0, Culture=neutral, PublicKeyToken=89845dcd8080cc91, processorArchitecture=MSIL">
+      <HintPath>..\packages\Microsoft.ReportingServices.ReportViewerControl.Winforms.150.1586.0\lib\net40\Microsoft.ReportViewer.ProcessingObjectModel.dll</HintPath>
+    </Reference>
+    <Reference Include="Microsoft.ReportViewer.WinForms, Version=15.0.0.0, Culture=neutral, PublicKeyToken=89845dcd8080cc91, processorArchitecture=MSIL">
+      <HintPath>..\packages\Microsoft.ReportingServices.ReportViewerControl.Winforms.150.1586.0\lib\net40\Microsoft.ReportViewer.WinForms.dll</HintPath>
+    </Reference>
+    <Reference Include="Microsoft.SqlServer.Types, Version=14.0.0.0, Culture=neutral, PublicKeyToken=89845dcd8080cc91, processorArchitecture=MSIL">
+      <HintPath>..\packages\Microsoft.SqlServer.Types.14.0.314.76\lib\net40\Microsoft.SqlServer.Types.dll</HintPath>
+    </Reference>
+    <Reference Include="PresentationCore" />
+    <Reference Include="System" />
+    <Reference Include="System.ComponentModel.Annotations, Version=4.2.1.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a, processorArchitecture=MSIL">
+      <HintPath>..\packages\System.ComponentModel.Annotations.5.0.0\lib\net461\System.ComponentModel.Annotations.dll</HintPath>
+    </Reference>
+    <Reference Include="System.ComponentModel.DataAnnotations" />
+    <Reference Include="System.configuration" />
+    <Reference Include="System.Core" />
+    <Reference Include="System.Data.Linq" />
+    <Reference Include="System.Security" />
+    <Reference Include="System.Threading.Tasks" />
+    <Reference Include="System.Xml.Linq" />
+    <Reference Include="System.Data.DataSetExtensions" />
+    <Reference Include="Microsoft.CSharp" />
+    <Reference Include="System.Data" />
+    <Reference Include="System.Deployment" />
+    <Reference Include="System.Drawing" />
+    <Reference Include="System.Windows.Forms" />
+    <Reference Include="System.Xml" />
+  </ItemGroup>
+  <ItemGroup>
+    <Import Include="Microsoft.VisualBasic" />
+    <Import Include="System.Collections.Generic" />
+    <Import Include="System.Diagnostics" />
+    <Import Include="System.Data" />
+    <Import Include="System.Drawing" />
+    <Import Include="System.Windows.Forms" />
+    <Import Include="System.Linq" />
+    <Import Include="System.Xml.Linq" />
+    <Import Include="System" />
+  </ItemGroup>
+  <ItemGroup>
+    <Compile Include="Connection and Module\AMSdbDataSet.Designer.vb">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>AMSdbDataSet.xsd</DependentUpon>
+    </Compile>
+    <Compile Include="OLD_FORMS_AND_CLASS\Class\RequestDetailClass.vb" />
+    <Compile Include="OLD_FORMS_AND_CLASS\Class\RequestHeaderClass.vb" />
+    <Compile Include="OLD_FORMS_AND_CLASS\Class\AssetDetailClass.vb" />
+    <Compile Include="OLD_FORMS_AND_CLASS\Class\AssetHeaderClass.vb" />
+    <Compile Include="OLD_FORMS_AND_CLASS\Class\BranchClass.vb" />
+    <Compile Include="OLD_FORMS_AND_CLASS\Class\InventoryClass.vb" />
+    <Compile Include="OLD_FORMS_AND_CLASS\Class\MasterdataDetailsClass.vb" />
+    <Compile Include="OLD_FORMS_AND_CLASS\Class\MasterdataHeaderClass.vb" />
+    <Compile Include="OLD_FORMS_AND_CLASS\Class\CategoryClass.vb" />
+    <Compile Include="OLD_FORMS_AND_CLASS\Class\ConditionClass.vb" />
+    <Compile Include="OLD_FORMS_AND_CLASS\Class\DepartmentClass.vb" />
+    <Compile Include="OLD_FORMS_AND_CLASS\Class\DocTypeClass.vb" />
+    <Compile Include="OLD_FORMS_AND_CLASS\Class\EmployeeClass.vb" />
+    <Compile Include="OLD_FORMS_AND_CLASS\Class\PositionClass.vb" />
+    <Compile Include="OLD_FORMS_AND_CLASS\Class\ReferenceClass.vb" />
+    <Compile Include="OLD_FORMS_AND_CLASS\Class\SectionClass.vb" />
+    <Compile Include="OLD_FORMS_AND_CLASS\Class\TransferHeaderClass.vb" />
+    <Compile Include="OLD_FORMS_AND_CLASS\Class\TypeClass.vb" />
+    <Compile Include="OLD_FORMS_AND_CLASS\Class\UserClass.vb" />
+    <Compile Include="OLD_FORMS_AND_CLASS\Class\VendorClass.vb" />
+    <Compile Include="Connection and Module\DataClasses1.designer.vb">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>DataClasses1.dbml</DependentUpon>
+    </Compile>
+    <Compile Include="Forms\2.%29 Asset_Management\2.%29 Movement\1.%29 Assignment\Assignment1.Designer.vb">
+      <DependentUpon>Assignment1.vb</DependentUpon>
+    </Compile>
+    <Compile Include="Forms\2.%29 Asset_Management\2.%29 Movement\1.%29 Assignment\Assignment1.vb">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Forms\2.%29 Asset_Management\1.%29 Request\Creating Request\date1.Designer.vb">
+      <DependentUpon>date1.vb</DependentUpon>
+    </Compile>
+    <Compile Include="Forms\2.%29 Asset_Management\1.%29 Request\Creating Request\date1.vb">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Forms\2.%29 Asset_Management\1.%29 Request\Creating Request\empllist.Designer.vb">
+      <DependentUpon>empllist.vb</DependentUpon>
+    </Compile>
+    <Compile Include="Forms\2.%29 Asset_Management\1.%29 Request\Creating Request\empllist.vb">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Forms\2.%29 Asset_Management\1.%29 Request\For Approval\ChngState.Designer.vb">
+      <DependentUpon>ChngState.vb</DependentUpon>
+    </Compile>
+    <Compile Include="Forms\2.%29 Asset_Management\1.%29 Request\For Approval\ChngState.vb">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Forms\2.%29 Asset_Management\1.%29 Request\For Approval\Rqregister.Designer.vb">
+      <DependentUpon>Rqregister.vb</DependentUpon>
+    </Compile>
+    <Compile Include="Forms\2.%29 Asset_Management\1.%29 Request\For Approval\Rqregister.vb">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Forms\2.%29 Asset_Management\1.%29 Request\Creating Request\Request.Designer.vb">
+      <DependentUpon>Request.vb</DependentUpon>
+    </Compile>
+    <Compile Include="Forms\2.%29 Asset_Management\1.%29 Request\Creating Request\Request.vb">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Forms\4.%29 List\AssetList\AssetList3.Designer.vb">
+      <DependentUpon>AssetList3.vb</DependentUpon>
+    </Compile>
+    <Compile Include="Forms\4.%29 List\AssetList\AssetList3.vb">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Forms\2.%29 Asset_Management\1.%29 Request\For Approval\RequestRegister.Designer.vb">
+      <DependentUpon>RequestRegister.vb</DependentUpon>
+    </Compile>
+    <Compile Include="Forms\2.%29 Asset_Management\1.%29 Request\For Approval\RequestRegister.vb">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Forms\3.%29 Asset\Build Asset\BuildAsset\BuildAsset.Designer.vb">
+      <DependentUpon>BuildAsset.vb</DependentUpon>
+    </Compile>
+    <Compile Include="Forms\3.%29 Asset\Build Asset\BuildAsset\BuildAsset.vb">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Forms\3.%29 Asset\Build Asset\BuildAsset\ReferenceList.Designer.vb">
+      <DependentUpon>ReferenceList.vb</DependentUpon>
+    </Compile>
+    <Compile Include="Forms\3.%29 Asset\Build Asset\BuildAsset\ReferenceList.vb">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Forms\3.%29 Asset\Build Asset\register\BuildRegisterDetail.Designer.vb">
+      <DependentUpon>BuildRegisterDetail.vb</DependentUpon>
+    </Compile>
+    <Compile Include="Forms\3.%29 Asset\Build Asset\register\BuildRegisterDetail.vb">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Forms\3.%29 Asset\Build Asset\register\NewAssetRegister.Designer.vb">
+      <DependentUpon>NewAssetRegister.vb</DependentUpon>
+    </Compile>
+    <Compile Include="Forms\3.%29 Asset\Build Asset\register\NewAssetRegister.vb">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Forms\1.%29 Asset_Inquiry\Inventory\Details.Designer.vb">
+      <DependentUpon>Details.vb</DependentUpon>
+    </Compile>
+    <Compile Include="Forms\1.%29 Asset_Inquiry\Inventory\Details.vb">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Forms\1.%29 Asset_Inquiry\Inventory\InventoryList.Designer.vb">
+      <DependentUpon>InventoryList.vb</DependentUpon>
+    </Compile>
+    <Compile Include="Forms\1.%29 Asset_Inquiry\Inventory\InventoryList.vb">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Forms\3.%29 Asset\MasterData\masterdatalist\MasterDataList.Designer.vb">
+      <DependentUpon>MasterDataList.vb</DependentUpon>
+    </Compile>
+    <Compile Include="Forms\3.%29 Asset\MasterData\masterdatalist\MasterDataList.vb">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Forms\3.%29 Asset\Build Asset\BuildAsset\NACondition.Designer.vb">
+      <DependentUpon>NACondition.vb</DependentUpon>
+    </Compile>
+    <Compile Include="Forms\3.%29 Asset\Build Asset\BuildAsset\NACondition.vb">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Forms\3.%29 Asset\MasterData\New Asset Masterdata\NATypeh.Designer.vb">
+      <DependentUpon>NATypeh.vb</DependentUpon>
+    </Compile>
+    <Compile Include="Forms\3.%29 Asset\MasterData\New Asset Masterdata\NATypeh.vb">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Forms\3.%29 Asset\MasterData\New Asset Masterdata\NAcategory.Designer.vb">
+      <DependentUpon>NAcategory.vb</DependentUpon>
+    </Compile>
+    <Compile Include="Forms\3.%29 Asset\MasterData\New Asset Masterdata\NAcategory.vb">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Forms\3.%29 Asset\MasterData\New Asset Masterdata\NewAsset.Designer.vb">
+      <DependentUpon>NewAsset.vb</DependentUpon>
+    </Compile>
+    <Compile Include="Forms\3.%29 Asset\MasterData\New Asset Masterdata\NewAsset.vb">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Forms\7.%29 Importation\Build Asset\importmasterlist.Designer.vb">
+      <DependentUpon>importmasterlist.vb</DependentUpon>
+    </Compile>
+    <Compile Include="Forms\7.%29 Importation\Build Asset\importmasterlist.vb">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Forms\LoginForm\Login.Designer.vb">
+      <DependentUpon>Login.vb</DependentUpon>
+    </Compile>
+    <Compile Include="Forms\LoginForm\Login.vb">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Forms\6.%29 Setup\AssetBranch\AssetBranch.Designer.vb">
+      <DependentUpon>AssetBranch.vb</DependentUpon>
+    </Compile>
+    <Compile Include="Forms\6.%29 Setup\AssetBranch\AssetBranch.vb">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Forms\6.%29 Setup\AssetBranch\AssetBranchAddandUpdate1.Designer.vb">
+      <DependentUpon>AssetBranchAddandUpdate1.vb</DependentUpon>
+    </Compile>
+    <Compile Include="Forms\6.%29 Setup\AssetBranch\AssetBranchAddandUpdate1.vb">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Forms\6.%29 Setup\AssetCategory\AssetCategory.Designer.vb">
+      <DependentUpon>AssetCategory.vb</DependentUpon>
+    </Compile>
+    <Compile Include="Forms\6.%29 Setup\AssetCategory\AssetCategory.vb">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Forms\6.%29 Setup\AssetCategory\AssetCategoryAddandUpdate1.Designer.vb">
+      <DependentUpon>AssetCategoryAddandUpdate1.vb</DependentUpon>
+    </Compile>
+    <Compile Include="Forms\6.%29 Setup\AssetCategory\AssetCategoryAddandUpdate1.vb">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Forms\6.%29 Setup\AssetCondition\AssetConditionAddandUpdate.Designer.vb">
+      <DependentUpon>AssetConditionAddandUpdate.vb</DependentUpon>
+    </Compile>
+    <Compile Include="Forms\6.%29 Setup\AssetCondition\AssetConditionAddandUpdate.vb">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Forms\6.%29 Setup\AssetCondition\AssetCondition.Designer.vb">
+      <DependentUpon>AssetCondition.vb</DependentUpon>
+    </Compile>
+    <Compile Include="Forms\6.%29 Setup\AssetCondition\AssetCondition.vb">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Forms\6.%29 Setup\AssetDepartment\AssetDepartment.Designer.vb">
+      <DependentUpon>AssetDepartment.vb</DependentUpon>
+    </Compile>
+    <Compile Include="Forms\6.%29 Setup\AssetDepartment\AssetDepartment.vb">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Forms\6.%29 Setup\AssetDepartment\AssetDepartmentAddandUpdate.Designer.vb">
+      <DependentUpon>AssetDepartmentAddandUpdate.vb</DependentUpon>
+    </Compile>
+    <Compile Include="Forms\6.%29 Setup\AssetDepartment\AssetDepartmentAddandUpdate.vb">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Forms\6.%29 Setup\AssetDocumentType\AssetDocTypeAddandUpdate.Designer.vb">
+      <DependentUpon>AssetDocTypeAddandUpdate.vb</DependentUpon>
+    </Compile>
+    <Compile Include="Forms\6.%29 Setup\AssetDocumentType\AssetDocTypeAddandUpdate.vb">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Forms\6.%29 Setup\AssetDocumentType\AssetDocumentType.Designer.vb">
+      <DependentUpon>AssetDocumentType.vb</DependentUpon>
+    </Compile>
+    <Compile Include="Forms\6.%29 Setup\AssetDocumentType\AssetDocumentType.vb">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Forms\6.%29 Setup\AssetPosition\AssetPositionAddandUpdate.Designer.vb">
+      <DependentUpon>AssetPositionAddandUpdate.vb</DependentUpon>
+    </Compile>
+    <Compile Include="Forms\6.%29 Setup\AssetPosition\AssetPositionAddandUpdate.vb">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Forms\6.%29 Setup\AssetPosition\AssetPosition.Designer.vb">
+      <DependentUpon>AssetPosition.vb</DependentUpon>
+    </Compile>
+    <Compile Include="Forms\6.%29 Setup\AssetPosition\AssetPosition.vb">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Forms\6.%29 Setup\AssetSection\AssetSection.Designer.vb">
+      <DependentUpon>AssetSection.vb</DependentUpon>
+    </Compile>
+    <Compile Include="Forms\6.%29 Setup\AssetSection\AssetSection.vb">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Forms\6.%29 Setup\AssetSection\AssetSectionAddandUpdate1.Designer.vb">
+      <DependentUpon>AssetSectionAddandUpdate1.vb</DependentUpon>
+    </Compile>
+    <Compile Include="Forms\6.%29 Setup\AssetSection\AssetSectionAddandUpdate1.vb">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Forms\6.%29 Setup\AssetType\AssetType.Designer.vb">
+      <DependentUpon>AssetType.vb</DependentUpon>
+    </Compile>
+    <Compile Include="Forms\6.%29 Setup\AssetType\AssetType.vb">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Forms\6.%29 Setup\AssetType\AssetTypeAddandUpdate.Designer.vb">
+      <DependentUpon>AssetTypeAddandUpdate.vb</DependentUpon>
+    </Compile>
+    <Compile Include="Forms\6.%29 Setup\AssetType\AssetTypeAddandUpdate.vb">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Forms\Home.Designer.vb">
+      <DependentUpon>Home.vb</DependentUpon>
+    </Compile>
+    <Compile Include="Forms\Home.vb">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Forms\6.%29 Setup\Employee\Employee.Designer.vb">
+      <DependentUpon>Employee.vb</DependentUpon>
+    </Compile>
+    <Compile Include="Forms\6.%29 Setup\Employee\Employee.vb">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Forms\6.%29 Setup\Employee\EmployeeAddandUpdate.Designer.vb">
+      <DependentUpon>EmployeeAddandUpdate.vb</DependentUpon>
+    </Compile>
+    <Compile Include="Forms\6.%29 Setup\Employee\EmployeeAddandUpdate.vb">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Forms\6.%29 Setup\Reference\Reference.Designer.vb">
+      <DependentUpon>Reference.vb</DependentUpon>
+    </Compile>
+    <Compile Include="Forms\6.%29 Setup\Reference\Reference.vb">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Forms\6.%29 Setup\User\EmployeeList.Designer.vb">
+      <DependentUpon>EmployeeList.vb</DependentUpon>
+    </Compile>
+    <Compile Include="Forms\6.%29 Setup\User\EmployeeList.vb">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Forms\6.%29 Setup\User\UpdateSelection.Designer.vb">
+      <DependentUpon>UpdateSelection.vb</DependentUpon>
+    </Compile>
+    <Compile Include="Forms\6.%29 Setup\User\UpdateSelection.vb">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Forms\6.%29 Setup\User\UserChangePass.Designer.vb">
+      <DependentUpon>UserChangePass.vb</DependentUpon>
+    </Compile>
+    <Compile Include="Forms\6.%29 Setup\User\UserChangePass.vb">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Forms\6.%29 Setup\User\User.Designer.vb">
+      <DependentUpon>User.vb</DependentUpon>
+    </Compile>
+    <Compile Include="Forms\6.%29 Setup\User\User.vb">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Forms\6.%29 Setup\User\UserAdd.Designer.vb">
+      <DependentUpon>UserAdd.vb</DependentUpon>
+    </Compile>
+    <Compile Include="Forms\6.%29 Setup\User\UserAdd.vb">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Forms\6.%29 Setup\User\UserUpdate.Designer.vb">
+      <DependentUpon>UserUpdate.vb</DependentUpon>
+    </Compile>
+    <Compile Include="Forms\6.%29 Setup\User\UserUpdate.vb">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Forms\6.%29 Setup\Vendor\Vendor.Designer.vb">
+      <DependentUpon>Vendor.vb</DependentUpon>
+    </Compile>
+    <Compile Include="Forms\6.%29 Setup\Vendor\Vendor.vb">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Forms\6.%29 Setup\Vendor\VendorAddandUpdate.Designer.vb">
+      <DependentUpon>VendorAddandUpdate.vb</DependentUpon>
+    </Compile>
+    <Compile Include="Forms\6.%29 Setup\Vendor\VendorAddandUpdate.vb">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Connection and Module\DBmodule.vb" />
+    <Compile Include="My Project\Application.Designer.vb">
+      <AutoGen>True</AutoGen>
+      <DependentUpon>Application.myapp</DependentUpon>
+    </Compile>
+    <Compile Include="My Project\AssemblyInfo.vb" />
+    <Compile Include="New_Class\FetchClass.vb" />
+    <Compile Include="New_Class\InsertionClass.vb" />
+    <Compile Include="New_Class\UpdateClass.vb" />
+    <Compile Include="New_Class\ViewClass.vb" />
+    <None Include="..\.editorconfig">
+      <Link>Connection and Module\.editorconfig</Link>
+    </None>
+    <None Include="Connection and Module\AMSdbDataSet.xsc">
+      <DependentUpon>AMSdbDataSet.xsd</DependentUpon>
+    </None>
+    <None Include="Connection and Module\AMSdbDataSet.xsd">
+      <Generator>MSDataSetGenerator</Generator>
+      <LastGenOutput>AMSdbDataSet.Designer.vb</LastGenOutput>
+      <SubType>Designer</SubType>
+    </None>
+    <None Include="Connection and Module\AMSdbDataSet.xss">
+      <DependentUpon>AMSdbDataSet.xsd</DependentUpon>
+    </None>
+    <None Include="Connection and Module\DataClasses1.dbml.layout">
+      <DependentUpon>DataClasses1.dbml</DependentUpon>
+    </None>
+    <EmbeddedResource Include="Forms\2.%29 Asset_Management\2.%29 Movement\1.%29 Assignment\Assignment1.resx">
+      <DependentUpon>Assignment1.vb</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Forms\2.%29 Asset_Management\1.%29 Request\Creating Request\date1.resx">
+      <DependentUpon>date1.vb</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Forms\2.%29 Asset_Management\1.%29 Request\Creating Request\empllist.resx">
+      <DependentUpon>empllist.vb</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Forms\2.%29 Asset_Management\1.%29 Request\For Approval\ChngState.resx">
+      <DependentUpon>ChngState.vb</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Forms\2.%29 Asset_Management\1.%29 Request\For Approval\Rqregister.resx">
+      <DependentUpon>Rqregister.vb</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Forms\2.%29 Asset_Management\1.%29 Request\Creating Request\Request.resx">
+      <DependentUpon>Request.vb</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Forms\4.%29 List\AssetList\AssetList3.resx">
+      <DependentUpon>AssetList3.vb</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Forms\2.%29 Asset_Management\1.%29 Request\For Approval\RequestRegister.resx">
+      <DependentUpon>RequestRegister.vb</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Forms\3.%29 Asset\Build Asset\BuildAsset\BuildAsset.resx">
+      <DependentUpon>BuildAsset.vb</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Forms\3.%29 Asset\Build Asset\BuildAsset\ReferenceList.resx">
+      <DependentUpon>ReferenceList.vb</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Forms\3.%29 Asset\Build Asset\register\BuildRegisterDetail.resx">
+      <DependentUpon>BuildRegisterDetail.vb</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Forms\3.%29 Asset\Build Asset\register\NewAssetRegister.resx">
+      <DependentUpon>NewAssetRegister.vb</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Forms\1.%29 Asset_Inquiry\Inventory\Details.resx">
+      <DependentUpon>Details.vb</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Forms\1.%29 Asset_Inquiry\Inventory\InventoryList.resx">
+      <DependentUpon>InventoryList.vb</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Forms\3.%29 Asset\MasterData\masterdatalist\MasterDataList.resx">
+      <DependentUpon>MasterDataList.vb</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Forms\3.%29 Asset\Build Asset\BuildAsset\NACondition.resx">
+      <DependentUpon>NACondition.vb</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Forms\3.%29 Asset\MasterData\New Asset Masterdata\NATypeh.resx">
+      <DependentUpon>NATypeh.vb</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Forms\3.%29 Asset\MasterData\New Asset Masterdata\NAcategory.resx">
+      <DependentUpon>NAcategory.vb</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Forms\3.%29 Asset\MasterData\New Asset Masterdata\NewAsset.resx">
+      <DependentUpon>NewAsset.vb</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Forms\7.%29 Importation\Build Asset\importmasterlist.resx">
+      <DependentUpon>importmasterlist.vb</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Forms\LoginForm\Login.resx">
+      <DependentUpon>Login.vb</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Forms\6.%29 Setup\AssetBranch\AssetBranch.resx">
+      <DependentUpon>AssetBranch.vb</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Forms\6.%29 Setup\AssetBranch\AssetBranchAddandUpdate1.resx">
+      <DependentUpon>AssetBranchAddandUpdate1.vb</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Forms\6.%29 Setup\AssetCategory\AssetCategory.resx">
+      <DependentUpon>AssetCategory.vb</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Forms\6.%29 Setup\AssetCategory\AssetCategoryAddandUpdate1.resx">
+      <DependentUpon>AssetCategoryAddandUpdate1.vb</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Forms\6.%29 Setup\AssetCondition\AssetConditionAddandUpdate.resx">
+      <DependentUpon>AssetConditionAddandUpdate.vb</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Forms\6.%29 Setup\AssetCondition\AssetCondition.resx">
+      <DependentUpon>AssetCondition.vb</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Forms\6.%29 Setup\AssetDepartment\AssetDepartment.resx">
+      <DependentUpon>AssetDepartment.vb</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Forms\6.%29 Setup\AssetDepartment\AssetDepartmentAddandUpdate.resx">
+      <DependentUpon>AssetDepartmentAddandUpdate.vb</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Forms\6.%29 Setup\AssetDocumentType\AssetDocTypeAddandUpdate.resx">
+      <DependentUpon>AssetDocTypeAddandUpdate.vb</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Forms\6.%29 Setup\AssetDocumentType\AssetDocumentType.resx">
+      <DependentUpon>AssetDocumentType.vb</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Forms\6.%29 Setup\AssetPosition\AssetPositionAddandUpdate.resx">
+      <DependentUpon>AssetPositionAddandUpdate.vb</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Forms\6.%29 Setup\AssetPosition\AssetPosition.resx">
+      <DependentUpon>AssetPosition.vb</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Forms\6.%29 Setup\AssetSection\AssetSection.resx">
+      <DependentUpon>AssetSection.vb</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Forms\6.%29 Setup\AssetSection\AssetSectionAddandUpdate1.resx">
+      <DependentUpon>AssetSectionAddandUpdate1.vb</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Forms\6.%29 Setup\AssetType\AssetType.resx">
+      <DependentUpon>AssetType.vb</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Forms\6.%29 Setup\AssetType\AssetTypeAddandUpdate.resx">
+      <DependentUpon>AssetTypeAddandUpdate.vb</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Forms\Home.resx">
+      <DependentUpon>Home.vb</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Forms\6.%29 Setup\Employee\Employee.resx">
+      <DependentUpon>Employee.vb</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Forms\6.%29 Setup\Employee\EmployeeAddandUpdate.resx">
+      <DependentUpon>EmployeeAddandUpdate.vb</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Forms\6.%29 Setup\Reference\Reference.resx">
+      <DependentUpon>Reference.vb</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Forms\6.%29 Setup\User\EmployeeList.resx">
+      <DependentUpon>EmployeeList.vb</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Forms\6.%29 Setup\User\UpdateSelection.resx">
+      <DependentUpon>UpdateSelection.vb</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Forms\6.%29 Setup\User\UserChangePass.resx">
+      <DependentUpon>UserChangePass.vb</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Forms\6.%29 Setup\User\User.resx">
+      <DependentUpon>User.vb</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Forms\6.%29 Setup\User\UserAdd.resx">
+      <DependentUpon>UserAdd.vb</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Forms\6.%29 Setup\User\UserUpdate.resx">
+      <DependentUpon>UserUpdate.vb</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Forms\6.%29 Setup\Vendor\Vendor.resx">
+      <DependentUpon>Vendor.vb</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Forms\6.%29 Setup\Vendor\VendorAddandUpdate.resx">
+      <DependentUpon>VendorAddandUpdate.vb</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="My Project\licenses.licx" />
+    <EmbeddedResource Include="My Project\Resources.resx">
+      <Generator>VbMyResourcesResXFileCodeGenerator</Generator>
+      <LastGenOutput>Resources.Designer.vb</LastGenOutput>
+      <CustomToolNamespace>My.Resources</CustomToolNamespace>
+      <SubType>Designer</SubType>
+    </EmbeddedResource>
+    <Compile Include="My Project\Resources.Designer.vb">
+      <AutoGen>True</AutoGen>
+      <DependentUpon>Resources.resx</DependentUpon>
+      <DesignTime>True</DesignTime>
+    </Compile>
+    <None Include="Connection and Module\DataClasses1.dbml">
+      <Generator>MSLinqToSQLGenerator</Generator>
+      <LastGenOutput>DataClasses1.designer.vb</LastGenOutput>
+      <SubType>Designer</SubType>
+    </None>
+    <None Include="My Project\Settings.settings">
+      <Generator>SettingsSingleFileGenerator</Generator>
+      <LastGenOutput>Settings.Designer.vb</LastGenOutput>
+    </None>
+    <None Include="Connection and Module\app.config" />
+    <Compile Include="My Project\Settings.Designer.vb">
+      <AutoGen>True</AutoGen>
+      <DependentUpon>Settings.settings</DependentUpon>
+      <DesignTimeSharedInput>True</DesignTimeSharedInput>
+    </Compile>
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="My Project\Application.myapp">
+      <Generator>MyApplicationCodeGenerator</Generator>
+      <LastGenOutput>Application.Designer.vb</LastGenOutput>
+    </None>
+  </ItemGroup>
+  <ItemGroup>
+    <Service Include="{3259AA49-8AA1-44D3-9025-A0B520596A8C}" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Connection and Module\packages.config" />
+    <None Include="Resources\Untitled.jpg" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\photo_2023-10-23_15-37-35.jpg" />
+  </ItemGroup>
+  <ItemGroup>
+    <Content Include="Connection and Module\completed-task.ico" />
+    <Content Include="SqlServerTypes\Loader.cs" />
+    <Content Include="SqlServerTypes\readme.htm" />
+    <Content Include="SqlServerTypes\x64\msvcr120.dll">
+      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+    </Content>
+    <Content Include="SqlServerTypes\x64\SqlServerSpatial140.dll">
+      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+    </Content>
+    <Content Include="SqlServerTypes\x86\msvcr120.dll">
+      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+    </Content>
+    <Content Include="SqlServerTypes\x86\SqlServerSpatial140.dll">
+      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+    </Content>
+  </ItemGroup>
+  <ItemGroup>
+    <WCFMetadata Include="Connected Services\" />
+  </ItemGroup>
+  <ItemGroup>
+    <Folder Include="Forms\3.%29 Asset\MasterData\Register\" />
+    <Folder Include="Forms\5.%29 Reports\" />
+  </ItemGroup>
+  <Import Project="$(MSBuildToolsPath)\Microsoft.VisualBasic.targets" />
+  <!-- To modify your build process, add your task inside one of the targets below and uncomment it.
+       Other similar extension points exist, see Microsoft.Common.targets.
+  <Target Name="BeforeBuild">
+  </Target>
+  <Target Name="AfterBuild">
+  </Target>
+  -->
+</Project>
