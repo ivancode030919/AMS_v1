@@ -5,7 +5,7 @@
 
 
     Private Sub display()
-        dgv.DataSource = MasterdataDetailsClass.Fetchmasterdata(TextBox1.Text, ComboBox1.Text, ComboBox2.Text)
+        dgv.DataSource = ViewClass.Fetchmasterdata(TextBox1.Text, ComboBox1.Text, ComboBox2.Text)
         'dgv.Columns(0).HeaderText = "Asset Code"
         'dgv.Columns(1).HeaderText = "Description"
         'dgv.Columns(2).HeaderText = "Category"

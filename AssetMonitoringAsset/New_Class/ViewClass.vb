@@ -98,7 +98,6 @@
     '------------------------------------------------------------------------------------
     'Display Request Register(For Approval) Details in 
     '------------------------------------------------------------------------------------
-
     Public Shared Function FetchsRequstRegister() As Object
 
         Dim query = (From s In db.tblRequestHeaders
@@ -111,5 +110,46 @@
                      Select s.Date, s.RequestNo, s.RequestType, k.Company, f.DepartmentDescription, h.BranchDescription, q.SectionDecription, y, s.Stat, s.HeaderId, s.RequestBy).ToList
         Return query
 
+    End Function
+
+    '------------------------------------------------------------------------------------
+    'Display Item List in AssetList
+    '------------------------------------------------------------------------------------
+    Public Shared Function Fetchrlist1(ByVal Search As String) As Object
+
+        Dim querysection = (From f In db.tblmasterlistdetails
+                            Join d In db.tblCategories On f.CategoryID Equals d.CategoryID
+                            Join g In db.tblAssetTypes On f.AssetTypeID Equals g.AssetTypeID
+                            Where f.AssetDescription.Contains(Search)
+                            Order By f.AssetDescription Ascending
+                            Select f.ItemCode, f.AssetDescription, f.ItemID, d.CategoryCode, g.AssetTypeCode)
+
+        Return querysection
+    End Function
+
+    '------------------------------------------------------------------------------------
+    'Display Item List in Masterdata
+    '------------------------------------------------------------------------------------
+    Public Shared Function Fetchmasterdata(ByVal Search As String, ByVal Cat As String, ByVal type As String) As Object
+        Dim querysection = (From f In db.tblmasterlistdetails
+                            Join c In db.tblCategories On f.CategoryID Equals c.CategoryID
+                            Join k In db.tblAssetTypes On f.AssetTypeID Equals k.AssetTypeID
+                            Where (f.AssetDescription.Contains(Search) Or f.ItemCode = Search) And (c.CategoryDescription = Cat Or Cat = "") And (k.AssetTypeDescription = type Or type = "")
+                            Order By f.AssetDescription Ascending
+                            Select f.ItemCode, f.AssetDescription, c.CategoryDescription, k.AssetTypeDescription).ToList()
+        Return querysection
+    End Function
+    '------------------------------------------------------------------------------------
+    'Display Item List in New Asset Register
+    '------------------------------------------------------------------------------------
+    Public Shared Function FetchDatatoDGV1(ByVal Search As String, ByVal date1 As Date, ByVal date2 As Date, ByVal mods As Integer) As Object
+        Dim querysection = (From s In db.tblAssetHeaders
+                            Join u In db.tblUsers On s.UserID Equals u.UserID
+                            Join j In db.tblEmployees On u.EmployeeID Equals j.EmployeeID
+                            Where (s.EntryNumber.Contains(Search)) And (s.TransDate >= date1 AndAlso s.TransDate <= date2) And (s.module1 = mods)
+                            Order By s.AssetHeaderID Ascending
+                            Let fl = j.FirstName + " " + j.LastName
+                            Select New With {s.TransDate, s.EntryNumber, s.Remarks, fl, s.AssetHeaderID}).ToList()
+        Return querysection
     End Function
 End Class

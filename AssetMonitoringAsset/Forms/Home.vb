@@ -90,11 +90,12 @@
     End Sub
 
     Private Sub AccordionControlElement35_Click(sender As Object, e As EventArgs) Handles e.Click
+
         With Assignment1
             .allowtoaddrow = "Y"
+            .ShowDialog()
         End With
 
-        Assignment1.ShowDialog()
     End Sub
 
     Private Sub AccordionControlElement45_Click(sender As Object, e As EventArgs) Handles AccordionControlElement45.Click

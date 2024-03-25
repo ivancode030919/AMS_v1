@@ -3,24 +3,26 @@
     Public headerid As Integer
     Public requestor As Integer
     Public allowtoaddrow As String = "Y"
+
     Private Sub Assignment1_Load(sender As Object, e As EventArgs) Handles MyBase.Load
 
         If allowtoaddrow = "Y" Then
-            dgv.AllowUserToAddRows = True
 
+            dgv.AllowUserToAddRows = True
+            TextBox1.Text = FetchClass.FetchAssignmentEntryNumber
+            TextBox2.Text = FetchClass.fetchRequestor(Home.EmployeeID)
 
         ElseIf allowtoaddrow = "N" Then
             dgv.AllowUserToAddRows = False
 
         End If
-        display()
 
+        display()
 
     End Sub
 
 
     Public Sub display()
-
         ViewClass.FetchRegisterDetail(headerid)
         With dgv
             .Columns(1).HeaderText = "Asset Code"
@@ -48,25 +50,7 @@
                 .Columns(4).ReadOnly = False
                 .Columns(6).Visible = False
             End If
-        End With
-    End Sub
 
-    Public Sub display2()
-
-        With dgv
-            .Columns(1).HeaderText = "Asset Code"
-            .Columns(2).HeaderText = "Class"
-            .Columns(3).HeaderText = "Assign For"
-            .Columns(4).HeaderText = "Quantity"
-            .Columns(5).HeaderText = "Remarks"
-            .Columns(6).HeaderText = "State"
-            .Columns(7).HeaderText = "Available Quantity"
-            .Columns(8).HeaderText = "NewOwnderID"
-            .Columns(0).Visible = False
-            .Columns(8).Visible = False
-
-            .Columns.Add("9", "Assigned Asset")
-            .Columns(9).ReadOnly = True
         End With
     End Sub
 
@@ -105,7 +89,7 @@
                     .Show()
                 End With
 
-            ElseIf e.ColumnIndex = 8 Then
+            ElseIf e.ColumnIndex = 9 Then
 
                 Dim index As Integer
                 index = e.RowIndex
@@ -152,29 +136,58 @@
     End Sub
 
     Private Sub SimpleButton2_Click(sender As Object, e As EventArgs) Handles SimpleButton2.Click
+
         Dim user As Integer = Home.UserID
         InsertionClass.SaveAssignmentHeader(TextBox1.Text, user, DateTimePicker1.Value, headerid)
 
         For Each row As DataGridViewRow In dgv.Rows
             If Not row.IsNewRow Then
-
+                Dim headid As Integer = FetchClass.FetchTransHeaderIDAssignment
                 Dim id As String = row.Cells(0).Value
                 Dim ItemCode As String = row.Cells(1).Value
                 Dim qty As String = row.Cells(4).Value
                 Dim Propertycode As String = row.Cells(9).Value
                 Dim NewOwnerID As String = row.Cells(8).Value
-
                 UpdateClass.UpdateAssignProperty(Propertycode, NewOwnerID)
-                UpdateClass.UpdateStatusReq(id)
-                InsertionClass.SaveAssignmentDetails(Double.Parse(qty), Propertycode, headerid, user, ItemCode)
+
+                If allowtoaddrow = "Y" Then
+
+                ElseIf allowtoaddrow = "N" Then
+                    UpdateClass.UpdateStatusReq(id)
+                End If
+                InsertionClass.SaveAssignmentDetails(Double.Parse(qty), Propertycode, headid, user, ItemCode)
 
             End If
         Next
         MessageBox.Show("Successfully Recorded", "Notification", MessageBoxButtons.OK, MessageBoxIcon.Information)
-        Me.Close()
+
+        SimpleButton2.Text = String.Empty
     End Sub
 
-    Private Sub SimpleButton1_Click(sender As Object, e As EventArgs)
+    Private Sub dgv_CellValidated(sender As Object, e As DataGridViewCellEventArgs) Handles dgv.CellValidated
+        If allowtoaddrow = "Y" Then
 
+            If e.ColumnIndex = 1 Then
+                For Each row As DataGridViewRow In dgv.Rows
+                    ' Assuming itemcode is stored in a specific column (adjust as needed)
+                    Dim itemcode As String = row.Cells(1).Value
+
+                    ' Fetch asset without owner for the specific itemcode
+                    row.Cells(7).Value = FetchClass.FetchAssetWithoutOwner(itemcode)
+
+                    If FetchClass.CheckifCosumable(itemcode) Is Nothing Then
+                        row.Cells(4).ReadOnly = False
+                    Else
+                        row.Cells(4).Value = "1"
+                        row.Cells(4).ReadOnly = True
+                    End If
+                Next
+            End If
+
+        ElseIf allowtoaddrow = "N" Then
+            ' Handle the case when adding rows is not allowed
+        End If
     End Sub
+
+
 End Class

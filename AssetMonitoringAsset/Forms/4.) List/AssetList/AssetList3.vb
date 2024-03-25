@@ -11,7 +11,7 @@
     Private Sub display()
         If mode1 = 1 Then
             Try
-                dgv.DataSource = MasterdataDetailsClass.Fetchrlist1(TextBox1.Text)
+                dgv.DataSource = ViewClass.Fetchrlist1(TextBox1.Text)
 
                 dgv.Columns(0).HeaderText = "Asset Code"
                 dgv.Columns(1).HeaderText = "Description"
@@ -20,8 +20,8 @@
                 dgv.Columns(3).Visible = False
                 dgv.Columns(4).Visible = False
 
-                dgv.Columns(0).Width = 200
-                dgv.Columns(1).Width = 500
+                'dgv.Columns(0).Width = 200
+                'dgv.Columns(1).Width = 500
             Catch ex As Exception
 
             End Try
@@ -108,6 +108,7 @@
                 .Rows(rowToEdit).Cells(1).Value = selectedrow.Cells(0).Value.ToString
                 .Rows(rowToEdit).Cells(2).Value = selectedrow.Cells(1).Value.ToString
             End With
+
         End If
 
         Me.Close()

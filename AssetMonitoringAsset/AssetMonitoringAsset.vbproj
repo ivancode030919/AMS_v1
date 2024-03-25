@@ -123,12 +123,8 @@
     </Compile>
     <Compile Include="OLD_FORMS_AND_CLASS\Class\RequestDetailClass.vb" />
     <Compile Include="OLD_FORMS_AND_CLASS\Class\RequestHeaderClass.vb" />
-    <Compile Include="OLD_FORMS_AND_CLASS\Class\AssetDetailClass.vb" />
-    <Compile Include="OLD_FORMS_AND_CLASS\Class\AssetHeaderClass.vb" />
     <Compile Include="OLD_FORMS_AND_CLASS\Class\BranchClass.vb" />
     <Compile Include="OLD_FORMS_AND_CLASS\Class\InventoryClass.vb" />
-    <Compile Include="OLD_FORMS_AND_CLASS\Class\MasterdataDetailsClass.vb" />
-    <Compile Include="OLD_FORMS_AND_CLASS\Class\MasterdataHeaderClass.vb" />
     <Compile Include="OLD_FORMS_AND_CLASS\Class\CategoryClass.vb" />
     <Compile Include="OLD_FORMS_AND_CLASS\Class\ConditionClass.vb" />
     <Compile Include="OLD_FORMS_AND_CLASS\Class\DepartmentClass.vb" />

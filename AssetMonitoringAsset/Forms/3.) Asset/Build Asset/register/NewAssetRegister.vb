@@ -5,15 +5,15 @@
 
     Private Sub viewdgv()
         Dim mods As Integer = 2
-        dgv.DataSource = AssetHeaderClass.FetchDatatoDGV1(TextBox2.Text, DateTimePicker1.Value, DateTimePicker2.Value, mods)
+        dgv.DataSource = ViewClass.FetchDatatoDGV1(TextBox2.Text, DateTimePicker1.Value, DateTimePicker2.Value, mods)
 
 
         dgv.Columns(0).HeaderText = "Date"
         dgv.Columns(1).HeaderText = "Entry No."
         dgv.Columns(2).HeaderText = "Remarks"
         dgv.Columns(3).HeaderText = "User"
-
         dgv.Columns(4).Visible = False
+
     End Sub
 
     Private Sub NewAssetRegister_KeyDown(sender As Object, e As KeyEventArgs) Handles MyBase.KeyDown

@@ -161,7 +161,7 @@ Partial Class Assignment1
         Me.Padding = New System.Windows.Forms.Padding(5)
         Me.ShowInTaskbar = False
         Me.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen
-        Me.Text = "Allocation"
+        Me.Text = "Assignment"
         CType(Me.PanelControl1, System.ComponentModel.ISupportInitialize).EndInit()
         Me.PanelControl1.ResumeLayout(False)
         Me.PanelControl1.PerformLayout()

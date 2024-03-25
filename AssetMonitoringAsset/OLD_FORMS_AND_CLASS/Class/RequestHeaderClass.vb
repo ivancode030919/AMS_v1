@@ -31,29 +31,6 @@ Public Class RequestHeaderClass
             Return newEntryID
         End If
     End Function
-    '--------------------------------------------------------------------------------------------
-    'Fetch Last HeaderID For Detail in Request
-    '--------------------------------------------------------------------------------------------
-    Public Shared Function FetchTransHeaderID() As Integer
-        Dim querysection As Integer = (From s In db.tblRequestHeaders
-                                       Order By s.HeaderId Descending
-                                       Select s.HeaderId).FirstOrDefault()
-
-        Return querysection
-    End Function
-    '--------------------------------------------------------------------------------------------
-    'Fetch Requestor
-    '--------------------------------------------------------------------------------------------
-    Public Shared Function fetchRequestor(ByVal emplID As Integer) As Object
-        Dim querysection = (From s In db.tblEmployees
-                            Where s.EmployeeID = emplID
-                            Let c = s.LastName + ", " + s.FirstName
-                            Select c).FirstOrDefault
-        Return querysection
-    End Function
-
-    '--------------------------------------------------------------------------------------------
-    'Fetch Request
 
 
 

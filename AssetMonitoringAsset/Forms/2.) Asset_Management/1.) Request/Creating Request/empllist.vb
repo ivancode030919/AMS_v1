@@ -44,7 +44,7 @@
 
         ElseIf modty = 4 Then
             With Assignment1.dgv
-                .Rows(rowToEdit).Cells(7).Value = selectedrow.Cells(0).Value.ToString
+                .Rows(rowToEdit).Cells(8).Value = selectedrow.Cells(0).Value.ToString
                 .Rows(rowToEdit).Cells(3).Value = selectedrow.Cells(1).Value.ToString
             End With
         End If

@@ -9,7 +9,7 @@
 
     Private Sub AcquisitionRequest_Load(sender As Object, e As EventArgs) Handles MyBase.Load
         ComboBox2.Select()
-        TextBox2.Text = RequestHeaderClass.fetchRequestor(Home.EmployeeID)
+        TextBox2.Text = FetchClass.fetchRequestor(Home.EmployeeID)
         ComboBox2.Enabled = True
     End Sub
 
@@ -121,7 +121,7 @@
                 For Each row As DataGridViewRow In dgv.Rows
 
                     If Not row.IsNewRow Then
-                        Dim headid As Integer = RequestHeaderClass.FetchTransHeaderID
+                        Dim headid As Integer = FetchClass.FetchTransHeaderIDRequest
                         Dim AssetCode As String = row.Cells(0).Value.ToString
                         Dim Des As String = row.Cells(1).Value.ToString
                         Dim qty As String = row.Cells(2).Value.ToString
@@ -136,7 +136,7 @@
                 For Each row As DataGridViewRow In dgv.Rows
 
                     If Not row.IsNewRow Then
-                        Dim headid As Integer = RequestHeaderClass.FetchTransHeaderID
+                        Dim headid As Integer = FetchClass.FetchTransHeaderIDRequest
                         Dim PropertyCode As String = row.Cells(0).Value.ToString
                         Dim Des As String = row.Cells(1).Value.ToString
                         Dim qty As String = row.Cells(2).Value.ToString
@@ -152,7 +152,7 @@
                 For Each row As DataGridViewRow In dgv.Rows
 
                     If Not row.IsNewRow Then
-                        Dim headid As Integer = RequestHeaderClass.FetchTransHeaderID
+                        Dim headid As Integer = FetchClass.FetchTransHeaderIDRequest
                         Dim PropertyCode As String = row.Cells(0).Value.ToString
                         Dim Des As String = row.Cells(1).Value.ToString
                         Dim qty As String = row.Cells(2).Value.ToString

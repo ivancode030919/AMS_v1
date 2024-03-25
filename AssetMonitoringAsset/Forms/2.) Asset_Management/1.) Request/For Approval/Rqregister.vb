@@ -91,11 +91,6 @@
 
     End Sub
 
-    Private Sub dgv_RowValidating(sender As Object, e As DataGridViewCellCancelEventArgs) Handles dgv.RowValidating
-
-
-    End Sub
-
     Private Sub SimpleButton3_Click(sender As Object, e As EventArgs) Handles SimpleButton1.Click
         With Assignment1
             .TextBox1.Text = TextBox1.Text
