@@ -59,75 +59,75 @@
     End Sub
 
     Private Sub dgv_CellDoubleClick(sender As Object, e As DataGridViewCellEventArgs) Handles dgv.CellDoubleClick
+        Try
+            If allowtoaddrow = "Y" Then
 
-        If allowtoaddrow = "Y" Then
+                If e.ColumnIndex = 1 Then
 
-            If e.ColumnIndex = 1 Then
+                    Dim index As Integer
+                    index = e.RowIndex
+                    Dim selectedrow As DataGridViewRow
+                    selectedrow = dgv.Rows(index)
 
-                Dim index As Integer
-                index = e.RowIndex
-                Dim selectedrow As DataGridViewRow
-                selectedrow = dgv.Rows(index)
+                    With AssetList3
+                        .rowToEdit = index
+                        .mode1 = 1
+                        .modty = 5
+                        .ac = selectedrow.Cells(1).Value
+                        .Show()
+                    End With
+                ElseIf e.ColumnIndex = 3 Then
 
-                With AssetList3
-                    .rowToEdit = index
-                    .mode1 = 1
-                    .modty = 5
-                    .ac = selectedrow.Cells(1).Value
-                    .Show()
-                End With
-            ElseIf e.ColumnIndex = 3 Then
+                    Dim index As Integer
+                    index = e.RowIndex
+                    Dim selectedrow As DataGridViewRow
+                    selectedrow = dgv.Rows(index)
 
-                Dim index As Integer
-                index = e.RowIndex
-                Dim selectedrow As DataGridViewRow
-                selectedrow = dgv.Rows(index)
+                    With empllist
+                        .rowToEdit = index
+                        .modty = 4
+                        .Show()
+                    End With
 
-                With empllist
-                    .rowToEdit = index
-                    .modty = 4
-                    .Show()
-                End With
+                ElseIf e.ColumnIndex = 9 Then
 
-            ElseIf e.ColumnIndex = 9 Then
+                    Dim index As Integer
+                    index = e.RowIndex
+                    Dim selectedrow As DataGridViewRow
+                    selectedrow = dgv.Rows(index)
 
-                Dim index As Integer
-                index = e.RowIndex
-                Dim selectedrow As DataGridViewRow
-                selectedrow = dgv.Rows(index)
+                    With AssetList3
+                        .rowToEdit = index
+                        .mode1 = 3
+                        .modty = 4
+                        .ac = selectedrow.Cells(1).Value
+                        .Show()
+                    End With
 
-                With AssetList3
-                    .rowToEdit = index
-                    .mode1 = 3
-                    .modty = 4
-                    .ac = selectedrow.Cells(1).Value
-                    .Show()
-                End With
+                End If
+
+            ElseIf allowtoaddrow = "N" Then
+
+                If e.ColumnIndex = 9 Then
+                    Dim index As Integer
+                    index = e.RowIndex
+                    Dim selectedrow As DataGridViewRow
+                    selectedrow = dgv.Rows(index)
+
+                    With AssetList3
+                        .rowToEdit = index
+                        .mode1 = 3
+                        .modty = 4
+                        .ac = selectedrow.Cells(1).Value
+                        .Show()
+                    End With
+
+                End If
 
             End If
-
-        ElseIf allowtoaddrow = "N" Then
-
-            If e.ColumnIndex = 9 Then
-                Dim index As Integer
-                index = e.RowIndex
-                Dim selectedrow As DataGridViewRow
-                selectedrow = dgv.Rows(index)
-
-                With AssetList3
-                    .rowToEdit = index
-                    .mode1 = 3
-                    .modty = 4
-                    .ac = selectedrow.Cells(1).Value
-                    .Show()
-                End With
-
-            End If
-
-        End If
-
-
-
+        Catch ex As Exception
+            MsgBox("Assignment.Error.Double.Click.01")
+        End Try
 
     End Sub
 
@@ -137,56 +137,96 @@
 
     Private Sub SimpleButton2_Click(sender As Object, e As EventArgs) Handles SimpleButton2.Click
 
-        Dim user As Integer = Home.UserID
-        InsertionClass.SaveAssignmentHeader(TextBox1.Text, user, DateTimePicker1.Value, headerid)
+        If SimpleButton2.Text = "Record" Then
+            Dim user As Integer = Home.UserID
+            InsertionClass.SaveAssignmentHeader(TextBox1.Text, user, DateTimePicker1.Value, headerid)
 
-        For Each row As DataGridViewRow In dgv.Rows
-            If Not row.IsNewRow Then
-                Dim headid As Integer = FetchClass.FetchTransHeaderIDAssignment
-                Dim id As String = row.Cells(0).Value
-                Dim ItemCode As String = row.Cells(1).Value
-                Dim qty As String = row.Cells(4).Value
-                Dim Propertycode As String = row.Cells(9).Value
-                Dim NewOwnerID As String = row.Cells(8).Value
-                UpdateClass.UpdateAssignProperty(Propertycode, NewOwnerID)
+            For Each row As DataGridViewRow In dgv.Rows
+                If Not row.IsNewRow Then
+                    Dim headid As Integer = FetchClass.FetchTransHeaderIDAssignment
+                    Dim id As String = row.Cells(0).Value
+                    Dim ItemCode As String = row.Cells(1).Value
+                    Dim qty As String = row.Cells(4).Value
+                    Dim Propertycode As String = row.Cells(9).Value
+                    Dim NewOwnerID As String = row.Cells(8).Value
+                    UpdateClass.UpdateAssignProperty(Propertycode, NewOwnerID)
 
-                If allowtoaddrow = "Y" Then
+                    If allowtoaddrow = "Y" Then
 
-                ElseIf allowtoaddrow = "N" Then
-                    UpdateClass.UpdateStatusReq(id)
+                    ElseIf allowtoaddrow = "N" Then
+                        UpdateClass.UpdateStatusReq(id)
+                    End If
+                    InsertionClass.SaveAssignmentDetails(Double.Parse(qty), Propertycode, headid, user, ItemCode)
+
                 End If
-                InsertionClass.SaveAssignmentDetails(Double.Parse(qty), Propertycode, headid, user, ItemCode)
+            Next
+            Rqregister.display()
+            MessageBox.Show("Successfully Recorded", "Notification", MessageBoxButtons.OK, MessageBoxIcon.Information)
 
-            End If
-        Next
-        MessageBox.Show("Successfully Recorded", "Notification", MessageBoxButtons.OK, MessageBoxIcon.Information)
+            SimpleButton2.Text = "New Entry"
+            dgv.Enabled = False
+        ElseIf SimpleButton2.Text = "New Entry" Then
+            SimpleButton2.Text = "Record"
+            TextBox1.Text = FetchClass.FetchAssignmentEntryNumber
+            dgv.Rows.Clear()
+            dgv.Enabled = True
+        End If
 
-        SimpleButton2.Text = String.Empty
+
+
     End Sub
 
     Private Sub dgv_CellValidated(sender As Object, e As DataGridViewCellEventArgs) Handles dgv.CellValidated
+
         If allowtoaddrow = "Y" Then
 
             If e.ColumnIndex = 1 Then
+
                 For Each row As DataGridViewRow In dgv.Rows
-                    ' Assuming itemcode is stored in a specific column (adjust as needed)
+
+                    'Assuming itemcode is stored in a specific column (adjust as needed)
                     Dim itemcode As String = row.Cells(1).Value
 
-                    ' Fetch asset without owner for the specific itemcode
+                    'Fetch asset without owner for the specific itemcode
                     row.Cells(7).Value = FetchClass.FetchAssetWithoutOwner(itemcode)
 
+                    'Check if the Item is Consumable or Non-Consumable
                     If FetchClass.CheckifCosumable(itemcode) Is Nothing Then
+
                         row.Cells(4).ReadOnly = False
+
                     Else
+
                         row.Cells(4).Value = "1"
                         row.Cells(4).ReadOnly = True
+
                     End If
+
+                    'Clear if no Available Assets
+                    If row.Cells(7).Value Is Nothing Then
+                        row.Cells(7).Value = 0
+                        MessageBox.Show("No Available Asset for this Item", "Notification", MessageBoxButtons.OK, MessageBoxIcon.Information)
+                        row.Cells(1).Value = String.Empty
+                        row.Cells(2).Value = String.Empty
+                        row.Cells(3).Value = String.Empty
+                        row.Cells(4).Value = String.Empty
+                        row.Cells(5).Value = String.Empty
+                        row.Cells(6).Value = String.Empty
+                        row.Cells(7).Value = String.Empty
+                        row.Cells(8).Value = String.Empty
+                        row.Cells(9).Value = String.Empty
+                    Else
+
+                    End If
+
                 Next
+
             End If
 
         ElseIf allowtoaddrow = "N" Then
             ' Handle the case when adding rows is not allowed
         End If
+
     End Sub
 
 

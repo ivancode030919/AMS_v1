@@ -104,7 +104,7 @@
     End Sub
 
     '------------------------------------------------------------------------------------
-    'Update Status of Request
+    'Update State of Request
     '------------------------------------------------------------------------------------
     Public Shared Sub UpdateStatusReq(ByVal ID As Integer)
         Dim Status As String = "CLOSED"
@@ -121,4 +121,21 @@
 
     End Sub
 
+    '------------------------------------------------------------------------------------
+    'Update Status of Request Header
+    '------------------------------------------------------------------------------------
+    Public Shared Sub UpdateStatusReqHeader(ByVal ID As Integer)
+        Dim Status As String = "CLOSED"
+        Try
+            Dim updateStat = (From p In db.GetTable(Of tblRequestHeader)()
+                              Where p.HeaderId = ID
+                              Select p).FirstOrDefault()
+            updateStat.stat = Status
+            db.SubmitChanges()
+
+        Catch ex As Exception
+            MsgBox("Error.21")
+        End Try
+
+    End Sub
 End Class
