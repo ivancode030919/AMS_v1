@@ -187,6 +187,18 @@ Partial Public Class DataClasses1DataContext
     End Sub
   Partial Private Sub Deletetblmasterlistdetail(instance As tblmasterlistdetail)
     End Sub
+  Partial Private Sub InserttblProcureHeader(instance As tblProcureHeader)
+    End Sub
+  Partial Private Sub UpdatetblProcureHeader(instance As tblProcureHeader)
+    End Sub
+  Partial Private Sub DeletetblProcureHeader(instance As tblProcureHeader)
+    End Sub
+  Partial Private Sub InserttblProcureDetail(instance As tblProcureDetail)
+    End Sub
+  Partial Private Sub UpdatetblProcureDetail(instance As tblProcureDetail)
+    End Sub
+  Partial Private Sub DeletetblProcureDetail(instance As tblProcureDetail)
+    End Sub
   #End Region
 	
 	Public Sub New()
@@ -367,6 +379,18 @@ Partial Public Class DataClasses1DataContext
 	Public ReadOnly Property tblmasterlistdetails() As System.Data.Linq.Table(Of tblmasterlistdetail)
 		Get
 			Return Me.GetTable(Of tblmasterlistdetail)
+		End Get
+	End Property
+	
+	Public ReadOnly Property tblProcureHeaders() As System.Data.Linq.Table(Of tblProcureHeader)
+		Get
+			Return Me.GetTable(Of tblProcureHeader)
+		End Get
+	End Property
+	
+	Public ReadOnly Property tblProcureDetails() As System.Data.Linq.Table(Of tblProcureDetail)
+		Get
+			Return Me.GetTable(Of tblProcureDetail)
 		End Get
 	End Property
 	
@@ -592,16 +616,16 @@ Partial Public Class DataClasses1DataContext
 		Return CType(result.ReturnValue,ISingleResult(Of spViewInventoryResult))
 	End Function
 	
-	<Global.System.Data.Linq.Mapping.FunctionAttribute(Name:="dbo.ShowAssetAvailability")>  _
-	Public Function ShowAssetAvailability(<Global.System.Data.Linq.Mapping.ParameterAttribute(DbType:="Int")> ByVal headerid As System.Nullable(Of Integer)) As ISingleResult(Of ShowAssetAvailabilityResult)
-		Dim result As IExecuteResult = Me.ExecuteMethodCall(Me, CType(MethodInfo.GetCurrentMethod,MethodInfo), headerid)
-		Return CType(result.ReturnValue,ISingleResult(Of ShowAssetAvailabilityResult))
-	End Function
-	
 	<Global.System.Data.Linq.Mapping.FunctionAttribute(Name:="dbo.ShowAssetAvailability2")>  _
 	Public Function ShowAssetAvailability2(<Global.System.Data.Linq.Mapping.ParameterAttribute(DbType:="Int")> ByVal headerid As System.Nullable(Of Integer)) As ISingleResult(Of ShowAssetAvailability2Result)
 		Dim result As IExecuteResult = Me.ExecuteMethodCall(Me, CType(MethodInfo.GetCurrentMethod,MethodInfo), headerid)
 		Return CType(result.ReturnValue,ISingleResult(Of ShowAssetAvailability2Result))
+	End Function
+	
+	<Global.System.Data.Linq.Mapping.FunctionAttribute(Name:="dbo.ShowAssetAvailability")>  _
+	Public Function ShowAssetAvailability(<Global.System.Data.Linq.Mapping.ParameterAttribute(DbType:="Int")> ByVal headerid As System.Nullable(Of Integer)) As ISingleResult(Of ShowAssetAvailabilityResult)
+		Dim result As IExecuteResult = Me.ExecuteMethodCall(Me, CType(MethodInfo.GetCurrentMethod,MethodInfo), headerid)
+		Return CType(result.ReturnValue,ISingleResult(Of ShowAssetAvailabilityResult))
 	End Function
 End Class
 
@@ -8018,6 +8042,372 @@ Partial Public Class tblmasterlistdetail
 	End Sub
 End Class
 
+<Global.System.Data.Linq.Mapping.TableAttribute(Name:="dbo.tblProcureHeader")>  _
+Partial Public Class tblProcureHeader
+	Implements System.ComponentModel.INotifyPropertyChanging, System.ComponentModel.INotifyPropertyChanged
+	
+	Private Shared emptyChangingEventArgs As PropertyChangingEventArgs = New PropertyChangingEventArgs(String.Empty)
+	
+	Private _id As Integer
+	
+	Private _RequestNumber As String
+	
+	Private _Requestor As System.Nullable(Of Integer)
+	
+	Private _TransType As String
+	
+	Private _Date As System.Nullable(Of Date)
+	
+    #Region "Extensibility Method Definitions"
+    Partial Private Sub OnLoaded()
+    End Sub
+    Partial Private Sub OnValidate(action As System.Data.Linq.ChangeAction)
+    End Sub
+    Partial Private Sub OnCreated()
+    End Sub
+    Partial Private Sub OnidChanging(value As Integer)
+    End Sub
+    Partial Private Sub OnidChanged()
+    End Sub
+    Partial Private Sub OnRequestNumberChanging(value As String)
+    End Sub
+    Partial Private Sub OnRequestNumberChanged()
+    End Sub
+    Partial Private Sub OnRequestorChanging(value As System.Nullable(Of Integer))
+    End Sub
+    Partial Private Sub OnRequestorChanged()
+    End Sub
+    Partial Private Sub OnTransTypeChanging(value As String)
+    End Sub
+    Partial Private Sub OnTransTypeChanged()
+    End Sub
+    Partial Private Sub OnDateChanging(value As System.Nullable(Of Date))
+    End Sub
+    Partial Private Sub OnDateChanged()
+    End Sub
+    #End Region
+	
+	Public Sub New()
+		MyBase.New
+		OnCreated
+	End Sub
+	
+	<Global.System.Data.Linq.Mapping.ColumnAttribute(Storage:="_id", AutoSync:=AutoSync.OnInsert, DbType:="Int NOT NULL IDENTITY", IsPrimaryKey:=true, IsDbGenerated:=true)>  _
+	Public Property id() As Integer
+		Get
+			Return Me._id
+		End Get
+		Set
+			If ((Me._id = value)  _
+						= false) Then
+				Me.OnidChanging(value)
+				Me.SendPropertyChanging
+				Me._id = value
+				Me.SendPropertyChanged("id")
+				Me.OnidChanged
+			End If
+		End Set
+	End Property
+	
+	<Global.System.Data.Linq.Mapping.ColumnAttribute(Storage:="_RequestNumber", DbType:="VarChar(200)")>  _
+	Public Property RequestNumber() As String
+		Get
+			Return Me._RequestNumber
+		End Get
+		Set
+			If (String.Equals(Me._RequestNumber, value) = false) Then
+				Me.OnRequestNumberChanging(value)
+				Me.SendPropertyChanging
+				Me._RequestNumber = value
+				Me.SendPropertyChanged("RequestNumber")
+				Me.OnRequestNumberChanged
+			End If
+		End Set
+	End Property
+	
+	<Global.System.Data.Linq.Mapping.ColumnAttribute(Storage:="_Requestor", DbType:="Int")>  _
+	Public Property Requestor() As System.Nullable(Of Integer)
+		Get
+			Return Me._Requestor
+		End Get
+		Set
+			If (Me._Requestor.Equals(value) = false) Then
+				Me.OnRequestorChanging(value)
+				Me.SendPropertyChanging
+				Me._Requestor = value
+				Me.SendPropertyChanged("Requestor")
+				Me.OnRequestorChanged
+			End If
+		End Set
+	End Property
+	
+	<Global.System.Data.Linq.Mapping.ColumnAttribute(Storage:="_TransType", DbType:="VarChar(200)")>  _
+	Public Property TransType() As String
+		Get
+			Return Me._TransType
+		End Get
+		Set
+			If (String.Equals(Me._TransType, value) = false) Then
+				Me.OnTransTypeChanging(value)
+				Me.SendPropertyChanging
+				Me._TransType = value
+				Me.SendPropertyChanged("TransType")
+				Me.OnTransTypeChanged
+			End If
+		End Set
+	End Property
+	
+	<Global.System.Data.Linq.Mapping.ColumnAttribute(Name:="Date", Storage:="_Date", DbType:="Date")>  _
+	Public Property [Date]() As System.Nullable(Of Date)
+		Get
+			Return Me._Date
+		End Get
+		Set
+			If (Me._Date.Equals(value) = false) Then
+				Me.OnDateChanging(value)
+				Me.SendPropertyChanging
+				Me._Date = value
+				Me.SendPropertyChanged("[Date]")
+				Me.OnDateChanged
+			End If
+		End Set
+	End Property
+	
+	Public Event PropertyChanging As PropertyChangingEventHandler Implements System.ComponentModel.INotifyPropertyChanging.PropertyChanging
+	
+	Public Event PropertyChanged As PropertyChangedEventHandler Implements System.ComponentModel.INotifyPropertyChanged.PropertyChanged
+	
+	Protected Overridable Sub SendPropertyChanging()
+		If ((Me.PropertyChangingEvent Is Nothing)  _
+					= false) Then
+			RaiseEvent PropertyChanging(Me, emptyChangingEventArgs)
+		End If
+	End Sub
+	
+	Protected Overridable Sub SendPropertyChanged(ByVal propertyName As [String])
+		If ((Me.PropertyChangedEvent Is Nothing)  _
+					= false) Then
+			RaiseEvent PropertyChanged(Me, New PropertyChangedEventArgs(propertyName))
+		End If
+	End Sub
+End Class
+
+<Global.System.Data.Linq.Mapping.TableAttribute(Name:="dbo.tblProcureDetails")>  _
+Partial Public Class tblProcureDetail
+	Implements System.ComponentModel.INotifyPropertyChanging, System.ComponentModel.INotifyPropertyChanged
+	
+	Private Shared emptyChangingEventArgs As PropertyChangingEventArgs = New PropertyChangingEventArgs(String.Empty)
+	
+	Private _id As Integer
+	
+	Private _AssetCode As String
+	
+	Private _Class As String
+	
+	Private _Requestfor As String
+	
+	Private _Quantity As System.Nullable(Of Double)
+	
+	Private _Remarks As String
+	
+	Private _State As String
+	
+	Private _TransID As System.Nullable(Of Integer)
+	
+    #Region "Extensibility Method Definitions"
+    Partial Private Sub OnLoaded()
+    End Sub
+    Partial Private Sub OnValidate(action As System.Data.Linq.ChangeAction)
+    End Sub
+    Partial Private Sub OnCreated()
+    End Sub
+    Partial Private Sub OnidChanging(value As Integer)
+    End Sub
+    Partial Private Sub OnidChanged()
+    End Sub
+    Partial Private Sub OnAssetCodeChanging(value As String)
+    End Sub
+    Partial Private Sub OnAssetCodeChanged()
+    End Sub
+    Partial Private Sub OnClassChanging(value As String)
+    End Sub
+    Partial Private Sub OnClassChanged()
+    End Sub
+    Partial Private Sub OnRequestforChanging(value As String)
+    End Sub
+    Partial Private Sub OnRequestforChanged()
+    End Sub
+    Partial Private Sub OnQuantityChanging(value As System.Nullable(Of Double))
+    End Sub
+    Partial Private Sub OnQuantityChanged()
+    End Sub
+    Partial Private Sub OnRemarksChanging(value As String)
+    End Sub
+    Partial Private Sub OnRemarksChanged()
+    End Sub
+    Partial Private Sub OnStateChanging(value As String)
+    End Sub
+    Partial Private Sub OnStateChanged()
+    End Sub
+    Partial Private Sub OnTransIDChanging(value As System.Nullable(Of Integer))
+    End Sub
+    Partial Private Sub OnTransIDChanged()
+    End Sub
+    #End Region
+	
+	Public Sub New()
+		MyBase.New
+		OnCreated
+	End Sub
+	
+	<Global.System.Data.Linq.Mapping.ColumnAttribute(Storage:="_id", AutoSync:=AutoSync.OnInsert, DbType:="Int NOT NULL IDENTITY", IsPrimaryKey:=true, IsDbGenerated:=true)>  _
+	Public Property id() As Integer
+		Get
+			Return Me._id
+		End Get
+		Set
+			If ((Me._id = value)  _
+						= false) Then
+				Me.OnidChanging(value)
+				Me.SendPropertyChanging
+				Me._id = value
+				Me.SendPropertyChanged("id")
+				Me.OnidChanged
+			End If
+		End Set
+	End Property
+	
+	<Global.System.Data.Linq.Mapping.ColumnAttribute(Storage:="_AssetCode", DbType:="VarChar(200)")>  _
+	Public Property AssetCode() As String
+		Get
+			Return Me._AssetCode
+		End Get
+		Set
+			If (String.Equals(Me._AssetCode, value) = false) Then
+				Me.OnAssetCodeChanging(value)
+				Me.SendPropertyChanging
+				Me._AssetCode = value
+				Me.SendPropertyChanged("AssetCode")
+				Me.OnAssetCodeChanged
+			End If
+		End Set
+	End Property
+	
+	<Global.System.Data.Linq.Mapping.ColumnAttribute(Name:="Class", Storage:="_Class", DbType:="VarChar(200)")>  _
+	Public Property [Class]() As String
+		Get
+			Return Me._Class
+		End Get
+		Set
+			If (String.Equals(Me._Class, value) = false) Then
+				Me.OnClassChanging(value)
+				Me.SendPropertyChanging
+				Me._Class = value
+				Me.SendPropertyChanged("[Class]")
+				Me.OnClassChanged
+			End If
+		End Set
+	End Property
+	
+	<Global.System.Data.Linq.Mapping.ColumnAttribute(Storage:="_Requestfor", DbType:="VarChar(200)")>  _
+	Public Property Requestfor() As String
+		Get
+			Return Me._Requestfor
+		End Get
+		Set
+			If (String.Equals(Me._Requestfor, value) = false) Then
+				Me.OnRequestforChanging(value)
+				Me.SendPropertyChanging
+				Me._Requestfor = value
+				Me.SendPropertyChanged("Requestfor")
+				Me.OnRequestforChanged
+			End If
+		End Set
+	End Property
+	
+	<Global.System.Data.Linq.Mapping.ColumnAttribute(Storage:="_Quantity", DbType:="Float")>  _
+	Public Property Quantity() As System.Nullable(Of Double)
+		Get
+			Return Me._Quantity
+		End Get
+		Set
+			If (Me._Quantity.Equals(value) = false) Then
+				Me.OnQuantityChanging(value)
+				Me.SendPropertyChanging
+				Me._Quantity = value
+				Me.SendPropertyChanged("Quantity")
+				Me.OnQuantityChanged
+			End If
+		End Set
+	End Property
+	
+	<Global.System.Data.Linq.Mapping.ColumnAttribute(Storage:="_Remarks", DbType:="VarChar(200)")>  _
+	Public Property Remarks() As String
+		Get
+			Return Me._Remarks
+		End Get
+		Set
+			If (String.Equals(Me._Remarks, value) = false) Then
+				Me.OnRemarksChanging(value)
+				Me.SendPropertyChanging
+				Me._Remarks = value
+				Me.SendPropertyChanged("Remarks")
+				Me.OnRemarksChanged
+			End If
+		End Set
+	End Property
+	
+	<Global.System.Data.Linq.Mapping.ColumnAttribute(Storage:="_State", DbType:="VarChar(200)")>  _
+	Public Property State() As String
+		Get
+			Return Me._State
+		End Get
+		Set
+			If (String.Equals(Me._State, value) = false) Then
+				Me.OnStateChanging(value)
+				Me.SendPropertyChanging
+				Me._State = value
+				Me.SendPropertyChanged("State")
+				Me.OnStateChanged
+			End If
+		End Set
+	End Property
+	
+	<Global.System.Data.Linq.Mapping.ColumnAttribute(Storage:="_TransID", DbType:="Int")>  _
+	Public Property TransID() As System.Nullable(Of Integer)
+		Get
+			Return Me._TransID
+		End Get
+		Set
+			If (Me._TransID.Equals(value) = false) Then
+				Me.OnTransIDChanging(value)
+				Me.SendPropertyChanging
+				Me._TransID = value
+				Me.SendPropertyChanged("TransID")
+				Me.OnTransIDChanged
+			End If
+		End Set
+	End Property
+	
+	Public Event PropertyChanging As PropertyChangingEventHandler Implements System.ComponentModel.INotifyPropertyChanging.PropertyChanging
+	
+	Public Event PropertyChanged As PropertyChangedEventHandler Implements System.ComponentModel.INotifyPropertyChanged.PropertyChanged
+	
+	Protected Overridable Sub SendPropertyChanging()
+		If ((Me.PropertyChangingEvent Is Nothing)  _
+					= false) Then
+			RaiseEvent PropertyChanging(Me, emptyChangingEventArgs)
+		End If
+	End Sub
+	
+	Protected Overridable Sub SendPropertyChanged(ByVal propertyName As [String])
+		If ((Me.PropertyChangedEvent Is Nothing)  _
+					= false) Then
+			RaiseEvent PropertyChanged(Me, New PropertyChangedEventArgs(propertyName))
+		End If
+	End Sub
+End Class
+
 Partial Public Class spUpdateCategoryResult
 	
 	Private _CategoryID As Integer
@@ -9645,7 +10035,7 @@ Partial Public Class spViewInventoryResult
 	End Property
 End Class
 
-Partial Public Class ShowAssetAvailabilityResult
+Partial Public Class ShowAssetAvailability2Result
 	
 	Private _id As Integer
 	
@@ -9662,6 +10052,8 @@ Partial Public Class ShowAssetAvailabilityResult
 	Private _State As String
 	
 	Private _vqty As System.Nullable(Of Integer)
+	
+	Private _Owner As System.Nullable(Of Integer)
 	
 	Public Sub New()
 		MyBase.New
@@ -9763,9 +10155,21 @@ Partial Public Class ShowAssetAvailabilityResult
 			End If
 		End Set
 	End Property
+	
+	<Global.System.Data.Linq.Mapping.ColumnAttribute(Storage:="_Owner", DbType:="Int")>  _
+	Public Property Owner() As System.Nullable(Of Integer)
+		Get
+			Return Me._Owner
+		End Get
+		Set
+			If (Me._Owner.Equals(value) = false) Then
+				Me._Owner = value
+			End If
+		End Set
+	End Property
 End Class
 
-Partial Public Class ShowAssetAvailability2Result
+Partial Public Class ShowAssetAvailabilityResult
 	
 	Private _id As Integer
 	

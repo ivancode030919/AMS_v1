@@ -325,8 +325,27 @@
             Return querysection
 
         Catch ex As Exception
+            MsgBox("Error.F-18")
+        End Try
+
+
+    End Function
+
+    '--------------------------------------------------------------------------------------------
+    'Fetch transheader id in For Approval
+    '--------------------------------------------------------------------------------------------
+    Public Shared Function FetchTransIdForApproval() As Object
+        Try
+            Dim querysection = (From s In db.tblProcureHeaders
+                                Order By s.id Descending
+                                Select s.id).FirstOrDefault()
+
+            Return querysection
+
+        Catch ex As Exception
             MsgBox("Error.F-17")
         End Try
+
 
     End Function
     '--------------------------------------------------------------------------------------------
@@ -341,10 +360,38 @@
             Return querysection
 
         Catch ex As Exception
-            MsgBox("Error.F-17")
+            MsgBox("Error.F-19")
         End Try
 
     End Function
 
+    '--------------------------------------------------------------------------------------------
+    'Fetch Last Request Number
+    '--------------------------------------------------------------------------------------------
+    Public Shared Function FetchEntryID2() As String
+        Try
+            Dim querysection As String = (From s In db.tblRequestHeaders
+                                          Order By s.HeaderId Descending
+                                          Where s.RequestNo <> ""
+                                          Select s.RequestNo).FirstOrDefault()
 
+            If IsNothing(querysection) Then
+                Dim newEntryID As String = "000001"
+                Return newEntryID
+            Else
+                Dim parts As String() = querysection.Split("-"c)
+                Dim lastPart As String = parts(parts.Length - 1)
+                Dim nextNumber As Integer = Integer.Parse(lastPart) + 1
+
+                ' Assuming you want the format "000001" for all values, you can use the following format.
+                Dim formattedNextNumber As String = nextNumber.ToString("D6")
+                Dim newEntryID As String = $"{formattedNextNumber}"
+
+                Return newEntryID
+            End If
+        Catch ex As Exception
+            MsgBox("Error.F-20")
+        End Try
+
+    End Function
 End Class

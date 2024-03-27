@@ -4,6 +4,25 @@ Imports System.Linq
 Imports System.Data.Linq
 
 Public Class InsertionClass
+    '--------------------------------------------------------------------------------------------
+    'Save in tblRequest Detail
+    '--------------------------------------------------------------------------------------------
+    Public Shared Function GetAquisitionRequest() As System.Data.Linq.Table(Of tblRequestDetail)
+        Return db.GetTable(Of tblRequestDetail)()
+    End Function
+
+    '--------------------------------------------------------------------------------------------
+    'Save in tblprocure Detail
+    '--------------------------------------------------------------------------------------------
+    Public Shared Function GetProcureDetail() As System.Data.Linq.Table(Of tblProcureDetail)
+        Return db.GetTable(Of tblProcureDetail)()
+    End Function
+    '--------------------------------------------------------------------------------------------
+    'Save in tblprocure Header
+    '--------------------------------------------------------------------------------------------
+    Public Shared Function GetProcureHeader() As System.Data.Linq.Table(Of tblProcureHeader)
+        Return db.GetTable(Of tblProcureHeader)()
+    End Function
 
     '--------------------------------------------------------------------------------------------
     'Save in tblRequestHeader
@@ -221,7 +240,11 @@ Public Class InsertionClass
     '--------------------------------------------------------------------------------------------
     'Save in New Asset Class Detail
     '--------------------------------------------------------------------------------------------
-    Public Shared Sub SaveAssetDetail(ByVal Assetcode As String, ByVal Description As String, ByVal Category As Integer, ByVal Type As Integer, ByVal TransHeaderId As Integer)
+    Public Shared Sub SaveAssetDetail(ByVal Assetcode As String,
+                                      ByVal Description As String,
+                                      ByVal Category As Integer,
+                                      ByVal Type As Integer,
+                                      ByVal TransHeaderId As Integer)
         Try
             Dim user As Integer = Home.UserID
             Dim currentdate As Date = DateTime.Now.Date()
@@ -251,7 +274,15 @@ Public Class InsertionClass
     'Import Data in tblAssetDetailMasterlist
     '--------------------------------------------------------------------------------------------
 
-    Public Shared Sub SaveMasterlistImport(ByVal itemcode As String, ByVal des As String, ByVal catid As Integer, ByVal typeid As Integer, ByVal date1 As Date, ByVal date2 As Date, ByVal user1 As Integer, ByVal user2 As Integer, ByVal AH As Integer)
+    Public Shared Sub SaveMasterlistImport(ByVal itemcode As String,
+                                           ByVal des As String,
+                                           ByVal catid As Integer,
+                                           ByVal typeid As Integer,
+                                           ByVal date1 As Date,
+                                           ByVal date2 As Date,
+                                           ByVal user1 As Integer,
+                                           ByVal user2 As Integer,
+                                           ByVal AH As Integer)
         Try
             Dim user As Integer = Home.UserID
             Dim currentdate As Date = DateTime.Now.Date()
@@ -279,7 +310,9 @@ Public Class InsertionClass
     '--------------------------------------------------------------------------------------------
     'Save in New Asset Class Header
     '--------------------------------------------------------------------------------------------
-    Public Shared Sub SaveMasterlistHeader(ByVal entry As String, ByVal remarks As String, ByVal date1 As Date)
+    Public Shared Sub SaveMasterlistHeader(ByVal entry As String,
+                                           ByVal remarks As String,
+                                           ByVal date1 As Date)
         Try
 
             Dim user As Integer = Home.UserID
@@ -328,7 +361,10 @@ Public Class InsertionClass
     '--------------------------------------------------------------------------------------------
     'Save in Assignment Header 
     '--------------------------------------------------------------------------------------------
-    Public Shared Sub SaveAssignmentHeader(ByVal Entrynumber As String, ByVal Requestor As Integer, ByVal HDate As Date, ByVal RequestID As Integer)
+    Public Shared Sub SaveAssignmentHeader(ByVal Entrynumber As String,
+                                           ByVal Requestor As Integer,
+                                           ByVal HDate As Date,
+                                           ByVal RequestID As Integer)
         Try
             Dim post As Table(Of tblAllocationHeader) = InsertionClass.GetAllocationHeader
             Dim p As New tblAllocationHeader With
@@ -348,7 +384,11 @@ Public Class InsertionClass
     '--------------------------------------------------------------------------------------------
     'Save in Assignment Details
     '--------------------------------------------------------------------------------------------
-    Public Shared Sub SaveAssignmentDetails(ByVal Qty As Double, ByVal PropertryCode As String, ByVal HeaderId As String, ByVal Employee As String, ByVal ItemCode As String)
+    Public Shared Sub SaveAssignmentDetails(ByVal Qty As Double,
+                                            ByVal PropertryCode As String,
+                                            ByVal HeaderId As String,
+                                            ByVal Employee As String,
+                                            ByVal ItemCode As String)
         Try
             Dim post As Table(Of tblAllocationDetail) = InsertionClass.GetAllocationDetail
             Dim p As New tblAllocationDetail With
@@ -369,7 +409,14 @@ Public Class InsertionClass
     '--------------------------------------------------------------------------------------------
     'Save in Employee
     '--------------------------------------------------------------------------------------------
-    Public Shared Sub SaveEmployee(ByVal fname As String, ByVal lname As String, ByVal BranchID As Integer, ByVal DepID As Integer, ByVal PID As Integer, ByVal SecID As Integer, ByVal manager As Integer, ByVal compny As String)
+    Public Shared Sub SaveEmployee(ByVal fname As String,
+                                   ByVal lname As String,
+                                   ByVal BranchID As Integer,
+                                   ByVal DepID As Integer,
+                                   ByVal PID As Integer,
+                                   ByVal SecID As Integer,
+                                   ByVal manager As Integer,
+                                   ByVal compny As String)
         'Try
         Dim user As Integer = Home.UserID
         Dim currentdate As Date = DateTime.Now.Date()
@@ -407,7 +454,11 @@ Public Class InsertionClass
     '--------------------------------------------------------------------------------------------
     'Save in Request Header
     '--------------------------------------------------------------------------------------------
-    Public Shared Sub SaveRequestHeader(ByVal reqno As String, ByVal reqby As Integer, ByVal date1 As Date, ByVal stat As String, ByVal rtype As String)
+    Public Shared Sub SaveRequestHeader(ByVal reqno As String,
+                                        ByVal reqby As Integer,
+                                        ByVal date1 As Date,
+                                        ByVal stat As String,
+                                        ByVal rtype As String)
         Try
             Dim post As Table(Of tblRequestHeader) = InsertionClass.GetAqRequestHeader
 
@@ -422,6 +473,173 @@ Public Class InsertionClass
                   .Stat2 = 0,
                   .Stat3 = 0,
                   .Stat4 = 0
+                }
+            post.InsertOnSubmit(p)
+            post.Context.SubmitChanges()
+
+        Catch ex As Exception
+            MsgBox("Invalid Data...")
+        End Try
+    End Sub
+    '--------------------------------------------------------------------------------------------
+    'Save in Procurement Header
+    '--------------------------------------------------------------------------------------------
+    Public Shared Sub SaveProcurementHeader(ByVal RequestNUmber As String,
+                                            ByVal Requestor As Integer,
+                                            ByVal pdate As Date)
+        Try
+            Dim Trastype As String = "Procure"
+            Dim post As Table(Of tblProcureHeader) = InsertionClass.GetProcureHeader
+
+            Dim p As New tblProcureHeader With
+                {
+               .RequestNumber = RequestNUmber,
+               .Requestor = Requestor,
+               .TransType = Trastype,
+               .[Date] = pdate
+                }
+            post.InsertOnSubmit(p)
+            post.Context.SubmitChanges()
+
+        Catch ex As Exception
+            MsgBox("Invalid Data...")
+        End Try
+    End Sub
+    '--------------------------------------------------------------------------------------------
+    'Save in Procurement DEtail
+    '--------------------------------------------------------------------------------------------
+    Public Shared Sub SaveProcurementDetail(ByVal AssetCode As String,
+                                            ByVal ItemClass As String,
+                                            ByVal Requestfor As String,
+                                            ByVal Quantity As Double,
+                                            ByVal remaks As String,
+                                            ByVal State As String,
+                                            ByVal TransId As Integer)
+        Try
+
+            Dim Trastype As String = "Procure"
+            Dim post As Table(Of tblProcureDetail) = InsertionClass.GetProcureDetail
+
+            Dim p As New tblProcureDetail With
+                {
+               .AssetCode = AssetCode,
+               .[Class] = ItemClass,
+               .Requestfor = Requestfor,
+               .Quantity = Quantity,
+               .Remarks = remaks,
+               .State = State,
+               .TransID = TransId
+                }
+            post.InsertOnSubmit(p)
+            post.Context.SubmitChanges()
+
+        Catch ex As Exception
+            MsgBox("Invalid Data...")
+        End Try
+    End Sub
+    '------------------------------------------------------------------------------------
+    'Save Request Procurement
+    '------------------------------------------------------------------------------------
+    Public Shared Sub SaveProcurement(ByVal assetcode As Integer,
+                           ByVal Class1 As String,
+                           ByVal Qty As Double,
+                           ByVal Owner As Integer,
+                           ByVal remarks As String,
+                           ByVal HeaderID As Integer)
+
+
+        Dim Status = "OPEN"
+        Dim State = "OPEN"
+        Dim Approval = 0
+        Dim post As Table(Of tblRequestDetail) = InsertionClass.GetAquisitionRequest
+        Dim p As New tblRequestDetail With
+            {
+             .AssetCode = assetcode,
+             .[Class] = Class1,
+             .Qty = Qty,
+             .Owner = Owner,
+             .Remarks = remarks,
+             .HeaderID = HeaderID,
+             .Status = Status,
+             .State = State,
+             .Approve1 = Approval,
+             .Approve2 = Approval,
+             .Approve3 = Approval,
+             .Approve4 = Approval
+            }
+        post.InsertOnSubmit(p)
+        post.Context.SubmitChanges()
+
+
+    End Sub
+
+    '------------------------------------------------------------------------------------
+    'Save Request Borrow 
+    '------------------------------------------------------------------------------------
+    Public Shared Sub SaveBorrow(ByVal PropertyCode As String,
+                          ByVal Des As String,
+                          ByVal Qty As Double,
+                          ByVal Borrowee As Integer,
+                          ByVal remarks As String,
+                          ByVal Date1 As Date,
+                          ByVal Date2 As Date,
+                          ByVal HeaderID As Integer)
+
+        Try
+            Dim Status = "OPEN"
+            Dim Approval = 0
+            Dim post As Table(Of tblRequestDetail) = InsertionClass.GetAquisitionRequest
+            Dim p As New tblRequestDetail With
+                {
+                 .PropertyCode = PropertyCode,
+                 .Description = Des,
+                 .Qty = Qty,
+                 .Borrowee = Borrowee,
+                 .Remarks = remarks,
+                 .DateFrom = Date1,
+                 .DateTo = Date2,
+                 .HeaderID = HeaderID,
+                 .Status = Status,
+                 .Approve1 = Approval,
+                 .Approve2 = Approval,
+                 .Approve3 = Approval,
+                 .Approve4 = Approval
+                }
+            post.InsertOnSubmit(p)
+            post.Context.SubmitChanges()
+
+        Catch ex As Exception
+            MsgBox("Invalid Data...")
+        End Try
+    End Sub
+
+    '------------------------------------------------------------------------------------
+    'Save Request Transfer
+    '------------------------------------------------------------------------------------
+    Public Shared Sub SaveTRansferOwner(ByVal PropertyCode As String,
+                         ByVal Des As String,
+                         ByVal Qty As Double,
+                         ByVal NewOwnwer As Integer,
+                         ByVal remarks As String,
+                         ByVal HeaderID As Integer)
+
+        Try
+            Dim Status = "OPEN"
+            Dim Approval = 0
+            Dim post As Table(Of tblRequestDetail) = InsertionClass.GetAquisitionRequest
+            Dim p As New tblRequestDetail With
+                {
+                 .PropertyCode = PropertyCode,
+                 .Description = Des,
+                 .Qty = Qty,
+                 .NewOwner = NewOwnwer,
+                 .Remarks = remarks,
+                 .HeaderID = HeaderID,
+                 .Status = Status,
+                 .Approve1 = Approval,
+                 .Approve2 = Approval,
+                 .Approve3 = Approval,
+                 .Approve4 = Approval
                 }
             post.InsertOnSubmit(p)
             post.Context.SubmitChanges()

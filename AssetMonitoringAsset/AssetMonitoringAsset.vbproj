@@ -127,8 +127,6 @@
     <Compile Include="Forms\2.%29 Asset_Management\1.%29 Request\Procure Register\ProcureRegister.vb">
       <SubType>Form</SubType>
     </Compile>
-    <Compile Include="OLD_FORMS_AND_CLASS\Class\RequestDetailClass.vb" />
-    <Compile Include="OLD_FORMS_AND_CLASS\Class\RequestHeaderClass.vb" />
     <Compile Include="OLD_FORMS_AND_CLASS\Class\BranchClass.vb" />
     <Compile Include="OLD_FORMS_AND_CLASS\Class\InventoryClass.vb" />
     <Compile Include="OLD_FORMS_AND_CLASS\Class\CategoryClass.vb" />
@@ -139,7 +137,6 @@
     <Compile Include="OLD_FORMS_AND_CLASS\Class\PositionClass.vb" />
     <Compile Include="OLD_FORMS_AND_CLASS\Class\ReferenceClass.vb" />
     <Compile Include="OLD_FORMS_AND_CLASS\Class\SectionClass.vb" />
-    <Compile Include="OLD_FORMS_AND_CLASS\Class\TransferHeaderClass.vb" />
     <Compile Include="OLD_FORMS_AND_CLASS\Class\TypeClass.vb" />
     <Compile Include="OLD_FORMS_AND_CLASS\Class\UserClass.vb" />
     <Compile Include="OLD_FORMS_AND_CLASS\Class\VendorClass.vb" />

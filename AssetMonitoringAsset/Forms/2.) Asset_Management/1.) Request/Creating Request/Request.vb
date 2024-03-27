@@ -113,7 +113,7 @@
 
         If SimpleButton2.Text = "Record" Then
             Dim Stat1 As String = "Open"
-            Dim rn As String = RequestHeaderClass.FetchEntryID2
+            Dim rn As String = FetchClass.FetchEntryID2
 
             InsertionClass.SaveRequestHeader(rn, Home.EmployeeID, DateTimePicker1.Value, Stat1, ComboBox2.Text)
             If ComboBox2.Text = "Procure" Then
@@ -127,7 +127,7 @@
                         Dim qty As String = row.Cells(2).Value.ToString
                         Dim Owner As String = row.Cells(5).Value.ToString
                         Dim Remarks As String = row.Cells(4).Value.ToString
-                        RequestDetailClass.SaveProcurement(AssetCode, Des, qty, Owner, Remarks, headid)
+                        InsertionClass.SaveProcurement(AssetCode, Des, qty, Owner, Remarks, headid)
                     End If
                 Next
 
@@ -144,7 +144,7 @@
                         Dim DateFrom As String = row.Cells(4).Value.ToString
                         Dim DateTo As String = row.Cells(5).Value.ToString
                         Dim Remarks As String = row.Cells(6).Value.ToString
-                        RequestDetailClass.SaveBorrow(PropertyCode, Des, qty, Integer.Parse(Borrowee), Remarks, DateFrom, DateTo, headid)
+                        InsertionClass.SaveBorrow(PropertyCode, Des, qty, Integer.Parse(Borrowee), Remarks, DateFrom, DateTo, headid)
                     End If
                 Next
             ElseIf ComboBox2.Text = "Transfer Ownership" Then
@@ -158,7 +158,7 @@
                         Dim qty As String = row.Cells(2).Value.ToString
                         Dim Newowner As String = row.Cells(5).Value.ToString
                         Dim Remarks As String = row.Cells(4).Value.ToString
-                        RequestDetailClass.SaveTRansferOwner(PropertyCode, Des, qty, Integer.Parse(Newowner), Remarks, headid)
+                        InsertionClass.SaveTRansferOwner(PropertyCode, Des, qty, Integer.Parse(Newowner), Remarks, headid)
                     End If
                 Next
             End If
@@ -181,9 +181,6 @@
             SimpleButton2.Text = "Record"
 
         End If
-
-
-
 
     End Sub
 
@@ -228,7 +225,6 @@
         'Catch ex As Exception
 
         'End Try
-
 
     End Sub
 

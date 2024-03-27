@@ -12,7 +12,7 @@
     End Sub
 
     Public Sub display()
-
+        SimpleButton2.Text = "Record"
         If Rtype = "Procure" Then
             'DISPLAY IF THE REQUEST TYPE IS PROCUREMENT
             ViewClass.FetchRegisterDetail1(headerid, Rtype)
@@ -26,7 +26,9 @@
                 .Columns(5).HeaderText = "Remarks"
                 .Columns(6).HeaderText = "State"
                 .Columns(7).HeaderText = "Available"
+                .Columns(8).HeaderText = "RequestorID"
                 .Columns(0).Visible = False
+                .Columns(8).Visible = False
                 .ReadOnly = True
             End With
 
@@ -104,21 +106,63 @@
     End Sub
 
     Private Sub dgv_RowValidated(sender As Object, e As DataGridViewCellEventArgs) Handles dgv.RowValidated
+        Try
+            For Each row As DataGridViewRow In dgv.Rows
 
-        For Each row As DataGridViewRow In dgv.Rows
+                If row.Cells(6).Value.ToString = "CLOSED" Then
+                    SimpleButton1.Visible = False
+                    UpdateClass.UpdateStatusReqHeader(headerid)
 
-            If row.Cells(6).Value.ToString = "CLOSED" Then
-                SimpleButton1.Visible = False
-                UpdateClass.UpdateStatusReqHeader(headerid)
+                ElseIf row.Cells(7).Value.ToString = 0 Then
 
-            ElseIf row.Cells(7).Value.ToString = 0 Then
+                    SimpleButton1.Visible = False
+                Else
+                    SimpleButton1.Visible = True
+                End If
 
-                SimpleButton1.Visible = False
-            Else
-                SimpleButton1.Visible = True
+            Next
+        Catch ex As Exception
+            MsgBox("Error.For Approval.02")
+        End Try
+
+
+    End Sub
+
+    Private Sub SimpleButton2_Click(sender As Object, e As EventArgs) Handles SimpleButton2.Click
+        Try
+            If SimpleButton2.Text = "Record" Then
+                InsertionClass.SaveProcurementHeader(TextBox1.Text, Home.EmployeeID, DateTimePicker1.Value)
+
+                For Each row As DataGridViewRow In dgv.Rows
+
+                    If Not row.IsNewRow Then
+
+                        Dim HeaderId As Integer = FetchClass.FetchTransIdForApproval
+                        Dim AssetCode As String = row.Cells(1).Value.ToString
+                        Dim ItemClass As String = row.Cells(2).Value.ToString
+                        Dim RequestFor As String = row.Cells(8).Value.ToString
+                        Dim Quantity As String = row.Cells(4).Value.ToString
+                        Dim Remarks As String = row.Cells(5).Value.ToString
+                        Dim State As String = row.Cells(6).Value.ToString
+                        InsertionClass.SaveProcurementDetail(AssetCode, ItemClass, RequestFor, Quantity, Remarks, State, HeaderId)
+
+                    End If
+                Next
+                MessageBox.Show("Successfully Recorded", "Notification", MessageBoxButtons.OK, MessageBoxIcon.Information)
+                SimpleButton2.Text = "Close"
+            ElseIf SimpleButton2.Text = "Close" Then
+                closingform()
             End If
 
-        Next
+
+        Catch ex As Exception
+            MsgBox("Error.For Approval.01")
+        End Try
+    End Sub
+
+
+    Private Sub closingform()
+        Me.Close()
 
     End Sub
 End Class

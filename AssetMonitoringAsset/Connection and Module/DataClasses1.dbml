@@ -376,6 +376,27 @@
       <Association Name="tblmasterlistdetail_tblTransferDetail" Member="tblTransferDetails" ThisKey="ItemID" OtherKey="AssetId" Type="tblTransferDetail" />
     </Type>
   </Table>
+  <Table Name="dbo.tblProcureHeader" Member="tblProcureHeaders">
+    <Type Name="tblProcureHeader">
+      <Column Name="id" Type="System.Int32" DbType="Int NOT NULL IDENTITY" IsPrimaryKey="true" IsDbGenerated="true" CanBeNull="false" />
+      <Column Name="RequestNumber" Type="System.String" DbType="VarChar(200)" CanBeNull="true" />
+      <Column Name="Requestor" Type="System.Int32" DbType="Int" CanBeNull="true" />
+      <Column Name="TransType" Type="System.String" DbType="VarChar(200)" CanBeNull="true" />
+      <Column Name="Date" Type="System.DateTime" DbType="Date" CanBeNull="true" />
+    </Type>
+  </Table>
+  <Table Name="dbo.tblProcureDetails" Member="tblProcureDetails">
+    <Type Name="tblProcureDetail">
+      <Column Name="id" Type="System.Int32" DbType="Int NOT NULL IDENTITY" IsPrimaryKey="true" IsDbGenerated="true" CanBeNull="false" />
+      <Column Name="AssetCode" Type="System.String" DbType="VarChar(200)" CanBeNull="true" />
+      <Column Name="Class" Type="System.String" DbType="VarChar(200)" CanBeNull="true" />
+      <Column Name="Requestfor" Type="System.String" DbType="VarChar(200)" CanBeNull="true" />
+      <Column Name="Quantity" Type="System.Double" DbType="Float" CanBeNull="true" />
+      <Column Name="Remarks" Type="System.String" DbType="VarChar(200)" CanBeNull="true" />
+      <Column Name="State" Type="System.String" DbType="VarChar(200)" CanBeNull="true" />
+      <Column Name="TransID" Type="System.Int32" DbType="Int" CanBeNull="true" />
+    </Type>
+  </Table>
   <Function Name="dbo.spNewAsset" Method="spNewAsset">
     <Parameter Name="Description" Parameter="description" Type="System.String" DbType="VarChar(200)" />
     <Parameter Name="category" Type="System.Int32" DbType="Int" />
@@ -751,9 +772,9 @@
       <Column Name="qty" Type="System.Double" DbType="Float" CanBeNull="true" />
     </ElementType>
   </Function>
-  <Function Name="dbo.ShowAssetAvailability" Method="ShowAssetAvailability">
+  <Function Name="dbo.ShowAssetAvailability2" Method="ShowAssetAvailability2">
     <Parameter Name="headerid" Type="System.Int32" DbType="Int" />
-    <ElementType Name="ShowAssetAvailabilityResult">
+    <ElementType Name="ShowAssetAvailability2Result">
       <Column Name="id" Type="System.Int32" DbType="Int NOT NULL" CanBeNull="false" />
       <Column Name="AssetCode" Type="System.Int32" DbType="Int" CanBeNull="true" />
       <Column Name="Class" Type="System.String" DbType="VarChar(MAX)" CanBeNull="true" />
@@ -762,11 +783,12 @@
       <Column Name="Remarks" Type="System.String" DbType="VarChar(MAX)" CanBeNull="true" />
       <Column Name="State" Type="System.String" DbType="VarChar(MAX)" CanBeNull="true" />
       <Column Name="vqty" Type="System.Int32" DbType="Int" CanBeNull="true" />
+      <Column Name="Owner" Type="System.Int32" DbType="Int" CanBeNull="true" />
     </ElementType>
   </Function>
-  <Function Name="dbo.ShowAssetAvailability2" Method="ShowAssetAvailability2">
+  <Function Name="dbo.ShowAssetAvailability" Method="ShowAssetAvailability">
     <Parameter Name="headerid" Type="System.Int32" DbType="Int" />
-    <ElementType Name="ShowAssetAvailability2Result">
+    <ElementType Name="ShowAssetAvailabilityResult">
       <Column Name="id" Type="System.Int32" DbType="Int NOT NULL" CanBeNull="false" />
       <Column Name="AssetCode" Type="System.Int32" DbType="Int" CanBeNull="true" />
       <Column Name="Class" Type="System.String" DbType="VarChar(MAX)" CanBeNull="true" />
