@@ -106,12 +106,18 @@
     Private Sub dgv_RowValidated(sender As Object, e As DataGridViewCellEventArgs) Handles dgv.RowValidated
 
         For Each row As DataGridViewRow In dgv.Rows
+
             If row.Cells(6).Value.ToString = "CLOSED" Then
                 SimpleButton1.Visible = False
                 UpdateClass.UpdateStatusReqHeader(headerid)
+
+            ElseIf row.Cells(7).Value.ToString = 0 Then
+
+                SimpleButton1.Visible = False
             Else
                 SimpleButton1.Visible = True
             End If
+
         Next
 
     End Sub

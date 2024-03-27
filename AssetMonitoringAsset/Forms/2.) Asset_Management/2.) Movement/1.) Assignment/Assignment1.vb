@@ -215,6 +215,7 @@
                         row.Cells(7).Value = String.Empty
                         row.Cells(8).Value = String.Empty
                         row.Cells(9).Value = String.Empty
+                        row.Cells(1).Selected = True
                     Else
 
                     End If
