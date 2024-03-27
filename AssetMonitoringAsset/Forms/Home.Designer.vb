@@ -124,6 +124,7 @@ Partial Class Home
         Me.AccordionControlElement35.Appearance.Default.ForeColor = System.Drawing.Color.Black
         Me.AccordionControlElement35.Appearance.Default.Options.UseForeColor = True
         Me.AccordionControlElement35.Elements.AddRange(New DevExpress.XtraBars.Navigation.AccordionControlElement() {Me.AccordionControlElement38, Me.AccordionControlElement46, Me.AccordionControlElement56})
+        Me.AccordionControlElement35.Expanded = True
         Me.AccordionControlElement35.Name = "AccordionControlElement35"
         Me.AccordionControlElement35.Text = "Request"
         '

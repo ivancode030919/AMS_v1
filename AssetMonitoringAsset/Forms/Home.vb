@@ -109,4 +109,8 @@
     Private Sub AccordionControlElement46_Click(sender As Object, e As EventArgs) Handles AccordionControlElement46.Click
         RequestRegister.ShowDialog()
     End Sub
+
+    Private Sub AccordionControlElement56_Click(sender As Object, e As EventArgs) Handles AccordionControlElement56.Click
+        ProcureRegister.ShowDialog()
+    End Sub
 End Class

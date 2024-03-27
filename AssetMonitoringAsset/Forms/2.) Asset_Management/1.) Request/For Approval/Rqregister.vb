@@ -38,9 +38,7 @@
             'DISPLAY IF THE REQUEST TYPE IS TRANSFER OWNERSHIP
         End If
 
-
     End Sub
-
 
     Private Sub Closing1()
 
@@ -89,6 +87,7 @@
                 .Stat = selectedrow.Cells(6).Value
                 .ShowDialog()
             End With
+
         End If
 
     End Sub

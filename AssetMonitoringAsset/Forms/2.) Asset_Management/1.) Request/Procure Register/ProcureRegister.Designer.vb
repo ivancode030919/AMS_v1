@@ -21,11 +21,11 @@ Partial Class ProcureRegister
     Private Sub InitializeComponent()
         Me.PanelControl1 = New DevExpress.XtraEditors.PanelControl()
         Me.PanelControl2 = New DevExpress.XtraEditors.PanelControl()
-        Me.DataGridView1 = New System.Windows.Forms.DataGridView()
+        Me.dgv = New System.Windows.Forms.DataGridView()
         CType(Me.PanelControl1, System.ComponentModel.ISupportInitialize).BeginInit()
         CType(Me.PanelControl2, System.ComponentModel.ISupportInitialize).BeginInit()
         Me.PanelControl2.SuspendLayout()
-        CType(Me.DataGridView1, System.ComponentModel.ISupportInitialize).BeginInit()
+        CType(Me.dgv, System.ComponentModel.ISupportInitialize).BeginInit()
         Me.SuspendLayout()
         '
         'PanelControl1
@@ -38,22 +38,22 @@ Partial Class ProcureRegister
         '
         'PanelControl2
         '
-        Me.PanelControl2.Controls.Add(Me.DataGridView1)
+        Me.PanelControl2.Controls.Add(Me.dgv)
         Me.PanelControl2.Dock = System.Windows.Forms.DockStyle.Bottom
         Me.PanelControl2.Location = New System.Drawing.Point(5, 98)
         Me.PanelControl2.Name = "PanelControl2"
         Me.PanelControl2.Size = New System.Drawing.Size(1037, 374)
         Me.PanelControl2.TabIndex = 1
         '
-        'DataGridView1
+        'dgv
         '
-        Me.DataGridView1.BackgroundColor = System.Drawing.Color.WhiteSmoke
-        Me.DataGridView1.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize
-        Me.DataGridView1.Dock = System.Windows.Forms.DockStyle.Fill
-        Me.DataGridView1.Location = New System.Drawing.Point(2, 2)
-        Me.DataGridView1.Name = "DataGridView1"
-        Me.DataGridView1.Size = New System.Drawing.Size(1033, 370)
-        Me.DataGridView1.TabIndex = 0
+        Me.dgv.BackgroundColor = System.Drawing.Color.WhiteSmoke
+        Me.dgv.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize
+        Me.dgv.Dock = System.Windows.Forms.DockStyle.Fill
+        Me.dgv.Location = New System.Drawing.Point(2, 2)
+        Me.dgv.Name = "dgv"
+        Me.dgv.Size = New System.Drawing.Size(1033, 370)
+        Me.dgv.TabIndex = 0
         '
         'ProcureRegister
         '
@@ -72,12 +72,12 @@ Partial Class ProcureRegister
         CType(Me.PanelControl1, System.ComponentModel.ISupportInitialize).EndInit()
         CType(Me.PanelControl2, System.ComponentModel.ISupportInitialize).EndInit()
         Me.PanelControl2.ResumeLayout(False)
-        CType(Me.DataGridView1, System.ComponentModel.ISupportInitialize).EndInit()
+        CType(Me.dgv, System.ComponentModel.ISupportInitialize).EndInit()
         Me.ResumeLayout(False)
 
     End Sub
 
     Friend WithEvents PanelControl1 As DevExpress.XtraEditors.PanelControl
     Friend WithEvents PanelControl2 As DevExpress.XtraEditors.PanelControl
-    Friend WithEvents DataGridView1 As DataGridView
+    Friend WithEvents dgv As DataGridView
 End Class

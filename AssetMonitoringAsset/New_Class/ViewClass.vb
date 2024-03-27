@@ -152,4 +152,15 @@
                             Select New With {s.TransDate, s.EntryNumber, s.Remarks, fl, s.AssetHeaderID}).ToList()
         Return querysection
     End Function
+
+    '------------------------------------------------------------------------------------
+    'Display In Procure Register
+    '------------------------------------------------------------------------------------
+    Public Shared Function ViewProcureRegister() As Object
+        Dim querysection = (From s In db.tblProcureHeaders
+                            Join r In db.tblEmployees On s.Requestor Equals r.EmployeeID
+                            Let x = r.FirstName + " " + r.LastName
+                            Select s.RequestNumber, x, s.Date).ToList()
+        Return querysection
+    End Function
 End Class
