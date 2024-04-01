@@ -6,7 +6,7 @@
     End Sub
 
     Private Sub SimpleButton2_Click(sender As Object, e As EventArgs) Handles SimpleButton2.Click
-        UserClass.UpdateUserStat(Status, User.Userid)
+        UpdateClass.UpdateUserStat(Status, User.Userid)
     End Sub
 
     Private Sub RadioButton6_CheckedChanged(sender As Object, e As EventArgs) Handles RadioButton6.CheckedChanged

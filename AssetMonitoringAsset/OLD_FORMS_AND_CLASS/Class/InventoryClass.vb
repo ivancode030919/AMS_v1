@@ -124,9 +124,9 @@ Public Class InventoryClass
         'End Try
     End Sub
 
-    '--------------------------------------------------------------------------------------------
+
     'Fetch Last PropertyCode By Asset Category and Type
-    '--------------------------------------------------------------------------------------------
+
 
     Public Shared Function FetchPropertyCode(ByVal cat As String, ByVal type As String) As Object
         Dim querysection = (From s In db.tblPropertyCodeSeries
@@ -148,9 +148,9 @@ Public Class InventoryClass
 
     End Function
 
-    '--------------------------------------------------------------------------------------------
+
     'Save To Records in tblBuildHeader
-    '--------------------------------------------------------------------------------------------
+
     Public Shared Function GetBuildHeader() As System.Data.Linq.Table(Of tblBuildHeader)
         Return db.GetTable(Of tblBuildHeader)()
     End Function

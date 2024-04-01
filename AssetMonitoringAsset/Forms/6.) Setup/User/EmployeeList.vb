@@ -7,7 +7,7 @@
     End Sub
 
     Private Sub viewdg()
-        dgview.DataSource = EmployeeClass.ViewEmployeeList(TextBox1.Text)
+        dgview.DataSource = ViewClass.ViewEmployeeList(TextBox1.Text)
     End Sub
 
     Private Sub Dgview_CellDoubleClick(sender As Object, e As DataGridViewCellEventArgs) Handles dgview.CellDoubleClick

@@ -10,7 +10,7 @@
         If TextBox2.Text = String.Empty Then
             MsgBox("Invalid Password...")
         Else
-            UserClass.UpdateUserPass(User.Userid, TextBox2.Text)
+            UpdateClass.UpdateUserPass(User.Userid, TextBox2.Text)
         End If
 
     End Sub

@@ -3,10 +3,10 @@
         display()
     End Sub
 
-    Private Sub display()
+    Public Sub display()
         dgv.DataSource = ViewClass.FetchsRequstRegister
 
-        With dgv        
+        With dgv
             .Columns(0).HeaderText = "Date"
             .Columns(1).HeaderText = "Request No."
             .Columns(2).HeaderText = "Transaction Type"

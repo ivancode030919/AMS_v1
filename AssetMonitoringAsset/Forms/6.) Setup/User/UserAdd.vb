@@ -13,22 +13,20 @@
 
     Private Sub SimpleButton2_Click(sender As Object, e As EventArgs) Handles SimpleButton2.Click
         If Label3.Text = "*" Then
-            MsgBox("PLease Select Employee...")
+            MsgBox("Please Select Employee...")
         Else
-            If UserClass.CountUserEmployee(EmpID) >= 1 Then
+            If FetchClass.CountUserEmployee(EmpID) >= 1 Then
                 MsgBox("Employee Had Already Existing Account")
-            ElseIf UserClass.CountUserEmployee(EmpID) = 0 Then
+            ElseIf FetchClass.CountUserEmployee(EmpID) = 0 Then
 
-                If UserClass.CountUsername(TextBox1.Text) > 1 Then
+                If FetchClass.CountUsername(TextBox1.Text) > 1 Then
                     MsgBox("Username Already Existed...")
                     TextBox1.Text = ""
                     TextBox2.Text = ""
                 Else
-                    UserClass.SaveUser(TextBox1.Text, TextBox2.Text, EmpID, ComboBox2.Text, ComboBox1.Text)
+                    InsertionClass.SaveUser(TextBox1.Text, TextBox2.Text, EmpID, ComboBox2.Text, ComboBox1.Text)
                 End If
-
             End If
-
 
         End If
 

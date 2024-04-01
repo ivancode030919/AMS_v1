@@ -13,12 +13,14 @@
     Public SectionID As Integer
 
 
+
     Private Sub AccordionControlElement4_Click(sender As Object, e As EventArgs) Handles AccordionControlElement4.Click
         AssetType.ShowDialog()
     End Sub
 
     Private Sub Home_Load(sender As Object, e As EventArgs) Handles MyBase.Load
-
+        Dim EmployeeName As String = FetchClass.fetchRequestor(EmployeeID)
+        Label1.Text = "Hello! " & EmployeeName & "_" & Date.Now.ToString("MM-dd-yyyy")
     End Sub
 
     Private Sub AccordionControlElement5_Click(sender As Object, e As EventArgs) Handles AccordionControlElement5.Click

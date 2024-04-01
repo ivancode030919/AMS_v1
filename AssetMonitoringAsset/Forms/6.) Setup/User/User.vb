@@ -14,7 +14,7 @@
     End Sub
 
     Public Sub Viewdg()
-        dgview.DataSource = UserClass.FetchUser(Statid, ComboBox4.Text, TextBox3.Text)
+        dgview.DataSource = ViewClass.FetchUser(Statid, ComboBox4.Text, TextBox3.Text)
     End Sub
 
     Private Sub RadioButton6_CheckedChanged(sender As Object, e As EventArgs) Handles RadioButton6.CheckedChanged

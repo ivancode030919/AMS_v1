@@ -69,7 +69,7 @@ Partial Class Request
         Me.ComboBox2.DropDownStyle = System.Windows.Forms.ComboBoxStyle.DropDownList
         Me.ComboBox2.Font = New System.Drawing.Font("Arial", 11.25!)
         Me.ComboBox2.FormattingEnabled = True
-        Me.ComboBox2.Items.AddRange(New Object() {"Procure", "Borrow", "Transfer Ownership"})
+        Me.ComboBox2.Items.AddRange(New Object() {"PROCURE", "BORROW", "TRANSFER OWNERSHIP"})
         Me.ComboBox2.Location = New System.Drawing.Point(376, 35)
         Me.ComboBox2.Name = "ComboBox2"
         Me.ComboBox2.Size = New System.Drawing.Size(237, 25)

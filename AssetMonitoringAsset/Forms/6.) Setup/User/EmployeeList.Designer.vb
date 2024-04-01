@@ -93,6 +93,7 @@ Partial Class EmployeeList
         Me.Controls.Add(Me.PanelControl1)
         Me.FormBorderEffect = DevExpress.XtraEditors.FormBorderEffect.None
         Me.FormBorderStyle = System.Windows.Forms.FormBorderStyle.FixedSingle
+        Me.IconOptions.ShowIcon = False
         Me.MaximizeBox = False
         Me.MinimizeBox = False
         Me.Name = "EmployeeList"

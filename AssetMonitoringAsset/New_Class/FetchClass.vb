@@ -1,7 +1,7 @@
 ﻿Public Class FetchClass
-    '--------------------------------------------------------------------------------------------
+
     'Fetch Last Item Code in New Asset Class
-    '--------------------------------------------------------------------------------------------
+
     Public Shared Function FetchLastItemcode() As String
         Try
             Dim querysection = (From s In db.tblmasterlistdetails
@@ -15,9 +15,9 @@
 
     End Function
 
-    '--------------------------------------------------------------------------------------------
+
     'Fetch HeaderID in BUild Assdet Header
-    '--------------------------------------------------------------------------------------------
+
     Public Shared Function FetcHeaderID() As String
         Try
             Dim querysection As String = (From s In db.tblBuildHeaders
@@ -30,9 +30,9 @@
 
     End Function
 
-    '--------------------------------------------------------------------------------------------
+
     'display Last save Entry Number
-    '--------------------------------------------------------------------------------------------
+
     Public Shared Function FetchEntryn1() As String
         Try
             Dim querysection As String = (From s In db.tblBuildHeaders
@@ -46,9 +46,9 @@
 
     End Function
 
-    '--------------------------------------------------------------------------------------------
+
     'Fetch AssetList
-    '--------------------------------------------------------------------------------------------
+
     Public Shared Sub ViewInventory()
         Try
             With InventoryList
@@ -66,9 +66,9 @@
         End Try
     End Sub
 
-    '--------------------------------------------------------------------------------------------
+
     'Fetch Last Entry Number then Plus 1 in series for new entry Number
-    '--------------------------------------------------------------------------------------------
+
     Public Shared Function FetchEntryno() As String
         Try
             Dim querysection As String = (From s In db.tblBuildHeaders
@@ -97,9 +97,9 @@
 
     End Function
 
-    '--------------------------------------------------------------------------------------------
+
     'Fetch ID in New Asset Class
-    '--------------------------------------------------------------------------------------------
+
     Public Shared Function FetchEntryID() As String
         Try
             Dim querysection As String = (From s In db.tblmasterlisheaders
@@ -130,9 +130,9 @@
 
     End Function
 
-    '--------------------------------------------------------------------------------------------
+
     'Fetch Transheader id in New Asset Class
-    '--------------------------------------------------------------------------------------------
+
     Public Shared Function FetchTransHeaderID() As Integer
         Try
             Dim querysection As Integer = (From s In db.tblmasterlisheaders
@@ -140,14 +140,14 @@
                                            Select s.AssetHeaderID).FirstOrDefault()
             Return querysection
         Catch ex As Exception
-            MsgBox("Error.F-9")
+            Return MsgBox("Error.F-9")
         End Try
 
     End Function
 
-    '--------------------------------------------------------------------------------------------
+
     'Fetch Combox Category
-    '--------------------------------------------------------------------------------------------
+
     Public Shared Function ViewCboxCat() As List(Of String)
         Try
             Dim querysection = (From s In db.tblCategories
@@ -159,9 +159,9 @@
         End Try
 
     End Function
-    '--------------------------------------------------------------------------------------------
+
     'Fetch Count in Asset Category Add and Update
-    '--------------------------------------------------------------------------------------------
+
     Public Shared Function FetchCCount(ByVal code As String) As Integer
         Try
             Dim count As Integer = (From s In db.tblCategories
@@ -169,14 +169,14 @@
                                     Select s.CategoryCode).Count()
             Return count
         Catch ex As Exception
-            MsgBox("Error.F-11")
+            Return MsgBox("Error.F-11")
         End Try
 
     End Function
 
-    '--------------------------------------------------------------------------------------------
+
     'Fetch Allocation Ebtry NUmber
-    '--------------------------------------------------------------------------------------------
+
     Public Shared Function FetchAllocationEntry() As String
         Try
             Dim querysection As String = (From s In db.tblAllocationHeaders
@@ -204,9 +204,9 @@
 
     End Function
 
-    '--------------------------------------------------------------------------------------------
+
     'Check Employee if existing
-    '--------------------------------------------------------------------------------------------
+
     Public Shared Function FetchEmployeeCount(ByVal fname As String, ByVal lname As String) As Integer
         Try
             Dim count As Integer = (From s In db.tblEmployees
@@ -214,14 +214,14 @@
                                     Select s).Count()
             Return count
         Catch ex As Exception
-            MsgBox("Error.F-13")
+            Return MsgBox("Error.F-13")
         End Try
 
     End Function
 
-    '--------------------------------------------------------------------------------------------
+
     'Check list ui
-    '--------------------------------------------------------------------------------------------
+
     Public Shared Function Fetchrlist1(ByVal Search As String) As Object
         Try
             Dim querysection = (From f In db.tblmasterlistdetails
@@ -238,9 +238,9 @@
 
     End Function
 
-    '--------------------------------------------------------------------------------------------
+
     'Check For Assets Without Ownser
-    '--------------------------------------------------------------------------------------------
+
     Public Shared Function FetchAssetWithoutOwner(ByVal ItemCode As String) As Object
         Try
             Dim querysection = (From f In db.tblAssetInventories
@@ -254,9 +254,9 @@
 
     End Function
 
-    '--------------------------------------------------------------------------------------------
+
     'Check If Cosumable
-    '--------------------------------------------------------------------------------------------
+
     Public Shared Function CheckifCosumable(ByVal ItemCodes As String) As Object
         Try
             Dim querysection = (From f In db.tblmasterlistdetails
@@ -270,9 +270,9 @@
 
     End Function
 
-    '--------------------------------------------------------------------------------------------
+
     'Fetch Last Assignment Entry Number
-    '--------------------------------------------------------------------------------------------
+
     Public Shared Function FetchAssignmentEntryNumber() As String
         Try
             Dim querysection As String = (From s In db.tblAllocationHeaders
@@ -298,9 +298,8 @@
             MsgBox("Error.F-15")
         End Try
     End Function
-    '--------------------------------------------------------------------------------------------
-    'Fetch Requestor
-    '--------------------------------------------------------------------------------------------
+
+    'Fetch Employee Name(Requestor in Request)
     Public Shared Function fetchRequestor(ByVal emplID As Integer) As Object
         Try
             Dim querysection = (From s In db.tblEmployees
@@ -313,9 +312,9 @@
         End Try
 
     End Function
-    '--------------------------------------------------------------------------------------------
+
     'Fetch transheader id in Request
-    '--------------------------------------------------------------------------------------------
+
     Public Shared Function FetchTransHeaderIDRequest() As Object
         Try
             Dim querysection = (From s In db.tblRequestHeaders
@@ -331,9 +330,8 @@
 
     End Function
 
-    '--------------------------------------------------------------------------------------------
+
     'Fetch transheader id in For Approval
-    '--------------------------------------------------------------------------------------------
     Public Shared Function FetchTransIdForApproval() As Object
         Try
             Dim querysection = (From s In db.tblProcureHeaders
@@ -343,14 +341,29 @@
             Return querysection
 
         Catch ex As Exception
+            MsgBox("Error.F-34")
+        End Try
+
+
+    End Function
+
+    'Fetch transheader id in For Approval
+    Public Shared Function FetchTransIdForApprovalBorrow() As Object
+        Try
+            Dim querysection = (From s In db.tblBorrowHeaders
+                                Order By s.HeaderId Descending
+                                Select s.HeaderId).FirstOrDefault()
+
+            Return querysection
+
+        Catch ex As Exception
             MsgBox("Error.F-17")
         End Try
 
 
     End Function
-    '--------------------------------------------------------------------------------------------
     'Fetch transheader id in Assignment
-    '--------------------------------------------------------------------------------------------
+
     Public Shared Function FetchTransHeaderIDAssignment() As Object
         Try
             Dim querysection = (From s In db.tblAllocationHeaders
@@ -365,9 +378,9 @@
 
     End Function
 
-    '--------------------------------------------------------------------------------------------
+
     'Fetch Last Request Number
-    '--------------------------------------------------------------------------------------------
+
     Public Shared Function FetchEntryID2() As String
         Try
             Dim querysection As String = (From s In db.tblRequestHeaders
@@ -394,4 +407,172 @@
         End Try
 
     End Function
+    'Check for Employee if Existing
+    Public Shared Function CountUserEmployee(ByVal EID As Integer) As Integer
+        Try
+            Dim queryBook = (From p In db.tblUsers
+                             Where (p.EmployeeID = EID)
+                             Select p.EmployeeID).Count
+
+            Return queryBook
+        Catch ex As Exception
+            Return MsgBox("Error.F-21")
+        End Try
+    End Function
+
+    'Check if Username Is Existing 
+    Public Shared Function CountUsername(ByVal uname As String) As Integer
+        Try
+            Dim queryBook = (From p In db.tblUsers
+                             Where (p.Username = uname)
+                             Select p.Username).Count
+            Return queryBook
+        Catch ex As Exception
+            Return MsgBox("Error.F-22")
+        End Try
+    End Function
+
+    'Fetch Login Credentials if Correct
+    Public Shared Function FetchLogin(ByVal uname As String, ByVal pass As String) As Integer
+        Try
+            Dim queryBook = (From p In db.tblUsers
+                             Where (p.Username = uname And p.Password = pass)
+                             Select p.Username, p.Password).Count
+            Return queryBook
+        Catch ex As Exception
+            Return MsgBox("Error.F-23")
+        End Try
+    End Function
+
+    'Fetch Branch Code
+    Public Shared Function FetcBranch(ByVal uname As String, ByVal pass As String) As String
+        Try
+            Dim querydetail = (From p In db.tblUsers
+                               Join e In db.tblEmployees On e.EmployeeID Equals p.EmployeeID
+                               Join b In db.tblBranches On b.BranchID Equals e.BranchID
+                               Where (p.Username = uname And p.Password = pass)
+                               Select b.BranchCode).SingleOrDefault
+            Return querydetail
+        Catch ex As Exception
+            Return MsgBox("Error.F-24")
+        End Try
+    End Function
+
+    'Fetch Branch ID
+    Public Shared Function FetcBranchID(ByVal BranchCode As String) As Integer
+        Try
+            Dim querydetail = (From p In db.tblBranches
+                               Where (p.BranchCode = BranchCode)
+                               Select p.BranchID).SingleOrDefault
+            Return querydetail
+        Catch ex As Exception
+            Return MsgBox("Error.F-25")
+        End Try
+    End Function
+
+    'Fetch Department Code
+    Public Shared Function FetcDepartment1(ByVal uname As String, ByVal pass As String) As String
+        Try
+            Dim querydetail = (From p In db.tblUsers
+                               Join e In db.tblEmployees On e.EmployeeID Equals p.EmployeeID
+                               Join d In db.tblDepartments On d.DepartmentID Equals e.DepartmentID
+                               Where (p.Username = uname And p.Password = pass)
+                               Select d.DepartmentCode).SingleOrDefault
+            Return querydetail
+        Catch ex As Exception
+            Return MsgBox("Error.F-26")
+        End Try
+    End Function
+
+    'Fetch User Type
+    Public Shared Function FetcUserType(ByVal Emplid As Integer) As Object
+        Try
+            Dim querydetail = (From p In db.tblUsers
+                               Where (p.EmployeeID = Emplid)
+                               Select p.UserType).FirstOrDefault
+            Return querydetail
+        Catch ex As Exception
+            Return MsgBox("Error.F-27")
+        End Try
+    End Function
+
+    'Employee ID
+    Public Shared Function FetcEmployeeID(ByVal UserID As Integer) As Integer
+        Try
+            Dim querydetail = (From p In db.tblUsers
+                               Where (p.UserID = UserID)
+                               Select p.EmployeeID).SingleOrDefault
+            Return querydetail
+        Catch ex As Exception
+            Return MsgBox("Error.F-28")
+        End Try
+    End Function
+
+    'Fetch User ID
+    Public Shared Function FetcUserID(ByVal uname As String, ByVal pass As String) As Integer
+        Try
+            Dim querydetail = (From p In db.tblUsers
+                               Where (p.Username = uname And p.Password = pass)
+                               Select p.UserID).SingleOrDefault
+            Return querydetail
+        Catch ex As Exception
+            Return MsgBox("Error.F-29")
+        End Try
+
+
+    End Function
+
+    'Fetch Section Code
+    Public Shared Function FetcSection(ByVal uname As String, ByVal pass As String) As String
+        Try
+            Dim querydetail = (From p In db.tblUsers
+                               Join e In db.tblEmployees On e.EmployeeID Equals p.EmployeeID
+                               Join s In db.tblSections On s.SectionID Equals e.SectionID
+                               Where (p.Username = uname And p.Password = pass)
+                               Select s.SectionCode).SingleOrDefault
+            Return querydetail
+        Catch ex As Exception
+            Return MsgBox("Error.F-30")
+        End Try
+    End Function
+
+    'Fetch Departement Code
+    Public Shared Function FetcDepartment(ByVal uname As String, ByVal pass As String) As String
+        Try
+            Dim querydetail = (From p In db.tblUsers
+                               Join e In db.tblEmployees On e.EmployeeID Equals p.EmployeeID
+                               Join d In db.tblDepartments On d.DepartmentID Equals e.DepartmentID
+                               Where (p.Username = uname And p.Password = pass)
+                               Select d.DepartmentCode).SingleOrDefault
+
+            Return querydetail
+        Catch ex As Exception
+            Return MsgBox("Error.F-31")
+        End Try
+    End Function
+
+    'Fetch Department ID
+    Public Shared Function FetcDepartmentID(ByVal DepartmentCode As String) As Integer
+        Try
+            Dim querydetail = (From p In db.tblDepartments
+                               Where (p.DepartmentCode = DepartmentCode)
+                               Select p.DepartmentID).SingleOrDefault
+            Return querydetail
+        Catch ex As Exception
+            Return MsgBox("Error.F-32")
+        End Try
+    End Function
+
+    'Fetch Section ID
+    Public Shared Function FetcSectionID(ByVal SectionCode As String) As Integer
+        Try
+            Dim querydetail = (From p In db.tblSections
+                               Where (p.SectionCode = SectionCode)
+                               Select p.SectionID).SingleOrDefault
+            Return querydetail
+        Catch ex As Exception
+            Return MsgBox("Error.F-33")
+        End Try
+    End Function
+
 End Class

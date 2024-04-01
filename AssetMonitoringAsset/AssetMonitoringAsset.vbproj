@@ -138,7 +138,6 @@
     <Compile Include="OLD_FORMS_AND_CLASS\Class\ReferenceClass.vb" />
     <Compile Include="OLD_FORMS_AND_CLASS\Class\SectionClass.vb" />
     <Compile Include="OLD_FORMS_AND_CLASS\Class\TypeClass.vb" />
-    <Compile Include="OLD_FORMS_AND_CLASS\Class\UserClass.vb" />
     <Compile Include="OLD_FORMS_AND_CLASS\Class\VendorClass.vb" />
     <Compile Include="Connection and Module\DataClasses1.designer.vb">
       <AutoGen>True</AutoGen>

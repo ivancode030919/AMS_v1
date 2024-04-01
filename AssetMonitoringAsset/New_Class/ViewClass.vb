@@ -5,12 +5,15 @@
     '------------------------------------------------------------------------------------
     Public Shared Sub FetchRegisterDetail1(ByVal HeaderID As Integer, ByVal RequestType As String)
 
-        If RequestType = "Procure" Then
+        If RequestType = "PROCURE" Then
             With Rqregister
-                .dgv.DataSource = db.ShowAssetAvailability(HeaderID)
+                .dgv.DataSource = db.ShowAssetAvailabilityProcure(HeaderID)
             End With
-        ElseIf RequestType = "Borrow" Then
-        ElseIf RequestType = "Transfer Ownership" Then
+        ElseIf RequestType = "BORROW" Then
+            With Rqregister
+                .dgv.DataSource = db.ShowAssetAvailabilityBorrow(HeaderID)
+            End With
+        ElseIf RequestType = "TRANSFER OWNERSHIP" Then
         End If
 
     End Sub
@@ -156,11 +159,36 @@
     '------------------------------------------------------------------------------------
     'Display In Procure Register
     '------------------------------------------------------------------------------------
-    Public Shared Function ViewProcureRegister() As Object
+    Public Shared Function ViewProcureRegister(ByVal rqnumber As String, ByVal date1 As Date, ByVal date2 As Date) As Object
         Dim querysection = (From s In db.tblProcureHeaders
                             Join r In db.tblEmployees On s.Requestor Equals r.EmployeeID
+                            Join t In db.tblDepartments On r.DepartmentID Equals t.DepartmentID
+                            Join y In db.tblBranches On r.BranchID Equals y.BranchID
+                            Where s.Date >= date1 AndAlso s.Date <= date2 AndAlso s.RequestNumber.Contains(rqnumber)
                             Let x = r.FirstName + " " + r.LastName
-                            Select s.RequestNumber, x, s.Date).ToList()
+                            Select s.RequestNumber, x, t.DepartmentDescription, y.BranchDescription, r.Company, s.Date).ToList()
         Return querysection
+    End Function
+
+    'View Employee List
+    Public Shared Function ViewEmployeeList(ByVal search As String) As Object
+        Dim querysection = (From s In db.tblEmployees
+                            Where s.FirstName.Contains(search) Or s.LastName.Contains(search)
+                            Order By s.EmployeeID
+                            Select s.EmployeeID, s.FirstName, s.LastName).ToList
+        Return querysection
+    End Function
+
+    'View Users
+    Public Shared Function FetchUser(ByVal stat As String, Optional ByVal des As String = "", Optional ByVal search As String = "") As Object
+
+        Dim querysection = (From s In db.tblUsers
+                            Join d In db.tblEmployees On s.EmployeeID Equals d.EmployeeID
+                            Join f In db.tblPositions On d.PositionID Equals f.PositionID
+                            Where (s.Status = stat) And f.PositionDescription.Contains(des) And (d.FirstName.Contains(search) Or d.LastName.Contains(search))
+                            Order By s.UserID
+                            Select s.UserID, d.FirstName, d.LastName, f.PositionDescription, s.Status).ToList()
+        Return querysection
+
     End Function
 End Class

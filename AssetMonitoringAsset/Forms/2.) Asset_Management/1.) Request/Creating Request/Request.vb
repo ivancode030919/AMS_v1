@@ -64,42 +64,42 @@
     Private Sub dgv_CellDoubleClick(sender As Object, e As DataGridViewCellEventArgs) Handles dgv.CellDoubleClick
         Dim row As Integer = dgv.CurrentCell.RowIndex
 
-        If e.ColumnIndex = 0 AndAlso ComboBox2.Text = "Procure" Then
+        If e.ColumnIndex = 0 AndAlso ComboBox2.Text = "PROCURE" Then
             AssetList3.modty = 2
             AssetList3.mode1 = 1
             AssetList3.rowToEdit = row
             AssetList3.ShowDialog()
-        ElseIf e.ColumnIndex = 3 AndAlso ComboBox2.Text = "Procure" Then
+        ElseIf e.ColumnIndex = 3 AndAlso ComboBox2.Text = "PROCURE" Then
             empllist.modty = 1
             empllist.rowToEdit = row
             empllist.Show()
-        ElseIf e.ColumnIndex = 0 AndAlso ComboBox2.Text = "Borrow" Then
+        ElseIf e.ColumnIndex = 0 AndAlso ComboBox2.Text = "BORROW" Then
             AssetList3.modty = 3
             AssetList3.mode1 = 2
             AssetList3.rowToEdit = row
             AssetList3.ShowDialog()
-        ElseIf e.ColumnIndex = 3 AndAlso ComboBox2.Text = "Borrow" Then
+        ElseIf e.ColumnIndex = 3 AndAlso ComboBox2.Text = "BORROW" Then
             empllist.modty = 2
             empllist.rowToEdit = row
             empllist.Show()
-        ElseIf e.ColumnIndex = 4 AndAlso ComboBox2.Text = "Borrow" Then
+        ElseIf e.ColumnIndex = 4 AndAlso ComboBox2.Text = "BORROW" Then
             date1.modty = 1
             date1.Text = "Date From"
             date1.rowToEdit = row
             date1.ShowDialog()
 
-        ElseIf e.ColumnIndex = 5 AndAlso ComboBox2.Text = "Borrow" Then
+        ElseIf e.ColumnIndex = 5 AndAlso ComboBox2.Text = "BORROW" Then
             date1.modty = 2
             date1.Text = "Date To"
             date1.rowToEdit = row
             date1.ShowDialog()
 
-        ElseIf e.ColumnIndex = 0 AndAlso ComboBox2.Text = "Transfer Ownership" Then
+        ElseIf e.ColumnIndex = 0 AndAlso ComboBox2.Text = "TRANSFER OWNERSHIP" Then
             AssetList3.modty = 3
             AssetList3.mode1 = 2
             AssetList3.rowToEdit = row
             AssetList3.ShowDialog()
-        ElseIf e.ColumnIndex = 3 AndAlso ComboBox2.Text = "Transfer Ownership" Then
+        ElseIf e.ColumnIndex = 3 AndAlso ComboBox2.Text = "TRANSFER OWNERSHIP" Then
             empllist.modty = 3
             empllist.rowToEdit = row
             empllist.Show()
@@ -112,11 +112,11 @@
     Private Sub SimpleButton2_Click(sender As Object, e As EventArgs) Handles SimpleButton2.Click
 
         If SimpleButton2.Text = "Record" Then
-            Dim Stat1 As String = "Open"
+            Dim Stat1 As String = "OPEN"
             Dim rn As String = FetchClass.FetchEntryID2
 
             InsertionClass.SaveRequestHeader(rn, Home.EmployeeID, DateTimePicker1.Value, Stat1, ComboBox2.Text)
-            If ComboBox2.Text = "Procure" Then
+            If ComboBox2.Text = "PROCURE" Then
 
                 For Each row As DataGridViewRow In dgv.Rows
 
@@ -131,7 +131,7 @@
                     End If
                 Next
 
-            ElseIf ComboBox2.Text = "Borrow" Then
+            ElseIf ComboBox2.Text = "BORROW" Then
 
                 For Each row As DataGridViewRow In dgv.Rows
 
@@ -147,7 +147,7 @@
                         InsertionClass.SaveBorrow(PropertyCode, Des, qty, Integer.Parse(Borrowee), Remarks, DateFrom, DateTo, headid)
                     End If
                 Next
-            ElseIf ComboBox2.Text = "Transfer Ownership" Then
+            ElseIf ComboBox2.Text = "TRANSFER OWNERSHIP" Then
 
                 For Each row As DataGridViewRow In dgv.Rows
 
@@ -229,15 +229,15 @@
     End Sub
 
     Private Sub ComboBox2_SelectedIndexChanged(sender As Object, e As EventArgs) Handles ComboBox2.SelectedIndexChanged
-        If ComboBox2.Text = "Procure" Then
+        If ComboBox2.Text = "PROCURE" Then
             dgv.Rows.Clear()
             dgv.Columns.Clear()
             DisplayProcure()
-        ElseIf ComboBox2.Text = "Borrow" Then
+        ElseIf ComboBox2.Text = "BORROW" Then
             dgv.Rows.Clear()
             dgv.Columns.Clear()
             DisplayBorrow()
-        ElseIf ComboBox2.Text = "Transfer Ownership" Then
+        ElseIf ComboBox2.Text = "TRANSFER OWNERSHIP" Then
             dgv.Rows.Clear()
             dgv.Columns.Clear()
             DisplayTransfer()
@@ -246,7 +246,7 @@
 
     Public Sub checkqtybycat()
         Dim row As Integer = dgv.CurrentCell.RowIndex
-        If ComboBox2.Text = "Procure" Then
+        If ComboBox2.Text = "PROCURE" Then
             If dgv.Rows(row).Cells(6).Value.ToString = "CNR" Then
                 dgv.Rows(row).Cells(2).ReadOnly = True
                 dgv.Rows(row).Cells(2).Value = "1"
@@ -258,10 +258,10 @@
 
             End If
 
-        ElseIf ComboBox2.Text = "Borrow" Then
+        ElseIf ComboBox2.Text = "BORROW" Then
             dgv.Rows(row).Cells(2).ReadOnly = True
             dgv.Rows(row).Cells(2).Value = "1"
-        ElseIf ComboBox2.Text = "Transfer Ownership" Then
+        ElseIf ComboBox2.Text = "TRANSFER OWNERSHIP" Then
             dgv.Rows(row).Cells(2).ReadOnly = True
             dgv.Rows(row).Cells(2).Value = "1"
         End If

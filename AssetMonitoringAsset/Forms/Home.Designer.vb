@@ -74,8 +74,10 @@ Partial Class Home
         Me.AccordionControlElement59 = New DevExpress.XtraBars.Navigation.AccordionControlElement()
         Me.PanelControl1 = New DevExpress.XtraEditors.PanelControl()
         Me.PictureBox1 = New System.Windows.Forms.PictureBox()
+        Me.Label1 = New System.Windows.Forms.Label()
         CType(Me.AccordionControl1, System.ComponentModel.ISupportInitialize).BeginInit()
         CType(Me.PanelControl1, System.ComponentModel.ISupportInitialize).BeginInit()
+        Me.PanelControl1.SuspendLayout()
         CType(Me.PictureBox1, System.ComponentModel.ISupportInitialize).BeginInit()
         Me.SuspendLayout()
         '
@@ -512,6 +514,7 @@ Partial Class Home
         '
         'PanelControl1
         '
+        Me.PanelControl1.Controls.Add(Me.Label1)
         Me.PanelControl1.Dock = System.Windows.Forms.DockStyle.Bottom
         Me.PanelControl1.Location = New System.Drawing.Point(227, 628)
         Me.PanelControl1.Name = "PanelControl1"
@@ -528,6 +531,15 @@ Partial Class Home
         Me.PictureBox1.Size = New System.Drawing.Size(1073, 628)
         Me.PictureBox1.TabIndex = 4
         Me.PictureBox1.TabStop = False
+        '
+        'Label1
+        '
+        Me.Label1.AutoSize = True
+        Me.Label1.Location = New System.Drawing.Point(6, 3)
+        Me.Label1.Name = "Label1"
+        Me.Label1.Size = New System.Drawing.Size(38, 13)
+        Me.Label1.TabIndex = 0
+        Me.Label1.Text = "Label1"
         '
         'Home
         '
@@ -548,6 +560,8 @@ Partial Class Home
         Me.WindowState = System.Windows.Forms.FormWindowState.Maximized
         CType(Me.AccordionControl1, System.ComponentModel.ISupportInitialize).EndInit()
         CType(Me.PanelControl1, System.ComponentModel.ISupportInitialize).EndInit()
+        Me.PanelControl1.ResumeLayout(False)
+        Me.PanelControl1.PerformLayout()
         CType(Me.PictureBox1, System.ComponentModel.ISupportInitialize).EndInit()
         Me.ResumeLayout(False)
 
@@ -607,4 +621,5 @@ Partial Class Home
     Friend WithEvents AccordionControlElement37 As DevExpress.XtraBars.Navigation.AccordionControlElement
     Friend WithEvents AccordionControlElement57 As DevExpress.XtraBars.Navigation.AccordionControlElement
     Friend WithEvents AccordionControlElement59 As DevExpress.XtraBars.Navigation.AccordionControlElement
+    Friend WithEvents Label1 As Label
 End Class
