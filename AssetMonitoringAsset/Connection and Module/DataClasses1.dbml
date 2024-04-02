@@ -727,13 +727,6 @@
       <Column Name="[DATE ADDED]" Member="DATE_ADDED" Type="System.DateTime" DbType="Date" CanBeNull="true" />
     </ElementType>
   </Function>
-  <Function Name="dbo.spViewInventory" Method="spViewInventory">
-    <ElementType Name="spViewInventoryResult">
-      <Column Name="AssetCode" Type="System.Int32" DbType="Int" CanBeNull="true" />
-      <Column Name="Class" Type="System.String" DbType="VarChar(MAX)" CanBeNull="true" />
-      <Column Name="qty" Type="System.Double" DbType="Float" CanBeNull="true" />
-    </ElementType>
-  </Function>
   <Function Name="dbo.ShowAssetAvailability2" Method="ShowAssetAvailability2">
     <Parameter Name="headerid" Type="System.Int32" DbType="Int" />
     <ElementType Name="ShowAssetAvailability2Result">
@@ -773,6 +766,17 @@
       <Column Name="DateTo" Type="System.DateTime" DbType="Date" CanBeNull="true" />
       <Column Name="Remarks" Type="System.String" DbType="VarChar(MAX)" CanBeNull="true" />
       <Column Name="EmployeeID" Type="System.Int32" DbType="Int NOT NULL" CanBeNull="false" />
+    </ElementType>
+  </Function>
+  <Function Name="dbo.spViewInventory" Method="spViewInventory">
+    <Parameter Name="dep" Type="System.String" DbType="VarChar(200)" />
+    <Parameter Name="search" Type="System.String" DbType="VarChar(200)" />
+    <Parameter Name="cat" Type="System.String" DbType="VarChar(200)" />
+    <Parameter Name="type" Type="System.String" DbType="VarChar(200)" />
+    <ElementType Name="spViewInventoryResult">
+      <Column Name="AssetCode" Type="System.Int32" DbType="Int" CanBeNull="true" />
+      <Column Name="Class" Type="System.String" DbType="VarChar(MAX)" CanBeNull="true" />
+      <Column Name="qty" Type="System.Double" DbType="Float" CanBeNull="true" />
     </ElementType>
   </Function>
 </Database>

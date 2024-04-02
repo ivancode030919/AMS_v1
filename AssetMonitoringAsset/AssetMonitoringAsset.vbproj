@@ -93,6 +93,7 @@
     <Reference Include="System.configuration" />
     <Reference Include="System.Core" />
     <Reference Include="System.Data.Linq" />
+    <Reference Include="System.Messaging" />
     <Reference Include="System.Security" />
     <Reference Include="System.Threading.Tasks" />
     <Reference Include="System.Xml.Linq" />
@@ -125,6 +126,12 @@
       <DependentUpon>ProcureRegister.vb</DependentUpon>
     </Compile>
     <Compile Include="Forms\2.%29 Asset_Management\1.%29 Request\Procure Register\ProcureRegister.vb">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Forms\7.%29 Importation\Build Asset\BuildAssetImport.Designer.vb">
+      <DependentUpon>BuildAssetImport.vb</DependentUpon>
+    </Compile>
+    <Compile Include="Forms\7.%29 Importation\Build Asset\BuildAssetImport.vb">
       <SubType>Form</SubType>
     </Compile>
     <Compile Include="OLD_FORMS_AND_CLASS\Class\BranchClass.vb" />
@@ -258,10 +265,10 @@
     <Compile Include="Forms\3.%29 Asset\MasterData\New Asset Masterdata\NewAsset.vb">
       <SubType>Form</SubType>
     </Compile>
-    <Compile Include="Forms\7.%29 Importation\Build Asset\importmasterlist.Designer.vb">
+    <Compile Include="Forms\7.%29 Importation\Master list\importmasterlist.Designer.vb">
       <DependentUpon>importmasterlist.vb</DependentUpon>
     </Compile>
-    <Compile Include="Forms\7.%29 Importation\Build Asset\importmasterlist.vb">
+    <Compile Include="Forms\7.%29 Importation\Master list\importmasterlist.vb">
       <SubType>Form</SubType>
     </Compile>
     <Compile Include="Forms\LoginForm\Login.Designer.vb">
@@ -525,7 +532,10 @@
     <EmbeddedResource Include="Forms\3.%29 Asset\MasterData\New Asset Masterdata\NewAsset.resx">
       <DependentUpon>NewAsset.vb</DependentUpon>
     </EmbeddedResource>
-    <EmbeddedResource Include="Forms\7.%29 Importation\Build Asset\importmasterlist.resx">
+    <EmbeddedResource Include="Forms\7.%29 Importation\Build Asset\BuildAssetImport.resx">
+      <DependentUpon>BuildAssetImport.vb</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Forms\7.%29 Importation\Master list\importmasterlist.resx">
       <DependentUpon>importmasterlist.vb</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="Forms\LoginForm\Login.resx">

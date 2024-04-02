@@ -20,7 +20,7 @@
 
     Private Sub Home_Load(sender As Object, e As EventArgs) Handles MyBase.Load
         Dim EmployeeName As String = FetchClass.fetchRequestor(EmployeeID)
-        Label1.Text = "Hello! " & EmployeeName & "_" & Date.Now.ToString("MM-dd-yyyy")
+        Label1.Text = "Hello! " & EmployeeName & " || " & Date.Now.ToString("MM-dd-yyyy") & " || " & Department & " || " & Section & " || " & UserType
     End Sub
 
     Private Sub AccordionControlElement5_Click(sender As Object, e As EventArgs) Handles AccordionControlElement5.Click

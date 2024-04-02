@@ -962,3 +962,4 @@ C:\Users\HSDP_SYS_DEV\Desktop\WORK\AMS\AMS_v1\AssetMonitoringAsset\obj\Debug\Ass
 C:\Users\HSDP_SYS_DEV\Desktop\WORK\AMS\AMS_v1\AssetMonitoringAsset\obj\Debug\AssetMonitoringAsset.exe
 C:\Users\HSDP_SYS_DEV\Desktop\WORK\AMS\AMS_v1\AssetMonitoringAsset\obj\Debug\AssetMonitoringAsset.pdb
 C:\Users\HSDP_SYS_DEV\Desktop\WORK\AMS\AMS_v1\AssetMonitoringAsset\obj\Debug\AssetMonitoringAsset.ProcureRegister.resources
+C:\Users\HSDP_SYS_DEV\Desktop\WORK\AMS\AMS_v1\AssetMonitoringAsset\obj\Debug\AssetMonitoringAsset.BuildAssetImport.resources

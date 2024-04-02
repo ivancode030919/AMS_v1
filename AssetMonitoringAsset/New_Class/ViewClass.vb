@@ -82,7 +82,17 @@
     '------------------------------------------------------------------------------------
     'Display Inventory Details in 
     '------------------------------------------------------------------------------------
-    Public Shared Function ViewInventoryDetails(ByVal AssetCode As Integer) As Object
+    Public Shared Function ViewInventoryDetails(ByVal AssetCode As Integer, ByVal search As String) As Object
+        Dim DepCode As String
+
+
+        If Home.UserType = "ADMIN" Then
+            'Make All Asset Visible in Admin
+            DepCode = ""
+        Else
+            'Make not Admin User Type Department Ownership
+            DepCode = Home.Department
+        End If
 
         Dim vinv = (From p In db.tblAssetInventories
                     Group Join y In db.tblEmployees On p.Keeper Equals y.EmployeeID Into KeeperGroup = Group
@@ -92,10 +102,11 @@
                     Join e In db.tblDepartments On y.DepartmentID Equals e.DepartmentID
                     Join h In db.tblBranches On y.BranchID Equals h.BranchID
                     Join l In db.tblSections On y.SectionID Equals l.SectionID
-                    Where p.AssetCode = AssetCode
+                    Where p.AssetCode = AssetCode And e.DepartmentCode.Contains(DepCode) AndAlso (p.PropertyCode.Contains(search) Or p.Des.Contains(search))
                     Let f = y.LastName + ", " + y.FirstName Let q = t.LastName + ", " + t.FirstName
                     Select p.PropertyCode, p.Des, p.Qty, e.DepartmentDescription, h.BranchDescription, l.SectionDecription, f, q).ToList
         Return vinv
+
 
     End Function
     '------------------------------------------------------------------------------------

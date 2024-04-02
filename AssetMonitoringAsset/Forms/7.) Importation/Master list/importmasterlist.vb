@@ -38,6 +38,22 @@ Public Class importmasterlist
 
                     ' Bind the data table to the DataGridView
                     dgv.DataSource = dataTable
+                    With dgv
+                        .Columns(0).Width = 100
+                        .Columns(1).Width = 300
+                        .Columns(2).Width = 200
+                        .Columns(3).Width = 200
+
+                        .Columns(0).HeaderText = "Item Code"
+                        .Columns(1).HeaderText = "Description"
+                        .Columns(2).HeaderText = "Category"
+                        .Columns(3).HeaderText = "Type"
+
+
+                    End With
+
+
+
                 End Using
             End Using
         End If
@@ -49,21 +65,21 @@ Public Class importmasterlist
             For Each row As DataGridViewRow In dgv.Rows
 
                 If Not row.IsNewRow Then
-
                     Dim Itemcode As String = row.Cells(0).Value.ToString
                     Dim Description As String = row.Cells(1).Value.ToString
-                    Dim Category As String = row.Cells(2).Value.ToString
-                    Dim Type As String = row.Cells(3).Value.ToString
+                    Dim CategoryID As String = FetchClass.FetchCategoryId(row.Cells(2).Value.ToString)
+                    Dim TypeID As String = FetchClass.FetchTypeId(row.Cells(3).Value.ToString)
                     Dim date1 As String = Date.Now.ToString
                     Dim date2 As String = Date.Now.ToString
                     Dim user1 As String = Home.UserID.ToString
                     Dim user2 As String = Home.UserID.ToString
                     Dim AH As String = "0"
-                    InsertionClass.SaveMasterlistImport(Itemcode, Description, Integer.Parse(Category), Integer.Parse(Type), Date.Parse(date1), Date.Parse(date2), Integer.Parse(user1), Integer.Parse(user2), Integer.Parse(AH))
+                    InsertionClass.SaveMasterlistImport(Itemcode, Description, Integer.Parse(CategoryID), Integer.Parse(TypeID), Date.Parse(date1), Date.Parse(date2), Integer.Parse(user1), Integer.Parse(user2), Integer.Parse(AH))
                 End If
             Next
 
-            MsgBox("Successfully Recorded...")
+
+            MessageBox.Show("Successfully Recorded...", "Notification", MessageBoxButtons.OK, MessageBoxIcon.Information)
             dgv.DataSource = Nothing
             dgv.Rows.Clear()
             dgv.Columns.Clear()

@@ -5,19 +5,15 @@
     End Sub
 
     Public Sub Display()
-
-        Dim fltr As Integer
-
-        If RadioButton2.Checked = True Then
-            fltr = 1
-        ElseIf RadioButton1.Checked = True Then
-            fltr = 2
-        ElseIf RadioButton4.Checked = True Then
-            fltr = 3
-        ElseIf RadioButton3.Checked = True Then
-            fltr = 4
+        Dim depcode As String
+        If Home.UserType = "ADMIN" Then
+            depcode = ""
+        Else
+            depcode = Home.Department
         End If
-        FetchClass.ViewInventory()
+
+        FetchClass.ViewInventory(TextBox1.Text, depcode, ComboBox1.Text, ComboBox2.Text)
+
         With dgv
             .Columns(0).HeaderText = "Asset Code"
             .Columns(1).HeaderText = "Description"
@@ -29,19 +25,19 @@
         Display()
     End Sub
 
-    Private Sub RadioButton2_CheckedChanged(sender As Object, e As EventArgs) Handles RadioButton2.CheckedChanged
+    Private Sub RadioButton2_CheckedChanged(sender As Object, e As EventArgs)
         Display()
     End Sub
 
-    Private Sub RadioButton1_CheckedChanged(sender As Object, e As EventArgs) Handles RadioButton1.CheckedChanged
+    Private Sub RadioButton1_CheckedChanged(sender As Object, e As EventArgs)
         Display()
     End Sub
 
-    Private Sub RadioButton4_CheckedChanged(sender As Object, e As EventArgs) Handles RadioButton4.CheckedChanged
+    Private Sub RadioButton4_CheckedChanged(sender As Object, e As EventArgs)
         Display()
     End Sub
 
-    Private Sub RadioButton3_CheckedChanged(sender As Object, e As EventArgs) Handles RadioButton3.CheckedChanged
+    Private Sub RadioButton3_CheckedChanged(sender As Object, e As EventArgs)
         Display()
     End Sub
 
@@ -69,5 +65,51 @@
             Me.Close()
             TextBox1.Text = String.Empty
         End If
+    End Sub
+
+    Private Sub RadioButton6_CheckedChanged(sender As Object, e As EventArgs) Handles RadioButton6.CheckedChanged
+        If RadioButton6.Checked = True Then
+            ComboBox1.DataSource = Nothing
+            ComboBox1.Enabled = False
+            RadioButton5.Checked = False
+        End If
+    End Sub
+
+    Private Sub RadioButton5_CheckedChanged(sender As Object, e As EventArgs) Handles RadioButton5.CheckedChanged
+        If RadioButton5.Checked = True Then
+            ComboBox1.DataSource = FetchClass.ViewCboxCat()
+            RadioButton6.Checked = False
+            ComboBox1.Enabled = True
+        End If
+    End Sub
+
+    Private Sub RadioButton2_CheckedChanged_1(sender As Object, e As EventArgs) Handles RadioButton2.CheckedChanged
+        If RadioButton2.Checked = True Then
+            ComboBox2.DataSource = Nothing
+            ComboBox2.Enabled = False
+            RadioButton1.Checked = False
+        End If
+    End Sub
+
+    Private Sub RadioButton1_CheckedChanged_1(sender As Object, e As EventArgs) Handles RadioButton1.CheckedChanged
+        If RadioButton1.Checked = True Then
+            ComboBox2.DataSource = FetchClass.ViewCboxtype()
+            RadioButton2.Checked = False
+            ComboBox2.Enabled = True
+        End If
+    End Sub
+
+    Private Sub InventoryList_FormClosing(sender As Object, e As FormClosingEventArgs) Handles MyBase.FormClosing
+        RadioButton6.Checked = True
+        RadioButton2.Checked = True
+        TextBox1.Text = String.Empty
+    End Sub
+
+    Private Sub ComboBox1_SelectedIndexChanged(sender As Object, e As EventArgs) Handles ComboBox1.SelectedIndexChanged
+        Display()
+    End Sub
+
+    Private Sub ComboBox2_SelectedIndexChanged(sender As Object, e As EventArgs) Handles ComboBox2.SelectedIndexChanged
+        Display()
     End Sub
 End Class

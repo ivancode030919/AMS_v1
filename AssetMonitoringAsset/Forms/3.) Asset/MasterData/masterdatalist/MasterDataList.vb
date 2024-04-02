@@ -29,7 +29,7 @@
     Private Sub RadioButton1_CheckedChanged(sender As Object, e As EventArgs) Handles RadioButton1.CheckedChanged
 
         If RadioButton1.Checked = True Then
-            ComboBox2.DataSource = TypeClass.ViewCboxtype()
+            ComboBox2.DataSource = FetchClass.ViewCboxtype()
             RadioButton2.Checked = False
             ComboBox2.Enabled = True
         End If

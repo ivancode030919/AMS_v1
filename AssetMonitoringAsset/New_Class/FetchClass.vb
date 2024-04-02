@@ -1,7 +1,6 @@
 ﻿Public Class FetchClass
 
     'Fetch Last Item Code in New Asset Class
-
     Public Shared Function FetchLastItemcode() As String
         Try
             Dim querysection = (From s In db.tblmasterlistdetails
@@ -17,7 +16,6 @@
 
 
     'Fetch HeaderID in BUild Assdet Header
-
     Public Shared Function FetcHeaderID() As String
         Try
             Dim querysection As String = (From s In db.tblBuildHeaders
@@ -32,7 +30,6 @@
 
 
     'display Last save Entry Number
-
     Public Shared Function FetchEntryn1() As String
         Try
             Dim querysection As String = (From s In db.tblBuildHeaders
@@ -48,27 +45,23 @@
 
 
     'Fetch AssetList
-
-    Public Shared Sub ViewInventory()
-        Try
-            With InventoryList
-                ''soure for viewing
-                .dgv.DataSource = db.spViewInventory.ToList
-
-                ''set column name
-                .dgv.Columns(0).HeaderText = "Asset Code"
-                .dgv.Columns(1).HeaderText = "Description"
-                .dgv.Columns(2).HeaderText = "Quantity"
-
-            End With
-        Catch ex As Exception
-            MsgBox("Error.F-6")
-        End Try
+    Public Shared Sub ViewInventory(ByVal Search As String, ByVal Depcode As String, ByVal cat As String, ByVal type As String)
+        'Try
+        With InventoryList
+            ''soure for viewing
+            .dgv.DataSource = db.spViewInventory(Depcode, Search, cat, type)
+            ''set column name
+            .dgv.Columns(0).HeaderText = "Asset Code"
+            .dgv.Columns(1).HeaderText = "Description"
+            .dgv.Columns(2).HeaderText = "Quantity"
+        End With
+        'Catch ex As Exception
+        '    MsgBox("Error.F-6")
+        'End Try
     End Sub
 
 
     'Fetch Last Entry Number then Plus 1 in series for new entry Number
-
     Public Shared Function FetchEntryno() As String
         Try
             Dim querysection As String = (From s In db.tblBuildHeaders
@@ -99,7 +92,6 @@
 
 
     'Fetch ID in New Asset Class
-
     Public Shared Function FetchEntryID() As String
         Try
             Dim querysection As String = (From s In db.tblmasterlisheaders
@@ -132,7 +124,6 @@
 
 
     'Fetch Transheader id in New Asset Class
-
     Public Shared Function FetchTransHeaderID() As Integer
         Try
             Dim querysection As Integer = (From s In db.tblmasterlisheaders
@@ -147,7 +138,6 @@
 
 
     'Fetch Combox Category
-
     Public Shared Function ViewCboxCat() As List(Of String)
         Try
             Dim querysection = (From s In db.tblCategories
@@ -157,11 +147,9 @@
         Catch ex As Exception
             MsgBox("Error.F-10")
         End Try
-
     End Function
 
     'Fetch Count in Asset Category Add and Update
-
     Public Shared Function FetchCCount(ByVal code As String) As Integer
         Try
             Dim count As Integer = (From s In db.tblCategories
@@ -176,7 +164,6 @@
 
 
     'Fetch Allocation Ebtry NUmber
-
     Public Shared Function FetchAllocationEntry() As String
         Try
             Dim querysection As String = (From s In db.tblAllocationHeaders
@@ -206,7 +193,6 @@
 
 
     'Check Employee if existing
-
     Public Shared Function FetchEmployeeCount(ByVal fname As String, ByVal lname As String) As Integer
         Try
             Dim count As Integer = (From s In db.tblEmployees
@@ -221,7 +207,6 @@
 
 
     'Check list ui
-
     Public Shared Function Fetchrlist1(ByVal Search As String) As Object
         Try
             Dim querysection = (From f In db.tblmasterlistdetails
@@ -240,7 +225,6 @@
 
 
     'Check For Assets Without Ownser
-
     Public Shared Function FetchAssetWithoutOwner(ByVal ItemCode As String) As Object
         Try
             Dim querysection = (From f In db.tblAssetInventories
@@ -256,7 +240,6 @@
 
 
     'Check If Cosumable
-
     Public Shared Function CheckifCosumable(ByVal ItemCodes As String) As Object
         Try
             Dim querysection = (From f In db.tblmasterlistdetails
@@ -272,7 +255,6 @@
 
 
     'Fetch Last Assignment Entry Number
-
     Public Shared Function FetchAssignmentEntryNumber() As String
         Try
             Dim querysection As String = (From s In db.tblAllocationHeaders
@@ -314,7 +296,6 @@
     End Function
 
     'Fetch transheader id in Request
-
     Public Shared Function FetchTransHeaderIDRequest() As Object
         Try
             Dim querysection = (From s In db.tblRequestHeaders
@@ -330,7 +311,6 @@
 
     End Function
 
-
     'Fetch transheader id in For Approval
     Public Shared Function FetchTransIdForApproval() As Object
         Try
@@ -343,8 +323,6 @@
         Catch ex As Exception
             MsgBox("Error.F-34")
         End Try
-
-
     End Function
 
     'Fetch transheader id in For Approval
@@ -575,4 +553,39 @@
         End Try
     End Function
 
+    'Fetch Asset Type Description
+    Public Shared Function ViewCboxtype() As Object
+        Try
+            Dim querysection = (From s In db.tblAssetTypes
+                                Order By s.AssetTypeID
+                                Select s.AssetTypeDescription).ToList
+            Return querysection
+        Catch ex As Exception
+            Return MsgBox("Error.F-34")
+        End Try
+    End Function
+
+    'Fetch Asset Category Id
+    Public Shared Function FetchCategoryId(ByVal categorydes As String) As Object
+        Try
+            Dim querysection = (From s In db.tblCategories
+                                Where s.CategoryDescription = categorydes
+                                Select s.CategoryID).SingleOrDefault
+            Return querysection
+        Catch ex As Exception
+            Return MsgBox("Error.F-35")
+        End Try
+    End Function
+
+    'Fetch Asset Type Id
+    Public Shared Function FetchTypeId(ByVal Type As String) As Object
+        Try
+            Dim querysection = (From s In db.tblAssetTypes
+                                Where s.AssetTypeDescription = Type
+                                Select s.AssetTypeID).SingleOrDefault
+            Return querysection
+        Catch ex As Exception
+            Return MsgBox("Error.F-36")
+        End Try
+    End Function
 End Class
