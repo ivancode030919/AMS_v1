@@ -588,4 +588,28 @@
             Return MsgBox("Error.F-36")
         End Try
     End Function
+
+    Public Shared Function ViewEmployeeList5(ByVal search As String) As Object
+        Try
+            If Home.UserType = "ADMIN" Then
+
+                Dim querysection = (From s In db.tblEmployees
+                                    Where s.FirstName.Contains(search) Or s.LastName.Contains(search) Or (s.FirstName + " " + s.LastName).Contains(search)
+                                    Order By s.EmployeeID
+                                    Let g = s.FirstName + " " + s.LastName
+                                    Select s.EmployeeID, g).ToList
+                Return querysection
+
+            Else
+
+            End If
+
+
+
+
+        Catch ex As Exception
+            Return MsgBox("Error.F-37")
+        End Try
+
+    End Function
 End Class

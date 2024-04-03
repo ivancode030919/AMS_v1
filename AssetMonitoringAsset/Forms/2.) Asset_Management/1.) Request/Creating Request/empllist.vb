@@ -8,7 +8,7 @@
     Private Sub viewdg()
 
         If Home.UserType = "ADMIN" Then
-            dgview.DataSource = EmployeeClass.ViewEmployeeList5(TextBox1.Text)
+            dgview.DataSource = FetchClass.ViewEmployeeList5(TextBox1.Text)
         Else
             dgview.DataSource = EmployeeClass.ViewEmployeeList4(Home.BranchID, Home.DepartmentID, Home.SectionID, TextBox1.Text)
         End If

@@ -93,22 +93,17 @@ Public Class EmployeeClass
     End Function
 
     Public Shared Function ViewEmployeeList4(ByVal branch As Integer, ByVal dept As Integer, ByVal section As Integer, ByVal search As String) As Object
+
         Dim querysection = (From s In db.tblEmployees
                             Where (s.BranchID = branch AndAlso s.DepartmentID = dept AndAlso s.SectionID = section) And s.FirstName.Contains(search) Or s.LastName.Contains(search) Or (s.FirstName + " " + s.LastName).Contains(search)
                             Order By s.EmployeeID
                             Let g = s.FirstName + " " + s.LastName
                             Select s.EmployeeID, g).ToList
         Return querysection
+
     End Function
 
-    Public Shared Function ViewEmployeeList5(ByVal search As String) As Object
-        Dim querysection = (From s In db.tblEmployees
-                            Where s.FirstName.Contains(search) Or s.LastName.Contains(search) Or (s.FirstName + " " + s.LastName).Contains(search)
-                            Order By s.EmployeeID
-                            Let g = s.FirstName + " " + s.LastName
-                            Select s.EmployeeID, g).ToList
-        Return querysection
-    End Function
+
 
 
     Public Shared Function FetchEmCount(ByVal fname As String, ByVal lname As String) As Integer

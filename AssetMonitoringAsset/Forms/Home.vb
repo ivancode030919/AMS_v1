@@ -115,4 +115,8 @@
     Private Sub AccordionControlElement56_Click(sender As Object, e As EventArgs) Handles AccordionControlElement56.Click
         ProcureRegister.ShowDialog()
     End Sub
+
+    Private Sub AccordionControlElement19_Click(sender As Object, e As EventArgs) Handles AccordionControlElement19.Click
+        BuildAssetImport.ShowDialog()
+    End Sub
 End Class

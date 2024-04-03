@@ -705,7 +705,49 @@ Public Class InsertionClass
             post.Context.SubmitChanges()
 
         Catch ex As Exception
-            MsgBox("Error.I-5")
+            MsgBox("Error.I-20")
+        End Try
+    End Sub
+
+    'Import Data in tblassetInventory
+    Public Shared Sub ImportExistingAssets(ByVal AssetCode As String,
+                                           ByVal Class1 As String,
+                                           ByVal PropertyCode As String,
+                                           ByVal Description As String,
+                                           ByVal Qty As Double,
+                                           ByVal Keeper As Integer,
+                                           ByVal Owner As Integer,
+                                           ByVal Borrower As Integer,
+                                           ByVal Reference1 As String,
+                                           ByVal Reference2 As String,
+                                           ByVal BorrowerStat As String,
+                                           ByVal Status1 As String,
+                                           ByVal Status2 As String,
+                                           ByVal Condition As String)
+        Try
+            Dim post As Table(Of tblAssetInventory) = InsertionClass.GetInventory
+
+            Dim p As New tblAssetInventory With
+                {
+               .AssetCode = AssetCode,
+               .[Class] = Class1,
+               .PropertyCode = PropertyCode,
+               .Des = Description,
+               .Qty = Qty,
+               .Keeper = Keeper,
+               .Owner = Owner,
+               .Borrower = Borrower,
+               .Reference = Reference1,
+               .Referenceno = Reference2,
+               .borrowerStat = BorrowerStat,
+               .Status1 = Status1,
+               .Status2 = Status2,
+               .Condition = Condition
+                }
+            post.InsertOnSubmit(p)
+            post.Context.SubmitChanges()
+        Catch ex As Exception
+        MsgBox("Error.I-21")
         End Try
     End Sub
 End Class

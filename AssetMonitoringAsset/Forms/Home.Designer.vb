@@ -73,8 +73,9 @@ Partial Class Home
         Me.AccordionControlElement45 = New DevExpress.XtraBars.Navigation.AccordionControlElement()
         Me.AccordionControlElement59 = New DevExpress.XtraBars.Navigation.AccordionControlElement()
         Me.PanelControl1 = New DevExpress.XtraEditors.PanelControl()
-        Me.PictureBox1 = New System.Windows.Forms.PictureBox()
         Me.Label1 = New System.Windows.Forms.Label()
+        Me.PictureBox1 = New System.Windows.Forms.PictureBox()
+        Me.AccordionControlElement19 = New DevExpress.XtraBars.Navigation.AccordionControlElement()
         CType(Me.AccordionControl1, System.ComponentModel.ISupportInitialize).BeginInit()
         CType(Me.PanelControl1, System.ComponentModel.ISupportInitialize).BeginInit()
         Me.PanelControl1.SuspendLayout()
@@ -126,7 +127,6 @@ Partial Class Home
         Me.AccordionControlElement35.Appearance.Default.ForeColor = System.Drawing.Color.Black
         Me.AccordionControlElement35.Appearance.Default.Options.UseForeColor = True
         Me.AccordionControlElement35.Elements.AddRange(New DevExpress.XtraBars.Navigation.AccordionControlElement() {Me.AccordionControlElement38, Me.AccordionControlElement46, Me.AccordionControlElement56})
-        Me.AccordionControlElement35.Expanded = True
         Me.AccordionControlElement35.Name = "AccordionControlElement35"
         Me.AccordionControlElement35.Text = "Request"
         '
@@ -159,7 +159,6 @@ Partial Class Home
         Me.AccordionControlElement48.Appearance.Default.ForeColor = System.Drawing.Color.Black
         Me.AccordionControlElement48.Appearance.Default.Options.UseForeColor = True
         Me.AccordionControlElement48.Elements.AddRange(New DevExpress.XtraBars.Navigation.AccordionControlElement() {Me.AccordionControlElement55, Me.AccordionControlElement18, Me.AccordionControlElement49, Me.AccordionControlElement52})
-        Me.AccordionControlElement48.Expanded = True
         Me.AccordionControlElement48.Name = "AccordionControlElement48"
         Me.AccordionControlElement48.Text = "Movement"
         '
@@ -394,6 +393,7 @@ Partial Class Home
         Me.AccordionControlElement3.Appearance.Normal.ForeColor = System.Drawing.Color.Black
         Me.AccordionControlElement3.Appearance.Normal.Options.UseForeColor = True
         Me.AccordionControlElement3.Elements.AddRange(New DevExpress.XtraBars.Navigation.AccordionControlElement() {Me.AccordionControlElement5, Me.AccordionControlElement4, Me.AccordionControlElement9, Me.AccordionControlElement8, Me.AccordionControlElement7, Me.AccordionControlElement13, Me.AccordionControlElement10, Me.AccordionControlElement14, Me.AccordionControlElement12, Me.AccordionControlElement11, Me.AccordionControlElement6, Me.AccordionControlElement30, Me.AccordionControlElement44})
+        Me.AccordionControlElement3.Expanded = True
         Me.AccordionControlElement3.ImageOptions.Image = CType(resources.GetObject("AccordionControlElement3.ImageOptions.Image"), System.Drawing.Image)
         Me.AccordionControlElement3.Name = "AccordionControlElement3"
         Me.AccordionControlElement3.Text = "Setup"
@@ -494,7 +494,8 @@ Partial Class Home
         '
         'AccordionControlElement44
         '
-        Me.AccordionControlElement44.Elements.AddRange(New DevExpress.XtraBars.Navigation.AccordionControlElement() {Me.AccordionControlElement45})
+        Me.AccordionControlElement44.Elements.AddRange(New DevExpress.XtraBars.Navigation.AccordionControlElement() {Me.AccordionControlElement45, Me.AccordionControlElement19})
+        Me.AccordionControlElement44.Expanded = True
         Me.AccordionControlElement44.Name = "AccordionControlElement44"
         Me.AccordionControlElement44.Text = "Importation"
         '
@@ -521,6 +522,15 @@ Partial Class Home
         Me.PanelControl1.Size = New System.Drawing.Size(1073, 23)
         Me.PanelControl1.TabIndex = 2
         '
+        'Label1
+        '
+        Me.Label1.AutoSize = True
+        Me.Label1.Location = New System.Drawing.Point(6, 3)
+        Me.Label1.Name = "Label1"
+        Me.Label1.Size = New System.Drawing.Size(38, 13)
+        Me.Label1.TabIndex = 0
+        Me.Label1.Text = "Label1"
+        '
         'PictureBox1
         '
         Me.PictureBox1.BackgroundImage = Global.AssetMonitoringAsset.My.Resources.Resources.photo_2023_10_23_15_37_35
@@ -532,14 +542,11 @@ Partial Class Home
         Me.PictureBox1.TabIndex = 4
         Me.PictureBox1.TabStop = False
         '
-        'Label1
+        'AccordionControlElement19
         '
-        Me.Label1.AutoSize = True
-        Me.Label1.Location = New System.Drawing.Point(6, 3)
-        Me.Label1.Name = "Label1"
-        Me.Label1.Size = New System.Drawing.Size(38, 13)
-        Me.Label1.TabIndex = 0
-        Me.Label1.Text = "Label1"
+        Me.AccordionControlElement19.Name = "AccordionControlElement19"
+        Me.AccordionControlElement19.Style = DevExpress.XtraBars.Navigation.ElementStyle.Item
+        Me.AccordionControlElement19.Text = "Existing Assets"
         '
         'Home
         '
@@ -622,4 +629,5 @@ Partial Class Home
     Friend WithEvents AccordionControlElement57 As DevExpress.XtraBars.Navigation.AccordionControlElement
     Friend WithEvents AccordionControlElement59 As DevExpress.XtraBars.Navigation.AccordionControlElement
     Friend WithEvents Label1 As Label
+    Friend WithEvents AccordionControlElement19 As DevExpress.XtraBars.Navigation.AccordionControlElement
 End Class
