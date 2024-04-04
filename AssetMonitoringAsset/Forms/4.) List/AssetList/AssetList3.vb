@@ -1,33 +1,29 @@
 ﻿Public Class AssetList3
     Public rowToEdit As Integer
-    Public modty As Integer
-    Public mode1 As Integer
+    Public modty As Integer = 0
+    Public mode1 As Integer = 0
     Public ac As Integer
     Private Sub AssetList3_Load(sender As Object, e As EventArgs) Handles MyBase.Load
         display()
+
     End Sub
 
 
     Private Sub display()
         If mode1 = 1 Then
-            Try
-                dgv.DataSource = ViewClass.Fetchrlist1(TextBox1.Text)
 
-                dgv.Columns(0).HeaderText = "Asset Code"
-                dgv.Columns(1).HeaderText = "Description"
+            dgv.DataSource = ViewClass.Fetchrlist1(TextBox1.Text)
 
-                dgv.Columns(2).Visible = False
-                dgv.Columns(3).Visible = False
-                dgv.Columns(4).Visible = False
+            dgv.Columns(0).HeaderText = "Asset Code"
+            dgv.Columns(1).HeaderText = "Description"
 
-                'dgv.Columns(0).Width = 200
-                'dgv.Columns(1).Width = 500
-            Catch ex As Exception
+            dgv.Columns(2).Visible = False
+            dgv.Columns(3).Visible = False
+            dgv.Columns(4).Visible = False
 
-            End Try
         ElseIf mode1 = 2 Then
-            dgv.DataSource = ViewClass.ViewInventoryDetails1
 
+            dgv.DataSource = ViewClass.ViewInventoryDetails1
             With dgv
                 .Columns(0).HeaderText = "Property Code"
                 .Columns(1).HeaderText = "Description"
@@ -38,9 +34,10 @@
                 .Columns(6).HeaderText = "Keeper"
                 .Columns(7).HeaderText = "Owner"
             End With
-        ElseIf mode1 = 3 Then
-            dgv.DataSource = ViewClass.ViewAvailableAssets(ac)
 
+        ElseIf mode1 = 3 Then
+
+            dgv.DataSource = ViewClass.ViewAvailableAssets(ac)
             With dgv
                 .Columns(0).HeaderText = "Property Code"
                 .Columns(1).HeaderText = "Description"
@@ -50,7 +47,6 @@
                 .Columns(5).HeaderText = "Branch"
                 .Columns(6).HeaderText = "Section"
             End With
-
         End If
 
     End Sub
@@ -75,7 +71,6 @@
                 .Rows(rowToEdit).Cells(17).Value = "0"
                 .Rows(rowToEdit).Cells(18).Value = "0"
             End With
-
 
         ElseIf modty = 2 Then
 
@@ -111,6 +106,12 @@
 
         End If
 
-        Me.Close()
+        Me.Dispose()
+    End Sub
+
+    Private Sub AssetList3_FormClosing(sender As Object, e As FormClosingEventArgs) Handles MyBase.FormClosing
+        modty = 0
+        mode1 = 0
+        Me.Dispose()
     End Sub
 End Class

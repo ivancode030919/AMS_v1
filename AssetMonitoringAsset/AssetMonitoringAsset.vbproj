@@ -140,7 +140,6 @@
     <Compile Include="OLD_FORMS_AND_CLASS\Class\ConditionClass.vb" />
     <Compile Include="OLD_FORMS_AND_CLASS\Class\DepartmentClass.vb" />
     <Compile Include="OLD_FORMS_AND_CLASS\Class\DocTypeClass.vb" />
-    <Compile Include="OLD_FORMS_AND_CLASS\Class\EmployeeClass.vb" />
     <Compile Include="OLD_FORMS_AND_CLASS\Class\PositionClass.vb" />
     <Compile Include="OLD_FORMS_AND_CLASS\Class\ReferenceClass.vb" />
     <Compile Include="OLD_FORMS_AND_CLASS\Class\SectionClass.vb" />

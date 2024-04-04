@@ -76,6 +76,7 @@
                         .ac = selectedrow.Cells(1).Value
                         .Show()
                     End With
+
                 ElseIf e.ColumnIndex = 3 Then
 
                     Dim index As Integer
@@ -98,17 +99,17 @@
 
                     With AssetList3
                         .rowToEdit = index
-                        .mode1 = 3
                         .modty = 4
+                        .mode1 = 3
                         .ac = selectedrow.Cells(1).Value
                         .Show()
                     End With
-
                 End If
 
             ElseIf allowtoaddrow = "N" Then
 
                 If e.ColumnIndex = 9 Then
+
                     Dim index As Integer
                     index = e.RowIndex
                     Dim selectedrow As DataGridViewRow
@@ -121,7 +122,6 @@
                         .ac = selectedrow.Cells(1).Value
                         .Show()
                     End With
-
                 End If
 
             End If

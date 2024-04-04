@@ -26,6 +26,9 @@
         dgv.Columns(0).ReadOnly = True
         dgv.Columns(1).ReadOnly = True
         dgv.Columns(3).ReadOnly = True
+
+        dgv.Columns(5).Visible = False
+        dgv.Columns(6).Visible = False
     End Sub
     Public Sub DisplayBorrow()
 
@@ -110,78 +113,82 @@
 
 
     Private Sub SimpleButton2_Click(sender As Object, e As EventArgs) Handles SimpleButton2.Click
+        If ComboBox2.Text = "" Then
+            MessageBox.Show("Please Select Transaction Type...", "Information", MessageBoxButtons.OK, MessageBoxIcon.Information)
+        ElseIf dgv.Rows.Count <= 1 Then
+            MessageBox.Show("Please Input Items to be Requested...", "Information", MessageBoxButtons.OK, MessageBoxIcon.Information)
+        Else
+            If SimpleButton2.Text = "Record" Then
+                Dim Stat1 As String = "OPEN"
+                Dim rn As String = FetchClass.FetchEntryID2
 
-        If SimpleButton2.Text = "Record" Then
-            Dim Stat1 As String = "OPEN"
-            Dim rn As String = FetchClass.FetchEntryID2
+                InsertionClass.SaveRequestHeader(rn, Home.EmployeeID, DateTimePicker1.Value, Stat1, ComboBox2.Text)
+                If ComboBox2.Text = "PROCURE" Then
 
-            InsertionClass.SaveRequestHeader(rn, Home.EmployeeID, DateTimePicker1.Value, Stat1, ComboBox2.Text)
-            If ComboBox2.Text = "PROCURE" Then
+                    For Each row As DataGridViewRow In dgv.Rows
 
-                For Each row As DataGridViewRow In dgv.Rows
+                        If Not row.IsNewRow Then
+                            Dim headid As Integer = FetchClass.FetchTransHeaderIDRequest
+                            Dim AssetCode As String = row.Cells(0).Value.ToString
+                            Dim Des As String = row.Cells(1).Value.ToString
+                            Dim qty As String = row.Cells(2).Value.ToString
+                            Dim Owner As String = row.Cells(5).Value.ToString
+                            Dim Remarks As String = row.Cells(4).Value.ToString
+                            InsertionClass.SaveProcurement(AssetCode, Des, qty, Owner, Remarks, headid)
+                        End If
+                    Next
 
-                    If Not row.IsNewRow Then
-                        Dim headid As Integer = FetchClass.FetchTransHeaderIDRequest
-                        Dim AssetCode As String = row.Cells(0).Value.ToString
-                        Dim Des As String = row.Cells(1).Value.ToString
-                        Dim qty As String = row.Cells(2).Value.ToString
-                        Dim Owner As String = row.Cells(5).Value.ToString
-                        Dim Remarks As String = row.Cells(4).Value.ToString
-                        InsertionClass.SaveProcurement(AssetCode, Des, qty, Owner, Remarks, headid)
-                    End If
-                Next
+                ElseIf ComboBox2.Text = "BORROW" Then
 
-            ElseIf ComboBox2.Text = "BORROW" Then
+                    For Each row As DataGridViewRow In dgv.Rows
+                        If Not row.IsNewRow Then
+                            Dim headid As Integer = FetchClass.FetchTransHeaderIDRequest
+                            Dim PropertyCode As String = row.Cells(0).Value.ToString
+                            Dim Des As String = row.Cells(1).Value.ToString
+                            Dim qty As String = row.Cells(2).Value.ToString
+                            Dim Borrowee As String = row.Cells(7).Value.ToString
+                            Dim DateFrom As String = row.Cells(4).Value.ToString
+                            Dim DateTo As String = row.Cells(5).Value.ToString
+                            Dim Remarks As String = row.Cells(6).Value.ToString
+                            InsertionClass.SaveBorrow(PropertyCode, Des, qty, Integer.Parse(Borrowee), Remarks, DateFrom, DateTo, headid)
+                        End If
+                    Next
+                ElseIf ComboBox2.Text = "TRANSFER OWNERSHIP" Then
 
-                For Each row As DataGridViewRow In dgv.Rows
+                    For Each row As DataGridViewRow In dgv.Rows
 
-                    If Not row.IsNewRow Then
-                        Dim headid As Integer = FetchClass.FetchTransHeaderIDRequest
-                        Dim PropertyCode As String = row.Cells(0).Value.ToString
-                        Dim Des As String = row.Cells(1).Value.ToString
-                        Dim qty As String = row.Cells(2).Value.ToString
-                        Dim Borrowee As String = row.Cells(7).Value.ToString
-                        Dim DateFrom As String = row.Cells(4).Value.ToString
-                        Dim DateTo As String = row.Cells(5).Value.ToString
-                        Dim Remarks As String = row.Cells(6).Value.ToString
-                        InsertionClass.SaveBorrow(PropertyCode, Des, qty, Integer.Parse(Borrowee), Remarks, DateFrom, DateTo, headid)
-                    End If
-                Next
-            ElseIf ComboBox2.Text = "TRANSFER OWNERSHIP" Then
+                        If Not row.IsNewRow Then
+                            Dim headid As Integer = FetchClass.FetchTransHeaderIDRequest
+                            Dim PropertyCode As String = row.Cells(0).Value.ToString
+                            Dim Des As String = row.Cells(1).Value.ToString
+                            Dim qty As String = row.Cells(2).Value.ToString
+                            Dim Newowner As String = row.Cells(5).Value.ToString
+                            Dim Remarks As String = row.Cells(4).Value.ToString
+                            InsertionClass.SaveTRansferOwner(PropertyCode, Des, qty, Integer.Parse(Newowner), Remarks, headid)
+                        End If
+                    Next
+                End If
 
-                For Each row As DataGridViewRow In dgv.Rows
+                MessageBox.Show("Successfully Recorded", "Notification", MessageBoxButtons.OK, MessageBoxIcon.Information)
+                TextBox1.Text = rn
+                dgv.Enabled = False
+                SimpleButton2.Text = "New Entry"
+                ComboBox2.Enabled = False
 
-                    If Not row.IsNewRow Then
-                        Dim headid As Integer = FetchClass.FetchTransHeaderIDRequest
-                        Dim PropertyCode As String = row.Cells(0).Value.ToString
-                        Dim Des As String = row.Cells(1).Value.ToString
-                        Dim qty As String = row.Cells(2).Value.ToString
-                        Dim Newowner As String = row.Cells(5).Value.ToString
-                        Dim Remarks As String = row.Cells(4).Value.ToString
-                        InsertionClass.SaveTRansferOwner(PropertyCode, Des, qty, Integer.Parse(Newowner), Remarks, headid)
-                    End If
-                Next
+            ElseIf SimpleButton2.Text = "New Entry" Then
+                ComboBox2.Enabled = True
+                TextBox1.Text = String.Empty
+                ComboBox2.SelectedIndex = -1
+                TextBox2.Text = String.Empty
+                DateTimePicker1.Value = Date.Now
+                dgv.Rows.Clear()
+                dgv.Columns.Clear()
+                dgv.Enabled = True
+                SimpleButton2.Text = "Record"
+
             End If
 
-            MessageBox.Show("Successfully Recorded", "Notification", MessageBoxButtons.OK, MessageBoxIcon.Information)
-            TextBox1.Text = rn
-            dgv.Enabled = False
-            SimpleButton2.Text = "New Entry"
-            ComboBox2.Enabled = False
-
-        ElseIf SimpleButton2.Text = "New Entry" Then
-            ComboBox2.Enabled = True
-            TextBox1.Text = String.Empty
-            ComboBox2.SelectedIndex = -1
-            TextBox2.Text = String.Empty
-            DateTimePicker1.Value = Date.Now
-            dgv.Rows.Clear()
-            dgv.Columns.Clear()
-            dgv.Enabled = True
-            SimpleButton2.Text = "Record"
-
         End If
-
     End Sub
 
     Private Sub AcquisitionRequest_FormClosing(sender As Object, e As FormClosingEventArgs) Handles MyBase.FormClosing

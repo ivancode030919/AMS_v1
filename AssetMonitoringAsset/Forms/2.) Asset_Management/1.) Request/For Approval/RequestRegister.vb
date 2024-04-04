@@ -5,7 +5,6 @@
 
     Public Sub display()
         dgv.DataSource = ViewClass.FetchsRequstRegister
-
         With dgv
             .Columns(0).HeaderText = "Date"
             .Columns(1).HeaderText = "Request No."

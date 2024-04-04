@@ -119,7 +119,6 @@
         Catch ex As Exception
             MsgBox("Error.F-8")
         End Try
-
     End Function
 
 
@@ -133,7 +132,6 @@
         Catch ex As Exception
             Return MsgBox("Error.F-9")
         End Try
-
     End Function
 
 
@@ -159,7 +157,6 @@
         Catch ex As Exception
             Return MsgBox("Error.F-11")
         End Try
-
     End Function
 
 
@@ -224,15 +221,22 @@
     End Function
 
 
-    'Check For Assets Without Ownser
+    'Check Asset Availability Quantity
     Public Shared Function FetchAssetWithoutOwner(ByVal ItemCode As String) As Object
         Try
-            Dim querysection = (From f In db.tblAssetInventories
-                                Where f.AssetCode = ItemCode And f.Owner = 0
-                                Select f.Qty).Sum.ToString
-            Return querysection
+            If Home.UserType = "ADMIN" Then
+                Dim querysection = (From f In db.tblAssetInventories
+                                    Where f.AssetCode = ItemCode And f.Owner = 0
+                                    Select f.Qty).Sum.ToString
+                Return querysection
+            Else
+                Dim querysection = (From f In db.tblAssetInventories
+                                    Join t In db.tblEmployees On f.Keeper Equals t.EmployeeID
+                                    Where f.AssetCode = ItemCode And f.Owner = 0 And t.DepartmentID = Home.DepartmentID
+                                    Select f.Qty).Sum.ToString
+                Return querysection
+            End If
         Catch ex As Exception
-
             MsgBox("Error.F-1")
         End Try
 
@@ -589,27 +593,6 @@
         End Try
     End Function
 
-    Public Shared Function ViewEmployeeList5(ByVal search As String) As Object
-        Try
-            If Home.UserType = "ADMIN" Then
-
-                Dim querysection = (From s In db.tblEmployees
-                                    Where s.FirstName.Contains(search) Or s.LastName.Contains(search) Or (s.FirstName + " " + s.LastName).Contains(search)
-                                    Order By s.EmployeeID
-                                    Let g = s.FirstName + " " + s.LastName
-                                    Select s.EmployeeID, g).ToList
-                Return querysection
-
-            Else
-
-            End If
 
 
-
-
-        Catch ex As Exception
-            Return MsgBox("Error.F-37")
-        End Try
-
-    End Function
 End Class

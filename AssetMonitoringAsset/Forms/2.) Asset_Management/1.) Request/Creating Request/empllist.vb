@@ -7,14 +7,10 @@
     End Sub
     Private Sub viewdg()
 
-        If Home.UserType = "ADMIN" Then
-            dgview.DataSource = FetchClass.ViewEmployeeList5(TextBox1.Text)
-        Else
-            dgview.DataSource = EmployeeClass.ViewEmployeeList4(Home.BranchID, Home.DepartmentID, Home.SectionID, TextBox1.Text)
-        End If
+        dgview.DataSource = ViewClass.ViewEmployeeList5(TextBox1.Text)
 
         With dgview
-            .Columns(0).HeaderText = "ID"
+            .Columns(0).HeaderText = "Employee ID"
             .Columns(1).HeaderText = "Name"
         End With
 

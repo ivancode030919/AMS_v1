@@ -23,7 +23,7 @@
 
 
     Public Sub viewEmployee()
-        EmployeeClass.ViewEmployee(TextBox2.Text, ComboBox1.Text, ComboBox2.Text, ComboBox3.Text, ComboBox4.Text)
+        ViewClass.ViewEmployee(TextBox2.Text, ComboBox1.Text, ComboBox2.Text, ComboBox3.Text, ComboBox4.Text)
 
     End Sub
 

@@ -6,8 +6,17 @@
     Public Shared Sub FetchRegisterDetail1(ByVal HeaderID As Integer, ByVal RequestType As String)
 
         If RequestType = "PROCURE" Then
+            Dim depID As Integer
+            If Home.UserType = "ADMIN" Then
+                'Condition in Scalar-Valued-Function
+                depID = 0
+            Else
+                'Condition in Scalar-Valued-Function
+                depID = Home.DepartmentID
+            End If
+
             With Rqregister
-                .dgv.DataSource = db.ShowAssetAvailabilityProcure(HeaderID)
+                .dgv.DataSource = db.ShowAssetAvailabilityProcure(HeaderID, depID)
             End With
         ElseIf RequestType = "BORROW" Then
             With Rqregister
@@ -22,9 +31,19 @@
     'Display in Assignmet1 form for datagridview
     '------------------------------------------------------------------------------------
     Public Shared Function FetchRegisterDetail(ByVal headerid As Integer) As Object
+        Dim depID As Integer
+
+        If Home.UserType = "ADMIN" Then
+            depID = 0
+        Else
+
+            depID = Home.DepartmentID
+        End If
+
         With Assignment1
-            .dgv.DataSource = db.ShowAssetAvailability2(headerid)
+            .dgv.DataSource = db.ShowAssetAvailability2(headerid, depID)
         End With
+
     End Function
 
     '------------------------------------------------------------------------------------
@@ -46,15 +65,30 @@
     'Display in Assignment Form For Choosing To be Assigned Assets that is Available
     '------------------------------------------------------------------------------------
     Public Shared Function ViewAvailableAssets(ByVal ac As Integer) As Object
-        Dim query = (From q In db.tblAssetInventories
-                     Join y In db.tblEmployees On q.Keeper Equals y.EmployeeID
-                     Join e In db.tblDepartments On y.DepartmentID Equals e.DepartmentID
-                     Join r In db.tblBranches On y.BranchID Equals r.BranchID
-                     Join t In db.tblSections On y.SectionID Equals t.SectionID
-                     Let m = y.LastName + ", " + y.FirstName
-                     Where q.Owner = 0 And q.AssetCode = ac
-                     Select q.PropertyCode, q.Des, q.Qty, m, e.DepartmentDescription, r.BranchDescription, t.SectionDecription)
-        Return query
+
+        If Home.UserType = "ADMIN" Then
+            Dim query = (From q In db.tblAssetInventories
+                         Join y In db.tblEmployees On q.Keeper Equals y.EmployeeID
+                         Join e In db.tblDepartments On y.DepartmentID Equals e.DepartmentID
+                         Join r In db.tblBranches On y.BranchID Equals r.BranchID
+                         Join t In db.tblSections On y.SectionID Equals t.SectionID
+                         Where q.Owner = 0 And q.AssetCode = ac
+                         Let m = y.LastName + ", " + y.FirstName
+                         Select q.PropertyCode, q.Des, q.Qty, m, e.DepartmentDescription, r.BranchDescription, t.SectionDecription)
+            Return query
+        Else
+            Dim query = (From q In db.tblAssetInventories
+                         Join y In db.tblEmployees On q.Keeper Equals y.EmployeeID
+                         Join e In db.tblDepartments On y.DepartmentID Equals e.DepartmentID
+                         Join r In db.tblBranches On y.BranchID Equals r.BranchID
+                         Join t In db.tblSections On y.SectionID Equals t.SectionID
+                         Where q.Owner = 0 And q.AssetCode = ac And (y.DepartmentID = Home.DepartmentID)
+                         Let m = y.LastName + ", " + y.FirstName
+                         Select q.PropertyCode, q.Des, q.Qty, m, e.DepartmentDescription, r.BranchDescription, t.SectionDecription)
+            Return query
+        End If
+
+
     End Function
 
     '------------------------------------------------------------------------------------
@@ -109,9 +143,8 @@
 
 
     End Function
-    '------------------------------------------------------------------------------------
+
     'Display Request Register(For Approval) Details in 
-    '------------------------------------------------------------------------------------
     Public Shared Function FetchsRequstRegister() As Object
 
         Dim query = (From s In db.tblRequestHeaders
@@ -200,6 +233,65 @@
                             Order By s.UserID
                             Select s.UserID, d.FirstName, d.LastName, f.PositionDescription, s.Status).ToList()
         Return querysection
+    End Function
+
+    'View Employee in Request
+    Public Shared Function ViewEmployeeList5(ByVal search As String) As Object
+
+        If Home.UserType = "ADMIN" Then
+
+            Dim querysection = (From s In db.tblEmployees
+                                Where s.FirstName.Contains(search) Or s.LastName.Contains(search) Or (s.FirstName + " " + s.LastName).Contains(search)
+                                Order By s.EmployeeID
+                                Let g = s.FirstName + " " + s.LastName
+                                Select s.EmployeeID, g).ToList
+            Return querysection
+
+        Else
+
+            Dim querysection = (From s In db.tblEmployees
+                                Where (s.BranchID = Home.BranchID And s.DepartmentID = Home.DepartmentID And s.SectionID = Home.SectionID) And (s.FirstName.Contains(search) Or s.LastName.Contains(search) Or (s.FirstName + " " + s.LastName).Contains(search))
+                                Order By s.EmployeeID
+                                Let g = s.FirstName + " " + s.LastName
+                                Select s.EmployeeID, g).ToList
+            Return querysection
+
+        End If
 
     End Function
+
+    'View Employee in Employee setup
+    Public Shared Sub ViewEmployee(ByVal Search As String, ByVal Bra As String, ByVal Dep As String, ByVal Pos As String, ByVal Sec As String)
+
+        Try
+
+            With Employee.dgview
+
+                'soure for viewing
+                .DataSource = db.spViewEmployee(Search, Bra, Dep, Sec, Pos)
+                'hide column 0
+
+                'set column name
+                .Columns(0).HeaderText = "Employee ID"
+                .Columns(1).HeaderText = "First Name"
+                .Columns(2).HeaderText = "Last Name"
+                .Columns(3).HeaderText = "Department"
+                .Columns(4).HeaderText = "Branch"
+                .Columns(5).HeaderText = "Section"
+                .Columns(6).HeaderText = "Position"
+                .Columns(7).HeaderText = "Manager"
+                .Columns(8).HeaderText = "Company"
+                .Columns(9).HeaderText = "Date Added"
+                'set column Width
+                '.dgview.Columns(1).Width = 100
+                '.dgview.Columns(3).Width = 125
+
+                'datagrid text alignment
+                .DefaultCellStyle.Alignment = DataGridViewContentAlignment.MiddleCenter
+
+            End With
+        Catch ex As Exception
+            MsgBox("Invalid Data...")
+        End Try
+    End Sub
 End Class

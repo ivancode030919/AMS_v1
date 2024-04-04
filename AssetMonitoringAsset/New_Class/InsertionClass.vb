@@ -4,6 +4,7 @@ Imports System.Linq
 Imports System.Data.Linq
 
 Public Class InsertionClass
+
     'Save in Borrow Detail
     Public Shared Function GetBorrowDetail() As System.Data.Linq.Table(Of tblBorrowDetail)
         Return db.GetTable(Of tblBorrowDetail)()
@@ -406,7 +407,7 @@ Public Class InsertionClass
             Dim user As Integer = Home.UserID
             Dim currentdate As Date = DateTime.Now.Date()
 
-            Dim post As Table(Of tblEmployee) = EmployeeClass.GetEmployee
+            Dim post As Table(Of tblEmployee) = InsertionClass.GetEmployee
             Dim p As New tblEmployee With
                 {
                     .FirstName = StrConv(fname, VbStrConv.ProperCase),
@@ -747,7 +748,7 @@ Public Class InsertionClass
             post.InsertOnSubmit(p)
             post.Context.SubmitChanges()
         Catch ex As Exception
-        MsgBox("Error.I-21")
+            MsgBox("Error.I-21")
         End Try
     End Sub
 End Class

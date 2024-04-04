@@ -137,6 +137,7 @@
                         Dim type1 As Integer = 1
                         UpdateClass.UpdateStatusReqHeader(headerid, type1)
 
+
                     ElseIf row.Cells(7).Value.ToString = 0 Then
 
                         SimpleButton1.Visible = False
