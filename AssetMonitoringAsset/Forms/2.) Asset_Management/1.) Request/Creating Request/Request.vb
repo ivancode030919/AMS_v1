@@ -199,39 +199,46 @@
     End Sub
 
     Private Sub dgv_CellValidated(sender As Object, e As DataGridViewCellEventArgs) Handles dgv.CellValidated
-        'Try
+        Try
 
-        '    Dim rowIndex As Integer = e.RowIndex
+            Dim rowIndex As Integer = e.RowIndex
 
-        '    If dgv.Rows(rowIndex).Cells(4).Value.ToString = "Non-Consumable-Depreciable" Then
+            'If dgv.Rows(rowIndex).Cells(4).Value.ToString = "Non-Consumable-Depreciable" Then
 
-        '        If dgv.Rows(rowIndex).Cells(2).Value.ToString > "1" Then
-        '            MessageBox.Show("Asset Items cannot be greater than 1", "Invalid Input", MessageBoxButtons.OK, MessageBoxIcon.Information)
-        '            dgv.AllowUserToAddRows = False
-        '            SimpleButton2.Enabled = False
-        '        Else
-        '            dgv.AllowUserToAddRows = True
-        '            SimpleButton2.Enabled = True
-        '        End If
+            '    If dgv.Rows(rowIndex).Cells(2).Value.ToString > "1" Then
+            '        MessageBox.Show("Asset Items cannot be greater than 1", "Invalid Input", MessageBoxButtons.OK, MessageBoxIcon.Information)
+            '        dgv.AllowUserToAddRows = False
+            '        SimpleButton2.Enabled = False
+            '    Else
+            '        dgv.AllowUserToAddRows = True
+            '        SimpleButton2.Enabled = True
+            '    End If
 
-        '    ElseIf dgv.Rows(rowIndex).Cells(4).Value.ToString = "Non-Consumable & Non-Depreciable" Then
+            'ElseIf dgv.Rows(rowIndex).Cells(4).Value.ToString = "Non-Consumable & Non-Depreciable" Then
 
-        '        If dgv.Rows(rowIndex).Cells(2).Value.ToString > "1" Then
-        '            MessageBox.Show("Asset Items cannot be greater than 1", "Invalid Input", MessageBoxButtons.OK, MessageBoxIcon.Information)
-        '            dgv.AllowUserToAddRows = False
-        '            SimpleButton2.Enabled = False
-        '        Else
-        '            dgv.AllowUserToAddRows = True
-        '            SimpleButton2.Enabled = True
-        '        End If
+            '    If dgv.Rows(rowIndex).Cells(2).Value.ToString > "1" Then
+            '        MessageBox.Show("Asset Items cannot be greater than 1", "Invalid Input", MessageBoxButtons.OK, MessageBoxIcon.Information)
+            '        dgv.AllowUserToAddRows = False
+            '        SimpleButton2.Enabled = False
+            '    Else
+            '        dgv.AllowUserToAddRows = True
+            '        SimpleButton2.Enabled = True
+            '    End If
 
-        '    ElseIf dgv.Rows(rowIndex).Cells(4).Value.ToString = "Consumable" Then
+            'ElseIf dgv.Rows(rowIndex).Cells(4).Value.ToString = "Consumable" Then
 
-        '    End If
+            'End If
+            If e.ColumnIndex = 4 Then
+                Dim row As Integer = dgv.CurrentCell.RowIndex
+                If dgv.Rows(row).Cells(4).Value Is Nothing Then
+                    MsgBox("STOP")
+                End If
+            End If
 
-        'Catch ex As Exception
 
-        'End Try
+        Catch ex As Exception
+
+        End Try
 
     End Sub
 
@@ -272,5 +279,13 @@
             dgv.Rows(row).Cells(2).ReadOnly = True
             dgv.Rows(row).Cells(2).Value = "1"
         End If
+    End Sub
+
+    Private Sub dgv_RowValidating(sender As Object, e As DataGridViewCellCancelEventArgs) Handles dgv.RowValidating
+        'Dim row As Integer = dgv.CurrentCell.RowIndex
+        'If dgv.Rows(row).Cells(4).Value Is Nothing Then
+        '    MsgBox("STOP")
+        'End If
+
     End Sub
 End Class
