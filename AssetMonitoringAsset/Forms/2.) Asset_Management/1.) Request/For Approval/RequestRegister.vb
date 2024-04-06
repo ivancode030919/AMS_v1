@@ -1,10 +1,12 @@
 ﻿Public Class RequestRegister
+
+    Private stat1 As String = ""
     Private Sub RequestRegister_Load(sender As Object, e As EventArgs) Handles MyBase.Load
         display()
     End Sub
 
     Public Sub display()
-        dgv.DataSource = ViewClass.FetchsRequstRegister
+        dgv.DataSource = ViewClass.FetchsRequstRegister(stat1)
         With dgv
             .Columns(0).HeaderText = "Date"
             .Columns(1).HeaderText = "Request No."
@@ -33,5 +35,9 @@
             .TextBox2.Text = dgv.Rows(row).Cells(7).Value.ToString
             .ShowDialog()
         End With
+    End Sub
+
+    Private Sub RadioButton1_Click(sender As Object, e As EventArgs) Handles RadioButton1.Click
+        stat1 = "OPEN"
     End Sub
 End Class

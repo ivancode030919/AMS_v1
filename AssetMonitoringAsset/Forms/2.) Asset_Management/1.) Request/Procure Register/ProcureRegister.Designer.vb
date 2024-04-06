@@ -20,8 +20,6 @@ Partial Class ProcureRegister
     <System.Diagnostics.DebuggerStepThrough()> _
     Private Sub InitializeComponent()
         Me.PanelControl1 = New DevExpress.XtraEditors.PanelControl()
-        Me.PanelControl2 = New DevExpress.XtraEditors.PanelControl()
-        Me.dgv = New System.Windows.Forms.DataGridView()
         Me.GroupBox2 = New System.Windows.Forms.GroupBox()
         Me.Label1 = New System.Windows.Forms.Label()
         Me.TextBox2 = New System.Windows.Forms.TextBox()
@@ -30,13 +28,15 @@ Partial Class ProcureRegister
         Me.Label2 = New System.Windows.Forms.Label()
         Me.DateTimePicker2 = New System.Windows.Forms.DateTimePicker()
         Me.DateTimePicker1 = New System.Windows.Forms.DateTimePicker()
+        Me.PanelControl2 = New DevExpress.XtraEditors.PanelControl()
+        Me.dgv = New System.Windows.Forms.DataGridView()
         CType(Me.PanelControl1, System.ComponentModel.ISupportInitialize).BeginInit()
         Me.PanelControl1.SuspendLayout()
+        Me.GroupBox2.SuspendLayout()
+        Me.GroupBox1.SuspendLayout()
         CType(Me.PanelControl2, System.ComponentModel.ISupportInitialize).BeginInit()
         Me.PanelControl2.SuspendLayout()
         CType(Me.dgv, System.ComponentModel.ISupportInitialize).BeginInit()
-        Me.GroupBox2.SuspendLayout()
-        Me.GroupBox1.SuspendLayout()
         Me.SuspendLayout()
         '
         'PanelControl1
@@ -48,25 +48,6 @@ Partial Class ProcureRegister
         Me.PanelControl1.Name = "PanelControl1"
         Me.PanelControl1.Size = New System.Drawing.Size(1037, 90)
         Me.PanelControl1.TabIndex = 0
-        '
-        'PanelControl2
-        '
-        Me.PanelControl2.Controls.Add(Me.dgv)
-        Me.PanelControl2.Dock = System.Windows.Forms.DockStyle.Bottom
-        Me.PanelControl2.Location = New System.Drawing.Point(5, 101)
-        Me.PanelControl2.Name = "PanelControl2"
-        Me.PanelControl2.Size = New System.Drawing.Size(1037, 371)
-        Me.PanelControl2.TabIndex = 1
-        '
-        'dgv
-        '
-        Me.dgv.BackgroundColor = System.Drawing.Color.WhiteSmoke
-        Me.dgv.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize
-        Me.dgv.Dock = System.Windows.Forms.DockStyle.Fill
-        Me.dgv.Location = New System.Drawing.Point(2, 2)
-        Me.dgv.Name = "dgv"
-        Me.dgv.Size = New System.Drawing.Size(1033, 367)
-        Me.dgv.TabIndex = 0
         '
         'GroupBox2
         '
@@ -150,6 +131,25 @@ Partial Class ProcureRegister
         Me.DateTimePicker1.Size = New System.Drawing.Size(235, 25)
         Me.DateTimePicker1.TabIndex = 0
         '
+        'PanelControl2
+        '
+        Me.PanelControl2.Controls.Add(Me.dgv)
+        Me.PanelControl2.Dock = System.Windows.Forms.DockStyle.Bottom
+        Me.PanelControl2.Location = New System.Drawing.Point(5, 101)
+        Me.PanelControl2.Name = "PanelControl2"
+        Me.PanelControl2.Size = New System.Drawing.Size(1037, 371)
+        Me.PanelControl2.TabIndex = 1
+        '
+        'dgv
+        '
+        Me.dgv.BackgroundColor = System.Drawing.Color.WhiteSmoke
+        Me.dgv.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize
+        Me.dgv.Dock = System.Windows.Forms.DockStyle.Fill
+        Me.dgv.Location = New System.Drawing.Point(2, 2)
+        Me.dgv.Name = "dgv"
+        Me.dgv.Size = New System.Drawing.Size(1033, 367)
+        Me.dgv.TabIndex = 0
+        '
         'ProcureRegister
         '
         Me.AutoScaleDimensions = New System.Drawing.SizeF(6.0!, 13.0!)
@@ -166,13 +166,13 @@ Partial Class ProcureRegister
         Me.Text = "Procure Register"
         CType(Me.PanelControl1, System.ComponentModel.ISupportInitialize).EndInit()
         Me.PanelControl1.ResumeLayout(False)
-        CType(Me.PanelControl2, System.ComponentModel.ISupportInitialize).EndInit()
-        Me.PanelControl2.ResumeLayout(False)
-        CType(Me.dgv, System.ComponentModel.ISupportInitialize).EndInit()
         Me.GroupBox2.ResumeLayout(False)
         Me.GroupBox2.PerformLayout()
         Me.GroupBox1.ResumeLayout(False)
         Me.GroupBox1.PerformLayout()
+        CType(Me.PanelControl2, System.ComponentModel.ISupportInitialize).EndInit()
+        Me.PanelControl2.ResumeLayout(False)
+        CType(Me.dgv, System.ComponentModel.ISupportInitialize).EndInit()
         Me.ResumeLayout(False)
 
     End Sub

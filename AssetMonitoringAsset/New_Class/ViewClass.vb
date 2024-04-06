@@ -10,9 +10,11 @@
             If Home.UserType = "ADMIN" Then
                 'Condition in Scalar-Valued-Function
                 depID = 0
-            Else
+            ElseIf Home.UserType = "DPC" Then
                 'Condition in Scalar-Valued-Function
                 depID = Home.DepartmentID
+            ElseIf Home.UserType = "BPC" Then
+                depID = 1
             End If
 
             With Rqregister
@@ -35,8 +37,9 @@
 
         If Home.UserType = "ADMIN" Then
             depID = 0
-        Else
-
+        ElseIf Home.UserType = "BPC" Then
+            depID = 1
+        ElseIf Home.UserType = "DPC" Then
             depID = Home.DepartmentID
         End If
 
@@ -67,6 +70,7 @@
     Public Shared Function ViewAvailableAssets(ByVal ac As Integer) As Object
 
         If Home.UserType = "ADMIN" Then
+
             Dim query = (From q In db.tblAssetInventories
                          Join y In db.tblEmployees On q.Keeper Equals y.EmployeeID
                          Join e In db.tblDepartments On y.DepartmentID Equals e.DepartmentID
@@ -76,7 +80,9 @@
                          Let m = y.LastName + ", " + y.FirstName
                          Select q.PropertyCode, q.Des, q.Qty, m, e.DepartmentDescription, r.BranchDescription, t.SectionDecription)
             Return query
-        Else
+
+        ElseIf Home.UserType = "DPC" Then
+
             Dim query = (From q In db.tblAssetInventories
                          Join y In db.tblEmployees On q.Keeper Equals y.EmployeeID
                          Join e In db.tblDepartments On y.DepartmentID Equals e.DepartmentID
@@ -86,6 +92,19 @@
                          Let m = y.LastName + ", " + y.FirstName
                          Select q.PropertyCode, q.Des, q.Qty, m, e.DepartmentDescription, r.BranchDescription, t.SectionDecription)
             Return query
+
+        ElseIf Home.UserType = "BPC" Then
+
+            Dim query = (From q In db.tblAssetInventories
+                         Join y In db.tblEmployees On q.Keeper Equals y.EmployeeID
+                         Join e In db.tblDepartments On y.DepartmentID Equals e.DepartmentID
+                         Join r In db.tblBranches On y.BranchID Equals r.BranchID
+                         Join t In db.tblSections On y.SectionID Equals t.SectionID
+                         Where q.Owner = 0 And q.AssetCode = ac And (y.DepartmentID = Home.DepartmentID)
+                         Let m = y.LastName + ", " + y.FirstName
+                         Select q.PropertyCode, q.Des, q.Qty, m, e.DepartmentDescription, r.BranchDescription, t.SectionDecription)
+            Return query
+
         End If
 
 
@@ -145,14 +164,14 @@
     End Function
 
     'Display Request Register(For Approval) Details in 
-    Public Shared Function FetchsRequstRegister() As Object
+    Public Shared Function FetchsRequstRegister(ByVal stat1 As String) As Object
 
         Dim query = (From s In db.tblRequestHeaders
                      Join k In db.tblEmployees On s.RequestBy Equals k.EmployeeID
                      Join f In db.tblDepartments On k.DepartmentID Equals f.DepartmentID
                      Join h In db.tblBranches On k.BranchID Equals h.BranchID
                      Join q In db.tblSections On k.SectionID Equals q.SectionID
-                     Where s.Stat = "Open"
+                     Where s.Stat.Contains(stat1)
                      Let y = k.LastName + ", " + k.FirstName
                      Select s.Date, s.RequestNo, s.RequestType, k.Company, f.DepartmentDescription, h.BranchDescription, q.SectionDecription, y, s.Stat, s.HeaderId, s.RequestBy).ToList
         Return query
@@ -210,7 +229,7 @@
                             Join y In db.tblBranches On r.BranchID Equals y.BranchID
                             Where s.Date >= date1 AndAlso s.Date <= date2 AndAlso s.RequestNumber.Contains(rqnumber)
                             Let x = r.FirstName + " " + r.LastName
-                            Select s.RequestNumber, x, t.DepartmentDescription, y.BranchDescription, r.Company, s.Date).ToList()
+                            Select s.RequestNumber, x, t.DepartmentDescription, y.BranchDescription, r.Company, s.Date, s.id).ToList()
         Return querysection
     End Function
 
@@ -247,14 +266,15 @@
                                 Select s.EmployeeID, g).ToList
             Return querysection
 
-        Else
+        ElseIf Home.UserType = "BPC" Then
 
             Dim querysection = (From s In db.tblEmployees
-                                Where (s.BranchID = Home.BranchID And s.DepartmentID = Home.DepartmentID And s.SectionID = Home.SectionID) And (s.FirstName.Contains(search) Or s.LastName.Contains(search) Or (s.FirstName + " " + s.LastName).Contains(search))
+                                Where (s.BranchID = Home.BranchID And s.DepartmentID = Home.DepartmentID And s.SectionID <> "2021") And (s.FirstName.Contains(search) Or s.LastName.Contains(search) Or (s.FirstName + " " + s.LastName).Contains(search))
                                 Order By s.EmployeeID
                                 Let g = s.FirstName + " " + s.LastName
                                 Select s.EmployeeID, g).ToList
             Return querysection
+
 
         End If
 
@@ -294,4 +314,15 @@
             MsgBox("Invalid Data...")
         End Try
     End Sub
+
+
+    'View Procurement Detail
+    Public Shared Function ViewProcureDetails(ByVal TransId As Integer) As Object
+        Dim querysection = (From s In db.tblProcureDetails
+                            Join g In db.tblEmployees On s.Requestfor Equals g.EmployeeID
+                            Where s.TransID = TransId
+                            Let c = g.FirstName + " " + g.LastName
+                            Select s.AssetCode, s.Class, c, s.Quantity, s.Remarks).ToList
+        Return querysection
+    End Function
 End Class

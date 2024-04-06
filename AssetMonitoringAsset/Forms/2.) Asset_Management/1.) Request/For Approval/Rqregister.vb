@@ -8,7 +8,6 @@
     Private Sub Rqregister_Load(sender As Object, e As EventArgs) Handles MyBase.Load
         display()
         ForQtySum()
-
     End Sub
 
     Public Sub display()
@@ -48,7 +47,6 @@
     End Sub
 
     Private Sub Closing1()
-
         dgv.Columns.Clear()
         qtysum = 0
     End Sub

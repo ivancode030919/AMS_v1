@@ -22,6 +22,10 @@ Partial Class RequestRegister
         Me.PanelControl2 = New DevExpress.XtraEditors.PanelControl()
         Me.dgv = New System.Windows.Forms.DataGridView()
         Me.PanelControl3 = New DevExpress.XtraEditors.PanelControl()
+        Me.SimpleButton1 = New DevExpress.XtraEditors.SimpleButton()
+        Me.RadioButton3 = New System.Windows.Forms.RadioButton()
+        Me.RadioButton2 = New System.Windows.Forms.RadioButton()
+        Me.RadioButton1 = New System.Windows.Forms.RadioButton()
         Me.GroupBox2 = New System.Windows.Forms.GroupBox()
         Me.Label1 = New System.Windows.Forms.Label()
         Me.TextBox2 = New System.Windows.Forms.TextBox()
@@ -65,6 +69,10 @@ Partial Class RequestRegister
         '
         'PanelControl3
         '
+        Me.PanelControl3.Controls.Add(Me.SimpleButton1)
+        Me.PanelControl3.Controls.Add(Me.RadioButton3)
+        Me.PanelControl3.Controls.Add(Me.RadioButton2)
+        Me.PanelControl3.Controls.Add(Me.RadioButton1)
         Me.PanelControl3.Controls.Add(Me.GroupBox2)
         Me.PanelControl3.Controls.Add(Me.GroupBox1)
         Me.PanelControl3.Dock = System.Windows.Forms.DockStyle.Top
@@ -72,6 +80,49 @@ Partial Class RequestRegister
         Me.PanelControl3.Name = "PanelControl3"
         Me.PanelControl3.Size = New System.Drawing.Size(1018, 101)
         Me.PanelControl3.TabIndex = 1
+        '
+        'SimpleButton1
+        '
+        Me.SimpleButton1.Location = New System.Drawing.Point(938, 38)
+        Me.SimpleButton1.Name = "SimpleButton1"
+        Me.SimpleButton1.Size = New System.Drawing.Size(51, 23)
+        Me.SimpleButton1.TabIndex = 25
+        Me.SimpleButton1.Text = "SimpleButton1"
+        '
+        'RadioButton3
+        '
+        Me.RadioButton3.AutoSize = True
+        Me.RadioButton3.Font = New System.Drawing.Font("Arial Rounded MT Bold", 11.25!)
+        Me.RadioButton3.Location = New System.Drawing.Point(813, 62)
+        Me.RadioButton3.Name = "RadioButton3"
+        Me.RadioButton3.Size = New System.Drawing.Size(99, 21)
+        Me.RadioButton3.TabIndex = 24
+        Me.RadioButton3.Text = "Cancelled"
+        Me.RadioButton3.UseVisualStyleBackColor = True
+        '
+        'RadioButton2
+        '
+        Me.RadioButton2.AutoSize = True
+        Me.RadioButton2.Font = New System.Drawing.Font("Arial Rounded MT Bold", 11.25!)
+        Me.RadioButton2.Location = New System.Drawing.Point(813, 38)
+        Me.RadioButton2.Name = "RadioButton2"
+        Me.RadioButton2.Size = New System.Drawing.Size(93, 21)
+        Me.RadioButton2.TabIndex = 23
+        Me.RadioButton2.Text = "Show All "
+        Me.RadioButton2.UseVisualStyleBackColor = True
+        '
+        'RadioButton1
+        '
+        Me.RadioButton1.AutoSize = True
+        Me.RadioButton1.Checked = True
+        Me.RadioButton1.Font = New System.Drawing.Font("Arial Rounded MT Bold", 11.25!)
+        Me.RadioButton1.Location = New System.Drawing.Point(813, 15)
+        Me.RadioButton1.Name = "RadioButton1"
+        Me.RadioButton1.Size = New System.Drawing.Size(85, 21)
+        Me.RadioButton1.TabIndex = 22
+        Me.RadioButton1.TabStop = True
+        Me.RadioButton1.Text = "Pending"
+        Me.RadioButton1.UseVisualStyleBackColor = True
         '
         'GroupBox2
         '
@@ -168,12 +219,13 @@ Partial Class RequestRegister
         Me.Name = "RequestRegister"
         Me.Padding = New System.Windows.Forms.Padding(5)
         Me.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen
-        Me.Text = "Allocation List"
+        Me.Text = "Request Register"
         CType(Me.PanelControl2, System.ComponentModel.ISupportInitialize).EndInit()
         Me.PanelControl2.ResumeLayout(False)
         CType(Me.dgv, System.ComponentModel.ISupportInitialize).EndInit()
         CType(Me.PanelControl3, System.ComponentModel.ISupportInitialize).EndInit()
         Me.PanelControl3.ResumeLayout(False)
+        Me.PanelControl3.PerformLayout()
         Me.GroupBox2.ResumeLayout(False)
         Me.GroupBox2.PerformLayout()
         Me.GroupBox1.ResumeLayout(False)
@@ -193,4 +245,8 @@ Partial Class RequestRegister
     Friend WithEvents Label2 As Label
     Friend WithEvents DateTimePicker2 As DateTimePicker
     Friend WithEvents DateTimePicker1 As DateTimePicker
+    Friend WithEvents RadioButton3 As RadioButton
+    Friend WithEvents RadioButton2 As RadioButton
+    Friend WithEvents RadioButton1 As RadioButton
+    Friend WithEvents SimpleButton1 As DevExpress.XtraEditors.SimpleButton
 End Class

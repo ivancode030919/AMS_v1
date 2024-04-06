@@ -75,7 +75,7 @@
         ElseIf e.ColumnIndex = 3 AndAlso ComboBox2.Text = "PROCURE" Then
             empllist.modty = 1
             empllist.rowToEdit = row
-            empllist.Show()
+            empllist.ShowDialog()
         ElseIf e.ColumnIndex = 0 AndAlso ComboBox2.Text = "BORROW" Then
             AssetList3.modty = 3
             AssetList3.mode1 = 2
@@ -84,7 +84,7 @@
         ElseIf e.ColumnIndex = 3 AndAlso ComboBox2.Text = "BORROW" Then
             empllist.modty = 2
             empllist.rowToEdit = row
-            empllist.Show()
+            empllist.ShowDialog()
         ElseIf e.ColumnIndex = 4 AndAlso ComboBox2.Text = "BORROW" Then
             date1.modty = 1
             date1.Text = "Date From"
@@ -105,7 +105,7 @@
         ElseIf e.ColumnIndex = 3 AndAlso ComboBox2.Text = "TRANSFER OWNERSHIP" Then
             empllist.modty = 3
             empllist.rowToEdit = row
-            empllist.Show()
+            empllist.ShowDialog()
         End If
 
 
@@ -203,35 +203,11 @@
 
             Dim rowIndex As Integer = e.RowIndex
 
-            'If dgv.Rows(rowIndex).Cells(4).Value.ToString = "Non-Consumable-Depreciable" Then
 
-            '    If dgv.Rows(rowIndex).Cells(2).Value.ToString > "1" Then
-            '        MessageBox.Show("Asset Items cannot be greater than 1", "Invalid Input", MessageBoxButtons.OK, MessageBoxIcon.Information)
-            '        dgv.AllowUserToAddRows = False
-            '        SimpleButton2.Enabled = False
-            '    Else
-            '        dgv.AllowUserToAddRows = True
-            '        SimpleButton2.Enabled = True
-            '    End If
-
-            'ElseIf dgv.Rows(rowIndex).Cells(4).Value.ToString = "Non-Consumable & Non-Depreciable" Then
-
-            '    If dgv.Rows(rowIndex).Cells(2).Value.ToString > "1" Then
-            '        MessageBox.Show("Asset Items cannot be greater than 1", "Invalid Input", MessageBoxButtons.OK, MessageBoxIcon.Information)
-            '        dgv.AllowUserToAddRows = False
-            '        SimpleButton2.Enabled = False
-            '    Else
-            '        dgv.AllowUserToAddRows = True
-            '        SimpleButton2.Enabled = True
-            '    End If
-
-            'ElseIf dgv.Rows(rowIndex).Cells(4).Value.ToString = "Consumable" Then
-
-            'End If
             If e.ColumnIndex = 4 Then
                 Dim row As Integer = dgv.CurrentCell.RowIndex
                 If dgv.Rows(row).Cells(4).Value Is Nothing Then
-                    MsgBox("STOP")
+                    MessageBox.Show("Please put remarks to proceed...", "Notification", MessageBoxButtons.OK, MessageBoxIcon.Information)
                 End If
             End If
 
@@ -281,11 +257,4 @@
         End If
     End Sub
 
-    Private Sub dgv_RowValidating(sender As Object, e As DataGridViewCellCancelEventArgs) Handles dgv.RowValidating
-        'Dim row As Integer = dgv.CurrentCell.RowIndex
-        'If dgv.Rows(row).Cells(4).Value Is Nothing Then
-        '    MsgBox("STOP")
-        'End If
-
-    End Sub
 End Class

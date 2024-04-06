@@ -122,6 +122,12 @@
       <DesignTime>True</DesignTime>
       <DependentUpon>AMSdbDataSet.xsd</DependentUpon>
     </Compile>
+    <Compile Include="Forms\2.%29 Asset_Management\1.%29 Request\Procure Register\ProcureDetail.Designer.vb">
+      <DependentUpon>ProcureDetail.vb</DependentUpon>
+    </Compile>
+    <Compile Include="Forms\2.%29 Asset_Management\1.%29 Request\Procure Register\ProcureDetail.vb">
+      <SubType>Form</SubType>
+    </Compile>
     <Compile Include="Forms\2.%29 Asset_Management\1.%29 Request\Procure Register\ProcureRegister.Designer.vb">
       <DependentUpon>ProcureRegister.vb</DependentUpon>
     </Compile>
@@ -471,6 +477,9 @@
     <None Include="Connection and Module\DataClasses1.dbml.layout">
       <DependentUpon>DataClasses1.dbml</DependentUpon>
     </None>
+    <EmbeddedResource Include="Forms\2.%29 Asset_Management\1.%29 Request\Procure Register\ProcureDetail.resx">
+      <DependentUpon>ProcureDetail.vb</DependentUpon>
+    </EmbeddedResource>
     <EmbeddedResource Include="Forms\2.%29 Asset_Management\1.%29 Request\Procure Register\ProcureRegister.resx">
       <DependentUpon>ProcureRegister.vb</DependentUpon>
     </EmbeddedResource>
