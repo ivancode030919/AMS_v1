@@ -71,11 +71,11 @@ Partial Class Home
         Me.AccordionControlElement30 = New DevExpress.XtraBars.Navigation.AccordionControlElement()
         Me.AccordionControlElement44 = New DevExpress.XtraBars.Navigation.AccordionControlElement()
         Me.AccordionControlElement45 = New DevExpress.XtraBars.Navigation.AccordionControlElement()
+        Me.AccordionControlElement19 = New DevExpress.XtraBars.Navigation.AccordionControlElement()
         Me.AccordionControlElement59 = New DevExpress.XtraBars.Navigation.AccordionControlElement()
         Me.PanelControl1 = New DevExpress.XtraEditors.PanelControl()
         Me.Label1 = New System.Windows.Forms.Label()
         Me.PictureBox1 = New System.Windows.Forms.PictureBox()
-        Me.AccordionControlElement19 = New DevExpress.XtraBars.Navigation.AccordionControlElement()
         CType(Me.AccordionControl1, System.ComponentModel.ISupportInitialize).BeginInit()
         CType(Me.PanelControl1, System.ComponentModel.ISupportInitialize).BeginInit()
         Me.PanelControl1.SuspendLayout()
@@ -144,7 +144,7 @@ Partial Class Home
         Me.AccordionControlElement46.Appearance.Default.Options.UseForeColor = True
         Me.AccordionControlElement46.Name = "AccordionControlElement46"
         Me.AccordionControlElement46.Style = DevExpress.XtraBars.Navigation.ElementStyle.Item
-        Me.AccordionControlElement46.Text = "For Approval"
+        Me.AccordionControlElement46.Text = "Request Register"
         '
         'AccordionControlElement56
         '
@@ -159,6 +159,7 @@ Partial Class Home
         Me.AccordionControlElement48.Appearance.Default.ForeColor = System.Drawing.Color.Black
         Me.AccordionControlElement48.Appearance.Default.Options.UseForeColor = True
         Me.AccordionControlElement48.Elements.AddRange(New DevExpress.XtraBars.Navigation.AccordionControlElement() {Me.AccordionControlElement55, Me.AccordionControlElement18, Me.AccordionControlElement49, Me.AccordionControlElement52})
+        Me.AccordionControlElement48.Expanded = True
         Me.AccordionControlElement48.Name = "AccordionControlElement48"
         Me.AccordionControlElement48.Text = "Movement"
         '
@@ -167,7 +168,6 @@ Partial Class Home
         Me.AccordionControlElement55.Appearance.Default.ForeColor = System.Drawing.Color.Black
         Me.AccordionControlElement55.Appearance.Default.Options.UseForeColor = True
         Me.AccordionControlElement55.Elements.AddRange(New DevExpress.XtraBars.Navigation.AccordionControlElement() {Me.e, Me.AccordionControlElement36})
-        Me.AccordionControlElement55.Expanded = True
         Me.AccordionControlElement55.Name = "AccordionControlElement55"
         Me.AccordionControlElement55.Text = "Assignment"
         '
@@ -192,6 +192,7 @@ Partial Class Home
         Me.AccordionControlElement18.Appearance.Default.ForeColor = System.Drawing.Color.Black
         Me.AccordionControlElement18.Appearance.Default.Options.UseForeColor = True
         Me.AccordionControlElement18.Elements.AddRange(New DevExpress.XtraBars.Navigation.AccordionControlElement() {Me.AccordionControlElement31, Me.AccordionControlElement32})
+        Me.AccordionControlElement18.Expanded = True
         Me.AccordionControlElement18.Name = "AccordionControlElement18"
         Me.AccordionControlElement18.Text = "Receive"
         '
@@ -505,6 +506,12 @@ Partial Class Home
         Me.AccordionControlElement45.Style = DevExpress.XtraBars.Navigation.ElementStyle.Item
         Me.AccordionControlElement45.Text = "Masterlist"
         '
+        'AccordionControlElement19
+        '
+        Me.AccordionControlElement19.Name = "AccordionControlElement19"
+        Me.AccordionControlElement19.Style = DevExpress.XtraBars.Navigation.ElementStyle.Item
+        Me.AccordionControlElement19.Text = "Existing Assets"
+        '
         'AccordionControlElement59
         '
         Me.AccordionControlElement59.Appearance.Default.ForeColor = System.Drawing.Color.Black
@@ -541,12 +548,6 @@ Partial Class Home
         Me.PictureBox1.Size = New System.Drawing.Size(1073, 628)
         Me.PictureBox1.TabIndex = 4
         Me.PictureBox1.TabStop = False
-        '
-        'AccordionControlElement19
-        '
-        Me.AccordionControlElement19.Name = "AccordionControlElement19"
-        Me.AccordionControlElement19.Style = DevExpress.XtraBars.Navigation.ElementStyle.Item
-        Me.AccordionControlElement19.Text = "Existing Assets"
         '
         'Home
         '

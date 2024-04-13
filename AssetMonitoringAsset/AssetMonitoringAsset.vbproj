@@ -134,6 +134,12 @@
     <Compile Include="Forms\2.%29 Asset_Management\1.%29 Request\Procure Register\ProcureRegister.vb">
       <SubType>Form</SubType>
     </Compile>
+    <Compile Include="Forms\2.%29 Asset_Management\2.%29 Movement\2.%29 Receive\ReceiveRequest.Designer.vb">
+      <DependentUpon>ReceiveRequest.vb</DependentUpon>
+    </Compile>
+    <Compile Include="Forms\2.%29 Asset_Management\2.%29 Movement\2.%29 Receive\ReceiveRequest.vb">
+      <SubType>Form</SubType>
+    </Compile>
     <Compile Include="Forms\7.%29 Importation\Build Asset\BuildAssetImport.Designer.vb">
       <DependentUpon>BuildAssetImport.vb</DependentUpon>
     </Compile>
@@ -174,16 +180,16 @@
     <Compile Include="Forms\2.%29 Asset_Management\1.%29 Request\Creating Request\empllist.vb">
       <SubType>Form</SubType>
     </Compile>
-    <Compile Include="Forms\2.%29 Asset_Management\1.%29 Request\For Approval\ChngState.Designer.vb">
+    <Compile Include="Forms\2.%29 Asset_Management\1.%29 Request\Request Register\ChngState.Designer.vb">
       <DependentUpon>ChngState.vb</DependentUpon>
     </Compile>
-    <Compile Include="Forms\2.%29 Asset_Management\1.%29 Request\For Approval\ChngState.vb">
+    <Compile Include="Forms\2.%29 Asset_Management\1.%29 Request\Request Register\ChngState.vb">
       <SubType>Form</SubType>
     </Compile>
-    <Compile Include="Forms\2.%29 Asset_Management\1.%29 Request\For Approval\Rqregister.Designer.vb">
+    <Compile Include="Forms\2.%29 Asset_Management\1.%29 Request\Request Register\Rqregister.Designer.vb">
       <DependentUpon>Rqregister.vb</DependentUpon>
     </Compile>
-    <Compile Include="Forms\2.%29 Asset_Management\1.%29 Request\For Approval\Rqregister.vb">
+    <Compile Include="Forms\2.%29 Asset_Management\1.%29 Request\Request Register\Rqregister.vb">
       <SubType>Form</SubType>
     </Compile>
     <Compile Include="Forms\2.%29 Asset_Management\1.%29 Request\Creating Request\Request.Designer.vb">
@@ -198,10 +204,10 @@
     <Compile Include="Forms\4.%29 List\AssetList\AssetList3.vb">
       <SubType>Form</SubType>
     </Compile>
-    <Compile Include="Forms\2.%29 Asset_Management\1.%29 Request\For Approval\RequestRegister.Designer.vb">
+    <Compile Include="Forms\2.%29 Asset_Management\1.%29 Request\Request Register\RequestRegister.Designer.vb">
       <DependentUpon>RequestRegister.vb</DependentUpon>
     </Compile>
-    <Compile Include="Forms\2.%29 Asset_Management\1.%29 Request\For Approval\RequestRegister.vb">
+    <Compile Include="Forms\2.%29 Asset_Management\1.%29 Request\Request Register\RequestRegister.vb">
       <SubType>Form</SubType>
     </Compile>
     <Compile Include="Forms\3.%29 Asset\Build Asset\BuildAsset\BuildAsset.Designer.vb">
@@ -492,19 +498,22 @@
     <EmbeddedResource Include="Forms\2.%29 Asset_Management\1.%29 Request\Creating Request\empllist.resx">
       <DependentUpon>empllist.vb</DependentUpon>
     </EmbeddedResource>
-    <EmbeddedResource Include="Forms\2.%29 Asset_Management\1.%29 Request\For Approval\ChngState.resx">
+    <EmbeddedResource Include="Forms\2.%29 Asset_Management\1.%29 Request\Request Register\ChngState.resx">
       <DependentUpon>ChngState.vb</DependentUpon>
     </EmbeddedResource>
-    <EmbeddedResource Include="Forms\2.%29 Asset_Management\1.%29 Request\For Approval\Rqregister.resx">
+    <EmbeddedResource Include="Forms\2.%29 Asset_Management\1.%29 Request\Request Register\Rqregister.resx">
       <DependentUpon>Rqregister.vb</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="Forms\2.%29 Asset_Management\1.%29 Request\Creating Request\Request.resx">
       <DependentUpon>Request.vb</DependentUpon>
     </EmbeddedResource>
+    <EmbeddedResource Include="Forms\2.%29 Asset_Management\2.%29 Movement\2.%29 Receive\ReceiveRequest.resx">
+      <DependentUpon>ReceiveRequest.vb</DependentUpon>
+    </EmbeddedResource>
     <EmbeddedResource Include="Forms\4.%29 List\AssetList\AssetList3.resx">
       <DependentUpon>AssetList3.vb</DependentUpon>
     </EmbeddedResource>
-    <EmbeddedResource Include="Forms\2.%29 Asset_Management\1.%29 Request\For Approval\RequestRegister.resx">
+    <EmbeddedResource Include="Forms\2.%29 Asset_Management\1.%29 Request\Request Register\RequestRegister.resx">
       <DependentUpon>RequestRegister.vb</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="Forms\3.%29 Asset\Build Asset\BuildAsset\BuildAsset.resx">

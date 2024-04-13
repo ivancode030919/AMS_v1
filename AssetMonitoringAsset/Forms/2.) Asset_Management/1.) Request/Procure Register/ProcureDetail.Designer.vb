@@ -28,6 +28,7 @@ Partial Class ProcureDetail
         Me.Label1 = New System.Windows.Forms.Label()
         Me.TextBox1 = New System.Windows.Forms.TextBox()
         Me.Label5 = New System.Windows.Forms.Label()
+        Me.SimpleButton2 = New DevExpress.XtraEditors.SimpleButton()
         CType(Me.PanelControl2, System.ComponentModel.ISupportInitialize).BeginInit()
         Me.PanelControl2.SuspendLayout()
         CType(Me.dgv, System.ComponentModel.ISupportInitialize).BeginInit()
@@ -38,10 +39,9 @@ Partial Class ProcureDetail
         'PanelControl2
         '
         Me.PanelControl2.Controls.Add(Me.dgv)
-        Me.PanelControl2.Dock = System.Windows.Forms.DockStyle.Bottom
         Me.PanelControl2.Location = New System.Drawing.Point(5, 135)
         Me.PanelControl2.Name = "PanelControl2"
-        Me.PanelControl2.Size = New System.Drawing.Size(1115, 370)
+        Me.PanelControl2.Size = New System.Drawing.Size(1115, 325)
         Me.PanelControl2.TabIndex = 2
         '
         'dgv
@@ -56,7 +56,7 @@ Partial Class ProcureDetail
         Me.dgv.Location = New System.Drawing.Point(2, 2)
         Me.dgv.Name = "dgv"
         Me.dgv.SelectionMode = System.Windows.Forms.DataGridViewSelectionMode.CellSelect
-        Me.dgv.Size = New System.Drawing.Size(1111, 366)
+        Me.dgv.Size = New System.Drawing.Size(1111, 321)
         Me.dgv.TabIndex = 1
         '
         'PanelControl1
@@ -131,11 +131,22 @@ Partial Class ProcureDetail
         Me.Label5.TabIndex = 38
         Me.Label5.Text = "Request Number :"
         '
+        'SimpleButton2
+        '
+        Me.SimpleButton2.Appearance.Font = New System.Drawing.Font("Arial Rounded MT Bold", 11.25!)
+        Me.SimpleButton2.Appearance.Options.UseFont = True
+        Me.SimpleButton2.Location = New System.Drawing.Point(985, 466)
+        Me.SimpleButton2.Name = "SimpleButton2"
+        Me.SimpleButton2.Size = New System.Drawing.Size(135, 36)
+        Me.SimpleButton2.TabIndex = 55
+        Me.SimpleButton2.Text = "Receive"
+        '
         'ProcureDetail
         '
         Me.AutoScaleDimensions = New System.Drawing.SizeF(6.0!, 13.0!)
         Me.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font
         Me.ClientSize = New System.Drawing.Size(1125, 510)
+        Me.Controls.Add(Me.SimpleButton2)
         Me.Controls.Add(Me.PanelControl1)
         Me.Controls.Add(Me.PanelControl2)
         Me.IconOptions.ShowIcon = False
@@ -162,4 +173,5 @@ Partial Class ProcureDetail
     Friend WithEvents Label1 As Label
     Friend WithEvents TextBox1 As TextBox
     Friend WithEvents Label5 As Label
+    Friend WithEvents SimpleButton2 As DevExpress.XtraEditors.SimpleButton
 End Class
