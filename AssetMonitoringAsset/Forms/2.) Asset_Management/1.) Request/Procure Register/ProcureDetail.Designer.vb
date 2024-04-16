@@ -1,9 +1,9 @@
-﻿<Global.Microsoft.VisualBasic.CompilerServices.DesignerGenerated()> _
+﻿<Global.Microsoft.VisualBasic.CompilerServices.DesignerGenerated()>
 Partial Class ProcureDetail
     Inherits DevExpress.XtraEditors.XtraForm
 
     'Form overrides dispose to clean up the component list.
-    <System.Diagnostics.DebuggerNonUserCode()> _
+    <System.Diagnostics.DebuggerNonUserCode()>
     Protected Overrides Sub Dispose(ByVal disposing As Boolean)
         If disposing AndAlso components IsNot Nothing Then
             components.Dispose()
@@ -17,7 +17,7 @@ Partial Class ProcureDetail
     'NOTE: The following procedure is required by the Windows Form Designer
     'It can be modified using the Windows Form Designer.  
     'Do not modify it using the code editor.
-    <System.Diagnostics.DebuggerStepThrough()> _
+    <System.Diagnostics.DebuggerStepThrough()>
     Private Sub InitializeComponent()
         Me.PanelControl2 = New DevExpress.XtraEditors.PanelControl()
         Me.dgv = New System.Windows.Forms.DataGridView()
@@ -28,7 +28,7 @@ Partial Class ProcureDetail
         Me.Label1 = New System.Windows.Forms.Label()
         Me.TextBox1 = New System.Windows.Forms.TextBox()
         Me.Label5 = New System.Windows.Forms.Label()
-        Me.SimpleButton2 = New DevExpress.XtraEditors.SimpleButton()
+        Me.Button1 = New System.Windows.Forms.Button()
         CType(Me.PanelControl2, System.ComponentModel.ISupportInitialize).BeginInit()
         Me.PanelControl2.SuspendLayout()
         CType(Me.dgv, System.ComponentModel.ISupportInitialize).BeginInit()
@@ -41,7 +41,7 @@ Partial Class ProcureDetail
         Me.PanelControl2.Controls.Add(Me.dgv)
         Me.PanelControl2.Location = New System.Drawing.Point(5, 135)
         Me.PanelControl2.Name = "PanelControl2"
-        Me.PanelControl2.Size = New System.Drawing.Size(1115, 325)
+        Me.PanelControl2.Size = New System.Drawing.Size(1115, 367)
         Me.PanelControl2.TabIndex = 2
         '
         'dgv
@@ -56,11 +56,12 @@ Partial Class ProcureDetail
         Me.dgv.Location = New System.Drawing.Point(2, 2)
         Me.dgv.Name = "dgv"
         Me.dgv.SelectionMode = System.Windows.Forms.DataGridViewSelectionMode.CellSelect
-        Me.dgv.Size = New System.Drawing.Size(1111, 321)
+        Me.dgv.Size = New System.Drawing.Size(1111, 363)
         Me.dgv.TabIndex = 1
         '
         'PanelControl1
         '
+        Me.PanelControl1.Controls.Add(Me.Button1)
         Me.PanelControl1.Controls.Add(Me.DateTimePicker1)
         Me.PanelControl1.Controls.Add(Me.Label6)
         Me.PanelControl1.Controls.Add(Me.TextBox2)
@@ -131,22 +132,20 @@ Partial Class ProcureDetail
         Me.Label5.TabIndex = 38
         Me.Label5.Text = "Request Number :"
         '
-        'SimpleButton2
+        'Button1
         '
-        Me.SimpleButton2.Appearance.Font = New System.Drawing.Font("Arial Rounded MT Bold", 11.25!)
-        Me.SimpleButton2.Appearance.Options.UseFont = True
-        Me.SimpleButton2.Location = New System.Drawing.Point(985, 466)
-        Me.SimpleButton2.Name = "SimpleButton2"
-        Me.SimpleButton2.Size = New System.Drawing.Size(135, 36)
-        Me.SimpleButton2.TabIndex = 55
-        Me.SimpleButton2.Text = "Receive"
+        Me.Button1.Location = New System.Drawing.Point(739, 63)
+        Me.Button1.Name = "Button1"
+        Me.Button1.Size = New System.Drawing.Size(75, 23)
+        Me.Button1.TabIndex = 55
+        Me.Button1.Text = "Button1"
+        Me.Button1.UseVisualStyleBackColor = True
         '
         'ProcureDetail
         '
         Me.AutoScaleDimensions = New System.Drawing.SizeF(6.0!, 13.0!)
         Me.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font
         Me.ClientSize = New System.Drawing.Size(1125, 510)
-        Me.Controls.Add(Me.SimpleButton2)
         Me.Controls.Add(Me.PanelControl1)
         Me.Controls.Add(Me.PanelControl2)
         Me.IconOptions.ShowIcon = False
@@ -173,5 +172,5 @@ Partial Class ProcureDetail
     Friend WithEvents Label1 As Label
     Friend WithEvents TextBox1 As TextBox
     Friend WithEvents Label5 As Label
-    Friend WithEvents SimpleButton2 As DevExpress.XtraEditors.SimpleButton
+    Friend WithEvents Button1 As Button
 End Class

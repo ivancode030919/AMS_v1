@@ -593,6 +593,44 @@
         End Try
     End Function
 
+    Public Shared Function FetchLastProteryCode(ByVal ItemCode As Integer) As Object
+        Try
+
+            Dim result = db.spGetLastPropertyCode(ItemCode).SingleOrDefault()
+
+            If result IsNot Nothing Then
+
+                Dim propertyCode As String = result.PropertyCode
+                Dim parts As String() = propertyCode.Split("-"c)
+                Dim lastPart As String = parts(parts.Length - 1)
+                Dim nextNumber As Integer = Integer.Parse(lastPart) + 1
+
+                ' Assuming you want the format "000001" for all values, you can use the following format.
+                Dim formattedNextNumber As String = nextNumber.ToString("D6")
+
+                ' Reconstruct the new entry ID by joining the parts with a dash (-).
+                Dim newEntryID As String = String.Join("-", parts.Take(parts.Length - 1).ToArray()) & "-" & formattedNextNumber
+
+                Return newEntryID
+
+
+            Else
+
+                Dim querysection = (From s In db.tblmasterlistdetails
+                                    Join k In db.tblCategories On s.CategoryID Equals k.CategoryID
+                                    Join i In db.tblAssetTypes On s.AssetTypeID Equals i.AssetTypeID
+                                    Where s.ItemCode = ItemCode
+                                    Let c = k.CategoryCode + "-" + i.AssetTypeCode + "00001"
+                                    Select c).SingleOrDefault
+                Return querysection
+
+            End If
+
+
+        Catch ex As Exception
+            Return MsgBox("Error.F-37")
+        End Try
+    End Function
 
 
 End Class

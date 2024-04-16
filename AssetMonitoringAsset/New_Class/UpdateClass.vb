@@ -186,5 +186,27 @@
         End Try
     End Sub
 
+    'Update Procure Status
+    Public Shared Sub UpdateProStat(ByVal itemid As Integer, ByVal Stat As Integer)
+        Try
+
+            Dim Status As String = ""
+            If Stat = 1 Then
+                Status = "RECEIVED"
+            ElseIf Stat = 0 Then
+                Status = "CANCELLED"
+            End If
+
+            Dim updateStat = (From p In db.GetTable(Of tblProcureDetail)()
+                              Where p.id = itemid
+                              Select p).FirstOrDefault()
+            updateStat.State = Status
+            db.SubmitChanges()
+
+        Catch ex As Exception
+            MsgBox("Error.U.24")
+        End Try
+    End Sub
+
 
 End Class

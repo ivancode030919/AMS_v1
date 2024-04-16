@@ -964,4 +964,4 @@ C:\Users\HSDP_SYS_DEV\Desktop\WORK\AMS\AMS_v1\AssetMonitoringAsset\obj\Debug\Ass
 C:\Users\HSDP_SYS_DEV\Desktop\WORK\AMS\AMS_v1\AssetMonitoringAsset\obj\Debug\AssetMonitoringAsset.ProcureRegister.resources
 C:\Users\HSDP_SYS_DEV\Desktop\WORK\AMS\AMS_v1\AssetMonitoringAsset\obj\Debug\AssetMonitoringAsset.BuildAssetImport.resources
 C:\Users\HSDP_SYS_DEV\Desktop\WORK\AMS\AMS_v1\AssetMonitoringAsset\obj\Debug\AssetMonitoringAsset.ProcureDetail.resources
-C:\Users\HSDP_SYS_DEV\Desktop\WORK\AMS\AMS_v1\AssetMonitoringAsset\obj\Debug\AssetMonitoringAsset.ReceiveRequest.resources
+C:\Users\HSDP_SYS_DEV\Desktop\WORK\AMS\AMS_v1\AssetMonitoringAsset\obj\Debug\AssetMonitoringAsset.RecvReqConfrm.resources

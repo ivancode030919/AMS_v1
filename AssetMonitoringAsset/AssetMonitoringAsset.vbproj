@@ -134,10 +134,10 @@
     <Compile Include="Forms\2.%29 Asset_Management\1.%29 Request\Procure Register\ProcureRegister.vb">
       <SubType>Form</SubType>
     </Compile>
-    <Compile Include="Forms\2.%29 Asset_Management\2.%29 Movement\2.%29 Receive\ReceiveRequest.Designer.vb">
-      <DependentUpon>ReceiveRequest.vb</DependentUpon>
+    <Compile Include="Forms\2.%29 Asset_Management\1.%29 Request\Procure Register\RecvReqConfrm.Designer.vb">
+      <DependentUpon>RecvReqConfrm.vb</DependentUpon>
     </Compile>
-    <Compile Include="Forms\2.%29 Asset_Management\2.%29 Movement\2.%29 Receive\ReceiveRequest.vb">
+    <Compile Include="Forms\2.%29 Asset_Management\1.%29 Request\Procure Register\RecvReqConfrm.vb">
       <SubType>Form</SubType>
     </Compile>
     <Compile Include="Forms\7.%29 Importation\Build Asset\BuildAssetImport.Designer.vb">
@@ -489,6 +489,9 @@
     <EmbeddedResource Include="Forms\2.%29 Asset_Management\1.%29 Request\Procure Register\ProcureRegister.resx">
       <DependentUpon>ProcureRegister.vb</DependentUpon>
     </EmbeddedResource>
+    <EmbeddedResource Include="Forms\2.%29 Asset_Management\1.%29 Request\Procure Register\RecvReqConfrm.resx">
+      <DependentUpon>RecvReqConfrm.vb</DependentUpon>
+    </EmbeddedResource>
     <EmbeddedResource Include="Forms\2.%29 Asset_Management\2.%29 Movement\1.%29 Assignment\Assignment1.resx">
       <DependentUpon>Assignment1.vb</DependentUpon>
     </EmbeddedResource>
@@ -506,9 +509,6 @@
     </EmbeddedResource>
     <EmbeddedResource Include="Forms\2.%29 Asset_Management\1.%29 Request\Creating Request\Request.resx">
       <DependentUpon>Request.vb</DependentUpon>
-    </EmbeddedResource>
-    <EmbeddedResource Include="Forms\2.%29 Asset_Management\2.%29 Movement\2.%29 Receive\ReceiveRequest.resx">
-      <DependentUpon>ReceiveRequest.vb</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="Forms\4.%29 List\AssetList\AssetList3.resx">
       <DependentUpon>AssetList3.vb</DependentUpon>
