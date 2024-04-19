@@ -164,14 +164,27 @@
     End Function
 
     'Display Request Register(For Approval) Details in 
-    Public Shared Function FetchsRequstRegister(ByVal stat1 As String) As Object
+    Public Shared Function FetchsRequstRegister(ByVal stat1 As String, ByVal date1 As Date, date2 As Date) As Object
+        Dim stat2 As String
+
+        If stat1 = 1 Then
+            stat2 = "OPEN"
+        ElseIf stat1 = 2 Then
+            stat2 = ""
+        ElseIf stat1 = 3 Then
+            stat2 = "CLOSED"
+        ElseIf stat1 = 4 Then
+            stat2 = "CANCELLED"
+        Else
+            stat2 = ""
+        End If
 
         Dim query = (From s In db.tblRequestHeaders
                      Join k In db.tblEmployees On s.RequestBy Equals k.EmployeeID
                      Join f In db.tblDepartments On k.DepartmentID Equals f.DepartmentID
                      Join h In db.tblBranches On k.BranchID Equals h.BranchID
                      Join q In db.tblSections On k.SectionID Equals q.SectionID
-                     Where s.Stat.Contains(stat1)
+                     Where s.Stat.Contains(stat2) AndAlso (s.Date >= date1 AndAlso s.Date <= date2)
                      Let y = k.LastName + ", " + k.FirstName
                      Select s.Date, s.RequestNo, s.RequestType, k.Company, f.DepartmentDescription, h.BranchDescription, q.SectionDecription, y, s.Stat, s.HeaderId, s.RequestBy).ToList
         Return query

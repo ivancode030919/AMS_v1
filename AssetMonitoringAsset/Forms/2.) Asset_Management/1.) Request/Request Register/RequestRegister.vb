@@ -1,12 +1,13 @@
 ﻿Public Class RequestRegister
 
-    Private stat1 As String = ""
+    Private stat1 As Integer
     Private Sub RequestRegister_Load(sender As Object, e As EventArgs) Handles MyBase.Load
         display()
+        RadioButton1.Checked = True
     End Sub
 
     Public Sub display()
-        dgv.DataSource = ViewClass.FetchsRequstRegister(stat1)
+        dgv.DataSource = ViewClass.FetchsRequstRegister(stat1, DateTimePicker1.Value, DateTimePicker2.Value)
         With dgv
             .Columns(0).HeaderText = "Date"
             .Columns(1).HeaderText = "Request No."
@@ -38,6 +39,34 @@
     End Sub
 
     Private Sub RadioButton1_Click(sender As Object, e As EventArgs) Handles RadioButton1.Click
-        stat1 = "OPEN"
+
+    End Sub
+
+    Private Sub RadioButton1_CheckedChanged(sender As Object, e As EventArgs) Handles RadioButton1.CheckedChanged
+        stat1 = 1
+        display()
+    End Sub
+
+    Private Sub RadioButton2_CheckedChanged(sender As Object, e As EventArgs) Handles RadioButton2.CheckedChanged
+        stat1 = 2
+        display()
+    End Sub
+
+    Private Sub RadioButton3_CheckedChanged(sender As Object, e As EventArgs) Handles RadioButton3.CheckedChanged
+        stat1 = 4
+        display()
+    End Sub
+
+    Private Sub RadioButton4_CheckedChanged(sender As Object, e As EventArgs) Handles RadioButton4.CheckedChanged
+        stat1 = 3
+        display()
+    End Sub
+
+    Private Sub DateTimePicker1_ValueChanged(sender As Object, e As EventArgs) Handles DateTimePicker1.ValueChanged
+        display()
+    End Sub
+
+    Private Sub DateTimePicker2_ValueChanged(sender As Object, e As EventArgs) Handles DateTimePicker2.ValueChanged
+        display()
     End Sub
 End Class

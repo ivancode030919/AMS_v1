@@ -145,20 +145,6 @@
       <Column Name="Company" Type="System.String" DbType="VarChar(200)" CanBeNull="true" />
     </Type>
   </Table>
-  <Table Name="dbo.tblRequestHeader" Member="tblRequestHeaders">
-    <Type Name="tblRequestHeader">
-      <Column Name="HeaderId" Type="System.Int32" DbType="Int NOT NULL IDENTITY" IsPrimaryKey="true" IsDbGenerated="true" CanBeNull="false" />
-      <Column Name="RequestNo" Type="System.String" DbType="VarChar(MAX)" CanBeNull="true" />
-      <Column Name="RequestBy" Type="System.Int32" DbType="Int" CanBeNull="true" />
-      <Column Name="Date" Type="System.DateTime" DbType="Date" CanBeNull="true" />
-      <Column Name="Stat" Type="System.String" DbType="VarChar(MAX)" CanBeNull="true" />
-      <Column Name="RequestType" Type="System.String" DbType="VarChar(MAX)" CanBeNull="true" />
-      <Column Name="Stat1" Type="System.Int32" DbType="Int" CanBeNull="true" />
-      <Column Name="Stat2" Type="System.Int32" DbType="Int" CanBeNull="true" />
-      <Column Name="Stat3" Type="System.Int32" DbType="Int" CanBeNull="true" />
-      <Column Name="Stat4" Type="System.Int32" DbType="Int" CanBeNull="true" />
-    </Type>
-  </Table>
   <Table Name="dbo.tblTransferDetails" Member="tblTransferDetails">
     <Type Name="tblTransferDetail">
       <Column Name="TransferId" Type="System.Int32" DbType="Int NOT NULL" IsPrimaryKey="true" CanBeNull="false" />
@@ -357,6 +343,21 @@
       <Column Name="DateTo" Type="System.DateTime" DbType="Date" CanBeNull="true" />
       <Column Name="Remarks" Type="System.String" DbType="VarChar(MAX)" CanBeNull="true" />
       <Column Name="HeaderID" Type="System.Int32" DbType="Int" CanBeNull="true" />
+    </Type>
+  </Table>
+  <Table Name="dbo.tblRequestHeader" Member="tblRequestHeaders">
+    <Type Name="tblRequestHeader">
+      <Column Name="HeaderId" Type="System.Int32" DbType="Int NOT NULL IDENTITY" IsPrimaryKey="true" IsDbGenerated="true" CanBeNull="false" />
+      <Column Name="RequestNo" Type="System.String" DbType="VarChar(MAX)" CanBeNull="true" />
+      <Column Name="RequestBy" Type="System.Int32" DbType="Int" CanBeNull="true" />
+      <Column Name="Date" Type="System.DateTime" DbType="Date" CanBeNull="true" />
+      <Column Name="Stat" Type="System.String" DbType="VarChar(MAX)" CanBeNull="true" />
+      <Column Name="RequestType" Type="System.String" DbType="VarChar(MAX)" CanBeNull="true" />
+      <Column Name="Stat1" Type="System.Int32" DbType="Int" CanBeNull="true" />
+      <Column Name="Stat2" Type="System.Int32" DbType="Int" CanBeNull="true" />
+      <Column Name="Stat3" Type="System.Int32" DbType="Int" CanBeNull="true" />
+      <Column Name="Stat4" Type="System.Int32" DbType="Int" CanBeNull="true" />
+      <Column Name="CancellationRemark" Type="System.String" DbType="VarChar(MAX)" CanBeNull="true" />
     </Type>
   </Table>
   <Function Name="dbo.spNewAsset" Method="spNewAsset">

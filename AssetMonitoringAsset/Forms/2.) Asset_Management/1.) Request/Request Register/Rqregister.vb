@@ -6,14 +6,22 @@
     Private qtysum As Integer
 
     Private Sub Rqregister_Load(sender As Object, e As EventArgs) Handles MyBase.Load
+        SimpleButton1.Enabled = True
+        SimpleButton2.Enabled = True
+        SimpleButton3.Enabled = True
+        Label3.Visible = False
+
         display()
         ForQtySum()
+
+
     End Sub
 
     Public Sub display()
         SimpleButton2.Text = "Record"
         ViewClass.FetchRegisterDetail1(headerid, Rtype)
         If Rtype = "PROCURE" Then
+            SimpleButton1.Visible = True
             With dgv
                 .Columns(1).HeaderText = "Asset Code"
                 .Columns(2).HeaderText = "Class"
@@ -28,7 +36,7 @@
                 .ReadOnly = True
             End With
         ElseIf Rtype = "BORROW" Then
-            SimpleButton1.Visible = False
+            SimpleButton1.Enabled = False
             With dgv
                 .Columns(0).HeaderText = "Property Code"
                 .Columns(1).HeaderText = "Description"
@@ -71,9 +79,9 @@
             Next
 
             If qtysum > 0 Then
-                SimpleButton1.Visible = True
+                SimpleButton1.Enabled = True
             Else
-                SimpleButton1.Visible = False
+                SimpleButton1.Enabled = False
             End If
 
         ElseIf TextBox3.Text = "BORROW" Then
@@ -130,7 +138,7 @@
                 For Each row As DataGridViewRow In dgv.Rows
 
                     If row.Cells(6).Value.ToString = "CLOSED" Then
-                        SimpleButton1.Visible = False
+                        SimpleButton1.Enabled = False
                         ' type1 for update to be re-use it is a condition on update
                         Dim type1 As Integer = 1
                         UpdateClass.UpdateStatusReqHeader(headerid, type1)
@@ -138,9 +146,9 @@
 
                     ElseIf row.Cells(7).Value.ToString = 0 Then
 
-                        SimpleButton1.Visible = False
+                        SimpleButton1.Enabled = False
                     Else
-                        SimpleButton1.Visible = True
+                        SimpleButton1.Enabled = True
                     End If
 
                 Next
@@ -255,6 +263,21 @@
 
     Private Sub closingform()
         Me.Close()
+
+    End Sub
+
+    Private Sub SimpleButton3_Click_1(sender As Object, e As EventArgs) Handles SimpleButton3.Click
+
+        Dim result As DialogResult = MessageBox.Show("Do you want to cancel this Request?", "Decision Box", MessageBoxButtons.YesNo)
+
+        If result = DialogResult.Yes Then
+            With ReqCancel
+                .requestno = TextBox1.Text
+                .ShowDialog()
+            End With
+        Else
+
+        End If
 
     End Sub
 End Class

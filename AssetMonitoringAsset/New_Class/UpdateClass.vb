@@ -209,4 +209,21 @@
     End Sub
 
 
+    'Update State in Request
+    Public Shared Sub CancellationReason(ByVal Requestno As String, ByVal reason As String)
+
+        Try
+            Dim updateStat = (From p In db.GetTable(Of tblRequestHeader)()
+                              Where (p.RequestNo = Requestno)
+                              Select p).FirstOrDefault()
+            updateStat.Stat = "CANCELLED"
+            updateStat.CancellationRemark = reason
+            db.SubmitChanges()
+
+        Catch ex As Exception
+            MsgBox("Error.U.25")
+        End Try
+
+    End Sub
+
 End Class

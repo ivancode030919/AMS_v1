@@ -456,7 +456,8 @@ Public Class InsertionClass
                   .Stat1 = 0,
                   .Stat2 = 0,
                   .Stat3 = 0,
-                  .Stat4 = 0
+                  .Stat4 = 0,
+                  .CancellationRemark = ""
                 }
             post.InsertOnSubmit(p)
             post.Context.SubmitChanges()

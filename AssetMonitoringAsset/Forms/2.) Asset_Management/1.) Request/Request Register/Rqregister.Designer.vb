@@ -32,6 +32,8 @@ Partial Class Rqregister
         Me.dgv = New System.Windows.Forms.DataGridView()
         Me.SimpleButton2 = New DevExpress.XtraEditors.SimpleButton()
         Me.SimpleButton1 = New DevExpress.XtraEditors.SimpleButton()
+        Me.SimpleButton3 = New DevExpress.XtraEditors.SimpleButton()
+        Me.Label3 = New System.Windows.Forms.Label()
         CType(Me.PanelControl1, System.ComponentModel.ISupportInitialize).BeginInit()
         Me.PanelControl1.SuspendLayout()
         CType(Me.PanelControl2, System.ComponentModel.ISupportInitialize).BeginInit()
@@ -134,6 +136,7 @@ Partial Class Rqregister
         '
         'PanelControl2
         '
+        Me.PanelControl2.Controls.Add(Me.Label3)
         Me.PanelControl2.Controls.Add(Me.dgv)
         Me.PanelControl2.Location = New System.Drawing.Point(5, 138)
         Me.PanelControl2.Name = "PanelControl2"
@@ -177,11 +180,34 @@ Partial Class Rqregister
         Me.SimpleButton1.TabIndex = 21
         Me.SimpleButton1.Text = "Allocation"
         '
+        'SimpleButton3
+        '
+        Me.SimpleButton3.Appearance.Font = New System.Drawing.Font("Arial Rounded MT Bold", 11.25!)
+        Me.SimpleButton3.Appearance.Options.UseFont = True
+        Me.SimpleButton3.Location = New System.Drawing.Point(604, 460)
+        Me.SimpleButton3.Name = "SimpleButton3"
+        Me.SimpleButton3.Size = New System.Drawing.Size(135, 36)
+        Me.SimpleButton3.TabIndex = 22
+        Me.SimpleButton3.Text = "Cancel Request"
+        '
+        'Label3
+        '
+        Me.Label3.AutoSize = True
+        Me.Label3.Font = New System.Drawing.Font("Arial Rounded MT Bold", 26.25!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
+        Me.Label3.ForeColor = System.Drawing.Color.Red
+        Me.Label3.Location = New System.Drawing.Point(406, 109)
+        Me.Label3.Name = "Label3"
+        Me.Label3.Size = New System.Drawing.Size(188, 40)
+        Me.Label3.TabIndex = 58
+        Me.Label3.Text = "Cancelled"
+        Me.Label3.Visible = False
+        '
         'Rqregister
         '
         Me.AutoScaleDimensions = New System.Drawing.SizeF(6.0!, 13.0!)
         Me.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font
         Me.ClientSize = New System.Drawing.Size(1028, 504)
+        Me.Controls.Add(Me.SimpleButton3)
         Me.Controls.Add(Me.SimpleButton1)
         Me.Controls.Add(Me.PanelControl1)
         Me.Controls.Add(Me.PanelControl2)
@@ -198,6 +224,7 @@ Partial Class Rqregister
         Me.PanelControl1.PerformLayout()
         CType(Me.PanelControl2, System.ComponentModel.ISupportInitialize).EndInit()
         Me.PanelControl2.ResumeLayout(False)
+        Me.PanelControl2.PerformLayout()
         CType(Me.dgv, System.ComponentModel.ISupportInitialize).EndInit()
         Me.ResumeLayout(False)
 
@@ -216,4 +243,6 @@ Partial Class Rqregister
     Friend WithEvents SimpleButton2 As DevExpress.XtraEditors.SimpleButton
     Friend WithEvents TextBox3 As TextBox
     Friend WithEvents SimpleButton1 As DevExpress.XtraEditors.SimpleButton
+    Friend WithEvents SimpleButton3 As DevExpress.XtraEditors.SimpleButton
+    Friend WithEvents Label3 As Label
 End Class

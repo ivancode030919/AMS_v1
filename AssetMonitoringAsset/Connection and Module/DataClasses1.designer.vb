@@ -103,12 +103,6 @@ Partial Public Class DataClasses1DataContext
     End Sub
   Partial Private Sub DeletetblEmployee(instance As tblEmployee)
     End Sub
-  Partial Private Sub InserttblRequestHeader(instance As tblRequestHeader)
-    End Sub
-  Partial Private Sub UpdatetblRequestHeader(instance As tblRequestHeader)
-    End Sub
-  Partial Private Sub DeletetblRequestHeader(instance As tblRequestHeader)
-    End Sub
   Partial Private Sub InserttblTransferDetail(instance As tblTransferDetail)
     End Sub
   Partial Private Sub UpdatetblTransferDetail(instance As tblTransferDetail)
@@ -211,6 +205,12 @@ Partial Public Class DataClasses1DataContext
     End Sub
   Partial Private Sub DeletetblBorrowDetail(instance As tblBorrowDetail)
     End Sub
+  Partial Private Sub InserttblRequestHeader(instance As tblRequestHeader)
+    End Sub
+  Partial Private Sub UpdatetblRequestHeader(instance As tblRequestHeader)
+    End Sub
+  Partial Private Sub DeletetblRequestHeader(instance As tblRequestHeader)
+    End Sub
   #End Region
 	
 	Public Sub New()
@@ -307,12 +307,6 @@ Partial Public Class DataClasses1DataContext
 	Public ReadOnly Property tblEmployees() As System.Data.Linq.Table(Of tblEmployee)
 		Get
 			Return Me.GetTable(Of tblEmployee)
-		End Get
-	End Property
-	
-	Public ReadOnly Property tblRequestHeaders() As System.Data.Linq.Table(Of tblRequestHeader)
-		Get
-			Return Me.GetTable(Of tblRequestHeader)
 		End Get
 	End Property
 	
@@ -415,6 +409,12 @@ Partial Public Class DataClasses1DataContext
 	Public ReadOnly Property tblBorrowDetails() As System.Data.Linq.Table(Of tblBorrowDetail)
 		Get
 			Return Me.GetTable(Of tblBorrowDetail)
+		End Get
+	End Property
+	
+	Public ReadOnly Property tblRequestHeaders() As System.Data.Linq.Table(Of tblRequestHeader)
+		Get
+			Return Me.GetTable(Of tblRequestHeader)
 		End Get
 	End Property
 	
@@ -3256,266 +3256,6 @@ Partial Public Class tblEmployee
 				Me._Company = value
 				Me.SendPropertyChanged("Company")
 				Me.OnCompanyChanged
-			End If
-		End Set
-	End Property
-	
-	Public Event PropertyChanging As PropertyChangingEventHandler Implements System.ComponentModel.INotifyPropertyChanging.PropertyChanging
-	
-	Public Event PropertyChanged As PropertyChangedEventHandler Implements System.ComponentModel.INotifyPropertyChanged.PropertyChanged
-	
-	Protected Overridable Sub SendPropertyChanging()
-		If ((Me.PropertyChangingEvent Is Nothing)  _
-					= false) Then
-			RaiseEvent PropertyChanging(Me, emptyChangingEventArgs)
-		End If
-	End Sub
-	
-	Protected Overridable Sub SendPropertyChanged(ByVal propertyName As [String])
-		If ((Me.PropertyChangedEvent Is Nothing)  _
-					= false) Then
-			RaiseEvent PropertyChanged(Me, New PropertyChangedEventArgs(propertyName))
-		End If
-	End Sub
-End Class
-
-<Global.System.Data.Linq.Mapping.TableAttribute(Name:="dbo.tblRequestHeader")>  _
-Partial Public Class tblRequestHeader
-	Implements System.ComponentModel.INotifyPropertyChanging, System.ComponentModel.INotifyPropertyChanged
-	
-	Private Shared emptyChangingEventArgs As PropertyChangingEventArgs = New PropertyChangingEventArgs(String.Empty)
-	
-	Private _HeaderId As Integer
-	
-	Private _RequestNo As String
-	
-	Private _RequestBy As System.Nullable(Of Integer)
-	
-	Private _Date As System.Nullable(Of Date)
-	
-	Private _Stat As String
-	
-	Private _RequestType As String
-	
-	Private _Stat1 As System.Nullable(Of Integer)
-	
-	Private _Stat2 As System.Nullable(Of Integer)
-	
-	Private _Stat3 As System.Nullable(Of Integer)
-	
-	Private _Stat4 As System.Nullable(Of Integer)
-	
-    #Region "Extensibility Method Definitions"
-    Partial Private Sub OnLoaded()
-    End Sub
-    Partial Private Sub OnValidate(action As System.Data.Linq.ChangeAction)
-    End Sub
-    Partial Private Sub OnCreated()
-    End Sub
-    Partial Private Sub OnHeaderIdChanging(value As Integer)
-    End Sub
-    Partial Private Sub OnHeaderIdChanged()
-    End Sub
-    Partial Private Sub OnRequestNoChanging(value As String)
-    End Sub
-    Partial Private Sub OnRequestNoChanged()
-    End Sub
-    Partial Private Sub OnRequestByChanging(value As System.Nullable(Of Integer))
-    End Sub
-    Partial Private Sub OnRequestByChanged()
-    End Sub
-    Partial Private Sub OnDateChanging(value As System.Nullable(Of Date))
-    End Sub
-    Partial Private Sub OnDateChanged()
-    End Sub
-    Partial Private Sub OnStatChanging(value As String)
-    End Sub
-    Partial Private Sub OnStatChanged()
-    End Sub
-    Partial Private Sub OnRequestTypeChanging(value As String)
-    End Sub
-    Partial Private Sub OnRequestTypeChanged()
-    End Sub
-    Partial Private Sub OnStat1Changing(value As System.Nullable(Of Integer))
-    End Sub
-    Partial Private Sub OnStat1Changed()
-    End Sub
-    Partial Private Sub OnStat2Changing(value As System.Nullable(Of Integer))
-    End Sub
-    Partial Private Sub OnStat2Changed()
-    End Sub
-    Partial Private Sub OnStat3Changing(value As System.Nullable(Of Integer))
-    End Sub
-    Partial Private Sub OnStat3Changed()
-    End Sub
-    Partial Private Sub OnStat4Changing(value As System.Nullable(Of Integer))
-    End Sub
-    Partial Private Sub OnStat4Changed()
-    End Sub
-    #End Region
-	
-	Public Sub New()
-		MyBase.New
-		OnCreated
-	End Sub
-	
-	<Global.System.Data.Linq.Mapping.ColumnAttribute(Storage:="_HeaderId", AutoSync:=AutoSync.OnInsert, DbType:="Int NOT NULL IDENTITY", IsPrimaryKey:=true, IsDbGenerated:=true)>  _
-	Public Property HeaderId() As Integer
-		Get
-			Return Me._HeaderId
-		End Get
-		Set
-			If ((Me._HeaderId = value)  _
-						= false) Then
-				Me.OnHeaderIdChanging(value)
-				Me.SendPropertyChanging
-				Me._HeaderId = value
-				Me.SendPropertyChanged("HeaderId")
-				Me.OnHeaderIdChanged
-			End If
-		End Set
-	End Property
-	
-	<Global.System.Data.Linq.Mapping.ColumnAttribute(Storage:="_RequestNo", DbType:="VarChar(MAX)")>  _
-	Public Property RequestNo() As String
-		Get
-			Return Me._RequestNo
-		End Get
-		Set
-			If (String.Equals(Me._RequestNo, value) = false) Then
-				Me.OnRequestNoChanging(value)
-				Me.SendPropertyChanging
-				Me._RequestNo = value
-				Me.SendPropertyChanged("RequestNo")
-				Me.OnRequestNoChanged
-			End If
-		End Set
-	End Property
-	
-	<Global.System.Data.Linq.Mapping.ColumnAttribute(Storage:="_RequestBy", DbType:="Int")>  _
-	Public Property RequestBy() As System.Nullable(Of Integer)
-		Get
-			Return Me._RequestBy
-		End Get
-		Set
-			If (Me._RequestBy.Equals(value) = false) Then
-				Me.OnRequestByChanging(value)
-				Me.SendPropertyChanging
-				Me._RequestBy = value
-				Me.SendPropertyChanged("RequestBy")
-				Me.OnRequestByChanged
-			End If
-		End Set
-	End Property
-	
-	<Global.System.Data.Linq.Mapping.ColumnAttribute(Name:="Date", Storage:="_Date", DbType:="Date")>  _
-	Public Property [Date]() As System.Nullable(Of Date)
-		Get
-			Return Me._Date
-		End Get
-		Set
-			If (Me._Date.Equals(value) = false) Then
-				Me.OnDateChanging(value)
-				Me.SendPropertyChanging
-				Me._Date = value
-				Me.SendPropertyChanged("[Date]")
-				Me.OnDateChanged
-			End If
-		End Set
-	End Property
-	
-	<Global.System.Data.Linq.Mapping.ColumnAttribute(Storage:="_Stat", DbType:="VarChar(MAX)")>  _
-	Public Property Stat() As String
-		Get
-			Return Me._Stat
-		End Get
-		Set
-			If (String.Equals(Me._Stat, value) = false) Then
-				Me.OnStatChanging(value)
-				Me.SendPropertyChanging
-				Me._Stat = value
-				Me.SendPropertyChanged("Stat")
-				Me.OnStatChanged
-			End If
-		End Set
-	End Property
-	
-	<Global.System.Data.Linq.Mapping.ColumnAttribute(Storage:="_RequestType", DbType:="VarChar(MAX)")>  _
-	Public Property RequestType() As String
-		Get
-			Return Me._RequestType
-		End Get
-		Set
-			If (String.Equals(Me._RequestType, value) = false) Then
-				Me.OnRequestTypeChanging(value)
-				Me.SendPropertyChanging
-				Me._RequestType = value
-				Me.SendPropertyChanged("RequestType")
-				Me.OnRequestTypeChanged
-			End If
-		End Set
-	End Property
-	
-	<Global.System.Data.Linq.Mapping.ColumnAttribute(Storage:="_Stat1", DbType:="Int")>  _
-	Public Property Stat1() As System.Nullable(Of Integer)
-		Get
-			Return Me._Stat1
-		End Get
-		Set
-			If (Me._Stat1.Equals(value) = false) Then
-				Me.OnStat1Changing(value)
-				Me.SendPropertyChanging
-				Me._Stat1 = value
-				Me.SendPropertyChanged("Stat1")
-				Me.OnStat1Changed
-			End If
-		End Set
-	End Property
-	
-	<Global.System.Data.Linq.Mapping.ColumnAttribute(Storage:="_Stat2", DbType:="Int")>  _
-	Public Property Stat2() As System.Nullable(Of Integer)
-		Get
-			Return Me._Stat2
-		End Get
-		Set
-			If (Me._Stat2.Equals(value) = false) Then
-				Me.OnStat2Changing(value)
-				Me.SendPropertyChanging
-				Me._Stat2 = value
-				Me.SendPropertyChanged("Stat2")
-				Me.OnStat2Changed
-			End If
-		End Set
-	End Property
-	
-	<Global.System.Data.Linq.Mapping.ColumnAttribute(Storage:="_Stat3", DbType:="Int")>  _
-	Public Property Stat3() As System.Nullable(Of Integer)
-		Get
-			Return Me._Stat3
-		End Get
-		Set
-			If (Me._Stat3.Equals(value) = false) Then
-				Me.OnStat3Changing(value)
-				Me.SendPropertyChanging
-				Me._Stat3 = value
-				Me.SendPropertyChanged("Stat3")
-				Me.OnStat3Changed
-			End If
-		End Set
-	End Property
-	
-	<Global.System.Data.Linq.Mapping.ColumnAttribute(Storage:="_Stat4", DbType:="Int")>  _
-	Public Property Stat4() As System.Nullable(Of Integer)
-		Get
-			Return Me._Stat4
-		End Get
-		Set
-			If (Me._Stat4.Equals(value) = false) Then
-				Me.OnStat4Changing(value)
-				Me.SendPropertyChanging
-				Me._Stat4 = value
-				Me.SendPropertyChanged("Stat4")
-				Me.OnStat4Changed
 			End If
 		End Set
 	End Property
@@ -7100,6 +6840,288 @@ Partial Public Class tblBorrowDetail
 				Me._HeaderID = value
 				Me.SendPropertyChanged("HeaderID")
 				Me.OnHeaderIDChanged
+			End If
+		End Set
+	End Property
+	
+	Public Event PropertyChanging As PropertyChangingEventHandler Implements System.ComponentModel.INotifyPropertyChanging.PropertyChanging
+	
+	Public Event PropertyChanged As PropertyChangedEventHandler Implements System.ComponentModel.INotifyPropertyChanged.PropertyChanged
+	
+	Protected Overridable Sub SendPropertyChanging()
+		If ((Me.PropertyChangingEvent Is Nothing)  _
+					= false) Then
+			RaiseEvent PropertyChanging(Me, emptyChangingEventArgs)
+		End If
+	End Sub
+	
+	Protected Overridable Sub SendPropertyChanged(ByVal propertyName As [String])
+		If ((Me.PropertyChangedEvent Is Nothing)  _
+					= false) Then
+			RaiseEvent PropertyChanged(Me, New PropertyChangedEventArgs(propertyName))
+		End If
+	End Sub
+End Class
+
+<Global.System.Data.Linq.Mapping.TableAttribute(Name:="dbo.tblRequestHeader")>  _
+Partial Public Class tblRequestHeader
+	Implements System.ComponentModel.INotifyPropertyChanging, System.ComponentModel.INotifyPropertyChanged
+	
+	Private Shared emptyChangingEventArgs As PropertyChangingEventArgs = New PropertyChangingEventArgs(String.Empty)
+	
+	Private _HeaderId As Integer
+	
+	Private _RequestNo As String
+	
+	Private _RequestBy As System.Nullable(Of Integer)
+	
+	Private _Date As System.Nullable(Of Date)
+	
+	Private _Stat As String
+	
+	Private _RequestType As String
+	
+	Private _Stat1 As System.Nullable(Of Integer)
+	
+	Private _Stat2 As System.Nullable(Of Integer)
+	
+	Private _Stat3 As System.Nullable(Of Integer)
+	
+	Private _Stat4 As System.Nullable(Of Integer)
+	
+	Private _CancellationRemark As String
+	
+    #Region "Extensibility Method Definitions"
+    Partial Private Sub OnLoaded()
+    End Sub
+    Partial Private Sub OnValidate(action As System.Data.Linq.ChangeAction)
+    End Sub
+    Partial Private Sub OnCreated()
+    End Sub
+    Partial Private Sub OnHeaderIdChanging(value As Integer)
+    End Sub
+    Partial Private Sub OnHeaderIdChanged()
+    End Sub
+    Partial Private Sub OnRequestNoChanging(value As String)
+    End Sub
+    Partial Private Sub OnRequestNoChanged()
+    End Sub
+    Partial Private Sub OnRequestByChanging(value As System.Nullable(Of Integer))
+    End Sub
+    Partial Private Sub OnRequestByChanged()
+    End Sub
+    Partial Private Sub OnDateChanging(value As System.Nullable(Of Date))
+    End Sub
+    Partial Private Sub OnDateChanged()
+    End Sub
+    Partial Private Sub OnStatChanging(value As String)
+    End Sub
+    Partial Private Sub OnStatChanged()
+    End Sub
+    Partial Private Sub OnRequestTypeChanging(value As String)
+    End Sub
+    Partial Private Sub OnRequestTypeChanged()
+    End Sub
+    Partial Private Sub OnStat1Changing(value As System.Nullable(Of Integer))
+    End Sub
+    Partial Private Sub OnStat1Changed()
+    End Sub
+    Partial Private Sub OnStat2Changing(value As System.Nullable(Of Integer))
+    End Sub
+    Partial Private Sub OnStat2Changed()
+    End Sub
+    Partial Private Sub OnStat3Changing(value As System.Nullable(Of Integer))
+    End Sub
+    Partial Private Sub OnStat3Changed()
+    End Sub
+    Partial Private Sub OnStat4Changing(value As System.Nullable(Of Integer))
+    End Sub
+    Partial Private Sub OnStat4Changed()
+    End Sub
+    Partial Private Sub OnCancellationRemarkChanging(value As String)
+    End Sub
+    Partial Private Sub OnCancellationRemarkChanged()
+    End Sub
+    #End Region
+	
+	Public Sub New()
+		MyBase.New
+		OnCreated
+	End Sub
+	
+	<Global.System.Data.Linq.Mapping.ColumnAttribute(Storage:="_HeaderId", AutoSync:=AutoSync.OnInsert, DbType:="Int NOT NULL IDENTITY", IsPrimaryKey:=true, IsDbGenerated:=true)>  _
+	Public Property HeaderId() As Integer
+		Get
+			Return Me._HeaderId
+		End Get
+		Set
+			If ((Me._HeaderId = value)  _
+						= false) Then
+				Me.OnHeaderIdChanging(value)
+				Me.SendPropertyChanging
+				Me._HeaderId = value
+				Me.SendPropertyChanged("HeaderId")
+				Me.OnHeaderIdChanged
+			End If
+		End Set
+	End Property
+	
+	<Global.System.Data.Linq.Mapping.ColumnAttribute(Storage:="_RequestNo", DbType:="VarChar(MAX)")>  _
+	Public Property RequestNo() As String
+		Get
+			Return Me._RequestNo
+		End Get
+		Set
+			If (String.Equals(Me._RequestNo, value) = false) Then
+				Me.OnRequestNoChanging(value)
+				Me.SendPropertyChanging
+				Me._RequestNo = value
+				Me.SendPropertyChanged("RequestNo")
+				Me.OnRequestNoChanged
+			End If
+		End Set
+	End Property
+	
+	<Global.System.Data.Linq.Mapping.ColumnAttribute(Storage:="_RequestBy", DbType:="Int")>  _
+	Public Property RequestBy() As System.Nullable(Of Integer)
+		Get
+			Return Me._RequestBy
+		End Get
+		Set
+			If (Me._RequestBy.Equals(value) = false) Then
+				Me.OnRequestByChanging(value)
+				Me.SendPropertyChanging
+				Me._RequestBy = value
+				Me.SendPropertyChanged("RequestBy")
+				Me.OnRequestByChanged
+			End If
+		End Set
+	End Property
+	
+	<Global.System.Data.Linq.Mapping.ColumnAttribute(Name:="Date", Storage:="_Date", DbType:="Date")>  _
+	Public Property [Date]() As System.Nullable(Of Date)
+		Get
+			Return Me._Date
+		End Get
+		Set
+			If (Me._Date.Equals(value) = false) Then
+				Me.OnDateChanging(value)
+				Me.SendPropertyChanging
+				Me._Date = value
+				Me.SendPropertyChanged("[Date]")
+				Me.OnDateChanged
+			End If
+		End Set
+	End Property
+	
+	<Global.System.Data.Linq.Mapping.ColumnAttribute(Storage:="_Stat", DbType:="VarChar(MAX)")>  _
+	Public Property Stat() As String
+		Get
+			Return Me._Stat
+		End Get
+		Set
+			If (String.Equals(Me._Stat, value) = false) Then
+				Me.OnStatChanging(value)
+				Me.SendPropertyChanging
+				Me._Stat = value
+				Me.SendPropertyChanged("Stat")
+				Me.OnStatChanged
+			End If
+		End Set
+	End Property
+	
+	<Global.System.Data.Linq.Mapping.ColumnAttribute(Storage:="_RequestType", DbType:="VarChar(MAX)")>  _
+	Public Property RequestType() As String
+		Get
+			Return Me._RequestType
+		End Get
+		Set
+			If (String.Equals(Me._RequestType, value) = false) Then
+				Me.OnRequestTypeChanging(value)
+				Me.SendPropertyChanging
+				Me._RequestType = value
+				Me.SendPropertyChanged("RequestType")
+				Me.OnRequestTypeChanged
+			End If
+		End Set
+	End Property
+	
+	<Global.System.Data.Linq.Mapping.ColumnAttribute(Storage:="_Stat1", DbType:="Int")>  _
+	Public Property Stat1() As System.Nullable(Of Integer)
+		Get
+			Return Me._Stat1
+		End Get
+		Set
+			If (Me._Stat1.Equals(value) = false) Then
+				Me.OnStat1Changing(value)
+				Me.SendPropertyChanging
+				Me._Stat1 = value
+				Me.SendPropertyChanged("Stat1")
+				Me.OnStat1Changed
+			End If
+		End Set
+	End Property
+	
+	<Global.System.Data.Linq.Mapping.ColumnAttribute(Storage:="_Stat2", DbType:="Int")>  _
+	Public Property Stat2() As System.Nullable(Of Integer)
+		Get
+			Return Me._Stat2
+		End Get
+		Set
+			If (Me._Stat2.Equals(value) = false) Then
+				Me.OnStat2Changing(value)
+				Me.SendPropertyChanging
+				Me._Stat2 = value
+				Me.SendPropertyChanged("Stat2")
+				Me.OnStat2Changed
+			End If
+		End Set
+	End Property
+	
+	<Global.System.Data.Linq.Mapping.ColumnAttribute(Storage:="_Stat3", DbType:="Int")>  _
+	Public Property Stat3() As System.Nullable(Of Integer)
+		Get
+			Return Me._Stat3
+		End Get
+		Set
+			If (Me._Stat3.Equals(value) = false) Then
+				Me.OnStat3Changing(value)
+				Me.SendPropertyChanging
+				Me._Stat3 = value
+				Me.SendPropertyChanged("Stat3")
+				Me.OnStat3Changed
+			End If
+		End Set
+	End Property
+	
+	<Global.System.Data.Linq.Mapping.ColumnAttribute(Storage:="_Stat4", DbType:="Int")>  _
+	Public Property Stat4() As System.Nullable(Of Integer)
+		Get
+			Return Me._Stat4
+		End Get
+		Set
+			If (Me._Stat4.Equals(value) = false) Then
+				Me.OnStat4Changing(value)
+				Me.SendPropertyChanging
+				Me._Stat4 = value
+				Me.SendPropertyChanged("Stat4")
+				Me.OnStat4Changed
+			End If
+		End Set
+	End Property
+	
+	<Global.System.Data.Linq.Mapping.ColumnAttribute(Storage:="_CancellationRemark", DbType:="VarChar(MAX)")>  _
+	Public Property CancellationRemark() As String
+		Get
+			Return Me._CancellationRemark
+		End Get
+		Set
+			If (String.Equals(Me._CancellationRemark, value) = false) Then
+				Me.OnCancellationRemarkChanging(value)
+				Me.SendPropertyChanging
+				Me._CancellationRemark = value
+				Me.SendPropertyChanged("CancellationRemark")
+				Me.OnCancellationRemarkChanged
 			End If
 		End Set
 	End Property
