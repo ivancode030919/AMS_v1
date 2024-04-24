@@ -6,20 +6,34 @@
     Private qtysum As Integer
 
     Private Sub Rqregister_Load(sender As Object, e As EventArgs) Handles MyBase.Load
-        SimpleButton1.Enabled = True
-        SimpleButton2.Enabled = True
-        SimpleButton3.Enabled = True
-        Label3.Visible = False
 
+        Dim Rstatus As String = FetchClass.FetchRequestStatus(TextBox1.Text)
+        If Rstatus = "OPEN" Then
+            SimpleButton1.Enabled = True
+            SimpleButton2.Enabled = True
+            SimpleButton3.Enabled = True
+            Label3.Visible = False
+            dgv.Enabled = True
+            ForQtySum()
+        ElseIf Rstatus = "CANCELLED" Then
+            SimpleButton1.Enabled = False
+            SimpleButton2.Enabled = False
+            SimpleButton3.Enabled = False
+            Label3.Visible = True
+            dgv.Enabled = False
+        Else
+            SimpleButton1.Enabled = False
+            SimpleButton2.Enabled = False
+            SimpleButton3.Enabled = False
+            dgv.Enabled = False
+        End If
         display()
-        ForQtySum()
-
-
     End Sub
 
     Public Sub display()
         SimpleButton2.Text = "Record"
         ViewClass.FetchRegisterDetail1(headerid, Rtype)
+
         If Rtype = "PROCURE" Then
             SimpleButton1.Visible = True
             With dgv
@@ -78,16 +92,22 @@
                 End If
             Next
 
-            If qtysum > 0 Then
-                SimpleButton1.Enabled = True
-            Else
-                SimpleButton1.Enabled = False
+            Dim Rstatus As String = FetchClass.FetchRequestStatus(TextBox1.Text)
+            If Rstatus = "OPEN" Then
+
+                If qtysum > 0 Then
+                    SimpleButton1.Enabled = True
+                Else
+                    SimpleButton1.Enabled = False
+                End If
+
             End If
 
-        ElseIf TextBox3.Text = "BORROW" Then
-        ElseIf TextBox3.Text = "TRANSFER OWNERSHIP" Then
 
-        End If
+        ElseIf TextBox3.Text = "BORROW" Then
+            ElseIf TextBox3.Text = "TRANSFER OWNERSHIP" Then
+
+            End If
 
     End Sub
 
@@ -116,7 +136,6 @@
 
         End If
 
-
     End Sub
 
     Private Sub SimpleButton3_Click(sender As Object, e As EventArgs) Handles SimpleButton1.Click
@@ -135,23 +154,28 @@
         If TextBox3.Text = "PROCURE" Then
 
             Try
-                For Each row As DataGridViewRow In dgv.Rows
 
-                    If row.Cells(6).Value.ToString = "CLOSED" Then
-                        SimpleButton1.Enabled = False
-                        ' type1 for update to be re-use it is a condition on update
-                        Dim type1 As Integer = 1
-                        UpdateClass.UpdateStatusReqHeader(headerid, type1)
+                Dim Rstatus As String = FetchClass.FetchRequestStatus(TextBox1.Text)
+                If Rstatus = "OPEN" Then
+                    For Each row As DataGridViewRow In dgv.Rows
+
+                        If row.Cells(6).Value.ToString = "CLOSED" Then
+                            SimpleButton1.Enabled = False
+                            ' type1 for update to be re-use it is a condition on update
+                            Dim type1 As Integer = 1
+                            UpdateClass.UpdateStatusReqHeader(headerid, type1)
 
 
-                    ElseIf row.Cells(7).Value.ToString = 0 Then
+                        ElseIf row.Cells(7).Value.ToString = 0 Then
 
-                        SimpleButton1.Enabled = False
-                    Else
-                        SimpleButton1.Enabled = True
-                    End If
+                            SimpleButton1.Enabled = False
+                        Else
+                            SimpleButton1.Enabled = True
+                        End If
 
-                Next
+                    Next
+                End If
+
             Catch ex As Exception
                 MsgBox("Error.For Approval.02")
             End Try
@@ -280,4 +304,6 @@
         End If
 
     End Sub
+
+
 End Class

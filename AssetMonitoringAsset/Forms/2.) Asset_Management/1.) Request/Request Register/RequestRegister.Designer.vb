@@ -85,7 +85,7 @@ Partial Class RequestRegister
         '
         Me.RadioButton4.AutoSize = True
         Me.RadioButton4.Font = New System.Drawing.Font("Arial Rounded MT Bold", 11.25!)
-        Me.RadioButton4.Location = New System.Drawing.Point(917, 38)
+        Me.RadioButton4.Location = New System.Drawing.Point(899, 25)
         Me.RadioButton4.Name = "RadioButton4"
         Me.RadioButton4.Size = New System.Drawing.Size(76, 21)
         Me.RadioButton4.TabIndex = 25
@@ -96,7 +96,7 @@ Partial Class RequestRegister
         '
         Me.RadioButton3.AutoSize = True
         Me.RadioButton3.Font = New System.Drawing.Font("Arial Rounded MT Bold", 11.25!)
-        Me.RadioButton3.Location = New System.Drawing.Point(812, 38)
+        Me.RadioButton3.Location = New System.Drawing.Point(899, 51)
         Me.RadioButton3.Name = "RadioButton3"
         Me.RadioButton3.Size = New System.Drawing.Size(99, 21)
         Me.RadioButton3.TabIndex = 24
@@ -107,22 +107,22 @@ Partial Class RequestRegister
         '
         Me.RadioButton2.AutoSize = True
         Me.RadioButton2.Font = New System.Drawing.Font("Arial Rounded MT Bold", 11.25!)
-        Me.RadioButton2.Location = New System.Drawing.Point(917, 15)
+        Me.RadioButton2.Location = New System.Drawing.Point(823, 51)
         Me.RadioButton2.Name = "RadioButton2"
-        Me.RadioButton2.Size = New System.Drawing.Size(93, 21)
+        Me.RadioButton2.Size = New System.Drawing.Size(45, 21)
         Me.RadioButton2.TabIndex = 23
-        Me.RadioButton2.Text = "Show All "
+        Me.RadioButton2.Text = "All"
         Me.RadioButton2.UseVisualStyleBackColor = True
         '
         'RadioButton1
         '
         Me.RadioButton1.AutoSize = True
         Me.RadioButton1.Font = New System.Drawing.Font("Arial Rounded MT Bold", 11.25!)
-        Me.RadioButton1.Location = New System.Drawing.Point(813, 15)
+        Me.RadioButton1.Location = New System.Drawing.Point(823, 25)
         Me.RadioButton1.Name = "RadioButton1"
-        Me.RadioButton1.Size = New System.Drawing.Size(85, 21)
+        Me.RadioButton1.Size = New System.Drawing.Size(65, 21)
         Me.RadioButton1.TabIndex = 22
-        Me.RadioButton1.Text = "Pending"
+        Me.RadioButton1.Text = "Open"
         Me.RadioButton1.UseVisualStyleBackColor = True
         '
         'GroupBox2

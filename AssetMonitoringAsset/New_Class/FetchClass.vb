@@ -632,5 +632,16 @@
         End Try
     End Function
 
+    'Check Request Status
+    Public Shared Function FetchRequestStatus(ByVal reqno As String) As Object
+        Try
+            Dim querysection = (From s In db.tblRequestHeaders
+                                Where s.RequestNo = reqno
+                                Select s.Stat).SingleOrDefault
+            Return querysection
+        Catch ex As Exception
+            Return MsgBox("Error.F-36")
+        End Try
+    End Function
 
 End Class

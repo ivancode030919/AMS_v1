@@ -335,7 +335,8 @@
                             Join g In db.tblEmployees On s.Requestfor Equals g.EmployeeID
                             Where s.TransID = TransId
                             Let c = g.FirstName + " " + g.LastName
-                            Select s.AssetCode, s.Class, c, s.Quantity, s.Remarks, s.State, s.id).ToList
+                            Select s.AssetCode, s.Class, c, s.Quantity, s.Remarks, s.State, s.id)
         Return querysection
+
     End Function
 End Class

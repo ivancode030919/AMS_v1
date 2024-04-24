@@ -26,7 +26,6 @@
 
     Private Sub dgv_CellDoubleClick(sender As Object, e As DataGridViewCellEventArgs) Handles dgv.CellDoubleClick
         Dim row As Integer = dgv.CurrentCell.RowIndex
-
         With Rqregister
             .headerid = Integer.Parse(dgv.Rows(row).Cells(9).Value.ToString)
             .requestby = dgv.Rows(row).Cells(10).Value
