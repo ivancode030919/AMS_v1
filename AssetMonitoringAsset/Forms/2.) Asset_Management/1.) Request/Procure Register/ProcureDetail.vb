@@ -1,6 +1,6 @@
 ﻿Public Class ProcureDetail
     Public transid As Integer
-    Public btnColumn As New DataGridViewButtonColumn()
+
     Private Sub ProcureDetail_Load(sender As Object, e As EventArgs) Handles MyBase.Load
 
         display()
@@ -9,7 +9,6 @@
     Public Sub display()
         dgv.Rows.Clear()
         dgv.Columns.Clear()
-        btnColumn.Dispose()
         dgv.DataSource = ViewClass.ViewProcureDetails(transid)
         With dgv
             .Columns(0).HeaderText = "Item Code"
@@ -20,15 +19,6 @@
             .Columns(5).HeaderText = "Status"
 
             ' Create a new DataGridViewButtonColumn
-
-
-            btnColumn.HeaderText = "Action"
-            btnColumn.Text = "Button Text" ' Set the text displayed on the buttons
-            btnColumn.UseColumnTextForButtonValue = True ' Display the same text for all buttons
-
-            ' Add the button column after the "Status" column (index 5)
-            .Columns.Insert(6, btnColumn)
-            MsgBox("Before Load: btnColumn index = " & dgv.Columns.IndexOf(btnColumn))
         End With
     End Sub
 
@@ -40,11 +30,9 @@
         dgv.DataSource = Nothing
         dgv.Columns.Clear()
         dgv.Rows.Clear()
-        btnColumn.Dispose()
     End Sub
 
     Private Sub dgv_CellDoubleClick(sender As Object, e As DataGridViewCellEventArgs) Handles dgv.CellDoubleClick
-
         If e.ColumnIndex = 6 Then
             Dim row As Integer = dgv.CurrentCell.RowIndex
             Dim itmcd As String = dgv.Rows(row).Cells(0).Value.ToString

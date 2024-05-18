@@ -117,18 +117,6 @@ Public Class PositionClass
 
     End Function
 
-
-    'Public Shared Function FetchManagerID(ByVal Des As String) As Object
-    '    Dim querysection = (
-    '        From s In db.tblEmployees
-    '        Where s.FirstName.Contains(Des)
-    '        Select s.EmployeeID
-    '    ).SingleOrDefault()
-
-    '    Return querysection
-    'End Function
-
-
     Public Shared Function FetchPositionID(ByVal Des As String) As Object
         Dim querysection = (From s In db.tblPositions
                             Where s.PositionDescription.Contains(Des)
@@ -136,10 +124,6 @@ Public Class PositionClass
 
         Return querysection
     End Function
-
-
-
-
 
     Public Shared Function FetPosCount(ByVal code As String) As Integer
         Dim count As Integer = (From s In db.tblPositions
