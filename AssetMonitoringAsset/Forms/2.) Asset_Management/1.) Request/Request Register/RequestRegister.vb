@@ -68,4 +68,14 @@
     Private Sub DateTimePicker2_ValueChanged(sender As Object, e As EventArgs) Handles DateTimePicker2.ValueChanged
         display()
     End Sub
+
+    Private Sub Guna2CircleButton1_Click(sender As Object, e As EventArgs) Handles Guna2CircleButton1.Click
+        Me.Dispose()
+        Home.IsMdiContainer = False
+    End Sub
+
+    Private Sub RequestRegister_Leave(sender As Object, e As EventArgs) Handles MyBase.Leave
+        Home.IsMdiContainer = False
+        Me.Dispose()
+    End Sub
 End Class

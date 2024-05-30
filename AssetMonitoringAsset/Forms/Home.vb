@@ -64,7 +64,7 @@
     End Sub
 
     Private Sub AccordionControlElement25_Click(sender As Object, e As EventArgs) Handles AccordionControlElement25.Click
-          NewAsset.ShowDialog()
+        NewAsset.ShowDialog()
     End Sub
 
     Private Sub AccordionControlElement17_Click(sender As Object, e As EventArgs) Handles AccordionControlElement17.Click
@@ -84,6 +84,7 @@
     End Sub
 
     Private Sub Home_FormClosing(sender As Object, e As FormClosingEventArgs) Handles MyBase.FormClosing
+        Me.Dispose()
         Login.Show()
     End Sub
 
@@ -93,34 +94,69 @@
 
     Private Sub AccordionControlElement35_Click(sender As Object, e As EventArgs) Handles e.Click
 
+        Me.IsMdiContainer = True
+        Assignment1.MdiParent = Me
+        PictureBox1.SendToBack()
+        Assignment1.BringToFront()
+        Assignment1.WindowState = WindowState.Maximized
+
         With Assignment1
+            .Text = String.Empty
             .allowtoaddrow = "Y"
-            .ShowDialog()
+            .winstatemax = True
+            .Show()
         End With
 
+
     End Sub
+
 
     Private Sub AccordionControlElement45_Click(sender As Object, e As EventArgs) Handles AccordionControlElement45.Click
         importmasterlist.ShowDialog()
     End Sub
 
     Private Sub AccordionControlElement38_Click(sender As Object, e As EventArgs) Handles AccordionControlElement38.Click
-        Request.ShowDialog()
+
+        Me.IsMdiContainer = True
+        Request.MdiParent = Me
+        PictureBox1.SendToBack()
+        Request.BringToFront()
+        Request.Show()
+
+
     End Sub
 
     Private Sub AccordionControlElement46_Click(sender As Object, e As EventArgs) Handles AccordionControlElement46.Click
-        RequestRegister.ShowDialog()
+
+        Me.IsMdiContainer = True
+        RequestRegister.MdiParent = Me
+        PictureBox1.SendToBack()
+        RequestRegister.BringToFront()
+        RequestRegister.Show()
+
+
+
+
+
+
+
     End Sub
 
     Private Sub AccordionControlElement56_Click(sender As Object, e As EventArgs) Handles AccordionControlElement56.Click
-        ProcureRegister.ShowDialog()
+
+        Me.IsMdiContainer = True
+        ProcureRegister.MdiParent = Me
+        PictureBox1.SendToBack()
+        ProcureRegister.BringToFront()
+        ProcureRegister.Show()
+
     End Sub
 
     Private Sub AccordionControlElement19_Click(sender As Object, e As EventArgs) Handles AccordionControlElement19.Click
         BuildAssetImport.ShowDialog()
     End Sub
 
-    Private Sub AccordionControlElement31_Click(sender As Object, e As EventArgs) Handles AccordionControlElement31.Click
+    Private Sub AccordionControlElement31_Click(sender As Object, e As EventArgs)
 
     End Sub
 

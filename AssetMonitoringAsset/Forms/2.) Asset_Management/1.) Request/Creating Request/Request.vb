@@ -27,8 +27,8 @@
         dgv.Columns(1).ReadOnly = True
         dgv.Columns(3).ReadOnly = True
 
-        dgv.Columns(5).Visible = False
-        dgv.Columns(6).Visible = False
+        'dgv.Columns(5).Visible = False
+        'dgv.Columns(6).Visible = False
     End Sub
     Public Sub DisplayBorrow()
 
@@ -237,15 +237,16 @@
     Public Sub checkqtybycat()
         Dim row As Integer = dgv.CurrentCell.RowIndex
         If ComboBox2.Text = "PROCURE" Then
-            If dgv.Rows(row).Cells(6).Value.ToString = "CNR" Then
+            If dgv.Rows(row).Cells(6).Value.ToString = "NCD" Then
                 dgv.Rows(row).Cells(2).ReadOnly = True
                 dgv.Rows(row).Cells(2).Value = "1"
 
-            ElseIf dgv.Rows(row).Cells(6).Value.ToString = "NCD" Then
+            ElseIf dgv.Rows(row).Cells(6).Value.ToString = "NCN" Then
                 dgv.Rows(row).Cells(2).ReadOnly = True
                 dgv.Rows(row).Cells(2).Value = "1"
             Else
-
+                dgv.Rows(row).Cells(2).ReadOnly = False
+                dgv.Rows(row).Cells(2).Value = "0"
             End If
 
         ElseIf ComboBox2.Text = "BORROW" Then
@@ -257,4 +258,13 @@
         End If
     End Sub
 
+    Private Sub Guna2CircleButton1_Click(sender As Object, e As EventArgs) Handles Guna2CircleButton1.Click
+        Home.IsMdiContainer = False
+        Me.Dispose()
+    End Sub
+
+    Private Sub Request_Leave(sender As Object, e As EventArgs) Handles MyBase.Leave
+        Home.IsMdiContainer = False
+        Me.Dispose()
+    End Sub
 End Class

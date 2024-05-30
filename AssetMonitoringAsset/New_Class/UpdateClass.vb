@@ -28,8 +28,6 @@
             MessageBox.Show("Asset Category Successfully Updated.", "Info!", MessageBoxButtons.OK, MessageBoxIcon.Information)
             'After Insert Load View
 
-
-
             With AssetCategory
                 .ViewCategory()
                 .TextBox1.Text = String.Empty
@@ -187,7 +185,9 @@
     End Sub
 
     'Update Procure Status
-    Public Shared Sub UpdateProStat(ByVal itemid As Integer, ByVal Stat As Integer)
+    Public Shared Sub UpdateProStat(ByVal itemid As Integer, ByVal Stat As Integer,
+                                    ByVal PropertyCode As String, ByVal Descrip As String,
+                                    ByVal Ref As String, ByVal Refno As String)
         Try
 
             Dim Status As String = ""
@@ -201,6 +201,11 @@
                               Where p.id = itemid
                               Select p).FirstOrDefault()
             updateStat.State = Status
+            updateStat.PropertyCode = PropertyCode
+            updateStat.Description = Descrip
+            updateStat.Reference = Ref
+            updateStat.ReferenceNo = Refno
+
             db.SubmitChanges()
 
         Catch ex As Exception
@@ -218,6 +223,23 @@
                               Select p).FirstOrDefault()
             updateStat.Stat = "CANCELLED"
             updateStat.CancellationRemark = reason
+            db.SubmitChanges()
+
+        Catch ex As Exception
+            MsgBox("Error.U.25")
+        End Try
+
+    End Sub
+
+
+    'Update Consumable Qty When Assigning in a new Item
+    Public Shared Sub UpdateAssetQty(ByVal PropertyCode As String, ByVal Qty As Double)
+
+        Try
+            Dim updateStat = (From p In db.GetTable(Of tblAssetInventory)()
+                              Where (p.PropertyCode = PropertyCode)
+                              Select p).FirstOrDefault()
+            updateStat.Qty = Qty
             db.SubmitChanges()
 
         Catch ex As Exception

@@ -248,8 +248,9 @@
         Try
             Dim querysection = (From f In db.tblmasterlistdetails
                                 Join g In db.tblCategories On f.CategoryID Equals g.CategoryID
-                                Where g.CategoryCode <> "NCND" And g.CategoryCode <> "CR" And f.ItemCode = ItemCodes
+                                Where (g.CategoryID <> 5002 AndAlso g.CategoryID <> 5003) And f.ItemCode = ItemCodes
                                 Select f.ItemCode).FirstOrDefault
+
             Return querysection
         Catch ex As Exception
             MsgBox("Error.F-2")
@@ -593,39 +594,65 @@
         End Try
     End Function
 
-    Public Shared Function FetchLastProteryCode(ByVal ItemCode As Integer) As Object
+
+
+    Public Shared Function FetchLastProteryCode(ByVal ItemCodes As Integer) As Object
         Try
+            'Dim consumable = (From s In db.tblmasterlistdetails
+            '                  Where s.ItemCode = ItemCodes
+            '                  Select s.CategoryID).SingleOrDefault
 
-            Dim result = db.spGetLastPropertyCode(ItemCode).SingleOrDefault()
+            'If consumable = 5004 Or consumable = 5005 Then
 
-            If result IsNot Nothing Then
+            '    Dim result = (From k In db.tblAssetInventories
+            '                  Where k.AssetCode = ItemCodes
+            '                  Select k.PropertyCode).SingleOrDefault
 
-                Dim propertyCode As String = result.PropertyCode
-                Dim parts As String() = propertyCode.Split("-"c)
-                Dim lastPart As String = parts(parts.Length - 1)
-                Dim nextNumber As Integer = Integer.Parse(lastPart) + 1
+            '    If result IsNot Nothing Then
 
-                ' Assuming you want the format "000001" for all values, you can use the following format.
-                Dim formattedNextNumber As String = nextNumber.ToString("D6")
+            '        Return result
+            '    Else
+            '        Dim querysection = (From s In db.tblmasterlistdetails
+            '                            Join k In db.tblCategories On s.CategoryID Equals k.CategoryID
+            '                            Join i In db.tblAssetTypes On s.AssetTypeID Equals i.AssetTypeID
+            '                            Where s.ItemCode = ItemCodes
+            '                            Let c = k.CategoryCode + "-" + i.AssetTypeCode + "-00001"
+            '                            Select c).SingleOrDefault
+            '        Return querysection
 
-                ' Reconstruct the new entry ID by joining the parts with a dash (-).
-                Dim newEntryID As String = String.Join("-", parts.Take(parts.Length - 1).ToArray()) & "-" & formattedNextNumber
+            '    End If
 
-                Return newEntryID
+            'Else
 
+            Dim result = db.spGetLastPropertyCode(ItemCodes).SingleOrDefault()
+                If result IsNot Nothing Then
 
-            Else
+                    Dim propertyCode As String = result.PropertyCode
+                    Dim parts As String() = propertyCode.Split("-"c)
+                    Dim lastPart As String = parts(parts.Length - 1)
+                    Dim nextNumber As Integer = Integer.Parse(lastPart) + 1
 
-                Dim querysection = (From s In db.tblmasterlistdetails
-                                    Join k In db.tblCategories On s.CategoryID Equals k.CategoryID
-                                    Join i In db.tblAssetTypes On s.AssetTypeID Equals i.AssetTypeID
-                                    Where s.ItemCode = ItemCode
-                                    Let c = k.CategoryCode + "-" + i.AssetTypeCode + "00001"
-                                    Select c).SingleOrDefault
-                Return querysection
+                    ' Assuming you want the format "000001" for all values, you can use the following format.
+                    Dim formattedNextNumber As String = nextNumber.ToString("D5")
 
-            End If
+                    ' Reconstruct the new entry ID by joining the parts with a dash (-).
+                    Dim newEntryID As String = String.Join("-", parts.Take(parts.Length - 1).ToArray()) & "-" & formattedNextNumber
 
+                    Return newEntryID
+
+                Else
+
+                    Dim querysection = (From s In db.tblmasterlistdetails
+                                        Join k In db.tblCategories On s.CategoryID Equals k.CategoryID
+                                        Join i In db.tblAssetTypes On s.AssetTypeID Equals i.AssetTypeID
+                                        Where s.ItemCode = ItemCodes
+                                        Let c = k.CategoryCode + "-" + i.AssetTypeCode + "00001"
+                                        Select c).SingleOrDefault
+                    Return querysection
+
+                End If
+
+            'End If
 
         Catch ex As Exception
             Return MsgBox("Error.F-37")
@@ -640,8 +667,64 @@
                                 Select s.Stat).SingleOrDefault
             Return querysection
         Catch ex As Exception
-            Return MsgBox("Error.F-36")
+            Return MsgBox("Error.F-38")
         End Try
     End Function
+
+    'Check Procure State
+    Public Shared Function FetchRequestStatus(ByVal ID As Integer) As Object
+        Try
+            Dim querysection = (From s In db.tblProcureDetails
+                                Where s.id = ID
+                                Select s.State).SingleOrDefault
+            Return querysection
+        Catch ex As Exception
+            Return MsgBox("Error.F-39")
+        End Try
+    End Function
+
+
+    'Check PropertyCode
+    Public Shared Function FetchPropertyCode(ByVal PropertyC As String) As Integer
+        Try
+            Dim querysection = (From s In db.tblAssetInventories
+                                Where s.PropertyCode = PropertyC
+                                Select s.PropertyCode).Count
+            Return querysection
+        Catch ex As Exception
+            Return MsgBox("Error.F-40")
+        End Try
+    End Function
+
+    'Check Item Category
+    Public Shared Function FetchItemCategory(ByVal ItemCodes As Integer) As Integer
+        Try
+
+            Dim consumable = (From s In db.tblmasterlistdetails
+                              Where s.ItemCode = ItemCodes
+                              Select s.CategoryID).SingleOrDefault
+            Return consumable
+
+        Catch ex As Exception
+            Return MsgBox("Error.F-41")
+        End Try
+    End Function
+
+
+    'Check for Asset Qty For Consumable Assignment
+    Public Shared Function FetchAssetQty(ByVal PC As String) As Object
+        Try
+
+            Dim consumable = (From s In db.tblAssetInventories
+                              Where s.PropertyCode = PC
+                              Select s.Qty).SingleOrDefault
+            Return consumable
+
+        Catch ex As Exception
+            Return MsgBox("Error.F-41")
+        End Try
+    End Function
+
+
 
 End Class

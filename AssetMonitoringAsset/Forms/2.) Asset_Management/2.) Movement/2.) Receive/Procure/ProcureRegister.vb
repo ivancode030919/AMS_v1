@@ -38,6 +38,7 @@
     End Sub
 
     Private Sub dgv_CellDoubleClick(sender As Object, e As DataGridViewCellEventArgs) Handles dgv.CellDoubleClick
+
         Dim row As Integer = dgv.CurrentCell.RowIndex
 
         With ProcureDetail
@@ -47,6 +48,16 @@
             .DateTimePicker1.Value = dgv.Rows(row).Cells(5).Value.ToString
             .ShowDialog()
         End With
+
     End Sub
 
+    Private Sub ProcureRegister_Leave(sender As Object, e As EventArgs) Handles MyBase.Leave
+        Home.IsMdiContainer = False
+        Me.Dispose()
+    End Sub
+
+    Private Sub ProcureRegister_FormClosing(sender As Object, e As FormClosingEventArgs) Handles MyBase.FormClosing
+        Home.IsMdiContainer = False
+        Me.Dispose()
+    End Sub
 End Class

@@ -63,8 +63,9 @@
     <Reference Include="EPPlus.System.Drawing, Version=6.1.1.0, Culture=neutral, PublicKeyToken=2308d35469c9bac0, processorArchitecture=MSIL">
       <HintPath>..\packages\EPPlus.System.Drawing.6.1.1\lib\net462\EPPlus.System.Drawing.dll</HintPath>
     </Reference>
-    <Reference Include="Guna.UI2, Version=2.0.4.6, Culture=neutral, PublicKeyToken=8b9d14aa5142e261, processorArchitecture=MSIL">
-      <HintPath>..\packages\Guna.UI2.WinForms.2.0.4.6\lib\net472\Guna.UI2.dll</HintPath>
+    <Reference Include="Guna.UI2, Version=2.0.3.4, Culture=neutral, PublicKeyToken=4015e4865bda28a4, processorArchitecture=MSIL">
+      <SpecificVersion>False</SpecificVersion>
+      <HintPath>D:\IVAN FILES\24.) Add-ons\Guna.UI2.dll</HintPath>
     </Reference>
     <Reference Include="Microsoft.IO.RecyclableMemoryStream, Version=1.4.1.0, Culture=neutral, PublicKeyToken=31bf3856ad364e35, processorArchitecture=MSIL">
       <HintPath>..\packages\Microsoft.IO.RecyclableMemoryStream.1.4.1\lib\net46\Microsoft.IO.RecyclableMemoryStream.dll</HintPath>
@@ -128,34 +129,34 @@
       <DesignTime>True</DesignTime>
       <DependentUpon>AMSdbDataSet.xsd</DependentUpon>
     </Compile>
-    <Compile Include="Forms\2.%29 Asset_Management\1.%29 Request\Procure Register\ProcureDetail.Designer.vb">
+    <Compile Include="Forms\2.%29 Asset_Management\2.%29 Movement\1.%29 Assignment\ConsumableQty.Designer.vb">
+      <DependentUpon>ConsumableQty.vb</DependentUpon>
+    </Compile>
+    <Compile Include="Forms\2.%29 Asset_Management\2.%29 Movement\1.%29 Assignment\ConsumableQty.vb">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Forms\2.%29 Asset_Management\2.%29 Movement\2.%29 Receive\Procure\ProcureDetail.Designer.vb">
       <DependentUpon>ProcureDetail.vb</DependentUpon>
     </Compile>
-    <Compile Include="Forms\2.%29 Asset_Management\1.%29 Request\Procure Register\ProcureDetail.vb">
+    <Compile Include="Forms\2.%29 Asset_Management\2.%29 Movement\2.%29 Receive\Procure\ProcureDetail.vb">
       <SubType>Form</SubType>
     </Compile>
-    <Compile Include="Forms\2.%29 Asset_Management\1.%29 Request\Procure Register\ProcureRegister.Designer.vb">
+    <Compile Include="Forms\2.%29 Asset_Management\2.%29 Movement\2.%29 Receive\Procure\ProcureRegister.Designer.vb">
       <DependentUpon>ProcureRegister.vb</DependentUpon>
     </Compile>
-    <Compile Include="Forms\2.%29 Asset_Management\1.%29 Request\Procure Register\ProcureRegister.vb">
+    <Compile Include="Forms\2.%29 Asset_Management\2.%29 Movement\2.%29 Receive\Procure\ProcureRegister.vb">
       <SubType>Form</SubType>
     </Compile>
-    <Compile Include="Forms\2.%29 Asset_Management\1.%29 Request\Procure Register\RecvReqConfrm.Designer.vb">
+    <Compile Include="Forms\2.%29 Asset_Management\2.%29 Movement\2.%29 Receive\Procure\RecvReqConfrm.Designer.vb">
       <DependentUpon>RecvReqConfrm.vb</DependentUpon>
     </Compile>
-    <Compile Include="Forms\2.%29 Asset_Management\1.%29 Request\Procure Register\RecvReqConfrm.vb">
+    <Compile Include="Forms\2.%29 Asset_Management\2.%29 Movement\2.%29 Receive\Procure\RecvReqConfrm.vb">
       <SubType>Form</SubType>
     </Compile>
     <Compile Include="Forms\2.%29 Asset_Management\1.%29 Request\Request Register\ReqCancel.Designer.vb">
       <DependentUpon>ReqCancel.vb</DependentUpon>
     </Compile>
     <Compile Include="Forms\2.%29 Asset_Management\1.%29 Request\Request Register\ReqCancel.vb">
-      <SubType>Form</SubType>
-    </Compile>
-    <Compile Include="Forms\2.%29 Asset_Management\2.%29 Movement\2.%29 Receive\Receive.Designer.vb">
-      <DependentUpon>Receive.vb</DependentUpon>
-    </Compile>
-    <Compile Include="Forms\2.%29 Asset_Management\2.%29 Movement\2.%29 Receive\Receive.vb">
       <SubType>Form</SubType>
     </Compile>
     <Compile Include="Forms\7.%29 Importation\Build Asset\BuildAssetImport.Designer.vb">
@@ -501,13 +502,16 @@
     <None Include="Connection and Module\DataClasses1.dbml.layout">
       <DependentUpon>DataClasses1.dbml</DependentUpon>
     </None>
-    <EmbeddedResource Include="Forms\2.%29 Asset_Management\1.%29 Request\Procure Register\ProcureDetail.resx">
+    <EmbeddedResource Include="Forms\2.%29 Asset_Management\2.%29 Movement\1.%29 Assignment\ConsumableQty.resx">
+      <DependentUpon>ConsumableQty.vb</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Forms\2.%29 Asset_Management\2.%29 Movement\2.%29 Receive\Procure\ProcureDetail.resx">
       <DependentUpon>ProcureDetail.vb</DependentUpon>
     </EmbeddedResource>
-    <EmbeddedResource Include="Forms\2.%29 Asset_Management\1.%29 Request\Procure Register\ProcureRegister.resx">
+    <EmbeddedResource Include="Forms\2.%29 Asset_Management\2.%29 Movement\2.%29 Receive\Procure\ProcureRegister.resx">
       <DependentUpon>ProcureRegister.vb</DependentUpon>
     </EmbeddedResource>
-    <EmbeddedResource Include="Forms\2.%29 Asset_Management\1.%29 Request\Procure Register\RecvReqConfrm.resx">
+    <EmbeddedResource Include="Forms\2.%29 Asset_Management\2.%29 Movement\2.%29 Receive\Procure\RecvReqConfrm.resx">
       <DependentUpon>RecvReqConfrm.vb</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="Forms\2.%29 Asset_Management\1.%29 Request\Request Register\ReqCancel.resx">
@@ -530,9 +534,6 @@
     </EmbeddedResource>
     <EmbeddedResource Include="Forms\2.%29 Asset_Management\1.%29 Request\Creating Request\Request.resx">
       <DependentUpon>Request.vb</DependentUpon>
-    </EmbeddedResource>
-    <EmbeddedResource Include="Forms\2.%29 Asset_Management\2.%29 Movement\2.%29 Receive\Receive.resx">
-      <DependentUpon>Receive.vb</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="Forms\4.%29 List\AssetList\AssetList3.resx">
       <DependentUpon>AssetList3.vb</DependentUpon>
@@ -693,6 +694,8 @@
       <DependentUpon>Settings.settings</DependentUpon>
       <DesignTimeSharedInput>True</DesignTimeSharedInput>
     </Compile>
+    <None Include="Resources\photo_2023-10-23_15-37-35.jpg" />
+    <None Include="Resources\Untitled.jpg" />
   </ItemGroup>
   <ItemGroup>
     <None Include="My Project\Application.myapp">
@@ -706,13 +709,17 @@
   <ItemGroup>
     <None Include="Connection and Module\packages.config" />
     <None Include="packages.config" />
-    <None Include="Resources\Untitled.jpg" />
-  </ItemGroup>
-  <ItemGroup>
-    <None Include="Resources\photo_2023-10-23_15-37-35.jpg" />
   </ItemGroup>
   <ItemGroup>
     <Content Include="Connection and Module\completed-task.ico" />
+    <Content Include="Resources\1.jpg" />
+    <Content Include="Resources\2.jpg" />
+    <Content Include="Resources\3.jpg" />
+    <Content Include="Resources\4.jpg" />
+    <Content Include="Resources\5.jpg" />
+    <None Include="Resources\Image1.bmp" />
+    <None Include="Resources\AMSLoginlogo.png" />
+    <None Include="Resources\AMSLoginlogo1.png" />
     <Content Include="SqlServerTypes\Loader.cs" />
     <Content Include="SqlServerTypes\readme.htm" />
     <Content Include="SqlServerTypes\x64\msvcr120.dll">

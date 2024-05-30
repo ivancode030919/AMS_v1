@@ -38,6 +38,8 @@ Partial Class Assignment1
         '
         'PanelControl1
         '
+        Me.PanelControl1.Anchor = CType(((System.Windows.Forms.AnchorStyles.Top Or System.Windows.Forms.AnchorStyles.Left) _
+            Or System.Windows.Forms.AnchorStyles.Right), System.Windows.Forms.AnchorStyles)
         Me.PanelControl1.BorderStyle = DevExpress.XtraEditors.Controls.BorderStyles.Simple
         Me.PanelControl1.Controls.Add(Me.DateTimePicker1)
         Me.PanelControl1.Controls.Add(Me.Label6)
@@ -45,7 +47,6 @@ Partial Class Assignment1
         Me.PanelControl1.Controls.Add(Me.Label1)
         Me.PanelControl1.Controls.Add(Me.TextBox1)
         Me.PanelControl1.Controls.Add(Me.Label5)
-        Me.PanelControl1.Dock = System.Windows.Forms.DockStyle.Top
         Me.PanelControl1.Location = New System.Drawing.Point(5, 5)
         Me.PanelControl1.Name = "PanelControl1"
         Me.PanelControl1.Size = New System.Drawing.Size(1018, 127)
@@ -111,6 +112,9 @@ Partial Class Assignment1
         '
         'PanelControl2
         '
+        Me.PanelControl2.Anchor = CType((((System.Windows.Forms.AnchorStyles.Top Or System.Windows.Forms.AnchorStyles.Bottom) _
+            Or System.Windows.Forms.AnchorStyles.Left) _
+            Or System.Windows.Forms.AnchorStyles.Right), System.Windows.Forms.AnchorStyles)
         Me.PanelControl2.Controls.Add(Me.dgv)
         Me.PanelControl2.Location = New System.Drawing.Point(5, 138)
         Me.PanelControl2.Name = "PanelControl2"
@@ -136,13 +140,14 @@ Partial Class Assignment1
         '
         'SimpleButton2
         '
+        Me.SimpleButton2.Anchor = CType((System.Windows.Forms.AnchorStyles.Bottom Or System.Windows.Forms.AnchorStyles.Right), System.Windows.Forms.AnchorStyles)
         Me.SimpleButton2.Appearance.Font = New System.Drawing.Font("Arial Rounded MT Bold", 11.25!)
         Me.SimpleButton2.Appearance.Options.UseFont = True
-        Me.SimpleButton2.Location = New System.Drawing.Point(885, 458)
+        Me.SimpleButton2.Location = New System.Drawing.Point(838, 458)
         Me.SimpleButton2.Name = "SimpleButton2"
-        Me.SimpleButton2.Size = New System.Drawing.Size(138, 36)
+        Me.SimpleButton2.Size = New System.Drawing.Size(183, 36)
         Me.SimpleButton2.TabIndex = 21
-        Me.SimpleButton2.Text = "Record"
+        Me.SimpleButton2.Text = "Record Transactions"
         '
         'Assignment1
         '

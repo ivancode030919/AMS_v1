@@ -117,6 +117,13 @@
   <resheader name="writer">
     <value>System.Resources.ResXResourceWriter, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
   </resheader>
+  <assembly alias="System.Windows.Forms" name="System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089" />
+  <data name="AccordionControl1.Dock" type="System.Windows.Forms.DockStyle, System.Windows.Forms">
+    <value>Left</value>
+  </data>
+  <data name="AccordionControlElement39.Text" xml:space="preserve">
+    <value>Asset List</value>
+  </data>
   <assembly alias="DevExpress.Data.v21.2" name="DevExpress.Data.v21.2, Version=21.2.5.0, Culture=neutral, PublicKeyToken=b88d1754d700e49a" />
   <data name="AccordionControlElement47.ImageOptions.SvgImage" type="DevExpress.Utils.Svg.SvgImage, DevExpress.Data.v21.2" mimetype="application/x-microsoft.net.object.bytearray.base64">
     <value>
@@ -138,6 +145,63 @@
         LjYsMjkuNywyNy4zeiBNNCwxM2MwLTUsNC05LDktOSAgczksNCw5LDlzLTQsOS05LDlTNCwxOCw0LDEz
         eiIgY2xhc3M9IkJsYWNrIiAvPg0KPC9zdmc+Cw==
 </value>
+  </data>
+  <data name="AccordionControlElement47.Text" xml:space="preserve">
+    <value>Asset Inquiry</value>
+  </data>
+  <data name="AccordionControlElement38.Text" xml:space="preserve">
+    <value>Request</value>
+  </data>
+  <data name="AccordionControlElement46.Text" xml:space="preserve">
+    <value>Request Register</value>
+  </data>
+  <data name="AccordionControlElement35.Text" xml:space="preserve">
+    <value>Request</value>
+  </data>
+  <data name="e.Text" xml:space="preserve">
+    <value>Assignment</value>
+  </data>
+  <data name="AccordionControlElement36.Text" xml:space="preserve">
+    <value>Assignment Register</value>
+  </data>
+  <data name="AccordionControlElement55.Text" xml:space="preserve">
+    <value>Assignment</value>
+  </data>
+  <data name="AccordionControlElement56.Text" xml:space="preserve">
+    <value>Procurement</value>
+  </data>
+  <data name="AccordionControlElement18.Text" xml:space="preserve">
+    <value>Receive</value>
+  </data>
+  <data name="AccordionControlElement50.Text" xml:space="preserve">
+    <value>Transfer Ownership</value>
+  </data>
+  <data name="AccordionControlElement51.Text" xml:space="preserve">
+    <value>Transfer List</value>
+  </data>
+  <data name="AccordionControlElement49.Text" xml:space="preserve">
+    <value>Transfer Ownership</value>
+  </data>
+  <data name="AccordionControlElement53.Text" xml:space="preserve">
+    <value>Borrow</value>
+  </data>
+  <data name="AccordionControlElement54.Text" xml:space="preserve">
+    <value>Borrow List</value>
+  </data>
+  <data name="AccordionControlElement52.Text" xml:space="preserve">
+    <value>Borrow</value>
+  </data>
+  <data name="AccordionControlElement48.Text" xml:space="preserve">
+    <value>Movement</value>
+  </data>
+  <data name="AccordionControlElement37.Text" xml:space="preserve">
+    <value>Utilization</value>
+  </data>
+  <data name="AccordionControlElement57.Text" xml:space="preserve">
+    <value>Scrapping</value>
+  </data>
+  <data name="AccordionControlElement21.Text" xml:space="preserve">
+    <value>Retirement</value>
   </data>
   <assembly alias="System.Drawing" name="System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a" />
   <data name="AccordionControlElement1.ImageOptions.Image" type="System.Drawing.Bitmap, System.Drawing" mimetype="application/x-microsoft.net.object.bytearray.base64">
@@ -190,6 +254,30 @@
         LuD3SM7f2UPNZzj2O+N+4M8XmH8Bjy5oxLkr+soAAAAASUVORK5CYII=
 </value>
   </data>
+  <data name="AccordionControlElement1.Text" xml:space="preserve">
+    <value>Asset Management</value>
+  </data>
+  <data name="AccordionControlElement25.Text" xml:space="preserve">
+    <value>New Master Data</value>
+  </data>
+  <data name="AccordionControlElement26.Text" xml:space="preserve">
+    <value>Master Data Register</value>
+  </data>
+  <data name="AccordionControlElement29.Text" xml:space="preserve">
+    <value>Master Data List</value>
+  </data>
+  <data name="AccordionControlElement27.Text" xml:space="preserve">
+    <value>Master Data</value>
+  </data>
+  <data name="AccordionControlElement17.Text" xml:space="preserve">
+    <value>New Asset</value>
+  </data>
+  <data name="AccordionControlElement28.Text" xml:space="preserve">
+    <value>New Asset Register</value>
+  </data>
+  <data name="AccordionControlElement15.Text" xml:space="preserve">
+    <value>Build Asset</value>
+  </data>
   <data name="AccordionControlElement2.ImageOptions.Image" type="System.Drawing.Bitmap, System.Drawing" mimetype="application/x-microsoft.net.object.bytearray.base64">
     <value>
         iVBORw0KGgoAAAANSUhEUgAAACAAAAAgCAYAAABzenr0AAAABGdBTUEAALGPC/xhBQAAABt0RVh0VGl0
@@ -228,6 +316,9 @@
         YA7guf8C2wFUEeIboy4AAAAASUVORK5CYII=
 </value>
   </data>
+  <data name="AccordionControlElement2.Text" xml:space="preserve">
+    <value>Asset</value>
+  </data>
   <data name="AccordionControlElement16.ImageOptions.Image" type="System.Drawing.Bitmap, System.Drawing" mimetype="application/x-microsoft.net.object.bytearray.base64">
     <value>
         iVBORw0KGgoAAAANSUhEUgAAACAAAAAgCAYAAABzenr0AAAABGdBTUEAALGPC/xhBQAAABJ0RVh0VGl0
@@ -248,6 +339,15 @@
         LgBLjvP/cG8oDXz4KG5CbEE9nF2XeXR01CMjIyNfAObiaLMj/gjxRD43AdgC3HpYcohhmOGg4mvRyfBc
         hFswIWY7aKbl0yffDaSD/kQ66E+kg/6DAv4BQH7c9bMbVK0AAAAASUVORK5CYII=
 </value>
+  </data>
+  <data name="AccordionControlElement16.Text" xml:space="preserve">
+    <value>List</value>
+  </data>
+  <data name="AccordionControlElement23.Text" xml:space="preserve">
+    <value>Export Register</value>
+  </data>
+  <data name="AccordionControlElement24.Text" xml:space="preserve">
+    <value>Asset Allocation Report</value>
   </data>
   <data name="AccordionControlElement22.ImageOptions.Image" type="System.Drawing.Bitmap, System.Drawing" mimetype="application/x-microsoft.net.object.bytearray.base64">
     <value>
@@ -291,6 +391,54 @@
         k5aMQ9LicUhc/BoSKdKEBcxYgfh/jkXsvFc1u2e/4kdre45kQ/aAJwv8IG+b3DSvDMOvh+A3bvgZnn8+
         jgnRE//X/REDnkzwwww3zU+FfwF54L95HSFyN25dPPY/yWUJNrs17CkAAAAASUVORK5CYII=
 </value>
+  </data>
+  <data name="AccordionControlElement22.Text" xml:space="preserve">
+    <value>Reports</value>
+  </data>
+  <data name="AccordionControlElement5.Text" xml:space="preserve">
+    <value>Asset Category</value>
+  </data>
+  <data name="AccordionControlElement4.Text" xml:space="preserve">
+    <value>Asset Type</value>
+  </data>
+  <data name="AccordionControlElement9.Text" xml:space="preserve">
+    <value>Department</value>
+  </data>
+  <data name="AccordionControlElement8.Text" xml:space="preserve">
+    <value>Branch</value>
+  </data>
+  <data name="AccordionControlElement7.Text" xml:space="preserve">
+    <value>Section</value>
+  </data>
+  <data name="AccordionControlElement13.Text" xml:space="preserve">
+    <value>Employee</value>
+  </data>
+  <data name="AccordionControlElement10.Text" xml:space="preserve">
+    <value>Position</value>
+  </data>
+  <data name="AccordionControlElement14.Text" xml:space="preserve">
+    <value>User</value>
+  </data>
+  <data name="AccordionControlElement12.Text" xml:space="preserve">
+    <value>Vendor</value>
+  </data>
+  <data name="AccordionControlElement11.Text" xml:space="preserve">
+    <value>Doc. Type</value>
+  </data>
+  <data name="AccordionControlElement6.Text" xml:space="preserve">
+    <value>Asset Condition</value>
+  </data>
+  <data name="AccordionControlElement30.Text" xml:space="preserve">
+    <value>Reference</value>
+  </data>
+  <data name="AccordionControlElement45.Text" xml:space="preserve">
+    <value>Masterlist</value>
+  </data>
+  <data name="AccordionControlElement19.Text" xml:space="preserve">
+    <value>Existing Assets</value>
+  </data>
+  <data name="AccordionControlElement44.Text" xml:space="preserve">
+    <value>Importation</value>
   </data>
   <data name="AccordionControlElement3.ImageOptions.Image" type="System.Drawing.Bitmap, System.Drawing" mimetype="application/x-microsoft.net.object.bytearray.base64">
     <value>
@@ -336,6 +484,127 @@
         1RmWrtjggjqqpHTv9DuRj5yeRB3BWFARpSfIELpXMoa+CaiCEsgwZSUdXdRGRB3BWHiL0KZKKKul8u+a
         kvS/xKwwzH8ALBnyGAPyeiwAAAAASUVORK5CYII=
 </value>
+  </data>
+  <data name="AccordionControlElement3.Text" xml:space="preserve">
+    <value>Setup</value>
+  </data>
+  <data name="AccordionControlElement59.Text" xml:space="preserve">
+    <value>Notification</value>
+  </data>
+  <data name="AccordionControl1.Location" type="System.Drawing.Point, System.Drawing">
+    <value>0, 0</value>
+  </data>
+  <data name="AccordionControl1.Size" type="System.Drawing.Size, System.Drawing">
+    <value>227, 721</value>
+  </data>
+  <assembly alias="mscorlib" name="mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089" />
+  <data name="AccordionControl1.TabIndex" type="System.Int32, mscorlib">
+    <value>0</value>
+  </data>
+  <data name="&gt;&gt;AccordionControl1.Name" xml:space="preserve">
+    <value>AccordionControl1</value>
+  </data>
+  <data name="&gt;&gt;AccordionControl1.Type" xml:space="preserve">
+    <value>DevExpress.XtraBars.Navigation.AccordionControl, DevExpress.XtraBars.v21.2, Version=21.2.5.0, Culture=neutral, PublicKeyToken=b88d1754d700e49a</value>
+  </data>
+  <data name="&gt;&gt;AccordionControl1.Parent" xml:space="preserve">
+    <value>$this</value>
+  </data>
+  <data name="&gt;&gt;AccordionControl1.ZOrder" xml:space="preserve">
+    <value>2</value>
+  </data>
+  <data name="Label1.AutoSize" type="System.Boolean, mscorlib">
+    <value>True</value>
+  </data>
+  <data name="Label1.Location" type="System.Drawing.Point, System.Drawing">
+    <value>6, 3</value>
+  </data>
+  <data name="Label1.Size" type="System.Drawing.Size, System.Drawing">
+    <value>38, 13</value>
+  </data>
+  <data name="Label1.TabIndex" type="System.Int32, mscorlib">
+    <value>0</value>
+  </data>
+  <data name="Label1.Text" xml:space="preserve">
+    <value>Label1</value>
+  </data>
+  <data name="&gt;&gt;Label1.Name" xml:space="preserve">
+    <value>Label1</value>
+  </data>
+  <data name="&gt;&gt;Label1.Type" xml:space="preserve">
+    <value>System.Windows.Forms.Label, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+  </data>
+  <data name="&gt;&gt;Label1.Parent" xml:space="preserve">
+    <value>PanelControl1</value>
+  </data>
+  <data name="&gt;&gt;Label1.ZOrder" xml:space="preserve">
+    <value>0</value>
+  </data>
+  <data name="PanelControl1.Dock" type="System.Windows.Forms.DockStyle, System.Windows.Forms">
+    <value>Bottom</value>
+  </data>
+  <data name="PanelControl1.Location" type="System.Drawing.Point, System.Drawing">
+    <value>227, 698</value>
+  </data>
+  <data name="PanelControl1.Size" type="System.Drawing.Size, System.Drawing">
+    <value>1073, 23</value>
+  </data>
+  <data name="PanelControl1.TabIndex" type="System.Int32, mscorlib">
+    <value>2</value>
+  </data>
+  <data name="&gt;&gt;PanelControl1.Name" xml:space="preserve">
+    <value>PanelControl1</value>
+  </data>
+  <data name="&gt;&gt;PanelControl1.Type" xml:space="preserve">
+    <value>DevExpress.XtraEditors.PanelControl, DevExpress.Utils.v21.2, Version=21.2.5.0, Culture=neutral, PublicKeyToken=b88d1754d700e49a</value>
+  </data>
+  <data name="&gt;&gt;PanelControl1.Parent" xml:space="preserve">
+    <value>$this</value>
+  </data>
+  <data name="&gt;&gt;PanelControl1.ZOrder" xml:space="preserve">
+    <value>1</value>
+  </data>
+  <data name="AccordionControlElement32.Text" xml:space="preserve">
+    <value>Receive Register</value>
+  </data>
+  <data name="PictureBox1.BackgroundImageLayout" type="System.Windows.Forms.ImageLayout, System.Windows.Forms">
+    <value>Stretch</value>
+  </data>
+  <data name="PictureBox1.Dock" type="System.Windows.Forms.DockStyle, System.Windows.Forms">
+    <value>Fill</value>
+  </data>
+  <data name="PictureBox1.Location" type="System.Drawing.Point, System.Drawing">
+    <value>227, 0</value>
+  </data>
+  <data name="PictureBox1.Size" type="System.Drawing.Size, System.Drawing">
+    <value>1073, 698</value>
+  </data>
+  <data name="PictureBox1.SizeMode" type="System.Windows.Forms.PictureBoxSizeMode, System.Windows.Forms">
+    <value>StretchImage</value>
+  </data>
+  <data name="PictureBox1.TabIndex" type="System.Int32, mscorlib">
+    <value>3</value>
+  </data>
+  <data name="&gt;&gt;PictureBox1.Name" xml:space="preserve">
+    <value>PictureBox1</value>
+  </data>
+  <data name="&gt;&gt;PictureBox1.Type" xml:space="preserve">
+    <value>System.Windows.Forms.PictureBox, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+  </data>
+  <data name="&gt;&gt;PictureBox1.Parent" xml:space="preserve">
+    <value>$this</value>
+  </data>
+  <data name="&gt;&gt;PictureBox1.ZOrder" xml:space="preserve">
+    <value>0</value>
+  </data>
+  <metadata name="$this.Localizable" type="System.Boolean, mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089">
+    <value>True</value>
+  </metadata>
+  <data name="$this.AutoScaleDimensions" type="System.Drawing.SizeF, System.Drawing">
+    <value>6, 13</value>
+  </data>
+  <data name="$this.ClientSize" type="System.Drawing.Size, System.Drawing">
+    <value>1300, 721</value>
   </data>
   <data name="Home.IconOptions.Icon" type="System.Drawing.Icon, System.Drawing" mimetype="application/x-microsoft.net.object.bytearray.base64">
     <value>
@@ -3209,5 +3478,323 @@
         l4AYPq2So40s7ZJlCRm6JJXrlPSpDjKHl5Ha2yHZ7+fVeeyd8uyBW/K/l01rjABBFS66uIuDL53gsW2r
         at09VeP/A85UHkMAosfsAAAAAElFTkSuQmCC
 </value>
+  </data>
+  <data name="$this.StartPosition" type="System.Windows.Forms.FormStartPosition, System.Windows.Forms">
+    <value>CenterScreen</value>
+  </data>
+  <data name="$this.Text" xml:space="preserve">
+    <value> Home</value>
+  </data>
+  <data name="&gt;&gt;AccordionControlElement47.Name" xml:space="preserve">
+    <value>AccordionControlElement47</value>
+  </data>
+  <data name="&gt;&gt;AccordionControlElement47.Type" xml:space="preserve">
+    <value>DevExpress.XtraBars.Navigation.AccordionControlElement, DevExpress.XtraBars.v21.2, Version=21.2.5.0, Culture=neutral, PublicKeyToken=b88d1754d700e49a</value>
+  </data>
+  <data name="&gt;&gt;AccordionControlElement39.Name" xml:space="preserve">
+    <value>AccordionControlElement39</value>
+  </data>
+  <data name="&gt;&gt;AccordionControlElement39.Type" xml:space="preserve">
+    <value>DevExpress.XtraBars.Navigation.AccordionControlElement, DevExpress.XtraBars.v21.2, Version=21.2.5.0, Culture=neutral, PublicKeyToken=b88d1754d700e49a</value>
+  </data>
+  <data name="&gt;&gt;AccordionControlElement1.Name" xml:space="preserve">
+    <value>AccordionControlElement1</value>
+  </data>
+  <data name="&gt;&gt;AccordionControlElement1.Type" xml:space="preserve">
+    <value>DevExpress.XtraBars.Navigation.AccordionControlElement, DevExpress.XtraBars.v21.2, Version=21.2.5.0, Culture=neutral, PublicKeyToken=b88d1754d700e49a</value>
+  </data>
+  <data name="&gt;&gt;AccordionControlElement35.Name" xml:space="preserve">
+    <value>AccordionControlElement35</value>
+  </data>
+  <data name="&gt;&gt;AccordionControlElement35.Type" xml:space="preserve">
+    <value>DevExpress.XtraBars.Navigation.AccordionControlElement, DevExpress.XtraBars.v21.2, Version=21.2.5.0, Culture=neutral, PublicKeyToken=b88d1754d700e49a</value>
+  </data>
+  <data name="&gt;&gt;AccordionControlElement38.Name" xml:space="preserve">
+    <value>AccordionControlElement38</value>
+  </data>
+  <data name="&gt;&gt;AccordionControlElement38.Type" xml:space="preserve">
+    <value>DevExpress.XtraBars.Navigation.AccordionControlElement, DevExpress.XtraBars.v21.2, Version=21.2.5.0, Culture=neutral, PublicKeyToken=b88d1754d700e49a</value>
+  </data>
+  <data name="&gt;&gt;AccordionControlElement46.Name" xml:space="preserve">
+    <value>AccordionControlElement46</value>
+  </data>
+  <data name="&gt;&gt;AccordionControlElement46.Type" xml:space="preserve">
+    <value>DevExpress.XtraBars.Navigation.AccordionControlElement, DevExpress.XtraBars.v21.2, Version=21.2.5.0, Culture=neutral, PublicKeyToken=b88d1754d700e49a</value>
+  </data>
+  <data name="&gt;&gt;AccordionControlElement48.Name" xml:space="preserve">
+    <value>AccordionControlElement48</value>
+  </data>
+  <data name="&gt;&gt;AccordionControlElement48.Type" xml:space="preserve">
+    <value>DevExpress.XtraBars.Navigation.AccordionControlElement, DevExpress.XtraBars.v21.2, Version=21.2.5.0, Culture=neutral, PublicKeyToken=b88d1754d700e49a</value>
+  </data>
+  <data name="&gt;&gt;AccordionControlElement55.Name" xml:space="preserve">
+    <value>AccordionControlElement55</value>
+  </data>
+  <data name="&gt;&gt;AccordionControlElement55.Type" xml:space="preserve">
+    <value>DevExpress.XtraBars.Navigation.AccordionControlElement, DevExpress.XtraBars.v21.2, Version=21.2.5.0, Culture=neutral, PublicKeyToken=b88d1754d700e49a</value>
+  </data>
+  <data name="&gt;&gt;e.Name" xml:space="preserve">
+    <value>e</value>
+  </data>
+  <data name="&gt;&gt;e.Type" xml:space="preserve">
+    <value>DevExpress.XtraBars.Navigation.AccordionControlElement, DevExpress.XtraBars.v21.2, Version=21.2.5.0, Culture=neutral, PublicKeyToken=b88d1754d700e49a</value>
+  </data>
+  <data name="&gt;&gt;AccordionControlElement36.Name" xml:space="preserve">
+    <value>AccordionControlElement36</value>
+  </data>
+  <data name="&gt;&gt;AccordionControlElement36.Type" xml:space="preserve">
+    <value>DevExpress.XtraBars.Navigation.AccordionControlElement, DevExpress.XtraBars.v21.2, Version=21.2.5.0, Culture=neutral, PublicKeyToken=b88d1754d700e49a</value>
+  </data>
+  <data name="&gt;&gt;AccordionControlElement18.Name" xml:space="preserve">
+    <value>AccordionControlElement18</value>
+  </data>
+  <data name="&gt;&gt;AccordionControlElement18.Type" xml:space="preserve">
+    <value>DevExpress.XtraBars.Navigation.AccordionControlElement, DevExpress.XtraBars.v21.2, Version=21.2.5.0, Culture=neutral, PublicKeyToken=b88d1754d700e49a</value>
+  </data>
+  <data name="&gt;&gt;AccordionControlElement56.Name" xml:space="preserve">
+    <value>AccordionControlElement56</value>
+  </data>
+  <data name="&gt;&gt;AccordionControlElement56.Type" xml:space="preserve">
+    <value>DevExpress.XtraBars.Navigation.AccordionControlElement, DevExpress.XtraBars.v21.2, Version=21.2.5.0, Culture=neutral, PublicKeyToken=b88d1754d700e49a</value>
+  </data>
+  <data name="&gt;&gt;AccordionControlElement49.Name" xml:space="preserve">
+    <value>AccordionControlElement49</value>
+  </data>
+  <data name="&gt;&gt;AccordionControlElement49.Type" xml:space="preserve">
+    <value>DevExpress.XtraBars.Navigation.AccordionControlElement, DevExpress.XtraBars.v21.2, Version=21.2.5.0, Culture=neutral, PublicKeyToken=b88d1754d700e49a</value>
+  </data>
+  <data name="&gt;&gt;AccordionControlElement50.Name" xml:space="preserve">
+    <value>AccordionControlElement50</value>
+  </data>
+  <data name="&gt;&gt;AccordionControlElement50.Type" xml:space="preserve">
+    <value>DevExpress.XtraBars.Navigation.AccordionControlElement, DevExpress.XtraBars.v21.2, Version=21.2.5.0, Culture=neutral, PublicKeyToken=b88d1754d700e49a</value>
+  </data>
+  <data name="&gt;&gt;AccordionControlElement51.Name" xml:space="preserve">
+    <value>AccordionControlElement51</value>
+  </data>
+  <data name="&gt;&gt;AccordionControlElement51.Type" xml:space="preserve">
+    <value>DevExpress.XtraBars.Navigation.AccordionControlElement, DevExpress.XtraBars.v21.2, Version=21.2.5.0, Culture=neutral, PublicKeyToken=b88d1754d700e49a</value>
+  </data>
+  <data name="&gt;&gt;AccordionControlElement52.Name" xml:space="preserve">
+    <value>AccordionControlElement52</value>
+  </data>
+  <data name="&gt;&gt;AccordionControlElement52.Type" xml:space="preserve">
+    <value>DevExpress.XtraBars.Navigation.AccordionControlElement, DevExpress.XtraBars.v21.2, Version=21.2.5.0, Culture=neutral, PublicKeyToken=b88d1754d700e49a</value>
+  </data>
+  <data name="&gt;&gt;AccordionControlElement53.Name" xml:space="preserve">
+    <value>AccordionControlElement53</value>
+  </data>
+  <data name="&gt;&gt;AccordionControlElement53.Type" xml:space="preserve">
+    <value>DevExpress.XtraBars.Navigation.AccordionControlElement, DevExpress.XtraBars.v21.2, Version=21.2.5.0, Culture=neutral, PublicKeyToken=b88d1754d700e49a</value>
+  </data>
+  <data name="&gt;&gt;AccordionControlElement54.Name" xml:space="preserve">
+    <value>AccordionControlElement54</value>
+  </data>
+  <data name="&gt;&gt;AccordionControlElement54.Type" xml:space="preserve">
+    <value>DevExpress.XtraBars.Navigation.AccordionControlElement, DevExpress.XtraBars.v21.2, Version=21.2.5.0, Culture=neutral, PublicKeyToken=b88d1754d700e49a</value>
+  </data>
+  <data name="&gt;&gt;AccordionControlElement21.Name" xml:space="preserve">
+    <value>AccordionControlElement21</value>
+  </data>
+  <data name="&gt;&gt;AccordionControlElement21.Type" xml:space="preserve">
+    <value>DevExpress.XtraBars.Navigation.AccordionControlElement, DevExpress.XtraBars.v21.2, Version=21.2.5.0, Culture=neutral, PublicKeyToken=b88d1754d700e49a</value>
+  </data>
+  <data name="&gt;&gt;AccordionControlElement37.Name" xml:space="preserve">
+    <value>AccordionControlElement37</value>
+  </data>
+  <data name="&gt;&gt;AccordionControlElement37.Type" xml:space="preserve">
+    <value>DevExpress.XtraBars.Navigation.AccordionControlElement, DevExpress.XtraBars.v21.2, Version=21.2.5.0, Culture=neutral, PublicKeyToken=b88d1754d700e49a</value>
+  </data>
+  <data name="&gt;&gt;AccordionControlElement57.Name" xml:space="preserve">
+    <value>AccordionControlElement57</value>
+  </data>
+  <data name="&gt;&gt;AccordionControlElement57.Type" xml:space="preserve">
+    <value>DevExpress.XtraBars.Navigation.AccordionControlElement, DevExpress.XtraBars.v21.2, Version=21.2.5.0, Culture=neutral, PublicKeyToken=b88d1754d700e49a</value>
+  </data>
+  <data name="&gt;&gt;AccordionControlElement2.Name" xml:space="preserve">
+    <value>AccordionControlElement2</value>
+  </data>
+  <data name="&gt;&gt;AccordionControlElement2.Type" xml:space="preserve">
+    <value>DevExpress.XtraBars.Navigation.AccordionControlElement, DevExpress.XtraBars.v21.2, Version=21.2.5.0, Culture=neutral, PublicKeyToken=b88d1754d700e49a</value>
+  </data>
+  <data name="&gt;&gt;AccordionControlElement27.Name" xml:space="preserve">
+    <value>AccordionControlElement27</value>
+  </data>
+  <data name="&gt;&gt;AccordionControlElement27.Type" xml:space="preserve">
+    <value>DevExpress.XtraBars.Navigation.AccordionControlElement, DevExpress.XtraBars.v21.2, Version=21.2.5.0, Culture=neutral, PublicKeyToken=b88d1754d700e49a</value>
+  </data>
+  <data name="&gt;&gt;AccordionControlElement25.Name" xml:space="preserve">
+    <value>AccordionControlElement25</value>
+  </data>
+  <data name="&gt;&gt;AccordionControlElement25.Type" xml:space="preserve">
+    <value>DevExpress.XtraBars.Navigation.AccordionControlElement, DevExpress.XtraBars.v21.2, Version=21.2.5.0, Culture=neutral, PublicKeyToken=b88d1754d700e49a</value>
+  </data>
+  <data name="&gt;&gt;AccordionControlElement26.Name" xml:space="preserve">
+    <value>AccordionControlElement26</value>
+  </data>
+  <data name="&gt;&gt;AccordionControlElement26.Type" xml:space="preserve">
+    <value>DevExpress.XtraBars.Navigation.AccordionControlElement, DevExpress.XtraBars.v21.2, Version=21.2.5.0, Culture=neutral, PublicKeyToken=b88d1754d700e49a</value>
+  </data>
+  <data name="&gt;&gt;AccordionControlElement29.Name" xml:space="preserve">
+    <value>AccordionControlElement29</value>
+  </data>
+  <data name="&gt;&gt;AccordionControlElement29.Type" xml:space="preserve">
+    <value>DevExpress.XtraBars.Navigation.AccordionControlElement, DevExpress.XtraBars.v21.2, Version=21.2.5.0, Culture=neutral, PublicKeyToken=b88d1754d700e49a</value>
+  </data>
+  <data name="&gt;&gt;AccordionControlElement15.Name" xml:space="preserve">
+    <value>AccordionControlElement15</value>
+  </data>
+  <data name="&gt;&gt;AccordionControlElement15.Type" xml:space="preserve">
+    <value>DevExpress.XtraBars.Navigation.AccordionControlElement, DevExpress.XtraBars.v21.2, Version=21.2.5.0, Culture=neutral, PublicKeyToken=b88d1754d700e49a</value>
+  </data>
+  <data name="&gt;&gt;AccordionControlElement17.Name" xml:space="preserve">
+    <value>AccordionControlElement17</value>
+  </data>
+  <data name="&gt;&gt;AccordionControlElement17.Type" xml:space="preserve">
+    <value>DevExpress.XtraBars.Navigation.AccordionControlElement, DevExpress.XtraBars.v21.2, Version=21.2.5.0, Culture=neutral, PublicKeyToken=b88d1754d700e49a</value>
+  </data>
+  <data name="&gt;&gt;AccordionControlElement28.Name" xml:space="preserve">
+    <value>AccordionControlElement28</value>
+  </data>
+  <data name="&gt;&gt;AccordionControlElement28.Type" xml:space="preserve">
+    <value>DevExpress.XtraBars.Navigation.AccordionControlElement, DevExpress.XtraBars.v21.2, Version=21.2.5.0, Culture=neutral, PublicKeyToken=b88d1754d700e49a</value>
+  </data>
+  <data name="&gt;&gt;AccordionControlElement16.Name" xml:space="preserve">
+    <value>AccordionControlElement16</value>
+  </data>
+  <data name="&gt;&gt;AccordionControlElement16.Type" xml:space="preserve">
+    <value>DevExpress.XtraBars.Navigation.AccordionControlElement, DevExpress.XtraBars.v21.2, Version=21.2.5.0, Culture=neutral, PublicKeyToken=b88d1754d700e49a</value>
+  </data>
+  <data name="&gt;&gt;AccordionControlElement22.Name" xml:space="preserve">
+    <value>AccordionControlElement22</value>
+  </data>
+  <data name="&gt;&gt;AccordionControlElement22.Type" xml:space="preserve">
+    <value>DevExpress.XtraBars.Navigation.AccordionControlElement, DevExpress.XtraBars.v21.2, Version=21.2.5.0, Culture=neutral, PublicKeyToken=b88d1754d700e49a</value>
+  </data>
+  <data name="&gt;&gt;AccordionControlElement23.Name" xml:space="preserve">
+    <value>AccordionControlElement23</value>
+  </data>
+  <data name="&gt;&gt;AccordionControlElement23.Type" xml:space="preserve">
+    <value>DevExpress.XtraBars.Navigation.AccordionControlElement, DevExpress.XtraBars.v21.2, Version=21.2.5.0, Culture=neutral, PublicKeyToken=b88d1754d700e49a</value>
+  </data>
+  <data name="&gt;&gt;AccordionControlElement24.Name" xml:space="preserve">
+    <value>AccordionControlElement24</value>
+  </data>
+  <data name="&gt;&gt;AccordionControlElement24.Type" xml:space="preserve">
+    <value>DevExpress.XtraBars.Navigation.AccordionControlElement, DevExpress.XtraBars.v21.2, Version=21.2.5.0, Culture=neutral, PublicKeyToken=b88d1754d700e49a</value>
+  </data>
+  <data name="&gt;&gt;AccordionControlElement3.Name" xml:space="preserve">
+    <value>AccordionControlElement3</value>
+  </data>
+  <data name="&gt;&gt;AccordionControlElement3.Type" xml:space="preserve">
+    <value>DevExpress.XtraBars.Navigation.AccordionControlElement, DevExpress.XtraBars.v21.2, Version=21.2.5.0, Culture=neutral, PublicKeyToken=b88d1754d700e49a</value>
+  </data>
+  <data name="&gt;&gt;AccordionControlElement5.Name" xml:space="preserve">
+    <value>AccordionControlElement5</value>
+  </data>
+  <data name="&gt;&gt;AccordionControlElement5.Type" xml:space="preserve">
+    <value>DevExpress.XtraBars.Navigation.AccordionControlElement, DevExpress.XtraBars.v21.2, Version=21.2.5.0, Culture=neutral, PublicKeyToken=b88d1754d700e49a</value>
+  </data>
+  <data name="&gt;&gt;AccordionControlElement4.Name" xml:space="preserve">
+    <value>AccordionControlElement4</value>
+  </data>
+  <data name="&gt;&gt;AccordionControlElement4.Type" xml:space="preserve">
+    <value>DevExpress.XtraBars.Navigation.AccordionControlElement, DevExpress.XtraBars.v21.2, Version=21.2.5.0, Culture=neutral, PublicKeyToken=b88d1754d700e49a</value>
+  </data>
+  <data name="&gt;&gt;AccordionControlElement9.Name" xml:space="preserve">
+    <value>AccordionControlElement9</value>
+  </data>
+  <data name="&gt;&gt;AccordionControlElement9.Type" xml:space="preserve">
+    <value>DevExpress.XtraBars.Navigation.AccordionControlElement, DevExpress.XtraBars.v21.2, Version=21.2.5.0, Culture=neutral, PublicKeyToken=b88d1754d700e49a</value>
+  </data>
+  <data name="&gt;&gt;AccordionControlElement8.Name" xml:space="preserve">
+    <value>AccordionControlElement8</value>
+  </data>
+  <data name="&gt;&gt;AccordionControlElement8.Type" xml:space="preserve">
+    <value>DevExpress.XtraBars.Navigation.AccordionControlElement, DevExpress.XtraBars.v21.2, Version=21.2.5.0, Culture=neutral, PublicKeyToken=b88d1754d700e49a</value>
+  </data>
+  <data name="&gt;&gt;AccordionControlElement7.Name" xml:space="preserve">
+    <value>AccordionControlElement7</value>
+  </data>
+  <data name="&gt;&gt;AccordionControlElement7.Type" xml:space="preserve">
+    <value>DevExpress.XtraBars.Navigation.AccordionControlElement, DevExpress.XtraBars.v21.2, Version=21.2.5.0, Culture=neutral, PublicKeyToken=b88d1754d700e49a</value>
+  </data>
+  <data name="&gt;&gt;AccordionControlElement13.Name" xml:space="preserve">
+    <value>AccordionControlElement13</value>
+  </data>
+  <data name="&gt;&gt;AccordionControlElement13.Type" xml:space="preserve">
+    <value>DevExpress.XtraBars.Navigation.AccordionControlElement, DevExpress.XtraBars.v21.2, Version=21.2.5.0, Culture=neutral, PublicKeyToken=b88d1754d700e49a</value>
+  </data>
+  <data name="&gt;&gt;AccordionControlElement10.Name" xml:space="preserve">
+    <value>AccordionControlElement10</value>
+  </data>
+  <data name="&gt;&gt;AccordionControlElement10.Type" xml:space="preserve">
+    <value>DevExpress.XtraBars.Navigation.AccordionControlElement, DevExpress.XtraBars.v21.2, Version=21.2.5.0, Culture=neutral, PublicKeyToken=b88d1754d700e49a</value>
+  </data>
+  <data name="&gt;&gt;AccordionControlElement14.Name" xml:space="preserve">
+    <value>AccordionControlElement14</value>
+  </data>
+  <data name="&gt;&gt;AccordionControlElement14.Type" xml:space="preserve">
+    <value>DevExpress.XtraBars.Navigation.AccordionControlElement, DevExpress.XtraBars.v21.2, Version=21.2.5.0, Culture=neutral, PublicKeyToken=b88d1754d700e49a</value>
+  </data>
+  <data name="&gt;&gt;AccordionControlElement12.Name" xml:space="preserve">
+    <value>AccordionControlElement12</value>
+  </data>
+  <data name="&gt;&gt;AccordionControlElement12.Type" xml:space="preserve">
+    <value>DevExpress.XtraBars.Navigation.AccordionControlElement, DevExpress.XtraBars.v21.2, Version=21.2.5.0, Culture=neutral, PublicKeyToken=b88d1754d700e49a</value>
+  </data>
+  <data name="&gt;&gt;AccordionControlElement11.Name" xml:space="preserve">
+    <value>AccordionControlElement11</value>
+  </data>
+  <data name="&gt;&gt;AccordionControlElement11.Type" xml:space="preserve">
+    <value>DevExpress.XtraBars.Navigation.AccordionControlElement, DevExpress.XtraBars.v21.2, Version=21.2.5.0, Culture=neutral, PublicKeyToken=b88d1754d700e49a</value>
+  </data>
+  <data name="&gt;&gt;AccordionControlElement6.Name" xml:space="preserve">
+    <value>AccordionControlElement6</value>
+  </data>
+  <data name="&gt;&gt;AccordionControlElement6.Type" xml:space="preserve">
+    <value>DevExpress.XtraBars.Navigation.AccordionControlElement, DevExpress.XtraBars.v21.2, Version=21.2.5.0, Culture=neutral, PublicKeyToken=b88d1754d700e49a</value>
+  </data>
+  <data name="&gt;&gt;AccordionControlElement30.Name" xml:space="preserve">
+    <value>AccordionControlElement30</value>
+  </data>
+  <data name="&gt;&gt;AccordionControlElement30.Type" xml:space="preserve">
+    <value>DevExpress.XtraBars.Navigation.AccordionControlElement, DevExpress.XtraBars.v21.2, Version=21.2.5.0, Culture=neutral, PublicKeyToken=b88d1754d700e49a</value>
+  </data>
+  <data name="&gt;&gt;AccordionControlElement44.Name" xml:space="preserve">
+    <value>AccordionControlElement44</value>
+  </data>
+  <data name="&gt;&gt;AccordionControlElement44.Type" xml:space="preserve">
+    <value>DevExpress.XtraBars.Navigation.AccordionControlElement, DevExpress.XtraBars.v21.2, Version=21.2.5.0, Culture=neutral, PublicKeyToken=b88d1754d700e49a</value>
+  </data>
+  <data name="&gt;&gt;AccordionControlElement45.Name" xml:space="preserve">
+    <value>AccordionControlElement45</value>
+  </data>
+  <data name="&gt;&gt;AccordionControlElement45.Type" xml:space="preserve">
+    <value>DevExpress.XtraBars.Navigation.AccordionControlElement, DevExpress.XtraBars.v21.2, Version=21.2.5.0, Culture=neutral, PublicKeyToken=b88d1754d700e49a</value>
+  </data>
+  <data name="&gt;&gt;AccordionControlElement19.Name" xml:space="preserve">
+    <value>AccordionControlElement19</value>
+  </data>
+  <data name="&gt;&gt;AccordionControlElement19.Type" xml:space="preserve">
+    <value>DevExpress.XtraBars.Navigation.AccordionControlElement, DevExpress.XtraBars.v21.2, Version=21.2.5.0, Culture=neutral, PublicKeyToken=b88d1754d700e49a</value>
+  </data>
+  <data name="&gt;&gt;AccordionControlElement59.Name" xml:space="preserve">
+    <value>AccordionControlElement59</value>
+  </data>
+  <data name="&gt;&gt;AccordionControlElement59.Type" xml:space="preserve">
+    <value>DevExpress.XtraBars.Navigation.AccordionControlElement, DevExpress.XtraBars.v21.2, Version=21.2.5.0, Culture=neutral, PublicKeyToken=b88d1754d700e49a</value>
+  </data>
+  <data name="&gt;&gt;AccordionControlElement32.Name" xml:space="preserve">
+    <value>AccordionControlElement32</value>
+  </data>
+  <data name="&gt;&gt;AccordionControlElement32.Type" xml:space="preserve">
+    <value>DevExpress.XtraBars.Navigation.AccordionControlElement, DevExpress.XtraBars.v21.2, Version=21.2.5.0, Culture=neutral, PublicKeyToken=b88d1754d700e49a</value>
+  </data>
+  <data name="&gt;&gt;$this.Name" xml:space="preserve">
+    <value>Home</value>
+  </data>
+  <data name="&gt;&gt;$this.Type" xml:space="preserve">
+    <value>DevExpress.XtraEditors.XtraForm, DevExpress.Utils.v21.2, Version=21.2.5.0, Culture=neutral, PublicKeyToken=b88d1754d700e49a</value>
   </data>
 </root>

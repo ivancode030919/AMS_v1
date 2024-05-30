@@ -23,6 +23,10 @@ Partial Class RecvReqConfrm
         Me.SimpleButton2 = New DevExpress.XtraEditors.SimpleButton()
         Me.TextBox1 = New System.Windows.Forms.TextBox()
         Me.Label1 = New System.Windows.Forms.Label()
+        Me.Label2 = New System.Windows.Forms.Label()
+        Me.Label3 = New System.Windows.Forms.Label()
+        Me.TextBox3 = New System.Windows.Forms.TextBox()
+        Me.ComboBox1 = New System.Windows.Forms.ComboBox()
         Me.SuspendLayout()
         '
         'SimpleButton1
@@ -58,17 +62,62 @@ Partial Class RecvReqConfrm
         '
         Me.Label1.AutoSize = True
         Me.Label1.Font = New System.Drawing.Font("Arial Rounded MT Bold", 11.25!)
-        Me.Label1.Location = New System.Drawing.Point(13, 54)
+        Me.Label1.Location = New System.Drawing.Point(9, 62)
         Me.Label1.Name = "Label1"
         Me.Label1.Size = New System.Drawing.Size(57, 17)
         Me.Label1.TabIndex = 3
         Me.Label1.Text = "Label1"
         '
+        'Label2
+        '
+        Me.Label2.AutoSize = True
+        Me.Label2.Font = New System.Drawing.Font("Arial Rounded MT Bold", 11.25!)
+        Me.Label2.Location = New System.Drawing.Point(9, 167)
+        Me.Label2.Name = "Label2"
+        Me.Label2.Size = New System.Drawing.Size(85, 17)
+        Me.Label2.TabIndex = 5
+        Me.Label2.Text = "Reference"
+        '
+        'Label3
+        '
+        Me.Label3.AutoSize = True
+        Me.Label3.Font = New System.Drawing.Font("Arial Rounded MT Bold", 11.25!)
+        Me.Label3.Location = New System.Drawing.Point(9, 220)
+        Me.Label3.Name = "Label3"
+        Me.Label3.Size = New System.Drawing.Size(114, 17)
+        Me.Label3.TabIndex = 6
+        Me.Label3.Text = "Reference No."
+        '
+        'TextBox3
+        '
+        Me.TextBox3.Font = New System.Drawing.Font("Arial Unicode MS", 11.25!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
+        Me.TextBox3.Location = New System.Drawing.Point(12, 240)
+        Me.TextBox3.Multiline = True
+        Me.TextBox3.Name = "TextBox3"
+        Me.TextBox3.Size = New System.Drawing.Size(263, 30)
+        Me.TextBox3.TabIndex = 7
+        '
+        'ComboBox1
+        '
+        Me.ComboBox1.BackColor = System.Drawing.Color.WhiteSmoke
+        Me.ComboBox1.DropDownStyle = System.Windows.Forms.ComboBoxStyle.DropDownList
+        Me.ComboBox1.Font = New System.Drawing.Font("Arial Unicode MS", 11.25!)
+        Me.ComboBox1.FormattingEnabled = True
+        Me.ComboBox1.Items.AddRange(New Object() {"Serial Number", "Plate Number", " "})
+        Me.ComboBox1.Location = New System.Drawing.Point(12, 188)
+        Me.ComboBox1.Name = "ComboBox1"
+        Me.ComboBox1.Size = New System.Drawing.Size(263, 28)
+        Me.ComboBox1.TabIndex = 8
+        '
         'RecvReqConfrm
         '
         Me.AutoScaleDimensions = New System.Drawing.SizeF(6.0!, 13.0!)
         Me.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font
-        Me.ClientSize = New System.Drawing.Size(292, 172)
+        Me.ClientSize = New System.Drawing.Size(288, 282)
+        Me.Controls.Add(Me.ComboBox1)
+        Me.Controls.Add(Me.TextBox3)
+        Me.Controls.Add(Me.Label3)
+        Me.Controls.Add(Me.Label2)
         Me.Controls.Add(Me.Label1)
         Me.Controls.Add(Me.TextBox1)
         Me.Controls.Add(Me.SimpleButton1)
@@ -78,7 +127,7 @@ Partial Class RecvReqConfrm
         Me.MinimizeBox = False
         Me.Name = "RecvReqConfrm"
         Me.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen
-        Me.Text = "Update Status"
+        Me.Text = "Status Update"
         Me.ResumeLayout(False)
         Me.PerformLayout()
 
@@ -88,4 +137,8 @@ Partial Class RecvReqConfrm
     Friend WithEvents SimpleButton2 As DevExpress.XtraEditors.SimpleButton
     Friend WithEvents TextBox1 As TextBox
     Friend WithEvents Label1 As Label
+    Friend WithEvents Label2 As Label
+    Friend WithEvents Label3 As Label
+    Friend WithEvents TextBox3 As TextBox
+    Friend WithEvents ComboBox1 As ComboBox
 End Class

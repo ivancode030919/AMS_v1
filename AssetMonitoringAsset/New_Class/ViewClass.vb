@@ -78,7 +78,7 @@
                          Join t In db.tblSections On y.SectionID Equals t.SectionID
                          Where q.Owner = 0 And q.AssetCode = ac
                          Let m = y.LastName + ", " + y.FirstName
-                         Select q.PropertyCode, q.Des, q.Qty, m, e.DepartmentDescription, r.BranchDescription, t.SectionDecription)
+                         Select q.PropertyCode, q.Des, q.Qty, m, e.DepartmentDescription, r.BranchDescription, t.SectionDecription, q.Reference, q.Referenceno)
             Return query
 
         ElseIf Home.UserType = "DPC" Then
@@ -90,8 +90,7 @@
                          Join t In db.tblSections On y.SectionID Equals t.SectionID
                          Where q.Owner = 0 And q.AssetCode = ac And (y.DepartmentID = Home.DepartmentID)
                          Let m = y.LastName + ", " + y.FirstName
-                         Select q.PropertyCode, q.Des, q.Qty, m, e.DepartmentDescription, r.BranchDescription, t.SectionDecription)
-            Return query
+                         Select q.PropertyCode, q.Des, q.Qty, m, e.DepartmentDescription, r.BranchDescription, t.SectionDecription, q.Reference, q.Referenceno)
 
         ElseIf Home.UserType = "BPC" Then
 
@@ -102,7 +101,7 @@
                          Join t In db.tblSections On y.SectionID Equals t.SectionID
                          Where q.Owner = 0 And q.AssetCode = ac And (y.DepartmentID = Home.DepartmentID)
                          Let m = y.LastName + ", " + y.FirstName
-                         Select q.PropertyCode, q.Des, q.Qty, m, e.DepartmentDescription, r.BranchDescription, t.SectionDecription)
+                         Select q.PropertyCode, q.Des, q.Qty, m, e.DepartmentDescription, r.BranchDescription, t.SectionDecription, q.Reference, q.Referenceno)
             Return query
 
         End If
@@ -199,7 +198,7 @@
         Dim querysection = (From f In db.tblmasterlistdetails
                             Join d In db.tblCategories On f.CategoryID Equals d.CategoryID
                             Join g In db.tblAssetTypes On f.AssetTypeID Equals g.AssetTypeID
-                            Where f.AssetDescription.Contains(Search)
+                            Where (f.AssetDescription.Contains(Search) Or f.ItemCode = Search)
                             Order By f.AssetDescription Ascending
                             Select f.ItemCode, f.AssetDescription, f.ItemID, d.CategoryCode, g.AssetTypeCode)
 
@@ -331,12 +330,14 @@
 
     'View Procurement Detail
     Public Shared Function ViewProcureDetails(ByVal TransId As Integer) As Object
+
         Dim querysection = (From s In db.tblProcureDetails
                             Join g In db.tblEmployees On s.Requestfor Equals g.EmployeeID
                             Where s.TransID = TransId
                             Let c = g.FirstName + " " + g.LastName
-                            Select s.AssetCode, s.Class, c, s.Quantity, s.Remarks, s.State, s.id)
+                            Select s.AssetCode, s.Class, c, s.Quantity, s.Remarks, s.State, s.id, s.Requestfor, s.PropertyCode, s.Description, s.Reference, s.ReferenceNo)
         Return querysection
 
     End Function
+
 End Class

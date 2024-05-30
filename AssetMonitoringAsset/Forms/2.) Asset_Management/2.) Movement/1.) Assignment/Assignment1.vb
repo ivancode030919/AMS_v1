@@ -3,6 +3,7 @@
     Public headerid As Integer
     Public requestor As Integer
     Public allowtoaddrow As String = "Y"
+    Public winstatemax As Boolean = False
 
     Private Sub Assignment1_Load(sender As Object, e As EventArgs) Handles MyBase.Load
 
@@ -18,12 +19,11 @@
         End If
 
         display()
-
     End Sub
-
 
     Public Sub display()
         ViewClass.FetchRegisterDetail(headerid)
+
         With dgv
             .Columns(1).HeaderText = "Asset Code"
             .Columns(2).HeaderText = "Class"
@@ -33,11 +33,12 @@
             .Columns(6).HeaderText = "State"
             .Columns(7).HeaderText = "Available Quantity"
             .Columns(8).HeaderText = "NewOwnderID"
+            .Columns(9).HeaderText = "Assign Asset"
 
             .Columns(0).Visible = False
             .Columns(8).Visible = False
 
-            .Columns.Add("9", "Assigned Asset")
+            '.Columns.Add("9", "Assigned Asset")
             .Columns(9).ReadOnly = True
             .Columns(1).ReadOnly = True
             .Columns(2).ReadOnly = True
@@ -50,84 +51,79 @@
                 .Columns(4).ReadOnly = False
                 .Columns(6).Visible = False
             End If
-
         End With
+
+
     End Sub
 
     Private Sub Assignment1_FormClosing(sender As Object, e As FormClosingEventArgs) Handles MyBase.FormClosing
-        Me.Dispose()
+
+        If winstatemax = True Then
+            Home.IsMdiContainer = False
+            winstatemax = False
+            Me.Dispose()
+        Else
+            Me.Dispose()
+        End If
+
     End Sub
 
     Private Sub dgv_CellDoubleClick(sender As Object, e As DataGridViewCellEventArgs) Handles dgv.CellDoubleClick
-        Try
+        'Try
+        Dim row As Integer = dgv.CurrentCell.RowIndex
+
             If allowtoaddrow = "Y" Then
 
                 If e.ColumnIndex = 1 Then
 
-                    Dim index As Integer
-                    index = e.RowIndex
-                    Dim selectedrow As DataGridViewRow
-                    selectedrow = dgv.Rows(index)
-
                     With AssetList3
-                        .rowToEdit = index
-                        .mode1 = 1
-                        .modty = 5
-                        .ac = selectedrow.Cells(1).Value
-                        .Show()
-                    End With
+                    .rowToEdit = row
+                    .mode1 = 1
+                    .modty = 5
+                    .ac = dgv.Rows(row).Cells(1).Value
+                    .ShowDialog()
+                End With
 
                 ElseIf e.ColumnIndex = 3 Then
 
-                    Dim index As Integer
-                    index = e.RowIndex
-                    Dim selectedrow As DataGridViewRow
-                    selectedrow = dgv.Rows(index)
-
                     With empllist
-                        .rowToEdit = index
-                        .modty = 4
-                        .Show()
+                    .rowToEdit = row
+                    .modty = 4
+                    .ShowDialog()
                     End With
 
                 ElseIf e.ColumnIndex = 9 Then
 
-                    Dim index As Integer
-                    index = e.RowIndex
-                    Dim selectedrow As DataGridViewRow
-                    selectedrow = dgv.Rows(index)
-
                     With AssetList3
-                        .rowToEdit = index
-                        .modty = 4
-                        .mode1 = 3
-                        .ac = selectedrow.Cells(1).Value
-                        .Show()
+                    .rowToEdit = row
+                    .modty = 4
+                    .mode1 = 3
+                    .AssignQty = dgv.Rows(row).Cells(4).Value
+                    .Newowner = dgv.Rows(row).Cells(8).Value
+                    .ItemClass = dgv.Rows(row).Cells(2).Value
+                    .ac = dgv.Rows(row).Cells(1).Value
+                    .ShowDialog()
                     End With
+
                 End If
 
             ElseIf allowtoaddrow = "N" Then
 
                 If e.ColumnIndex = 9 Then
 
-                    Dim index As Integer
-                    index = e.RowIndex
-                    Dim selectedrow As DataGridViewRow
-                    selectedrow = dgv.Rows(index)
-
                     With AssetList3
-                        .rowToEdit = index
-                        .mode1 = 3
-                        .modty = 4
-                        .ac = selectedrow.Cells(1).Value
-                        .Show()
-                    End With
+                    .rowToEdit = row
+                    .mode1 = 3
+                    .modty = 4
+                    .ac = dgv.Rows(row).Cells(1).Value
+                    .ShowDialog()
+                End With
                 End If
 
             End If
-        Catch ex As Exception
-            MsgBox("Assignment.Error.Double.Click.01")
-        End Try
+        'Catch ex As Exception
+        '    MsgBox("Assignment.Error.Double.Click.01")
+        'End Try
 
     End Sub
 
@@ -149,14 +145,14 @@
                     Dim qty As String = row.Cells(4).Value
                     Dim Propertycode As String = row.Cells(9).Value
                     Dim NewOwnerID As String = row.Cells(8).Value
-                    UpdateClass.UpdateAssignProperty(Propertycode, NewOwnerID)
+                    Dim Availableqty As String = row.Cells(7).Value
 
                     If allowtoaddrow = "Y" Then
 
                     ElseIf allowtoaddrow = "N" Then
                         UpdateClass.UpdateStatusReq(id)
                     End If
-                    InsertionClass.SaveAssignmentDetails(Double.Parse(qty), Propertycode, headid, user, ItemCode)
+                    InsertionClass.SaveAssignmentDetails(Double.Parse(qty), Propertycode, headid, user, ItemCode, Availableqty)
 
                 End If
             Next
@@ -192,14 +188,11 @@
 
                     'Check if the Item is Consumable or Non-Consumable
                     If FetchClass.CheckifCosumable(itemcode) Is Nothing Then
-
-                        row.Cells(4).ReadOnly = False
-
-                    Else
-
                         row.Cells(4).Value = "1"
                         row.Cells(4).ReadOnly = True
-
+                    Else
+                        row.Cells(4).Value = ""
+                        row.Cells(4).ReadOnly = False
                     End If
 
                     'Clear if no Available Assets
@@ -230,5 +223,13 @@
 
     End Sub
 
-
+    Private Sub Assignment1_Leave(sender As Object, e As EventArgs) Handles MyBase.Leave
+        If winstatemax = True Then
+            Home.IsMdiContainer = False
+            winstatemax = False
+            Me.Dispose()
+        Else
+            Me.Dispose()
+        End If
+    End Sub
 End Class

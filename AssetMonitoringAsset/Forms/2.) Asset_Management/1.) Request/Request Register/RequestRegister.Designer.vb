@@ -22,6 +22,7 @@ Partial Class RequestRegister
         Me.PanelControl2 = New DevExpress.XtraEditors.PanelControl()
         Me.dgv = New System.Windows.Forms.DataGridView()
         Me.PanelControl3 = New DevExpress.XtraEditors.PanelControl()
+        Me.Guna2CircleButton1 = New Guna.UI2.WinForms.Guna2CircleButton()
         Me.RadioButton4 = New System.Windows.Forms.RadioButton()
         Me.RadioButton3 = New System.Windows.Forms.RadioButton()
         Me.RadioButton2 = New System.Windows.Forms.RadioButton()
@@ -45,11 +46,13 @@ Partial Class RequestRegister
         '
         'PanelControl2
         '
+        Me.PanelControl2.Anchor = CType((((System.Windows.Forms.AnchorStyles.Top Or System.Windows.Forms.AnchorStyles.Bottom) _
+            Or System.Windows.Forms.AnchorStyles.Left) _
+            Or System.Windows.Forms.AnchorStyles.Right), System.Windows.Forms.AnchorStyles)
         Me.PanelControl2.Controls.Add(Me.dgv)
-        Me.PanelControl2.Dock = System.Windows.Forms.DockStyle.Bottom
         Me.PanelControl2.Location = New System.Drawing.Point(5, 112)
         Me.PanelControl2.Name = "PanelControl2"
-        Me.PanelControl2.Size = New System.Drawing.Size(1018, 438)
+        Me.PanelControl2.Size = New System.Drawing.Size(1077, 438)
         Me.PanelControl2.TabIndex = 3
         '
         'dgv
@@ -64,22 +67,44 @@ Partial Class RequestRegister
         Me.dgv.Location = New System.Drawing.Point(2, 2)
         Me.dgv.Name = "dgv"
         Me.dgv.SelectionMode = System.Windows.Forms.DataGridViewSelectionMode.FullRowSelect
-        Me.dgv.Size = New System.Drawing.Size(1014, 434)
+        Me.dgv.Size = New System.Drawing.Size(1073, 434)
         Me.dgv.TabIndex = 1
         '
         'PanelControl3
         '
+        Me.PanelControl3.Anchor = CType(((System.Windows.Forms.AnchorStyles.Top Or System.Windows.Forms.AnchorStyles.Left) _
+            Or System.Windows.Forms.AnchorStyles.Right), System.Windows.Forms.AnchorStyles)
+        Me.PanelControl3.Controls.Add(Me.Guna2CircleButton1)
         Me.PanelControl3.Controls.Add(Me.RadioButton4)
         Me.PanelControl3.Controls.Add(Me.RadioButton3)
         Me.PanelControl3.Controls.Add(Me.RadioButton2)
         Me.PanelControl3.Controls.Add(Me.RadioButton1)
         Me.PanelControl3.Controls.Add(Me.GroupBox2)
         Me.PanelControl3.Controls.Add(Me.GroupBox1)
-        Me.PanelControl3.Dock = System.Windows.Forms.DockStyle.Top
         Me.PanelControl3.Location = New System.Drawing.Point(5, 5)
         Me.PanelControl3.Name = "PanelControl3"
-        Me.PanelControl3.Size = New System.Drawing.Size(1018, 101)
+        Me.PanelControl3.Size = New System.Drawing.Size(1077, 101)
         Me.PanelControl3.TabIndex = 1
+        '
+        'Guna2CircleButton1
+        '
+        Me.Guna2CircleButton1.Anchor = CType((System.Windows.Forms.AnchorStyles.Top Or System.Windows.Forms.AnchorStyles.Right), System.Windows.Forms.AnchorStyles)
+        Me.Guna2CircleButton1.Animated = True
+        Me.Guna2CircleButton1.BackColor = System.Drawing.Color.Transparent
+        Me.Guna2CircleButton1.DisabledState.BorderColor = System.Drawing.Color.DarkGray
+        Me.Guna2CircleButton1.DisabledState.CustomBorderColor = System.Drawing.Color.DarkGray
+        Me.Guna2CircleButton1.DisabledState.FillColor = System.Drawing.Color.FromArgb(CType(CType(169, Byte), Integer), CType(CType(169, Byte), Integer), CType(CType(169, Byte), Integer))
+        Me.Guna2CircleButton1.DisabledState.ForeColor = System.Drawing.Color.FromArgb(CType(CType(141, Byte), Integer), CType(CType(141, Byte), Integer), CType(CType(141, Byte), Integer))
+        Me.Guna2CircleButton1.Font = New System.Drawing.Font("Arial Rounded MT Bold", 9.75!)
+        Me.Guna2CircleButton1.ForeColor = System.Drawing.Color.White
+        Me.Guna2CircleButton1.HoverState.BorderColor = System.Drawing.Color.FromArgb(CType(CType(128, Byte), Integer), CType(CType(255, Byte), Integer), CType(CType(255, Byte), Integer))
+        Me.Guna2CircleButton1.IndicateFocus = True
+        Me.Guna2CircleButton1.Location = New System.Drawing.Point(1041, 5)
+        Me.Guna2CircleButton1.Name = "Guna2CircleButton1"
+        Me.Guna2CircleButton1.ShadowDecoration.Mode = Guna.UI2.WinForms.Enums.ShadowMode.Circle
+        Me.Guna2CircleButton1.Size = New System.Drawing.Size(31, 25)
+        Me.Guna2CircleButton1.TabIndex = 59
+        Me.Guna2CircleButton1.Text = "X"
         '
         'RadioButton4
         '
@@ -211,16 +236,20 @@ Partial Class RequestRegister
         '
         Me.AutoScaleDimensions = New System.Drawing.SizeF(6.0!, 13.0!)
         Me.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font
-        Me.ClientSize = New System.Drawing.Size(1028, 555)
+        Me.AutoSizeMode = System.Windows.Forms.AutoSizeMode.GrowAndShrink
+        Me.ClientSize = New System.Drawing.Size(1087, 555)
+        Me.ControlBox = False
         Me.Controls.Add(Me.PanelControl3)
         Me.Controls.Add(Me.PanelControl2)
+        Me.FormBorderEffect = DevExpress.XtraEditors.FormBorderEffect.None
+        Me.FormBorderStyle = System.Windows.Forms.FormBorderStyle.FixedSingle
         Me.IconOptions.ShowIcon = False
         Me.MaximizeBox = False
         Me.MinimizeBox = False
         Me.Name = "RequestRegister"
         Me.Padding = New System.Windows.Forms.Padding(5)
         Me.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen
-        Me.Text = "Request Register"
+        Me.WindowState = System.Windows.Forms.FormWindowState.Maximized
         CType(Me.PanelControl2, System.ComponentModel.ISupportInitialize).EndInit()
         Me.PanelControl2.ResumeLayout(False)
         CType(Me.dgv, System.ComponentModel.ISupportInitialize).EndInit()
@@ -250,4 +279,5 @@ Partial Class RequestRegister
     Friend WithEvents RadioButton2 As RadioButton
     Friend WithEvents RadioButton1 As RadioButton
     Friend WithEvents RadioButton4 As RadioButton
+    Friend WithEvents Guna2CircleButton1 As Guna.UI2.WinForms.Guna2CircleButton
 End Class
