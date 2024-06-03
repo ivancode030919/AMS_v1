@@ -55,12 +55,6 @@ Partial Public Class DataClasses1DataContext
     End Sub
   Partial Private Sub DeletetblReference(instance As tblReference)
     End Sub
-  Partial Private Sub InserttblRequestDetail(instance As tblRequestDetail)
-    End Sub
-  Partial Private Sub UpdatetblRequestDetail(instance As tblRequestDetail)
-    End Sub
-  Partial Private Sub DeletetblRequestDetail(instance As tblRequestDetail)
-    End Sub
   Partial Private Sub InserttblAllocationHeader(instance As tblAllocationHeader)
     End Sub
   Partial Private Sub UpdatetblAllocationHeader(instance As tblAllocationHeader)
@@ -211,6 +205,12 @@ Partial Public Class DataClasses1DataContext
     End Sub
   Partial Private Sub DeletetblAssetInventory(instance As tblAssetInventory)
     End Sub
+  Partial Private Sub InserttblRequestDetail(instance As tblRequestDetail)
+    End Sub
+  Partial Private Sub UpdatetblRequestDetail(instance As tblRequestDetail)
+    End Sub
+  Partial Private Sub DeletetblRequestDetail(instance As tblRequestDetail)
+    End Sub
   #End Region
 	
 	Public Sub New()
@@ -259,12 +259,6 @@ Partial Public Class DataClasses1DataContext
 	Public ReadOnly Property tblReferences() As System.Data.Linq.Table(Of tblReference)
 		Get
 			Return Me.GetTable(Of tblReference)
-		End Get
-	End Property
-	
-	Public ReadOnly Property tblRequestDetails() As System.Data.Linq.Table(Of tblRequestDetail)
-		Get
-			Return Me.GetTable(Of tblRequestDetail)
 		End Get
 	End Property
 	
@@ -415,6 +409,12 @@ Partial Public Class DataClasses1DataContext
 	Public ReadOnly Property tblAssetInventories() As System.Data.Linq.Table(Of tblAssetInventory)
 		Get
 			Return Me.GetTable(Of tblAssetInventory)
+		End Get
+	End Property
+	
+	Public ReadOnly Property tblRequestDetails() As System.Data.Linq.Table(Of tblRequestDetail)
+		Get
+			Return Me.GetTable(Of tblRequestDetail)
 		End Get
 	End Property
 	
@@ -1396,508 +1396,6 @@ Partial Public Class tblReference
 				Me._Reference = value
 				Me.SendPropertyChanged("Reference")
 				Me.OnReferenceChanged
-			End If
-		End Set
-	End Property
-	
-	Public Event PropertyChanging As PropertyChangingEventHandler Implements System.ComponentModel.INotifyPropertyChanging.PropertyChanging
-	
-	Public Event PropertyChanged As PropertyChangedEventHandler Implements System.ComponentModel.INotifyPropertyChanged.PropertyChanged
-	
-	Protected Overridable Sub SendPropertyChanging()
-		If ((Me.PropertyChangingEvent Is Nothing)  _
-					= false) Then
-			RaiseEvent PropertyChanging(Me, emptyChangingEventArgs)
-		End If
-	End Sub
-	
-	Protected Overridable Sub SendPropertyChanged(ByVal propertyName As [String])
-		If ((Me.PropertyChangedEvent Is Nothing)  _
-					= false) Then
-			RaiseEvent PropertyChanged(Me, New PropertyChangedEventArgs(propertyName))
-		End If
-	End Sub
-End Class
-
-<Global.System.Data.Linq.Mapping.TableAttribute(Name:="dbo.tblRequestDetail")>  _
-Partial Public Class tblRequestDetail
-	Implements System.ComponentModel.INotifyPropertyChanging, System.ComponentModel.INotifyPropertyChanged
-	
-	Private Shared emptyChangingEventArgs As PropertyChangingEventArgs = New PropertyChangingEventArgs(String.Empty)
-	
-	Private _id As Integer
-	
-	Private _AssetCode As System.Nullable(Of Integer)
-	
-	Private _PropertyCode As String
-	
-	Private _Class As String
-	
-	Private _Description As String
-	
-	Private _Borrowee As System.Nullable(Of Integer)
-	
-	Private _Owner As System.Nullable(Of Integer)
-	
-	Private _Qty As System.Nullable(Of Double)
-	
-	Private _DateFrom As System.Nullable(Of Date)
-	
-	Private _DateTo As System.Nullable(Of Date)
-	
-	Private _Time As String
-	
-	Private _Remarks As String
-	
-	Private _NewOwner As System.Nullable(Of Integer)
-	
-	Private _Status As String
-	
-	Private _State As String
-	
-	Private _Status2 As String
-	
-	Private _HeaderID As System.Nullable(Of Integer)
-	
-	Private _Approve1 As System.Nullable(Of Integer)
-	
-	Private _Approve2 As System.Nullable(Of Integer)
-	
-	Private _Approve3 As System.Nullable(Of Integer)
-	
-	Private _Approve4 As System.Nullable(Of Integer)
-	
-    #Region "Extensibility Method Definitions"
-    Partial Private Sub OnLoaded()
-    End Sub
-    Partial Private Sub OnValidate(action As System.Data.Linq.ChangeAction)
-    End Sub
-    Partial Private Sub OnCreated()
-    End Sub
-    Partial Private Sub OnidChanging(value As Integer)
-    End Sub
-    Partial Private Sub OnidChanged()
-    End Sub
-    Partial Private Sub OnAssetCodeChanging(value As System.Nullable(Of Integer))
-    End Sub
-    Partial Private Sub OnAssetCodeChanged()
-    End Sub
-    Partial Private Sub OnPropertyCodeChanging(value As String)
-    End Sub
-    Partial Private Sub OnPropertyCodeChanged()
-    End Sub
-    Partial Private Sub OnClassChanging(value As String)
-    End Sub
-    Partial Private Sub OnClassChanged()
-    End Sub
-    Partial Private Sub OnDescriptionChanging(value As String)
-    End Sub
-    Partial Private Sub OnDescriptionChanged()
-    End Sub
-    Partial Private Sub OnBorroweeChanging(value As System.Nullable(Of Integer))
-    End Sub
-    Partial Private Sub OnBorroweeChanged()
-    End Sub
-    Partial Private Sub OnOwnerChanging(value As System.Nullable(Of Integer))
-    End Sub
-    Partial Private Sub OnOwnerChanged()
-    End Sub
-    Partial Private Sub OnQtyChanging(value As System.Nullable(Of Double))
-    End Sub
-    Partial Private Sub OnQtyChanged()
-    End Sub
-    Partial Private Sub OnDateFromChanging(value As System.Nullable(Of Date))
-    End Sub
-    Partial Private Sub OnDateFromChanged()
-    End Sub
-    Partial Private Sub OnDateToChanging(value As System.Nullable(Of Date))
-    End Sub
-    Partial Private Sub OnDateToChanged()
-    End Sub
-    Partial Private Sub OnTimeChanging(value As String)
-    End Sub
-    Partial Private Sub OnTimeChanged()
-    End Sub
-    Partial Private Sub OnRemarksChanging(value As String)
-    End Sub
-    Partial Private Sub OnRemarksChanged()
-    End Sub
-    Partial Private Sub OnNewOwnerChanging(value As System.Nullable(Of Integer))
-    End Sub
-    Partial Private Sub OnNewOwnerChanged()
-    End Sub
-    Partial Private Sub OnStatusChanging(value As String)
-    End Sub
-    Partial Private Sub OnStatusChanged()
-    End Sub
-    Partial Private Sub OnStateChanging(value As String)
-    End Sub
-    Partial Private Sub OnStateChanged()
-    End Sub
-    Partial Private Sub OnStatus2Changing(value As String)
-    End Sub
-    Partial Private Sub OnStatus2Changed()
-    End Sub
-    Partial Private Sub OnHeaderIDChanging(value As System.Nullable(Of Integer))
-    End Sub
-    Partial Private Sub OnHeaderIDChanged()
-    End Sub
-    Partial Private Sub OnApprove1Changing(value As System.Nullable(Of Integer))
-    End Sub
-    Partial Private Sub OnApprove1Changed()
-    End Sub
-    Partial Private Sub OnApprove2Changing(value As System.Nullable(Of Integer))
-    End Sub
-    Partial Private Sub OnApprove2Changed()
-    End Sub
-    Partial Private Sub OnApprove3Changing(value As System.Nullable(Of Integer))
-    End Sub
-    Partial Private Sub OnApprove3Changed()
-    End Sub
-    Partial Private Sub OnApprove4Changing(value As System.Nullable(Of Integer))
-    End Sub
-    Partial Private Sub OnApprove4Changed()
-    End Sub
-    #End Region
-	
-	Public Sub New()
-		MyBase.New
-		OnCreated
-	End Sub
-	
-	<Global.System.Data.Linq.Mapping.ColumnAttribute(Storage:="_id", AutoSync:=AutoSync.OnInsert, DbType:="Int NOT NULL IDENTITY", IsPrimaryKey:=true, IsDbGenerated:=true)>  _
-	Public Property id() As Integer
-		Get
-			Return Me._id
-		End Get
-		Set
-			If ((Me._id = value)  _
-						= false) Then
-				Me.OnidChanging(value)
-				Me.SendPropertyChanging
-				Me._id = value
-				Me.SendPropertyChanged("id")
-				Me.OnidChanged
-			End If
-		End Set
-	End Property
-	
-	<Global.System.Data.Linq.Mapping.ColumnAttribute(Storage:="_AssetCode", DbType:="Int")>  _
-	Public Property AssetCode() As System.Nullable(Of Integer)
-		Get
-			Return Me._AssetCode
-		End Get
-		Set
-			If (Me._AssetCode.Equals(value) = false) Then
-				Me.OnAssetCodeChanging(value)
-				Me.SendPropertyChanging
-				Me._AssetCode = value
-				Me.SendPropertyChanged("AssetCode")
-				Me.OnAssetCodeChanged
-			End If
-		End Set
-	End Property
-	
-	<Global.System.Data.Linq.Mapping.ColumnAttribute(Storage:="_PropertyCode", DbType:="VarChar(MAX)")>  _
-	Public Property PropertyCode() As String
-		Get
-			Return Me._PropertyCode
-		End Get
-		Set
-			If (String.Equals(Me._PropertyCode, value) = false) Then
-				Me.OnPropertyCodeChanging(value)
-				Me.SendPropertyChanging
-				Me._PropertyCode = value
-				Me.SendPropertyChanged("PropertyCode")
-				Me.OnPropertyCodeChanged
-			End If
-		End Set
-	End Property
-	
-	<Global.System.Data.Linq.Mapping.ColumnAttribute(Name:="Class", Storage:="_Class", DbType:="VarChar(MAX)")>  _
-	Public Property [Class]() As String
-		Get
-			Return Me._Class
-		End Get
-		Set
-			If (String.Equals(Me._Class, value) = false) Then
-				Me.OnClassChanging(value)
-				Me.SendPropertyChanging
-				Me._Class = value
-				Me.SendPropertyChanged("[Class]")
-				Me.OnClassChanged
-			End If
-		End Set
-	End Property
-	
-	<Global.System.Data.Linq.Mapping.ColumnAttribute(Storage:="_Description", DbType:="VarChar(MAX)")>  _
-	Public Property Description() As String
-		Get
-			Return Me._Description
-		End Get
-		Set
-			If (String.Equals(Me._Description, value) = false) Then
-				Me.OnDescriptionChanging(value)
-				Me.SendPropertyChanging
-				Me._Description = value
-				Me.SendPropertyChanged("Description")
-				Me.OnDescriptionChanged
-			End If
-		End Set
-	End Property
-	
-	<Global.System.Data.Linq.Mapping.ColumnAttribute(Storage:="_Borrowee", DbType:="Int")>  _
-	Public Property Borrowee() As System.Nullable(Of Integer)
-		Get
-			Return Me._Borrowee
-		End Get
-		Set
-			If (Me._Borrowee.Equals(value) = false) Then
-				Me.OnBorroweeChanging(value)
-				Me.SendPropertyChanging
-				Me._Borrowee = value
-				Me.SendPropertyChanged("Borrowee")
-				Me.OnBorroweeChanged
-			End If
-		End Set
-	End Property
-	
-	<Global.System.Data.Linq.Mapping.ColumnAttribute(Storage:="_Owner", DbType:="Int")>  _
-	Public Property Owner() As System.Nullable(Of Integer)
-		Get
-			Return Me._Owner
-		End Get
-		Set
-			If (Me._Owner.Equals(value) = false) Then
-				Me.OnOwnerChanging(value)
-				Me.SendPropertyChanging
-				Me._Owner = value
-				Me.SendPropertyChanged("Owner")
-				Me.OnOwnerChanged
-			End If
-		End Set
-	End Property
-	
-	<Global.System.Data.Linq.Mapping.ColumnAttribute(Storage:="_Qty", DbType:="Float")>  _
-	Public Property Qty() As System.Nullable(Of Double)
-		Get
-			Return Me._Qty
-		End Get
-		Set
-			If (Me._Qty.Equals(value) = false) Then
-				Me.OnQtyChanging(value)
-				Me.SendPropertyChanging
-				Me._Qty = value
-				Me.SendPropertyChanged("Qty")
-				Me.OnQtyChanged
-			End If
-		End Set
-	End Property
-	
-	<Global.System.Data.Linq.Mapping.ColumnAttribute(Storage:="_DateFrom", DbType:="Date")>  _
-	Public Property DateFrom() As System.Nullable(Of Date)
-		Get
-			Return Me._DateFrom
-		End Get
-		Set
-			If (Me._DateFrom.Equals(value) = false) Then
-				Me.OnDateFromChanging(value)
-				Me.SendPropertyChanging
-				Me._DateFrom = value
-				Me.SendPropertyChanged("DateFrom")
-				Me.OnDateFromChanged
-			End If
-		End Set
-	End Property
-	
-	<Global.System.Data.Linq.Mapping.ColumnAttribute(Storage:="_DateTo", DbType:="Date")>  _
-	Public Property DateTo() As System.Nullable(Of Date)
-		Get
-			Return Me._DateTo
-		End Get
-		Set
-			If (Me._DateTo.Equals(value) = false) Then
-				Me.OnDateToChanging(value)
-				Me.SendPropertyChanging
-				Me._DateTo = value
-				Me.SendPropertyChanged("DateTo")
-				Me.OnDateToChanged
-			End If
-		End Set
-	End Property
-	
-	<Global.System.Data.Linq.Mapping.ColumnAttribute(Storage:="_Time", DbType:="VarChar(MAX)")>  _
-	Public Property Time() As String
-		Get
-			Return Me._Time
-		End Get
-		Set
-			If (String.Equals(Me._Time, value) = false) Then
-				Me.OnTimeChanging(value)
-				Me.SendPropertyChanging
-				Me._Time = value
-				Me.SendPropertyChanged("Time")
-				Me.OnTimeChanged
-			End If
-		End Set
-	End Property
-	
-	<Global.System.Data.Linq.Mapping.ColumnAttribute(Storage:="_Remarks", DbType:="VarChar(MAX)")>  _
-	Public Property Remarks() As String
-		Get
-			Return Me._Remarks
-		End Get
-		Set
-			If (String.Equals(Me._Remarks, value) = false) Then
-				Me.OnRemarksChanging(value)
-				Me.SendPropertyChanging
-				Me._Remarks = value
-				Me.SendPropertyChanged("Remarks")
-				Me.OnRemarksChanged
-			End If
-		End Set
-	End Property
-	
-	<Global.System.Data.Linq.Mapping.ColumnAttribute(Storage:="_NewOwner", DbType:="Int")>  _
-	Public Property NewOwner() As System.Nullable(Of Integer)
-		Get
-			Return Me._NewOwner
-		End Get
-		Set
-			If (Me._NewOwner.Equals(value) = false) Then
-				Me.OnNewOwnerChanging(value)
-				Me.SendPropertyChanging
-				Me._NewOwner = value
-				Me.SendPropertyChanged("NewOwner")
-				Me.OnNewOwnerChanged
-			End If
-		End Set
-	End Property
-	
-	<Global.System.Data.Linq.Mapping.ColumnAttribute(Storage:="_Status", DbType:="VarChar(MAX)")>  _
-	Public Property Status() As String
-		Get
-			Return Me._Status
-		End Get
-		Set
-			If (String.Equals(Me._Status, value) = false) Then
-				Me.OnStatusChanging(value)
-				Me.SendPropertyChanging
-				Me._Status = value
-				Me.SendPropertyChanged("Status")
-				Me.OnStatusChanged
-			End If
-		End Set
-	End Property
-	
-	<Global.System.Data.Linq.Mapping.ColumnAttribute(Storage:="_State", DbType:="VarChar(MAX)")>  _
-	Public Property State() As String
-		Get
-			Return Me._State
-		End Get
-		Set
-			If (String.Equals(Me._State, value) = false) Then
-				Me.OnStateChanging(value)
-				Me.SendPropertyChanging
-				Me._State = value
-				Me.SendPropertyChanged("State")
-				Me.OnStateChanged
-			End If
-		End Set
-	End Property
-	
-	<Global.System.Data.Linq.Mapping.ColumnAttribute(Storage:="_Status2", DbType:="VarChar(MAX)")>  _
-	Public Property Status2() As String
-		Get
-			Return Me._Status2
-		End Get
-		Set
-			If (String.Equals(Me._Status2, value) = false) Then
-				Me.OnStatus2Changing(value)
-				Me.SendPropertyChanging
-				Me._Status2 = value
-				Me.SendPropertyChanged("Status2")
-				Me.OnStatus2Changed
-			End If
-		End Set
-	End Property
-	
-	<Global.System.Data.Linq.Mapping.ColumnAttribute(Storage:="_HeaderID", DbType:="Int")>  _
-	Public Property HeaderID() As System.Nullable(Of Integer)
-		Get
-			Return Me._HeaderID
-		End Get
-		Set
-			If (Me._HeaderID.Equals(value) = false) Then
-				Me.OnHeaderIDChanging(value)
-				Me.SendPropertyChanging
-				Me._HeaderID = value
-				Me.SendPropertyChanged("HeaderID")
-				Me.OnHeaderIDChanged
-			End If
-		End Set
-	End Property
-	
-	<Global.System.Data.Linq.Mapping.ColumnAttribute(Storage:="_Approve1", DbType:="Int")>  _
-	Public Property Approve1() As System.Nullable(Of Integer)
-		Get
-			Return Me._Approve1
-		End Get
-		Set
-			If (Me._Approve1.Equals(value) = false) Then
-				Me.OnApprove1Changing(value)
-				Me.SendPropertyChanging
-				Me._Approve1 = value
-				Me.SendPropertyChanged("Approve1")
-				Me.OnApprove1Changed
-			End If
-		End Set
-	End Property
-	
-	<Global.System.Data.Linq.Mapping.ColumnAttribute(Storage:="_Approve2", DbType:="Int")>  _
-	Public Property Approve2() As System.Nullable(Of Integer)
-		Get
-			Return Me._Approve2
-		End Get
-		Set
-			If (Me._Approve2.Equals(value) = false) Then
-				Me.OnApprove2Changing(value)
-				Me.SendPropertyChanging
-				Me._Approve2 = value
-				Me.SendPropertyChanged("Approve2")
-				Me.OnApprove2Changed
-			End If
-		End Set
-	End Property
-	
-	<Global.System.Data.Linq.Mapping.ColumnAttribute(Storage:="_Approve3", DbType:="Int")>  _
-	Public Property Approve3() As System.Nullable(Of Integer)
-		Get
-			Return Me._Approve3
-		End Get
-		Set
-			If (Me._Approve3.Equals(value) = false) Then
-				Me.OnApprove3Changing(value)
-				Me.SendPropertyChanging
-				Me._Approve3 = value
-				Me.SendPropertyChanged("Approve3")
-				Me.OnApprove3Changed
-			End If
-		End Set
-	End Property
-	
-	<Global.System.Data.Linq.Mapping.ColumnAttribute(Storage:="_Approve4", DbType:="Int")>  _
-	Public Property Approve4() As System.Nullable(Of Integer)
-		Get
-			Return Me._Approve4
-		End Get
-		Set
-			If (Me._Approve4.Equals(value) = false) Then
-				Me.OnApprove4Changing(value)
-				Me.SendPropertyChanging
-				Me._Approve4 = value
-				Me.SendPropertyChanged("Approve4")
-				Me.OnApprove4Changed
 			End If
 		End Set
 	End Property
@@ -7364,6 +6862,508 @@ Partial Public Class tblAssetInventory
 				Me._Returned = value
 				Me.SendPropertyChanged("Returned")
 				Me.OnReturnedChanged
+			End If
+		End Set
+	End Property
+	
+	Public Event PropertyChanging As PropertyChangingEventHandler Implements System.ComponentModel.INotifyPropertyChanging.PropertyChanging
+	
+	Public Event PropertyChanged As PropertyChangedEventHandler Implements System.ComponentModel.INotifyPropertyChanged.PropertyChanged
+	
+	Protected Overridable Sub SendPropertyChanging()
+		If ((Me.PropertyChangingEvent Is Nothing)  _
+					= false) Then
+			RaiseEvent PropertyChanging(Me, emptyChangingEventArgs)
+		End If
+	End Sub
+	
+	Protected Overridable Sub SendPropertyChanged(ByVal propertyName As [String])
+		If ((Me.PropertyChangedEvent Is Nothing)  _
+					= false) Then
+			RaiseEvent PropertyChanged(Me, New PropertyChangedEventArgs(propertyName))
+		End If
+	End Sub
+End Class
+
+<Global.System.Data.Linq.Mapping.TableAttribute(Name:="dbo.tblRequestDetail")>  _
+Partial Public Class tblRequestDetail
+	Implements System.ComponentModel.INotifyPropertyChanging, System.ComponentModel.INotifyPropertyChanged
+	
+	Private Shared emptyChangingEventArgs As PropertyChangingEventArgs = New PropertyChangingEventArgs(String.Empty)
+	
+	Private _id As Integer
+	
+	Private _AssetCode As System.Nullable(Of Integer)
+	
+	Private _PropertyCode As String
+	
+	Private _Class As String
+	
+	Private _Description As String
+	
+	Private _Borrowee As System.Nullable(Of Integer)
+	
+	Private _Owner As System.Nullable(Of Integer)
+	
+	Private _Qty As System.Nullable(Of Double)
+	
+	Private _DateFrom As System.Nullable(Of Date)
+	
+	Private _DateTo As System.Nullable(Of Date)
+	
+	Private _Time As String
+	
+	Private _Remarks As String
+	
+	Private _NewOwner As System.Nullable(Of Integer)
+	
+	Private _Status As String
+	
+	Private _State As String
+	
+	Private _Status2 As String
+	
+	Private _HeaderID As System.Nullable(Of Integer)
+	
+	Private _Approve1 As System.Nullable(Of Boolean)
+	
+	Private _Approve2 As System.Nullable(Of Boolean)
+	
+	Private _Approve3 As System.Nullable(Of Boolean)
+	
+	Private _Approve4 As System.Nullable(Of Boolean)
+	
+    #Region "Extensibility Method Definitions"
+    Partial Private Sub OnLoaded()
+    End Sub
+    Partial Private Sub OnValidate(action As System.Data.Linq.ChangeAction)
+    End Sub
+    Partial Private Sub OnCreated()
+    End Sub
+    Partial Private Sub OnidChanging(value As Integer)
+    End Sub
+    Partial Private Sub OnidChanged()
+    End Sub
+    Partial Private Sub OnAssetCodeChanging(value As System.Nullable(Of Integer))
+    End Sub
+    Partial Private Sub OnAssetCodeChanged()
+    End Sub
+    Partial Private Sub OnPropertyCodeChanging(value As String)
+    End Sub
+    Partial Private Sub OnPropertyCodeChanged()
+    End Sub
+    Partial Private Sub OnClassChanging(value As String)
+    End Sub
+    Partial Private Sub OnClassChanged()
+    End Sub
+    Partial Private Sub OnDescriptionChanging(value As String)
+    End Sub
+    Partial Private Sub OnDescriptionChanged()
+    End Sub
+    Partial Private Sub OnBorroweeChanging(value As System.Nullable(Of Integer))
+    End Sub
+    Partial Private Sub OnBorroweeChanged()
+    End Sub
+    Partial Private Sub OnOwnerChanging(value As System.Nullable(Of Integer))
+    End Sub
+    Partial Private Sub OnOwnerChanged()
+    End Sub
+    Partial Private Sub OnQtyChanging(value As System.Nullable(Of Double))
+    End Sub
+    Partial Private Sub OnQtyChanged()
+    End Sub
+    Partial Private Sub OnDateFromChanging(value As System.Nullable(Of Date))
+    End Sub
+    Partial Private Sub OnDateFromChanged()
+    End Sub
+    Partial Private Sub OnDateToChanging(value As System.Nullable(Of Date))
+    End Sub
+    Partial Private Sub OnDateToChanged()
+    End Sub
+    Partial Private Sub OnTimeChanging(value As String)
+    End Sub
+    Partial Private Sub OnTimeChanged()
+    End Sub
+    Partial Private Sub OnRemarksChanging(value As String)
+    End Sub
+    Partial Private Sub OnRemarksChanged()
+    End Sub
+    Partial Private Sub OnNewOwnerChanging(value As System.Nullable(Of Integer))
+    End Sub
+    Partial Private Sub OnNewOwnerChanged()
+    End Sub
+    Partial Private Sub OnStatusChanging(value As String)
+    End Sub
+    Partial Private Sub OnStatusChanged()
+    End Sub
+    Partial Private Sub OnStateChanging(value As String)
+    End Sub
+    Partial Private Sub OnStateChanged()
+    End Sub
+    Partial Private Sub OnStatus2Changing(value As String)
+    End Sub
+    Partial Private Sub OnStatus2Changed()
+    End Sub
+    Partial Private Sub OnHeaderIDChanging(value As System.Nullable(Of Integer))
+    End Sub
+    Partial Private Sub OnHeaderIDChanged()
+    End Sub
+    Partial Private Sub OnApprove1Changing(value As System.Nullable(Of Boolean))
+    End Sub
+    Partial Private Sub OnApprove1Changed()
+    End Sub
+    Partial Private Sub OnApprove2Changing(value As System.Nullable(Of Boolean))
+    End Sub
+    Partial Private Sub OnApprove2Changed()
+    End Sub
+    Partial Private Sub OnApprove3Changing(value As System.Nullable(Of Boolean))
+    End Sub
+    Partial Private Sub OnApprove3Changed()
+    End Sub
+    Partial Private Sub OnApprove4Changing(value As System.Nullable(Of Boolean))
+    End Sub
+    Partial Private Sub OnApprove4Changed()
+    End Sub
+    #End Region
+	
+	Public Sub New()
+		MyBase.New
+		OnCreated
+	End Sub
+	
+	<Global.System.Data.Linq.Mapping.ColumnAttribute(Storage:="_id", AutoSync:=AutoSync.OnInsert, DbType:="Int NOT NULL IDENTITY", IsPrimaryKey:=true, IsDbGenerated:=true)>  _
+	Public Property id() As Integer
+		Get
+			Return Me._id
+		End Get
+		Set
+			If ((Me._id = value)  _
+						= false) Then
+				Me.OnidChanging(value)
+				Me.SendPropertyChanging
+				Me._id = value
+				Me.SendPropertyChanged("id")
+				Me.OnidChanged
+			End If
+		End Set
+	End Property
+	
+	<Global.System.Data.Linq.Mapping.ColumnAttribute(Storage:="_AssetCode", DbType:="Int")>  _
+	Public Property AssetCode() As System.Nullable(Of Integer)
+		Get
+			Return Me._AssetCode
+		End Get
+		Set
+			If (Me._AssetCode.Equals(value) = false) Then
+				Me.OnAssetCodeChanging(value)
+				Me.SendPropertyChanging
+				Me._AssetCode = value
+				Me.SendPropertyChanged("AssetCode")
+				Me.OnAssetCodeChanged
+			End If
+		End Set
+	End Property
+	
+	<Global.System.Data.Linq.Mapping.ColumnAttribute(Storage:="_PropertyCode", DbType:="VarChar(MAX)")>  _
+	Public Property PropertyCode() As String
+		Get
+			Return Me._PropertyCode
+		End Get
+		Set
+			If (String.Equals(Me._PropertyCode, value) = false) Then
+				Me.OnPropertyCodeChanging(value)
+				Me.SendPropertyChanging
+				Me._PropertyCode = value
+				Me.SendPropertyChanged("PropertyCode")
+				Me.OnPropertyCodeChanged
+			End If
+		End Set
+	End Property
+	
+	<Global.System.Data.Linq.Mapping.ColumnAttribute(Name:="Class", Storage:="_Class", DbType:="VarChar(MAX)")>  _
+	Public Property [Class]() As String
+		Get
+			Return Me._Class
+		End Get
+		Set
+			If (String.Equals(Me._Class, value) = false) Then
+				Me.OnClassChanging(value)
+				Me.SendPropertyChanging
+				Me._Class = value
+				Me.SendPropertyChanged("[Class]")
+				Me.OnClassChanged
+			End If
+		End Set
+	End Property
+	
+	<Global.System.Data.Linq.Mapping.ColumnAttribute(Storage:="_Description", DbType:="VarChar(MAX)")>  _
+	Public Property Description() As String
+		Get
+			Return Me._Description
+		End Get
+		Set
+			If (String.Equals(Me._Description, value) = false) Then
+				Me.OnDescriptionChanging(value)
+				Me.SendPropertyChanging
+				Me._Description = value
+				Me.SendPropertyChanged("Description")
+				Me.OnDescriptionChanged
+			End If
+		End Set
+	End Property
+	
+	<Global.System.Data.Linq.Mapping.ColumnAttribute(Storage:="_Borrowee", DbType:="Int")>  _
+	Public Property Borrowee() As System.Nullable(Of Integer)
+		Get
+			Return Me._Borrowee
+		End Get
+		Set
+			If (Me._Borrowee.Equals(value) = false) Then
+				Me.OnBorroweeChanging(value)
+				Me.SendPropertyChanging
+				Me._Borrowee = value
+				Me.SendPropertyChanged("Borrowee")
+				Me.OnBorroweeChanged
+			End If
+		End Set
+	End Property
+	
+	<Global.System.Data.Linq.Mapping.ColumnAttribute(Storage:="_Owner", DbType:="Int")>  _
+	Public Property Owner() As System.Nullable(Of Integer)
+		Get
+			Return Me._Owner
+		End Get
+		Set
+			If (Me._Owner.Equals(value) = false) Then
+				Me.OnOwnerChanging(value)
+				Me.SendPropertyChanging
+				Me._Owner = value
+				Me.SendPropertyChanged("Owner")
+				Me.OnOwnerChanged
+			End If
+		End Set
+	End Property
+	
+	<Global.System.Data.Linq.Mapping.ColumnAttribute(Storage:="_Qty", DbType:="Float")>  _
+	Public Property Qty() As System.Nullable(Of Double)
+		Get
+			Return Me._Qty
+		End Get
+		Set
+			If (Me._Qty.Equals(value) = false) Then
+				Me.OnQtyChanging(value)
+				Me.SendPropertyChanging
+				Me._Qty = value
+				Me.SendPropertyChanged("Qty")
+				Me.OnQtyChanged
+			End If
+		End Set
+	End Property
+	
+	<Global.System.Data.Linq.Mapping.ColumnAttribute(Storage:="_DateFrom", DbType:="Date")>  _
+	Public Property DateFrom() As System.Nullable(Of Date)
+		Get
+			Return Me._DateFrom
+		End Get
+		Set
+			If (Me._DateFrom.Equals(value) = false) Then
+				Me.OnDateFromChanging(value)
+				Me.SendPropertyChanging
+				Me._DateFrom = value
+				Me.SendPropertyChanged("DateFrom")
+				Me.OnDateFromChanged
+			End If
+		End Set
+	End Property
+	
+	<Global.System.Data.Linq.Mapping.ColumnAttribute(Storage:="_DateTo", DbType:="Date")>  _
+	Public Property DateTo() As System.Nullable(Of Date)
+		Get
+			Return Me._DateTo
+		End Get
+		Set
+			If (Me._DateTo.Equals(value) = false) Then
+				Me.OnDateToChanging(value)
+				Me.SendPropertyChanging
+				Me._DateTo = value
+				Me.SendPropertyChanged("DateTo")
+				Me.OnDateToChanged
+			End If
+		End Set
+	End Property
+	
+	<Global.System.Data.Linq.Mapping.ColumnAttribute(Storage:="_Time", DbType:="VarChar(MAX)")>  _
+	Public Property Time() As String
+		Get
+			Return Me._Time
+		End Get
+		Set
+			If (String.Equals(Me._Time, value) = false) Then
+				Me.OnTimeChanging(value)
+				Me.SendPropertyChanging
+				Me._Time = value
+				Me.SendPropertyChanged("Time")
+				Me.OnTimeChanged
+			End If
+		End Set
+	End Property
+	
+	<Global.System.Data.Linq.Mapping.ColumnAttribute(Storage:="_Remarks", DbType:="VarChar(MAX)")>  _
+	Public Property Remarks() As String
+		Get
+			Return Me._Remarks
+		End Get
+		Set
+			If (String.Equals(Me._Remarks, value) = false) Then
+				Me.OnRemarksChanging(value)
+				Me.SendPropertyChanging
+				Me._Remarks = value
+				Me.SendPropertyChanged("Remarks")
+				Me.OnRemarksChanged
+			End If
+		End Set
+	End Property
+	
+	<Global.System.Data.Linq.Mapping.ColumnAttribute(Storage:="_NewOwner", DbType:="Int")>  _
+	Public Property NewOwner() As System.Nullable(Of Integer)
+		Get
+			Return Me._NewOwner
+		End Get
+		Set
+			If (Me._NewOwner.Equals(value) = false) Then
+				Me.OnNewOwnerChanging(value)
+				Me.SendPropertyChanging
+				Me._NewOwner = value
+				Me.SendPropertyChanged("NewOwner")
+				Me.OnNewOwnerChanged
+			End If
+		End Set
+	End Property
+	
+	<Global.System.Data.Linq.Mapping.ColumnAttribute(Storage:="_Status", DbType:="VarChar(MAX)")>  _
+	Public Property Status() As String
+		Get
+			Return Me._Status
+		End Get
+		Set
+			If (String.Equals(Me._Status, value) = false) Then
+				Me.OnStatusChanging(value)
+				Me.SendPropertyChanging
+				Me._Status = value
+				Me.SendPropertyChanged("Status")
+				Me.OnStatusChanged
+			End If
+		End Set
+	End Property
+	
+	<Global.System.Data.Linq.Mapping.ColumnAttribute(Storage:="_State", DbType:="VarChar(MAX)")>  _
+	Public Property State() As String
+		Get
+			Return Me._State
+		End Get
+		Set
+			If (String.Equals(Me._State, value) = false) Then
+				Me.OnStateChanging(value)
+				Me.SendPropertyChanging
+				Me._State = value
+				Me.SendPropertyChanged("State")
+				Me.OnStateChanged
+			End If
+		End Set
+	End Property
+	
+	<Global.System.Data.Linq.Mapping.ColumnAttribute(Storage:="_Status2", DbType:="VarChar(MAX)")>  _
+	Public Property Status2() As String
+		Get
+			Return Me._Status2
+		End Get
+		Set
+			If (String.Equals(Me._Status2, value) = false) Then
+				Me.OnStatus2Changing(value)
+				Me.SendPropertyChanging
+				Me._Status2 = value
+				Me.SendPropertyChanged("Status2")
+				Me.OnStatus2Changed
+			End If
+		End Set
+	End Property
+	
+	<Global.System.Data.Linq.Mapping.ColumnAttribute(Storage:="_HeaderID", DbType:="Int")>  _
+	Public Property HeaderID() As System.Nullable(Of Integer)
+		Get
+			Return Me._HeaderID
+		End Get
+		Set
+			If (Me._HeaderID.Equals(value) = false) Then
+				Me.OnHeaderIDChanging(value)
+				Me.SendPropertyChanging
+				Me._HeaderID = value
+				Me.SendPropertyChanged("HeaderID")
+				Me.OnHeaderIDChanged
+			End If
+		End Set
+	End Property
+	
+	<Global.System.Data.Linq.Mapping.ColumnAttribute(Storage:="_Approve1", DbType:="Bit")>  _
+	Public Property Approve1() As System.Nullable(Of Boolean)
+		Get
+			Return Me._Approve1
+		End Get
+		Set
+			If (Me._Approve1.Equals(value) = false) Then
+				Me.OnApprove1Changing(value)
+				Me.SendPropertyChanging
+				Me._Approve1 = value
+				Me.SendPropertyChanged("Approve1")
+				Me.OnApprove1Changed
+			End If
+		End Set
+	End Property
+	
+	<Global.System.Data.Linq.Mapping.ColumnAttribute(Storage:="_Approve2", DbType:="Bit")>  _
+	Public Property Approve2() As System.Nullable(Of Boolean)
+		Get
+			Return Me._Approve2
+		End Get
+		Set
+			If (Me._Approve2.Equals(value) = false) Then
+				Me.OnApprove2Changing(value)
+				Me.SendPropertyChanging
+				Me._Approve2 = value
+				Me.SendPropertyChanged("Approve2")
+				Me.OnApprove2Changed
+			End If
+		End Set
+	End Property
+	
+	<Global.System.Data.Linq.Mapping.ColumnAttribute(Storage:="_Approve3", DbType:="Bit")>  _
+	Public Property Approve3() As System.Nullable(Of Boolean)
+		Get
+			Return Me._Approve3
+		End Get
+		Set
+			If (Me._Approve3.Equals(value) = false) Then
+				Me.OnApprove3Changing(value)
+				Me.SendPropertyChanging
+				Me._Approve3 = value
+				Me.SendPropertyChanged("Approve3")
+				Me.OnApprove3Changed
+			End If
+		End Set
+	End Property
+	
+	<Global.System.Data.Linq.Mapping.ColumnAttribute(Storage:="_Approve4", DbType:="Bit")>  _
+	Public Property Approve4() As System.Nullable(Of Boolean)
+		Get
+			Return Me._Approve4
+		End Get
+		Set
+			If (Me._Approve4.Equals(value) = false) Then
+				Me.OnApprove4Changing(value)
+				Me.SendPropertyChanging
+				Me._Approve4 = value
+				Me.SendPropertyChanged("Approve4")
+				Me.OnApprove4Changed
 			End If
 		End Set
 	End Property

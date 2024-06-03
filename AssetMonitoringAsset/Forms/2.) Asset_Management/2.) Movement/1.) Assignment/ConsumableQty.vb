@@ -2,7 +2,7 @@
     Public rowToEdit, ItemCode, NewOwner As Integer
     Public QtyToDeduct, QtyResult, QtyInDb, AQty As Double
     Public ItemClass, referenceno, ItemDescription, Reference, PropertyCode As String
-
+    Public IsFromReq As Boolean = False
 
     Private Sub QtyCalication()
 
@@ -30,25 +30,54 @@
         ElseIf ComboBox1.Text = "" Then
             MessageBox.Show("Asset condition is invalid...,", "Validation", MessageBoxButtons.OK)
         Else
-            QtyCalication()
 
-            If QtyInDb < QtyToDeduct Then
-                Qtytxt.Text = 0
 
-            ElseIf Qtytxt.Text = 0 Then
-                MessageBox.Show("Quantity must be greater than 0", "Validation", MessageBoxButtons.OK)
+
+
+            If IsFromReq = True Then
+                QtyCalication()
+
+                If QtyInDb < QtyToDeduct Then
+                    Qtytxt.Text = 0
+
+                ElseIf Qtytxt.Text = 0 Then
+                    MessageBox.Show("Quantity must be greater than 0", "Validation", MessageBoxButtons.OK)
+                Else
+
+                    MsgBox("Corect")
+
+                End If
+
             Else
-                Dim NewPropertyCode As String = FetchClass.FetchLastProteryCode(ItemCode)
-                UpdateClass.UpdateAssetQty(PropertyCode, QtyResult)
-                InsertionClass.SaveAssetInventory(ItemCode, ItemClass, NewPropertyCode, ItemDescription, Double.Parse(Qtytxt.Text), NewOwner, NewOwner, 0, Reference, referenceno, "Not Allowed", 0, 0, ComboBox1.Text)
 
-                With Assignment1.dgv
-                    .Rows(rowToEdit).Cells(4).Value = Qtytxt.Text
-                    .Rows(rowToEdit).Cells(9).Value = NewPropertyCode
-                End With
-                MessageBox.Show("Successfully Assigned...", "Confrimation", MessageBoxButtons.OK)
-                Me.Dispose()
+                QtyCalication()
+
+                If QtyInDb < QtyToDeduct Then
+                    Qtytxt.Text = 0
+
+                ElseIf Qtytxt.Text = 0 Then
+                    MessageBox.Show("Quantity must be greater than 0", "Validation", MessageBoxButtons.OK)
+                Else
+
+
+                    Dim NewPropertyCode As String = FetchClass.FetchLastProteryCode(ItemCode)
+                    UpdateClass.UpdateAssetQty(PropertyCode, QtyResult)
+                    InsertionClass.SaveAssetInventory(ItemCode, ItemClass, NewPropertyCode, ItemDescription, Double.Parse(Qtytxt.Text), NewOwner, NewOwner, 0, Reference, referenceno, "Not Allowed", 0, 0, ComboBox1.Text)
+
+                    With Assignment1.dgv
+                        .Rows(rowToEdit).Cells(4).Value = Qtytxt.Text
+                        .Rows(rowToEdit).Cells(9).Value = NewPropertyCode
+                    End With
+                    MessageBox.Show("Successfully Assigned...", "Confrimation", MessageBoxButtons.OK)
+                    Me.Dispose()
+                    AssetList3.Dispose()
+
+
+                End If
+
             End If
+
+
 
         End If
 

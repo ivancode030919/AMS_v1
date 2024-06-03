@@ -102,7 +102,7 @@
 
         With Assignment1
             .Text = String.Empty
-            .allowtoaddrow = "Y"
+            .allowtoaddrow = True
             .winstatemax = True
             .Show()
         End With

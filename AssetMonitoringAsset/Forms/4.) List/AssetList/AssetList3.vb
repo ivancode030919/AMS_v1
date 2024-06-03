@@ -94,11 +94,14 @@
             End With
             Request.checkqtybycat()
             Me.Dispose()
+
         ElseIf modty = 4 Then
+
             Dim CatID As Integer = FetchClass.FetchItemCategory(ac)
             Dim Propertycode As String
 
             If CatID = 5002 Or CatID = 5003 Then
+
                 Dim msg As DialogResult = MessageBox.Show("Please confirm if this is the correct asset.", "Confirmation", MessageBoxButtons.YesNo)
 
                 If msg = DialogResult.Yes Then
@@ -133,12 +136,22 @@
                         .ItemDescription = dgv.Rows(row).Cells(1).Value
                         .Reference = dgv.Rows(row).Cells(7).Value
                         .referenceno = dgv.Rows(row).Cells(8).Value
+
+                        If Assignment1.allowtoaddrow = False Then
+                            .IsFromReq = True
+                        Else
+                            .IsFromReq = False
+                        End If
+
                         .ItemClass = ItemClass
                         .AQty = AssignQty
                         .rowToEdit = rowToEdit
                         .NewOwner = Newowner
                         .ItemCode = ac
                         .ShowDialog()
+
+
+
                     End With
 
                 End If

@@ -2,18 +2,18 @@
 
     Public headerid As Integer
     Public requestor As Integer
-    Public allowtoaddrow As String = "Y"
+    Public allowtoaddrow As Boolean = False
     Public winstatemax As Boolean = False
 
     Private Sub Assignment1_Load(sender As Object, e As EventArgs) Handles MyBase.Load
 
-        If allowtoaddrow = "Y" Then
+        If allowtoaddrow = True Then
 
             dgv.AllowUserToAddRows = True
             TextBox1.Text = FetchClass.FetchAssignmentEntryNumber
             TextBox2.Text = FetchClass.fetchRequestor(Home.EmployeeID)
 
-        ElseIf allowtoaddrow = "N" Then
+        ElseIf allowtoaddrow = False Then
             dgv.AllowUserToAddRows = False
 
         End If
@@ -44,10 +44,10 @@
             .Columns(2).ReadOnly = True
             .Columns(3).ReadOnly = True
 
-            If allowtoaddrow = "N" Then
+            If allowtoaddrow = False Then
                 .Columns(4).ReadOnly = True
                 .Columns(6).Visible = True
-            ElseIf allowtoaddrow = "Y" Then
+            ElseIf allowtoaddrow = True Then
                 .Columns(4).ReadOnly = False
                 .Columns(6).Visible = False
             End If
@@ -72,11 +72,11 @@
         'Try
         Dim row As Integer = dgv.CurrentCell.RowIndex
 
-            If allowtoaddrow = "Y" Then
+        If allowtoaddrow = True Then
 
-                If e.ColumnIndex = 1 Then
+            If e.ColumnIndex = 1 Then
 
-                    With AssetList3
+                With AssetList3
                     .rowToEdit = row
                     .mode1 = 1
                     .modty = 5
@@ -84,17 +84,17 @@
                     .ShowDialog()
                 End With
 
-                ElseIf e.ColumnIndex = 3 Then
+            ElseIf e.ColumnIndex = 3 Then
 
-                    With empllist
+                With empllist
                     .rowToEdit = row
                     .modty = 4
                     .ShowDialog()
-                    End With
+                End With
 
-                ElseIf e.ColumnIndex = 9 Then
+            ElseIf e.ColumnIndex = 9 Then
 
-                    With AssetList3
+                With AssetList3
                     .rowToEdit = row
                     .modty = 4
                     .mode1 = 3
@@ -103,13 +103,13 @@
                     .ItemClass = dgv.Rows(row).Cells(2).Value
                     .ac = dgv.Rows(row).Cells(1).Value
                     .ShowDialog()
-                    End With
+                End With
 
-                End If
+            End If
 
-            ElseIf allowtoaddrow = "N" Then
+        ElseIf allowtoaddrow = False Then
 
-                If e.ColumnIndex = 9 Then
+            If e.ColumnIndex = 9 Then
 
                     With AssetList3
                     .rowToEdit = row
@@ -147,9 +147,9 @@
                     Dim NewOwnerID As String = row.Cells(8).Value
                     Dim Availableqty As String = row.Cells(7).Value
 
-                    If allowtoaddrow = "Y" Then
+                    If allowtoaddrow = True Then
 
-                    ElseIf allowtoaddrow = "N" Then
+                    ElseIf allowtoaddrow = False Then
                         UpdateClass.UpdateStatusReq(id)
                     End If
                     InsertionClass.SaveAssignmentDetails(Double.Parse(qty), Propertycode, headid, user, ItemCode, Availableqty)
@@ -174,7 +174,7 @@
 
     Private Sub dgv_CellValidated(sender As Object, e As DataGridViewCellEventArgs) Handles dgv.CellValidated
 
-        If allowtoaddrow = "Y" Then
+        If allowtoaddrow = True Then
 
             If e.ColumnIndex = 1 Then
 
@@ -217,7 +217,7 @@
 
             End If
 
-        ElseIf allowtoaddrow = "N" Then
+        ElseIf allowtoaddrow = False Then
             ' Handle the case when adding rows is not allowed
         End If
 

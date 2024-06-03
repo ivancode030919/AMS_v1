@@ -143,7 +143,7 @@
 
             .TextBox1.Text = TextBox1.Text
             .TextBox2.Text = TextBox2.Text
-            .allowtoaddrow = "N"
+            .allowtoaddrow = False
 
             .headerid = headerid
             .requestor = requestby

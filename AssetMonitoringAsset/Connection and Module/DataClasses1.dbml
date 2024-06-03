@@ -43,31 +43,6 @@
       <Column Name="Reference" Type="System.String" DbType="VarChar(MAX)" CanBeNull="true" />
     </Type>
   </Table>
-  <Table Name="dbo.tblRequestDetail" Member="tblRequestDetails">
-    <Type Name="tblRequestDetail">
-      <Column Name="id" Type="System.Int32" DbType="Int NOT NULL IDENTITY" IsPrimaryKey="true" IsDbGenerated="true" CanBeNull="false" />
-      <Column Name="AssetCode" Type="System.Int32" DbType="Int" CanBeNull="true" />
-      <Column Name="PropertyCode" Type="System.String" DbType="VarChar(MAX)" CanBeNull="true" />
-      <Column Name="Class" Type="System.String" DbType="VarChar(MAX)" CanBeNull="true" />
-      <Column Name="Description" Type="System.String" DbType="VarChar(MAX)" CanBeNull="true" />
-      <Column Name="Borrowee" Type="System.Int32" DbType="Int" CanBeNull="true" />
-      <Column Name="Owner" Type="System.Int32" DbType="Int" CanBeNull="true" />
-      <Column Name="Qty" Type="System.Double" DbType="Float" CanBeNull="true" />
-      <Column Name="DateFrom" Type="System.DateTime" DbType="Date" CanBeNull="true" />
-      <Column Name="DateTo" Type="System.DateTime" DbType="Date" CanBeNull="true" />
-      <Column Name="Time" Type="System.String" DbType="VarChar(MAX)" CanBeNull="true" />
-      <Column Name="Remarks" Type="System.String" DbType="VarChar(MAX)" CanBeNull="true" />
-      <Column Name="NewOwner" Type="System.Int32" DbType="Int" CanBeNull="true" />
-      <Column Name="Status" Type="System.String" DbType="VarChar(MAX)" CanBeNull="true" />
-      <Column Name="State" Type="System.String" DbType="VarChar(MAX)" CanBeNull="true" />
-      <Column Name="Status2" Type="System.String" DbType="VarChar(MAX)" CanBeNull="true" />
-      <Column Name="HeaderID" Type="System.Int32" DbType="Int" CanBeNull="true" />
-      <Column Name="Approve1" Type="System.Int32" DbType="Int" CanBeNull="true" />
-      <Column Name="Approve2" Type="System.Int32" DbType="Int" CanBeNull="true" />
-      <Column Name="Approve3" Type="System.Int32" DbType="Int" CanBeNull="true" />
-      <Column Name="Approve4" Type="System.Int32" DbType="Int" CanBeNull="true" />
-    </Type>
-  </Table>
   <Table Name="dbo.tblAllocationHeader" Member="tblAllocationHeaders">
     <Type Name="tblAllocationHeader">
       <Column Name="ID" Type="System.Int32" DbType="Int NOT NULL IDENTITY" IsPrimaryKey="true" IsDbGenerated="true" CanBeNull="false" />
@@ -369,6 +344,31 @@
       <Column Name="DateDeployed" Type="System.DateTime" DbType="Date" CanBeNull="true" />
       <Column Name="DateRequestorRecv" Type="System.DateTime" DbType="Date" CanBeNull="true" />
       <Column Name="Returned" Type="System.Boolean" DbType="Bit" CanBeNull="true" />
+    </Type>
+  </Table>
+  <Table Name="dbo.tblRequestDetail" Member="tblRequestDetails">
+    <Type Name="tblRequestDetail">
+      <Column Name="id" Type="System.Int32" DbType="Int NOT NULL IDENTITY" IsPrimaryKey="true" IsDbGenerated="true" CanBeNull="false" />
+      <Column Name="AssetCode" Type="System.Int32" DbType="Int" CanBeNull="true" />
+      <Column Name="PropertyCode" Type="System.String" DbType="VarChar(MAX)" CanBeNull="true" />
+      <Column Name="Class" Type="System.String" DbType="VarChar(MAX)" CanBeNull="true" />
+      <Column Name="Description" Type="System.String" DbType="VarChar(MAX)" CanBeNull="true" />
+      <Column Name="Borrowee" Type="System.Int32" DbType="Int" CanBeNull="true" />
+      <Column Name="Owner" Type="System.Int32" DbType="Int" CanBeNull="true" />
+      <Column Name="Qty" Type="System.Double" DbType="Float" CanBeNull="true" />
+      <Column Name="DateFrom" Type="System.DateTime" DbType="Date" CanBeNull="true" />
+      <Column Name="DateTo" Type="System.DateTime" DbType="Date" CanBeNull="true" />
+      <Column Name="Time" Type="System.String" DbType="VarChar(MAX)" CanBeNull="true" />
+      <Column Name="Remarks" Type="System.String" DbType="VarChar(MAX)" CanBeNull="true" />
+      <Column Name="NewOwner" Type="System.Int32" DbType="Int" CanBeNull="true" />
+      <Column Name="Status" Type="System.String" DbType="VarChar(MAX)" CanBeNull="true" />
+      <Column Name="State" Type="System.String" DbType="VarChar(MAX)" CanBeNull="true" />
+      <Column Name="Status2" Type="System.String" DbType="VarChar(MAX)" CanBeNull="true" />
+      <Column Name="HeaderID" Type="System.Int32" DbType="Int" CanBeNull="true" />
+      <Column Name="Approve1" Type="System.Boolean" DbType="Bit" CanBeNull="true" />
+      <Column Name="Approve2" Type="System.Boolean" DbType="Bit" CanBeNull="true" />
+      <Column Name="Approve3" Type="System.Boolean" DbType="Bit" CanBeNull="true" />
+      <Column Name="Approve4" Type="System.Boolean" DbType="Bit" CanBeNull="true" />
     </Type>
   </Table>
   <Function Name="dbo.spNewAsset" Method="spNewAsset">

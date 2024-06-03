@@ -67,13 +67,16 @@ Public Class importmasterlist
                 If Not row.IsNewRow Then
                     Dim Itemcode As String = row.Cells(0).Value.ToString
                     Dim Description As String = row.Cells(1).Value.ToString
-                    Dim CategoryID As String = FetchClass.FetchCategoryId(row.Cells(2).Value.ToString)
-                    Dim TypeID As String = FetchClass.FetchTypeId(row.Cells(3).Value.ToString)
+                    'Dim CategoryID As String = FetchClass.FetchCategoryId(row.Cells(2).Value.ToString)
+                    'Dim TypeID As String = FetchClass.FetchTypeId(row.Cells(3).Value.ToString)
+                    Dim CategoryID As String = row.Cells(2).Value.ToString
+                    Dim TypeID As String = row.Cells(3).Value.ToString
                     Dim date1 As String = Date.Now.ToString
                     Dim date2 As String = Date.Now.ToString
                     Dim user1 As String = Home.UserID.ToString
                     Dim user2 As String = Home.UserID.ToString
                     Dim AH As String = "0"
+
                     InsertionClass.SaveMasterlistImport(Itemcode, Description, Integer.Parse(CategoryID), Integer.Parse(TypeID), Date.Parse(date1), Date.Parse(date2), Integer.Parse(user1), Integer.Parse(user2), Integer.Parse(AH))
                 End If
             Next

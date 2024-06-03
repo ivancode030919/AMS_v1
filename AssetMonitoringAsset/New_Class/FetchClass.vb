@@ -659,6 +659,56 @@
         End Try
     End Function
 
+    'Check in Asset Inventory if the Item is cosumable
+    Public Shared Function CheckIsConsumable(ByVal itemcodes As String) As Object
+        Try
+
+            Dim querysection = (From s In db.tblmasterlistdetails
+                                Join i In db.tblCategories On s.CategoryID Equals i.CategoryID
+                                Where s.ItemCode = itemcodes And (i.CategoryID = 5004 Or i.CategoryID = 5005)
+                                Select s.ItemCode).FirstOrDefault()
+
+            Return querysection
+
+
+        Catch ex As Exception
+            Return MsgBox("Error.F-38")
+        End Try
+    End Function
+
+    'Get Consumable Property Code
+    Public Shared Function FetchConsumablePropertyCode(ByVal itemcode As String) As Object
+        Try
+            Dim querysection = (From s In db.tblAssetInventories
+                                Join k In db.tblmasterlistdetails On s.AssetCode Equals k.ItemCode
+                                Join i In db.tblCategories On k.CategoryID Equals i.CategoryID
+                                Where s.AssetCode = itemcode And i.CategoryID = 5004 And i.CategoryID = 5005
+                                Select s.PropertyCode).SingleOrDefault
+
+
+            If querysection Is Nothing Then
+
+                Dim getpp = (From s In db.tblmasterlistdetails
+                             Join k In db.tblCategories On s.CategoryID Equals k.CategoryID
+                             Join i In db.tblAssetTypes On s.AssetTypeID Equals i.AssetTypeID
+                             Where s.ItemCode = itemcode
+                             Let c = k.CategoryCode + "-" + i.AssetTypeCode + "-00001"
+                             Select c).SingleOrDefault
+                Return getpp
+
+            Else
+                Return querysection
+
+            End If
+
+
+
+
+        Catch ex As Exception
+            Return MsgBox("Error.F-38")
+        End Try
+    End Function
+
     'Check Request Status
     Public Shared Function FetchRequestStatus(ByVal reqno As String) As Object
         Try
@@ -682,7 +732,6 @@
             Return MsgBox("Error.F-39")
         End Try
     End Function
-
 
     'Check PropertyCode
     Public Shared Function FetchPropertyCode(ByVal PropertyC As String) As Integer
