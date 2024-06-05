@@ -137,9 +137,10 @@ Public Class InsertionClass
                                          ByVal BorrowerStat As String,
                                          ByVal Status1 As String,
                                          ByVal Status2 As String,
-                                         ByVal con As String)
-        Try
-            Dim post As Table(Of tblAssetInventory) = InsertionClass.GetInventory
+                                         ByVal con As String, ByVal IsChildS As Integer,
+                                         ByVal IsChild As Boolean, ByVal IsParent As Boolean)
+        'Try
+        Dim post As Table(Of tblAssetInventory) = InsertionClass.GetInventory
             Dim p As New tblAssetInventory With
                 {
                 .AssetCode = AssetCode,
@@ -155,14 +156,17 @@ Public Class InsertionClass
                 .borrowerStat = BorrowerStat,
                 .Status1 = Status1,
                 .Status2 = Status2,
-                .Condition = con
+                .Condition = con,
+                .IsChildSeries = IsChildS,
+                .IsChild = IsChild,
+                .IsParent = IsParent
                 }
             post.InsertOnSubmit(p)
             post.Context.SubmitChanges()
 
-        Catch ex As Exception
-            MsgBox("Error.I-17")
-        End Try
+        'Catch ex As Exception
+        '    MsgBox("Error.I-17")
+        'End Try
     End Sub
 
 
@@ -746,7 +750,10 @@ Public Class InsertionClass
                .borrowerStat = BorrowerStat,
                .Status1 = Status1,
                .Status2 = Status2,
-               .Condition = Condition
+               .Condition = Condition,
+               .IsChild = False,
+               .IsParent = True,
+               .IsChildSeries = 0
                 }
             post.InsertOnSubmit(p)
             post.Context.SubmitChanges()

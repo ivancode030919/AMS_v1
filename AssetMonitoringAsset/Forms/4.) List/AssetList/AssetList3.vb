@@ -51,6 +51,7 @@
                 .Columns(6).HeaderText = "Section"
                 .Columns(7).Visible = False
                 .Columns(8).Visible = False
+                .Columns(9).Visible = False
             End With
 
         End If
@@ -118,7 +119,7 @@
 
             Else
 
-                Dim msg As DialogResult = MessageBox.Show("Does all quantity need to be assigned? Note:If `NO` it will create separate property code", "Confirmation", MessageBoxButtons.YesNo)
+                Dim msg As DialogResult = MessageBox.Show("Does all quantity need to be assigned ?", "Confirmation", MessageBoxButtons.YesNo)
 
                 If msg = DialogResult.Yes Then
 
@@ -136,6 +137,7 @@
                         .ItemDescription = dgv.Rows(row).Cells(1).Value
                         .Reference = dgv.Rows(row).Cells(7).Value
                         .referenceno = dgv.Rows(row).Cells(8).Value
+                        .InvId = dgv.Rows(row).Cells(9).Value
 
                         If Assignment1.allowtoaddrow = False Then
                             .IsFromReq = True

@@ -2,6 +2,7 @@
 
     'Fetch Last Item Code in New Asset Class
     Public Shared Function FetchLastItemcode() As String
+
         Try
             Dim querysection = (From s In db.tblmasterlistdetails
                                 Order By Convert.ToInt32(s.ItemCode) Descending
@@ -17,6 +18,7 @@
 
     'Fetch HeaderID in BUild Assdet Header
     Public Shared Function FetcHeaderID() As String
+
         Try
             Dim querysection As String = (From s In db.tblBuildHeaders
                                           Order By s.id Descending
@@ -31,6 +33,7 @@
 
     'display Last save Entry Number
     Public Shared Function FetchEntryn1() As String
+
         Try
             Dim querysection As String = (From s In db.tblBuildHeaders
                                           Order By s.id Descending
@@ -625,7 +628,8 @@
             'Else
 
             Dim result = db.spGetLastPropertyCode(ItemCodes).SingleOrDefault()
-                If result IsNot Nothing Then
+
+            If result IsNot Nothing Then
 
                     Dim propertyCode As String = result.PropertyCode
                     Dim parts As String() = propertyCode.Split("-"c)
@@ -642,13 +646,13 @@
 
                 Else
 
-                    Dim querysection = (From s In db.tblmasterlistdetails
-                                        Join k In db.tblCategories On s.CategoryID Equals k.CategoryID
-                                        Join i In db.tblAssetTypes On s.AssetTypeID Equals i.AssetTypeID
-                                        Where s.ItemCode = ItemCodes
-                                        Let c = k.CategoryCode + "-" + i.AssetTypeCode + "00001"
-                                        Select c).SingleOrDefault
-                    Return querysection
+                Dim querysection = (From s In db.tblmasterlistdetails
+                                    Join k In db.tblCategories On s.CategoryID Equals k.CategoryID
+                                    Join i In db.tblAssetTypes On s.AssetTypeID Equals i.AssetTypeID
+                                    Where s.ItemCode = ItemCodes
+                                    Let c = k.CategoryCode + "-" + i.AssetTypeCode + "-00001"
+                                    Select c).SingleOrDefault
+                Return querysection
 
                 End If
 
@@ -656,56 +660,6 @@
 
         Catch ex As Exception
             Return MsgBox("Error.F-37")
-        End Try
-    End Function
-
-    'Check in Asset Inventory if the Item is cosumable
-    Public Shared Function CheckIsConsumable(ByVal itemcodes As String) As Object
-        Try
-
-            Dim querysection = (From s In db.tblmasterlistdetails
-                                Join i In db.tblCategories On s.CategoryID Equals i.CategoryID
-                                Where s.ItemCode = itemcodes And (i.CategoryID = 5004 Or i.CategoryID = 5005)
-                                Select s.ItemCode).FirstOrDefault()
-
-            Return querysection
-
-
-        Catch ex As Exception
-            Return MsgBox("Error.F-38")
-        End Try
-    End Function
-
-    'Get Consumable Property Code
-    Public Shared Function FetchConsumablePropertyCode(ByVal itemcode As String) As Object
-        Try
-            Dim querysection = (From s In db.tblAssetInventories
-                                Join k In db.tblmasterlistdetails On s.AssetCode Equals k.ItemCode
-                                Join i In db.tblCategories On k.CategoryID Equals i.CategoryID
-                                Where s.AssetCode = itemcode And i.CategoryID = 5004 And i.CategoryID = 5005
-                                Select s.PropertyCode).SingleOrDefault
-
-
-            If querysection Is Nothing Then
-
-                Dim getpp = (From s In db.tblmasterlistdetails
-                             Join k In db.tblCategories On s.CategoryID Equals k.CategoryID
-                             Join i In db.tblAssetTypes On s.AssetTypeID Equals i.AssetTypeID
-                             Where s.ItemCode = itemcode
-                             Let c = k.CategoryCode + "-" + i.AssetTypeCode + "-00001"
-                             Select c).SingleOrDefault
-                Return getpp
-
-            Else
-                Return querysection
-
-            End If
-
-
-
-
-        Catch ex As Exception
-            Return MsgBox("Error.F-38")
         End Try
     End Function
 
@@ -760,20 +714,64 @@
     End Function
 
 
-    'Check for Asset Qty For Consumable Assignment
-    Public Shared Function FetchAssetQty(ByVal PC As String) As Object
+    'Check for Asset Qty For Consumable Assignment base on Property Code
+    Public Shared Function FetchAssetQty(ByVal InvId As Integer) As Object
         Try
 
             Dim consumable = (From s In db.tblAssetInventories
-                              Where s.PropertyCode = PC
+                              Where s.InvID = InvId
                               Select s.Qty).SingleOrDefault
             Return consumable
 
         Catch ex As Exception
-            Return MsgBox("Error.F-41")
+            Return MsgBox("Error.F-42")
         End Try
     End Function
 
 
+    'Check for Property if had Child : in Assignmet from Request not stand alone
+    Public Shared Function IsPropertyCodeChild(ByVal InvId As Integer) As Object
+        Try
+
+            Dim consumable = (From s In db.tblAssetInventories
+                              Where s.InvID = InvId
+                              Select s.IsChild).SingleOrDefault
+            Return consumable
+
+        Catch ex As Exception
+            Return MsgBox("Error.F-43")
+        End Try
+    End Function
+
+    'Check for Property if had Child : Get The Last Child
+    Public Shared Function IsLastChild(ByVal PC As String) As Object
+        Try
+
+            Dim consumable = (From s In db.tblAssetInventories
+                              Where s.PropertyCode = PC
+                              Order By s.IsChildSeries Descending
+                              Select s.IsChildSeries).FirstOrDefault()
+            Return consumable
+
+
+        Catch ex As Exception
+            Return MsgBox("Error.F-44")
+        End Try
+    End Function
+
+    'Check for Qty in Request
+    Public Shared Function RequestQty(ByVal id As String) As Object
+        Try
+
+            Dim consumable = (From s In db.tblRequestDetails
+                              Where s.id = id
+                              Select s.Qty).FirstOrDefault()
+            Return consumable
+
+        Catch ex As Exception
+            Return MsgBox("Error.F-45")
+        End Try
+
+    End Function
 
 End Class

@@ -27,17 +27,7 @@
     Private Sub SimpleButton1_Click(sender As Object, e As EventArgs) Handles SimpleButton1.Click
         If SimpleButton1.Text = "Receive" Then
 
-            Dim IsConsumable As Integer = FetchClass.CheckIsConsumable(ItemCode)
-
-            If IsConsumable <= 0 Then
-
-                Label1.Text = FetchClass.FetchLastProteryCode(ItemCode)
-
-            Else
-                Label1.Text = FetchClass.FetchConsumablePropertyCode(ItemCode)
-
-            End If
-
+            Label1.Text = FetchClass.FetchLastProteryCode(ItemCode)
             Me.Size = New Size(294, 310)
             SimpleButton1.Text = "Generate"
             SimpleButton2.Text = "Cancel"

@@ -1,12 +1,15 @@
 ﻿Public Class ConsumableQty
-    Public rowToEdit, ItemCode, NewOwner As Integer
+    Public rowToEdit, ItemCode, NewOwner, InvId As Integer
     Public QtyToDeduct, QtyResult, QtyInDb, AQty As Double
     Public ItemClass, referenceno, ItemDescription, Reference, PropertyCode As String
     Public IsFromReq As Boolean = False
 
     Private Sub QtyCalication()
 
-        QtyInDb = FetchClass.FetchAssetQty(PropertyCode)
+
+
+        QtyInDb = FetchClass.FetchAssetQty(InvId)
+
         QtyToDeduct = Qtytxt.Text
 
         If QtyInDb < QtyToDeduct Then
@@ -19,54 +22,47 @@
 
     End Sub
 
-    Private Sub Qtytxt_TextChanged(sender As Object, e As EventArgs) Handles Qtytxt.TextChanged
-
-    End Sub
-
     Private Sub SimpleButton2_Click(sender As Object, e As EventArgs) Handles SimpleButton2.Click
 
         If Qtytxt.Text = "" Then
             MessageBox.Show("Quantity must be greater than 0", "Validation", MessageBoxButtons.OK)
         ElseIf ComboBox1.Text = "" Then
-            MessageBox.Show("Asset condition is invalid...,", "Validation", MessageBoxButtons.OK)
+            MessageBox.Show("Invali Input in Asset Condition", "Validation", MessageBoxButtons.OK)
         Else
 
+            QtyCalication()
 
+            If QtyInDb < QtyToDeduct Then
+                Qtytxt.Text = 0
 
-
-            If IsFromReq = True Then
-                QtyCalication()
-
-                If QtyInDb < QtyToDeduct Then
-                    Qtytxt.Text = 0
-
-                ElseIf Qtytxt.Text = 0 Then
-                    MessageBox.Show("Quantity must be greater than 0", "Validation", MessageBoxButtons.OK)
-                Else
-
-                    MsgBox("Corect")
-
-                End If
-
+            ElseIf Qtytxt.Text = 0 Then
+                MessageBox.Show("Quantity must be greater than 0", "Validation", MessageBoxButtons.OK)
             Else
 
-                QtyCalication()
+                Dim IsChild As Boolean = FetchClass.IsPropertyCodeChild(InvId)
 
-                If QtyInDb < QtyToDeduct Then
-                    Qtytxt.Text = 0
+                If IsChild = True Then
 
-                ElseIf Qtytxt.Text = 0 Then
-                    MessageBox.Show("Quantity must be greater than 0", "Validation", MessageBoxButtons.OK)
+
+
                 Else
+                    Dim lastChildSeries As Integer = FetchClass.IsLastChild(PropertyCode)
 
+                    If lastChildSeries = 0 Then
 
-                    Dim NewPropertyCode As String = FetchClass.FetchLastProteryCode(ItemCode)
-                    UpdateClass.UpdateAssetQty(PropertyCode, QtyResult)
-                    InsertionClass.SaveAssetInventory(ItemCode, ItemClass, NewPropertyCode, ItemDescription, Double.Parse(Qtytxt.Text), NewOwner, NewOwner, 0, Reference, referenceno, "Not Allowed", 0, 0, ComboBox1.Text)
+                        lastChildSeries = 1
+                    Else
+
+                        lastChildSeries = lastChildSeries + 1
+
+                    End If
+
+                    UpdateClass.UpdateAssetQty(InvId, QtyResult)
+                    InsertionClass.SaveAssetInventory(ItemCode, ItemClass, PropertyCode, ItemDescription, Double.Parse(Qtytxt.Text), NewOwner, NewOwner, 0, Reference, referenceno, "Not Allowed", 0, 0, ComboBox1.Text, lastChildSeries, True, False)
 
                     With Assignment1.dgv
                         .Rows(rowToEdit).Cells(4).Value = Qtytxt.Text
-                        .Rows(rowToEdit).Cells(9).Value = NewPropertyCode
+                        .Rows(rowToEdit).Cells(9).Value = PropertyCode + "-" + lastChildSeries.ToString
                     End With
                     MessageBox.Show("Successfully Assigned...", "Confrimation", MessageBoxButtons.OK)
                     Me.Dispose()
@@ -77,8 +73,6 @@
 
             End If
 
-
-
         End If
 
     End Sub
@@ -87,5 +81,16 @@
         Qtytxt.Text = AQty
         QtyCalication()
     End Sub
+
+
+    Private Sub Request()
+
+        'FetchClass.RequestQty()
+
+
+
+    End Sub
+
+
 
 End Class

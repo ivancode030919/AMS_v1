@@ -78,7 +78,7 @@
                          Join t In db.tblSections On y.SectionID Equals t.SectionID
                          Where q.Owner = 0 And q.AssetCode = ac
                          Let m = y.LastName + ", " + y.FirstName
-                         Select q.PropertyCode, q.Des, q.Qty, m, e.DepartmentDescription, r.BranchDescription, t.SectionDecription, q.Reference, q.Referenceno)
+                         Select q.PropertyCode, q.Des, q.Qty, m, e.DepartmentDescription, r.BranchDescription, t.SectionDecription, q.Reference, q.Referenceno, q.InvID)
             Return query
 
         ElseIf Home.UserType = "DPC" Then
@@ -90,7 +90,7 @@
                          Join t In db.tblSections On y.SectionID Equals t.SectionID
                          Where q.Owner = 0 And q.AssetCode = ac And (y.DepartmentID = Home.DepartmentID)
                          Let m = y.LastName + ", " + y.FirstName
-                         Select q.PropertyCode, q.Des, q.Qty, m, e.DepartmentDescription, r.BranchDescription, t.SectionDecription, q.Reference, q.Referenceno)
+                         Select q.PropertyCode, q.Des, q.Qty, m, e.DepartmentDescription, r.BranchDescription, t.SectionDecription, q.Reference, q.Referenceno, q.InvID)
 
         ElseIf Home.UserType = "BPC" Then
 
@@ -101,7 +101,7 @@
                          Join t In db.tblSections On y.SectionID Equals t.SectionID
                          Where q.Owner = 0 And q.AssetCode = ac And (y.DepartmentID = Home.DepartmentID)
                          Let m = y.LastName + ", " + y.FirstName
-                         Select q.PropertyCode, q.Des, q.Qty, m, e.DepartmentDescription, r.BranchDescription, t.SectionDecription, q.Reference, q.Referenceno)
+                         Select q.PropertyCode, q.Des, q.Qty, m, e.DepartmentDescription, r.BranchDescription, t.SectionDecription, q.Reference, q.Referenceno, q.InvID)
             Return query
 
         End If
@@ -155,8 +155,8 @@
                     Join h In db.tblBranches On y.BranchID Equals h.BranchID
                     Join l In db.tblSections On y.SectionID Equals l.SectionID
                     Where p.AssetCode = AssetCode And e.DepartmentCode.Contains(DepCode) AndAlso (p.PropertyCode.Contains(search) Or p.Des.Contains(search))
-                    Let f = y.LastName + ", " + y.FirstName Let q = t.LastName + ", " + t.FirstName
-                    Select p.PropertyCode, p.Des, p.Qty, e.DepartmentDescription, h.BranchDescription, l.SectionDecription, f, q).ToList
+                    Let f = y.LastName + ", " + y.FirstName Let q = t.LastName + ", " + t.FirstName Let o = p.PropertyCode & If(p.IsChildSeries = 0, "", "-" & p.IsChildSeries.ToString())
+                    Select o, p.Des, p.Qty, e.DepartmentDescription, h.BranchDescription, l.SectionDecription, f, q).ToList
         Return vinv
 
 
@@ -341,3 +341,11 @@
     End Function
 
 End Class
+
+
+
+'Dim result = (From ai In context.tblAssetInventory
+'              Order By ai.InvID Descending
+'              Select PropertyCodeOrChildSeries = If(ai.isChildSeries = 0 OrElse ai.isChildSeries Is Nothing,
+'                                                           ai.PropertyCode,
+'                                                           ai.PropertyCode & "-" & ai.isChildSeries.ToString())).ToList()

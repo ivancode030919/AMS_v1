@@ -115,7 +115,11 @@
                     .rowToEdit = row
                     .mode1 = 3
                     .modty = 4
+                    .AssignQty = dgv.Rows(row).Cells(4).Value
+                    .Newowner = dgv.Rows(row).Cells(8).Value
+                    .ItemClass = dgv.Rows(row).Cells(2).Value
                     .ac = dgv.Rows(row).Cells(1).Value
+
                     .ShowDialog()
                 End With
                 End If

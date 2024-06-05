@@ -139,12 +139,12 @@
     End Sub
 
     Private Sub SimpleButton3_Click(sender As Object, e As EventArgs) Handles SimpleButton1.Click
+
         With Assignment1
 
             .TextBox1.Text = TextBox1.Text
             .TextBox2.Text = TextBox2.Text
             .allowtoaddrow = False
-
             .headerid = headerid
             .requestor = requestby
             .WindowState = WindowState.Normal

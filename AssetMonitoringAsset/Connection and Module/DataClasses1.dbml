@@ -294,22 +294,6 @@
       <Column Name="CancellationRemark" Type="System.String" DbType="VarChar(MAX)" CanBeNull="true" />
     </Type>
   </Table>
-  <Table Name="dbo.tblProcureDetails" Member="tblProcureDetails">
-    <Type Name="tblProcureDetail">
-      <Column Name="id" Type="System.Int32" DbType="Int NOT NULL IDENTITY" IsPrimaryKey="true" IsDbGenerated="true" CanBeNull="false" />
-      <Column Name="AssetCode" Type="System.String" DbType="VarChar(200)" CanBeNull="true" />
-      <Column Name="Class" Type="System.String" DbType="VarChar(200)" CanBeNull="true" />
-      <Column Name="Requestfor" Type="System.String" DbType="VarChar(200)" CanBeNull="true" />
-      <Column Name="Quantity" Type="System.Double" DbType="Float" CanBeNull="true" />
-      <Column Name="Remarks" Type="System.String" DbType="VarChar(200)" CanBeNull="true" />
-      <Column Name="State" Type="System.String" DbType="VarChar(200)" CanBeNull="true" />
-      <Column Name="TransID" Type="System.Int32" DbType="Int" CanBeNull="true" />
-      <Column Name="PropertyCode" Type="System.String" DbType="VarChar(200)" CanBeNull="true" />
-      <Column Name="Description" Type="System.String" DbType="VarChar(200)" CanBeNull="true" />
-      <Column Name="Reference" Type="System.String" DbType="VarChar(200)" CanBeNull="true" />
-      <Column Name="ReferenceNo" Type="System.String" DbType="VarChar(200)" CanBeNull="true" />
-    </Type>
-  </Table>
   <Table Name="dbo.tblAllocationDetail" Member="tblAllocationDetails">
     <Type Name="tblAllocationDetail">
       <Column Name="id" Type="System.Int32" DbType="Int NOT NULL IDENTITY" IsPrimaryKey="true" IsDbGenerated="true" CanBeNull="false" />
@@ -319,31 +303,6 @@
       <Column Name="Employee" Type="System.Int32" DbType="Int" CanBeNull="true" />
       <Column Name="ItemCode" Type="System.Int32" DbType="Int" CanBeNull="true" />
       <Column Name="AvailableQty" Type="System.Double" DbType="Float" CanBeNull="true" />
-    </Type>
-  </Table>
-  <Table Name="dbo.tblAssetInventory" Member="tblAssetInventories">
-    <Type Name="tblAssetInventory">
-      <Column Name="InvID" Type="System.Int32" DbType="Int NOT NULL IDENTITY" IsPrimaryKey="true" IsDbGenerated="true" CanBeNull="false" />
-      <Column Name="AssetCode" Type="System.Int32" DbType="Int" CanBeNull="true" />
-      <Column Name="Class" Type="System.String" DbType="VarChar(MAX)" CanBeNull="true" />
-      <Column Name="PropertyCode" Type="System.String" DbType="VarChar(MAX)" CanBeNull="true" />
-      <Column Name="Des" Type="System.String" DbType="VarChar(MAX)" CanBeNull="true" />
-      <Column Name="Qty" Type="System.Double" DbType="Float" CanBeNull="true" />
-      <Column Name="Keeper" Type="System.Int32" DbType="Int" CanBeNull="true" />
-      <Column Name="Owner" Type="System.Int32" DbType="Int" CanBeNull="true" />
-      <Column Name="Borrower" Type="System.Int32" DbType="Int" CanBeNull="true" />
-      <Column Name="Reference" Type="System.String" DbType="VarChar(MAX)" CanBeNull="true" />
-      <Column Name="Referenceno" Type="System.String" DbType="VarChar(MAX)" CanBeNull="true" />
-      <Column Name="borrowerStat" Type="System.String" DbType="VarChar(MAX)" CanBeNull="true" />
-      <Column Name="Status1" Type="System.String" DbType="VarChar(MAX)" CanBeNull="true" />
-      <Column Name="Status2" Type="System.String" DbType="VarChar(MAX)" CanBeNull="true" />
-      <Column Name="Condition" Type="System.String" DbType="VarChar(MAX)" CanBeNull="true" />
-      <Column Name="ParentPropertyCode" Type="System.String" DbType="VarChar(MAX)" CanBeNull="true" />
-      <Column Name="Deployed" Type="System.Boolean" DbType="Bit" CanBeNull="true" />
-      <Column Name="ReceivedByRequestor" Type="System.Boolean" DbType="Bit" CanBeNull="true" />
-      <Column Name="DateDeployed" Type="System.DateTime" DbType="Date" CanBeNull="true" />
-      <Column Name="DateRequestorRecv" Type="System.DateTime" DbType="Date" CanBeNull="true" />
-      <Column Name="Returned" Type="System.Boolean" DbType="Bit" CanBeNull="true" />
     </Type>
   </Table>
   <Table Name="dbo.tblRequestDetail" Member="tblRequestDetails">
@@ -369,6 +328,51 @@
       <Column Name="Approve2" Type="System.Boolean" DbType="Bit" CanBeNull="true" />
       <Column Name="Approve3" Type="System.Boolean" DbType="Bit" CanBeNull="true" />
       <Column Name="Approve4" Type="System.Boolean" DbType="Bit" CanBeNull="true" />
+    </Type>
+  </Table>
+  <Table Name="dbo.tblProcureDetails" Member="tblProcureDetails">
+    <Type Name="tblProcureDetail">
+      <Column Name="id" Type="System.Int32" DbType="Int NOT NULL IDENTITY" IsPrimaryKey="true" IsDbGenerated="true" CanBeNull="false" />
+      <Column Name="AssetCode" Type="System.String" DbType="VarChar(200)" CanBeNull="true" />
+      <Column Name="Class" Type="System.String" DbType="VarChar(200)" CanBeNull="true" />
+      <Column Name="Requestfor" Type="System.String" DbType="VarChar(200)" CanBeNull="true" />
+      <Column Name="Quantity" Type="System.Double" DbType="Float" CanBeNull="true" />
+      <Column Name="Remarks" Type="System.String" DbType="VarChar(200)" CanBeNull="true" />
+      <Column Name="State" Type="System.String" DbType="VarChar(200)" CanBeNull="true" />
+      <Column Name="TransID" Type="System.Int32" DbType="Int" CanBeNull="true" />
+      <Column Name="PropertyCode" Type="System.String" DbType="VarChar(200)" CanBeNull="true" />
+      <Column Name="Description" Type="System.String" DbType="VarChar(200)" CanBeNull="true" />
+      <Column Name="Reference" Type="System.String" DbType="VarChar(200)" CanBeNull="true" />
+      <Column Name="ReferenceNo" Type="System.String" DbType="VarChar(200)" CanBeNull="true" />
+      <Column Name="IsChild" Type="System.Boolean" DbType="Bit" CanBeNull="true" />
+      <Column Name="NewPropertyCode" Type="System.String" DbType="VarChar(200)" CanBeNull="true" />
+    </Type>
+  </Table>
+  <Table Name="dbo.tblAssetInventory" Member="tblAssetInventories">
+    <Type Name="tblAssetInventory">
+      <Column Name="InvID" Type="System.Int32" DbType="Int NOT NULL IDENTITY" IsPrimaryKey="true" IsDbGenerated="true" CanBeNull="false" />
+      <Column Name="AssetCode" Type="System.Int32" DbType="Int" CanBeNull="true" />
+      <Column Name="Class" Type="System.String" DbType="VarChar(MAX)" CanBeNull="true" />
+      <Column Name="PropertyCode" Type="System.String" DbType="VarChar(MAX)" CanBeNull="true" />
+      <Column Name="Des" Type="System.String" DbType="VarChar(MAX)" CanBeNull="true" />
+      <Column Name="Qty" Type="System.Double" DbType="Float" CanBeNull="true" />
+      <Column Name="Keeper" Type="System.Int32" DbType="Int" CanBeNull="true" />
+      <Column Name="Owner" Type="System.Int32" DbType="Int" CanBeNull="true" />
+      <Column Name="Borrower" Type="System.Int32" DbType="Int" CanBeNull="true" />
+      <Column Name="Reference" Type="System.String" DbType="VarChar(MAX)" CanBeNull="true" />
+      <Column Name="Referenceno" Type="System.String" DbType="VarChar(MAX)" CanBeNull="true" />
+      <Column Name="borrowerStat" Type="System.String" DbType="VarChar(MAX)" CanBeNull="true" />
+      <Column Name="Status1" Type="System.String" DbType="VarChar(MAX)" CanBeNull="true" />
+      <Column Name="Status2" Type="System.String" DbType="VarChar(MAX)" CanBeNull="true" />
+      <Column Name="Condition" Type="System.String" DbType="VarChar(MAX)" CanBeNull="true" />
+      <Column Name="IsChildSeries" Type="System.Int32" DbType="Int" CanBeNull="true" />
+      <Column Name="Deployed" Type="System.Boolean" DbType="Bit" CanBeNull="true" />
+      <Column Name="ReceivedByRequestor" Type="System.Boolean" DbType="Bit" CanBeNull="true" />
+      <Column Name="DateDeployed" Type="System.DateTime" DbType="Date" CanBeNull="true" />
+      <Column Name="DateRequestorRecv" Type="System.DateTime" DbType="Date" CanBeNull="true" />
+      <Column Name="Returned" Type="System.Boolean" DbType="Bit" CanBeNull="true" />
+      <Column Name="IsChild" Type="System.Boolean" DbType="Bit" CanBeNull="true" />
+      <Column Name="IsParent" Type="System.Boolean" DbType="Bit" CanBeNull="true" />
     </Type>
   </Table>
   <Function Name="dbo.spNewAsset" Method="spNewAsset">
@@ -778,12 +782,6 @@
       <Column Name="Owner" Type="System.Int32" DbType="Int" CanBeNull="true" />
     </ElementType>
   </Function>
-  <Function Name="dbo.spGetLastPropertyCode" Method="spGetLastPropertyCode">
-    <Parameter Name="ItemCode" Parameter="itemCode" Type="System.Int32" DbType="Int" />
-    <ElementType Name="spGetLastPropertyCodeResult">
-      <Column Name="PropertyCode" Type="System.String" DbType="VarChar(MAX)" CanBeNull="true" />
-    </ElementType>
-  </Function>
   <Function Name="dbo.ShowAssetAvailability2" Method="ShowAssetAvailability2">
     <Parameter Name="headerid" Type="System.Int32" DbType="Int" />
     <Parameter Name="department" Type="System.Int32" DbType="Int" />
@@ -798,6 +796,12 @@
       <Column Name="vqty" Type="System.Int32" DbType="Int" CanBeNull="true" />
       <Column Name="Owner" Type="System.Int32" DbType="Int" CanBeNull="true" />
       <Column Name="AssignAsset" Type="System.String" DbType="VarChar(1) NOT NULL" CanBeNull="false" />
+    </ElementType>
+  </Function>
+  <Function Name="dbo.spGetLastPropertyCode" Method="spGetLastPropertyCode">
+    <Parameter Name="ItemCode" Parameter="itemCode" Type="System.Int32" DbType="Int" />
+    <ElementType Name="spGetLastPropertyCodeResult">
+      <Column Name="PropertyCode" Type="System.String" DbType="VarChar(MAX)" CanBeNull="true" />
     </ElementType>
   </Function>
 </Database>

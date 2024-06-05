@@ -55,6 +55,7 @@ Partial Class ConsumableQty
         '
         'ComboBox1
         '
+        Me.ComboBox1.DropDownStyle = System.Windows.Forms.ComboBoxStyle.DropDownList
         Me.ComboBox1.FormattingEnabled = True
         Me.ComboBox1.Items.AddRange(New Object() {"New Item: Good", "Used Item: Good"})
         Me.ComboBox1.Location = New System.Drawing.Point(6, 20)

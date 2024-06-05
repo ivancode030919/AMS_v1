@@ -151,30 +151,19 @@
 
                     Dim PropertyCodeCount As Integer = FetchClass.FetchPropertyCode(PropertyCode)
 
-                    Dim IsConsumable As Integer = FetchClass.CheckIsConsumable(Itemcode)
+                    If PropertyCodeCount = 0 Then
 
-                    If IsConsumable <= 0 Then
-
-                        If PropertyCodeCount = 0 Then
-
-                            InsertionClass.SaveAssetInventory(Itemcode, ItemClass, PropertyCode, Description, qty, owner, owner, 0, reference, referenceno, "Not Allowed", 0, 0, "New Item: Good")
-                            MessageBox.Show("Successfully Recorded", "Notification", MessageBoxButtons.OK, MessageBoxIcon.Information)
-                        Else
-
-                        End If
+                        InsertionClass.SaveAssetInventory(Itemcode, ItemClass, PropertyCode, Description, qty, owner, owner, 0, reference, referenceno, "Not Allowed", 0, 0, "New Item: Good", 0, False, True)
+                        MessageBox.Show("Successfully Recorded", "Notification", MessageBoxButtons.OK, MessageBoxIcon.Information)
 
                     Else
-
-                        InsertionClass.SaveAssetInventory(Itemcode, ItemClass, PropertyCode, Description, qty, owner, owner, 0, reference, referenceno, "Not Allowed", 0, 0, "New Item: Good")
-                        MessageBox.Show("Successfully Recorded", "Notification", MessageBoxButtons.OK, MessageBoxIcon.Information)
 
                     End If
 
 
                 End If
 
-
-                Else
+            Else
 
             End If
 
