@@ -235,18 +235,37 @@
     'Update Consumable Qty When Assigning in a new Item
     Public Shared Sub UpdateAssetQty(ByVal Invd As Integer, ByVal Qty As Double)
 
-        MsgBox(Invd)
-        'Try
-        Dim updateStat = (From p In db.GetTable(Of tblAssetInventory)()
-                          Where (p.InvID = Invd)
-                          Select p).FirstOrDefault()
-        updateStat.Qty = Qty
 
-        db.SubmitChanges()
+        Try
+            Dim updateStat = (From p In db.GetTable(Of tblAssetInventory)()
+                              Where (p.InvID = Invd)
+                              Select p).FirstOrDefault()
+            updateStat.Qty = Qty
 
-        'Catch ex As Exception
-        'MsgBox("Error.U.26")
-        'End Try
+
+            db.SubmitChanges()
+
+        Catch ex As Exception
+            MsgBox("Error.U.26")
+        End Try
+
+    End Sub
+
+
+    'Update For Assigned Items with property code
+    Public Shared Sub UpdateReqstQuantity(ByVal reqi8d As Integer, ByVal Quantiy As Double, ByVal ProCode As String)
+
+        Try
+            Dim updateStat = (From p In db.GetTable(Of tblRequestDetail)()
+                              Where p.id = reqi8d
+                              Select p).FirstOrDefault()
+            updateStat.Qty = Quantiy
+            updateStat.PropertyCode = ProCode
+            db.SubmitChanges()
+
+        Catch ex As Exception
+            MsgBox("Error.U.20")
+        End Try
 
     End Sub
 

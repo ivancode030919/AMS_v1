@@ -19,9 +19,11 @@
         End If
 
         display()
+
     End Sub
 
     Public Sub display()
+
         ViewClass.FetchRegisterDetail(headerid)
 
         With dgv
@@ -57,6 +59,14 @@
     End Sub
 
     Private Sub Assignment1_FormClosing(sender As Object, e As FormClosingEventArgs) Handles MyBase.FormClosing
+        Dim committedRowsCount As Integer = dgv.Rows.Cast(Of DataGridViewRow)().Count(Function(row) Not row.IsNewRow)
+
+        If committedRowsCount >= 1 Then
+            MsgBox("save dapat")
+
+        ElseIf committedRowsCount = 0 Then
+            MsgBox("not save")
+        End If
 
         If winstatemax = True Then
             Home.IsMdiContainer = False
@@ -111,7 +121,7 @@
 
             If e.ColumnIndex = 9 Then
 
-                    With AssetList3
+                With AssetList3
                     .rowToEdit = row
                     .mode1 = 3
                     .modty = 4
@@ -119,10 +129,12 @@
                     .Newowner = dgv.Rows(row).Cells(8).Value
                     .ItemClass = dgv.Rows(row).Cells(2).Value
                     .ac = dgv.Rows(row).Cells(1).Value
-
+                    .ReqId = dgv.Rows(row).Cells(0).Value
                     .ShowDialog()
+
                 End With
-                End If
+
+            End If
 
             End If
         'Catch ex As Exception
@@ -135,44 +147,7 @@
 
     End Sub
 
-    Private Sub SimpleButton2_Click(sender As Object, e As EventArgs) Handles SimpleButton2.Click
-
-        If SimpleButton2.Text = "Record" Then
-            Dim user As Integer = Home.UserID
-            InsertionClass.SaveAssignmentHeader(TextBox1.Text, user, DateTimePicker1.Value, headerid)
-
-            For Each row As DataGridViewRow In dgv.Rows
-                If Not row.IsNewRow Then
-                    Dim headid As Integer = FetchClass.FetchTransHeaderIDAssignment
-                    Dim id As String = row.Cells(0).Value
-                    Dim ItemCode As String = row.Cells(1).Value
-                    Dim qty As String = row.Cells(4).Value
-                    Dim Propertycode As String = row.Cells(9).Value
-                    Dim NewOwnerID As String = row.Cells(8).Value
-                    Dim Availableqty As String = row.Cells(7).Value
-
-                    If allowtoaddrow = True Then
-
-                    ElseIf allowtoaddrow = False Then
-                        UpdateClass.UpdateStatusReq(id)
-                    End If
-                    InsertionClass.SaveAssignmentDetails(Double.Parse(qty), Propertycode, headid, user, ItemCode, Availableqty)
-
-                End If
-            Next
-            Rqregister.display()
-            MessageBox.Show("Successfully Recorded", "Notification", MessageBoxButtons.OK, MessageBoxIcon.Information)
-
-            SimpleButton2.Text = "New Entry"
-            dgv.Enabled = False
-        ElseIf SimpleButton2.Text = "New Entry" Then
-            SimpleButton2.Text = "Record"
-            TextBox1.Text = FetchClass.FetchAssignmentEntryNumber
-            dgv.Rows.Clear()
-            dgv.Enabled = True
-        End If
-
-
+    Private Sub SimpleButton2_Click(sender As Object, e As EventArgs)
 
     End Sub
 
@@ -228,6 +203,16 @@
     End Sub
 
     Private Sub Assignment1_Leave(sender As Object, e As EventArgs) Handles MyBase.Leave
+
+        Dim committedRowsCount As Integer = dgv.Rows.Cast(Of DataGridViewRow)().Count(Function(row) Not row.IsNewRow)
+
+        If committedRowsCount >= 1 Then
+            MsgBox("save dapat")
+
+        ElseIf committedRowsCount = 0 Then
+            MsgBox("not save")
+        End If
+
         If winstatemax = True Then
             Home.IsMdiContainer = False
             winstatemax = False
@@ -235,5 +220,45 @@
         Else
             Me.Dispose()
         End If
+    End Sub
+
+
+
+    Private Sub AddRecord()
+
+        Dim user As Integer = Home.UserID
+
+            InsertionClass.SaveAssignmentHeader(TextBox1.Text, user, DateTimePicker1.Value, headerid)
+
+        For Each row As DataGridViewRow In dgv.Rows
+            If Not row.IsNewRow Then
+                Dim headid As Integer = FetchClass.FetchTransHeaderIDAssignment
+                Dim id As String = row.Cells(0).Value
+                Dim ItemCode As String = row.Cells(1).Value
+                Dim qty As String = row.Cells(4).Value
+                Dim Propertycode As String = row.Cells(9).Value
+                Dim NewOwnerID As String = row.Cells(8).Value
+                Dim Availableqty As String = row.Cells(7).Value
+
+                If allowtoaddrow = True Then
+
+                ElseIf allowtoaddrow = False Then
+
+                    UpdateClass.UpdateStatusReq(id)
+
+                End If
+
+                InsertionClass.SaveAssignmentDetails(Double.Parse(qty), Propertycode, headid, user, ItemCode, Availableqty)
+
+            End If
+        Next
+
+        Rqregister.display()
+        MessageBox.Show("Successfully Recorded", "Notification", MessageBoxButtons.OK, MessageBoxIcon.Information)
+
+        TextBox1.Text = FetchClass.FetchAssignmentEntryNumber
+        dgv.Rows.Clear()
+        dgv.Enabled = True
+
     End Sub
 End Class

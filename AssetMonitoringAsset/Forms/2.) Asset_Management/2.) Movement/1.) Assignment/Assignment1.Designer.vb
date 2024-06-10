@@ -28,7 +28,6 @@ Partial Class Assignment1
         Me.Label5 = New System.Windows.Forms.Label()
         Me.PanelControl2 = New DevExpress.XtraEditors.PanelControl()
         Me.dgv = New System.Windows.Forms.DataGridView()
-        Me.SimpleButton2 = New DevExpress.XtraEditors.SimpleButton()
         CType(Me.PanelControl1, System.ComponentModel.ISupportInitialize).BeginInit()
         Me.PanelControl1.SuspendLayout()
         CType(Me.PanelControl2, System.ComponentModel.ISupportInitialize).BeginInit()
@@ -138,23 +137,11 @@ Partial Class Assignment1
         Me.dgv.Size = New System.Drawing.Size(1014, 312)
         Me.dgv.TabIndex = 1
         '
-        'SimpleButton2
-        '
-        Me.SimpleButton2.Anchor = CType((System.Windows.Forms.AnchorStyles.Bottom Or System.Windows.Forms.AnchorStyles.Right), System.Windows.Forms.AnchorStyles)
-        Me.SimpleButton2.Appearance.Font = New System.Drawing.Font("Arial Rounded MT Bold", 11.25!)
-        Me.SimpleButton2.Appearance.Options.UseFont = True
-        Me.SimpleButton2.Location = New System.Drawing.Point(838, 458)
-        Me.SimpleButton2.Name = "SimpleButton2"
-        Me.SimpleButton2.Size = New System.Drawing.Size(183, 36)
-        Me.SimpleButton2.TabIndex = 21
-        Me.SimpleButton2.Text = "Record Transactions"
-        '
         'Assignment1
         '
         Me.AutoScaleDimensions = New System.Drawing.SizeF(6.0!, 13.0!)
         Me.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font
         Me.ClientSize = New System.Drawing.Size(1028, 499)
-        Me.Controls.Add(Me.SimpleButton2)
         Me.Controls.Add(Me.PanelControl1)
         Me.Controls.Add(Me.PanelControl2)
         Me.FormBorderStyle = System.Windows.Forms.FormBorderStyle.FixedSingle
@@ -184,7 +171,6 @@ Partial Class Assignment1
     Friend WithEvents Label5 As Label
     Friend WithEvents PanelControl2 As DevExpress.XtraEditors.PanelControl
     Friend WithEvents dgv As DataGridView
-    Friend WithEvents SimpleButton2 As DevExpress.XtraEditors.SimpleButton
     Friend WithEvents DateTimePicker1 As DateTimePicker
     Friend WithEvents Label6 As Label
 End Class

@@ -729,19 +729,6 @@
     End Function
 
 
-    'Check for Property if had Child : in Assignmet from Request not stand alone
-    Public Shared Function IsPropertyCodeChild(ByVal InvId As Integer) As Object
-        Try
-
-            Dim consumable = (From s In db.tblAssetInventories
-                              Where s.InvID = InvId
-                              Select s.IsChild).SingleOrDefault
-            Return consumable
-
-        Catch ex As Exception
-            Return MsgBox("Error.F-43")
-        End Try
-    End Function
 
     'Check for Property if had Child : Get The Last Child
     Public Shared Function IsLastChild(ByVal PC As String) As Object

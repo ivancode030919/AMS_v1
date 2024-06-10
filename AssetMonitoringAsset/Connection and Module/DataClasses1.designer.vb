@@ -646,6 +646,12 @@ Partial Public Class DataClasses1DataContext
 		Return CType(result.ReturnValue,ISingleResult(Of spViewInventoryResult))
 	End Function
 	
+	<Global.System.Data.Linq.Mapping.FunctionAttribute(Name:="dbo.spGetLastPropertyCode")>  _
+	Public Function spGetLastPropertyCode(<Global.System.Data.Linq.Mapping.ParameterAttribute(Name:="ItemCode", DbType:="Int")> ByVal itemCode As System.Nullable(Of Integer)) As ISingleResult(Of spGetLastPropertyCodeResult)
+		Dim result As IExecuteResult = Me.ExecuteMethodCall(Me, CType(MethodInfo.GetCurrentMethod,MethodInfo), itemCode)
+		Return CType(result.ReturnValue,ISingleResult(Of spGetLastPropertyCodeResult))
+	End Function
+	
 	<Global.System.Data.Linq.Mapping.FunctionAttribute(Name:="dbo.ShowAssetAvailabilityProcure")>  _
 	Public Function ShowAssetAvailabilityProcure(<Global.System.Data.Linq.Mapping.ParameterAttribute(DbType:="Int")> ByVal headerid As System.Nullable(Of Integer), <Global.System.Data.Linq.Mapping.ParameterAttribute(DbType:="Int")> ByVal depID As System.Nullable(Of Integer)) As ISingleResult(Of ShowAssetAvailabilityProcureResult)
 		Dim result As IExecuteResult = Me.ExecuteMethodCall(Me, CType(MethodInfo.GetCurrentMethod,MethodInfo), headerid, depID)
@@ -656,12 +662,6 @@ Partial Public Class DataClasses1DataContext
 	Public Function ShowAssetAvailability2(<Global.System.Data.Linq.Mapping.ParameterAttribute(DbType:="Int")> ByVal headerid As System.Nullable(Of Integer), <Global.System.Data.Linq.Mapping.ParameterAttribute(DbType:="Int")> ByVal department As System.Nullable(Of Integer)) As ISingleResult(Of ShowAssetAvailability2Result)
 		Dim result As IExecuteResult = Me.ExecuteMethodCall(Me, CType(MethodInfo.GetCurrentMethod,MethodInfo), headerid, department)
 		Return CType(result.ReturnValue,ISingleResult(Of ShowAssetAvailability2Result))
-	End Function
-	
-	<Global.System.Data.Linq.Mapping.FunctionAttribute(Name:="dbo.spGetLastPropertyCode")>  _
-	Public Function spGetLastPropertyCode(<Global.System.Data.Linq.Mapping.ParameterAttribute(Name:="ItemCode", DbType:="Int")> ByVal itemCode As System.Nullable(Of Integer)) As ISingleResult(Of spGetLastPropertyCodeResult)
-		Dim result As IExecuteResult = Me.ExecuteMethodCall(Me, CType(MethodInfo.GetCurrentMethod,MethodInfo), itemCode)
-		Return CType(result.ReturnValue,ISingleResult(Of spGetLastPropertyCodeResult))
 	End Function
 End Class
 
@@ -9222,6 +9222,27 @@ Partial Public Class spViewInventoryResult
 	End Property
 End Class
 
+Partial Public Class spGetLastPropertyCodeResult
+	
+	Private _PropertyCode As String
+	
+	Public Sub New()
+		MyBase.New
+	End Sub
+	
+	<Global.System.Data.Linq.Mapping.ColumnAttribute(Storage:="_PropertyCode", DbType:="VarChar(MAX)")>  _
+	Public Property PropertyCode() As String
+		Get
+			Return Me._PropertyCode
+		End Get
+		Set
+			If (String.Equals(Me._PropertyCode, value) = false) Then
+				Me._PropertyCode = value
+			End If
+		End Set
+	End Property
+End Class
+
 Partial Public Class ShowAssetAvailabilityProcureResult
 	
 	Private _id As Integer
@@ -9376,7 +9397,7 @@ Partial Public Class ShowAssetAvailability2Result
 	
 	Private _Owner As System.Nullable(Of Integer)
 	
-	Private _AssignAsset As String
+	Private _PropertyCode As String
 	
 	Public Sub New()
 		MyBase.New
@@ -9490,27 +9511,6 @@ Partial Public Class ShowAssetAvailability2Result
 			End If
 		End Set
 	End Property
-	
-	<Global.System.Data.Linq.Mapping.ColumnAttribute(Storage:="_AssignAsset", DbType:="VarChar(1) NOT NULL", CanBeNull:=false)>  _
-	Public Property AssignAsset() As String
-		Get
-			Return Me._AssignAsset
-		End Get
-		Set
-			If (String.Equals(Me._AssignAsset, value) = false) Then
-				Me._AssignAsset = value
-			End If
-		End Set
-	End Property
-End Class
-
-Partial Public Class spGetLastPropertyCodeResult
-	
-	Private _PropertyCode As String
-	
-	Public Sub New()
-		MyBase.New
-	End Sub
 	
 	<Global.System.Data.Linq.Mapping.ColumnAttribute(Storage:="_PropertyCode", DbType:="VarChar(MAX)")>  _
 	Public Property PropertyCode() As String

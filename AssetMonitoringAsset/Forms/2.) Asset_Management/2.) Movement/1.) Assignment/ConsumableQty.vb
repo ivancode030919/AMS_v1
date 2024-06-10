@@ -1,5 +1,5 @@
 ﻿Public Class ConsumableQty
-    Public rowToEdit, ItemCode, NewOwner, InvId As Integer
+    Public rowToEdit, ItemCode, NewOwner, InvId, ReqId As Integer
     Public QtyToDeduct, QtyResult, QtyInDb, AQty As Double
     Public ItemClass, referenceno, ItemDescription, Reference, PropertyCode As String
     Public IsFromReq As Boolean = False
@@ -33,43 +33,39 @@
             QtyCalication()
 
             If QtyInDb < QtyToDeduct Then
+
                 Qtytxt.Text = 0
 
             ElseIf Qtytxt.Text = 0 Then
+
                 MessageBox.Show("Quantity must be greater than 0", "Validation", MessageBoxButtons.OK)
+
             Else
 
-                Dim IsChild As Boolean = FetchClass.IsPropertyCodeChild(InvId)
+                Dim lastChildSeries As Integer = FetchClass.IsLastChild(PropertyCode)
 
-                If IsChild = True Then
+                If lastChildSeries = 0 Then
 
-
-
+                    lastChildSeries = 1
                 Else
-                    Dim lastChildSeries As Integer = FetchClass.IsLastChild(PropertyCode)
 
-                    If lastChildSeries = 0 Then
-
-                        lastChildSeries = 1
-                    Else
-
-                        lastChildSeries = lastChildSeries + 1
-
-                    End If
-
-                    UpdateClass.UpdateAssetQty(InvId, QtyResult)
-                    InsertionClass.SaveAssetInventory(ItemCode, ItemClass, PropertyCode, ItemDescription, Double.Parse(Qtytxt.Text), NewOwner, NewOwner, 0, Reference, referenceno, "Not Allowed", 0, 0, ComboBox1.Text, lastChildSeries, True, False)
-
-                    With Assignment1.dgv
-                        .Rows(rowToEdit).Cells(4).Value = Qtytxt.Text
-                        .Rows(rowToEdit).Cells(9).Value = PropertyCode + "-" + lastChildSeries.ToString
-                    End With
-                    MessageBox.Show("Successfully Assigned...", "Confrimation", MessageBoxButtons.OK)
-                    Me.Dispose()
-                    AssetList3.Dispose()
-
+                    lastChildSeries = lastChildSeries + 1
 
                 End If
+
+                UpdateClass.UpdateAssetQty(InvId, QtyResult)
+                UpdateClass.UpdateReqstQuantity(ReqId, AQty - Qtytxt.Text, PropertyCode + "-" + lastChildSeries.ToString)
+                InsertionClass.SaveAssetInventory(ItemCode, ItemClass, PropertyCode, ItemDescription, Double.Parse(Qtytxt.Text), NewOwner, NewOwner, 0, Reference, referenceno, "Not Allowed", 0, 0, ComboBox1.Text, lastChildSeries, True, False)
+
+                With Assignment1.dgv
+                    .Rows(rowToEdit).Cells(4).Value = Qtytxt.Text
+                    .Rows(rowToEdit).Cells(9).Value = PropertyCode + "-" + lastChildSeries.ToString
+                End With
+                MessageBox.Show("Successfully Assigned...", "Confrimation", MessageBoxButtons.OK)
+                Me.Dispose()
+                AssetList3.Dispose()
+                Assignment1.display()
+                Rqregister.display()
 
             End If
 

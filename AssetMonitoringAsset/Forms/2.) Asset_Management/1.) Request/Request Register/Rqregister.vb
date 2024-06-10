@@ -47,6 +47,7 @@
                 .Columns(8).HeaderText = "RequestorID"
                 .Columns(0).Visible = False
                 .Columns(8).Visible = False
+
                 .ReadOnly = True
             End With
         ElseIf Rtype = "BORROW" Then

@@ -767,6 +767,12 @@
       <Column Name="qty" Type="System.Double" DbType="Float" CanBeNull="true" />
     </ElementType>
   </Function>
+  <Function Name="dbo.spGetLastPropertyCode" Method="spGetLastPropertyCode">
+    <Parameter Name="ItemCode" Parameter="itemCode" Type="System.Int32" DbType="Int" />
+    <ElementType Name="spGetLastPropertyCodeResult">
+      <Column Name="PropertyCode" Type="System.String" DbType="VarChar(MAX)" CanBeNull="true" />
+    </ElementType>
+  </Function>
   <Function Name="dbo.ShowAssetAvailabilityProcure" Method="ShowAssetAvailabilityProcure">
     <Parameter Name="headerid" Type="System.Int32" DbType="Int" />
     <Parameter Name="depID" Type="System.Int32" DbType="Int" />
@@ -795,12 +801,6 @@
       <Column Name="State" Type="System.String" DbType="VarChar(MAX)" CanBeNull="true" />
       <Column Name="vqty" Type="System.Int32" DbType="Int" CanBeNull="true" />
       <Column Name="Owner" Type="System.Int32" DbType="Int" CanBeNull="true" />
-      <Column Name="AssignAsset" Type="System.String" DbType="VarChar(1) NOT NULL" CanBeNull="false" />
-    </ElementType>
-  </Function>
-  <Function Name="dbo.spGetLastPropertyCode" Method="spGetLastPropertyCode">
-    <Parameter Name="ItemCode" Parameter="itemCode" Type="System.Int32" DbType="Int" />
-    <ElementType Name="spGetLastPropertyCodeResult">
       <Column Name="PropertyCode" Type="System.String" DbType="VarChar(MAX)" CanBeNull="true" />
     </ElementType>
   </Function>
