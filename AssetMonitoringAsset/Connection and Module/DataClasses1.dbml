@@ -804,4 +804,15 @@
       <Column Name="PropertyCode" Type="System.String" DbType="VarChar(MAX)" CanBeNull="true" />
     </ElementType>
   </Function>
+  <Function Name="dbo.ShowRequestTransfer" Method="ShowRequestTransfer">
+    <Parameter Name="headerid" Type="System.Int32" DbType="Int" />
+    <ElementType Name="ShowRequestTransferResult">
+      <Column Name="PropertyCode" Type="System.String" DbType="VarChar(MAX)" CanBeNull="true" />
+      <Column Name="Description" Type="System.String" DbType="VarChar(MAX)" CanBeNull="true" />
+      <Column Name="Qty" Type="System.Double" DbType="Float" CanBeNull="true" />
+      <Column Name="[Current Owner]" Member="Current_Owner" Type="System.String" DbType="VarChar(402)" CanBeNull="true" />
+      <Column Name="[Trasfer To]" Member="Trasfer_To" Type="System.String" DbType="VarChar(402)" CanBeNull="true" />
+      <Column Name="Remarks" Type="System.String" DbType="VarChar(MAX)" CanBeNull="true" />
+    </ElementType>
+  </Function>
 </Database>

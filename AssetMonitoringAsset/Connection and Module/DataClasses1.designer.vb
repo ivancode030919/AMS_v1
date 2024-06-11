@@ -663,6 +663,12 @@ Partial Public Class DataClasses1DataContext
 		Dim result As IExecuteResult = Me.ExecuteMethodCall(Me, CType(MethodInfo.GetCurrentMethod,MethodInfo), headerid, department)
 		Return CType(result.ReturnValue,ISingleResult(Of ShowAssetAvailability2Result))
 	End Function
+	
+	<Global.System.Data.Linq.Mapping.FunctionAttribute(Name:="dbo.ShowRequestTransfer")>  _
+	Public Function ShowRequestTransfer(<Global.System.Data.Linq.Mapping.ParameterAttribute(DbType:="Int")> ByVal headerid As System.Nullable(Of Integer)) As ISingleResult(Of ShowRequestTransferResult)
+		Dim result As IExecuteResult = Me.ExecuteMethodCall(Me, CType(MethodInfo.GetCurrentMethod,MethodInfo), headerid)
+		Return CType(result.ReturnValue,ISingleResult(Of ShowRequestTransferResult))
+	End Function
 End Class
 
 <Global.System.Data.Linq.Mapping.TableAttribute(Name:="dbo.tblBuildDetail")>  _
@@ -9520,6 +9526,97 @@ Partial Public Class ShowAssetAvailability2Result
 		Set
 			If (String.Equals(Me._PropertyCode, value) = false) Then
 				Me._PropertyCode = value
+			End If
+		End Set
+	End Property
+End Class
+
+Partial Public Class ShowRequestTransferResult
+	
+	Private _PropertyCode As String
+	
+	Private _Description As String
+	
+	Private _Qty As System.Nullable(Of Double)
+	
+	Private _Current_Owner As String
+	
+	Private _Trasfer_To As String
+	
+	Private _Remarks As String
+	
+	Public Sub New()
+		MyBase.New
+	End Sub
+	
+	<Global.System.Data.Linq.Mapping.ColumnAttribute(Storage:="_PropertyCode", DbType:="VarChar(MAX)")>  _
+	Public Property PropertyCode() As String
+		Get
+			Return Me._PropertyCode
+		End Get
+		Set
+			If (String.Equals(Me._PropertyCode, value) = false) Then
+				Me._PropertyCode = value
+			End If
+		End Set
+	End Property
+	
+	<Global.System.Data.Linq.Mapping.ColumnAttribute(Storage:="_Description", DbType:="VarChar(MAX)")>  _
+	Public Property Description() As String
+		Get
+			Return Me._Description
+		End Get
+		Set
+			If (String.Equals(Me._Description, value) = false) Then
+				Me._Description = value
+			End If
+		End Set
+	End Property
+	
+	<Global.System.Data.Linq.Mapping.ColumnAttribute(Storage:="_Qty", DbType:="Float")>  _
+	Public Property Qty() As System.Nullable(Of Double)
+		Get
+			Return Me._Qty
+		End Get
+		Set
+			If (Me._Qty.Equals(value) = false) Then
+				Me._Qty = value
+			End If
+		End Set
+	End Property
+	
+	<Global.System.Data.Linq.Mapping.ColumnAttribute(Name:="[Current Owner]", Storage:="_Current_Owner", DbType:="VarChar(402)")>  _
+	Public Property Current_Owner() As String
+		Get
+			Return Me._Current_Owner
+		End Get
+		Set
+			If (String.Equals(Me._Current_Owner, value) = false) Then
+				Me._Current_Owner = value
+			End If
+		End Set
+	End Property
+	
+	<Global.System.Data.Linq.Mapping.ColumnAttribute(Name:="[Trasfer To]", Storage:="_Trasfer_To", DbType:="VarChar(402)")>  _
+	Public Property Trasfer_To() As String
+		Get
+			Return Me._Trasfer_To
+		End Get
+		Set
+			If (String.Equals(Me._Trasfer_To, value) = false) Then
+				Me._Trasfer_To = value
+			End If
+		End Set
+	End Property
+	
+	<Global.System.Data.Linq.Mapping.ColumnAttribute(Storage:="_Remarks", DbType:="VarChar(MAX)")>  _
+	Public Property Remarks() As String
+		Get
+			Return Me._Remarks
+		End Get
+		Set
+			If (String.Equals(Me._Remarks, value) = false) Then
+				Me._Remarks = value
 			End If
 		End Set
 	End Property

@@ -7,6 +7,7 @@
     Public Newowner As Integer
     Public ItemClass As String
     Public ReqId As Integer
+    Public fromrq As Boolean = True
     Private Sub AssetList3_Load(sender As Object, e As EventArgs) Handles MyBase.Load
         display()
     End Sub
@@ -124,8 +125,16 @@
                 If msg = DialogResult.Yes Then
 
                     Propertycode = dgv.Rows(row).Cells(0).Value.ToString()
-                    UpdateClass.UpdateReqstQuantity(ReqId, AssignQty, Propertycode)
+
+
+                    If fromrq = False Then
+                        UpdateClass.UpdateReqstQuantity(ReqId, AssignQty, Propertycode)
+                    Else
+
+                    End If
+
                     UpdateClass.UpdateAssignProperty(Propertycode, Newowner)
+
                     With Assignment1.dgv
                         .Rows(rowToEdit).Cells(9).Value = Propertycode
                     End With
@@ -140,20 +149,13 @@
                         .referenceno = dgv.Rows(row).Cells(8).Value
                         .InvId = dgv.Rows(row).Cells(9).Value
                         .ReqId = ReqId
-
-                        If Assignment1.allowtoaddrow = False Then
-                            .IsFromReq = True
-                        Else
-                            .IsFromReq = False
-                        End If
-
+                        .IsFromReq = fromrq
                         .ItemClass = ItemClass
                         .AQty = AssignQty
                         .rowToEdit = rowToEdit
                         .NewOwner = Newowner
                         .ItemCode = ac
                         .ShowDialog()
-
 
 
                     End With

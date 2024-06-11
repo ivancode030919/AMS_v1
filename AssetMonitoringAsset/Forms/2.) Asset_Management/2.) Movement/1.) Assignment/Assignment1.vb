@@ -62,7 +62,7 @@
         Dim committedRowsCount As Integer = dgv.Rows.Cast(Of DataGridViewRow)().Count(Function(row) Not row.IsNewRow)
 
         If committedRowsCount >= 1 Then
-            MsgBox("save dapat")
+            AddRecord()
 
         ElseIf committedRowsCount = 0 Then
             MsgBox("not save")
@@ -111,6 +111,7 @@
                     .AssignQty = dgv.Rows(row).Cells(4).Value
                     .Newowner = dgv.Rows(row).Cells(8).Value
                     .ItemClass = dgv.Rows(row).Cells(2).Value
+                    .fromrq = allowtoaddrow
                     .ac = dgv.Rows(row).Cells(1).Value
                     .ShowDialog()
                 End With
@@ -207,7 +208,7 @@
         Dim committedRowsCount As Integer = dgv.Rows.Cast(Of DataGridViewRow)().Count(Function(row) Not row.IsNewRow)
 
         If committedRowsCount >= 1 Then
-            MsgBox("save dapat")
+            AddRecord()
 
         ElseIf committedRowsCount = 0 Then
             MsgBox("not save")

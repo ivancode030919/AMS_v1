@@ -36,6 +36,7 @@
 
         If Rtype = "PROCURE" Then
             SimpleButton1.Visible = True
+            SimpleButton2.Text = "Record"
             With dgv
                 .Columns(1).HeaderText = "Asset Code"
                 .Columns(2).HeaderText = "Class"
@@ -52,6 +53,7 @@
             End With
         ElseIf Rtype = "BORROW" Then
             SimpleButton1.Enabled = False
+            SimpleButton2.Text = "Approve"
             With dgv
                 .Columns(0).HeaderText = "Property Code"
                 .Columns(1).HeaderText = "Description"
@@ -64,6 +66,9 @@
                 .ReadOnly = True
             End With
         ElseIf Rtype = "TRANSFER OWNERSHIP" Then
+            SimpleButton2.Text = "Approve"
+            SimpleButton1.Enabled = False
+
             'DISPLAY IF THE REQUEST TYPE IS TRANSFER OWNERSHIP
         End If
 
@@ -133,6 +138,7 @@
 
             End If
         ElseIf TextBox3.Text = "BORROW" Then
+
         ElseIf TextBox3.Text = "TRANSFER OWNERSHIP" Then
 
         End If
@@ -186,7 +192,21 @@
 
         ElseIf TextBox3.Text = "BORROW" Then
 
+
+
+
+
+
+
+
         ElseIf TextBox3.Text = "TRANSFER OWNERSHIP" Then
+
+
+
+
+
+
+
 
         End If
 
@@ -220,12 +240,17 @@
                             InsertionClass.SaveProcurementDetail(AssetCode, ItemClass, RequestFor, Quantity, Remarks, State, HeaderId)
 
                         End If
+
                     Next
                     RequestRegister.display()
                     MessageBox.Show("Successfully Recorded", "Notification", MessageBoxButtons.OK, MessageBoxIcon.Information)
                     SimpleButton2.Text = "Close"
 
-                ElseIf TextBox3.Text = "BORROW" Then
+                End If
+
+            ElseIf SimpleButton2.Text = "Approve" Then
+
+                If TextBox3.Text = "BORROW" Then
 
                     ' type1 for update to be re-use it is a condition on update
                     Dim type1 As Integer = 1
@@ -250,42 +275,48 @@
                     RequestRegister.display()
                     MessageBox.Show("Successfully Recorded", "Notification", MessageBoxButtons.OK, MessageBoxIcon.Information)
                     SimpleButton2.Text = "Close"
-                ElseIf TextBox3.Text = "TRANSFER OWNERSHIP" Then
-                    '' type1 for update to be re-use it is a condition on update
-                    'Dim type1 As Integer = 2
-                    'UpdateClass.UpdateStatusReqHeader(headerid, type1)
-                    'InsertionClass.SaveProcurementHeader(TextBox1.Text, Home.EmployeeID, DateTimePicker1.Value)
+                    If TextBox3.Text = "TRANSFER OWNERSHIP" Then
+                        '' type1 for update to be re-use it is a condition on update
+                        'Dim type1 As Integer = 2
+                        'UpdateClass.UpdateStatusReqHeader(headerid, type1)
+                        'InsertionClass.SaveProcurementHeader(TextBox1.Text, Home.EmployeeID, DateTimePicker1.Value)
 
-                    'For Each row As DataGridViewRow In dgv.Rows
+                        'For Each row As DataGridViewRow In dgv.Rows
 
-                    '    If Not row.IsNewRow Then
+                        '    If Not row.IsNewRow Then
 
-                    '        Dim HeaderId As Integer = FetchClass.FetchTransIdForApproval
-                    '        Dim AssetCode As String = row.Cells(1).Value.ToString
-                    '        Dim ItemClass As String = row.Cells(2).Value.ToString
-                    '        Dim RequestFor As String = row.Cells(8).Value.ToString
-                    '        Dim Quantity As String = row.Cells(4).Value.ToString
-                    '        Dim Remarks As String = row.Cells(5).Value.ToString
-                    '        Dim State As String = row.Cells(6).Value.ToString
-                    '        InsertionClass.SaveProcurementDetail(AssetCode, ItemClass, RequestFor, Quantity, Remarks, State, HeaderId)
+                        '        Dim HeaderId As Integer = FetchClass.FetchTransIdForApproval
+                        '        Dim AssetCode As String = row.Cells(1).Value.ToString
+                        '        Dim ItemClass As String = row.Cells(2).Value.ToString
+                        '        Dim RequestFor As String = row.Cells(8).Value.ToString
+                        '        Dim Quantity As String = row.Cells(4).Value.ToString
+                        '        Dim Remarks As String = row.Cells(5).Value.ToString
+                        '        Dim State As String = row.Cells(6).Value.ToString
+                        '        InsertionClass.SaveProcurementDetail(AssetCode, ItemClass, RequestFor, Quantity, Remarks, State, HeaderId)
 
-                    '    End If
-                    'Next
-                    'RequestRegister.display()
-                    'MessageBox.Show("Successfully Recorded", "Notification", MessageBoxButtons.OK, MessageBoxIcon.Information)
-                    'SimpleButton2.Text = "Close"
+                        '    End If
+                        'Next
+                        'RequestRegister.display()
+                        'MessageBox.Show("Successfully Recorded", "Notification", MessageBoxButtons.OK, MessageBoxIcon.Information)
+                        'SimpleButton2.Text = "Close"
+
+                    End If
+
                 End If
+
 
 
 
             ElseIf SimpleButton2.Text = "Close" Then
                 closingform()
+
             End If
 
 
         Catch ex As Exception
             MsgBox("Error.For Approval.01")
         End Try
+
     End Sub
 
 

@@ -54,7 +54,13 @@
                 End If
 
                 UpdateClass.UpdateAssetQty(InvId, QtyResult)
-                UpdateClass.UpdateReqstQuantity(ReqId, AQty - Qtytxt.Text, PropertyCode + "-" + lastChildSeries.ToString)
+
+                If IsFromReq = False Then
+                    UpdateClass.UpdateReqstQuantity(ReqId, AQty - Qtytxt.Text, PropertyCode + "-" + lastChildSeries.ToString)
+                Else
+
+                End If
+
                 InsertionClass.SaveAssetInventory(ItemCode, ItemClass, PropertyCode, ItemDescription, Double.Parse(Qtytxt.Text), NewOwner, NewOwner, 0, Reference, referenceno, "Not Allowed", 0, 0, ComboBox1.Text, lastChildSeries, True, False)
 
                 With Assignment1.dgv

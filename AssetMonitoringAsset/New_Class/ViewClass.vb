@@ -25,6 +25,10 @@
                 .dgv.DataSource = db.ShowAssetAvailabilityBorrow(HeaderID)
             End With
         ElseIf RequestType = "TRANSFER OWNERSHIP" Then
+
+            With Rqregister
+                .dgv.DataSource = db.ShowRequestTransfer(HeaderID)
+            End With
         End If
 
     End Sub

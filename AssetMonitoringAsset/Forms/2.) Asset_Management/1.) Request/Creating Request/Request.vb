@@ -27,8 +27,9 @@
         dgv.Columns(1).ReadOnly = True
         dgv.Columns(3).ReadOnly = True
 
-        'dgv.Columns(5).Visible = False
-        'dgv.Columns(6).Visible = False
+        dgv.Columns(5).Visible = False
+        dgv.Columns(6).Visible = False
+
     End Sub
     Public Sub DisplayBorrow()
 
