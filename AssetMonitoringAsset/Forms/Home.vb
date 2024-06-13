@@ -163,4 +163,14 @@
     Private Sub AccordionControlElement48_Click(sender As Object, e As EventArgs) Handles AccordionControlElement48.Click
 
     End Sub
+
+    Private Sub AccordionControlElement36_Click(sender As Object, e As EventArgs) Handles AccordionControlElement36.Click
+
+        Me.IsMdiContainer = True
+        AssignemntRegister.MdiParent = Me
+        PictureBox1.SendToBack()
+        AssignemntRegister.BringToFront()
+        AssignemntRegister.Show()
+
+    End Sub
 End Class

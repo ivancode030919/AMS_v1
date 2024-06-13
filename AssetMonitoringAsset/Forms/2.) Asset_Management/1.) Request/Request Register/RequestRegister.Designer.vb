@@ -35,6 +35,7 @@ Partial Class RequestRegister
         Me.Label2 = New System.Windows.Forms.Label()
         Me.DateTimePicker2 = New System.Windows.Forms.DateTimePicker()
         Me.DateTimePicker1 = New System.Windows.Forms.DateTimePicker()
+        Me.GroupBox3 = New System.Windows.Forms.GroupBox()
         CType(Me.PanelControl2, System.ComponentModel.ISupportInitialize).BeginInit()
         Me.PanelControl2.SuspendLayout()
         CType(Me.dgv, System.ComponentModel.ISupportInitialize).BeginInit()
@@ -42,6 +43,7 @@ Partial Class RequestRegister
         Me.PanelControl3.SuspendLayout()
         Me.GroupBox2.SuspendLayout()
         Me.GroupBox1.SuspendLayout()
+        Me.GroupBox3.SuspendLayout()
         Me.SuspendLayout()
         '
         'PanelControl2
@@ -74,11 +76,8 @@ Partial Class RequestRegister
         '
         Me.PanelControl3.Anchor = CType(((System.Windows.Forms.AnchorStyles.Top Or System.Windows.Forms.AnchorStyles.Left) _
             Or System.Windows.Forms.AnchorStyles.Right), System.Windows.Forms.AnchorStyles)
+        Me.PanelControl3.Controls.Add(Me.GroupBox3)
         Me.PanelControl3.Controls.Add(Me.Guna2CircleButton1)
-        Me.PanelControl3.Controls.Add(Me.RadioButton4)
-        Me.PanelControl3.Controls.Add(Me.RadioButton3)
-        Me.PanelControl3.Controls.Add(Me.RadioButton2)
-        Me.PanelControl3.Controls.Add(Me.RadioButton1)
         Me.PanelControl3.Controls.Add(Me.GroupBox2)
         Me.PanelControl3.Controls.Add(Me.GroupBox1)
         Me.PanelControl3.Location = New System.Drawing.Point(5, 5)
@@ -110,7 +109,7 @@ Partial Class RequestRegister
         '
         Me.RadioButton4.AutoSize = True
         Me.RadioButton4.Font = New System.Drawing.Font("Arial Rounded MT Bold", 11.25!)
-        Me.RadioButton4.Location = New System.Drawing.Point(899, 25)
+        Me.RadioButton4.Location = New System.Drawing.Point(95, 27)
         Me.RadioButton4.Name = "RadioButton4"
         Me.RadioButton4.Size = New System.Drawing.Size(76, 21)
         Me.RadioButton4.TabIndex = 25
@@ -121,7 +120,7 @@ Partial Class RequestRegister
         '
         Me.RadioButton3.AutoSize = True
         Me.RadioButton3.Font = New System.Drawing.Font("Arial Rounded MT Bold", 11.25!)
-        Me.RadioButton3.Location = New System.Drawing.Point(899, 51)
+        Me.RadioButton3.Location = New System.Drawing.Point(95, 53)
         Me.RadioButton3.Name = "RadioButton3"
         Me.RadioButton3.Size = New System.Drawing.Size(99, 21)
         Me.RadioButton3.TabIndex = 24
@@ -132,7 +131,7 @@ Partial Class RequestRegister
         '
         Me.RadioButton2.AutoSize = True
         Me.RadioButton2.Font = New System.Drawing.Font("Arial Rounded MT Bold", 11.25!)
-        Me.RadioButton2.Location = New System.Drawing.Point(823, 51)
+        Me.RadioButton2.Location = New System.Drawing.Point(19, 53)
         Me.RadioButton2.Name = "RadioButton2"
         Me.RadioButton2.Size = New System.Drawing.Size(45, 21)
         Me.RadioButton2.TabIndex = 23
@@ -143,7 +142,7 @@ Partial Class RequestRegister
         '
         Me.RadioButton1.AutoSize = True
         Me.RadioButton1.Font = New System.Drawing.Font("Arial Rounded MT Bold", 11.25!)
-        Me.RadioButton1.Location = New System.Drawing.Point(823, 25)
+        Me.RadioButton1.Location = New System.Drawing.Point(19, 27)
         Me.RadioButton1.Name = "RadioButton1"
         Me.RadioButton1.Size = New System.Drawing.Size(65, 21)
         Me.RadioButton1.TabIndex = 22
@@ -232,6 +231,20 @@ Partial Class RequestRegister
         Me.DateTimePicker1.Size = New System.Drawing.Size(235, 25)
         Me.DateTimePicker1.TabIndex = 0
         '
+        'GroupBox3
+        '
+        Me.GroupBox3.Controls.Add(Me.RadioButton3)
+        Me.GroupBox3.Controls.Add(Me.RadioButton4)
+        Me.GroupBox3.Controls.Add(Me.RadioButton1)
+        Me.GroupBox3.Controls.Add(Me.RadioButton2)
+        Me.GroupBox3.Font = New System.Drawing.Font("Arial Rounded MT Bold", 11.25!)
+        Me.GroupBox3.Location = New System.Drawing.Point(812, 5)
+        Me.GroupBox3.Name = "GroupBox3"
+        Me.GroupBox3.Size = New System.Drawing.Size(196, 89)
+        Me.GroupBox3.TabIndex = 2
+        Me.GroupBox3.TabStop = False
+        Me.GroupBox3.Text = "Filter"
+        '
         'RequestRegister
         '
         Me.AutoScaleDimensions = New System.Drawing.SizeF(6.0!, 13.0!)
@@ -255,11 +268,12 @@ Partial Class RequestRegister
         CType(Me.dgv, System.ComponentModel.ISupportInitialize).EndInit()
         CType(Me.PanelControl3, System.ComponentModel.ISupportInitialize).EndInit()
         Me.PanelControl3.ResumeLayout(False)
-        Me.PanelControl3.PerformLayout()
         Me.GroupBox2.ResumeLayout(False)
         Me.GroupBox2.PerformLayout()
         Me.GroupBox1.ResumeLayout(False)
         Me.GroupBox1.PerformLayout()
+        Me.GroupBox3.ResumeLayout(False)
+        Me.GroupBox3.PerformLayout()
         Me.ResumeLayout(False)
 
     End Sub
@@ -280,4 +294,5 @@ Partial Class RequestRegister
     Friend WithEvents RadioButton1 As RadioButton
     Friend WithEvents RadioButton4 As RadioButton
     Friend WithEvents Guna2CircleButton1 As Guna.UI2.WinForms.Guna2CircleButton
+    Friend WithEvents GroupBox3 As GroupBox
 End Class

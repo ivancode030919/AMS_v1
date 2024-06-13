@@ -344,6 +344,33 @@
 
     End Function
 
+    'View Assignemnt Register
+    Public Shared Function ViewAssignmentRegister(ByVal EN As String, ByVal d1 As Date, ByVal d2 As Date, ByVal IsfromR As String) As Object
+
+        If IsfromR = "O" Then
+
+            Dim querysection = (From s In db.tblAllocationHeaders
+                                Join j In db.tblUsers On s.Requestor Equals j.UserID
+                                Join g In db.tblEmployees On j.EmployeeID Equals g.EmployeeID
+                                Where s.EntryNumber.Contains(EN) AndAlso (s.Date >= d1 AndAlso s.Date <= d2)
+                                Let c = g.FirstName + " " + g.LastName
+                                Select s.EntryNumber, c, s.Date).ToList
+            Return querysection
+
+        Else
+
+            Dim querysection = (From s In db.tblAllocationHeaders
+                                Join j In db.tblUsers On s.Requestor Equals j.UserID
+                                Join g In db.tblEmployees On j.EmployeeID Equals g.EmployeeID
+                                Where s.EntryNumber.Contains(EN) AndAlso (s.Date >= d1 AndAlso s.Date <= d2) AndAlso (s.IsReq = IsfromR)
+                                Let c = g.FirstName + " " + g.LastName
+                                Select s.EntryNumber, c, s.Date).ToList
+            Return querysection
+
+        End If
+
+    End Function
+
 End Class
 
 

@@ -968,3 +968,5 @@ C:\Users\HSDP_SYS_DEV\Desktop\WORK\AMS\AMS_v1\AssetMonitoringAsset\obj\Debug\Ass
 C:\Users\HSDP_SYS_DEV\Desktop\WORK\AMS\AMS_v1\AssetMonitoringAsset\obj\Debug\AssetMonitoringAsset.ReqCancel.resources
 C:\Users\HSDP_SYS_DEV\Desktop\WORK\AMS\AMS_v1\AssetMonitoringAsset\bin\Debug\Guna.UI2.dll
 C:\Users\HSDP_SYS_DEV\Desktop\WORK\AMS\AMS_v1\AssetMonitoringAsset\obj\Debug\AssetMonitoringAsset.ConsumableQty.resources
+C:\Users\HSDP_SYS_DEV\Desktop\WORK\AMS\AMS_v1\AssetMonitoringAsset\obj\Debug\AssetMonitoringAsset.AssignemntRegister.resources
+C:\Users\HSDP_SYS_DEV\Desktop\WORK\AMS\AMS_v1\AssetMonitoringAsset\obj\Debug\AssetMonitoringAsset.AssignmentDetail.resources

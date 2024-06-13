@@ -4,7 +4,7 @@
     Public requestor As Integer
     Public allowtoaddrow As Boolean = False
     Public winstatemax As Boolean = False
-
+    Public IsFromReq As String
     Private Sub Assignment1_Load(sender As Object, e As EventArgs) Handles MyBase.Load
 
         If allowtoaddrow = True Then
@@ -60,12 +60,13 @@
 
     Private Sub Assignment1_FormClosing(sender As Object, e As FormClosingEventArgs) Handles MyBase.FormClosing
         Dim committedRowsCount As Integer = dgv.Rows.Cast(Of DataGridViewRow)().Count(Function(row) Not row.IsNewRow)
+        IsFromReq = "R"
 
         If committedRowsCount >= 1 Then
-            AddRecord()
+            AddRecord(IsFromReq)
 
         ElseIf committedRowsCount = 0 Then
-            MsgBox("not save")
+
         End If
 
         If winstatemax = True Then
@@ -204,14 +205,14 @@
     End Sub
 
     Private Sub Assignment1_Leave(sender As Object, e As EventArgs) Handles MyBase.Leave
+        IsFromReq = "S"
 
         Dim committedRowsCount As Integer = dgv.Rows.Cast(Of DataGridViewRow)().Count(Function(row) Not row.IsNewRow)
 
         If committedRowsCount >= 1 Then
-            AddRecord()
-
+            AddRecord(IsFromReq)
         ElseIf committedRowsCount = 0 Then
-            MsgBox("not save")
+
         End If
 
         If winstatemax = True Then
@@ -225,11 +226,11 @@
 
 
 
-    Private Sub AddRecord()
+    Private Sub AddRecord(ByVal IsFromR As String)
 
         Dim user As Integer = Home.UserID
 
-            InsertionClass.SaveAssignmentHeader(TextBox1.Text, user, DateTimePicker1.Value, headerid)
+        InsertionClass.SaveAssignmentHeader(TextBox1.Text, user, DateTimePicker1.Value, headerid, IsFromR)
 
         For Each row As DataGridViewRow In dgv.Rows
             If Not row.IsNewRow Then

@@ -129,6 +129,18 @@
       <DesignTime>True</DesignTime>
       <DependentUpon>AMSdbDataSet.xsd</DependentUpon>
     </Compile>
+    <Compile Include="Forms\2.%29 Asset_Management\2.%29 Movement\1.%29 Assignment\AssignemntRegister.Designer.vb">
+      <DependentUpon>AssignemntRegister.vb</DependentUpon>
+    </Compile>
+    <Compile Include="Forms\2.%29 Asset_Management\2.%29 Movement\1.%29 Assignment\AssignemntRegister.vb">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Forms\2.%29 Asset_Management\2.%29 Movement\1.%29 Assignment\AssignmentDetail.Designer.vb">
+      <DependentUpon>AssignmentDetail.vb</DependentUpon>
+    </Compile>
+    <Compile Include="Forms\2.%29 Asset_Management\2.%29 Movement\1.%29 Assignment\AssignmentDetail.vb">
+      <SubType>Form</SubType>
+    </Compile>
     <Compile Include="Forms\2.%29 Asset_Management\2.%29 Movement\1.%29 Assignment\ConsumableQty.Designer.vb">
       <DependentUpon>ConsumableQty.vb</DependentUpon>
     </Compile>
@@ -502,6 +514,12 @@
     <None Include="Connection and Module\DataClasses1.dbml.layout">
       <DependentUpon>DataClasses1.dbml</DependentUpon>
     </None>
+    <EmbeddedResource Include="Forms\2.%29 Asset_Management\2.%29 Movement\1.%29 Assignment\AssignemntRegister.resx">
+      <DependentUpon>AssignemntRegister.vb</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Forms\2.%29 Asset_Management\2.%29 Movement\1.%29 Assignment\AssignmentDetail.resx">
+      <DependentUpon>AssignmentDetail.vb</DependentUpon>
+    </EmbeddedResource>
     <EmbeddedResource Include="Forms\2.%29 Asset_Management\2.%29 Movement\1.%29 Assignment\ConsumableQty.resx">
       <DependentUpon>ConsumableQty.vb</DependentUpon>
     </EmbeddedResource>

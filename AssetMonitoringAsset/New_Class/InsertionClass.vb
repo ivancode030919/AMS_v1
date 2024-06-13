@@ -352,12 +352,11 @@ Public Class InsertionClass
         End Try
     End Sub
 
-
     'Save in Assignment Header 
     Public Shared Sub SaveAssignmentHeader(ByVal Entrynumber As String,
                                            ByVal Requestor As Integer,
                                            ByVal HDate As Date,
-                                           ByVal RequestID As Integer)
+                                           ByVal RequestID As Integer, ByVal IsfrmR As String)
         Try
             Dim post As Table(Of tblAllocationHeader) = InsertionClass.GetAllocationHeader
             Dim p As New tblAllocationHeader With
@@ -365,7 +364,8 @@ Public Class InsertionClass
               .EntryNumber = Entrynumber,
               .Requestor = Requestor,
               .[Date] = HDate,
-              .RequestID = RequestID
+              .RequestID = RequestID,
+              .IsReq = IsfrmR
                 }
             post.InsertOnSubmit(p)
             post.Context.SubmitChanges()
