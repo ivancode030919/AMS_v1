@@ -240,7 +240,7 @@ Public Class InsertionClass
 
 
     'Save in New Asset Class Detail
-    Public Shared Sub SaveAssetDetail(ByVal Assetcode As String,
+    Public Shared Sub SaveAssetDetail(ByVal Assetcode As Integer,
                                       ByVal Description As String,
                                       ByVal Category As Integer,
                                       ByVal Type As Integer,
@@ -272,7 +272,7 @@ Public Class InsertionClass
 
 
     'Import Data in tblAssetDetailMasterlist
-    Public Shared Sub SaveMasterlistImport(ByVal itemcode As String,
+    Public Shared Sub SaveMasterlistImport(ByVal itemcode As Integer,
                                            ByVal des As String,
                                            ByVal catid As Integer,
                                            ByVal typeid As Integer,
@@ -356,7 +356,7 @@ Public Class InsertionClass
     Public Shared Sub SaveAssignmentHeader(ByVal Entrynumber As String,
                                            ByVal Requestor As Integer,
                                            ByVal HDate As Date,
-                                           ByVal RequestID As Integer, ByVal IsfrmR As String)
+                                           ByVal RequestID As Integer, ByVal IsfrmR As Char)
         Try
             Dim post As Table(Of tblAllocationHeader) = InsertionClass.GetAllocationHeader
             Dim p As New tblAllocationHeader With
@@ -375,11 +375,11 @@ Public Class InsertionClass
     End Sub
 
     'Save in Assignment Details
-    Public Shared Sub SaveAssignmentDetails(ByVal Qty As Double,
+    Public Shared Sub SaveAssignmentDetails(ByVal Qty As Decimal,
                                             ByVal PropertryCode As String,
-                                            ByVal HeaderId As String,
-                                            ByVal Employee As String,
-                                            ByVal ItemCode As String,
+                                            ByVal HeaderId As Integer,
+                                            ByVal Employee As Integer,
+                                            ByVal ItemCode As Integer,
                                             ByVal AvailableQty As Double)
         Try
             Dim post As Table(Of tblAllocationDetail) = InsertionClass.GetAllocationDetail
@@ -499,7 +499,7 @@ Public Class InsertionClass
     'Save in Procurement DEtail
     Public Shared Sub SaveProcurementDetail(ByVal AssetCode As String,
                                             ByVal ItemClass As String,
-                                            ByVal Requestfor As String,
+                                            ByVal Requestfor As Integer,
                                             ByVal Quantity As Double,
                                             ByVal remaks As String,
                                             ByVal State As String,
@@ -536,7 +536,7 @@ Public Class InsertionClass
         Try
             Dim Status = "OPEN"
             Dim State = "OPEN"
-            Dim Approval = 0
+            Dim Approval = False
             Dim post As Table(Of tblRequestDetail) = InsertionClass.GetAquisitionRequest
             Dim p As New tblRequestDetail With
                 {
@@ -572,7 +572,7 @@ Public Class InsertionClass
 
         Try
             Dim Status = "OPEN"
-            Dim Approval = 0
+            Dim Approval = False
             Dim post As Table(Of tblRequestDetail) = InsertionClass.GetAquisitionRequest
             Dim p As New tblRequestDetail With
                 {
@@ -609,7 +609,7 @@ Public Class InsertionClass
 
         Try
             Dim Status = "OPEN"
-            Dim Approval = 0
+            Dim Approval = False
             Dim post As Table(Of tblRequestDetail) = InsertionClass.GetAquisitionRequest
             Dim p As New tblRequestDetail With
                 {
@@ -689,7 +689,7 @@ Public Class InsertionClass
 
     'Save in Borrow DEtail
     Public Shared Sub SaveBorrowDetail(ByVal PropertyCode As String,
-                                            ByVal Quantity As Double,
+                                            ByVal Quantity As Decimal,
                                             ByVal Borrowee As Integer,
                                             ByVal DateFrom As Date,
                                             ByVal DateTo As Date,
@@ -718,7 +718,7 @@ Public Class InsertionClass
     End Sub
 
     'Import Data in tblassetInventory
-    Public Shared Sub ImportExistingAssets(ByVal AssetCode As String,
+    Public Shared Sub ImportExistingAssets(ByVal AssetCode As Integer,
                                            ByVal Class1 As String,
                                            ByVal PropertyCode As String,
                                            ByVal Description As String,

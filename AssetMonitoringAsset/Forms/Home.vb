@@ -173,4 +173,15 @@
         AssignemntRegister.Show()
 
     End Sub
+
+
+    Private Sub AccordionControlElement53_Click(sender As Object, e As EventArgs) Handles AccordionControlElement53.Click
+
+        Me.IsMdiContainer = True
+        BorrowMain.MdiParent = Me
+        PictureBox1.SendToBack()
+        BorrowMain.BringToFront()
+        BorrowMain.Show()
+
+    End Sub
 End Class

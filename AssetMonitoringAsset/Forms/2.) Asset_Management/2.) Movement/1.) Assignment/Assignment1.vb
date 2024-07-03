@@ -1,6 +1,6 @@
 ﻿Public Class Assignment1
 
-    Public headerid As Integer
+    Public headerId As Integer
     Public requestor As Integer
     Public allowtoaddrow As Boolean = False
     Public winstatemax As Boolean = False
@@ -24,7 +24,7 @@
 
     Public Sub display()
 
-        ViewClass.FetchRegisterDetail(headerid)
+        ViewClass.FetchRegisterDetail(headerId)
 
         With dgv
             .Columns(1).HeaderText = "Asset Code"
@@ -63,7 +63,7 @@
         IsFromReq = "R"
 
         If committedRowsCount >= 1 Then
-            AddRecord(IsFromReq)
+            AddRecord(Char.Parse(IsFromReq))
 
         ElseIf committedRowsCount = 0 Then
 
@@ -91,7 +91,7 @@
                     .rowToEdit = row
                     .mode1 = 1
                     .modty = 5
-                    .ac = dgv.Rows(row).Cells(1).Value
+                    .ac = Integer.Parse(dgv.Rows(row).Cells(1).Value.ToString)
                     .ShowDialog()
                 End With
 
@@ -109,11 +109,11 @@
                     .rowToEdit = row
                     .modty = 4
                     .mode1 = 3
-                    .AssignQty = dgv.Rows(row).Cells(4).Value
-                    .Newowner = dgv.Rows(row).Cells(8).Value
-                    .ItemClass = dgv.Rows(row).Cells(2).Value
+                    .AssignQty = Integer.Parse(dgv.Rows(row).Cells(4).Value.ToString)
+                    .Newowner = Integer.Parse(dgv.Rows(row).Cells(8).Value.ToString)
+                    .ItemClass = dgv.Rows(row).Cells(2).Value.ToString
                     .fromrq = allowtoaddrow
-                    .ac = dgv.Rows(row).Cells(1).Value
+                    .ac = Integer.Parse(dgv.Rows(row).Cells(1).Value.ToString)
                     .ShowDialog()
                 End With
 
@@ -127,18 +127,18 @@
                     .rowToEdit = row
                     .mode1 = 3
                     .modty = 4
-                    .AssignQty = dgv.Rows(row).Cells(4).Value
-                    .Newowner = dgv.Rows(row).Cells(8).Value
-                    .ItemClass = dgv.Rows(row).Cells(2).Value
-                    .ac = dgv.Rows(row).Cells(1).Value
-                    .ReqId = dgv.Rows(row).Cells(0).Value
+                    .AssignQty = Double.Parse(dgv.Rows(row).Cells(4).Value.ToString)
+                    .Newowner = Integer.Parse(dgv.Rows(row).Cells(8).Value.ToString)
+                    .ItemClass = dgv.Rows(row).Cells(2).Value.ToString
+                    .ac = Integer.Parse(dgv.Rows(row).Cells(1).Value.ToString)
+                    .ReqId = Integer.Parse(dgv.Rows(row).Cells(0).Value.ToString)
                     .ShowDialog()
 
                 End With
 
             End If
 
-            End If
+        End If
         'Catch ex As Exception
         '    MsgBox("Assignment.Error.Double.Click.01")
         'End Try
@@ -162,13 +162,13 @@
                 For Each row As DataGridViewRow In dgv.Rows
 
                     'Assuming itemcode is stored in a specific column (adjust as needed)
-                    Dim itemcode As String = row.Cells(1).Value
+                    Dim itemcode As Integer = Integer.Parse(row.Cells(1).Value.ToString)
 
                     'Fetch asset without owner for the specific itemcode
                     row.Cells(7).Value = FetchClass.FetchAssetWithoutOwner(itemcode)
 
                     'Check if the Item is Consumable or Non-Consumable
-                    If FetchClass.CheckifCosumable(itemcode) Is Nothing Then
+                    If FetchClass.CheckIfConsumable(itemcode) Is Nothing Then
                         row.Cells(4).Value = "1"
                         row.Cells(4).ReadOnly = True
                     Else
@@ -210,7 +210,7 @@
         Dim committedRowsCount As Integer = dgv.Rows.Cast(Of DataGridViewRow)().Count(Function(row) Not row.IsNewRow)
 
         If committedRowsCount >= 1 Then
-            AddRecord(IsFromReq)
+            AddRecord(Char.Parse(IsFromReq))
         ElseIf committedRowsCount = 0 Then
 
         End If
@@ -226,31 +226,31 @@
 
 
 
-    Private Sub AddRecord(ByVal IsFromR As String)
+    Private Sub AddRecord(ByVal IsFromR As Char)
 
         Dim user As Integer = Home.UserID
 
-        InsertionClass.SaveAssignmentHeader(TextBox1.Text, user, DateTimePicker1.Value, headerid, IsFromR)
+        InsertionClass.SaveAssignmentHeader(TextBox1.Text, user, DateTimePicker1.Value, headerId, IsFromR)
 
         For Each row As DataGridViewRow In dgv.Rows
             If Not row.IsNewRow Then
                 Dim headid As Integer = FetchClass.FetchTransHeaderIDAssignment
-                Dim id As String = row.Cells(0).Value
-                Dim ItemCode As String = row.Cells(1).Value
-                Dim qty As String = row.Cells(4).Value
-                Dim Propertycode As String = row.Cells(9).Value
-                Dim NewOwnerID As String = row.Cells(8).Value
-                Dim Availableqty As String = row.Cells(7).Value
+                Dim id As String = row.Cells(0).Value.ToString
+                Dim ItemCode As String = row.Cells(1).Value.ToString
+                Dim qty As String = row.Cells(4).Value.ToString
+                Dim Propertycode As String = row.Cells(9).Value.ToString
+                Dim NewOwnerID As String = row.Cells(8).Value.ToString
+                Dim Availableqty As String = row.Cells(7).Value.ToString
 
                 If allowtoaddrow = True Then
 
                 ElseIf allowtoaddrow = False Then
 
-                    UpdateClass.UpdateStatusReq(id)
+                    UpdateClass.UpdateStatusReq(Integer.Parse(id))
 
                 End If
 
-                InsertionClass.SaveAssignmentDetails(Double.Parse(qty), Propertycode, headid, user, ItemCode, Availableqty)
+                InsertionClass.SaveAssignmentDetails(Decimal.Parse(qty), Propertycode, headid, user, Integer.Parse(ItemCode), Double.Parse(Availableqty))
 
             End If
         Next

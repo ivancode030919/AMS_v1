@@ -131,8 +131,8 @@
 
                 With ChngState
                     .rowToEdit = row
-                    .id = selectedrow.Cells(0).Value
-                    .Stat = selectedrow.Cells(6).Value
+                    .id = Integer.Parse(selectedrow.Cells(0).Value.ToString)
+                    .Stat = selectedrow.Cells(6).Value.ToString
                     .ShowDialog()
                 End With
 
@@ -152,7 +152,7 @@
             .TextBox1.Text = TextBox1.Text
             .TextBox2.Text = TextBox2.Text
             .allowtoaddrow = False
-            .headerid = headerid
+            .headerId = headerid
             .requestor = requestby
             .WindowState = WindowState.Normal
             .ShowDialog()
@@ -176,7 +176,7 @@
                             UpdateClass.UpdateStatusReqHeader(headerid, type1)
 
 
-                        ElseIf row.Cells(7).Value.ToString = 0 Then
+                        ElseIf Double.parse(row.Cells(7).Value.ToString) = 0 Then
 
                             SimpleButton1.Enabled = False
                         Else
@@ -237,7 +237,7 @@
                             Dim Quantity As String = row.Cells(4).Value.ToString
                             Dim Remarks As String = row.Cells(5).Value.ToString
                             Dim State As String = row.Cells(6).Value.ToString
-                            InsertionClass.SaveProcurementDetail(AssetCode, ItemClass, RequestFor, Quantity, Remarks, State, HeaderId)
+                            InsertionClass.SaveProcurementDetail(AssetCode, ItemClass, Integer.Parse(RequestFor), Double.Parse(Quantity), Remarks, State, HeaderId)
 
                         End If
 
@@ -268,7 +268,7 @@
                             Dim DateBorrow As String = row.Cells(4).Value.ToString
                             Dim DateTobeReturn As String = row.Cells(5).Value.ToString
                             Dim Remarks As String = row.Cells(6).Value.ToString
-                            InsertionClass.SaveBorrowDetail(PropertyCode, Quanity, Borrowee, DateBorrow, DateTobeReturn, Remarks, HeaderId)
+                            InsertionClass.SaveBorrowDetail(PropertyCode, Decimal.Parse(Quanity), Integer.Parse(Borrowee), Date.Parse(DateBorrow), Date.Parse(DateTobeReturn), Remarks, HeaderId)
 
                         End If
                     Next

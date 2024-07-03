@@ -1,7 +1,7 @@
 ﻿Public Class FetchClass
 
     'Fetch Last Item Code in New Asset Class
-    Public Shared Function FetchLastItemcode() As String
+    Public Shared Function FetchLastItemcode() As Integer
 
         Try
             Dim querysection = (From s In db.tblmasterlistdetails
@@ -11,21 +11,24 @@
         Catch ex As Exception
 
             MsgBox("Error.F-3")
+            Return Nothing
         End Try
 
     End Function
 
 
     'Fetch HeaderID in BUild Assdet Header
-    Public Shared Function FetcHeaderID() As String
+    Public Shared Function FetchHeaderID() As Integer
 
         Try
-            Dim querysection As String = (From s In db.tblBuildHeaders
-                                          Order By s.id Descending
-                                          Select s.id).FirstOrDefault()
+            Dim querysection = (From s In db.tblBuildHeaders
+                                Order By s.id Descending
+                                Select s.id).FirstOrDefault()
             Return querysection
+
         Catch ex As Exception
             MsgBox("Error.F-4")
+            Return Nothing
         End Try
 
     End Function
@@ -42,6 +45,7 @@
             Return querysection
         Catch ex As Exception
             MsgBox("Error.F-5")
+            Return Nothing
         End Try
 
     End Function
@@ -88,6 +92,7 @@
             End If
         Catch ex As Exception
             MsgBox("Error.F-7")
+            Return Nothing
         End Try
 
 
@@ -121,6 +126,7 @@
             End If
         Catch ex As Exception
             MsgBox("Error.F-8")
+            Return Nothing
         End Try
     End Function
 
@@ -133,7 +139,8 @@
                                            Select s.AssetHeaderID).FirstOrDefault()
             Return querysection
         Catch ex As Exception
-            Return MsgBox("Error.F-9")
+            MsgBox("Error.F-9")
+            Return Nothing
         End Try
     End Function
 
@@ -147,6 +154,7 @@
             Return querysection
         Catch ex As Exception
             MsgBox("Error.F-10")
+            Return Nothing
         End Try
     End Function
 
@@ -187,6 +195,7 @@
             End If
         Catch ex As Exception
             MsgBox("Error.F-12")
+            Return Nothing
         End Try
 
     End Function
@@ -219,13 +228,14 @@
             Return querysection
         Catch ex As Exception
             MsgBox("Error.F-14")
+            Return Nothing
         End Try
 
     End Function
 
 
     'Check Asset Availability Quantity
-    Public Shared Function FetchAssetWithoutOwner(ByVal ItemCode As String) As Object
+    Public Shared Function FetchAssetWithoutOwner(ByVal ItemCode As Integer) As Object
         Try
             If Home.UserType = "ADMIN" Then
                 Dim querysection = (From f In db.tblAssetInventories
@@ -241,13 +251,15 @@
             End If
         Catch ex As Exception
             MsgBox("Error.F-1")
+            Return Nothing
         End Try
 
     End Function
 
 
     'Check If Cosumable
-    Public Shared Function CheckifCosumable(ByVal ItemCodes As String) As Object
+    Public Shared Function CheckIfConsumable(ByVal ItemCodes As Integer) As Object
+
         Try
             Dim querysection = (From f In db.tblmasterlistdetails
                                 Join g In db.tblCategories On f.CategoryID Equals g.CategoryID
@@ -257,6 +269,7 @@
             Return querysection
         Catch ex As Exception
             MsgBox("Error.F-2")
+            Return Nothing
         End Try
 
     End Function
@@ -286,11 +299,12 @@
             End If
         Catch ex As Exception
             MsgBox("Error.F-15")
+            Return Nothing
         End Try
     End Function
 
     'Fetch Employee Name(Requestor in Request)
-    Public Shared Function fetchRequestor(ByVal emplID As Integer) As Object
+    Public Shared Function fetchRequestor(ByVal emplID As Integer) As String
         Try
             Dim querysection = (From s In db.tblEmployees
                                 Where s.EmployeeID = emplID
@@ -299,6 +313,7 @@
             Return querysection
         Catch ex As Exception
             MsgBox("Error.F-16")
+            Return Nothing
         End Try
 
     End Function
@@ -314,13 +329,14 @@
 
         Catch ex As Exception
             MsgBox("Error.F-18")
+            Return Nothing
         End Try
 
 
     End Function
 
     'Fetch transheader id in For Approval
-    Public Shared Function FetchTransIdForApproval() As Object
+    Public Shared Function FetchTransIdForApproval() As Integer
         Try
             Dim querysection = (From s In db.tblProcureHeaders
                                 Order By s.id Descending
@@ -330,11 +346,12 @@
 
         Catch ex As Exception
             MsgBox("Error.F-34")
+            Return Nothing
         End Try
     End Function
 
     'Fetch transheader id in For Approval
-    Public Shared Function FetchTransIdForApprovalBorrow() As Object
+    Public Shared Function FetchTransIdForApprovalBorrow() As Integer
         Try
             Dim querysection = (From s In db.tblBorrowHeaders
                                 Order By s.HeaderId Descending
@@ -344,13 +361,14 @@
 
         Catch ex As Exception
             MsgBox("Error.F-17")
+            Return Nothing
         End Try
 
 
     End Function
     'Fetch transheader id in Assignment
 
-    Public Shared Function FetchTransHeaderIDAssignment() As Object
+    Public Shared Function FetchTransHeaderIDAssignment() As Integer
         Try
             Dim querysection = (From s In db.tblAllocationHeaders
                                 Order By s.ID Descending
@@ -360,6 +378,7 @@
 
         Catch ex As Exception
             MsgBox("Error.F-19")
+            Return Nothing
         End Try
 
     End Function
@@ -390,6 +409,7 @@
             End If
         Catch ex As Exception
             MsgBox("Error.F-20")
+            Return Nothing
         End Try
 
     End Function
@@ -440,7 +460,8 @@
                                Select b.BranchCode).SingleOrDefault
             Return querydetail
         Catch ex As Exception
-            Return MsgBox("Error.F-24")
+            MsgBox("Error.F-24")
+            Return Nothing
         End Try
     End Function
 
@@ -452,7 +473,8 @@
                                Select p.BranchID).SingleOrDefault
             Return querydetail
         Catch ex As Exception
-            Return MsgBox("Error.F-25")
+            MsgBox("Error.F-25")
+            Return Nothing
         End Try
     End Function
 
@@ -466,19 +488,21 @@
                                Select d.DepartmentCode).SingleOrDefault
             Return querydetail
         Catch ex As Exception
-            Return MsgBox("Error.F-26")
+            MsgBox("Error.F-26")
+            Return Nothing
         End Try
     End Function
 
     'Fetch User Type
-    Public Shared Function FetcUserType(ByVal Emplid As Integer) As Object
+    Public Shared Function FetcUserType(ByVal Emplid As Integer) As String
         Try
             Dim querydetail = (From p In db.tblUsers
                                Where (p.EmployeeID = Emplid)
                                Select p.UserType).FirstOrDefault
             Return querydetail
         Catch ex As Exception
-            Return MsgBox("Error.F-27")
+            MsgBox("Error.F-27")
+            Return Nothing
         End Try
     End Function
 
@@ -489,8 +513,10 @@
                                Where (p.UserID = UserID)
                                Select p.EmployeeID).SingleOrDefault
             Return querydetail
+
         Catch ex As Exception
-            Return MsgBox("Error.F-28")
+            MsgBox("Error.F-28")
+            Return Nothing
         End Try
     End Function
 
@@ -518,7 +544,8 @@
                                Select s.SectionCode).SingleOrDefault
             Return querydetail
         Catch ex As Exception
-            Return MsgBox("Error.F-30")
+            MsgBox("Error.F-30")
+            Return Nothing
         End Try
     End Function
 
@@ -533,7 +560,8 @@
 
             Return querydetail
         Catch ex As Exception
-            Return MsgBox("Error.F-31")
+            MsgBox("Error.F-31")
+            Return Nothing
         End Try
     End Function
 
@@ -664,14 +692,15 @@
     End Function
 
     'Check Request Status
-    Public Shared Function FetchRequestStatus(ByVal reqno As String) As Object
+    Public Shared Function FetchRequestStatus(ByVal reqno As String) As String
         Try
             Dim querysection = (From s In db.tblRequestHeaders
                                 Where s.RequestNo = reqno
                                 Select s.Stat).SingleOrDefault
             Return querysection
         Catch ex As Exception
-            Return MsgBox("Error.F-38")
+            MsgBox("Error.F-38")
+            Return Nothing
         End Try
     End Function
 
@@ -683,7 +712,8 @@
                                 Select s.State).SingleOrDefault
             Return querysection
         Catch ex As Exception
-            Return MsgBox("Error.F-39")
+            MsgBox("Error.F-39")
+            Return Nothing
         End Try
     End Function
 
@@ -695,7 +725,8 @@
                                 Select s.PropertyCode).Count
             Return querysection
         Catch ex As Exception
-            Return MsgBox("Error.F-40")
+            MsgBox("Error.F-40")
+            Return Nothing
         End Try
     End Function
 
@@ -747,7 +778,7 @@
     End Function
 
     'Check for Qty in Request
-    Public Shared Function RequestQty(ByVal id As String) As Object
+    Public Shared Function RequestQty(ByVal id As Integer) As Object
         Try
 
             Dim consumable = (From s In db.tblRequestDetails

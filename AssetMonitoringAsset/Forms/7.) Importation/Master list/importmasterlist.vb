@@ -77,7 +77,7 @@ Public Class importmasterlist
                     Dim user2 As String = Home.UserID.ToString
                     Dim AH As String = "0"
 
-                    InsertionClass.SaveMasterlistImport(Itemcode, Description, Integer.Parse(CategoryID), Integer.Parse(TypeID), Date.Parse(date1), Date.Parse(date2), Integer.Parse(user1), Integer.Parse(user2), Integer.Parse(AH))
+                    InsertionClass.SaveMasterlistImport(Integer.Parse(Itemcode), Description, Integer.Parse(CategoryID), Integer.Parse(TypeID), Date.Parse(date1), Date.Parse(date2), Integer.Parse(user1), Integer.Parse(user2), Integer.Parse(AH))
                 End If
             Next
 

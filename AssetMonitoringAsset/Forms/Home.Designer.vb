@@ -222,6 +222,7 @@ Partial Class Home
         Me.AccordionControlElement52.Appearance.Default.ForeColor = System.Drawing.Color.Black
         Me.AccordionControlElement52.Appearance.Default.Options.UseForeColor = True
         Me.AccordionControlElement52.Elements.AddRange(New DevExpress.XtraBars.Navigation.AccordionControlElement() {Me.AccordionControlElement53, Me.AccordionControlElement54})
+        Me.AccordionControlElement52.Expanded = True
         Me.AccordionControlElement52.Name = "AccordionControlElement52"
         resources.ApplyResources(Me.AccordionControlElement52, "AccordionControlElement52")
         '

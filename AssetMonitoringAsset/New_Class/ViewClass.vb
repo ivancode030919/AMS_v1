@@ -36,7 +36,8 @@
     '------------------------------------------------------------------------------------
     'Display in Assignmet1 form for datagridview
     '------------------------------------------------------------------------------------
-    Public Shared Function FetchRegisterDetail(ByVal headerid As Integer) As Object
+    Public Shared Sub FetchRegisterDetail(ByVal headerid As Integer)
+
         Dim depID As Integer
 
         If Home.UserType = "ADMIN" Then
@@ -51,7 +52,7 @@
             .dgv.DataSource = db.ShowAssetAvailability2(headerid, depID)
         End With
 
-    End Function
+    End Sub
 
     '------------------------------------------------------------------------------------
     'Display in Asset3 Form
@@ -110,6 +111,7 @@
 
         End If
 
+        Return Nothing
 
     End Function
 
@@ -167,7 +169,7 @@
     End Function
 
     'Display Request Register(For Approval) Details in 
-    Public Shared Function FetchsRequstRegister(ByVal stat1 As String, ByVal date1 As Date, date2 As Date) As Object
+    Public Shared Function FetchsRequstRegister(ByVal stat1 As Integer, ByVal date1 As Date, date2 As Date) As Object
         Dim stat2 As String
 
         If stat1 = 1 Then
@@ -202,7 +204,7 @@
         Dim querysection = (From f In db.tblmasterlistdetails
                             Join d In db.tblCategories On f.CategoryID Equals d.CategoryID
                             Join g In db.tblAssetTypes On f.AssetTypeID Equals g.AssetTypeID
-                            Where (f.AssetDescription.Contains(Search) Or f.ItemCode = Search)
+                            Where (f.AssetDescription.Contains(Search) Or f.ItemCode = Integer.Parse(Search))
                             Order By f.AssetDescription Ascending
                             Select f.ItemCode, f.AssetDescription, f.ItemID, d.CategoryCode, g.AssetTypeCode)
 
@@ -216,7 +218,7 @@
         Dim querysection = (From f In db.tblmasterlistdetails
                             Join c In db.tblCategories On f.CategoryID Equals c.CategoryID
                             Join k In db.tblAssetTypes On f.AssetTypeID Equals k.AssetTypeID
-                            Where (f.AssetDescription.Contains(Search) Or f.ItemCode = Search) And (c.CategoryDescription = Cat Or Cat = "") And (k.AssetTypeDescription = type Or type = "")
+                            Where (f.AssetDescription.Contains(Search) Or f.ItemCode = Integer.Parse(Search)) And (c.CategoryDescription = Cat Or Cat = "") And (k.AssetTypeDescription = type Or type = "")
                             Order By f.AssetDescription Ascending
                             Select f.ItemCode, f.AssetDescription, c.CategoryDescription, k.AssetTypeDescription).ToList()
         Return querysection
@@ -285,7 +287,7 @@
         ElseIf Home.UserType = "BPC" Then
 
             Dim querysection = (From s In db.tblEmployees
-                                Where (s.BranchID = Home.BranchID And s.DepartmentID = Home.DepartmentID And s.SectionID <> "2021") And (s.FirstName.Contains(search) Or s.LastName.Contains(search) Or (s.FirstName + " " + s.LastName).Contains(search))
+                                Where (s.BranchID = Home.BranchID And s.DepartmentID = Home.DepartmentID And s.SectionID <> 2021) And (s.FirstName.Contains(search) Or s.LastName.Contains(search) Or (s.FirstName + " " + s.LastName).Contains(search))
                                 Order By s.EmployeeID
                                 Let g = s.FirstName + " " + s.LastName
                                 Select s.EmployeeID, g).ToList
@@ -293,6 +295,8 @@
 
 
         End If
+
+        Return Nothing
 
     End Function
 
@@ -345,7 +349,7 @@
     End Function
 
     'View Assignemnt Register
-    Public Shared Function ViewAssignmentRegister(ByVal EN As String, ByVal d1 As Date, ByVal d2 As Date, ByVal IsfromR As String) As Object
+    Public Shared Function ViewAssignmentRegister(ByVal EN As String, ByVal d1 As Date, ByVal d2 As Date, ByVal IsfromR As Char) As Object
 
         If IsfromR = "O" Then
 
@@ -368,6 +372,71 @@
             Return querysection
 
         End If
+
+    End Function
+
+    '------------------------------------------------------------------------------------
+    'Display In Borrow Register
+    '------------------------------------------------------------------------------------
+    Public Shared Function ViewBorrowRegister(ByVal rqnumber As String, ByVal date1 As Date, ByVal date2 As Date, ByVal EmpId As Integer) As Object
+
+        Dim queryUserType = (From s In db.tblUsers
+                             Where s.EmployeeID = EmpId
+                             Select s.UserType).FirstOrDefault
+
+
+        Dim GetDetails = (From s In db.tblEmployees
+                          Where s.EmployeeID = EmpId
+                          Select New With {s.BranchID, s.SectionID, s.DepartmentID}).FirstOrDefault()
+
+
+        Dim BrnchID As Integer = GetDetails.BranchID.Value
+        Dim DepID As Integer = GetDetails.DepartmentID.Value
+        Dim SecID As Integer = GetDetails.SectionID.Value
+
+        If queryUserType = "DPC" Then
+
+        ElseIf queryUserType = "SPC" Then
+
+            Dim querysection = (From s In db.tblBorrowHeaders
+                                Join t In db.tblEmployees On s.Requestor Equals t.EmployeeID
+                                Join i In db.tblDepartments On t.DepartmentID Equals i.DepartmentID
+                                Join y In db.tblBranches On t.BranchID Equals y.BranchID
+                                Where s.RecordDate >= date1 AndAlso s.RecordDate <= date2 AndAlso t.SectionID = SecID AndAlso s.RequestNumber.Contains(rqnumber)
+                                Let x = t.FirstName + " " + t.LastName
+                                Select s.RequestNumber, x, i.DepartmentDescription, y.BranchDescription, t.Company, s.RecordDate, s.HeaderId).ToList()
+            Return querysection
+
+        ElseIf queryUserType = "ADMIN" Then
+
+            Dim querysection = (From s In db.tblBorrowHeaders
+                                Join t In db.tblEmployees On s.Requestor Equals t.EmployeeID
+                                Join i In db.tblDepartments On t.DepartmentID Equals i.DepartmentID
+                                Join y In db.tblBranches On t.BranchID Equals y.BranchID
+                                Where s.RecordDate >= date1 AndAlso s.RecordDate <= date2 AndAlso s.RequestNumber.Contains(rqnumber)
+                                Let x = t.FirstName + " " + t.LastName
+                                Select s.RequestNumber, x, i.DepartmentDescription, y.BranchDescription, t.Company, s.RecordDate, s.HeaderId).ToList()
+            Return querysection
+
+        End If
+
+
+
+
+        Return Nothing
+
+
+    End Function
+
+    Public Shared Function ViewBorrowDetails(ByVal TransId As Integer) As Object
+
+        Dim querysection = (From s In db.tblBorrowDetails
+                            Join g In db.tblEmployees On s.Borrowee Equals g.EmployeeID
+                            Join t In db.tblAssetInventories On s.PropertyCode Equals t.PropertyCode
+                            Where s.HeaderID = TransId
+                            Let c = g.FirstName + " " + g.LastName
+                            Select s.PropertyCode, t.Des, s.Quantity, c, s.DateFrom, s.DateTo)
+        Return querysection
 
     End Function
 

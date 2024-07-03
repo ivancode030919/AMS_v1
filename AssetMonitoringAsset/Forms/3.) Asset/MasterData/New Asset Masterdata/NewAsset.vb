@@ -6,11 +6,11 @@
     End Sub
 
     Private Sub NewAsset_Load(sender As Object, e As EventArgs) Handles MyBase.Load
-        Displaydg()
+        Display()
         lastItemCode = FetchClass.FetchLastItemcode
     End Sub
 
-    Public Sub Displaydg()
+    Public Sub Display()
         dgview.AllowUserToAddRows = True
         DateTimePicker1.Value = DateTime.Now.Date()
         Label2.Text = FetchClass.FetchEntryID
@@ -70,13 +70,13 @@
                     Dim description As String = row.Cells(1).Value.ToString
                     Dim category As String = row.Cells(4).Value.ToString
                     Dim type As String = row.Cells(5).Value.ToString
-                    InsertionClass.SaveAssetDetail(Assetcode, description, Integer.Parse(category), Integer.Parse(type), TransHeaderID)
+                    InsertionClass.SaveAssetDetail(Integer.Parse(Assetcode), description, Integer.Parse(category), Integer.Parse(type), TransHeaderID)
                 End If
             Next
             TextBox1.Text = String.Empty
             Label2.Text = String.Empty
             fordgvclearing()
-            Displaydg()
+            Display()
             MsgBox("Successfully Recorded...")
 
         Catch ex As Exception

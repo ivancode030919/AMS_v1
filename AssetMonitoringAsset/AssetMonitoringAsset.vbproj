@@ -44,16 +44,17 @@
     <ApplicationIcon>Connection and Module\completed-task.ico</ApplicationIcon>
   </PropertyGroup>
   <ItemGroup>
-    <Reference Include="DevExpress.BonusSkins.v21.2" />
-    <Reference Include="DevExpress.Data.v21.2" />
-    <Reference Include="DevExpress.Data.Desktop.v21.2" />
-    <Reference Include="DevExpress.SpellChecker.v21.2.Core, Version=21.2.5.0, Culture=neutral, PublicKeyToken=b88d1754d700e49a" />
-    <Reference Include="DevExpress.Utils.v21.2" />
-    <Reference Include="DevExpress.Sparkline.v21.2.Core" />
-    <Reference Include="DevExpress.XtraBars.v21.2, Version=21.2.5.0, Culture=neutral, PublicKeyToken=b88d1754d700e49a, processorArchitecture=MSIL" />
-    <Reference Include="DevExpress.XtraEditors.v21.2" />
-    <Reference Include="DevExpress.Printing.v21.2.Core" />
-    <Reference Include="DevExpress.XtraSpellChecker.v21.2, Version=21.2.5.0, Culture=neutral, PublicKeyToken=b88d1754d700e49a, processorArchitecture=MSIL" />
+    <Reference Include="DevExpress.BonusSkins.v24.1" />
+    <Reference Include="DevExpress.Drawing.v24.1" />
+    <Reference Include="DevExpress.Data.v24.1" />
+    <Reference Include="DevExpress.Data.Desktop.v24.1" />
+    <Reference Include="DevExpress.SpellChecker.v24.1.Core, Version=24.1.3.0, Culture=neutral, PublicKeyToken=b88d1754d700e49a" />
+    <Reference Include="DevExpress.Utils.v24.1" />
+    <Reference Include="DevExpress.Sparkline.v24.1.Core" />
+    <Reference Include="DevExpress.XtraBars.v24.1, Version=24.1.3.0, Culture=neutral, PublicKeyToken=b88d1754d700e49a, processorArchitecture=MSIL" />
+    <Reference Include="DevExpress.XtraEditors.v24.1" />
+    <Reference Include="DevExpress.Printing.v24.1.Core" />
+    <Reference Include="DevExpress.XtraSpellChecker.v24.1, Version=24.1.3.0, Culture=neutral, PublicKeyToken=b88d1754d700e49a, processorArchitecture=MSIL" />
     <Reference Include="EPPlus, Version=7.0.4.0, Culture=neutral, PublicKeyToken=ea159fdaa78159a1, processorArchitecture=MSIL">
       <HintPath>..\packages\EPPlus.7.0.4\lib\net462\EPPlus.dll</HintPath>
     </Reference>
@@ -169,6 +170,18 @@
       <DependentUpon>ReqCancel.vb</DependentUpon>
     </Compile>
     <Compile Include="Forms\2.%29 Asset_Management\1.%29 Request\Request Register\ReqCancel.vb">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Forms\2.%29 Asset_Management\2.%29 Movement\4.%29 Borrow\BorrowDetails.Designer.vb">
+      <DependentUpon>BorrowDetails.vb</DependentUpon>
+    </Compile>
+    <Compile Include="Forms\2.%29 Asset_Management\2.%29 Movement\4.%29 Borrow\BorrowDetails.vb">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Forms\2.%29 Asset_Management\2.%29 Movement\4.%29 Borrow\BorrowMain.Designer.vb">
+      <DependentUpon>BorrowMain.vb</DependentUpon>
+    </Compile>
+    <Compile Include="Forms\2.%29 Asset_Management\2.%29 Movement\4.%29 Borrow\BorrowMain.vb">
       <SubType>Form</SubType>
     </Compile>
     <Compile Include="Forms\7.%29 Importation\Build Asset\BuildAssetImport.Designer.vb">
@@ -553,6 +566,12 @@
     <EmbeddedResource Include="Forms\2.%29 Asset_Management\1.%29 Request\Creating Request\Request.resx">
       <DependentUpon>Request.vb</DependentUpon>
     </EmbeddedResource>
+    <EmbeddedResource Include="Forms\2.%29 Asset_Management\2.%29 Movement\4.%29 Borrow\BorrowDetails.resx">
+      <DependentUpon>BorrowDetails.vb</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Forms\2.%29 Asset_Management\2.%29 Movement\4.%29 Borrow\BorrowMain.resx">
+      <DependentUpon>BorrowMain.vb</DependentUpon>
+    </EmbeddedResource>
     <EmbeddedResource Include="Forms\4.%29 List\AssetList\AssetList3.resx">
       <DependentUpon>AssetList3.vb</DependentUpon>
     </EmbeddedResource>
@@ -758,7 +777,6 @@
   </ItemGroup>
   <ItemGroup>
     <Folder Include="Forms\2.%29 Asset_Management\2.%29 Movement\3.%29 TransferOwnership\" />
-    <Folder Include="Forms\2.%29 Asset_Management\2.%29 Movement\4.%29 Borrow\" />
     <Folder Include="Forms\3.%29 Asset\MasterData\Register\" />
     <Folder Include="Forms\5.%29 Reports\" />
   </ItemGroup>

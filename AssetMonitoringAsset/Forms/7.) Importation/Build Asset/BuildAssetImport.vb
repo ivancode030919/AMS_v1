@@ -91,7 +91,7 @@ Public Class BuildAssetImport
                     Dim Status1 As String = row.Cells(11).Value.ToString
                     Dim Status2 As String = row.Cells(12).Value.ToString
                     Dim Condition As String = row.Cells(13).Value.ToString
-                    InsertionClass.ImportExistingAssets(AssetCode, Class1, PropertyCode, Des, Double.Parse(Qty), Integer.Parse(Keeper), Integer.Parse(Ownwer), Integer.Parse(Borrower), Reference, Referenceno, BorroerStat, Status1, Status2, Condition)
+                    InsertionClass.ImportExistingAssets(Integer.Parse(AssetCode), Class1, PropertyCode, Des, Double.Parse(Qty), Integer.Parse(Keeper), Integer.Parse(Ownwer), Integer.Parse(Borrower), Reference, Referenceno, BorroerStat, Status1, Status2, Condition)
                 End If
             Next
 

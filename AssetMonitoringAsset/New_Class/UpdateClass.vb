@@ -115,7 +115,7 @@
 
 
     'Update Status of Request Header
-    Public Shared Sub UpdateStatusReqHeader(ByVal ID As Integer, ByVal type As String)
+    Public Shared Sub UpdateStatusReqHeader(ByVal ID As Integer, ByVal type As Integer)
 
         Try
             If type = 1 Then

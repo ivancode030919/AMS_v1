@@ -9,7 +9,7 @@
 
 
 
-    Public Sub loaddetails()
+    Public Sub loadDetails()
         With Home
 
             .UserID = FetchClass.FetcUserID(TextBox1.Text, TextBox2.Text)
@@ -43,7 +43,7 @@
                 TextBox1.Text = String.Empty
                 TextBox2.Text = String.Empty
             ElseIf FetchClass.FetchLogin(TextBox1.Text, TextBox2.Text) = 1 Then
-                loaddetails()
+                loadDetails()
                 Home.Show()
                 Me.Hide()
 

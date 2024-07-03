@@ -149,7 +149,7 @@
                     Dim stat1 As String = ""
                     Dim stat2 As String = ""
 
-                    Dim headerid As Integer = FetchClass.FetcHeaderID
+                    Dim headerid As Integer = FetchClass.FetchHeaderID
 
                     InsertionClass.SaveAssetInventory(Integer.Parse(AssetCode), Class1, PropertyCode, Des, Double.Parse(Qty), Integer.Parse(Keeper),
                                                        Integer.Parse(Owner), Integer.Parse(Borrower), Ref, Refno, BorrowerStat, stat1, stat2, Condition, 0, False, True)
