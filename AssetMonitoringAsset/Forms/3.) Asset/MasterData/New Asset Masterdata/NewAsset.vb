@@ -1,6 +1,7 @@
 ﻿Public Class NewAsset
 
     Private lastItemCode As Integer = FetchClass.FetchLastItemcode
+
     Private Sub Button1_Click(sender As Object, e As EventArgs)
         NAcategory.Show()
     End Sub
@@ -75,7 +76,7 @@
             Next
             TextBox1.Text = String.Empty
             Label2.Text = String.Empty
-            fordgvclearing()
+            Fordgvclearing()
             Display()
             MsgBox("Successfully Recorded...")
 
@@ -84,7 +85,7 @@
         End Try
     End Sub
 
-    Public Sub fordgvclearing()
+    Public Sub Fordgvclearing()
         dgview.Rows.Clear()
         dgview.Columns.Clear()
     End Sub

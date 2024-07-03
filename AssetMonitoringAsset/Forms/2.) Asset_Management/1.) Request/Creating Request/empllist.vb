@@ -1,4 +1,4 @@
-﻿Public Class empllist
+﻿Public Class Empllist
     Public modty As Integer
     Public rowToEdit As Integer
 

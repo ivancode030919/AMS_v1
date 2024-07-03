@@ -287,17 +287,36 @@
         ElseIf Home.UserType = "BPC" Then
 
             Dim querysection = (From s In db.tblEmployees
-                                Where (s.BranchID = Home.BranchID And s.DepartmentID = Home.DepartmentID And s.SectionID <> 2021) And (s.FirstName.Contains(search) Or s.LastName.Contains(search) Or (s.FirstName + " " + s.LastName).Contains(search))
+                                Join i In db.tblDepartments On s.DepartmentID Equals i.DepartmentID
+                                Where (s.BranchID = Home.BranchID And i.location = "Within" And i.DepartmentID <> 1) And (s.FirstName.Contains(search) Or s.LastName.Contains(search) Or (s.FirstName + " " + s.LastName).Contains(search))
                                 Order By s.EmployeeID
                                 Let g = s.FirstName + " " + s.LastName
                                 Select s.EmployeeID, g).ToList
             Return querysection
 
+        ElseIf Home.UserType = "DPC" Then
+
+            Dim querysection = (From s In db.tblEmployees
+                                Where (s.BranchID = Home.BranchID And s.DepartmentID = Home.DepartmentID) And (s.FirstName.Contains(search) Or s.LastName.Contains(search) Or (s.FirstName + " " + s.LastName).Contains(search))
+                                Order By s.EmployeeID
+                                Let g = s.FirstName + " " + s.LastName
+                                Select s.EmployeeID, g).ToList
+
+            Return querysection
+
+        ElseIf Home.UserType = "SPC" Then
+
+            Dim querysection = (From s In db.tblEmployees
+                                Where (s.BranchID = Home.BranchID And s.SectionID = Home.SectionID) And (s.FirstName.Contains(search) Or s.LastName.Contains(search) Or (s.FirstName + " " + s.LastName).Contains(search))
+                                Order By s.EmployeeID
+                                Let g = s.FirstName + " " + s.LastName
+                                Select s.EmployeeID, g).ToList
+
+            Return querysection
 
         End If
 
         Return Nothing
-
     End Function
 
     'View Employee in Employee setup
@@ -380,21 +399,40 @@
     '------------------------------------------------------------------------------------
     Public Shared Function ViewBorrowRegister(ByVal rqnumber As String, ByVal date1 As Date, ByVal date2 As Date, ByVal EmpId As Integer) As Object
 
+
         Dim queryUserType = (From s In db.tblUsers
                              Where s.EmployeeID = EmpId
                              Select s.UserType).FirstOrDefault
 
-
         Dim GetDetails = (From s In db.tblEmployees
                           Where s.EmployeeID = EmpId
                           Select New With {s.BranchID, s.SectionID, s.DepartmentID}).FirstOrDefault()
-
 
         Dim BrnchID As Integer = GetDetails.BranchID.Value
         Dim DepID As Integer = GetDetails.DepartmentID.Value
         Dim SecID As Integer = GetDetails.SectionID.Value
 
         If queryUserType = "DPC" Then
+
+            Dim querysection = (From s In db.tblBorrowHeaders
+                                Join t In db.tblEmployees On s.Requestor Equals t.EmployeeID
+                                Join i In db.tblDepartments On t.DepartmentID Equals i.DepartmentID
+                                Join y In db.tblBranches On t.BranchID Equals y.BranchID
+                                Where s.RecordDate >= date1 AndAlso s.RecordDate <= date2 AndAlso t.DepartmentID = DepID AndAlso s.RequestNumber.Contains(rqnumber)
+                                Let x = t.FirstName + " " + t.LastName
+                                Select s.RequestNumber, x, i.DepartmentDescription, y.BranchDescription, t.Company, s.RecordDate, s.HeaderId).ToList()
+            Return querysection
+
+        ElseIf queryUserType = "BPC" Then
+
+            Dim querysection = (From s In db.tblBorrowHeaders
+                                Join t In db.tblEmployees On s.Requestor Equals t.EmployeeID
+                                Join i In db.tblDepartments On t.DepartmentID Equals i.DepartmentID
+                                Join y In db.tblBranches On t.BranchID Equals y.BranchID
+                                Where s.RecordDate >= date1 AndAlso s.RecordDate <= date2 AndAlso t.DepartmentID = DepID AndAlso s.RequestNumber.Contains(rqnumber)
+                                Let x = t.FirstName + " " + t.LastName
+                                Select s.RequestNumber, x, i.DepartmentDescription, y.BranchDescription, t.Company, s.RecordDate, s.HeaderId).ToList()
+            Return querysection
 
         ElseIf queryUserType = "SPC" Then
 
@@ -418,13 +456,11 @@
                                 Select s.RequestNumber, x, i.DepartmentDescription, y.BranchDescription, t.Company, s.RecordDate, s.HeaderId).ToList()
             Return querysection
 
+        Else
+
+            Return Nothing
+
         End If
-
-
-
-
-        Return Nothing
-
 
     End Function
 

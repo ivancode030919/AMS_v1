@@ -4,10 +4,13 @@
     Public Shared Function FetchLastItemcode() As Integer
 
         Try
+
             Dim querysection = (From s In db.tblmasterlistdetails
                                 Order By Convert.ToInt32(s.ItemCode) Descending
                                 Select s.ItemCode).FirstOrDefault
+
             Return querysection
+
         Catch ex As Exception
 
             MsgBox("Error.F-3")
@@ -16,11 +19,11 @@
 
     End Function
 
-
     'Fetch HeaderID in BUild Assdet Header
     Public Shared Function FetchHeaderID() As Integer
 
         Try
+
             Dim querysection = (From s In db.tblBuildHeaders
                                 Order By s.id Descending
                                 Select s.id).FirstOrDefault()
@@ -32,7 +35,6 @@
         End Try
 
     End Function
-
 
     'display Last save Entry Number
     Public Shared Function FetchEntryn1() As String
@@ -321,10 +323,10 @@
     'Fetch transheader id in Request
     Public Shared Function FetchTransHeaderIDRequest() As Object
         Try
-            Dim querysection = (From s In db.tblRequestHeaders
-                                Order By s.HeaderId Descending
-                                Select s.HeaderId).FirstOrDefault()
 
+            Dim querysection As Integer = (From s In db.tblRequestHeaders
+                                           Order By s.HeaderId Descending
+                                           Select s.HeaderId).FirstOrDefault()
             Return querysection
 
         Catch ex As Exception

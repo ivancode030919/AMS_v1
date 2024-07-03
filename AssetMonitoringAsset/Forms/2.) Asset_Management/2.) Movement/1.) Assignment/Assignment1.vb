@@ -97,7 +97,7 @@
 
             ElseIf e.ColumnIndex = 3 Then
 
-                With empllist
+                With Empllist
                     .rowToEdit = row
                     .modty = 4
                     .ShowDialog()

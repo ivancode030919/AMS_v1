@@ -96,20 +96,20 @@
         If e.ColumnIndex = DataGridView1.Columns("UpdateStat").Index Then
 
             Dim row As Integer = DataGridView1.CurrentCell.RowIndex
-            Dim itmcd As String = ""
-            Dim itmid As String = ""
+            Dim itmcd As Integer
+            Dim itmid As Integer
 
 
             If DataGridView1.Columns(0).Name <> "AssetCode" Then
-                itmcd = DataGridView1.Rows(row).Cells(1).Value.ToString()
+                itmcd = Integer.Parse(DataGridView1.Rows(row).Cells(1).Value.ToString())
             Else
-                itmcd = DataGridView1.Rows(row).Cells(0).Value.ToString()
+                itmcd = Integer.Parse(DataGridView1.Rows(row).Cells(0).Value.ToString())
             End If
 
             If DataGridView1.Columns(6).Name <> "id" Then
-                itmid = DataGridView1.Rows(row).Cells(6 + 1).Value.ToString()
+                itmid = Integer.Parse(DataGridView1.Rows(row).Cells(6 + 1).Value.ToString())
             Else
-                itmid = DataGridView1.Rows(row).Cells(6).Value.ToString()
+                itmid = Integer.Parse(DataGridView1.Rows(row).Cells(6).Value.ToString())
             End If
 
             With RecvReqConfrm
@@ -134,13 +134,13 @@
 
         For Each row As DataGridViewRow In DataGridView1.Rows
 
-            Dim stat As String = row.Cells(5).Value
+            Dim stat As String = row.Cells(5).Value.ToString
 
             If stat = "RECEIVED" Then
 
                 If Not row.IsNewRow Then
 
-                    Dim Itemcode As Integer = row.Cells(0).Value.ToString
+                    Dim Itemcode As Integer = Integer.Parse(row.Cells(0).Value.ToString)
                     Dim ItemClass As String = row.Cells(1).Value.ToString
                     Dim PropertyCode As String = row.Cells(8).Value.ToString
                     Dim Description As String = row.Cells(9).Value.ToString
@@ -153,7 +153,7 @@
 
                     If PropertyCodeCount = 0 Then
 
-                        InsertionClass.SaveAssetInventory(Itemcode, ItemClass, PropertyCode, Description, qty, owner, owner, 0, reference, referenceno, "Not Allowed", 0, 0, "New Item: Good", 0, False, True)
+                        InsertionClass.SaveAssetInventory(Itemcode, ItemClass, PropertyCode, Description, Double.Parse(qty), Integer.Parse(owner), Integer.Parse(owner), 0, reference, referenceno, "Not Allowed", 0, 0, "New Item: Good", 0, False, True)
                         MessageBox.Show("Successfully Recorded", "Notification", MessageBoxButtons.OK, MessageBoxIcon.Information)
 
                     Else

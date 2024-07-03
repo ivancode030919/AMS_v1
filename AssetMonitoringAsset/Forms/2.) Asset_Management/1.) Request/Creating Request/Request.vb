@@ -74,39 +74,37 @@
             AssetList3.rowToEdit = row
             AssetList3.ShowDialog()
         ElseIf e.ColumnIndex = 3 AndAlso ComboBox2.Text = "PROCURE" Then
-            empllist.modty = 1
-            empllist.rowToEdit = row
-            empllist.ShowDialog()
+            Empllist.modty = 1
+            Empllist.rowToEdit = row
+            Empllist.ShowDialog()
         ElseIf e.ColumnIndex = 0 AndAlso ComboBox2.Text = "BORROW" Then
             AssetList3.modty = 3
             AssetList3.mode1 = 2
             AssetList3.rowToEdit = row
             AssetList3.ShowDialog()
         ElseIf e.ColumnIndex = 3 AndAlso ComboBox2.Text = "BORROW" Then
-            empllist.modty = 2
-            empllist.rowToEdit = row
-            empllist.ShowDialog()
+            Empllist.modty = 2
+            Empllist.rowToEdit = row
+            Empllist.ShowDialog()
         ElseIf e.ColumnIndex = 4 AndAlso ComboBox2.Text = "BORROW" Then
             date1.modty = 1
             date1.Text = "Date From"
             date1.rowToEdit = row
             date1.ShowDialog()
-
         ElseIf e.ColumnIndex = 5 AndAlso ComboBox2.Text = "BORROW" Then
             date1.modty = 2
             date1.Text = "Date To"
             date1.rowToEdit = row
             date1.ShowDialog()
-
         ElseIf e.ColumnIndex = 0 AndAlso ComboBox2.Text = "TRANSFER OWNERSHIP" Then
             AssetList3.modty = 3
             AssetList3.mode1 = 2
             AssetList3.rowToEdit = row
             AssetList3.ShowDialog()
         ElseIf e.ColumnIndex = 3 AndAlso ComboBox2.Text = "TRANSFER OWNERSHIP" Then
-            empllist.modty = 3
-            empllist.rowToEdit = row
-            empllist.ShowDialog()
+            Empllist.modty = 3
+            Empllist.rowToEdit = row
+            Empllist.ShowDialog()
         End If
 
 
@@ -129,13 +127,13 @@
                     For Each row As DataGridViewRow In dgv.Rows
 
                         If Not row.IsNewRow Then
-                            Dim headid As Integer = FetchClass.FetchTransHeaderIDRequest
+                            Dim headid = FetchClass.FetchTransHeaderIDRequest
                             Dim AssetCode As String = row.Cells(0).Value.ToString
                             Dim Des As String = row.Cells(1).Value.ToString
                             Dim qty As String = row.Cells(2).Value.ToString
                             Dim Owner As String = row.Cells(5).Value.ToString
                             Dim Remarks As String = row.Cells(4).Value.ToString
-                            InsertionClass.SaveProcurement(AssetCode, Des, qty, Owner, Remarks, headid)
+                            InsertionClass.SaveProcurement(Integer.Parse(AssetCode), Des, Double.Parse(qty), Integer.Parse(Owner), Remarks, headid)
                         End If
                     Next
 
@@ -143,7 +141,7 @@
 
                     For Each row As DataGridViewRow In dgv.Rows
                         If Not row.IsNewRow Then
-                            Dim headid As Integer = FetchClass.FetchTransHeaderIDRequest
+                            Dim headid = FetchClass.FetchTransHeaderIDRequest
                             Dim PropertyCode As String = row.Cells(0).Value.ToString
                             Dim Des As String = row.Cells(1).Value.ToString
                             Dim qty As String = row.Cells(2).Value.ToString
@@ -151,7 +149,7 @@
                             Dim DateFrom As String = row.Cells(4).Value.ToString
                             Dim DateTo As String = row.Cells(5).Value.ToString
                             Dim Remarks As String = row.Cells(6).Value.ToString
-                            InsertionClass.SaveBorrow(PropertyCode, Des, qty, Integer.Parse(Borrowee), Remarks, DateFrom, DateTo, headid)
+                            InsertionClass.SaveBorrow(PropertyCode, Des, Double.Parse(qty), Integer.Parse(Borrowee), Remarks, Date.Parse(DateFrom), Date.Parse(DateTo), headid)
                         End If
                     Next
                 ElseIf ComboBox2.Text = "TRANSFER OWNERSHIP" Then

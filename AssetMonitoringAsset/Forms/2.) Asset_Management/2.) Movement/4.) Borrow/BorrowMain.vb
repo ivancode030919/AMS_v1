@@ -1,10 +1,10 @@
 ﻿Public Class BorrowMain
 
     Private Sub BorrowMain_Load(sender As Object, e As EventArgs) Handles MyBase.Load
-        display()
+        Display()
     End Sub
 
-    Public Sub display()
+    Public Sub Display()
         dgv.DataSource = ViewClass.ViewBorrowRegister(TextBox2.Text, DateTimePicker1.Value, DateTimePicker2.Value, Home.EmployeeID)
 
         With dgv
@@ -21,15 +21,15 @@
     End Sub
 
     Private Sub TextBox2_TextChanged(sender As Object, e As EventArgs) Handles TextBox2.TextChanged
-        display()
+        Display()
     End Sub
 
     Private Sub DateTimePicker1_ValueChanged(sender As Object, e As EventArgs) Handles DateTimePicker1.ValueChanged
-        display()
+        Display()
     End Sub
 
     Private Sub DateTimePicker2_ValueChanged(sender As Object, e As EventArgs) Handles DateTimePicker2.ValueChanged
-        display()
+        Display()
     End Sub
 
     Private Sub BorrowMain_FormClosing(sender As Object, e As FormClosingEventArgs) Handles MyBase.FormClosing
