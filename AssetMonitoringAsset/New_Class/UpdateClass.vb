@@ -251,7 +251,6 @@
 
     End Sub
 
-
     'Update For Assigned Items with property code
     Public Shared Sub UpdateReqstQuantity(ByVal reqi8d As Integer, ByVal Quantiy As Double, ByVal ProCode As String)
 
@@ -269,5 +268,19 @@
 
     End Sub
 
+    Public Shared Sub UpdateBorrowStat(PropertyCode As String, Status As String)
+
+        Try
+            Dim updateStat = (From p In db.GetTable(Of tblAssetInventory)()
+                              Where p.PropertyCode = PropertyCode
+                              Select p).FirstOrDefault()
+            updateStat.borrowerStat = Status
+            db.SubmitChanges()
+
+        Catch ex As Exception
+            MsgBox("Error.U.20")
+        End Try
+
+    End Sub
 
 End Class

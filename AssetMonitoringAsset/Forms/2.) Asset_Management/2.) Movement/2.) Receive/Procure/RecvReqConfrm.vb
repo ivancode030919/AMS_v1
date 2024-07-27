@@ -7,7 +7,7 @@
     Private Sub RecvReqConfrm_Load(sender As Object, e As EventArgs) Handles MyBase.Load
 
         Me.Size = New Size(294, 85)
-        Dim State As String = FetchClass.FetchRequestStatus(ItemId)
+        Dim State As String = FetchClass.FetchRequestStatus(ItemId).ToString
 
         If State = "OPEN" Then
 
@@ -27,7 +27,7 @@
     Private Sub SimpleButton1_Click(sender As Object, e As EventArgs) Handles SimpleButton1.Click
         If SimpleButton1.Text = "Receive" Then
 
-            Label1.Text = FetchClass.FetchLastProteryCode(ItemCode)
+            Label1.Text = FetchClass.FetchLastPropertyCode(ItemCode).ToString
             Me.Size = New Size(294, 310)
             SimpleButton1.Text = "Generate"
             SimpleButton2.Text = "Cancel"

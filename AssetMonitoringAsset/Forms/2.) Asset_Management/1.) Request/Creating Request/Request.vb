@@ -9,7 +9,7 @@
 
     Private Sub AcquisitionRequest_Load(sender As Object, e As EventArgs) Handles MyBase.Load
         ComboBox2.Select()
-        TextBox2.Text = FetchClass.fetchRequestor(Home.EmployeeID)
+        TextBox2.Text = FetchClass.FetchRequestor(Home.EmployeeID)
         ComboBox2.Enabled = True
     End Sub
 
@@ -65,7 +65,7 @@
     End Sub
 
 
-    Private Sub dgv_CellDoubleClick(sender As Object, e As DataGridViewCellEventArgs) Handles dgv.CellDoubleClick
+    Private Sub Dgv_CellDoubleClick(sender As Object, e As DataGridViewCellEventArgs) Handles dgv.CellDoubleClick
         Dim row As Integer = dgv.CurrentCell.RowIndex
 
         If e.ColumnIndex = 0 AndAlso ComboBox2.Text = "PROCURE" Then
@@ -127,7 +127,7 @@
                     For Each row As DataGridViewRow In dgv.Rows
 
                         If Not row.IsNewRow Then
-                            Dim headid = FetchClass.FetchTransHeaderIDRequest
+                            Dim headid As Integer = FetchClass.FetchTransHeaderIDRequest
                             Dim AssetCode As String = row.Cells(0).Value.ToString
                             Dim Des As String = row.Cells(1).Value.ToString
                             Dim qty As String = row.Cells(2).Value.ToString
@@ -135,6 +135,7 @@
                             Dim Remarks As String = row.Cells(4).Value.ToString
                             InsertionClass.SaveProcurement(Integer.Parse(AssetCode), Des, Double.Parse(qty), Integer.Parse(Owner), Remarks, headid)
                         End If
+
                     Next
 
                 ElseIf ComboBox2.Text = "BORROW" Then
@@ -163,7 +164,7 @@
                             Dim qty As String = row.Cells(2).Value.ToString
                             Dim Newowner As String = row.Cells(5).Value.ToString
                             Dim Remarks As String = row.Cells(4).Value.ToString
-                            InsertionClass.SaveTRansferOwner(PropertyCode, Des, qty, Integer.Parse(Newowner), Remarks, headid)
+                            InsertionClass.SaveTRansferOwner(PropertyCode, Des, Double.Parse(qty), Integer.Parse(Newowner), Remarks, headid)
                         End If
                     Next
                 End If
@@ -197,7 +198,7 @@
 
     End Sub
 
-    Private Sub dgv_CellValidated(sender As Object, e As DataGridViewCellEventArgs) Handles dgv.CellValidated
+    Private Sub Dgv_CellValidated(sender As Object, e As DataGridViewCellEventArgs) Handles dgv.CellValidated
         Try
 
             Dim rowIndex As Integer = e.RowIndex
@@ -233,7 +234,7 @@
         End If
     End Sub
 
-    Public Sub checkqtybycat()
+    Public Sub Checkqtybycat()
         Dim row As Integer = dgv.CurrentCell.RowIndex
         If ComboBox2.Text = "PROCURE" Then
             If dgv.Rows(row).Cells(6).Value.ToString = "NCD" Then

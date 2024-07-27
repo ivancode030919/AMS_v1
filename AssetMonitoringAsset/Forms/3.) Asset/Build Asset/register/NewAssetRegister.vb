@@ -5,7 +5,7 @@
 
     Private Sub viewdgv()
         Dim mods As Integer = 2
-        dgv.DataSource = ViewClass.FetchDatatoDGV1(TextBox2.Text, DateTimePicker1.Value, DateTimePicker2.Value, mods)
+        dgv.DataSource = ViewClass.FetchDataToDGV1(TextBox2.Text, DateTimePicker1.Value, DateTimePicker2.Value, mods)
 
 
         dgv.Columns(0).HeaderText = "Date"

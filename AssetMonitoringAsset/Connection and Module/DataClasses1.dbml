@@ -350,18 +350,6 @@
       <Column Name="AvailableQty" Type="System.Double" DbType="Float" CanBeNull="true" />
     </Type>
   </Table>
-  <Table Name="dbo.tblBorrowDetail" Member="tblBorrowDetails">
-    <Type Name="tblBorrowDetail">
-      <Column Name="id" Type="System.Int32" DbType="Int NOT NULL IDENTITY" IsPrimaryKey="true" IsDbGenerated="true" CanBeNull="false" />
-      <Column Name="PropertyCode" Type="System.String" DbType="VarChar(MAX)" CanBeNull="true" />
-      <Column Name="Quantity" Type="System.Decimal" DbType="Decimal(18,1)" CanBeNull="true" />
-      <Column Name="Borrowee" Type="System.Int32" DbType="Int" CanBeNull="true" />
-      <Column Name="DateFrom" Type="System.DateTime" DbType="Date" CanBeNull="true" />
-      <Column Name="DateTo" Type="System.DateTime" DbType="Date" CanBeNull="true" />
-      <Column Name="Remarks" Type="System.String" DbType="VarChar(MAX)" CanBeNull="true" />
-      <Column Name="HeaderID" Type="System.Int32" DbType="Int" CanBeNull="true" />
-    </Type>
-  </Table>
   <Table Name="dbo.tblmasterlistdetail" Member="tblmasterlistdetails">
     <Type Name="tblmasterlistdetail">
       <Column Name="ItemID" Type="System.Int32" DbType="Int NOT NULL IDENTITY" IsPrimaryKey="true" IsDbGenerated="true" CanBeNull="false" />
@@ -374,6 +362,18 @@
       <Column Name="UserID" Type="System.Int32" DbType="Int" CanBeNull="true" />
       <Column Name="UserIDModified" Type="System.Int32" DbType="Int" CanBeNull="true" />
       <Column Name="AssetHeaderID" Type="System.Int32" DbType="Int" CanBeNull="true" />
+    </Type>
+  </Table>
+  <Table Name="dbo.tblBorrowDetail" Member="tblBorrowDetails">
+    <Type Name="tblBorrowDetail">
+      <Column Name="id" Type="System.Int32" DbType="Int NOT NULL IDENTITY" IsPrimaryKey="true" IsDbGenerated="true" CanBeNull="false" />
+      <Column Name="PropertyCode" Type="System.String" DbType="VarChar(MAX)" CanBeNull="true" />
+      <Column Name="Quantity" Type="System.Double" DbType="Float" CanBeNull="true" />
+      <Column Name="Borrowee" Type="System.Int32" DbType="Int" CanBeNull="true" />
+      <Column Name="DateFrom" Type="System.DateTime" DbType="Date" CanBeNull="true" />
+      <Column Name="DateTo" Type="System.DateTime" DbType="Date" CanBeNull="true" />
+      <Column Name="Remarks" Type="System.String" DbType="VarChar(MAX)" CanBeNull="true" />
+      <Column Name="HeaderID" Type="System.Int32" DbType="Int" CanBeNull="true" />
     </Type>
   </Table>
   <Function Name="dbo.spNewAsset" Method="spNewAsset">

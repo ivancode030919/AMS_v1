@@ -1067,7 +1067,6 @@ D:\IVAN FILES\25.) GitHub\AMS\AMS_v1\AssetMonitoringAsset\bin\Debug\pt\Microsoft
 D:\IVAN FILES\25.) GitHub\AMS\AMS_v1\AssetMonitoringAsset\bin\Debug\ru\Microsoft.ReportViewer.WinForms.resources.dll
 D:\IVAN FILES\25.) GitHub\AMS\AMS_v1\AssetMonitoringAsset\bin\Debug\zh-CHS\Microsoft.ReportViewer.WinForms.resources.dll
 D:\IVAN FILES\25.) GitHub\AMS\AMS_v1\AssetMonitoringAsset\bin\Debug\zh-CHT\Microsoft.ReportViewer.WinForms.resources.dll
-D:\IVAN FILES\25.) GitHub\AMS\AMS_v1\AssetMonitoringAsset\obj\Debug\AssetMonitoringAsset.vbprojAssemblyReference.cache
 D:\IVAN FILES\25.) GitHub\AMS\AMS_v1\AssetMonitoringAsset\obj\Debug\AssetMonitoringAsset.AssignemntRegister.resources
 D:\IVAN FILES\25.) GitHub\AMS\AMS_v1\AssetMonitoringAsset\obj\Debug\AssetMonitoringAsset.AssignmentDetail.resources
 D:\IVAN FILES\25.) GitHub\AMS\AMS_v1\AssetMonitoringAsset\obj\Debug\AssetMonitoringAsset.ConsumableQty.resources
@@ -1134,3 +1133,5 @@ D:\IVAN FILES\25.) GitHub\AMS\AMS_v1\AssetMonitoringAsset\obj\Debug\AssetMonitor
 D:\IVAN FILES\25.) GitHub\AMS\AMS_v1\AssetMonitoringAsset\obj\Debug\AssetMonitoringAsset.exe
 D:\IVAN FILES\25.) GitHub\AMS\AMS_v1\AssetMonitoringAsset\obj\Debug\AssetMonitoringAsset.pdb
 D:\IVAN FILES\25.) GitHub\AMS\AMS_v1\AssetMonitoringAsset\obj\Debug\AssetMonitoringAsset.BorrowDetails.resources
+D:\IVAN FILES\25.) GitHub\AMS\AMS_v1\AssetMonitoringAsset\obj\Debug\AssetMonitoringAsset.BorrowList.resources
+D:\IVAN FILES\25.) GitHub\AMS\AMS_v1\AssetMonitoringAsset\obj\Debug\AssetMonitoringAsset.vbproj.AssemblyReference.cache

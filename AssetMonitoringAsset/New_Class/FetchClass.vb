@@ -5,9 +5,9 @@
 
         Try
 
-            Dim querysection = (From s In db.tblmasterlistdetails
-                                Order By Convert.ToInt32(s.ItemCode) Descending
-                                Select s.ItemCode).FirstOrDefault
+            Dim querysection As Integer = (From s In db.tblmasterlistdetails
+                                           Order By Convert.ToInt32(s.ItemCode) Descending
+                                           Select Convert.ToInt32(s.ItemCode)).FirstOrDefault
 
             Return querysection
 
@@ -306,7 +306,7 @@
     End Function
 
     'Fetch Employee Name(Requestor in Request)
-    Public Shared Function fetchRequestor(ByVal emplID As Integer) As String
+    Public Shared Function FetchRequestor(ByVal emplID As Integer) As String
         Try
             Dim querysection = (From s In db.tblEmployees
                                 Where s.EmployeeID = emplID
@@ -321,7 +321,7 @@
     End Function
 
     'Fetch transheader id in Request
-    Public Shared Function FetchTransHeaderIDRequest() As Object
+    Public Shared Function FetchTransHeaderIDRequest() As Integer
         Try
 
             Dim querysection As Integer = (From s In db.tblRequestHeaders
@@ -453,7 +453,7 @@
     End Function
 
     'Fetch Branch Code
-    Public Shared Function FetcBranch(ByVal uname As String, ByVal pass As String) As String
+    Public Shared Function FetchBranch(ByVal uname As String, ByVal pass As String) As String
         Try
             Dim querydetail = (From p In db.tblUsers
                                Join e In db.tblEmployees On e.EmployeeID Equals p.EmployeeID
@@ -468,7 +468,7 @@
     End Function
 
     'Fetch Branch ID
-    Public Shared Function FetcBranchID(ByVal BranchCode As String) As Integer
+    Public Shared Function FetchBranchID(ByVal BranchCode As String) As Integer
         Try
             Dim querydetail = (From p In db.tblBranches
                                Where (p.BranchCode = BranchCode)
@@ -481,7 +481,7 @@
     End Function
 
     'Fetch Department Code
-    Public Shared Function FetcDepartment1(ByVal uname As String, ByVal pass As String) As String
+    Public Shared Function FetchDepartment1(ByVal uname As String, ByVal pass As String) As String
         Try
             Dim querydetail = (From p In db.tblUsers
                                Join e In db.tblEmployees On e.EmployeeID Equals p.EmployeeID
@@ -496,7 +496,7 @@
     End Function
 
     'Fetch User Type
-    Public Shared Function FetcUserType(ByVal Emplid As Integer) As String
+    Public Shared Function FetchUserType(ByVal Emplid As Integer) As String
         Try
             Dim querydetail = (From p In db.tblUsers
                                Where (p.EmployeeID = Emplid)
@@ -509,11 +509,11 @@
     End Function
 
     'Employee ID
-    Public Shared Function FetcEmployeeID(ByVal UserID As Integer) As Integer
+    Public Shared Function FetchEmployeeID(ByVal UserID As Integer) As Integer
         Try
             Dim querydetail = (From p In db.tblUsers
                                Where (p.UserID = UserID)
-                               Select p.EmployeeID).SingleOrDefault
+                               Select Convert.ToInt32(p.EmployeeID)).SingleOrDefault
             Return querydetail
 
         Catch ex As Exception
@@ -523,7 +523,7 @@
     End Function
 
     'Fetch User ID
-    Public Shared Function FetcUserID(ByVal uname As String, ByVal pass As String) As Integer
+    Public Shared Function FetchUserID(ByVal uname As String, ByVal pass As String) As Integer
         Try
             Dim querydetail = (From p In db.tblUsers
                                Where (p.Username = uname And p.Password = pass)
@@ -537,7 +537,7 @@
     End Function
 
     'Fetch Section Code
-    Public Shared Function FetcSection(ByVal uname As String, ByVal pass As String) As String
+    Public Shared Function FetchSection(ByVal uname As String, ByVal pass As String) As String
         Try
             Dim querydetail = (From p In db.tblUsers
                                Join e In db.tblEmployees On e.EmployeeID Equals p.EmployeeID
@@ -552,7 +552,7 @@
     End Function
 
     'Fetch Departement Code
-    Public Shared Function FetcDepartment(ByVal uname As String, ByVal pass As String) As String
+    Public Shared Function FetchDepartment(ByVal uname As String, ByVal pass As String) As String
         Try
             Dim querydetail = (From p In db.tblUsers
                                Join e In db.tblEmployees On e.EmployeeID Equals p.EmployeeID
@@ -568,7 +568,7 @@
     End Function
 
     'Fetch Department ID
-    Public Shared Function FetcDepartmentID(ByVal DepartmentCode As String) As Integer
+    Public Shared Function FetchDepartmentID(ByVal DepartmentCode As String) As Integer
         Try
             Dim querydetail = (From p In db.tblDepartments
                                Where (p.DepartmentCode = DepartmentCode)
@@ -629,52 +629,26 @@
 
 
 
-    Public Shared Function FetchLastProteryCode(ByVal ItemCodes As Integer) As Object
+    Public Shared Function FetchLastPropertyCode(ByVal ItemCodes As Integer) As Object
         Try
-            'Dim consumable = (From s In db.tblmasterlistdetails
-            '                  Where s.ItemCode = ItemCodes
-            '                  Select s.CategoryID).SingleOrDefault
-
-            'If consumable = 5004 Or consumable = 5005 Then
-
-            '    Dim result = (From k In db.tblAssetInventories
-            '                  Where k.AssetCode = ItemCodes
-            '                  Select k.PropertyCode).SingleOrDefault
-
-            '    If result IsNot Nothing Then
-
-            '        Return result
-            '    Else
-            '        Dim querysection = (From s In db.tblmasterlistdetails
-            '                            Join k In db.tblCategories On s.CategoryID Equals k.CategoryID
-            '                            Join i In db.tblAssetTypes On s.AssetTypeID Equals i.AssetTypeID
-            '                            Where s.ItemCode = ItemCodes
-            '                            Let c = k.CategoryCode + "-" + i.AssetTypeCode + "-00001"
-            '                            Select c).SingleOrDefault
-            '        Return querysection
-
-            '    End If
-
-            'Else
-
             Dim result = db.spGetLastPropertyCode(ItemCodes).SingleOrDefault()
 
             If result IsNot Nothing Then
 
-                    Dim propertyCode As String = result.PropertyCode
-                    Dim parts As String() = propertyCode.Split("-"c)
-                    Dim lastPart As String = parts(parts.Length - 1)
-                    Dim nextNumber As Integer = Integer.Parse(lastPart) + 1
+                Dim propertyCode As String = result.PropertyCode
+                Dim parts As String() = propertyCode.Split("-"c)
+                Dim lastPart As String = parts(parts.Length - 1)
+                Dim nextNumber As Integer = Integer.Parse(lastPart) + 1
 
-                    ' Assuming you want the format "000001" for all values, you can use the following format.
-                    Dim formattedNextNumber As String = nextNumber.ToString("D5")
+                ' Assuming you want the format "000001" for all values, you can use the following format.
+                Dim formattedNextNumber As String = nextNumber.ToString("D5")
 
-                    ' Reconstruct the new entry ID by joining the parts with a dash (-).
-                    Dim newEntryID As String = String.Join("-", parts.Take(parts.Length - 1).ToArray()) & "-" & formattedNextNumber
+                ' Reconstruct the new entry ID by joining the parts with a dash (-).
+                Dim newEntryID As String = String.Join("-", parts.Take(parts.Length - 1).ToArray()) & "-" & formattedNextNumber
 
-                    Return newEntryID
+                Return newEntryID
 
-                Else
+            Else
 
                 Dim querysection = (From s In db.tblmasterlistdetails
                                     Join k In db.tblCategories On s.CategoryID Equals k.CategoryID
@@ -684,12 +658,12 @@
                                     Select c).SingleOrDefault
                 Return querysection
 
-                End If
+            End If
 
-            'End If
 
         Catch ex As Exception
-            Return MsgBox("Error.F-37")
+            MsgBox("Error.F-37")
+            Return Nothing
         End Try
     End Function
 
@@ -738,7 +712,7 @@
 
             Dim consumable = (From s In db.tblmasterlistdetails
                               Where s.ItemCode = ItemCodes
-                              Select s.CategoryID).SingleOrDefault
+                              Select Convert.ToInt32(s.CategoryID)).SingleOrDefault
             Return consumable
 
         Catch ex As Exception

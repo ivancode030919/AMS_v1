@@ -4,7 +4,7 @@
     Public mode1 As Integer = 0
     Public ac As Integer
     Public AssignQty As Double
-    Public Newowner As Integer
+    Public NewOwner As Integer
     Public ItemClass As String
     Public ReqId As Integer
     Public fromrq As Boolean = True
@@ -16,6 +16,7 @@
     Private Sub display()
         If mode1 = 1 Then
 
+            'Procure
             dgv.DataSource = ViewClass.Fetchrlist1(TextBox1.Text)
 
             dgv.Columns(0).HeaderText = "Asset Code"
@@ -27,6 +28,7 @@
 
         ElseIf mode1 = 2 Then
 
+            'Borrow
             dgv.DataSource = ViewClass.ViewInventoryDetails1
             With dgv
                 .Columns(0).HeaderText = "Property Code"
@@ -40,6 +42,7 @@
             End With
 
         ElseIf mode1 = 3 Then
+
 
             dgv.DataSource = ViewClass.ViewAvailableAssets(ac)
             With dgv
@@ -84,8 +87,9 @@
                 .Rows(rowToEdit).Cells(6).Value = dgv.Rows(row).Cells(3).Value.ToString
                 .AllowUserToAddRows = True
             End With
-            Request.checkqtybycat()
+            Request.Checkqtybycat()
             Me.Dispose()
+
         ElseIf modty = 3 Then
 
             With Request.dgv
@@ -94,7 +98,7 @@
                 .Rows(rowToEdit).Cells(2).Value = dgv.Rows(row).Cells(2).Value.ToString
                 .AllowUserToAddRows = True
             End With
-            Request.checkqtybycat()
+            Request.Checkqtybycat()
             Me.Dispose()
 
         ElseIf modty = 4 Then
@@ -109,7 +113,7 @@
                 If msg = DialogResult.Yes Then
 
                     Propertycode = dgv.Rows(row).Cells(0).Value.ToString()
-                    UpdateClass.UpdateAssignProperty(Propertycode, Newowner)
+                    UpdateClass.UpdateAssignProperty(Propertycode, NewOwner)
                     With Assignment1.dgv
                         .Rows(rowToEdit).Cells(9).Value = Propertycode
                     End With
@@ -133,7 +137,7 @@
 
                     End If
 
-                    UpdateClass.UpdateAssignProperty(Propertycode, Newowner)
+                    UpdateClass.UpdateAssignProperty(Propertycode, NewOwner)
 
                     With Assignment1.dgv
                         .Rows(rowToEdit).Cells(9).Value = Propertycode
@@ -143,20 +147,20 @@
                 Else
 
                     With ConsumableQty
-                        .PropertyCode = dgv.Rows(row).Cells(0).Value
-                        .ItemDescription = dgv.Rows(row).Cells(1).Value
-                        .Reference = dgv.Rows(row).Cells(7).Value
-                        .referenceno = dgv.Rows(row).Cells(8).Value
-                        .InvId = dgv.Rows(row).Cells(9).Value
+
+                        .PropertyCode = dgv.Rows(row).Cells(0).Value.ToString
+                        .ItemDescription = dgv.Rows(row).Cells(1).Value.ToString
+                        .Reference = dgv.Rows(row).Cells(7).Value.ToString
+                        .referenceno = dgv.Rows(row).Cells(8).Value.ToString
+                        .InvId = Integer.Parse(dgv.Rows(row).Cells(9).Value.ToString)
                         .ReqId = ReqId
                         .IsFromReq = fromrq
                         .ItemClass = ItemClass
                         .AQty = AssignQty
                         .rowToEdit = rowToEdit
-                        .NewOwner = Newowner
+                        .NewOwner = NewOwner
                         .ItemCode = ac
                         .ShowDialog()
-
 
                     End With
 

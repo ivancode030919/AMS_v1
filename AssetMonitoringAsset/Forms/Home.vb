@@ -19,7 +19,7 @@
     End Sub
 
     Private Sub Home_Load(sender As Object, e As EventArgs) Handles MyBase.Load
-        Dim EmployeeName As String = FetchClass.fetchRequestor(EmployeeID)
+        Dim EmployeeName As String = FetchClass.FetchRequestor(EmployeeID)
         Label1.Text = "Hello! " & EmployeeName & " || " & Date.Now.ToString("MM-dd-yyyy") & " || " & Department & " || " & Section & " || " & UserType
     End Sub
 
@@ -182,6 +182,16 @@
         PictureBox1.SendToBack()
         BorrowMain.BringToFront()
         BorrowMain.Show()
+
+    End Sub
+
+    Private Sub AccordionControlElement54_Click(sender As Object, e As EventArgs) Handles AccordionControlElement54.Click
+
+        Me.IsMdiContainer = True
+        BorrowList.MdiParent = Me
+        PictureBox1.SendToBack()
+        BorrowList.BringToFront()
+        BorrowList.Show()
 
     End Sub
 End Class

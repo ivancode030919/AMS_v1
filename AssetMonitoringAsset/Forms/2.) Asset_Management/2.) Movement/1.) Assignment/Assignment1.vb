@@ -11,7 +11,7 @@
 
             dgv.AllowUserToAddRows = True
             TextBox1.Text = FetchClass.FetchAssignmentEntryNumber
-            TextBox2.Text = FetchClass.fetchRequestor(Home.EmployeeID)
+            TextBox2.Text = FetchClass.FetchRequestor(Home.EmployeeID)
 
         ElseIf allowtoaddrow = False Then
             dgv.AllowUserToAddRows = False
@@ -80,68 +80,68 @@
     End Sub
 
     Private Sub dgv_CellDoubleClick(sender As Object, e As DataGridViewCellEventArgs) Handles dgv.CellDoubleClick
-        'Try
-        Dim row As Integer = dgv.CurrentCell.RowIndex
+        Try
+            Dim row As Integer = dgv.CurrentCell.RowIndex
 
-        If allowtoaddrow = True Then
+            If allowtoaddrow = True Then
 
-            If e.ColumnIndex = 1 Then
+                If e.ColumnIndex = 1 Then
 
-                With AssetList3
-                    .rowToEdit = row
-                    .mode1 = 1
-                    .modty = 5
-                    .ac = Integer.Parse(dgv.Rows(row).Cells(1).Value.ToString)
-                    .ShowDialog()
-                End With
+                    With AssetList3
+                        .rowToEdit = row
+                        .mode1 = 1
+                        .modty = 5
+                        .ac = dgv.Rows(row).Cells(1).Value
+                        .ShowDialog()
+                    End With
 
-            ElseIf e.ColumnIndex = 3 Then
+                ElseIf e.ColumnIndex = 3 Then
 
-                With Empllist
-                    .rowToEdit = row
-                    .modty = 4
-                    .ShowDialog()
-                End With
+                    With Empllist
+                        .rowToEdit = row
+                        .modty = 4
+                        .ShowDialog()
+                    End With
 
-            ElseIf e.ColumnIndex = 9 Then
+                ElseIf e.ColumnIndex = 9 Then
 
-                With AssetList3
-                    .rowToEdit = row
-                    .modty = 4
-                    .mode1 = 3
-                    .AssignQty = Integer.Parse(dgv.Rows(row).Cells(4).Value.ToString)
-                    .Newowner = Integer.Parse(dgv.Rows(row).Cells(8).Value.ToString)
-                    .ItemClass = dgv.Rows(row).Cells(2).Value.ToString
-                    .fromrq = allowtoaddrow
-                    .ac = Integer.Parse(dgv.Rows(row).Cells(1).Value.ToString)
-                    .ShowDialog()
-                End With
+                    With AssetList3
+                        .rowToEdit = row
+                        .modty = 4
+                        .mode1 = 3
+                        .AssignQty = Integer.Parse(dgv.Rows(row).Cells(4).Value.ToString)
+                        .NewOwner = Integer.Parse(dgv.Rows(row).Cells(8).Value.ToString)
+                        .ItemClass = dgv.Rows(row).Cells(2).Value.ToString
+                        .fromrq = allowtoaddrow
+                        .ac = Integer.Parse(dgv.Rows(row).Cells(1).Value.ToString)
+                        .ShowDialog()
+                    End With
+
+                End If
+
+            ElseIf allowtoaddrow = False Then
+
+                If e.ColumnIndex = 9 Then
+
+                    With AssetList3
+                        .rowToEdit = row
+                        .mode1 = 3
+                        .modty = 4
+                        .AssignQty = Double.Parse(dgv.Rows(row).Cells(4).Value.ToString)
+                        .NewOwner = Integer.Parse(dgv.Rows(row).Cells(8).Value.ToString)
+                        .ItemClass = dgv.Rows(row).Cells(2).Value.ToString
+                        .ac = Integer.Parse(dgv.Rows(row).Cells(1).Value.ToString)
+                        .ReqId = Integer.Parse(dgv.Rows(row).Cells(0).Value.ToString)
+                        .ShowDialog()
+
+                    End With
+
+                End If
 
             End If
-
-        ElseIf allowtoaddrow = False Then
-
-            If e.ColumnIndex = 9 Then
-
-                With AssetList3
-                    .rowToEdit = row
-                    .mode1 = 3
-                    .modty = 4
-                    .AssignQty = Double.Parse(dgv.Rows(row).Cells(4).Value.ToString)
-                    .Newowner = Integer.Parse(dgv.Rows(row).Cells(8).Value.ToString)
-                    .ItemClass = dgv.Rows(row).Cells(2).Value.ToString
-                    .ac = Integer.Parse(dgv.Rows(row).Cells(1).Value.ToString)
-                    .ReqId = Integer.Parse(dgv.Rows(row).Cells(0).Value.ToString)
-                    .ShowDialog()
-
-                End With
-
-            End If
-
-        End If
-        'Catch ex As Exception
-        '    MsgBox("Assignment.Error.Double.Click.01")
-        'End Try
+        Catch ex As Exception
+            MsgBox("Assignment.Error.Double.Click.01")
+        End Try
 
     End Sub
 

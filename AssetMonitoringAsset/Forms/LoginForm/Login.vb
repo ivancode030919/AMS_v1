@@ -12,17 +12,17 @@
     Public Sub loadDetails()
         With Home
 
-            .UserID = FetchClass.FetcUserID(TextBox1.Text, TextBox2.Text)
-            .EmployeeID = FetchClass.FetcEmployeeID(.UserID)
-            .UserType = FetchClass.FetcUserType(.EmployeeID)
+            .UserID = FetchClass.FetchUserID(TextBox1.Text, TextBox2.Text)
+            .EmployeeID = FetchClass.FetchEmployeeID(.UserID)
+            .UserType = FetchClass.FetchUserType(.EmployeeID)
 
-            .Branch = FetchClass.FetcBranch(TextBox1.Text, TextBox2.Text)
-            .BranchID = FetchClass.FetcBranchID(.Branch)
+            .Branch = FetchClass.FetchBranch(TextBox1.Text, TextBox2.Text)
+            .BranchID = FetchClass.FetchBranchID(.Branch)
 
-            .Department = FetchClass.FetcDepartment1(TextBox1.Text, TextBox2.Text)
-            .DepartmentID = FetchClass.FetcDepartmentID(.Department)
+            .Department = FetchClass.FetchDepartment1(TextBox1.Text, TextBox2.Text)
+            .DepartmentID = FetchClass.FetchDepartmentID(.Department)
 
-            .Section = FetchClass.FetcSection(TextBox1.Text, TextBox2.Text)
+            .Section = FetchClass.FetchSection(TextBox1.Text, TextBox2.Text)
             .SectionID = FetchClass.FetcSectionID(.Section)
         End With
     End Sub

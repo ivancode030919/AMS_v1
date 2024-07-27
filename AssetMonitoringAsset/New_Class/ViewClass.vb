@@ -64,6 +64,7 @@
                      Join r In db.tblBranches On w.BranchID Equals r.BranchID
                      Join t In db.tblSections On w.SectionID Equals t.SectionID
                      Join y In db.tblEmployees On q.Keeper Equals y.EmployeeID
+                     Where q.borrowerStat <> "Not Allowed"
                      Let n = w.FirstName + ", " + w.LastName Let m = y.LastName + ", " + y.FirstName
                      Select q.PropertyCode, q.Des, q.Qty, e.DepartmentDescription, r.BranchDescription, t.SectionDecription, n, m)
         Return query
@@ -198,18 +199,19 @@
 
     '------------------------------------------------------------------------------------
     'Display Item List in AssetList
-    '------------------------------------------------------------------------------------
+
     Public Shared Function Fetchrlist1(ByVal Search As String) As Object
 
         Dim querysection = (From f In db.tblmasterlistdetails
                             Join d In db.tblCategories On f.CategoryID Equals d.CategoryID
                             Join g In db.tblAssetTypes On f.AssetTypeID Equals g.AssetTypeID
-                            Where (f.AssetDescription.Contains(Search) Or f.ItemCode = Integer.Parse(Search))
+                            Where f.AssetDescription.Contains(Search) Or f.ItemCode.ToString = Search
                             Order By f.AssetDescription Ascending
                             Select f.ItemCode, f.AssetDescription, f.ItemID, d.CategoryCode, g.AssetTypeCode)
-
         Return querysection
+
     End Function
+
 
     '------------------------------------------------------------------------------------
     'Display Item List in Masterdata
@@ -226,7 +228,7 @@
     '------------------------------------------------------------------------------------
     'Display Item List in New Asset Register
     '------------------------------------------------------------------------------------
-    Public Shared Function FetchDatatoDGV1(ByVal Search As String, ByVal date1 As Date, ByVal date2 As Date, ByVal mods As Integer) As Object
+    Public Shared Function FetchDataToDGV1(ByVal Search As String, ByVal date1 As Date, ByVal date2 As Date, ByVal mods As Integer) As Object
         Dim querysection = (From s In db.tblAssetHeaders
                             Join u In db.tblUsers On s.UserID Equals u.UserID
                             Join j In db.tblEmployees On u.EmployeeID Equals j.EmployeeID
@@ -404,21 +406,13 @@
                              Where s.EmployeeID = EmpId
                              Select s.UserType).FirstOrDefault
 
-        Dim GetDetails = (From s In db.tblEmployees
-                          Where s.EmployeeID = EmpId
-                          Select New With {s.BranchID, s.SectionID, s.DepartmentID}).FirstOrDefault()
-
-        Dim BrnchID As Integer = GetDetails.BranchID.Value
-        Dim DepID As Integer = GetDetails.DepartmentID.Value
-        Dim SecID As Integer = GetDetails.SectionID.Value
-
         If queryUserType = "DPC" Then
 
             Dim querysection = (From s In db.tblBorrowHeaders
                                 Join t In db.tblEmployees On s.Requestor Equals t.EmployeeID
                                 Join i In db.tblDepartments On t.DepartmentID Equals i.DepartmentID
                                 Join y In db.tblBranches On t.BranchID Equals y.BranchID
-                                Where s.RecordDate >= date1 AndAlso s.RecordDate <= date2 AndAlso t.DepartmentID = DepID AndAlso s.RequestNumber.Contains(rqnumber)
+                                Where s.RecordDate >= date1 AndAlso s.RecordDate <= date2 AndAlso t.DepartmentID = Home.DepartmentID AndAlso s.RequestNumber.Contains(rqnumber)
                                 Let x = t.FirstName + " " + t.LastName
                                 Select s.RequestNumber, x, i.DepartmentDescription, y.BranchDescription, t.Company, s.RecordDate, s.HeaderId).ToList()
             Return querysection
@@ -429,7 +423,7 @@
                                 Join t In db.tblEmployees On s.Requestor Equals t.EmployeeID
                                 Join i In db.tblDepartments On t.DepartmentID Equals i.DepartmentID
                                 Join y In db.tblBranches On t.BranchID Equals y.BranchID
-                                Where s.RecordDate >= date1 AndAlso s.RecordDate <= date2 AndAlso t.DepartmentID = DepID AndAlso s.RequestNumber.Contains(rqnumber)
+                                Where s.RecordDate >= date1 AndAlso s.RecordDate <= date2 AndAlso i.location = "Within" AndAlso i.DepartmentID <> 2 AndAlso s.RequestNumber.Contains(rqnumber)
                                 Let x = t.FirstName + " " + t.LastName
                                 Select s.RequestNumber, x, i.DepartmentDescription, y.BranchDescription, t.Company, s.RecordDate, s.HeaderId).ToList()
             Return querysection
@@ -440,7 +434,7 @@
                                 Join t In db.tblEmployees On s.Requestor Equals t.EmployeeID
                                 Join i In db.tblDepartments On t.DepartmentID Equals i.DepartmentID
                                 Join y In db.tblBranches On t.BranchID Equals y.BranchID
-                                Where s.RecordDate >= date1 AndAlso s.RecordDate <= date2 AndAlso t.SectionID = SecID AndAlso s.RequestNumber.Contains(rqnumber)
+                                Where s.RecordDate >= date1 AndAlso s.RecordDate <= date2 AndAlso t.SectionID = Home.SectionID AndAlso s.RequestNumber.Contains(rqnumber)
                                 Let x = t.FirstName + " " + t.LastName
                                 Select s.RequestNumber, x, i.DepartmentDescription, y.BranchDescription, t.Company, s.RecordDate, s.HeaderId).ToList()
             Return querysection
@@ -464,6 +458,9 @@
 
     End Function
 
+    '------------------------------------------------------------------------------------
+    'Display In Borrow Details
+    '------------------------------------------------------------------------------------
     Public Shared Function ViewBorrowDetails(ByVal TransId As Integer) As Object
 
         Dim querysection = (From s In db.tblBorrowDetails
@@ -476,9 +473,77 @@
 
     End Function
 
+    Public Shared Function ViewItemsInBorrow() As Object
+
+        Dim queryUserType = (From s In db.tblUsers
+                             Where s.EmployeeID = Home.EmployeeID
+                             Select s.UserType).FirstOrDefault
+
+        If queryUserType = "ADMIN" Then
+
+            Dim querysection = (From s In db.tblAssetInventories
+                                Join g In db.tblEmployees On s.Keeper Equals g.EmployeeID
+                                Where Not s.PropertyCode.StartsWith("CNR") And Not s.PropertyCode.StartsWith("CRE")
+                                Let q = g.LastName + ", " + g.FirstName
+                                Select s.PropertyCode, s.Des, s.Qty, q, s.borrowerStat)
+            Return querysection
+
+        ElseIf queryUserType = "SPC" Then
+
+            Dim querysection = (From s In db.tblAssetInventories
+                                Join g In db.tblEmployees On s.Keeper Equals g.EmployeeID
+                                Where g.SectionID = Home.SectionID And Not s.PropertyCode.StartsWith("CNR") And Not s.PropertyCode.StartsWith("CRE")
+                                Let q = g.LastName + ", " + g.FirstName
+                                Select s.PropertyCode, s.Des, s.Qty, q, s.borrowerStat)
+            Return querysection
+
+        ElseIf queryUserType = "BPC" Then
+
+            Dim querysection = (From s In db.tblAssetInventories
+                                Join g In db.tblEmployees On s.Keeper Equals g.EmployeeID
+                                Join l In db.tblDepartments On g.DepartmentID Equals l.DepartmentID
+                                Where l.location = "Within" AndAlso l.DepartmentID <> 2 And Not s.PropertyCode.StartsWith("CNR") And Not s.PropertyCode.StartsWith("CRE")
+                                Let q = g.LastName + ", " + g.FirstName
+                                Select s.PropertyCode, s.Des, s.Qty, q, s.borrowerStat)
+            Return querysection
+
+        ElseIf queryUserType = "DPC" Then
+
+            Dim querysection = (From s In db.tblAssetInventories
+                                Join g In db.tblEmployees On s.Keeper Equals g.EmployeeID
+                                Where g.DepartmentID = Home.DepartmentID And Not s.PropertyCode.StartsWith("CNR") And Not s.PropertyCode.StartsWith("CRE")
+                                Let q = g.LastName + ", " + g.FirstName
+                                Select s.PropertyCode, s.Des, s.Qty, q, s.borrowerStat)
+            Return querysection
+
+        End If
+
+        Return Nothing
+    End Function
+
+    Public Shared Function ViewBorrowedItems() As Object
+
+
+        Dim queryUserType = (From s In db.tblUsers
+                             Where s.EmployeeID = Home.EmployeeID
+                             Select s.UserType).FirstOrDefault
+
+        If queryUserType = "ADMIN" Then
+
+            'Dim querysection = (From s In db.tblBorrowDetails
+            '                    Join g In db.tblEmployees On s.Borrowee Equals g.EmployeeID
+            '                    Let q = g.LastName + ", " + g.FirstName
+            '                    Select s.PropertyCode, s.Des, s.Qty, q, s.borrowerStat)
+            'Return querysection
+
+        ElseIf queryUserType = "DPC" Then
+
+        End If
+
+        Return Nothing
+    End Function
+
 End Class
-
-
 
 'Dim result = (From ai In context.tblAssetInventory
 '              Order By ai.InvID Descending
