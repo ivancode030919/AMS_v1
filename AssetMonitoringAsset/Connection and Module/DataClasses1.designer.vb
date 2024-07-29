@@ -7309,6 +7309,12 @@ Partial Public Class tblBorrowDetail
 	
 	Private _HeaderID As System.Nullable(Of Integer)
 	
+	Private _IsReturn As System.Nullable(Of Boolean)
+	
+	Private _IsReturnDate As System.Nullable(Of Date)
+	
+	Private _ReturnBy As System.Nullable(Of Integer)
+	
     #Region "Extensibility Method Definitions"
     Partial Private Sub OnLoaded()
     End Sub
@@ -7347,6 +7353,18 @@ Partial Public Class tblBorrowDetail
     Partial Private Sub OnHeaderIDChanging(value As System.Nullable(Of Integer))
     End Sub
     Partial Private Sub OnHeaderIDChanged()
+    End Sub
+    Partial Private Sub OnIsReturnChanging(value As System.Nullable(Of Boolean))
+    End Sub
+    Partial Private Sub OnIsReturnChanged()
+    End Sub
+    Partial Private Sub OnIsReturnDateChanging(value As System.Nullable(Of Date))
+    End Sub
+    Partial Private Sub OnIsReturnDateChanged()
+    End Sub
+    Partial Private Sub OnReturnByChanging(value As System.Nullable(Of Integer))
+    End Sub
+    Partial Private Sub OnReturnByChanged()
     End Sub
     #End Region
 	
@@ -7480,6 +7498,54 @@ Partial Public Class tblBorrowDetail
 				Me._HeaderID = value
 				Me.SendPropertyChanged("HeaderID")
 				Me.OnHeaderIDChanged
+			End If
+		End Set
+	End Property
+	
+	<Global.System.Data.Linq.Mapping.ColumnAttribute(Storage:="_IsReturn", DbType:="Bit")>  _
+	Public Property IsReturn() As System.Nullable(Of Boolean)
+		Get
+			Return Me._IsReturn
+		End Get
+		Set
+			If (Me._IsReturn.Equals(value) = false) Then
+				Me.OnIsReturnChanging(value)
+				Me.SendPropertyChanging
+				Me._IsReturn = value
+				Me.SendPropertyChanged("IsReturn")
+				Me.OnIsReturnChanged
+			End If
+		End Set
+	End Property
+	
+	<Global.System.Data.Linq.Mapping.ColumnAttribute(Storage:="_IsReturnDate", DbType:="DateTime")>  _
+	Public Property IsReturnDate() As System.Nullable(Of Date)
+		Get
+			Return Me._IsReturnDate
+		End Get
+		Set
+			If (Me._IsReturnDate.Equals(value) = false) Then
+				Me.OnIsReturnDateChanging(value)
+				Me.SendPropertyChanging
+				Me._IsReturnDate = value
+				Me.SendPropertyChanged("IsReturnDate")
+				Me.OnIsReturnDateChanged
+			End If
+		End Set
+	End Property
+	
+	<Global.System.Data.Linq.Mapping.ColumnAttribute(Storage:="_ReturnBy", DbType:="Int")>  _
+	Public Property ReturnBy() As System.Nullable(Of Integer)
+		Get
+			Return Me._ReturnBy
+		End Get
+		Set
+			If (Me._ReturnBy.Equals(value) = false) Then
+				Me.OnReturnByChanging(value)
+				Me.SendPropertyChanging
+				Me._ReturnBy = value
+				Me.SendPropertyChanged("ReturnBy")
+				Me.OnReturnByChanged
 			End If
 		End Set
 	End Property

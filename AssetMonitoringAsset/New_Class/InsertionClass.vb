@@ -707,8 +707,9 @@ Public Class InsertionClass
            .DateFrom = DateFrom,
            .DateTo = DateTo,
            .Remarks = Remarks,
-           .HeaderID = HeaderID
-                }
+           .HeaderID = HeaderID,
+           .IsReturn = False
+                        }
             post.InsertOnSubmit(p)
             post.Context.SubmitChanges()
 

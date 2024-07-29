@@ -190,6 +190,12 @@
     <Compile Include="Forms\2.%29 Asset_Management\2.%29 Movement\4.%29 Borrow\BorrowMain.vb">
       <SubType>Form</SubType>
     </Compile>
+    <Compile Include="Forms\2.%29 Asset_Management\2.%29 Movement\4.%29 Borrow\BorrowReturn.Designer.vb">
+      <DependentUpon>BorrowReturn.vb</DependentUpon>
+    </Compile>
+    <Compile Include="Forms\2.%29 Asset_Management\2.%29 Movement\4.%29 Borrow\BorrowReturn.vb">
+      <SubType>Form</SubType>
+    </Compile>
     <Compile Include="Forms\7.%29 Importation\Build Asset\BuildAssetImport.Designer.vb">
       <DependentUpon>BuildAssetImport.vb</DependentUpon>
     </Compile>
@@ -581,6 +587,9 @@
     <EmbeddedResource Include="Forms\2.%29 Asset_Management\2.%29 Movement\4.%29 Borrow\BorrowMain.resx">
       <DependentUpon>BorrowMain.vb</DependentUpon>
     </EmbeddedResource>
+    <EmbeddedResource Include="Forms\2.%29 Asset_Management\2.%29 Movement\4.%29 Borrow\BorrowReturn.resx">
+      <DependentUpon>BorrowReturn.vb</DependentUpon>
+    </EmbeddedResource>
     <EmbeddedResource Include="Forms\4.%29 List\AssetList\AssetList3.resx">
       <DependentUpon>AssetList3.vb</DependentUpon>
     </EmbeddedResource>
@@ -785,8 +794,6 @@
     <WCFMetadata Include="Connected Services\" />
   </ItemGroup>
   <ItemGroup>
-    <Folder Include="Forms\2.%29 Asset_Management\2.%29 Movement\2.%29 Receive\Borrow\" />
-    <Folder Include="Forms\2.%29 Asset_Management\2.%29 Movement\2.%29 Receive\NewFolder1\" />
     <Folder Include="Forms\2.%29 Asset_Management\2.%29 Movement\3.%29 TransferOwnership\" />
     <Folder Include="Forms\3.%29 Asset\MasterData\Register\" />
     <Folder Include="Forms\5.%29 Reports\" />

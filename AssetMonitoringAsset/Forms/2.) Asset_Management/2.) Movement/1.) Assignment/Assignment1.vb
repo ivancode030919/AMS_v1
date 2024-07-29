@@ -162,7 +162,7 @@
                 For Each row As DataGridViewRow In dgv.Rows
 
                     'Assuming itemcode is stored in a specific column (adjust as needed)
-                    Dim itemcode As Integer = Integer.Parse(row.Cells(1).Value.ToString)
+                    Dim itemcode As Integer = Integer.Parse(row.Cells(1).Value)
 
                     'Fetch asset without owner for the specific itemcode
                     row.Cells(7).Value = FetchClass.FetchAssetWithoutOwner(itemcode)
@@ -245,13 +245,9 @@
                 If allowtoaddrow = True Then
 
                 ElseIf allowtoaddrow = False Then
-
                     UpdateClass.UpdateStatusReq(Integer.Parse(id))
-
                 End If
-
                 InsertionClass.SaveAssignmentDetails(Decimal.Parse(qty), Propertycode, headid, user, Integer.Parse(ItemCode), Double.Parse(Availableqty))
-
             End If
         Next
 

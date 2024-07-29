@@ -374,6 +374,9 @@
       <Column Name="DateTo" Type="System.DateTime" DbType="Date" CanBeNull="true" />
       <Column Name="Remarks" Type="System.String" DbType="VarChar(MAX)" CanBeNull="true" />
       <Column Name="HeaderID" Type="System.Int32" DbType="Int" CanBeNull="true" />
+      <Column Name="IsReturn" Type="System.Boolean" DbType="Bit" CanBeNull="true" />
+      <Column Name="IsReturnDate" Type="System.DateTime" DbType="DateTime" CanBeNull="true" />
+      <Column Name="ReturnBy" Type="System.Int32" DbType="Int" CanBeNull="true" />
     </Type>
   </Table>
   <Function Name="dbo.spNewAsset" Method="spNewAsset">

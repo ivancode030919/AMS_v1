@@ -260,8 +260,8 @@
                     For Each row As DataGridViewRow In dgv.Rows
 
                         If Not row.IsNewRow Then
-                            Dim HeaderId As Integer = FetchClass.FetchTransIdForApprovalBorrow
 
+                            Dim HeaderId As Integer = FetchClass.FetchTransIdForApprovalBorrow
                             Dim PropertyCode As String = row.Cells(0).Value.ToString
                             Dim Quanity As String = row.Cells(2).Value.ToString
                             Dim Borrowee As String = row.Cells(7).Value.ToString
@@ -269,7 +269,7 @@
                             Dim DateTobeReturn As String = row.Cells(5).Value.ToString
                             Dim Remarks As String = row.Cells(6).Value.ToString
                             InsertionClass.SaveBorrowDetail(PropertyCode, Decimal.Parse(Quanity), Integer.Parse(Borrowee), Date.Parse(DateBorrow), Date.Parse(DateTobeReturn), Remarks, HeaderId)
-
+                            UpdateClass.UpdateInventoryBorrower(PropertyCode, Integer.Parse(Borrowee))
                         End If
                     Next
                     RequestRegister.display()

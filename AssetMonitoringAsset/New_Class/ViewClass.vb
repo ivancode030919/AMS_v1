@@ -467,13 +467,14 @@
                             Join g In db.tblEmployees On s.Borrowee Equals g.EmployeeID
                             Join t In db.tblAssetInventories On s.PropertyCode Equals t.PropertyCode
                             Where s.HeaderID = TransId
-                            Let c = g.FirstName + " " + g.LastName
-                            Select s.PropertyCode, t.Des, s.Quantity, c, s.DateFrom, s.DateTo)
+                            Let Borrower = g.FirstName + " " + g.LastName Let Desecription = t.Des Let Returned = s.IsReturn
+                            Select s.PropertyCode, Desecription, s.Quantity, Borrower, s.DateFrom, s.DateTo, Returned)
         Return querysection
 
     End Function
 
-    Public Shared Function ViewItemsInBorrow() As Object
+    'View Items in Borrow List
+    Public Shared Function ViewItemsInBorrow(ProertyCode As String, Descrip As String) As Object
 
         Dim queryUserType = (From s In db.tblUsers
                              Where s.EmployeeID = Home.EmployeeID
@@ -483,7 +484,8 @@
 
             Dim querysection = (From s In db.tblAssetInventories
                                 Join g In db.tblEmployees On s.Keeper Equals g.EmployeeID
-                                Where Not s.PropertyCode.StartsWith("CNR") And Not s.PropertyCode.StartsWith("CRE")
+                                Where Not s.PropertyCode.StartsWith("CNR") And Not s.PropertyCode.StartsWith("CRE") And
+                                s.PropertyCode.Contains(ProertyCode) And (s.Des.Contains(Descrip))
                                 Let q = g.LastName + ", " + g.FirstName
                                 Select s.PropertyCode, s.Des, s.Qty, q, s.borrowerStat)
             Return querysection
@@ -492,7 +494,8 @@
 
             Dim querysection = (From s In db.tblAssetInventories
                                 Join g In db.tblEmployees On s.Keeper Equals g.EmployeeID
-                                Where g.SectionID = Home.SectionID And Not s.PropertyCode.StartsWith("CNR") And Not s.PropertyCode.StartsWith("CRE")
+                                Where g.SectionID = Home.SectionID And Not s.PropertyCode.StartsWith("CNR") And Not s.PropertyCode.StartsWith("CRE") And
+                                s.PropertyCode.Contains(ProertyCode) And (s.Des.Contains(Descrip))
                                 Let q = g.LastName + ", " + g.FirstName
                                 Select s.PropertyCode, s.Des, s.Qty, q, s.borrowerStat)
             Return querysection
@@ -502,7 +505,8 @@
             Dim querysection = (From s In db.tblAssetInventories
                                 Join g In db.tblEmployees On s.Keeper Equals g.EmployeeID
                                 Join l In db.tblDepartments On g.DepartmentID Equals l.DepartmentID
-                                Where l.location = "Within" AndAlso l.DepartmentID <> 2 And Not s.PropertyCode.StartsWith("CNR") And Not s.PropertyCode.StartsWith("CRE")
+                                Where l.location = "Within" AndAlso l.DepartmentID <> 2 And Not s.PropertyCode.StartsWith("CNR") And Not s.PropertyCode.StartsWith("CRE") And
+                                s.PropertyCode.Contains(ProertyCode) And (s.Des.Contains(Descrip))
                                 Let q = g.LastName + ", " + g.FirstName
                                 Select s.PropertyCode, s.Des, s.Qty, q, s.borrowerStat)
             Return querysection
@@ -511,7 +515,8 @@
 
             Dim querysection = (From s In db.tblAssetInventories
                                 Join g In db.tblEmployees On s.Keeper Equals g.EmployeeID
-                                Where g.DepartmentID = Home.DepartmentID And Not s.PropertyCode.StartsWith("CNR") And Not s.PropertyCode.StartsWith("CRE")
+                                Where g.DepartmentID = Home.DepartmentID And Not s.PropertyCode.StartsWith("CNR") And Not s.PropertyCode.StartsWith("CRE") And
+                                s.PropertyCode.Contains(ProertyCode) And (s.Des.Contains(Descrip))
                                 Let q = g.LastName + ", " + g.FirstName
                                 Select s.PropertyCode, s.Des, s.Qty, q, s.borrowerStat)
             Return querysection
@@ -521,8 +526,7 @@
         Return Nothing
     End Function
 
-    Public Shared Function ViewBorrowedItems() As Object
-
+    Public Shared Function ViewBorrowedItems(PC As String, Descrip As String) As Object
 
         Dim queryUserType = (From s In db.tblUsers
                              Where s.EmployeeID = Home.EmployeeID
@@ -530,23 +534,40 @@
 
         If queryUserType = "ADMIN" Then
 
-            'Dim querysection = (From s In db.tblBorrowDetails
-            '                    Join g In db.tblEmployees On s.Borrowee Equals g.EmployeeID
-            '                    Let q = g.LastName + ", " + g.FirstName
-            '                    Select s.PropertyCode, s.Des, s.Qty, q, s.borrowerStat)
-            'Return querysection
+            Dim querysection = (From s In db.tblAssetInventories
+                                Join g In db.tblEmployees On s.Keeper Equals g.EmployeeID
+                                Join o In db.tblEmployees On s.Borrower Equals o.EmployeeID
+                                Join y In db.tblBorrowDetails On s.PropertyCode Equals y.PropertyCode
+                                Where Not s.PropertyCode.StartsWith("CNR") And Not s.PropertyCode.StartsWith("CRE") And
+                                (s.PropertyCode.Contains(PC)) And (s.Des.Contains(Descrip)) And (s.Returned = False)
+                                Let Owner = g.LastName + ", " + g.FirstName Let Borrower = o.LastName + ", " + o.FirstName
+                                Let Description = s.Des Let Status = s.borrowerStat Let Quantity = s.Qty Let DateBorrowed = y.DateFrom & "  -to-  " & y.DateTo
+                                Select s.PropertyCode, Description, Quantity, Owner, Borrower, DateBorrowed).Distinct
+            Return querysection
 
         ElseIf queryUserType = "DPC" Then
+
+            Dim querysection = (From s In db.tblAssetInventories
+                                Join g In db.tblEmployees On s.Keeper Equals g.EmployeeID
+                                Join o In db.tblEmployees On s.Borrower Equals o.EmployeeID
+                                Join y In db.tblBorrowDetails On s.PropertyCode Equals y.PropertyCode
+                                Where Not s.PropertyCode.StartsWith("CNR") And Not s.PropertyCode.StartsWith("CRE") And
+                                (s.PropertyCode.Contains(PC)) And (s.Des.Contains(Descrip)) And (s.Returned = False)
+                                Let Owner = g.LastName + ", " + g.FirstName Let Borrower = o.LastName + ", " + o.FirstName
+                                Let Description = s.Des Let Status = s.borrowerStat Let Quantity = s.Qty Let DateBorrowed = y.DateFrom & "  -to-  " & y.DateTo
+                                Select s.PropertyCode, Description, Quantity, Owner, Borrower, DateBorrowed).Distinct
+            Return querysection
 
         End If
 
         Return Nothing
+
     End Function
 
 End Class
 
 'Dim result = (From ai In context.tblAssetInventory
-'              Order By ai.InvID Descending
-'              Select PropertyCodeOrChildSeries = If(ai.isChildSeries = 0 OrElse ai.isChildSeries Is Nothing,
-'                                                           ai.PropertyCode,
-'                                                           ai.PropertyCode & "-" & ai.isChildSeries.ToString())).ToList()
+'Order By ai.InvID Descending
+'Select Case PropertyCodeOrChildSeries = If(ai.isChildSeries = 0 OrElse ai.isChildSeries Is Nothing,
+'ai.PropertyCode,
+'ai.PropertyCode & "-" & ai.isChildSeries.ToString())).ToList()

@@ -194,4 +194,12 @@
         BorrowList.Show()
 
     End Sub
+
+    Private Sub AccordionControlElement20_Click(sender As Object, e As EventArgs) Handles AccordionControlElement20.Click
+        Me.IsMdiContainer = True
+        BorrowReturn.MdiParent = Me
+        PictureBox1.SendToBack()
+        BorrowReturn.BringToFront()
+        BorrowReturn.Show()
+    End Sub
 End Class

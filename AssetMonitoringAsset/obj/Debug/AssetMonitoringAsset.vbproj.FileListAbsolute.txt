@@ -1135,3 +1135,4 @@ D:\IVAN FILES\25.) GitHub\AMS\AMS_v1\AssetMonitoringAsset\obj\Debug\AssetMonitor
 D:\IVAN FILES\25.) GitHub\AMS\AMS_v1\AssetMonitoringAsset\obj\Debug\AssetMonitoringAsset.BorrowDetails.resources
 D:\IVAN FILES\25.) GitHub\AMS\AMS_v1\AssetMonitoringAsset\obj\Debug\AssetMonitoringAsset.BorrowList.resources
 D:\IVAN FILES\25.) GitHub\AMS\AMS_v1\AssetMonitoringAsset\obj\Debug\AssetMonitoringAsset.vbproj.AssemblyReference.cache
+D:\IVAN FILES\25.) GitHub\AMS\AMS_v1\AssetMonitoringAsset\obj\Debug\AssetMonitoringAsset.BorrowReturn.resources
