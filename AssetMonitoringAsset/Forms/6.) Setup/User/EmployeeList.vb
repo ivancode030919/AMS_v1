@@ -1,6 +1,6 @@
 ﻿Public Class EmployeeList
     Public rowToEdit As Integer
-    Public modty As Integer
+    Public modty As Integer = 0
 
     Private Sub EmployeeList_Load(sender As Object, e As EventArgs) Handles MyBase.Load
         viewdg()
@@ -21,14 +21,14 @@
 
                 With BuildAsset.dgview
                     .Rows(rowToEdit).Cells(17).Value = selectedrow.Cells(0).Value.ToString
-                    .Rows(rowToEdit).Cells(5).Value = selectedrow.Cells(2).Value.ToString + ", " + selectedrow.Cells(1).Value.ToString
+                    .Rows(rowToEdit).Cells(5).Value = selectedrow.Cells(1).Value.ToString
                 End With
 
 
             ElseIf modty = 2 Then
 
                 With UserAdd
-                    .Label3.Text = selectedrow.Cells(1).Value.ToString + " " + selectedrow.Cells(2).Value.ToString
+                    .Label3.Text = selectedrow.Cells(1).Value.ToString
                     .EmpID = Integer.Parse(selectedrow.Cells(0).Value.ToString)
                     .TextBox1.Enabled = True
                     .TextBox2.Enabled = True
@@ -38,11 +38,18 @@
 
                 With BuildAsset.dgview
                     .Rows(rowToEdit).Cells(18).Value = selectedrow.Cells(0).Value.ToString
-                    .Rows(rowToEdit).Cells(6).Value = selectedrow.Cells(2).Value.ToString + ", " + selectedrow.Cells(1).Value.ToString
+                    .Rows(rowToEdit).Cells(6).Value = selectedrow.Cells(1).Value.ToString
                 End With
+
+
+            ElseIf modty = 4 Then
+
+                With BorrowerRetuenConfirmation
+                    .BorrowerID = selectedrow.Cells(0).Value
+                    .TextBox2.Text = selectedrow.Cells(1).Value.ToString
+                End With
+
             End If
-
-
 
             Me.Close()
         Catch ex As Exception
@@ -58,5 +65,9 @@
         If e.KeyCode = Keys.Escape Then
             Me.Close()
         End If
+    End Sub
+
+    Private Sub EmployeeList_FormClosing(sender As Object, e As FormClosingEventArgs) Handles MyBase.FormClosing
+        modty = 0
     End Sub
 End Class

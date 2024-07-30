@@ -202,4 +202,12 @@
         BorrowReturn.BringToFront()
         BorrowReturn.Show()
     End Sub
+
+    Private Sub AccordionControlElement31_Click_1(sender As Object, e As EventArgs) Handles AccordionControlElement31.Click
+        Me.IsMdiContainer = True
+        frmDeplyment.MdiParent = Me
+        PictureBox1.SendToBack()
+        frmDeplyment.BringToFront()
+        frmDeplyment.Show()
+    End Sub
 End Class

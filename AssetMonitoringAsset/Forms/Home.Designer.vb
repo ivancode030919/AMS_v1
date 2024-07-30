@@ -39,6 +39,7 @@ Partial Class Home
         Me.AccordionControlElement52 = New DevExpress.XtraBars.Navigation.AccordionControlElement()
         Me.AccordionControlElement53 = New DevExpress.XtraBars.Navigation.AccordionControlElement()
         Me.AccordionControlElement54 = New DevExpress.XtraBars.Navigation.AccordionControlElement()
+        Me.AccordionControlElement20 = New DevExpress.XtraBars.Navigation.AccordionControlElement()
         Me.AccordionControlElement21 = New DevExpress.XtraBars.Navigation.AccordionControlElement()
         Me.AccordionControlElement37 = New DevExpress.XtraBars.Navigation.AccordionControlElement()
         Me.AccordionControlElement57 = New DevExpress.XtraBars.Navigation.AccordionControlElement()
@@ -75,7 +76,7 @@ Partial Class Home
         Me.Label1 = New System.Windows.Forms.Label()
         Me.AccordionControlElement32 = New DevExpress.XtraBars.Navigation.AccordionControlElement()
         Me.PictureBox1 = New System.Windows.Forms.PictureBox()
-        Me.AccordionControlElement20 = New DevExpress.XtraBars.Navigation.AccordionControlElement()
+        Me.AccordionControlElement31 = New DevExpress.XtraBars.Navigation.AccordionControlElement()
         CType(Me.AccordionControl1, System.ComponentModel.ISupportInitialize).BeginInit()
         CType(Me.PanelControl1, System.ComponentModel.ISupportInitialize).BeginInit()
         Me.PanelControl1.SuspendLayout()
@@ -96,6 +97,7 @@ Partial Class Home
         Me.AccordionControlElement47.Appearance.Default.ForeColor = System.Drawing.Color.Black
         Me.AccordionControlElement47.Appearance.Default.Options.UseForeColor = True
         Me.AccordionControlElement47.Elements.AddRange(New DevExpress.XtraBars.Navigation.AccordionControlElement() {Me.AccordionControlElement39})
+        Me.AccordionControlElement47.Expanded = True
         Me.AccordionControlElement47.ImageOptions.SvgImage = CType(resources.GetObject("AccordionControlElement47.ImageOptions.SvgImage"), DevExpress.Utils.Svg.SvgImage)
         Me.AccordionControlElement47.Name = "AccordionControlElement47"
         resources.ApplyResources(Me.AccordionControlElement47, "AccordionControlElement47")
@@ -157,7 +159,6 @@ Partial Class Home
         Me.AccordionControlElement55.Appearance.Default.ForeColor = System.Drawing.Color.Black
         Me.AccordionControlElement55.Appearance.Default.Options.UseForeColor = True
         Me.AccordionControlElement55.Elements.AddRange(New DevExpress.XtraBars.Navigation.AccordionControlElement() {Me.e, Me.AccordionControlElement36})
-        Me.AccordionControlElement55.Expanded = True
         Me.AccordionControlElement55.Name = "AccordionControlElement55"
         resources.ApplyResources(Me.AccordionControlElement55, "AccordionControlElement55")
         '
@@ -181,7 +182,7 @@ Partial Class Home
         '
         Me.AccordionControlElement18.Appearance.Default.ForeColor = System.Drawing.Color.Black
         Me.AccordionControlElement18.Appearance.Default.Options.UseForeColor = True
-        Me.AccordionControlElement18.Elements.AddRange(New DevExpress.XtraBars.Navigation.AccordionControlElement() {Me.AccordionControlElement56})
+        Me.AccordionControlElement18.Elements.AddRange(New DevExpress.XtraBars.Navigation.AccordionControlElement() {Me.AccordionControlElement56, Me.AccordionControlElement31})
         Me.AccordionControlElement18.Expanded = True
         Me.AccordionControlElement18.Name = "AccordionControlElement18"
         resources.ApplyResources(Me.AccordionControlElement18, "AccordionControlElement18")
@@ -199,7 +200,6 @@ Partial Class Home
         Me.AccordionControlElement49.Appearance.Default.ForeColor = System.Drawing.Color.Black
         Me.AccordionControlElement49.Appearance.Default.Options.UseForeColor = True
         Me.AccordionControlElement49.Elements.AddRange(New DevExpress.XtraBars.Navigation.AccordionControlElement() {Me.AccordionControlElement50, Me.AccordionControlElement51})
-        Me.AccordionControlElement49.Expanded = True
         Me.AccordionControlElement49.Name = "AccordionControlElement49"
         resources.ApplyResources(Me.AccordionControlElement49, "AccordionControlElement49")
         '
@@ -224,7 +224,6 @@ Partial Class Home
         Me.AccordionControlElement52.Appearance.Default.ForeColor = System.Drawing.Color.Black
         Me.AccordionControlElement52.Appearance.Default.Options.UseForeColor = True
         Me.AccordionControlElement52.Elements.AddRange(New DevExpress.XtraBars.Navigation.AccordionControlElement() {Me.AccordionControlElement53, Me.AccordionControlElement54, Me.AccordionControlElement20})
-        Me.AccordionControlElement52.Expanded = True
         Me.AccordionControlElement52.Name = "AccordionControlElement52"
         resources.ApplyResources(Me.AccordionControlElement52, "AccordionControlElement52")
         '
@@ -244,11 +243,20 @@ Partial Class Home
         Me.AccordionControlElement54.Style = DevExpress.XtraBars.Navigation.ElementStyle.Item
         resources.ApplyResources(Me.AccordionControlElement54, "AccordionControlElement54")
         '
+        'AccordionControlElement20
+        '
+        Me.AccordionControlElement20.Appearance.Default.ForeColor = System.Drawing.Color.Black
+        Me.AccordionControlElement20.Appearance.Default.Options.UseForeColor = True
+        Me.AccordionControlElement20.Name = "AccordionControlElement20"
+        Me.AccordionControlElement20.Style = DevExpress.XtraBars.Navigation.ElementStyle.Item
+        resources.ApplyResources(Me.AccordionControlElement20, "AccordionControlElement20")
+        '
         'AccordionControlElement21
         '
         Me.AccordionControlElement21.Appearance.Default.ForeColor = System.Drawing.Color.Black
         Me.AccordionControlElement21.Appearance.Default.Options.UseForeColor = True
         Me.AccordionControlElement21.Elements.AddRange(New DevExpress.XtraBars.Navigation.AccordionControlElement() {Me.AccordionControlElement37, Me.AccordionControlElement57})
+        Me.AccordionControlElement21.Expanded = True
         Me.AccordionControlElement21.Name = "AccordionControlElement21"
         resources.ApplyResources(Me.AccordionControlElement21, "AccordionControlElement21")
         '
@@ -529,13 +537,13 @@ Partial Class Home
         Me.PictureBox1.Name = "PictureBox1"
         Me.PictureBox1.TabStop = False
         '
-        'AccordionControlElement20
+        'AccordionControlElement31
         '
-        Me.AccordionControlElement20.Appearance.Default.ForeColor = System.Drawing.Color.Black
-        Me.AccordionControlElement20.Appearance.Default.Options.UseForeColor = True
-        Me.AccordionControlElement20.Name = "AccordionControlElement20"
-        Me.AccordionControlElement20.Style = DevExpress.XtraBars.Navigation.ElementStyle.Item
-        resources.ApplyResources(Me.AccordionControlElement20, "AccordionControlElement20")
+        Me.AccordionControlElement31.Appearance.Default.ForeColor = System.Drawing.Color.Black
+        Me.AccordionControlElement31.Appearance.Default.Options.UseForeColor = True
+        Me.AccordionControlElement31.Name = "AccordionControlElement31"
+        Me.AccordionControlElement31.Style = DevExpress.XtraBars.Navigation.ElementStyle.Item
+        resources.ApplyResources(Me.AccordionControlElement31, "AccordionControlElement31")
         '
         'Home
         '
@@ -615,4 +623,5 @@ Partial Class Home
     Friend WithEvents AccordionControlElement32 As DevExpress.XtraBars.Navigation.AccordionControlElement
     Friend WithEvents PictureBox1 As PictureBox
     Friend WithEvents AccordionControlElement20 As DevExpress.XtraBars.Navigation.AccordionControlElement
+    Friend WithEvents AccordionControlElement31 As DevExpress.XtraBars.Navigation.AccordionControlElement
 End Class

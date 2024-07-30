@@ -141,7 +141,7 @@ Public Class InsertionClass
                                          ByVal IsChild As Boolean, ByVal IsParent As Boolean)
         'Try
         Dim post As Table(Of tblAssetInventory) = InsertionClass.GetInventory
-            Dim p As New tblAssetInventory With
+        Dim p As New tblAssetInventory With
                 {
                 .AssetCode = AssetCode,
                 .[Class] = Class1,
@@ -159,9 +159,15 @@ Public Class InsertionClass
                 .Condition = con,
                 .IsChildSeries = IsChildS,
                 .IsChild = IsChild,
-                .IsParent = IsParent
+                .IsParent = IsParent,
+                .Deployed = 0,
+                .ReceivedByRequestor = 0,
+                .DateDeployed = "",
+                .DateRequestorRecv = "",
+                .DeployBy = 777,
+                .RecvBy = 777
                 }
-            post.InsertOnSubmit(p)
+        post.InsertOnSubmit(p)
             post.Context.SubmitChanges()
 
         'Catch ex As Exception
@@ -754,7 +760,11 @@ Public Class InsertionClass
                .Condition = Condition,
                .IsChild = False,
                .IsParent = True,
-               .IsChildSeries = 0
+               .IsChildSeries = 0,
+               .Deployed = 1,
+               .ReceivedByRequestor = 1,
+               .DateDeployed = "",
+               .DateRequestorRecv = ""
                 }
             post.InsertOnSubmit(p)
             post.Context.SubmitChanges()

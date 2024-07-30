@@ -768,4 +768,23 @@
 
     End Function
 
+    'Public Shared Function FetchEmployeeName() As Object
+    '    Try
+
+    '        Dim dname = (From s In db.tblEmployees
+    '                     Let name = s.LastName + ", " + s.FirstName
+    '                     Select name).ToList
+    '        Return dname
+
+    '    Catch ex As Exception
+
+    '        Return MsgBox("Error.F-45")
+
+    '    End Try
+
+    'End Function
+
+
+
+
 End Class

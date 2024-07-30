@@ -16,7 +16,6 @@
 
     End Sub
 
-
     'Update Category
     Public Shared Sub UpdateCategory(ByVal typeid As Integer, ByVal ATC As String, ByVal ATD As String)
         Try
@@ -263,7 +262,7 @@
             db.SubmitChanges()
 
         Catch ex As Exception
-            MsgBox("Error.U.20")
+            MsgBox("Error.U.27")
         End Try
 
     End Sub
@@ -278,7 +277,7 @@
             db.SubmitChanges()
 
         Catch ex As Exception
-            MsgBox("Error.U.20")
+            MsgBox("Error.U.28")
         End Try
 
     End Sub
@@ -292,7 +291,43 @@
             db.SubmitChanges()
 
         Catch ex As Exception
-            MsgBox("Error.U.20")
+            MsgBox("Error.U.29")
         End Try
     End Sub
+
+    Public Shared Sub UpdateReturnItem(PropertyCode As String, Runner As String)
+        Try
+            Dim updateBorrower = (From p In db.GetTable(Of tblAssetInventory)()
+                                  Where p.PropertyCode = PropertyCode
+                                  Select p).FirstOrDefault()
+            updateBorrower.Borrower = 0
+
+            Dim updateStat = (From p In db.GetTable(Of tblBorrowDetail)()
+                              Where p.PropertyCode = PropertyCode
+                              Select p).FirstOrDefault()
+            updateStat.IsReturn = True
+            updateStat.IsReturnDate = DateAndTime.Now
+            updateStat.ReturnBy = Home.EmployeeID
+            updateStat.Runner = Runner
+
+            db.SubmitChanges()
+
+        Catch ex As Exception
+            MsgBox("Error.U.30")
+        End Try
+    End Sub
+
+    Public Shared Sub UpdateDeployment(PropertyCode As String, InvId As Integer)
+
+        Dim updateDeployment = (From p In db.GetTable(Of tblAssetInventory)()
+                                Where p.InvID = InvId And p.PropertyCode = PropertyCode
+                                Select p).FirstOrDefault()
+
+        updateDeployment.Deployed = 1
+        updateDeployment.DateDeployed = DateAndTime.Now
+        updateDeployment.DeployBy = Home.EmployeeID
+
+        db.SubmitChanges()
+    End Sub
+
 End Class

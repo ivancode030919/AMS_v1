@@ -14,6 +14,7 @@
 
 
     Private Sub display()
+
         If mode1 = 1 Then
 
             'Procure
@@ -29,7 +30,7 @@
         ElseIf mode1 = 2 Then
 
             'Borrow
-            dgv.DataSource = ViewClass.ViewInventoryDetails1
+            dgv.DataSource = ViewClass.ViewInventoryDetails1(TextBox1.Text)
             With dgv
                 .Columns(0).HeaderText = "Property Code"
                 .Columns(1).HeaderText = "Description"
