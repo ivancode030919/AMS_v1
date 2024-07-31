@@ -1,5 +1,4 @@
 ﻿Public Class UpdateClass
-
     'Update State in Request
     Public Shared Sub UpdateState(ByVal id As Integer, ByVal stat As String)
 
@@ -13,7 +12,6 @@
         Catch ex As Exception
             MsgBox("Error.U.17")
         End Try
-
     End Sub
 
     'Update Category
@@ -288,6 +286,7 @@
                               Where p.PropertyCode = PropertyCode
                               Select p).FirstOrDefault()
             updateStat.Borrower = Borrower
+            updateStat.Returned = False
             db.SubmitChanges()
 
         Catch ex As Exception
@@ -301,6 +300,7 @@
                                   Where p.PropertyCode = PropertyCode
                                   Select p).FirstOrDefault()
             updateBorrower.Borrower = 0
+            updateBorrower.Returned = True
 
             Dim updateStat = (From p In db.GetTable(Of tblBorrowDetail)()
                               Where p.PropertyCode = PropertyCode

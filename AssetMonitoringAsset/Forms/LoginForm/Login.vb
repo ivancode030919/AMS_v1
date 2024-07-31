@@ -4,12 +4,13 @@
     Public currentIndex As Integer = 0
 
     Private Sub Login_Load(sender As Object, e As EventArgs) Handles MyBase.Load
-        BACKPIC()
+        'BACKPIC()
     End Sub
 
 
 
     Public Sub loadDetails()
+
         With Home
 
             .UserID = FetchClass.FetchUserID(TextBox1.Text, TextBox2.Text)
@@ -25,6 +26,7 @@
             .Section = FetchClass.FetchSection(TextBox1.Text, TextBox2.Text)
             .SectionID = FetchClass.FetcSectionID(.Section)
         End With
+
     End Sub
 
     Public Sub Login()
@@ -62,41 +64,37 @@
 
     End Sub
 
+    'for background animation
+    'Public Sub BACKPIC()
+    '    ' Initialize the images array with the images from resources
+    '    images = New Image() {
+    '    My.Resources._1,
+    '    My.Resources._2,
+    '    My.Resources._3,
+    '    My.Resources._4,
+    '    My.Resources._5}
 
+    '    PictureBox1.SizeMode = PictureBoxSizeMode.StretchImage ' Stretch the image
 
+    '    ' Configure the timer
+    '    Timer1.Interval = 1000 ' Set the interval to 2000 milliseconds (2 seconds)
+    '    Timer1.Start()
 
-
-
-    Public Sub BACKPIC()
-        ' Initialize the images array with the images from resources
-        images = New Image() {
-        My.Resources._1,
-        My.Resources._2,
-        My.Resources._3,
-        My.Resources._4,
-        My.Resources._5}
-
-        PictureBox1.SizeMode = PictureBoxSizeMode.StretchImage ' Stretch the image
-
-        ' Configure the timer
-        Timer1.Interval = 1000 ' Set the interval to 2000 milliseconds (2 seconds)
-        Timer1.Start()
-
-        ' Set the initial image
-        PictureBox1.Image = images(currentIndex)
-    End Sub
+    '    ' Set the initial image
+    '    PictureBox1.Image = images(currentIndex)
+    'End Sub
 
     Private Sub Timer1_Tick(sender As Object, e As EventArgs) Handles Timer1.Tick
-        ' Increment the index to show the next image
-        currentIndex += 1
+        '' Increment the index to show the next image
+        'currentIndex += 1
 
-        ' Check if currentIndex is within bounds before accessing images array
-        If currentIndex >= 0 AndAlso currentIndex < images.Length Then
-            PictureBox1.Image = images(currentIndex)
-        Else
-            ' Handle the out-of-range condition (e.g., reset currentIndex)
-            currentIndex = 0
-            PictureBox1.Image = images(currentIndex)
-        End If
+        '' Check if currentIndex is within bounds before accessing images array
+        'If currentIndex >= 0 AndAlso currentIndex < images.Length Then
+        '    PictureBox1.Image = images(currentIndex)
+        'Else
+        '    ' Handle the out-of-range condition (e.g., reset currentIndex)
+        '    currentIndex = 0
+        '    PictureBox1.Image = images(currentIndex)
+        'End If
     End Sub
 End Class

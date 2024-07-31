@@ -40,6 +40,11 @@
                 .Columns(5).HeaderText = "Section"
                 .Columns(6).HeaderText = "Keeper"
                 .Columns(7).HeaderText = "Owner"
+
+
+                .Columns(2).Visible = False
+                .Columns(7).Visible = False
+
             End With
 
         ElseIf mode1 = 3 Then
@@ -80,6 +85,7 @@
                 .Rows(rowToEdit).Cells(18).Value = "0"
             End With
             Me.Dispose()
+
         ElseIf modty = 2 Then
 
             With Request.dgv
@@ -93,13 +99,20 @@
 
         ElseIf modty = 3 Then
 
-            With Request.dgv
-                .Rows(rowToEdit).Cells(0).Value = dgv.Rows(row).Cells(0).Value.ToString
-                .Rows(rowToEdit).Cells(1).Value = dgv.Rows(row).Cells(1).Value.ToString
-                .Rows(rowToEdit).Cells(2).Value = dgv.Rows(row).Cells(2).Value.ToString
-                .AllowUserToAddRows = True
-            End With
-            Request.Checkqtybycat()
+            Dim BorrowStat As String = dgv.Rows(row).Cells(8).Value.ToString
+
+            If BorrowStat = "Not Allowed" Then
+                MessageBox.Show("This Item is not Allowed to be Borrowed, Please Conatct the Assigned Owner", "Validation")
+            Else
+                With Request.dgv
+                    .Rows(rowToEdit).Cells(0).Value = dgv.Rows(row).Cells(0).Value.ToString
+                    .Rows(rowToEdit).Cells(1).Value = dgv.Rows(row).Cells(1).Value.ToString
+                    .Rows(rowToEdit).Cells(2).Value = dgv.Rows(row).Cells(2).Value.ToString
+                    .AllowUserToAddRows = True
+                End With
+                Request.Checkqtybycat()
+            End If
+
             Me.Dispose()
 
         ElseIf modty = 4 Then

@@ -104,18 +104,22 @@
                     End With
 
                 ElseIf e.ColumnIndex = 9 Then
+                    Try
+                        With AssetList3
+                            .rowToEdit = row
+                            .modty = 4
+                            .mode1 = 3
+                            .AssignQty = Integer.Parse(dgv.Rows(row).Cells(4).Value)
+                            .NewOwner = Integer.Parse(dgv.Rows(row).Cells(8).Value)
+                            .ItemClass = dgv.Rows(row).Cells(2).Value
+                            .fromrq = allowtoaddrow
+                            .ac = Integer.Parse(dgv.Rows(row).Cells(1).Value)
+                            .ShowDialog()
+                        End With
+                    Catch ex As Exception
 
-                    With AssetList3
-                        .rowToEdit = row
-                        .modty = 4
-                        .mode1 = 3
-                        .AssignQty = Integer.Parse(dgv.Rows(row).Cells(4).Value.ToString)
-                        .NewOwner = Integer.Parse(dgv.Rows(row).Cells(8).Value.ToString)
-                        .ItemClass = dgv.Rows(row).Cells(2).Value.ToString
-                        .fromrq = allowtoaddrow
-                        .ac = Integer.Parse(dgv.Rows(row).Cells(1).Value.ToString)
-                        .ShowDialog()
-                    End With
+                    End Try
+
 
                 End If
 
@@ -127,13 +131,12 @@
                         .rowToEdit = row
                         .mode1 = 3
                         .modty = 4
-                        .AssignQty = Double.Parse(dgv.Rows(row).Cells(4).Value.ToString)
-                        .NewOwner = Integer.Parse(dgv.Rows(row).Cells(8).Value.ToString)
-                        .ItemClass = dgv.Rows(row).Cells(2).Value.ToString
-                        .ac = Integer.Parse(dgv.Rows(row).Cells(1).Value.ToString)
-                        .ReqId = Integer.Parse(dgv.Rows(row).Cells(0).Value.ToString)
+                        .AssignQty = Double.Parse(dgv.Rows(row).Cells(4).Value)
+                        .NewOwner = Integer.Parse(dgv.Rows(row).Cells(8).Value)
+                        .ItemClass = dgv.Rows(row).Cells(2).Value
+                        .ac = Integer.Parse(dgv.Rows(row).Cells(1).Value)
+                        .ReqId = Integer.Parse(dgv.Rows(row).Cells(0).Value)
                         .ShowDialog()
-
                     End With
 
                 End If
@@ -154,53 +157,57 @@
     End Sub
 
     Private Sub dgv_CellValidated(sender As Object, e As DataGridViewCellEventArgs) Handles dgv.CellValidated
+        Try
+            If allowtoaddrow = True Then
 
-        If allowtoaddrow = True Then
+                If e.ColumnIndex = 1 Then
 
-            If e.ColumnIndex = 1 Then
+                    For Each row As DataGridViewRow In dgv.Rows
 
-                For Each row As DataGridViewRow In dgv.Rows
+                        'Assuming itemcode is stored in a specific column (adjust as needed)
+                        Dim itemcode As Integer = Integer.Parse(row.Cells(1).Value)
 
-                    'Assuming itemcode is stored in a specific column (adjust as needed)
-                    Dim itemcode As Integer = Integer.Parse(row.Cells(1).Value)
+                        'Fetch asset without owner for the specific itemcode
+                        row.Cells(7).Value = FetchClass.FetchAssetWithoutOwner(itemcode)
 
-                    'Fetch asset without owner for the specific itemcode
-                    row.Cells(7).Value = FetchClass.FetchAssetWithoutOwner(itemcode)
+                        'Check if the Item is Consumable or Non-Consumable
+                        If FetchClass.CheckIfConsumable(itemcode) Is Nothing Then
+                            row.Cells(4).Value = "1"
+                            row.Cells(4).ReadOnly = True
+                        Else
+                            row.Cells(4).Value = ""
+                            row.Cells(4).ReadOnly = False
+                        End If
 
-                    'Check if the Item is Consumable or Non-Consumable
-                    If FetchClass.CheckIfConsumable(itemcode) Is Nothing Then
-                        row.Cells(4).Value = "1"
-                        row.Cells(4).ReadOnly = True
-                    Else
-                        row.Cells(4).Value = ""
-                        row.Cells(4).ReadOnly = False
-                    End If
+                        'Clear if no Available Assets
+                        If row.Cells(7).Value Is Nothing Then
+                            row.Cells(7).Value = 0
+                            MessageBox.Show("No Available Asset for this Item", "Notification", MessageBoxButtons.OK, MessageBoxIcon.Information)
+                            row.Cells(1).Value = String.Empty
+                            row.Cells(2).Value = String.Empty
+                            row.Cells(3).Value = String.Empty
+                            row.Cells(4).Value = String.Empty
+                            row.Cells(5).Value = String.Empty
+                            row.Cells(6).Value = String.Empty
+                            row.Cells(7).Value = String.Empty
+                            row.Cells(8).Value = String.Empty
+                            row.Cells(9).Value = String.Empty
+                            row.Cells(1).Selected = True
+                        Else
 
-                    'Clear if no Available Assets
-                    If row.Cells(7).Value Is Nothing Then
-                        row.Cells(7).Value = 0
-                        MessageBox.Show("No Available Asset for this Item", "Notification", MessageBoxButtons.OK, MessageBoxIcon.Information)
-                        row.Cells(1).Value = String.Empty
-                        row.Cells(2).Value = String.Empty
-                        row.Cells(3).Value = String.Empty
-                        row.Cells(4).Value = String.Empty
-                        row.Cells(5).Value = String.Empty
-                        row.Cells(6).Value = String.Empty
-                        row.Cells(7).Value = String.Empty
-                        row.Cells(8).Value = String.Empty
-                        row.Cells(9).Value = String.Empty
-                        row.Cells(1).Selected = True
-                    Else
+                        End If
 
-                    End If
+                    Next
 
-                Next
+                End If
 
+            ElseIf allowtoaddrow = False Then
+                ' Handle the case when adding rows is not allowed
             End If
+        Catch ex As Exception
 
-        ElseIf allowtoaddrow = False Then
-            ' Handle the case when adding rows is not allowed
-        End If
+        End Try
+
 
     End Sub
 

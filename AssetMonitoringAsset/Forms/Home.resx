@@ -3563,6 +3563,12 @@
   <data name="&gt;&gt;AccordionControlElement56.Type" xml:space="preserve">
     <value>DevExpress.XtraBars.Navigation.AccordionControlElement, DevExpress.XtraBars.v24.1, Version=24.1.3.0, Culture=neutral, PublicKeyToken=b88d1754d700e49a</value>
   </data>
+  <data name="&gt;&gt;AccordionControlElement31.Name" xml:space="preserve">
+    <value>AccordionControlElement31</value>
+  </data>
+  <data name="&gt;&gt;AccordionControlElement31.Type" xml:space="preserve">
+    <value>DevExpress.XtraBars.Navigation.AccordionControlElement, DevExpress.XtraBars.v24.1, Version=24.1.3.0, Culture=neutral, PublicKeyToken=b88d1754d700e49a</value>
+  </data>
   <data name="&gt;&gt;AccordionControlElement49.Name" xml:space="preserve">
     <value>AccordionControlElement49</value>
   </data>
@@ -3801,12 +3807,6 @@
     <value>AccordionControlElement32</value>
   </data>
   <data name="&gt;&gt;AccordionControlElement32.Type" xml:space="preserve">
-    <value>DevExpress.XtraBars.Navigation.AccordionControlElement, DevExpress.XtraBars.v24.1, Version=24.1.3.0, Culture=neutral, PublicKeyToken=b88d1754d700e49a</value>
-  </data>
-  <data name="&gt;&gt;AccordionControlElement31.Name" xml:space="preserve">
-    <value>AccordionControlElement31</value>
-  </data>
-  <data name="&gt;&gt;AccordionControlElement31.Type" xml:space="preserve">
     <value>DevExpress.XtraBars.Navigation.AccordionControlElement, DevExpress.XtraBars.v24.1, Version=24.1.3.0, Culture=neutral, PublicKeyToken=b88d1754d700e49a</value>
   </data>
   <data name="&gt;&gt;$this.Name" xml:space="preserve">

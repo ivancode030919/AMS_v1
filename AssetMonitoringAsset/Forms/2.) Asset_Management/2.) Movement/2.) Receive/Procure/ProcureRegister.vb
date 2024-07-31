@@ -5,14 +5,15 @@
 
     Public Sub display()
         dgv.DataSource = ViewClass.ViewProcureRegister(TextBox2.Text, DateTimePicker1.Value, DateTimePicker2.Value)
+
         With dgv
+
             .Columns(0).HeaderText = "Request Number"
             .Columns(1).HeaderText = "Requestor"
             .Columns(2).HeaderText = "Department"
             .Columns(3).HeaderText = "Branch"
             .Columns(4).HeaderText = "Company"
             .Columns(5).HeaderText = "Date"
-
 
             .Columns(0).Width = 125
             .Columns(1).Width = 150
@@ -22,7 +23,9 @@
             .Columns(5).Width = 125
 
             .Columns(6).Visible = False
+
         End With
+
     End Sub
 
     Private Sub DateTimePicker1_ValueChanged(sender As Object, e As EventArgs) Handles DateTimePicker1.ValueChanged

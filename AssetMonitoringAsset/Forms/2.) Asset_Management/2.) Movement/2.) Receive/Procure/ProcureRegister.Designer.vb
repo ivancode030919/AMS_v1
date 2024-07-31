@@ -145,6 +145,7 @@ Partial Class ProcureRegister
         '
         'dgv
         '
+        Me.dgv.AutoSizeColumnsMode = System.Windows.Forms.DataGridViewAutoSizeColumnsMode.Fill
         Me.dgv.BackgroundColor = System.Drawing.Color.WhiteSmoke
         Me.dgv.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize
         Me.dgv.Dock = System.Windows.Forms.DockStyle.Fill

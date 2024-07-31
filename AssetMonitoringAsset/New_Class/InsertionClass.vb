@@ -162,10 +162,9 @@ Public Class InsertionClass
                 .IsParent = IsParent,
                 .Deployed = 0,
                 .ReceivedByRequestor = 0,
-                .DateDeployed = "",
-                .DateRequestorRecv = "",
                 .DeployBy = 777,
-                .RecvBy = 777
+                .RecvBy = 777,
+                .Returned = True
                 }
         post.InsertOnSubmit(p)
             post.Context.SubmitChanges()
@@ -763,9 +762,8 @@ Public Class InsertionClass
                .IsChildSeries = 0,
                .Deployed = 1,
                .ReceivedByRequestor = 1,
-               .DateDeployed = "",
-               .DateRequestorRecv = ""
-                }
+               .DeployBy = 777
+                     }
             post.InsertOnSubmit(p)
             post.Context.SubmitChanges()
         Catch ex As Exception

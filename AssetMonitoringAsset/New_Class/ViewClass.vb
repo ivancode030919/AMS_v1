@@ -64,9 +64,9 @@
                      Join r In db.tblBranches On w.BranchID Equals r.BranchID
                      Join t In db.tblSections On w.SectionID Equals t.SectionID
                      Join y In db.tblEmployees On q.Keeper Equals y.EmployeeID
-                     Where q.borrowerStat <> "Not Allowed" And q.Borrower = 0 And (q.PropertyCode.Contains(search)) Or (q.Des.Contains(search))
+                     Where ((q.PropertyCode.Contains(search)) Or (q.Des.Contains(search)))
                      Let n = w.FirstName + ", " + w.LastName Let m = y.LastName + ", " + y.FirstName
-                     Select q.PropertyCode, q.Des, q.Qty, e.DepartmentDescription, r.BranchDescription, t.SectionDecription, n, m)
+                     Select q.PropertyCode, q.Des, q.Qty, e.DepartmentDescription, r.BranchDescription, t.SectionDecription, n, m, q.borrowerStat)
         Return query
     End Function
 
@@ -161,7 +161,7 @@
                     Join e In db.tblDepartments On y.DepartmentID Equals e.DepartmentID
                     Join h In db.tblBranches On y.BranchID Equals h.BranchID
                     Join l In db.tblSections On y.SectionID Equals l.SectionID
-                    Where p.AssetCode = AssetCode And e.DepartmentCode.Contains(DepCode) AndAlso (p.PropertyCode.Contains(search) Or p.Des.Contains(search))
+                    Where (p.AssetCode = AssetCode And e.DepartmentCode.Contains(DepCode) And ((p.PropertyCode.Contains(search) Or p.Des.Contains(search)))) And (p.Deployed = True)
                     Let f = y.LastName + ", " + y.FirstName Let q = t.LastName + ", " + t.FirstName Let o = p.PropertyCode & If(p.IsChildSeries = 0, "", "-" & p.IsChildSeries.ToString())
                     Select o, p.Des, p.Qty, e.DepartmentDescription, h.BranchDescription, l.SectionDecription, f, q).ToList
         Return vinv
@@ -185,15 +185,35 @@
             stat2 = ""
         End If
 
-        Dim query = (From s In db.tblRequestHeaders
-                     Join k In db.tblEmployees On s.RequestBy Equals k.EmployeeID
-                     Join f In db.tblDepartments On k.DepartmentID Equals f.DepartmentID
-                     Join h In db.tblBranches On k.BranchID Equals h.BranchID
-                     Join q In db.tblSections On k.SectionID Equals q.SectionID
-                     Where s.Stat.Contains(stat2) AndAlso (s.Date >= date1 AndAlso s.Date <= date2)
-                     Let y = k.LastName + ", " + k.FirstName
-                     Select s.Date, s.RequestNo, s.RequestType, k.Company, f.DepartmentDescription, h.BranchDescription, q.SectionDecription, y, s.Stat, s.HeaderId, s.RequestBy).ToList
-        Return query
+        If Home.UserType = "Admin" Then
+
+            Dim query = (From s In db.tblRequestHeaders
+                         Join k In db.tblEmployees On s.RequestBy Equals k.EmployeeID
+                         Join f In db.tblDepartments On k.DepartmentID Equals f.DepartmentID
+                         Join h In db.tblBranches On k.BranchID Equals h.BranchID
+                         Join q In db.tblSections On k.SectionID Equals q.SectionID
+                         Where s.Stat.Contains(stat2) AndAlso (s.Date >= date1 AndAlso s.Date <= date2)
+                         Let y = k.LastName + ", " + k.FirstName
+                         Select s.Date, s.RequestNo, s.RequestType, k.Company, f.DepartmentDescription, h.BranchDescription, q.SectionDecription, y, s.Stat, s.HeaderId, s.RequestBy).ToList
+            Return query
+
+        ElseIf Home.UserType = "BPC" Then
+
+            Dim query = (From s In db.tblRequestHeaders
+                         Join k In db.tblEmployees On s.RequestBy Equals k.EmployeeID
+                         Join f In db.tblDepartments On k.DepartmentID Equals f.DepartmentID
+                         Join h In db.tblBranches On k.BranchID Equals h.BranchID
+                         Join q In db.tblSections On k.SectionID Equals q.SectionID
+                         Where (f.location = "Within" And f.DepartmentID <> 2 And f.DepartmentID = Home.DepartmentID) And (s.Stat.Contains(stat2) AndAlso (s.Date >= date1 AndAlso s.Date <= date2))
+                         Let y = k.LastName + ", " + k.FirstName
+                         Select s.Date, s.RequestNo, s.RequestType, k.Company, f.DepartmentDescription, h.BranchDescription, q.SectionDecription, y, s.Stat, s.HeaderId, s.RequestBy).ToList
+            Return query
+
+        ElseIf Home.UserType = "DPC" Then
+
+        End If
+
+
 
     End Function
 
@@ -539,7 +559,7 @@
                                 Join g In db.tblEmployees On s.Keeper Equals g.EmployeeID
                                 Join o In db.tblEmployees On s.Borrower Equals o.EmployeeID
                                 Join y In db.tblBorrowDetails On s.PropertyCode Equals y.PropertyCode
-                                Where Not s.PropertyCode.StartsWith("CNR") And Not s.PropertyCode.StartsWith("CRE") And
+                                Where (Not s.PropertyCode.StartsWith("CNR") And Not s.PropertyCode.StartsWith("CRE")) And
                                 (s.PropertyCode.Contains(PC)) And (s.Des.Contains(Descrip)) And (s.Returned = False)
                                 Let Owner = g.LastName + ", " + g.FirstName Let Borrower = o.LastName + ", " + o.FirstName
                                 Let Description = s.Des Let Status = s.borrowerStat Let Quantity = s.Qty Let DateBorrowed = y.DateFrom & "  -to-  " & y.DateTo
@@ -552,8 +572,8 @@
                                 Join g In db.tblEmployees On s.Keeper Equals g.EmployeeID
                                 Join o In db.tblEmployees On s.Borrower Equals o.EmployeeID
                                 Join y In db.tblBorrowDetails On s.PropertyCode Equals y.PropertyCode
-                                Where g.DepartmentID = Home.DepartmentID And Not s.PropertyCode.StartsWith("CNR") And Not s.PropertyCode.StartsWith("CRE") And
-                                (s.PropertyCode.Contains(PC)) And (s.Des.Contains(Descrip)) And (s.Returned = False)
+                                Where (g.DepartmentID = Home.DepartmentID) And (Not s.PropertyCode.StartsWith("CNR") And Not s.PropertyCode.StartsWith("CRE")) And
+                                ((s.PropertyCode.Contains(PC)) And (s.Des.Contains(Descrip)) And (s.Returned = False))
                                 Let Owner = g.LastName + ", " + g.FirstName Let Borrower = o.LastName + ", " + o.FirstName
                                 Let Description = s.Des Let Status = s.borrowerStat Let Quantity = s.Qty Let DateBorrowed = y.DateFrom & "  -to-  " & y.DateTo
                                 Select s.PropertyCode, Description, Quantity, Owner, Borrower, DateBorrowed).Distinct
@@ -565,7 +585,7 @@
                                 Join g In db.tblEmployees On s.Keeper Equals g.EmployeeID
                                 Join o In db.tblEmployees On s.Borrower Equals o.EmployeeID
                                 Join y In db.tblBorrowDetails On s.PropertyCode Equals y.PropertyCode
-                                Where g.SectionID = Home.SectionID And g.DepartmentID = Home.DepartmentID And Not s.PropertyCode.StartsWith("CNR") And Not s.PropertyCode.StartsWith("CRE") And
+                                Where (g.SectionID = Home.SectionID And g.DepartmentID = Home.DepartmentID) And Not s.PropertyCode.StartsWith("CNR") And Not s.PropertyCode.StartsWith("CRE") And
                                 (s.PropertyCode.Contains(PC)) And (s.Des.Contains(Descrip)) And (s.Returned = False)
                                 Let Owner = g.LastName + ", " + g.FirstName Let Borrower = o.LastName + ", " + o.FirstName
                                 Let Description = s.Des Let Status = s.borrowerStat Let Quantity = s.Qty Let DateBorrowed = y.DateFrom & "  -to-  " & y.DateTo
@@ -578,7 +598,7 @@
                                 Join o In db.tblEmployees On s.Borrower Equals o.EmployeeID
                                 Join y In db.tblBorrowDetails On s.PropertyCode Equals y.PropertyCode
                                 Join l In db.tblDepartments On g.DepartmentID Equals l.DepartmentID
-                                Where l.location = "Within" AndAlso l.DepartmentID <> 2 And g.DepartmentID = Home.DepartmentID And Not s.PropertyCode.StartsWith("CNR") And Not s.PropertyCode.StartsWith("CRE") And
+                                Where (l.location = "Within" AndAlso l.DepartmentID <> 2 And g.DepartmentID = Home.DepartmentID) And Not s.PropertyCode.StartsWith("CNR") And Not s.PropertyCode.StartsWith("CRE") And
                                 (s.PropertyCode.Contains(PC)) And (s.Des.Contains(Descrip)) And (s.Returned = False)
                                 Let Owner = g.LastName + ", " + g.FirstName Let Borrower = o.LastName + ", " + o.FirstName
                                 Let Description = s.Des Let Status = s.borrowerStat Let Quantity = s.Qty Let DateBorrowed = y.DateFrom & "  -to-  " & y.DateTo
@@ -607,23 +627,26 @@
             Return DeployItems
 
         ElseIf queryUserType = "DPC" Then
+
             Dim DeployItems = (From s In db.tblAssetInventories
                                Join d In db.tblEmployees On s.Owner Equals d.EmployeeID
-                               Where d.DepartmentID = Home.DepartmentID And s.Deployed = False And s.ReceivedByRequestor = False
+                               Where (d.DepartmentID = Home.DepartmentID) And s.Deployed = False And s.ReceivedByRequestor = False
                                Let Description = s.Des Let Name = d.LastName + ", " + d.FirstName
                                Select s.PropertyCode, Description, Name, s.Reference, s.Referenceno, s.Deployed, s.InvID)
             Return DeployItems
+
         ElseIf queryUserType = "BPC" Then
 
             Dim DeployItems = (From s In db.tblAssetInventories
                                Join d In db.tblEmployees On s.Owner Equals d.EmployeeID
                                Join l In db.tblDepartments On d.DepartmentID Equals l.DepartmentID
-                               Where (l.location = "Within" AndAlso l.DepartmentID <> 2) And s.Deployed = False And s.ReceivedByRequestor = False
+                               Where (l.location = "Within" AndAlso l.DepartmentID <> 2) And (s.Deployed = False And s.ReceivedByRequestor = False)
                                Let Description = s.Des Let Name = d.LastName + ", " + d.FirstName
                                Select s.PropertyCode, Description, Name, s.Reference, s.Referenceno, s.Deployed, s.InvID)
             Return DeployItems
 
         ElseIf queryUserType = "SPC" Then
+
             Dim DeployItems = (From s In db.tblAssetInventories
                                Join d In db.tblEmployees On s.Owner Equals d.EmployeeID
                                Where d.SectionID = Home.SectionID And s.Deployed = False And s.ReceivedByRequestor = False
@@ -631,6 +654,7 @@
                                Select s.PropertyCode, Description, Name, s.Reference, s.Referenceno, s.Deployed, s.InvID)
 
             Return DeployItems
+
         End If
 
     End Function

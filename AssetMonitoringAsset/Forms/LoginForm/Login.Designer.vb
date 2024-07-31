@@ -22,20 +22,17 @@ Partial Class Login
         Me.components = New System.ComponentModel.Container()
         Dim resources As System.ComponentModel.ComponentResourceManager = New System.ComponentModel.ComponentResourceManager(GetType(Login))
         Me.Guna2CustomGradientPanel1 = New Guna.UI2.WinForms.Guna2CustomGradientPanel()
+        Me.Guna2PictureBox1 = New Guna.UI2.WinForms.Guna2PictureBox()
         Me.TextBox2 = New Guna.UI2.WinForms.Guna2TextBox()
         Me.TextBox1 = New Guna.UI2.WinForms.Guna2TextBox()
         Me.Timer1 = New System.Windows.Forms.Timer(Me.components)
-        Me.Guna2PictureBox1 = New Guna.UI2.WinForms.Guna2PictureBox()
-        Me.PictureBox1 = New Guna.UI2.WinForms.Guna2PictureBox()
         Me.Guna2CustomGradientPanel1.SuspendLayout()
         CType(Me.Guna2PictureBox1, System.ComponentModel.ISupportInitialize).BeginInit()
-        CType(Me.PictureBox1, System.ComponentModel.ISupportInitialize).BeginInit()
         Me.SuspendLayout()
         '
         'Guna2CustomGradientPanel1
         '
         Me.Guna2CustomGradientPanel1.Controls.Add(Me.Guna2PictureBox1)
-        Me.Guna2CustomGradientPanel1.Controls.Add(Me.PictureBox1)
         Me.Guna2CustomGradientPanel1.Controls.Add(Me.TextBox2)
         Me.Guna2CustomGradientPanel1.Controls.Add(Me.TextBox1)
         Me.Guna2CustomGradientPanel1.Dock = System.Windows.Forms.DockStyle.Fill
@@ -43,8 +40,22 @@ Partial Class Login
         Me.Guna2CustomGradientPanel1.FillColor3 = System.Drawing.Color.Aqua
         Me.Guna2CustomGradientPanel1.Location = New System.Drawing.Point(0, 0)
         Me.Guna2CustomGradientPanel1.Name = "Guna2CustomGradientPanel1"
-        Me.Guna2CustomGradientPanel1.Size = New System.Drawing.Size(770, 437)
+        Me.Guna2CustomGradientPanel1.Size = New System.Drawing.Size(369, 306)
         Me.Guna2CustomGradientPanel1.TabIndex = 10
+        '
+        'Guna2PictureBox1
+        '
+        Me.Guna2PictureBox1.BackColor = System.Drawing.Color.Transparent
+        Me.Guna2PictureBox1.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Zoom
+        Me.Guna2PictureBox1.FillColor = System.Drawing.Color.Transparent
+        Me.Guna2PictureBox1.Image = Global.AssetMonitoringAsset.My.Resources.Resources.AMSLoginlogo1
+        Me.Guna2PictureBox1.ImageRotate = 0!
+        Me.Guna2PictureBox1.Location = New System.Drawing.Point(43, 24)
+        Me.Guna2PictureBox1.Name = "Guna2PictureBox1"
+        Me.Guna2PictureBox1.Size = New System.Drawing.Size(280, 118)
+        Me.Guna2PictureBox1.SizeMode = System.Windows.Forms.PictureBoxSizeMode.Zoom
+        Me.Guna2PictureBox1.TabIndex = 13
+        Me.Guna2PictureBox1.TabStop = False
         '
         'TextBox2
         '
@@ -61,7 +72,7 @@ Partial Class Login
         Me.TextBox2.FocusedState.BorderColor = System.Drawing.Color.FromArgb(CType(CType(94, Byte), Integer), CType(CType(148, Byte), Integer), CType(CType(255, Byte), Integer))
         Me.TextBox2.Font = New System.Drawing.Font("Segoe UI", 9.0!)
         Me.TextBox2.HoverState.BorderColor = System.Drawing.Color.FromArgb(CType(CType(94, Byte), Integer), CType(CType(148, Byte), Integer), CType(CType(255, Byte), Integer))
-        Me.TextBox2.Location = New System.Drawing.Point(43, 334)
+        Me.TextBox2.Location = New System.Drawing.Point(43, 228)
         Me.TextBox2.Name = "TextBox2"
         Me.TextBox2.PasswordChar = Global.Microsoft.VisualBasic.ChrW(9679)
         Me.TextBox2.PlaceholderText = "Password"
@@ -85,7 +96,7 @@ Partial Class Login
         Me.TextBox1.FocusedState.BorderColor = System.Drawing.Color.FromArgb(CType(CType(94, Byte), Integer), CType(CType(148, Byte), Integer), CType(CType(255, Byte), Integer))
         Me.TextBox1.Font = New System.Drawing.Font("Segoe UI", 9.0!)
         Me.TextBox1.HoverState.BorderColor = System.Drawing.Color.FromArgb(CType(CType(94, Byte), Integer), CType(CType(148, Byte), Integer), CType(CType(255, Byte), Integer))
-        Me.TextBox1.Location = New System.Drawing.Point(43, 278)
+        Me.TextBox1.Location = New System.Drawing.Point(43, 172)
         Me.TextBox1.Name = "TextBox1"
         Me.TextBox1.PasswordChar = Global.Microsoft.VisualBasic.ChrW(0)
         Me.TextBox1.PlaceholderText = "Username"
@@ -96,36 +107,11 @@ Partial Class Login
         'Timer1
         '
         '
-        'Guna2PictureBox1
-        '
-        Me.Guna2PictureBox1.BackColor = System.Drawing.Color.Transparent
-        Me.Guna2PictureBox1.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Zoom
-        Me.Guna2PictureBox1.FillColor = System.Drawing.Color.Transparent
-        Me.Guna2PictureBox1.Image = Global.AssetMonitoringAsset.My.Resources.Resources.AMSLoginlogo1
-        Me.Guna2PictureBox1.ImageRotate = 0!
-        Me.Guna2PictureBox1.Location = New System.Drawing.Point(43, 57)
-        Me.Guna2PictureBox1.Name = "Guna2PictureBox1"
-        Me.Guna2PictureBox1.Size = New System.Drawing.Size(280, 175)
-        Me.Guna2PictureBox1.SizeMode = System.Windows.Forms.PictureBoxSizeMode.Zoom
-        Me.Guna2PictureBox1.TabIndex = 13
-        Me.Guna2PictureBox1.TabStop = False
-        '
-        'PictureBox1
-        '
-        Me.PictureBox1.BorderStyle = System.Windows.Forms.BorderStyle.Fixed3D
-        Me.PictureBox1.Dock = System.Windows.Forms.DockStyle.Right
-        Me.PictureBox1.ImageRotate = 0!
-        Me.PictureBox1.Location = New System.Drawing.Point(360, 0)
-        Me.PictureBox1.Name = "PictureBox1"
-        Me.PictureBox1.Size = New System.Drawing.Size(410, 437)
-        Me.PictureBox1.TabIndex = 12
-        Me.PictureBox1.TabStop = False
-        '
         'Login
         '
         Me.AutoScaleDimensions = New System.Drawing.SizeF(6.0!, 13.0!)
         Me.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font
-        Me.ClientSize = New System.Drawing.Size(770, 437)
+        Me.ClientSize = New System.Drawing.Size(369, 306)
         Me.Controls.Add(Me.Guna2CustomGradientPanel1)
         Me.FormBorderStyle = System.Windows.Forms.FormBorderStyle.FixedSingle
         Me.IconOptions.Icon = CType(resources.GetObject("Login.IconOptions.Icon"), System.Drawing.Icon)
@@ -136,14 +122,12 @@ Partial Class Login
         Me.Text = "Login"
         Me.Guna2CustomGradientPanel1.ResumeLayout(False)
         CType(Me.Guna2PictureBox1, System.ComponentModel.ISupportInitialize).EndInit()
-        CType(Me.PictureBox1, System.ComponentModel.ISupportInitialize).EndInit()
         Me.ResumeLayout(False)
 
     End Sub
     Friend WithEvents Guna2CustomGradientPanel1 As Guna.UI2.WinForms.Guna2CustomGradientPanel
     Friend WithEvents TextBox1 As Guna.UI2.WinForms.Guna2TextBox
     Friend WithEvents TextBox2 As Guna.UI2.WinForms.Guna2TextBox
-    Friend WithEvents PictureBox1 As Guna.UI2.WinForms.Guna2PictureBox
     Friend WithEvents Timer1 As Timer
     Friend WithEvents Guna2PictureBox1 As Guna.UI2.WinForms.Guna2PictureBox
 End Class

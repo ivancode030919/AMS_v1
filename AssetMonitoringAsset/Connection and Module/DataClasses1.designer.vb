@@ -640,12 +640,6 @@ Partial Public Class DataClasses1DataContext
 		Return CType(result.ReturnValue,ISingleResult(Of ShowAssetAvailabilityBorrowResult))
 	End Function
 	
-	<Global.System.Data.Linq.Mapping.FunctionAttribute(Name:="dbo.spViewInventory")>  _
-	Public Function spViewInventory(<Global.System.Data.Linq.Mapping.ParameterAttribute(DbType:="VarChar(200)")> ByVal dep As String, <Global.System.Data.Linq.Mapping.ParameterAttribute(DbType:="VarChar(200)")> ByVal search As String, <Global.System.Data.Linq.Mapping.ParameterAttribute(DbType:="VarChar(200)")> ByVal cat As String, <Global.System.Data.Linq.Mapping.ParameterAttribute(DbType:="VarChar(200)")> ByVal type As String) As ISingleResult(Of spViewInventoryResult)
-		Dim result As IExecuteResult = Me.ExecuteMethodCall(Me, CType(MethodInfo.GetCurrentMethod,MethodInfo), dep, search, cat, type)
-		Return CType(result.ReturnValue,ISingleResult(Of spViewInventoryResult))
-	End Function
-	
 	<Global.System.Data.Linq.Mapping.FunctionAttribute(Name:="dbo.spGetLastPropertyCode")>  _
 	Public Function spGetLastPropertyCode(<Global.System.Data.Linq.Mapping.ParameterAttribute(Name:="ItemCode", DbType:="Int")> ByVal itemCode As System.Nullable(Of Integer)) As ISingleResult(Of spGetLastPropertyCodeResult)
 		Dim result As IExecuteResult = Me.ExecuteMethodCall(Me, CType(MethodInfo.GetCurrentMethod,MethodInfo), itemCode)
@@ -668,6 +662,12 @@ Partial Public Class DataClasses1DataContext
 	Public Function ShowRequestTransfer(<Global.System.Data.Linq.Mapping.ParameterAttribute(DbType:="Int")> ByVal headerid As System.Nullable(Of Integer)) As ISingleResult(Of ShowRequestTransferResult)
 		Dim result As IExecuteResult = Me.ExecuteMethodCall(Me, CType(MethodInfo.GetCurrentMethod,MethodInfo), headerid)
 		Return CType(result.ReturnValue,ISingleResult(Of ShowRequestTransferResult))
+	End Function
+	
+	<Global.System.Data.Linq.Mapping.FunctionAttribute(Name:="dbo.spViewInventory")>  _
+	Public Function spViewInventory(<Global.System.Data.Linq.Mapping.ParameterAttribute(DbType:="VarChar(200)")> ByVal dep As String, <Global.System.Data.Linq.Mapping.ParameterAttribute(DbType:="VarChar(200)")> ByVal search As String, <Global.System.Data.Linq.Mapping.ParameterAttribute(DbType:="VarChar(200)")> ByVal cat As String, <Global.System.Data.Linq.Mapping.ParameterAttribute(DbType:="VarChar(200)")> ByVal type As String) As ISingleResult(Of spViewInventoryResult)
+		Dim result As IExecuteResult = Me.ExecuteMethodCall(Me, CType(MethodInfo.GetCurrentMethod,MethodInfo), dep, search, cat, type)
+		Return CType(result.ReturnValue,ISingleResult(Of spViewInventoryResult))
 	End Function
 End Class
 
@@ -9377,55 +9377,6 @@ Partial Public Class ShowAssetAvailabilityBorrowResult
 	End Property
 End Class
 
-Partial Public Class spViewInventoryResult
-	
-	Private _AssetCode As System.Nullable(Of Integer)
-	
-	Private _Class As String
-	
-	Private _qty As System.Nullable(Of Double)
-	
-	Public Sub New()
-		MyBase.New
-	End Sub
-	
-	<Global.System.Data.Linq.Mapping.ColumnAttribute(Storage:="_AssetCode", DbType:="Int")>  _
-	Public Property AssetCode() As System.Nullable(Of Integer)
-		Get
-			Return Me._AssetCode
-		End Get
-		Set
-			If (Me._AssetCode.Equals(value) = false) Then
-				Me._AssetCode = value
-			End If
-		End Set
-	End Property
-	
-	<Global.System.Data.Linq.Mapping.ColumnAttribute(Name:="Class", Storage:="_Class", DbType:="VarChar(MAX)")>  _
-	Public Property [Class]() As String
-		Get
-			Return Me._Class
-		End Get
-		Set
-			If (String.Equals(Me._Class, value) = false) Then
-				Me._Class = value
-			End If
-		End Set
-	End Property
-	
-	<Global.System.Data.Linq.Mapping.ColumnAttribute(Storage:="_qty", DbType:="Float")>  _
-	Public Property qty() As System.Nullable(Of Double)
-		Get
-			Return Me._qty
-		End Get
-		Set
-			If (Me._qty.Equals(value) = false) Then
-				Me._qty = value
-			End If
-		End Set
-	End Property
-End Class
-
 Partial Public Class spGetLastPropertyCodeResult
 	
 	Private _PropertyCode As String
@@ -9815,6 +9766,55 @@ Partial Public Class ShowRequestTransferResult
 		Set
 			If (String.Equals(Me._Remarks, value) = false) Then
 				Me._Remarks = value
+			End If
+		End Set
+	End Property
+End Class
+
+Partial Public Class spViewInventoryResult
+	
+	Private _AssetCode As System.Nullable(Of Integer)
+	
+	Private _Class As String
+	
+	Private _qty As System.Nullable(Of Double)
+	
+	Public Sub New()
+		MyBase.New
+	End Sub
+	
+	<Global.System.Data.Linq.Mapping.ColumnAttribute(Storage:="_AssetCode", DbType:="Int")>  _
+	Public Property AssetCode() As System.Nullable(Of Integer)
+		Get
+			Return Me._AssetCode
+		End Get
+		Set
+			If (Me._AssetCode.Equals(value) = false) Then
+				Me._AssetCode = value
+			End If
+		End Set
+	End Property
+	
+	<Global.System.Data.Linq.Mapping.ColumnAttribute(Name:="Class", Storage:="_Class", DbType:="VarChar(MAX)")>  _
+	Public Property [Class]() As String
+		Get
+			Return Me._Class
+		End Get
+		Set
+			If (String.Equals(Me._Class, value) = false) Then
+				Me._Class = value
+			End If
+		End Set
+	End Property
+	
+	<Global.System.Data.Linq.Mapping.ColumnAttribute(Storage:="_qty", DbType:="Float")>  _
+	Public Property qty() As System.Nullable(Of Double)
+		Get
+			Return Me._qty
+		End Get
+		Set
+			If (Me._qty.Equals(value) = false) Then
+				Me._qty = value
 			End If
 		End Set
 	End Property

@@ -61,7 +61,6 @@
                     If cellValue = True Then
                         Dim InvId As Integer = row.Cells(7).Value
                         Dim ProCode As String = row.Cells(1).Value
-                        MsgBox(InvId & " and " & ProCode)
                         UpdateClass.UpdateDeployment(ProCode, InvId)
                     End If
 
