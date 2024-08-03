@@ -7,20 +7,22 @@
     End Sub
 
     Public Sub display()
+
         dgv.DataSource = ViewClass.FetchsRequstRegister(stat1, DateTimePicker1.Value, DateTimePicker2.Value)
-        With dgv
-            .Columns(0).HeaderText = "Date"
-            .Columns(1).HeaderText = "Request No."
-            .Columns(2).HeaderText = "Transaction Type"
-            .Columns(3).HeaderText = "Company"
-            .Columns(4).HeaderText = "Department"
-            .Columns(5).HeaderText = "Branch"
-            .Columns(6).HeaderText = "Section"
-            .Columns(7).HeaderText = "Requestor"
-            .Columns(8).HeaderText = "Status"
-            .Columns(9).Visible = False
-            .Columns(10).Visible = False
-        End With
+
+        'With dgv
+        '    .Columns(0).HeaderText = "Date"
+        '    .Columns(1).HeaderText = "Request No."
+        '    .Columns(2).HeaderText = "Transaction Type"
+        '    .Columns(3).HeaderText = "Company"
+        '    .Columns(4).HeaderText = "Department"
+        '    .Columns(5).HeaderText = "Branch"
+        '    .Columns(6).HeaderText = "Section"
+        '    .Columns(7).HeaderText = "Requestor"
+        '    .Columns(8).HeaderText = "Status"
+        '    .Columns(9).Visible = False
+        '    .Columns(10).Visible = False
+        'End With
 
     End Sub
 
