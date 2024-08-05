@@ -20,13 +20,13 @@ Partial Class BorrowDetails
     <System.Diagnostics.DebuggerStepThrough()> _
     Private Sub InitializeComponent()
         Me.PanelControl1 = New DevExpress.XtraEditors.PanelControl()
-        Me.PanelControl2 = New DevExpress.XtraEditors.PanelControl()
         Me.DateTimePicker1 = New System.Windows.Forms.DateTimePicker()
         Me.Label6 = New System.Windows.Forms.Label()
         Me.TextBox2 = New System.Windows.Forms.TextBox()
         Me.Label1 = New System.Windows.Forms.Label()
         Me.TextBox1 = New System.Windows.Forms.TextBox()
         Me.Label5 = New System.Windows.Forms.Label()
+        Me.PanelControl2 = New DevExpress.XtraEditors.PanelControl()
         Me.dgv = New System.Windows.Forms.DataGridView()
         CType(Me.PanelControl1, System.ComponentModel.ISupportInitialize).BeginInit()
         Me.PanelControl1.SuspendLayout()
@@ -50,17 +50,6 @@ Partial Class BorrowDetails
         Me.PanelControl1.Name = "PanelControl1"
         Me.PanelControl1.Size = New System.Drawing.Size(962, 106)
         Me.PanelControl1.TabIndex = 0
-        '
-        'PanelControl2
-        '
-        Me.PanelControl2.Anchor = CType((((System.Windows.Forms.AnchorStyles.Top Or System.Windows.Forms.AnchorStyles.Bottom) _
-            Or System.Windows.Forms.AnchorStyles.Left) _
-            Or System.Windows.Forms.AnchorStyles.Right), System.Windows.Forms.AnchorStyles)
-        Me.PanelControl2.Controls.Add(Me.dgv)
-        Me.PanelControl2.Location = New System.Drawing.Point(5, 117)
-        Me.PanelControl2.Name = "PanelControl2"
-        Me.PanelControl2.Size = New System.Drawing.Size(962, 325)
-        Me.PanelControl2.TabIndex = 1
         '
         'DateTimePicker1
         '
@@ -119,6 +108,17 @@ Partial Class BorrowDetails
         Me.Label5.Size = New System.Drawing.Size(139, 17)
         Me.Label5.TabIndex = 56
         Me.Label5.Text = "Request Number :"
+        '
+        'PanelControl2
+        '
+        Me.PanelControl2.Anchor = CType((((System.Windows.Forms.AnchorStyles.Top Or System.Windows.Forms.AnchorStyles.Bottom) _
+            Or System.Windows.Forms.AnchorStyles.Left) _
+            Or System.Windows.Forms.AnchorStyles.Right), System.Windows.Forms.AnchorStyles)
+        Me.PanelControl2.Controls.Add(Me.dgv)
+        Me.PanelControl2.Location = New System.Drawing.Point(5, 117)
+        Me.PanelControl2.Name = "PanelControl2"
+        Me.PanelControl2.Size = New System.Drawing.Size(962, 325)
+        Me.PanelControl2.TabIndex = 1
         '
         'dgv
         '

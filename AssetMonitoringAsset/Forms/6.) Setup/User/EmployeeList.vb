@@ -48,6 +48,12 @@
                     .BorrowerID = selectedrow.Cells(0).Value
                     .TextBox2.Text = selectedrow.Cells(1).Value.ToString
                 End With
+            ElseIf modty = 5 Then
+
+                With frmDeplyment
+                    .BorrowerID = selectedrow.Cells(0).Value
+                    .TextBox2.Text = selectedrow.Cells(1).Value.ToString
+                End With
 
             End If
 

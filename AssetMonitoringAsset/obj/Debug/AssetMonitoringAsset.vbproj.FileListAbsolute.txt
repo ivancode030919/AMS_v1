@@ -1157,3 +1157,5 @@ D:\IVAN FILES\25.) GitHub\AMS\AMS_v1\AssetMonitoringAsset\bin\Debug\DevExpress.X
 D:\IVAN FILES\25.) GitHub\AMS\AMS_v1\AssetMonitoringAsset\bin\Debug\DevExpress.Office.v24.1.Core.xml
 D:\IVAN FILES\25.) GitHub\AMS\AMS_v1\AssetMonitoringAsset\obj\Debug\AssetMonitoringAsset.BorrowerRetuenConfirmation.resources
 D:\IVAN FILES\25.) GitHub\AMS\AMS_v1\AssetMonitoringAsset\obj\Debug\AssetMonitoringAsset.frmDeplyment.resources
+D:\IVAN FILES\25.) GitHub\AMS\AMS_v1\AssetMonitoringAsset\obj\Debug\AssetMonitoringAsset.frmDeploymentRegister.resources
+D:\IVAN FILES\25.) GitHub\AMS\AMS_v1\AssetMonitoringAsset\obj\Debug\AssetMonitoringAsset.frmDeploymentRegisterDetail.resources

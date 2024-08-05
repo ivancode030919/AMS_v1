@@ -13,7 +13,51 @@
     Public SectionID As Integer
 
 
+    Private Sub HideMenu()
 
+        If UserType = "BPC" Then
+        ElseIf UserType = "DPC" Then
+        ElseIf UserType = "SPC" Then
+            'Receive Procurement
+            AccordionControlElement56.Visible = False
+            'Request Register
+            AccordionControlElement46.Visible = False
+            'Assignment
+            AccordionControlElement55.Visible = False
+            'Deployment
+            AccordionControlElement34.Visible = False
+            'Transfer Ownership
+            AccordionControlElement49.Visible = False
+
+            'Assets
+            AccordionControlElement2.Visible = False
+
+            'Setup
+            'Category
+            AccordionControlElement5.Visible = False
+            'Type
+            AccordionControlElement4.Visible = False
+            'Department
+            AccordionControlElement9.Visible = False
+            'Branch
+            AccordionControlElement8.Visible = False
+            'Section
+            AccordionControlElement7.Visible = False
+            'POsotion
+            AccordionControlElement10.Visible = False
+            'User
+            AccordionControlElement14.Visible = False
+            'Vendor
+            AccordionControlElement12.Visible = False
+            'Doc Type
+            AccordionControlElement11.Visible = False
+            'Asset Condition
+            AccordionControlElement6.Visible = False
+
+        Else
+
+        End If
+    End Sub
     Private Sub AccordionControlElement4_Click(sender As Object, e As EventArgs) Handles AccordionControlElement4.Click
         AssetType.ShowDialog()
     End Sub
@@ -210,4 +254,21 @@
         frmDeplyment.BringToFront()
         frmDeplyment.Show()
     End Sub
+
+    Private Sub AccordionControlElement55_Click(sender As Object, e As EventArgs) Handles AccordionControlElement55.Click
+
+    End Sub
+
+    Private Sub AccordionControlElement18_Click(sender As Object, e As EventArgs) Handles AccordionControlElement18.Click
+
+    End Sub
+
+    Private Sub AccordionControlElement40_Click(sender As Object, e As EventArgs) Handles AccordionControlElement40.Click
+        Me.IsMdiContainer = True
+        frmDeploymentRegister.MdiParent = Me
+        PictureBox1.SendToBack()
+        frmDeploymentRegister.BringToFront()
+        frmDeploymentRegister.Show()
+    End Sub
+
 End Class

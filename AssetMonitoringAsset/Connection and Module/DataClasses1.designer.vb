@@ -211,6 +211,18 @@ Partial Public Class DataClasses1DataContext
     End Sub
   Partial Private Sub DeletetblAssetInventory(instance As tblAssetInventory)
     End Sub
+  Partial Private Sub InserttblDeploymentDetail(instance As tblDeploymentDetail)
+    End Sub
+  Partial Private Sub UpdatetblDeploymentDetail(instance As tblDeploymentDetail)
+    End Sub
+  Partial Private Sub DeletetblDeploymentDetail(instance As tblDeploymentDetail)
+    End Sub
+  Partial Private Sub InserttblDeploymentHeader(instance As tblDeploymentHeader)
+    End Sub
+  Partial Private Sub UpdatetblDeploymentHeader(instance As tblDeploymentHeader)
+    End Sub
+  Partial Private Sub DeletetblDeploymentHeader(instance As tblDeploymentHeader)
+    End Sub
   #End Region
 	
 	Public Sub New()
@@ -415,6 +427,18 @@ Partial Public Class DataClasses1DataContext
 	Public ReadOnly Property tblAssetInventories() As System.Data.Linq.Table(Of tblAssetInventory)
 		Get
 			Return Me.GetTable(Of tblAssetInventory)
+		End Get
+	End Property
+	
+	Public ReadOnly Property tblDeploymentDetails() As System.Data.Linq.Table(Of tblDeploymentDetail)
+		Get
+			Return Me.GetTable(Of tblDeploymentDetail)
+		End Get
+	End Property
+	
+	Public ReadOnly Property tblDeploymentHeaders() As System.Data.Linq.Table(Of tblDeploymentHeader)
+		Get
+			Return Me.GetTable(Of tblDeploymentHeader)
 		End Get
 	End Property
 	
@@ -7656,6 +7680,284 @@ Partial Public Class tblAssetInventory
 				Me._RecvBy = value
 				Me.SendPropertyChanged("RecvBy")
 				Me.OnRecvByChanged
+			End If
+		End Set
+	End Property
+	
+	Public Event PropertyChanging As PropertyChangingEventHandler Implements System.ComponentModel.INotifyPropertyChanging.PropertyChanging
+	
+	Public Event PropertyChanged As PropertyChangedEventHandler Implements System.ComponentModel.INotifyPropertyChanged.PropertyChanged
+	
+	Protected Overridable Sub SendPropertyChanging()
+		If ((Me.PropertyChangingEvent Is Nothing)  _
+					= false) Then
+			RaiseEvent PropertyChanging(Me, emptyChangingEventArgs)
+		End If
+	End Sub
+	
+	Protected Overridable Sub SendPropertyChanged(ByVal propertyName As [String])
+		If ((Me.PropertyChangedEvent Is Nothing)  _
+					= false) Then
+			RaiseEvent PropertyChanged(Me, New PropertyChangedEventArgs(propertyName))
+		End If
+	End Sub
+End Class
+
+<Global.System.Data.Linq.Mapping.TableAttribute(Name:="dbo.tblDeploymentDetail")>  _
+Partial Public Class tblDeploymentDetail
+	Implements System.ComponentModel.INotifyPropertyChanging, System.ComponentModel.INotifyPropertyChanged
+	
+	Private Shared emptyChangingEventArgs As PropertyChangingEventArgs = New PropertyChangingEventArgs(String.Empty)
+	
+	Private _id As Integer
+	
+	Private _PropertyCode As String
+	
+	Private _Transid As System.Nullable(Of Integer)
+	
+	Private _DateDeployed As System.Nullable(Of Date)
+	
+    #Region "Extensibility Method Definitions"
+    Partial Private Sub OnLoaded()
+    End Sub
+    Partial Private Sub OnValidate(action As System.Data.Linq.ChangeAction)
+    End Sub
+    Partial Private Sub OnCreated()
+    End Sub
+    Partial Private Sub OnidChanging(value As Integer)
+    End Sub
+    Partial Private Sub OnidChanged()
+    End Sub
+    Partial Private Sub OnPropertyCodeChanging(value As String)
+    End Sub
+    Partial Private Sub OnPropertyCodeChanged()
+    End Sub
+    Partial Private Sub OnTransidChanging(value As System.Nullable(Of Integer))
+    End Sub
+    Partial Private Sub OnTransidChanged()
+    End Sub
+    Partial Private Sub OnDateDeployedChanging(value As System.Nullable(Of Date))
+    End Sub
+    Partial Private Sub OnDateDeployedChanged()
+    End Sub
+    #End Region
+	
+	Public Sub New()
+		MyBase.New
+		OnCreated
+	End Sub
+	
+	<Global.System.Data.Linq.Mapping.ColumnAttribute(Storage:="_id", AutoSync:=AutoSync.OnInsert, DbType:="Int NOT NULL IDENTITY", IsPrimaryKey:=true, IsDbGenerated:=true)>  _
+	Public Property id() As Integer
+		Get
+			Return Me._id
+		End Get
+		Set
+			If ((Me._id = value)  _
+						= false) Then
+				Me.OnidChanging(value)
+				Me.SendPropertyChanging
+				Me._id = value
+				Me.SendPropertyChanged("id")
+				Me.OnidChanged
+			End If
+		End Set
+	End Property
+	
+	<Global.System.Data.Linq.Mapping.ColumnAttribute(Storage:="_PropertyCode", DbType:="VarChar(100)")>  _
+	Public Property PropertyCode() As String
+		Get
+			Return Me._PropertyCode
+		End Get
+		Set
+			If (String.Equals(Me._PropertyCode, value) = false) Then
+				Me.OnPropertyCodeChanging(value)
+				Me.SendPropertyChanging
+				Me._PropertyCode = value
+				Me.SendPropertyChanged("PropertyCode")
+				Me.OnPropertyCodeChanged
+			End If
+		End Set
+	End Property
+	
+	<Global.System.Data.Linq.Mapping.ColumnAttribute(Storage:="_Transid", DbType:="Int")>  _
+	Public Property Transid() As System.Nullable(Of Integer)
+		Get
+			Return Me._Transid
+		End Get
+		Set
+			If (Me._Transid.Equals(value) = false) Then
+				Me.OnTransidChanging(value)
+				Me.SendPropertyChanging
+				Me._Transid = value
+				Me.SendPropertyChanged("Transid")
+				Me.OnTransidChanged
+			End If
+		End Set
+	End Property
+	
+	<Global.System.Data.Linq.Mapping.ColumnAttribute(Storage:="_DateDeployed", DbType:="DateTime")>  _
+	Public Property DateDeployed() As System.Nullable(Of Date)
+		Get
+			Return Me._DateDeployed
+		End Get
+		Set
+			If (Me._DateDeployed.Equals(value) = false) Then
+				Me.OnDateDeployedChanging(value)
+				Me.SendPropertyChanging
+				Me._DateDeployed = value
+				Me.SendPropertyChanged("DateDeployed")
+				Me.OnDateDeployedChanged
+			End If
+		End Set
+	End Property
+	
+	Public Event PropertyChanging As PropertyChangingEventHandler Implements System.ComponentModel.INotifyPropertyChanging.PropertyChanging
+	
+	Public Event PropertyChanged As PropertyChangedEventHandler Implements System.ComponentModel.INotifyPropertyChanged.PropertyChanged
+	
+	Protected Overridable Sub SendPropertyChanging()
+		If ((Me.PropertyChangingEvent Is Nothing)  _
+					= false) Then
+			RaiseEvent PropertyChanging(Me, emptyChangingEventArgs)
+		End If
+	End Sub
+	
+	Protected Overridable Sub SendPropertyChanged(ByVal propertyName As [String])
+		If ((Me.PropertyChangedEvent Is Nothing)  _
+					= false) Then
+			RaiseEvent PropertyChanged(Me, New PropertyChangedEventArgs(propertyName))
+		End If
+	End Sub
+End Class
+
+<Global.System.Data.Linq.Mapping.TableAttribute(Name:="dbo.tblDeploymentHeader")>  _
+Partial Public Class tblDeploymentHeader
+	Implements System.ComponentModel.INotifyPropertyChanging, System.ComponentModel.INotifyPropertyChanged
+	
+	Private Shared emptyChangingEventArgs As PropertyChangingEventArgs = New PropertyChangingEventArgs(String.Empty)
+	
+	Private _id As Integer
+	
+	Private _DeploymentID As String
+	
+	Private _Date As System.Nullable(Of Date)
+	
+	Private _DeyployedBy As System.Nullable(Of Integer)
+	
+	Private _Runner As System.Nullable(Of Integer)
+	
+    #Region "Extensibility Method Definitions"
+    Partial Private Sub OnLoaded()
+    End Sub
+    Partial Private Sub OnValidate(action As System.Data.Linq.ChangeAction)
+    End Sub
+    Partial Private Sub OnCreated()
+    End Sub
+    Partial Private Sub OnidChanging(value As Integer)
+    End Sub
+    Partial Private Sub OnidChanged()
+    End Sub
+    Partial Private Sub OnDeploymentIDChanging(value As String)
+    End Sub
+    Partial Private Sub OnDeploymentIDChanged()
+    End Sub
+    Partial Private Sub OnDateChanging(value As System.Nullable(Of Date))
+    End Sub
+    Partial Private Sub OnDateChanged()
+    End Sub
+    Partial Private Sub OnDeyployedByChanging(value As System.Nullable(Of Integer))
+    End Sub
+    Partial Private Sub OnDeyployedByChanged()
+    End Sub
+    Partial Private Sub OnRunnerChanging(value As System.Nullable(Of Integer))
+    End Sub
+    Partial Private Sub OnRunnerChanged()
+    End Sub
+    #End Region
+	
+	Public Sub New()
+		MyBase.New
+		OnCreated
+	End Sub
+	
+	<Global.System.Data.Linq.Mapping.ColumnAttribute(Storage:="_id", AutoSync:=AutoSync.OnInsert, DbType:="Int NOT NULL IDENTITY", IsPrimaryKey:=true, IsDbGenerated:=true)>  _
+	Public Property id() As Integer
+		Get
+			Return Me._id
+		End Get
+		Set
+			If ((Me._id = value)  _
+						= false) Then
+				Me.OnidChanging(value)
+				Me.SendPropertyChanging
+				Me._id = value
+				Me.SendPropertyChanged("id")
+				Me.OnidChanged
+			End If
+		End Set
+	End Property
+	
+	<Global.System.Data.Linq.Mapping.ColumnAttribute(Storage:="_DeploymentID", DbType:="VarChar(100)")>  _
+	Public Property DeploymentID() As String
+		Get
+			Return Me._DeploymentID
+		End Get
+		Set
+			If (String.Equals(Me._DeploymentID, value) = false) Then
+				Me.OnDeploymentIDChanging(value)
+				Me.SendPropertyChanging
+				Me._DeploymentID = value
+				Me.SendPropertyChanged("DeploymentID")
+				Me.OnDeploymentIDChanged
+			End If
+		End Set
+	End Property
+	
+	<Global.System.Data.Linq.Mapping.ColumnAttribute(Name:="Date", Storage:="_Date", DbType:="DateTime")>  _
+	Public Property [Date]() As System.Nullable(Of Date)
+		Get
+			Return Me._Date
+		End Get
+		Set
+			If (Me._Date.Equals(value) = false) Then
+				Me.OnDateChanging(value)
+				Me.SendPropertyChanging
+				Me._Date = value
+				Me.SendPropertyChanged("[Date]")
+				Me.OnDateChanged
+			End If
+		End Set
+	End Property
+	
+	<Global.System.Data.Linq.Mapping.ColumnAttribute(Storage:="_DeyployedBy", DbType:="Int")>  _
+	Public Property DeyployedBy() As System.Nullable(Of Integer)
+		Get
+			Return Me._DeyployedBy
+		End Get
+		Set
+			If (Me._DeyployedBy.Equals(value) = false) Then
+				Me.OnDeyployedByChanging(value)
+				Me.SendPropertyChanging
+				Me._DeyployedBy = value
+				Me.SendPropertyChanged("DeyployedBy")
+				Me.OnDeyployedByChanged
+			End If
+		End Set
+	End Property
+	
+	<Global.System.Data.Linq.Mapping.ColumnAttribute(Storage:="_Runner", DbType:="Int")>  _
+	Public Property Runner() As System.Nullable(Of Integer)
+		Get
+			Return Me._Runner
+		End Get
+		Set
+			If (Me._Runner.Equals(value) = false) Then
+				Me.OnRunnerChanging(value)
+				Me.SendPropertyChanging
+				Me._Runner = value
+				Me.SendPropertyChanged("Runner")
+				Me.OnRunnerChanged
 			End If
 		End Set
 	End Property

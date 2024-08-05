@@ -1,4 +1,7 @@
 ﻿Public Class frmDeplyment
+
+    Public BorrowerID As Integer
+
     Private Sub frmDeplyment_Load(sender As Object, e As EventArgs) Handles MyBase.Load
         display()
     End Sub
@@ -26,6 +29,7 @@
         dgv.Columns(4).HeaderText = "Reference"
         dgv.Columns(5).HeaderText = "Reference No."
         dgv.Columns(6).HeaderText = "Deployed"
+        dgv.Columns(7).Visible = False
 
     End Sub
 
@@ -48,25 +52,40 @@
             End If
         Next
 
-        If trueCount = 0 Then
+        If TextBox2.Text = String.Empty Then
+
+            MessageBox.Show("Please Select to Runner", "Notification")
+
+        ElseIf trueCount = 0 Then
+
             MessageBox.Show("Please Select to Deploy Items", "Notification")
         Else
             Dim result As DialogResult = MessageBox.Show("Do you want to Deploy this " & trueCount & " Items?", "Confirmation", MessageBoxButtons.YesNo, MessageBoxIcon.Question)
 
             If result = DialogResult.Yes Then
 
+                Dim DepID As String = FetchClass.DepID
+
+                InsertionClass.SaveDeploymentHeader(DepID, BorrowerID)
+                Dim TransID As Integer = FetchClass.DeploymentTransID
+
                 For Each row As DataGridViewRow In dgv.Rows
+
                     Dim cellValue As Boolean = Convert.ToBoolean(row.Cells(0).Value)
 
                     If cellValue = True Then
+
                         Dim InvId As Integer = row.Cells(7).Value
                         Dim ProCode As String = row.Cells(1).Value
                         UpdateClass.UpdateDeployment(ProCode, InvId)
+                        InsertionClass.SaveDeploymentDetail(ProCode, TransID)
+
                     End If
 
                 Next
 
                 display()
+                TextBox2.Text = String.Empty
                 MessageBox.Show("Successfully Deployed", "Notification", MessageBoxButtons.OK, MessageBoxIcon.Information)
 
             ElseIf result = DialogResult.No Then
@@ -75,5 +94,20 @@
         End If
 
 
+    End Sub
+
+    Private Sub SimpleButton1_Click(sender As Object, e As EventArgs) Handles SimpleButton1.Click
+        EmployeeList.modty = 5
+        EmployeeList.ShowDialog()
+    End Sub
+
+    Private Sub frmDeplyment_FormClosing(sender As Object, e As FormClosingEventArgs) Handles MyBase.FormClosing
+        Home.IsMdiContainer = False
+        Me.Dispose()
+    End Sub
+
+    Private Sub frmDeplyment_Leave(sender As Object, e As EventArgs) Handles MyBase.Leave
+        Home.IsMdiContainer = False
+        Me.Dispose()
     End Sub
 End Class

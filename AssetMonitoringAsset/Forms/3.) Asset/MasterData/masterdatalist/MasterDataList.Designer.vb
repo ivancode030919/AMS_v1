@@ -208,7 +208,7 @@ Partial Class MasterDataList
         Me.Padding = New System.Windows.Forms.Padding(5)
         Me.ShowInTaskbar = False
         Me.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen
-        Me.Text = "Master Data"
+        Me.Text = "Item List"
         CType(Me.PanelControl1, System.ComponentModel.ISupportInitialize).EndInit()
         Me.PanelControl1.ResumeLayout(False)
         CType(Me.dgv, System.ComponentModel.ISupportInitialize).EndInit()

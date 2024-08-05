@@ -318,16 +318,21 @@
     End Sub
 
     Public Shared Sub UpdateDeployment(PropertyCode As String, InvId As Integer)
+        Try
+            Dim updateDeployment = (From p In db.GetTable(Of tblAssetInventory)()
+                                    Where p.InvID = InvId And p.PropertyCode = PropertyCode
+                                    Select p).FirstOrDefault()
 
-        Dim updateDeployment = (From p In db.GetTable(Of tblAssetInventory)()
-                                Where p.InvID = InvId And p.PropertyCode = PropertyCode
-                                Select p).FirstOrDefault()
+            updateDeployment.Deployed = 1
+            updateDeployment.DateDeployed = DateAndTime.Now
+            updateDeployment.DeployBy = Home.EmployeeID
 
-        updateDeployment.Deployed = 1
-        updateDeployment.DateDeployed = DateAndTime.Now
-        updateDeployment.DeployBy = Home.EmployeeID
+            db.SubmitChanges()
+        Catch ex As Exception
+            MsgBox("Error.U.31")
+        End Try
 
-        db.SubmitChanges()
+
     End Sub
 
 End Class

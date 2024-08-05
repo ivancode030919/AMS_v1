@@ -98,6 +98,15 @@ Public Class InsertionClass
         Return db.GetTable(Of tblBuildHeader)()
     End Function
 
+    'Save in Deployment Detail
+    Public Shared Function GetDeploymentDetail() As System.Data.Linq.Table(Of tblDeploymentDetail)
+        Return db.GetTable(Of tblDeploymentDetail)()
+    End Function
+
+    'Save in Deployment header
+    Public Shared Function GetDeploymentHeader() As System.Data.Linq.Table(Of tblDeploymentHeader)
+        Return db.GetTable(Of tblDeploymentHeader)()
+    End Function
 
     'Save To Records in tblBuildHeader Header
     Public Shared Sub SaveBuildHeader(ByVal Entryno As String,
@@ -771,6 +780,41 @@ Public Class InsertionClass
         End Try
     End Sub
 
+    'Save Deployment Header
+    Public Shared Sub SaveDeploymentHeader(DepID As String, runner As Integer)
+        Try
+            Dim post As Table(Of tblDeploymentHeader) = InsertionClass.GetDeploymentHeader
+            Dim p As New tblDeploymentHeader With
+                {
+            .DeploymentID = DepID,
+            .DeyployedBy = Home.EmployeeID,
+            .[Date] = Date.Now,
+            .Runner = runner
+                }
+            post.InsertOnSubmit(p)
+            post.Context.SubmitChanges()
 
+        Catch ex As Exception
+            MsgBox("Error.I-18")
+        End Try
+    End Sub
+
+    'Save Deployment Detail
+    Public Shared Sub SaveDeploymentDetail(PC As String, transactionID As Integer)
+        Try
+            Dim post As Table(Of tblDeploymentDetail) = InsertionClass.GetDeploymentDetail
+            Dim p As New tblDeploymentDetail With
+                {
+            .PropertyCode = PC,
+            .Transid = transactionID,
+            .DateDeployed = Date.Now
+                }
+            post.InsertOnSubmit(p)
+            post.Context.SubmitChanges()
+
+        Catch ex As Exception
+            MsgBox("Error.I-18")
+        End Try
+    End Sub
 
 End Class

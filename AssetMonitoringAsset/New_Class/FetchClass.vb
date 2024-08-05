@@ -768,6 +768,61 @@
 
     End Function
 
+    'Get DeployemntID
+    Public Shared Function DepID() As Object
+        Try
+            Dim Dep = (From s In db.tblDeploymentHeaders
+                       Order By s.id Descending
+                       Select s.DeploymentID).FirstOrDefault()
+
+            If Dep > 0 Then
+
+                Dim DepIdSeries As Integer = Integer.Parse(Dep)
+                DepIdSeries += 1
+
+                Return DepIdSeries.ToString("00000")
+
+            Else
+                Return "00001"
+            End If
+        Catch ex As Exception
+            Return MsgBox("Error.F-46")
+        End Try
+
+    End Function
+
+    'Get Deployemnt
+    Public Shared Function DeploymentTransID() As Object
+        Try
+            Dim Dep = (From s In db.tblDeploymentHeaders
+                       Order By s.id Descending
+                       Select s.id).FirstOrDefault()
+            Return Dep
+
+        Catch ex As Exception
+            Return MsgBox("Error.F-47")
+        End Try
+
+    End Function
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
     'Public Shared Function FetchEmployeeName() As Object
     '    Try
 

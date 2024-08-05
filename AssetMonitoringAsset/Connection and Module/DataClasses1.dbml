@@ -384,6 +384,23 @@
       <Column Name="RecvBy" Type="System.Int32" DbType="Int" CanBeNull="true" />
     </Type>
   </Table>
+  <Table Name="dbo.tblDeploymentDetail" Member="tblDeploymentDetails">
+    <Type Name="tblDeploymentDetail">
+      <Column Name="id" Type="System.Int32" DbType="Int NOT NULL IDENTITY" IsPrimaryKey="true" IsDbGenerated="true" CanBeNull="false" />
+      <Column Name="PropertyCode" Type="System.String" DbType="VarChar(100)" CanBeNull="true" />
+      <Column Name="Transid" Type="System.Int32" DbType="Int" CanBeNull="true" />
+      <Column Name="DateDeployed" Type="System.DateTime" DbType="DateTime" CanBeNull="true" />
+    </Type>
+  </Table>
+  <Table Name="dbo.tblDeploymentHeader" Member="tblDeploymentHeaders">
+    <Type Name="tblDeploymentHeader">
+      <Column Name="id" Type="System.Int32" DbType="Int NOT NULL IDENTITY" IsPrimaryKey="true" IsDbGenerated="true" CanBeNull="false" />
+      <Column Name="DeploymentID" Type="System.String" DbType="VarChar(100)" CanBeNull="true" />
+      <Column Name="Date" Type="System.DateTime" DbType="DateTime" CanBeNull="true" />
+      <Column Name="DeyployedBy" Type="System.Int32" DbType="Int" CanBeNull="true" />
+      <Column Name="Runner" Type="System.Int32" DbType="Int" CanBeNull="true" />
+    </Type>
+  </Table>
   <Function Name="dbo.spNewAsset" Method="spNewAsset">
     <Parameter Name="Description" Parameter="description" Type="System.String" DbType="VarChar(200)" />
     <Parameter Name="category" Type="System.Int32" DbType="Int" />

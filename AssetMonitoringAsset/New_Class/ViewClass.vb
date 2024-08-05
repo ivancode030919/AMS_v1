@@ -185,7 +185,7 @@
             stat2 = ""
         End If
 
-        If Home.UserType = "Admin" Then
+        If Home.UserType = "ADMIN" Then
 
             Dim query = (From s In db.tblRequestHeaders
                          Join k In db.tblEmployees On s.RequestBy Equals k.EmployeeID
@@ -237,13 +237,18 @@
     'Display Item List in Masterdata
     '------------------------------------------------------------------------------------
     Public Shared Function Fetchmasterdata(ByVal Search As String, ByVal Cat As String, ByVal type As String) As Object
-        Dim querysection = (From f In db.tblmasterlistdetails
-                            Join c In db.tblCategories On f.CategoryID Equals c.CategoryID
-                            Join k In db.tblAssetTypes On f.AssetTypeID Equals k.AssetTypeID
-                            Where (f.AssetDescription.Contains(Search) Or f.ItemCode = Integer.Parse(Search)) And (c.CategoryDescription = Cat Or Cat = "") And (k.AssetTypeDescription = type Or type = "")
-                            Order By f.AssetDescription Ascending
-                            Select f.ItemCode, f.AssetDescription, c.CategoryDescription, k.AssetTypeDescription).ToList()
-        Return querysection
+        Try
+            Dim querysection = (From f In db.tblmasterlistdetails
+                                Join c In db.tblCategories On f.CategoryID Equals c.CategoryID
+                                Join k In db.tblAssetTypes On f.AssetTypeID Equals k.AssetTypeID
+                                Where (f.AssetDescription.Contains(Search) Or f.ItemCode = Integer.Parse(Search)) And (c.CategoryDescription = Cat Or Cat = "") And (k.AssetTypeDescription = type Or type = "")
+                                Order By f.AssetDescription Ascending
+                                Select f.ItemCode, f.AssetDescription, c.CategoryDescription, k.AssetTypeDescription).ToList()
+            Return querysection
+        Catch ex As Exception
+
+        End Try
+
     End Function
     '------------------------------------------------------------------------------------
     'Display Item List in New Asset Register
@@ -656,6 +661,30 @@
             Return DeployItems
 
         End If
+
+    End Function
+
+    'View Deployment Register Header
+    Public Shared Function ViewDeployemntRegisterHeader() As Object
+
+        Dim querysection = (From s In db.tblDeploymentHeaders
+                            Join d In db.tblEmployees On s.DeyployedBy Equals d.EmployeeID
+                            Join f In db.tblEmployees On s.Runner Equals f.EmployeeID
+                            Let Runner = f.LastName + ", " + f.FirstName Let DeployedBy = d.LastName + ", " + d.FirstName
+                            Select s.DeploymentID, DeployedBy, Runner, s.Date, s.id)
+        Return querysection
+
+    End Function
+
+    'View Deployment Register Detail
+    Public Shared Function ViewDeployemntRegisterDetail(transid As Integer) As Object
+
+        Dim querysection = (From s In db.tblDeploymentDetails
+                            Join d In db.tblAssetInventories On s.PropertyCode Equals d.PropertyCode
+                            Join f In db.tblEmployees On d.Owner Equals f.EmployeeID
+                            Let name = f.LastName + ", " + f.FirstName
+                            Select s.PropertyCode, d.Des, name, s.DateDeployed)
+        Return querysection
 
     End Function
 
