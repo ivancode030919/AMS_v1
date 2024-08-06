@@ -75,27 +75,6 @@
       <Column Name="Company" Type="System.String" DbType="VarChar(200)" CanBeNull="true" />
     </Type>
   </Table>
-  <Table Name="dbo.tblTransferDetails" Member="tblTransferDetails">
-    <Type Name="tblTransferDetail">
-      <Column Name="TransferId" Type="System.Int32" DbType="Int NOT NULL" IsPrimaryKey="true" CanBeNull="false" />
-      <Column Name="AssetCode" Type="System.String" DbType="VarChar(MAX)" CanBeNull="true" />
-      <Column Name="AssetId" Type="System.Int32" DbType="Int" CanBeNull="true" />
-      <Column Name="InvId" Type="System.Int32" DbType="Int" CanBeNull="true" />
-      <Column Name="TranStatus" Type="System.String" DbType="VarChar(MAX)" CanBeNull="true" />
-      <Column Name="TransferHeaderId" Type="System.Int32" DbType="Int" CanBeNull="true" />
-      <Column Name="Owner" Type="System.String" DbType="VarChar(MAX)" CanBeNull="true" />
-    </Type>
-  </Table>
-  <Table Name="dbo.tblTransferHeader" Member="tblTransferHeaders">
-    <Type Name="tblTransferHeader">
-      <Column Name="TransferHeaderId" Type="System.Int32" DbType="Int NOT NULL IDENTITY" IsPrimaryKey="true" IsDbGenerated="true" CanBeNull="false" />
-      <Column Name="RequaestType" Type="System.String" DbType="VarChar(MAX) NOT NULL" CanBeNull="false" />
-      <Column Name="RequestBy" Type="System.Int32" DbType="Int" CanBeNull="true" />
-      <Column Name="RequestFor" Type="System.Int32" DbType="Int" CanBeNull="true" />
-      <Column Name="Date" Type="System.DateTime" DbType="Date" CanBeNull="true" />
-      <Column Name="Status" Type="System.String" DbType="VarChar(MAX)" CanBeNull="true" />
-    </Type>
-  </Table>
   <Table Name="dbo.tblAssetHeader" Member="tblAssetHeaders">
     <Type Name="tblAssetHeader">
       <Column Name="AssetHeaderID" Type="System.Int32" DbType="Int NOT NULL IDENTITY" IsPrimaryKey="true" IsDbGenerated="true" CanBeNull="false" />
@@ -355,6 +334,23 @@
       <Column Name="Runner" Type="System.Int32" DbType="Int" CanBeNull="true" />
     </Type>
   </Table>
+  <Table Name="dbo.tblDeploymentDetail" Member="tblDeploymentDetails">
+    <Type Name="tblDeploymentDetail">
+      <Column Name="id" Type="System.Int32" DbType="Int NOT NULL IDENTITY" IsPrimaryKey="true" IsDbGenerated="true" CanBeNull="false" />
+      <Column Name="PropertyCode" Type="System.String" DbType="VarChar(100)" CanBeNull="true" />
+      <Column Name="Transid" Type="System.Int32" DbType="Int" CanBeNull="true" />
+      <Column Name="DateDeployed" Type="System.DateTime" DbType="DateTime" CanBeNull="true" />
+    </Type>
+  </Table>
+  <Table Name="dbo.tblDeploymentHeader" Member="tblDeploymentHeaders">
+    <Type Name="tblDeploymentHeader">
+      <Column Name="id" Type="System.Int32" DbType="Int NOT NULL IDENTITY" IsPrimaryKey="true" IsDbGenerated="true" CanBeNull="false" />
+      <Column Name="DeploymentID" Type="System.String" DbType="VarChar(100)" CanBeNull="true" />
+      <Column Name="Date" Type="System.DateTime" DbType="DateTime" CanBeNull="true" />
+      <Column Name="DeyployedBy" Type="System.Int32" DbType="Int" CanBeNull="true" />
+      <Column Name="Runner" Type="System.Int32" DbType="Int" CanBeNull="true" />
+    </Type>
+  </Table>
   <Table Name="dbo.tblAssetInventory" Member="tblAssetInventories">
     <Type Name="tblAssetInventory">
       <Column Name="InvID" Type="System.Int32" DbType="Int NOT NULL IDENTITY" IsPrimaryKey="true" IsDbGenerated="true" CanBeNull="false" />
@@ -384,21 +380,23 @@
       <Column Name="RecvBy" Type="System.Int32" DbType="Int" CanBeNull="true" />
     </Type>
   </Table>
-  <Table Name="dbo.tblDeploymentDetail" Member="tblDeploymentDetails">
-    <Type Name="tblDeploymentDetail">
-      <Column Name="id" Type="System.Int32" DbType="Int NOT NULL IDENTITY" IsPrimaryKey="true" IsDbGenerated="true" CanBeNull="false" />
-      <Column Name="PropertyCode" Type="System.String" DbType="VarChar(100)" CanBeNull="true" />
-      <Column Name="Transid" Type="System.Int32" DbType="Int" CanBeNull="true" />
-      <Column Name="DateDeployed" Type="System.DateTime" DbType="DateTime" CanBeNull="true" />
+  <Table Name="dbo.tblTransferDetails" Member="tblTransferDetails">
+    <Type Name="tblTransferDetail">
+      <Column Name="TransferId" Type="System.Int32" DbType="Int NOT NULL IDENTITY" IsPrimaryKey="true" IsDbGenerated="true" CanBeNull="false" />
+      <Column Name="AssetCode" Type="System.String" DbType="VarChar(50)" CanBeNull="true" />
+      <Column Name="InvId" Type="System.Int32" DbType="Int" CanBeNull="true" />
+      <Column Name="Status" Type="System.String" DbType="VarChar(20)" CanBeNull="true" />
+      <Column Name="TransferHeaderId" Type="System.Int32" DbType="Int" CanBeNull="true" />
+      <Column Name="OldOwner" Type="System.Int32" DbType="Int" CanBeNull="true" />
+      <Column Name="NewOwner" Type="System.Int32" DbType="Int" CanBeNull="true" />
     </Type>
   </Table>
-  <Table Name="dbo.tblDeploymentHeader" Member="tblDeploymentHeaders">
-    <Type Name="tblDeploymentHeader">
-      <Column Name="id" Type="System.Int32" DbType="Int NOT NULL IDENTITY" IsPrimaryKey="true" IsDbGenerated="true" CanBeNull="false" />
-      <Column Name="DeploymentID" Type="System.String" DbType="VarChar(100)" CanBeNull="true" />
-      <Column Name="Date" Type="System.DateTime" DbType="DateTime" CanBeNull="true" />
-      <Column Name="DeyployedBy" Type="System.Int32" DbType="Int" CanBeNull="true" />
-      <Column Name="Runner" Type="System.Int32" DbType="Int" CanBeNull="true" />
+  <Table Name="dbo.tblTransferHeader" Member="tblTransferHeaders">
+    <Type Name="tblTransferHeader">
+      <Column Name="TransferHeaderId" Type="System.Int32" DbType="Int NOT NULL IDENTITY" IsPrimaryKey="true" IsDbGenerated="true" CanBeNull="false" />
+      <Column Name="Date" Type="System.DateTime" DbType="Date" CanBeNull="true" />
+      <Column Name="Status" Type="System.String" DbType="VarChar(10)" CanBeNull="true" />
+      <Column Name="ReqID" Type="System.String" DbType="VarChar(50)" CanBeNull="true" />
     </Type>
   </Table>
   <Function Name="dbo.spNewAsset" Method="spNewAsset">
@@ -819,17 +817,6 @@
       <Column Name="PropertyCode" Type="System.String" DbType="VarChar(MAX)" CanBeNull="true" />
     </ElementType>
   </Function>
-  <Function Name="dbo.ShowRequestTransfer" Method="ShowRequestTransfer">
-    <Parameter Name="headerid" Type="System.Int32" DbType="Int" />
-    <ElementType Name="ShowRequestTransferResult">
-      <Column Name="PropertyCode" Type="System.String" DbType="VarChar(MAX)" CanBeNull="true" />
-      <Column Name="Description" Type="System.String" DbType="VarChar(MAX)" CanBeNull="true" />
-      <Column Name="Qty" Type="System.Double" DbType="Float" CanBeNull="true" />
-      <Column Name="[Current Owner]" Member="Current_Owner" Type="System.String" DbType="VarChar(402)" CanBeNull="true" />
-      <Column Name="[Trasfer To]" Member="Trasfer_To" Type="System.String" DbType="VarChar(402)" CanBeNull="true" />
-      <Column Name="Remarks" Type="System.String" DbType="VarChar(MAX)" CanBeNull="true" />
-    </ElementType>
-  </Function>
   <Function Name="dbo.spViewInventory" Method="spViewInventory">
     <Parameter Name="dep" Type="System.String" DbType="VarChar(200)" />
     <Parameter Name="search" Type="System.String" DbType="VarChar(200)" />
@@ -839,6 +826,19 @@
       <Column Name="AssetCode" Type="System.Int32" DbType="Int" CanBeNull="true" />
       <Column Name="Class" Type="System.String" DbType="VarChar(MAX)" CanBeNull="true" />
       <Column Name="qty" Type="System.Double" DbType="Float" CanBeNull="true" />
+    </ElementType>
+  </Function>
+  <Function Name="dbo.ShowRequestTransfer" Method="ShowRequestTransfer">
+    <Parameter Name="headerid" Type="System.Int32" DbType="Int" />
+    <ElementType Name="ShowRequestTransferResult">
+      <Column Name="PropertyCode" Type="System.String" DbType="VarChar(MAX)" CanBeNull="true" />
+      <Column Name="Description" Type="System.String" DbType="VarChar(MAX)" CanBeNull="true" />
+      <Column Name="Qty" Type="System.Double" DbType="Float" CanBeNull="true" />
+      <Column Name="[Current Owner]" Member="Current_Owner" Type="System.String" DbType="VarChar(402)" CanBeNull="true" />
+      <Column Name="[Trasfer To]" Member="Trasfer_To" Type="System.String" DbType="VarChar(402)" CanBeNull="true" />
+      <Column Name="Remarks" Type="System.String" DbType="VarChar(MAX)" CanBeNull="true" />
+      <Column Name="NewOwner" Type="System.Int32" DbType="Int NOT NULL" CanBeNull="false" />
+      <Column Name="oldOwner" Type="System.Int32" DbType="Int NOT NULL" CanBeNull="false" />
     </ElementType>
   </Function>
 </Database>

@@ -352,6 +352,7 @@
         End Try
     End Function
 
+
     'Fetch transheader id in For Approval
     Public Shared Function FetchTransIdForApprovalBorrow() As Integer
         Try
@@ -383,6 +384,21 @@
             Return Nothing
         End Try
 
+    End Function
+
+
+    'Fetch transheader id in For Transfer Approval
+    Public Shared Function FetchTransIdForApprovalTransfer(rqid As String) As Integer
+        Try
+            Dim querysection = (From s In db.tblTransferHeaders
+                                Where s.ReqID = rqid
+                                Select s.TransferHeaderId).FirstOrDefault()
+            Return querysection
+
+        Catch ex As Exception
+            MsgBox("Error.F-34")
+            Return Nothing
+        End Try
     End Function
 
 

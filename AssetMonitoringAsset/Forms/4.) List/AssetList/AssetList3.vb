@@ -49,7 +49,7 @@
 
         ElseIf mode1 = 3 Then
 
-
+            '
             dgv.DataSource = ViewClass.ViewAvailableAssets(ac)
             With dgv
                 .Columns(0).HeaderText = "Property Code"
@@ -62,6 +62,26 @@
                 .Columns(7).Visible = False
                 .Columns(8).Visible = False
                 .Columns(9).Visible = False
+            End With
+
+        ElseIf mode1 = 4 Then
+
+            'Borrow
+            dgv.DataSource = ViewClass.ViewInventoryDetails4(TextBox1.Text)
+            With dgv
+                .Columns(0).HeaderText = "Property Code"
+                .Columns(1).HeaderText = "Description"
+                .Columns(2).HeaderText = "Quantity"
+                .Columns(3).HeaderText = "Department"
+                .Columns(4).HeaderText = "Branch"
+                .Columns(5).HeaderText = "Section"
+                .Columns(6).HeaderText = "Keeper"
+                .Columns(7).HeaderText = "Owner"
+
+
+                .Columns(2).Visible = False
+                .Columns(7).Visible = False
+
             End With
 
         End If
@@ -188,6 +208,20 @@
                 .Rows(rowToEdit).Cells(1).Value = dgv.Rows(row).Cells(0).Value
                 .Rows(rowToEdit).Cells(2).Value = dgv.Rows(row).Cells(1).Value
             End With
+            Me.Dispose()
+
+        ElseIf modty = 6 Then
+
+
+            With Request.dgv
+                .Rows(rowToEdit).Cells(0).Value = dgv.Rows(row).Cells(0).Value.ToString
+                .Rows(rowToEdit).Cells(1).Value = dgv.Rows(row).Cells(1).Value.ToString
+                .Rows(rowToEdit).Cells(2).Value = dgv.Rows(row).Cells(2).Value.ToString
+                .AllowUserToAddRows = True
+            End With
+            Request.Checkqtybycat()
+
+
             Me.Dispose()
 
         End If

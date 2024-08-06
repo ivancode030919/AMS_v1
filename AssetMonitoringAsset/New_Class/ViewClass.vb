@@ -28,6 +28,15 @@
 
             With Rqregister
                 .dgv.DataSource = db.ShowRequestTransfer(HeaderID)
+                .dgv.Columns(0).HeaderText = "Property Code"
+                .dgv.Columns(1).HeaderText = "Description"
+                .dgv.Columns(2).HeaderText = "Quantity"
+                .dgv.Columns(3).HeaderText = "Current Owner"
+                .dgv.Columns(4).HeaderText = "Transfer To"
+                .dgv.Columns(5).HeaderText = "Remarks"
+
+                .dgv.Columns(6).Visible = False
+                .dgv.Columns(7).Visible = False
             End With
         End If
 
@@ -70,6 +79,19 @@
         Return query
     End Function
 
+    'Display in Asset3 Form Mode1 = 4
+    Public Shared Function ViewInventoryDetails4(search As String) As Object
+        Dim query = (From q In db.tblAssetInventories
+                     Join w In db.tblEmployees On q.Owner Equals w.EmployeeID
+                     Join e In db.tblDepartments On w.DepartmentID Equals e.DepartmentID
+                     Join r In db.tblBranches On w.BranchID Equals r.BranchID
+                     Join t In db.tblSections On w.SectionID Equals t.SectionID
+                     Join y In db.tblEmployees On q.Keeper Equals y.EmployeeID
+                     Where ((q.PropertyCode.Contains(search)) Or (q.Des.Contains(search)))
+                     Let n = w.FirstName + ", " + w.LastName Let m = y.LastName + ", " + y.FirstName
+                     Select q.PropertyCode, q.Des, q.Qty, e.DepartmentDescription, r.BranchDescription, t.SectionDecription, n, m)
+        Return query
+    End Function
     '------------------------------------------------------------------------------------
     'Display in Assignment Form For Choosing To be Assigned Assets that is Available
     '------------------------------------------------------------------------------------
@@ -615,7 +637,7 @@
 
 
 
-
+    'For Deployment Display
     Public Shared Function ViewForDeployment() As Object
 
         Dim queryUserType = (From s In db.tblUsers
@@ -665,11 +687,12 @@
     End Function
 
     'View Deployment Register Header
-    Public Shared Function ViewDeployemntRegisterHeader() As Object
+    Public Shared Function ViewDeployemntRegisterHeader(Date1 As Date, Date2 As Date, Search As String) As Object
 
         Dim querysection = (From s In db.tblDeploymentHeaders
                             Join d In db.tblEmployees On s.DeyployedBy Equals d.EmployeeID
                             Join f In db.tblEmployees On s.Runner Equals f.EmployeeID
+                            Where (s.Date >= Date1 AndAlso s.Date <= Date2) And (s.DeploymentID.Contains(Search))
                             Let Runner = f.LastName + ", " + f.FirstName Let DeployedBy = d.LastName + ", " + d.FirstName
                             Select s.DeploymentID, DeployedBy, Runner, s.Date, s.id)
         Return querysection
@@ -688,6 +711,54 @@
 
     End Function
 
+    'For Receive By End User
+    Public Shared Function ViewForReceiveEndUser() As Object
+
+        Dim queryUserType = (From s In db.tblUsers
+                             Where s.EmployeeID = Home.EmployeeID
+                             Select s.UserType).FirstOrDefault
+
+        If queryUserType = "ADMIN" Then
+
+            Dim DeployItems = (From s In db.tblAssetInventories
+                               Join d In db.tblEmployees On s.Owner Equals d.EmployeeID
+                               Where s.ReceivedByRequestor = False And s.ReceivedByRequestor = False And s.Deployed = True
+                               Let Description = s.Des Let Name = d.LastName + ", " + d.FirstName
+                               Select s.PropertyCode, Description, Name, s.Reference, s.Referenceno, s.ReceivedByRequestor, s.InvID)
+            Return DeployItems
+
+        ElseIf queryUserType = "DPC" Then
+
+            Dim DeployItems = (From s In db.tblAssetInventories
+                               Join d In db.tblEmployees On s.Owner Equals d.EmployeeID
+                               Where (d.DepartmentID = Home.DepartmentID) And s.ReceivedByRequestor = False And s.ReceivedByRequestor = False And s.Deployed = True
+                               Let Description = s.Des Let Name = d.LastName + ", " + d.FirstName
+                               Select s.PropertyCode, Description, Name, s.Reference, s.Referenceno, s.Deployed, s.InvID)
+            Return DeployItems
+
+        ElseIf queryUserType = "BPC" Then
+
+            Dim DeployItems = (From s In db.tblAssetInventories
+                               Join d In db.tblEmployees On s.Owner Equals d.EmployeeID
+                               Join l In db.tblDepartments On d.DepartmentID Equals l.DepartmentID
+                               Where (l.location = "Within" AndAlso l.DepartmentID <> 2) And (s.ReceivedByRequestor = False And s.ReceivedByRequestor = False And s.Deployed = True)
+                               Let Description = s.Des Let Name = d.LastName + ", " + d.FirstName
+                               Select s.PropertyCode, Description, Name, s.Reference, s.Referenceno, s.Deployed, s.InvID)
+            Return DeployItems
+
+        ElseIf queryUserType = "SPC" Then
+
+            Dim DeployItems = (From s In db.tblAssetInventories
+                               Join d In db.tblEmployees On s.Owner Equals d.EmployeeID
+                               Where d.SectionID = Home.SectionID And s.ReceivedByRequestor = False And s.ReceivedByRequestor = False And s.Deployed = True
+                               Let Description = s.Des Let Name = d.LastName + ", " + d.FirstName
+                               Select s.PropertyCode, Description, Name, s.Reference, s.Referenceno, s.Deployed, s.InvID)
+
+            Return DeployItems
+
+        End If
+
+    End Function
 End Class
 
 'Dim result = (From ai In context.tblAssetInventory

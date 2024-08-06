@@ -39,10 +39,6 @@
         End With
     End Sub
 
-    Private Sub RadioButton1_Click(sender As Object, e As EventArgs) Handles RadioButton1.Click
-
-    End Sub
-
     Private Sub RadioButton1_CheckedChanged(sender As Object, e As EventArgs) Handles RadioButton1.CheckedChanged
         stat1 = 1
         display()

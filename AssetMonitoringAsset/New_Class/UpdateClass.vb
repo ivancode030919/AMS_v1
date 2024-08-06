@@ -323,7 +323,7 @@
                                     Where p.InvID = InvId And p.PropertyCode = PropertyCode
                                     Select p).FirstOrDefault()
 
-            updateDeployment.Deployed = 1
+            updateDeployment.Deployed = True
             updateDeployment.DateDeployed = DateAndTime.Now
             updateDeployment.DeployBy = Home.EmployeeID
 
@@ -332,7 +332,22 @@
             MsgBox("Error.U.31")
         End Try
 
-
     End Sub
 
+    Public Shared Sub UpdateReceive(PropertyCode As String, InvId As Integer)
+        Try
+            Dim updateDeployment = (From p In db.GetTable(Of tblAssetInventory)()
+                                    Where p.InvID = InvId And p.PropertyCode = PropertyCode
+                                    Select p).FirstOrDefault()
+
+            updateDeployment.ReceivedByRequestor = True
+            updateDeployment.DateRequestorRecv = DateAndTime.Now
+            updateDeployment.RecvBy = Home.EmployeeID
+
+            db.SubmitChanges()
+        Catch ex As Exception
+            MsgBox("Error.U.31")
+        End Try
+
+    End Sub
 End Class

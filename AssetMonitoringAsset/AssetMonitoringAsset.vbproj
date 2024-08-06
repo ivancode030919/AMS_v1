@@ -629,6 +629,9 @@
     <EmbeddedResource Include="Forms\2.%29 Asset_Management\1.%29 Request\Creating Request\Request.resx">
       <DependentUpon>Request.vb</DependentUpon>
     </EmbeddedResource>
+    <EmbeddedResource Include="Forms\2.%29 Asset_Management\2.%29 Movement\2.%29 Receive\RecvItems\FrmRecvItems.resx">
+      <DependentUpon>FrmRecvItems.vb</DependentUpon>
+    </EmbeddedResource>
     <EmbeddedResource Include="Forms\2.%29 Asset_Management\2.%29 Movement\4.%29 Borrow\BorrowDetails.resx">
       <DependentUpon>BorrowDetails.vb</DependentUpon>
     </EmbeddedResource>

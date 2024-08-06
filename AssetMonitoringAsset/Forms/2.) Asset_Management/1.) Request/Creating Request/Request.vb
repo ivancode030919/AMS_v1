@@ -77,6 +77,9 @@
             Empllist.modty = 1
             Empllist.rowToEdit = row
             Empllist.ShowDialog()
+
+
+            '-----------------------------------------------------------------------------------------------------------------------------------
         ElseIf e.ColumnIndex = 0 AndAlso ComboBox2.Text = "BORROW" Then
             AssetList3.modty = 3
             AssetList3.mode1 = 2
@@ -96,9 +99,11 @@
             date1.Text = "Date To"
             date1.rowToEdit = row
             date1.ShowDialog()
+
+            '-----------------------------------------------------------------------------------------------------------------------------------
         ElseIf e.ColumnIndex = 0 AndAlso ComboBox2.Text = "TRANSFER OWNERSHIP" Then
-            AssetList3.modty = 3
-            AssetList3.mode1 = 2
+            AssetList3.modty = 6
+            AssetList3.mode1 = 4
             AssetList3.rowToEdit = row
             AssetList3.ShowDialog()
         ElseIf e.ColumnIndex = 3 AndAlso ComboBox2.Text = "TRANSFER OWNERSHIP" Then

@@ -73,18 +73,6 @@ Partial Public Class DataClasses1DataContext
     End Sub
   Partial Private Sub DeletetblEmployee(instance As tblEmployee)
     End Sub
-  Partial Private Sub InserttblTransferDetail(instance As tblTransferDetail)
-    End Sub
-  Partial Private Sub UpdatetblTransferDetail(instance As tblTransferDetail)
-    End Sub
-  Partial Private Sub DeletetblTransferDetail(instance As tblTransferDetail)
-    End Sub
-  Partial Private Sub InserttblTransferHeader(instance As tblTransferHeader)
-    End Sub
-  Partial Private Sub UpdatetblTransferHeader(instance As tblTransferHeader)
-    End Sub
-  Partial Private Sub DeletetblTransferHeader(instance As tblTransferHeader)
-    End Sub
   Partial Private Sub InserttblAssetHeader(instance As tblAssetHeader)
     End Sub
   Partial Private Sub UpdatetblAssetHeader(instance As tblAssetHeader)
@@ -205,12 +193,6 @@ Partial Public Class DataClasses1DataContext
     End Sub
   Partial Private Sub DeletetblBorrowDetail(instance As tblBorrowDetail)
     End Sub
-  Partial Private Sub InserttblAssetInventory(instance As tblAssetInventory)
-    End Sub
-  Partial Private Sub UpdatetblAssetInventory(instance As tblAssetInventory)
-    End Sub
-  Partial Private Sub DeletetblAssetInventory(instance As tblAssetInventory)
-    End Sub
   Partial Private Sub InserttblDeploymentDetail(instance As tblDeploymentDetail)
     End Sub
   Partial Private Sub UpdatetblDeploymentDetail(instance As tblDeploymentDetail)
@@ -222,6 +204,24 @@ Partial Public Class DataClasses1DataContext
   Partial Private Sub UpdatetblDeploymentHeader(instance As tblDeploymentHeader)
     End Sub
   Partial Private Sub DeletetblDeploymentHeader(instance As tblDeploymentHeader)
+    End Sub
+  Partial Private Sub InserttblAssetInventory(instance As tblAssetInventory)
+    End Sub
+  Partial Private Sub UpdatetblAssetInventory(instance As tblAssetInventory)
+    End Sub
+  Partial Private Sub DeletetblAssetInventory(instance As tblAssetInventory)
+    End Sub
+  Partial Private Sub InserttblTransferDetail(instance As tblTransferDetail)
+    End Sub
+  Partial Private Sub UpdatetblTransferDetail(instance As tblTransferDetail)
+    End Sub
+  Partial Private Sub DeletetblTransferDetail(instance As tblTransferDetail)
+    End Sub
+  Partial Private Sub InserttblTransferHeader(instance As tblTransferHeader)
+    End Sub
+  Partial Private Sub UpdatetblTransferHeader(instance As tblTransferHeader)
+    End Sub
+  Partial Private Sub DeletetblTransferHeader(instance As tblTransferHeader)
     End Sub
   #End Region
 	
@@ -289,18 +289,6 @@ Partial Public Class DataClasses1DataContext
 	Public ReadOnly Property tblEmployees() As System.Data.Linq.Table(Of tblEmployee)
 		Get
 			Return Me.GetTable(Of tblEmployee)
-		End Get
-	End Property
-	
-	Public ReadOnly Property tblTransferDetails() As System.Data.Linq.Table(Of tblTransferDetail)
-		Get
-			Return Me.GetTable(Of tblTransferDetail)
-		End Get
-	End Property
-	
-	Public ReadOnly Property tblTransferHeaders() As System.Data.Linq.Table(Of tblTransferHeader)
-		Get
-			Return Me.GetTable(Of tblTransferHeader)
 		End Get
 	End Property
 	
@@ -424,12 +412,6 @@ Partial Public Class DataClasses1DataContext
 		End Get
 	End Property
 	
-	Public ReadOnly Property tblAssetInventories() As System.Data.Linq.Table(Of tblAssetInventory)
-		Get
-			Return Me.GetTable(Of tblAssetInventory)
-		End Get
-	End Property
-	
 	Public ReadOnly Property tblDeploymentDetails() As System.Data.Linq.Table(Of tblDeploymentDetail)
 		Get
 			Return Me.GetTable(Of tblDeploymentDetail)
@@ -439,6 +421,24 @@ Partial Public Class DataClasses1DataContext
 	Public ReadOnly Property tblDeploymentHeaders() As System.Data.Linq.Table(Of tblDeploymentHeader)
 		Get
 			Return Me.GetTable(Of tblDeploymentHeader)
+		End Get
+	End Property
+	
+	Public ReadOnly Property tblAssetInventories() As System.Data.Linq.Table(Of tblAssetInventory)
+		Get
+			Return Me.GetTable(Of tblAssetInventory)
+		End Get
+	End Property
+	
+	Public ReadOnly Property tblTransferDetails() As System.Data.Linq.Table(Of tblTransferDetail)
+		Get
+			Return Me.GetTable(Of tblTransferDetail)
+		End Get
+	End Property
+	
+	Public ReadOnly Property tblTransferHeaders() As System.Data.Linq.Table(Of tblTransferHeader)
+		Get
+			Return Me.GetTable(Of tblTransferHeader)
 		End Get
 	End Property
 	
@@ -682,16 +682,16 @@ Partial Public Class DataClasses1DataContext
 		Return CType(result.ReturnValue,ISingleResult(Of ShowAssetAvailability2Result))
 	End Function
 	
-	<Global.System.Data.Linq.Mapping.FunctionAttribute(Name:="dbo.ShowRequestTransfer")>  _
-	Public Function ShowRequestTransfer(<Global.System.Data.Linq.Mapping.ParameterAttribute(DbType:="Int")> ByVal headerid As System.Nullable(Of Integer)) As ISingleResult(Of ShowRequestTransferResult)
-		Dim result As IExecuteResult = Me.ExecuteMethodCall(Me, CType(MethodInfo.GetCurrentMethod,MethodInfo), headerid)
-		Return CType(result.ReturnValue,ISingleResult(Of ShowRequestTransferResult))
-	End Function
-	
 	<Global.System.Data.Linq.Mapping.FunctionAttribute(Name:="dbo.spViewInventory")>  _
 	Public Function spViewInventory(<Global.System.Data.Linq.Mapping.ParameterAttribute(DbType:="VarChar(200)")> ByVal dep As String, <Global.System.Data.Linq.Mapping.ParameterAttribute(DbType:="VarChar(200)")> ByVal search As String, <Global.System.Data.Linq.Mapping.ParameterAttribute(DbType:="VarChar(200)")> ByVal cat As String, <Global.System.Data.Linq.Mapping.ParameterAttribute(DbType:="VarChar(200)")> ByVal type As String) As ISingleResult(Of spViewInventoryResult)
 		Dim result As IExecuteResult = Me.ExecuteMethodCall(Me, CType(MethodInfo.GetCurrentMethod,MethodInfo), dep, search, cat, type)
 		Return CType(result.ReturnValue,ISingleResult(Of spViewInventoryResult))
+	End Function
+	
+	<Global.System.Data.Linq.Mapping.FunctionAttribute(Name:="dbo.ShowRequestTransfer")>  _
+	Public Function ShowRequestTransfer(<Global.System.Data.Linq.Mapping.ParameterAttribute(DbType:="Int")> ByVal headerid As System.Nullable(Of Integer)) As ISingleResult(Of ShowRequestTransferResult)
+		Dim result As IExecuteResult = Me.ExecuteMethodCall(Me, CType(MethodInfo.GetCurrentMethod,MethodInfo), headerid)
+		Return CType(result.ReturnValue,ISingleResult(Of ShowRequestTransferResult))
 	End Function
 End Class
 
@@ -1986,372 +1986,6 @@ Partial Public Class tblEmployee
 				Me._Company = value
 				Me.SendPropertyChanged("Company")
 				Me.OnCompanyChanged
-			End If
-		End Set
-	End Property
-	
-	Public Event PropertyChanging As PropertyChangingEventHandler Implements System.ComponentModel.INotifyPropertyChanging.PropertyChanging
-	
-	Public Event PropertyChanged As PropertyChangedEventHandler Implements System.ComponentModel.INotifyPropertyChanged.PropertyChanged
-	
-	Protected Overridable Sub SendPropertyChanging()
-		If ((Me.PropertyChangingEvent Is Nothing)  _
-					= false) Then
-			RaiseEvent PropertyChanging(Me, emptyChangingEventArgs)
-		End If
-	End Sub
-	
-	Protected Overridable Sub SendPropertyChanged(ByVal propertyName As [String])
-		If ((Me.PropertyChangedEvent Is Nothing)  _
-					= false) Then
-			RaiseEvent PropertyChanged(Me, New PropertyChangedEventArgs(propertyName))
-		End If
-	End Sub
-End Class
-
-<Global.System.Data.Linq.Mapping.TableAttribute(Name:="dbo.tblTransferDetails")>  _
-Partial Public Class tblTransferDetail
-	Implements System.ComponentModel.INotifyPropertyChanging, System.ComponentModel.INotifyPropertyChanged
-	
-	Private Shared emptyChangingEventArgs As PropertyChangingEventArgs = New PropertyChangingEventArgs(String.Empty)
-	
-	Private _TransferId As Integer
-	
-	Private _AssetCode As String
-	
-	Private _AssetId As System.Nullable(Of Integer)
-	
-	Private _InvId As System.Nullable(Of Integer)
-	
-	Private _TranStatus As String
-	
-	Private _TransferHeaderId As System.Nullable(Of Integer)
-	
-	Private _Owner As String
-	
-    #Region "Extensibility Method Definitions"
-    Partial Private Sub OnLoaded()
-    End Sub
-    Partial Private Sub OnValidate(action As System.Data.Linq.ChangeAction)
-    End Sub
-    Partial Private Sub OnCreated()
-    End Sub
-    Partial Private Sub OnTransferIdChanging(value As Integer)
-    End Sub
-    Partial Private Sub OnTransferIdChanged()
-    End Sub
-    Partial Private Sub OnAssetCodeChanging(value As String)
-    End Sub
-    Partial Private Sub OnAssetCodeChanged()
-    End Sub
-    Partial Private Sub OnAssetIdChanging(value As System.Nullable(Of Integer))
-    End Sub
-    Partial Private Sub OnAssetIdChanged()
-    End Sub
-    Partial Private Sub OnInvIdChanging(value As System.Nullable(Of Integer))
-    End Sub
-    Partial Private Sub OnInvIdChanged()
-    End Sub
-    Partial Private Sub OnTranStatusChanging(value As String)
-    End Sub
-    Partial Private Sub OnTranStatusChanged()
-    End Sub
-    Partial Private Sub OnTransferHeaderIdChanging(value As System.Nullable(Of Integer))
-    End Sub
-    Partial Private Sub OnTransferHeaderIdChanged()
-    End Sub
-    Partial Private Sub OnOwnerChanging(value As String)
-    End Sub
-    Partial Private Sub OnOwnerChanged()
-    End Sub
-    #End Region
-	
-	Public Sub New()
-		MyBase.New
-		OnCreated
-	End Sub
-	
-	<Global.System.Data.Linq.Mapping.ColumnAttribute(Storage:="_TransferId", DbType:="Int NOT NULL", IsPrimaryKey:=true)>  _
-	Public Property TransferId() As Integer
-		Get
-			Return Me._TransferId
-		End Get
-		Set
-			If ((Me._TransferId = value)  _
-						= false) Then
-				Me.OnTransferIdChanging(value)
-				Me.SendPropertyChanging
-				Me._TransferId = value
-				Me.SendPropertyChanged("TransferId")
-				Me.OnTransferIdChanged
-			End If
-		End Set
-	End Property
-	
-	<Global.System.Data.Linq.Mapping.ColumnAttribute(Storage:="_AssetCode", DbType:="VarChar(MAX)")>  _
-	Public Property AssetCode() As String
-		Get
-			Return Me._AssetCode
-		End Get
-		Set
-			If (String.Equals(Me._AssetCode, value) = false) Then
-				Me.OnAssetCodeChanging(value)
-				Me.SendPropertyChanging
-				Me._AssetCode = value
-				Me.SendPropertyChanged("AssetCode")
-				Me.OnAssetCodeChanged
-			End If
-		End Set
-	End Property
-	
-	<Global.System.Data.Linq.Mapping.ColumnAttribute(Storage:="_AssetId", DbType:="Int")>  _
-	Public Property AssetId() As System.Nullable(Of Integer)
-		Get
-			Return Me._AssetId
-		End Get
-		Set
-			If (Me._AssetId.Equals(value) = false) Then
-				Me.OnAssetIdChanging(value)
-				Me.SendPropertyChanging
-				Me._AssetId = value
-				Me.SendPropertyChanged("AssetId")
-				Me.OnAssetIdChanged
-			End If
-		End Set
-	End Property
-	
-	<Global.System.Data.Linq.Mapping.ColumnAttribute(Storage:="_InvId", DbType:="Int")>  _
-	Public Property InvId() As System.Nullable(Of Integer)
-		Get
-			Return Me._InvId
-		End Get
-		Set
-			If (Me._InvId.Equals(value) = false) Then
-				Me.OnInvIdChanging(value)
-				Me.SendPropertyChanging
-				Me._InvId = value
-				Me.SendPropertyChanged("InvId")
-				Me.OnInvIdChanged
-			End If
-		End Set
-	End Property
-	
-	<Global.System.Data.Linq.Mapping.ColumnAttribute(Storage:="_TranStatus", DbType:="VarChar(MAX)")>  _
-	Public Property TranStatus() As String
-		Get
-			Return Me._TranStatus
-		End Get
-		Set
-			If (String.Equals(Me._TranStatus, value) = false) Then
-				Me.OnTranStatusChanging(value)
-				Me.SendPropertyChanging
-				Me._TranStatus = value
-				Me.SendPropertyChanged("TranStatus")
-				Me.OnTranStatusChanged
-			End If
-		End Set
-	End Property
-	
-	<Global.System.Data.Linq.Mapping.ColumnAttribute(Storage:="_TransferHeaderId", DbType:="Int")>  _
-	Public Property TransferHeaderId() As System.Nullable(Of Integer)
-		Get
-			Return Me._TransferHeaderId
-		End Get
-		Set
-			If (Me._TransferHeaderId.Equals(value) = false) Then
-				Me.OnTransferHeaderIdChanging(value)
-				Me.SendPropertyChanging
-				Me._TransferHeaderId = value
-				Me.SendPropertyChanged("TransferHeaderId")
-				Me.OnTransferHeaderIdChanged
-			End If
-		End Set
-	End Property
-	
-	<Global.System.Data.Linq.Mapping.ColumnAttribute(Storage:="_Owner", DbType:="VarChar(MAX)")>  _
-	Public Property Owner() As String
-		Get
-			Return Me._Owner
-		End Get
-		Set
-			If (String.Equals(Me._Owner, value) = false) Then
-				Me.OnOwnerChanging(value)
-				Me.SendPropertyChanging
-				Me._Owner = value
-				Me.SendPropertyChanged("Owner")
-				Me.OnOwnerChanged
-			End If
-		End Set
-	End Property
-	
-	Public Event PropertyChanging As PropertyChangingEventHandler Implements System.ComponentModel.INotifyPropertyChanging.PropertyChanging
-	
-	Public Event PropertyChanged As PropertyChangedEventHandler Implements System.ComponentModel.INotifyPropertyChanged.PropertyChanged
-	
-	Protected Overridable Sub SendPropertyChanging()
-		If ((Me.PropertyChangingEvent Is Nothing)  _
-					= false) Then
-			RaiseEvent PropertyChanging(Me, emptyChangingEventArgs)
-		End If
-	End Sub
-	
-	Protected Overridable Sub SendPropertyChanged(ByVal propertyName As [String])
-		If ((Me.PropertyChangedEvent Is Nothing)  _
-					= false) Then
-			RaiseEvent PropertyChanged(Me, New PropertyChangedEventArgs(propertyName))
-		End If
-	End Sub
-End Class
-
-<Global.System.Data.Linq.Mapping.TableAttribute(Name:="dbo.tblTransferHeader")>  _
-Partial Public Class tblTransferHeader
-	Implements System.ComponentModel.INotifyPropertyChanging, System.ComponentModel.INotifyPropertyChanged
-	
-	Private Shared emptyChangingEventArgs As PropertyChangingEventArgs = New PropertyChangingEventArgs(String.Empty)
-	
-	Private _TransferHeaderId As Integer
-	
-	Private _RequaestType As String
-	
-	Private _RequestBy As System.Nullable(Of Integer)
-	
-	Private _RequestFor As System.Nullable(Of Integer)
-	
-	Private _Date As System.Nullable(Of Date)
-	
-	Private _Status As String
-	
-    #Region "Extensibility Method Definitions"
-    Partial Private Sub OnLoaded()
-    End Sub
-    Partial Private Sub OnValidate(action As System.Data.Linq.ChangeAction)
-    End Sub
-    Partial Private Sub OnCreated()
-    End Sub
-    Partial Private Sub OnTransferHeaderIdChanging(value As Integer)
-    End Sub
-    Partial Private Sub OnTransferHeaderIdChanged()
-    End Sub
-    Partial Private Sub OnRequaestTypeChanging(value As String)
-    End Sub
-    Partial Private Sub OnRequaestTypeChanged()
-    End Sub
-    Partial Private Sub OnRequestByChanging(value As System.Nullable(Of Integer))
-    End Sub
-    Partial Private Sub OnRequestByChanged()
-    End Sub
-    Partial Private Sub OnRequestForChanging(value As System.Nullable(Of Integer))
-    End Sub
-    Partial Private Sub OnRequestForChanged()
-    End Sub
-    Partial Private Sub OnDateChanging(value As System.Nullable(Of Date))
-    End Sub
-    Partial Private Sub OnDateChanged()
-    End Sub
-    Partial Private Sub OnStatusChanging(value As String)
-    End Sub
-    Partial Private Sub OnStatusChanged()
-    End Sub
-    #End Region
-	
-	Public Sub New()
-		MyBase.New
-		OnCreated
-	End Sub
-	
-	<Global.System.Data.Linq.Mapping.ColumnAttribute(Storage:="_TransferHeaderId", AutoSync:=AutoSync.OnInsert, DbType:="Int NOT NULL IDENTITY", IsPrimaryKey:=true, IsDbGenerated:=true)>  _
-	Public Property TransferHeaderId() As Integer
-		Get
-			Return Me._TransferHeaderId
-		End Get
-		Set
-			If ((Me._TransferHeaderId = value)  _
-						= false) Then
-				Me.OnTransferHeaderIdChanging(value)
-				Me.SendPropertyChanging
-				Me._TransferHeaderId = value
-				Me.SendPropertyChanged("TransferHeaderId")
-				Me.OnTransferHeaderIdChanged
-			End If
-		End Set
-	End Property
-	
-	<Global.System.Data.Linq.Mapping.ColumnAttribute(Storage:="_RequaestType", DbType:="VarChar(MAX) NOT NULL", CanBeNull:=false)>  _
-	Public Property RequaestType() As String
-		Get
-			Return Me._RequaestType
-		End Get
-		Set
-			If (String.Equals(Me._RequaestType, value) = false) Then
-				Me.OnRequaestTypeChanging(value)
-				Me.SendPropertyChanging
-				Me._RequaestType = value
-				Me.SendPropertyChanged("RequaestType")
-				Me.OnRequaestTypeChanged
-			End If
-		End Set
-	End Property
-	
-	<Global.System.Data.Linq.Mapping.ColumnAttribute(Storage:="_RequestBy", DbType:="Int")>  _
-	Public Property RequestBy() As System.Nullable(Of Integer)
-		Get
-			Return Me._RequestBy
-		End Get
-		Set
-			If (Me._RequestBy.Equals(value) = false) Then
-				Me.OnRequestByChanging(value)
-				Me.SendPropertyChanging
-				Me._RequestBy = value
-				Me.SendPropertyChanged("RequestBy")
-				Me.OnRequestByChanged
-			End If
-		End Set
-	End Property
-	
-	<Global.System.Data.Linq.Mapping.ColumnAttribute(Storage:="_RequestFor", DbType:="Int")>  _
-	Public Property RequestFor() As System.Nullable(Of Integer)
-		Get
-			Return Me._RequestFor
-		End Get
-		Set
-			If (Me._RequestFor.Equals(value) = false) Then
-				Me.OnRequestForChanging(value)
-				Me.SendPropertyChanging
-				Me._RequestFor = value
-				Me.SendPropertyChanged("RequestFor")
-				Me.OnRequestForChanged
-			End If
-		End Set
-	End Property
-	
-	<Global.System.Data.Linq.Mapping.ColumnAttribute(Name:="Date", Storage:="_Date", DbType:="Date")>  _
-	Public Property [Date]() As System.Nullable(Of Date)
-		Get
-			Return Me._Date
-		End Get
-		Set
-			If (Me._Date.Equals(value) = false) Then
-				Me.OnDateChanging(value)
-				Me.SendPropertyChanging
-				Me._Date = value
-				Me.SendPropertyChanged("[Date]")
-				Me.OnDateChanged
-			End If
-		End Set
-	End Property
-	
-	<Global.System.Data.Linq.Mapping.ColumnAttribute(Storage:="_Status", DbType:="VarChar(MAX)")>  _
-	Public Property Status() As String
-		Get
-			Return Me._Status
-		End Get
-		Set
-			If (String.Equals(Me._Status, value) = false) Then
-				Me.OnStatusChanging(value)
-				Me.SendPropertyChanging
-				Me._Status = value
-				Me.SendPropertyChanged("Status")
-				Me.OnStatusChanged
 			End If
 		End Set
 	End Property
@@ -7113,6 +6747,284 @@ Partial Public Class tblBorrowDetail
 	End Sub
 End Class
 
+<Global.System.Data.Linq.Mapping.TableAttribute(Name:="dbo.tblDeploymentDetail")>  _
+Partial Public Class tblDeploymentDetail
+	Implements System.ComponentModel.INotifyPropertyChanging, System.ComponentModel.INotifyPropertyChanged
+	
+	Private Shared emptyChangingEventArgs As PropertyChangingEventArgs = New PropertyChangingEventArgs(String.Empty)
+	
+	Private _id As Integer
+	
+	Private _PropertyCode As String
+	
+	Private _Transid As System.Nullable(Of Integer)
+	
+	Private _DateDeployed As System.Nullable(Of Date)
+	
+    #Region "Extensibility Method Definitions"
+    Partial Private Sub OnLoaded()
+    End Sub
+    Partial Private Sub OnValidate(action As System.Data.Linq.ChangeAction)
+    End Sub
+    Partial Private Sub OnCreated()
+    End Sub
+    Partial Private Sub OnidChanging(value As Integer)
+    End Sub
+    Partial Private Sub OnidChanged()
+    End Sub
+    Partial Private Sub OnPropertyCodeChanging(value As String)
+    End Sub
+    Partial Private Sub OnPropertyCodeChanged()
+    End Sub
+    Partial Private Sub OnTransidChanging(value As System.Nullable(Of Integer))
+    End Sub
+    Partial Private Sub OnTransidChanged()
+    End Sub
+    Partial Private Sub OnDateDeployedChanging(value As System.Nullable(Of Date))
+    End Sub
+    Partial Private Sub OnDateDeployedChanged()
+    End Sub
+    #End Region
+	
+	Public Sub New()
+		MyBase.New
+		OnCreated
+	End Sub
+	
+	<Global.System.Data.Linq.Mapping.ColumnAttribute(Storage:="_id", AutoSync:=AutoSync.OnInsert, DbType:="Int NOT NULL IDENTITY", IsPrimaryKey:=true, IsDbGenerated:=true)>  _
+	Public Property id() As Integer
+		Get
+			Return Me._id
+		End Get
+		Set
+			If ((Me._id = value)  _
+						= false) Then
+				Me.OnidChanging(value)
+				Me.SendPropertyChanging
+				Me._id = value
+				Me.SendPropertyChanged("id")
+				Me.OnidChanged
+			End If
+		End Set
+	End Property
+	
+	<Global.System.Data.Linq.Mapping.ColumnAttribute(Storage:="_PropertyCode", DbType:="VarChar(100)")>  _
+	Public Property PropertyCode() As String
+		Get
+			Return Me._PropertyCode
+		End Get
+		Set
+			If (String.Equals(Me._PropertyCode, value) = false) Then
+				Me.OnPropertyCodeChanging(value)
+				Me.SendPropertyChanging
+				Me._PropertyCode = value
+				Me.SendPropertyChanged("PropertyCode")
+				Me.OnPropertyCodeChanged
+			End If
+		End Set
+	End Property
+	
+	<Global.System.Data.Linq.Mapping.ColumnAttribute(Storage:="_Transid", DbType:="Int")>  _
+	Public Property Transid() As System.Nullable(Of Integer)
+		Get
+			Return Me._Transid
+		End Get
+		Set
+			If (Me._Transid.Equals(value) = false) Then
+				Me.OnTransidChanging(value)
+				Me.SendPropertyChanging
+				Me._Transid = value
+				Me.SendPropertyChanged("Transid")
+				Me.OnTransidChanged
+			End If
+		End Set
+	End Property
+	
+	<Global.System.Data.Linq.Mapping.ColumnAttribute(Storage:="_DateDeployed", DbType:="DateTime")>  _
+	Public Property DateDeployed() As System.Nullable(Of Date)
+		Get
+			Return Me._DateDeployed
+		End Get
+		Set
+			If (Me._DateDeployed.Equals(value) = false) Then
+				Me.OnDateDeployedChanging(value)
+				Me.SendPropertyChanging
+				Me._DateDeployed = value
+				Me.SendPropertyChanged("DateDeployed")
+				Me.OnDateDeployedChanged
+			End If
+		End Set
+	End Property
+	
+	Public Event PropertyChanging As PropertyChangingEventHandler Implements System.ComponentModel.INotifyPropertyChanging.PropertyChanging
+	
+	Public Event PropertyChanged As PropertyChangedEventHandler Implements System.ComponentModel.INotifyPropertyChanged.PropertyChanged
+	
+	Protected Overridable Sub SendPropertyChanging()
+		If ((Me.PropertyChangingEvent Is Nothing)  _
+					= false) Then
+			RaiseEvent PropertyChanging(Me, emptyChangingEventArgs)
+		End If
+	End Sub
+	
+	Protected Overridable Sub SendPropertyChanged(ByVal propertyName As [String])
+		If ((Me.PropertyChangedEvent Is Nothing)  _
+					= false) Then
+			RaiseEvent PropertyChanged(Me, New PropertyChangedEventArgs(propertyName))
+		End If
+	End Sub
+End Class
+
+<Global.System.Data.Linq.Mapping.TableAttribute(Name:="dbo.tblDeploymentHeader")>  _
+Partial Public Class tblDeploymentHeader
+	Implements System.ComponentModel.INotifyPropertyChanging, System.ComponentModel.INotifyPropertyChanged
+	
+	Private Shared emptyChangingEventArgs As PropertyChangingEventArgs = New PropertyChangingEventArgs(String.Empty)
+	
+	Private _id As Integer
+	
+	Private _DeploymentID As String
+	
+	Private _Date As System.Nullable(Of Date)
+	
+	Private _DeyployedBy As System.Nullable(Of Integer)
+	
+	Private _Runner As System.Nullable(Of Integer)
+	
+    #Region "Extensibility Method Definitions"
+    Partial Private Sub OnLoaded()
+    End Sub
+    Partial Private Sub OnValidate(action As System.Data.Linq.ChangeAction)
+    End Sub
+    Partial Private Sub OnCreated()
+    End Sub
+    Partial Private Sub OnidChanging(value As Integer)
+    End Sub
+    Partial Private Sub OnidChanged()
+    End Sub
+    Partial Private Sub OnDeploymentIDChanging(value As String)
+    End Sub
+    Partial Private Sub OnDeploymentIDChanged()
+    End Sub
+    Partial Private Sub OnDateChanging(value As System.Nullable(Of Date))
+    End Sub
+    Partial Private Sub OnDateChanged()
+    End Sub
+    Partial Private Sub OnDeyployedByChanging(value As System.Nullable(Of Integer))
+    End Sub
+    Partial Private Sub OnDeyployedByChanged()
+    End Sub
+    Partial Private Sub OnRunnerChanging(value As System.Nullable(Of Integer))
+    End Sub
+    Partial Private Sub OnRunnerChanged()
+    End Sub
+    #End Region
+	
+	Public Sub New()
+		MyBase.New
+		OnCreated
+	End Sub
+	
+	<Global.System.Data.Linq.Mapping.ColumnAttribute(Storage:="_id", AutoSync:=AutoSync.OnInsert, DbType:="Int NOT NULL IDENTITY", IsPrimaryKey:=true, IsDbGenerated:=true)>  _
+	Public Property id() As Integer
+		Get
+			Return Me._id
+		End Get
+		Set
+			If ((Me._id = value)  _
+						= false) Then
+				Me.OnidChanging(value)
+				Me.SendPropertyChanging
+				Me._id = value
+				Me.SendPropertyChanged("id")
+				Me.OnidChanged
+			End If
+		End Set
+	End Property
+	
+	<Global.System.Data.Linq.Mapping.ColumnAttribute(Storage:="_DeploymentID", DbType:="VarChar(100)")>  _
+	Public Property DeploymentID() As String
+		Get
+			Return Me._DeploymentID
+		End Get
+		Set
+			If (String.Equals(Me._DeploymentID, value) = false) Then
+				Me.OnDeploymentIDChanging(value)
+				Me.SendPropertyChanging
+				Me._DeploymentID = value
+				Me.SendPropertyChanged("DeploymentID")
+				Me.OnDeploymentIDChanged
+			End If
+		End Set
+	End Property
+	
+	<Global.System.Data.Linq.Mapping.ColumnAttribute(Name:="Date", Storage:="_Date", DbType:="DateTime")>  _
+	Public Property [Date]() As System.Nullable(Of Date)
+		Get
+			Return Me._Date
+		End Get
+		Set
+			If (Me._Date.Equals(value) = false) Then
+				Me.OnDateChanging(value)
+				Me.SendPropertyChanging
+				Me._Date = value
+				Me.SendPropertyChanged("[Date]")
+				Me.OnDateChanged
+			End If
+		End Set
+	End Property
+	
+	<Global.System.Data.Linq.Mapping.ColumnAttribute(Storage:="_DeyployedBy", DbType:="Int")>  _
+	Public Property DeyployedBy() As System.Nullable(Of Integer)
+		Get
+			Return Me._DeyployedBy
+		End Get
+		Set
+			If (Me._DeyployedBy.Equals(value) = false) Then
+				Me.OnDeyployedByChanging(value)
+				Me.SendPropertyChanging
+				Me._DeyployedBy = value
+				Me.SendPropertyChanged("DeyployedBy")
+				Me.OnDeyployedByChanged
+			End If
+		End Set
+	End Property
+	
+	<Global.System.Data.Linq.Mapping.ColumnAttribute(Storage:="_Runner", DbType:="Int")>  _
+	Public Property Runner() As System.Nullable(Of Integer)
+		Get
+			Return Me._Runner
+		End Get
+		Set
+			If (Me._Runner.Equals(value) = false) Then
+				Me.OnRunnerChanging(value)
+				Me.SendPropertyChanging
+				Me._Runner = value
+				Me.SendPropertyChanged("Runner")
+				Me.OnRunnerChanged
+			End If
+		End Set
+	End Property
+	
+	Public Event PropertyChanging As PropertyChangingEventHandler Implements System.ComponentModel.INotifyPropertyChanging.PropertyChanging
+	
+	Public Event PropertyChanged As PropertyChangedEventHandler Implements System.ComponentModel.INotifyPropertyChanged.PropertyChanged
+	
+	Protected Overridable Sub SendPropertyChanging()
+		If ((Me.PropertyChangingEvent Is Nothing)  _
+					= false) Then
+			RaiseEvent PropertyChanging(Me, emptyChangingEventArgs)
+		End If
+	End Sub
+	
+	Protected Overridable Sub SendPropertyChanged(ByVal propertyName As [String])
+		If ((Me.PropertyChangedEvent Is Nothing)  _
+					= false) Then
+			RaiseEvent PropertyChanged(Me, New PropertyChangedEventArgs(propertyName))
+		End If
+	End Sub
+End Class
+
 <Global.System.Data.Linq.Mapping.TableAttribute(Name:="dbo.tblAssetInventory")>  _
 Partial Public Class tblAssetInventory
 	Implements System.ComponentModel.INotifyPropertyChanging, System.ComponentModel.INotifyPropertyChanged
@@ -7703,19 +7615,25 @@ Partial Public Class tblAssetInventory
 	End Sub
 End Class
 
-<Global.System.Data.Linq.Mapping.TableAttribute(Name:="dbo.tblDeploymentDetail")>  _
-Partial Public Class tblDeploymentDetail
+<Global.System.Data.Linq.Mapping.TableAttribute(Name:="dbo.tblTransferDetails")>  _
+Partial Public Class tblTransferDetail
 	Implements System.ComponentModel.INotifyPropertyChanging, System.ComponentModel.INotifyPropertyChanged
 	
 	Private Shared emptyChangingEventArgs As PropertyChangingEventArgs = New PropertyChangingEventArgs(String.Empty)
 	
-	Private _id As Integer
+	Private _TransferId As Integer
 	
-	Private _PropertyCode As String
+	Private _AssetCode As String
 	
-	Private _Transid As System.Nullable(Of Integer)
+	Private _InvId As System.Nullable(Of Integer)
 	
-	Private _DateDeployed As System.Nullable(Of Date)
+	Private _Status As String
+	
+	Private _TransferHeaderId As System.Nullable(Of Integer)
+	
+	Private _OldOwner As System.Nullable(Of Integer)
+	
+	Private _NewOwner As System.Nullable(Of Integer)
 	
     #Region "Extensibility Method Definitions"
     Partial Private Sub OnLoaded()
@@ -7724,21 +7642,33 @@ Partial Public Class tblDeploymentDetail
     End Sub
     Partial Private Sub OnCreated()
     End Sub
-    Partial Private Sub OnidChanging(value As Integer)
+    Partial Private Sub OnTransferIdChanging(value As Integer)
     End Sub
-    Partial Private Sub OnidChanged()
+    Partial Private Sub OnTransferIdChanged()
     End Sub
-    Partial Private Sub OnPropertyCodeChanging(value As String)
+    Partial Private Sub OnAssetCodeChanging(value As String)
     End Sub
-    Partial Private Sub OnPropertyCodeChanged()
+    Partial Private Sub OnAssetCodeChanged()
     End Sub
-    Partial Private Sub OnTransidChanging(value As System.Nullable(Of Integer))
+    Partial Private Sub OnInvIdChanging(value As System.Nullable(Of Integer))
     End Sub
-    Partial Private Sub OnTransidChanged()
+    Partial Private Sub OnInvIdChanged()
     End Sub
-    Partial Private Sub OnDateDeployedChanging(value As System.Nullable(Of Date))
+    Partial Private Sub OnStatusChanging(value As String)
     End Sub
-    Partial Private Sub OnDateDeployedChanged()
+    Partial Private Sub OnStatusChanged()
+    End Sub
+    Partial Private Sub OnTransferHeaderIdChanging(value As System.Nullable(Of Integer))
+    End Sub
+    Partial Private Sub OnTransferHeaderIdChanged()
+    End Sub
+    Partial Private Sub OnOldOwnerChanging(value As System.Nullable(Of Integer))
+    End Sub
+    Partial Private Sub OnOldOwnerChanged()
+    End Sub
+    Partial Private Sub OnNewOwnerChanging(value As System.Nullable(Of Integer))
+    End Sub
+    Partial Private Sub OnNewOwnerChanged()
     End Sub
     #End Region
 	
@@ -7747,67 +7677,115 @@ Partial Public Class tblDeploymentDetail
 		OnCreated
 	End Sub
 	
-	<Global.System.Data.Linq.Mapping.ColumnAttribute(Storage:="_id", AutoSync:=AutoSync.OnInsert, DbType:="Int NOT NULL IDENTITY", IsPrimaryKey:=true, IsDbGenerated:=true)>  _
-	Public Property id() As Integer
+	<Global.System.Data.Linq.Mapping.ColumnAttribute(Storage:="_TransferId", AutoSync:=AutoSync.OnInsert, DbType:="Int NOT NULL IDENTITY", IsPrimaryKey:=true, IsDbGenerated:=true)>  _
+	Public Property TransferId() As Integer
 		Get
-			Return Me._id
+			Return Me._TransferId
 		End Get
 		Set
-			If ((Me._id = value)  _
+			If ((Me._TransferId = value)  _
 						= false) Then
-				Me.OnidChanging(value)
+				Me.OnTransferIdChanging(value)
 				Me.SendPropertyChanging
-				Me._id = value
-				Me.SendPropertyChanged("id")
-				Me.OnidChanged
+				Me._TransferId = value
+				Me.SendPropertyChanged("TransferId")
+				Me.OnTransferIdChanged
 			End If
 		End Set
 	End Property
 	
-	<Global.System.Data.Linq.Mapping.ColumnAttribute(Storage:="_PropertyCode", DbType:="VarChar(100)")>  _
-	Public Property PropertyCode() As String
+	<Global.System.Data.Linq.Mapping.ColumnAttribute(Storage:="_AssetCode", DbType:="VarChar(50)")>  _
+	Public Property AssetCode() As String
 		Get
-			Return Me._PropertyCode
+			Return Me._AssetCode
 		End Get
 		Set
-			If (String.Equals(Me._PropertyCode, value) = false) Then
-				Me.OnPropertyCodeChanging(value)
+			If (String.Equals(Me._AssetCode, value) = false) Then
+				Me.OnAssetCodeChanging(value)
 				Me.SendPropertyChanging
-				Me._PropertyCode = value
-				Me.SendPropertyChanged("PropertyCode")
-				Me.OnPropertyCodeChanged
+				Me._AssetCode = value
+				Me.SendPropertyChanged("AssetCode")
+				Me.OnAssetCodeChanged
 			End If
 		End Set
 	End Property
 	
-	<Global.System.Data.Linq.Mapping.ColumnAttribute(Storage:="_Transid", DbType:="Int")>  _
-	Public Property Transid() As System.Nullable(Of Integer)
+	<Global.System.Data.Linq.Mapping.ColumnAttribute(Storage:="_InvId", DbType:="Int")>  _
+	Public Property InvId() As System.Nullable(Of Integer)
 		Get
-			Return Me._Transid
+			Return Me._InvId
 		End Get
 		Set
-			If (Me._Transid.Equals(value) = false) Then
-				Me.OnTransidChanging(value)
+			If (Me._InvId.Equals(value) = false) Then
+				Me.OnInvIdChanging(value)
 				Me.SendPropertyChanging
-				Me._Transid = value
-				Me.SendPropertyChanged("Transid")
-				Me.OnTransidChanged
+				Me._InvId = value
+				Me.SendPropertyChanged("InvId")
+				Me.OnInvIdChanged
 			End If
 		End Set
 	End Property
 	
-	<Global.System.Data.Linq.Mapping.ColumnAttribute(Storage:="_DateDeployed", DbType:="DateTime")>  _
-	Public Property DateDeployed() As System.Nullable(Of Date)
+	<Global.System.Data.Linq.Mapping.ColumnAttribute(Storage:="_Status", DbType:="VarChar(20)")>  _
+	Public Property Status() As String
 		Get
-			Return Me._DateDeployed
+			Return Me._Status
 		End Get
 		Set
-			If (Me._DateDeployed.Equals(value) = false) Then
-				Me.OnDateDeployedChanging(value)
+			If (String.Equals(Me._Status, value) = false) Then
+				Me.OnStatusChanging(value)
 				Me.SendPropertyChanging
-				Me._DateDeployed = value
-				Me.SendPropertyChanged("DateDeployed")
-				Me.OnDateDeployedChanged
+				Me._Status = value
+				Me.SendPropertyChanged("Status")
+				Me.OnStatusChanged
+			End If
+		End Set
+	End Property
+	
+	<Global.System.Data.Linq.Mapping.ColumnAttribute(Storage:="_TransferHeaderId", DbType:="Int")>  _
+	Public Property TransferHeaderId() As System.Nullable(Of Integer)
+		Get
+			Return Me._TransferHeaderId
+		End Get
+		Set
+			If (Me._TransferHeaderId.Equals(value) = false) Then
+				Me.OnTransferHeaderIdChanging(value)
+				Me.SendPropertyChanging
+				Me._TransferHeaderId = value
+				Me.SendPropertyChanged("TransferHeaderId")
+				Me.OnTransferHeaderIdChanged
+			End If
+		End Set
+	End Property
+	
+	<Global.System.Data.Linq.Mapping.ColumnAttribute(Storage:="_OldOwner", DbType:="Int")>  _
+	Public Property OldOwner() As System.Nullable(Of Integer)
+		Get
+			Return Me._OldOwner
+		End Get
+		Set
+			If (Me._OldOwner.Equals(value) = false) Then
+				Me.OnOldOwnerChanging(value)
+				Me.SendPropertyChanging
+				Me._OldOwner = value
+				Me.SendPropertyChanged("OldOwner")
+				Me.OnOldOwnerChanged
+			End If
+		End Set
+	End Property
+	
+	<Global.System.Data.Linq.Mapping.ColumnAttribute(Storage:="_NewOwner", DbType:="Int")>  _
+	Public Property NewOwner() As System.Nullable(Of Integer)
+		Get
+			Return Me._NewOwner
+		End Get
+		Set
+			If (Me._NewOwner.Equals(value) = false) Then
+				Me.OnNewOwnerChanging(value)
+				Me.SendPropertyChanging
+				Me._NewOwner = value
+				Me.SendPropertyChanged("NewOwner")
+				Me.OnNewOwnerChanged
 			End If
 		End Set
 	End Property
@@ -7831,21 +7809,19 @@ Partial Public Class tblDeploymentDetail
 	End Sub
 End Class
 
-<Global.System.Data.Linq.Mapping.TableAttribute(Name:="dbo.tblDeploymentHeader")>  _
-Partial Public Class tblDeploymentHeader
+<Global.System.Data.Linq.Mapping.TableAttribute(Name:="dbo.tblTransferHeader")>  _
+Partial Public Class tblTransferHeader
 	Implements System.ComponentModel.INotifyPropertyChanging, System.ComponentModel.INotifyPropertyChanged
 	
 	Private Shared emptyChangingEventArgs As PropertyChangingEventArgs = New PropertyChangingEventArgs(String.Empty)
 	
-	Private _id As Integer
-	
-	Private _DeploymentID As String
+	Private _TransferHeaderId As Integer
 	
 	Private _Date As System.Nullable(Of Date)
 	
-	Private _DeyployedBy As System.Nullable(Of Integer)
+	Private _Status As String
 	
-	Private _Runner As System.Nullable(Of Integer)
+	Private _ReqID As String
 	
     #Region "Extensibility Method Definitions"
     Partial Private Sub OnLoaded()
@@ -7854,25 +7830,21 @@ Partial Public Class tblDeploymentHeader
     End Sub
     Partial Private Sub OnCreated()
     End Sub
-    Partial Private Sub OnidChanging(value As Integer)
+    Partial Private Sub OnTransferHeaderIdChanging(value As Integer)
     End Sub
-    Partial Private Sub OnidChanged()
-    End Sub
-    Partial Private Sub OnDeploymentIDChanging(value As String)
-    End Sub
-    Partial Private Sub OnDeploymentIDChanged()
+    Partial Private Sub OnTransferHeaderIdChanged()
     End Sub
     Partial Private Sub OnDateChanging(value As System.Nullable(Of Date))
     End Sub
     Partial Private Sub OnDateChanged()
     End Sub
-    Partial Private Sub OnDeyployedByChanging(value As System.Nullable(Of Integer))
+    Partial Private Sub OnStatusChanging(value As String)
     End Sub
-    Partial Private Sub OnDeyployedByChanged()
+    Partial Private Sub OnStatusChanged()
     End Sub
-    Partial Private Sub OnRunnerChanging(value As System.Nullable(Of Integer))
+    Partial Private Sub OnReqIDChanging(value As String)
     End Sub
-    Partial Private Sub OnRunnerChanged()
+    Partial Private Sub OnReqIDChanged()
     End Sub
     #End Region
 	
@@ -7881,40 +7853,24 @@ Partial Public Class tblDeploymentHeader
 		OnCreated
 	End Sub
 	
-	<Global.System.Data.Linq.Mapping.ColumnAttribute(Storage:="_id", AutoSync:=AutoSync.OnInsert, DbType:="Int NOT NULL IDENTITY", IsPrimaryKey:=true, IsDbGenerated:=true)>  _
-	Public Property id() As Integer
+	<Global.System.Data.Linq.Mapping.ColumnAttribute(Storage:="_TransferHeaderId", AutoSync:=AutoSync.OnInsert, DbType:="Int NOT NULL IDENTITY", IsPrimaryKey:=true, IsDbGenerated:=true)>  _
+	Public Property TransferHeaderId() As Integer
 		Get
-			Return Me._id
+			Return Me._TransferHeaderId
 		End Get
 		Set
-			If ((Me._id = value)  _
+			If ((Me._TransferHeaderId = value)  _
 						= false) Then
-				Me.OnidChanging(value)
+				Me.OnTransferHeaderIdChanging(value)
 				Me.SendPropertyChanging
-				Me._id = value
-				Me.SendPropertyChanged("id")
-				Me.OnidChanged
+				Me._TransferHeaderId = value
+				Me.SendPropertyChanged("TransferHeaderId")
+				Me.OnTransferHeaderIdChanged
 			End If
 		End Set
 	End Property
 	
-	<Global.System.Data.Linq.Mapping.ColumnAttribute(Storage:="_DeploymentID", DbType:="VarChar(100)")>  _
-	Public Property DeploymentID() As String
-		Get
-			Return Me._DeploymentID
-		End Get
-		Set
-			If (String.Equals(Me._DeploymentID, value) = false) Then
-				Me.OnDeploymentIDChanging(value)
-				Me.SendPropertyChanging
-				Me._DeploymentID = value
-				Me.SendPropertyChanged("DeploymentID")
-				Me.OnDeploymentIDChanged
-			End If
-		End Set
-	End Property
-	
-	<Global.System.Data.Linq.Mapping.ColumnAttribute(Name:="Date", Storage:="_Date", DbType:="DateTime")>  _
+	<Global.System.Data.Linq.Mapping.ColumnAttribute(Name:="Date", Storage:="_Date", DbType:="Date")>  _
 	Public Property [Date]() As System.Nullable(Of Date)
 		Get
 			Return Me._Date
@@ -7930,34 +7886,34 @@ Partial Public Class tblDeploymentHeader
 		End Set
 	End Property
 	
-	<Global.System.Data.Linq.Mapping.ColumnAttribute(Storage:="_DeyployedBy", DbType:="Int")>  _
-	Public Property DeyployedBy() As System.Nullable(Of Integer)
+	<Global.System.Data.Linq.Mapping.ColumnAttribute(Storage:="_Status", DbType:="VarChar(10)")>  _
+	Public Property Status() As String
 		Get
-			Return Me._DeyployedBy
+			Return Me._Status
 		End Get
 		Set
-			If (Me._DeyployedBy.Equals(value) = false) Then
-				Me.OnDeyployedByChanging(value)
+			If (String.Equals(Me._Status, value) = false) Then
+				Me.OnStatusChanging(value)
 				Me.SendPropertyChanging
-				Me._DeyployedBy = value
-				Me.SendPropertyChanged("DeyployedBy")
-				Me.OnDeyployedByChanged
+				Me._Status = value
+				Me.SendPropertyChanged("Status")
+				Me.OnStatusChanged
 			End If
 		End Set
 	End Property
 	
-	<Global.System.Data.Linq.Mapping.ColumnAttribute(Storage:="_Runner", DbType:="Int")>  _
-	Public Property Runner() As System.Nullable(Of Integer)
+	<Global.System.Data.Linq.Mapping.ColumnAttribute(Storage:="_ReqID", DbType:="VarChar(50)")>  _
+	Public Property ReqID() As String
 		Get
-			Return Me._Runner
+			Return Me._ReqID
 		End Get
 		Set
-			If (Me._Runner.Equals(value) = false) Then
-				Me.OnRunnerChanging(value)
+			If (String.Equals(Me._ReqID, value) = false) Then
+				Me.OnReqIDChanging(value)
 				Me.SendPropertyChanging
-				Me._Runner = value
-				Me.SendPropertyChanged("Runner")
-				Me.OnRunnerChanged
+				Me._ReqID = value
+				Me.SendPropertyChanged("ReqID")
+				Me.OnReqIDChanged
 			End If
 		End Set
 	End Property
@@ -9982,6 +9938,55 @@ Partial Public Class ShowAssetAvailability2Result
 	End Property
 End Class
 
+Partial Public Class spViewInventoryResult
+	
+	Private _AssetCode As System.Nullable(Of Integer)
+	
+	Private _Class As String
+	
+	Private _qty As System.Nullable(Of Double)
+	
+	Public Sub New()
+		MyBase.New
+	End Sub
+	
+	<Global.System.Data.Linq.Mapping.ColumnAttribute(Storage:="_AssetCode", DbType:="Int")>  _
+	Public Property AssetCode() As System.Nullable(Of Integer)
+		Get
+			Return Me._AssetCode
+		End Get
+		Set
+			If (Me._AssetCode.Equals(value) = false) Then
+				Me._AssetCode = value
+			End If
+		End Set
+	End Property
+	
+	<Global.System.Data.Linq.Mapping.ColumnAttribute(Name:="Class", Storage:="_Class", DbType:="VarChar(MAX)")>  _
+	Public Property [Class]() As String
+		Get
+			Return Me._Class
+		End Get
+		Set
+			If (String.Equals(Me._Class, value) = false) Then
+				Me._Class = value
+			End If
+		End Set
+	End Property
+	
+	<Global.System.Data.Linq.Mapping.ColumnAttribute(Storage:="_qty", DbType:="Float")>  _
+	Public Property qty() As System.Nullable(Of Double)
+		Get
+			Return Me._qty
+		End Get
+		Set
+			If (Me._qty.Equals(value) = false) Then
+				Me._qty = value
+			End If
+		End Set
+	End Property
+End Class
+
 Partial Public Class ShowRequestTransferResult
 	
 	Private _PropertyCode As String
@@ -9995,6 +10000,10 @@ Partial Public Class ShowRequestTransferResult
 	Private _Trasfer_To As String
 	
 	Private _Remarks As String
+	
+	Private _NewOwner As Integer
+	
+	Private _oldOwner As Integer
 	
 	Public Sub New()
 		MyBase.New
@@ -10071,52 +10080,29 @@ Partial Public Class ShowRequestTransferResult
 			End If
 		End Set
 	End Property
-End Class
-
-Partial Public Class spViewInventoryResult
 	
-	Private _AssetCode As System.Nullable(Of Integer)
-	
-	Private _Class As String
-	
-	Private _qty As System.Nullable(Of Double)
-	
-	Public Sub New()
-		MyBase.New
-	End Sub
-	
-	<Global.System.Data.Linq.Mapping.ColumnAttribute(Storage:="_AssetCode", DbType:="Int")>  _
-	Public Property AssetCode() As System.Nullable(Of Integer)
+	<Global.System.Data.Linq.Mapping.ColumnAttribute(Storage:="_NewOwner", DbType:="Int NOT NULL")>  _
+	Public Property NewOwner() As Integer
 		Get
-			Return Me._AssetCode
+			Return Me._NewOwner
 		End Get
 		Set
-			If (Me._AssetCode.Equals(value) = false) Then
-				Me._AssetCode = value
+			If ((Me._NewOwner = value)  _
+						= false) Then
+				Me._NewOwner = value
 			End If
 		End Set
 	End Property
 	
-	<Global.System.Data.Linq.Mapping.ColumnAttribute(Name:="Class", Storage:="_Class", DbType:="VarChar(MAX)")>  _
-	Public Property [Class]() As String
+	<Global.System.Data.Linq.Mapping.ColumnAttribute(Storage:="_oldOwner", DbType:="Int NOT NULL")>  _
+	Public Property oldOwner() As Integer
 		Get
-			Return Me._Class
+			Return Me._oldOwner
 		End Get
 		Set
-			If (String.Equals(Me._Class, value) = false) Then
-				Me._Class = value
-			End If
-		End Set
-	End Property
-	
-	<Global.System.Data.Linq.Mapping.ColumnAttribute(Storage:="_qty", DbType:="Float")>  _
-	Public Property qty() As System.Nullable(Of Double)
-		Get
-			Return Me._qty
-		End Get
-		Set
-			If (Me._qty.Equals(value) = false) Then
-				Me._qty = value
+			If ((Me._oldOwner = value)  _
+						= false) Then
+				Me._oldOwner = value
 			End If
 		End Set
 	End Property

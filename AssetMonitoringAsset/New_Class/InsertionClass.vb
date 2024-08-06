@@ -4,6 +4,15 @@ Imports System.Linq
 Imports System.Data.Linq
 
 Public Class InsertionClass
+    'Save in Transfer Detail
+    Public Shared Function GetTransferDetail() As System.Data.Linq.Table(Of tblTransferDetail)
+        Return db.GetTable(Of tblTransferDetail)()
+    End Function
+
+    'Save in Borrow Header
+    Public Shared Function GetTransferHeader() As System.Data.Linq.Table(Of tblTransferHeader)
+        Return db.GetTable(Of tblTransferHeader)()
+    End Function
 
     'Save in Borrow Detail
     Public Shared Function GetBorrowDetail() As System.Data.Linq.Table(Of tblBorrowDetail)
@@ -176,7 +185,7 @@ Public Class InsertionClass
                 .Returned = True
                 }
         post.InsertOnSubmit(p)
-            post.Context.SubmitChanges()
+        post.Context.SubmitChanges()
 
         'Catch ex As Exception
         '    MsgBox("Error.I-17")
@@ -731,6 +740,65 @@ Public Class InsertionClass
             MsgBox("Error.I-20")
         End Try
     End Sub
+
+    'Save in TRansferItem Header
+    Public Shared Sub SaveTransferHeader(ByVal RequestNUmber As String, TDate As Date)
+        Try
+            Dim post As Table(Of tblTransferHeader) = InsertionClass.GetTransferHeader
+
+            Dim p As New tblTransferHeader With
+                {
+               .ReqID = RequestNUmber,
+               .[Date] = TDate,
+               .Status = "Closed"
+                }
+            post.InsertOnSubmit(p)
+            post.Context.SubmitChanges()
+
+        Catch ex As Exception
+            MsgBox("Error.I-191")
+        End Try
+    End Sub
+
+    Public Shared Sub SaveTransferDetail(ByVal PropertyCode As String, TrasheaderID As Integer, OldOnwer As Integer, NewOwner As Integer)
+        Try
+            Dim Trastype As String = "PROCURE"
+            Dim post As Table(Of tblTransferDetail) = InsertionClass.GetTransferDetail
+
+            Dim p As New tblTransferDetail With
+                {
+           .PropertyCode = PropertyCode,
+           .Quantity = Quantity,
+           .Borrowee = Borrowee,
+           .DateFrom = DateFrom,
+           .DateTo = DateTo,
+           .Remarks = Remarks,
+           .HeaderID = HeaderID,
+           .IsReturn = False
+                        }
+            post.InsertOnSubmit(p)
+            post.Context.SubmitChanges()
+
+        Catch ex As Exception
+            MsgBox("Error.I-201")
+        End Try
+    End Sub
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
 
     'Import Data in tblassetInventory
     Public Shared Sub ImportExistingAssets(ByVal AssetCode As Integer,

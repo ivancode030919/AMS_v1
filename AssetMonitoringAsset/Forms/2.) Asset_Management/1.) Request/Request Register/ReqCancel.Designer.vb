@@ -20,7 +20,6 @@ Partial Class ReqCancel
     <System.Diagnostics.DebuggerStepThrough()> _
     Private Sub InitializeComponent()
         Me.PanelControl1 = New DevExpress.XtraEditors.PanelControl()
-        Me.SimpleButton1 = New DevExpress.XtraEditors.SimpleButton()
         Me.SimpleButton2 = New DevExpress.XtraEditors.SimpleButton()
         Me.Label2 = New System.Windows.Forms.Label()
         Me.TextBox1 = New System.Windows.Forms.TextBox()
@@ -30,7 +29,6 @@ Partial Class ReqCancel
         '
         'PanelControl1
         '
-        Me.PanelControl1.Controls.Add(Me.SimpleButton1)
         Me.PanelControl1.Controls.Add(Me.SimpleButton2)
         Me.PanelControl1.Controls.Add(Me.Label2)
         Me.PanelControl1.Controls.Add(Me.TextBox1)
@@ -40,16 +38,6 @@ Partial Class ReqCancel
         Me.PanelControl1.Size = New System.Drawing.Size(376, 221)
         Me.PanelControl1.TabIndex = 0
         '
-        'SimpleButton1
-        '
-        Me.SimpleButton1.Appearance.Font = New System.Drawing.Font("Arial Rounded MT Bold", 11.25!)
-        Me.SimpleButton1.Appearance.Options.UseFont = True
-        Me.SimpleButton1.Location = New System.Drawing.Point(88, 179)
-        Me.SimpleButton1.Name = "SimpleButton1"
-        Me.SimpleButton1.Size = New System.Drawing.Size(138, 36)
-        Me.SimpleButton1.TabIndex = 59
-        Me.SimpleButton1.Text = "Exit"
-        '
         'SimpleButton2
         '
         Me.SimpleButton2.Appearance.Font = New System.Drawing.Font("Arial Rounded MT Bold", 11.25!)
@@ -58,7 +46,7 @@ Partial Class ReqCancel
         Me.SimpleButton2.Name = "SimpleButton2"
         Me.SimpleButton2.Size = New System.Drawing.Size(138, 36)
         Me.SimpleButton2.TabIndex = 58
-        Me.SimpleButton2.Text = "Cancel"
+        Me.SimpleButton2.Text = "Confirm"
         '
         'Label2
         '
@@ -72,7 +60,7 @@ Partial Class ReqCancel
         '
         'TextBox1
         '
-        Me.TextBox1.Font = New System.Drawing.Font("Arial Unicode MS", 11.25!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
+        Me.TextBox1.Font = New System.Drawing.Font("Microsoft Sans Serif", 11.25!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
         Me.TextBox1.Location = New System.Drawing.Point(5, 36)
         Me.TextBox1.Multiline = True
         Me.TextBox1.Name = "TextBox1"
@@ -103,6 +91,5 @@ Partial Class ReqCancel
     Friend WithEvents PanelControl1 As DevExpress.XtraEditors.PanelControl
     Friend WithEvents TextBox1 As TextBox
     Friend WithEvents Label2 As Label
-    Friend WithEvents SimpleButton1 As DevExpress.XtraEditors.SimpleButton
     Friend WithEvents SimpleButton2 As DevExpress.XtraEditors.SimpleButton
 End Class

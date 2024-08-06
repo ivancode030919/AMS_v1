@@ -34,14 +34,14 @@ Partial Class frmDeploymentRegisterDetail
         Me.DepDgv.Dock = System.Windows.Forms.DockStyle.Fill
         Me.DepDgv.Location = New System.Drawing.Point(5, 5)
         Me.DepDgv.Name = "DepDgv"
-        Me.DepDgv.Size = New System.Drawing.Size(840, 324)
+        Me.DepDgv.Size = New System.Drawing.Size(1057, 324)
         Me.DepDgv.TabIndex = 1
         '
         'frmDeploymentRegisterDetail
         '
         Me.AutoScaleDimensions = New System.Drawing.SizeF(6.0!, 13.0!)
         Me.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font
-        Me.ClientSize = New System.Drawing.Size(850, 334)
+        Me.ClientSize = New System.Drawing.Size(1067, 334)
         Me.Controls.Add(Me.DepDgv)
         Me.MaximizeBox = False
         Me.MinimizeBox = False

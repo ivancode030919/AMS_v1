@@ -28,7 +28,5 @@
 
     End Sub
 
-    Private Sub SimpleButton1_Click(sender As Object, e As EventArgs) Handles SimpleButton1.Click
-        Me.Dispose()
-    End Sub
+
 End Class

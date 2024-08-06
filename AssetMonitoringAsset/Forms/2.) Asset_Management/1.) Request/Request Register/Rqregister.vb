@@ -175,7 +175,6 @@
                             Dim type1 As Integer = 1
                             UpdateClass.UpdateStatusReqHeader(headerid, type1)
 
-
                         ElseIf Double.parse(row.Cells(7).Value.ToString) = 0 Then
 
                             SimpleButton1.Enabled = False
@@ -216,8 +215,8 @@
     End Sub
 
     Private Sub SimpleButton2_Click(sender As Object, e As EventArgs) Handles SimpleButton2.Click
-        Try
-            If SimpleButton2.Text = "Record" Then
+        'Try
+        If SimpleButton2.Text = "Record" Then
 
                 If TextBox3.Text = "PROCURE" Then
 
@@ -250,72 +249,71 @@
 
             ElseIf SimpleButton2.Text = "Approve" Then
 
-                If TextBox3.Text = "BORROW" Then
+            If TextBox3.Text = "BORROW" Then
 
-                    ' type1 for update to be re-use it is a condition on update
-                    Dim type1 As Integer = 1
-                    UpdateClass.UpdateStatusReqHeader(headerid, type1)
-                    InsertionClass.SaveBorrowHeader(TextBox1.Text, Home.EmployeeID, DateTimePicker1.Value)
+                ' type1 for update to be re-use it is a condition on update
+                Dim type1 As Integer = 1
+                UpdateClass.UpdateStatusReqHeader(headerid, type1)
+                InsertionClass.SaveBorrowHeader(TextBox1.Text, Home.EmployeeID, DateTimePicker1.Value)
 
-                    For Each row As DataGridViewRow In dgv.Rows
+                For Each row As DataGridViewRow In dgv.Rows
 
-                        If Not row.IsNewRow Then
+                    If Not row.IsNewRow Then
 
-                            Dim HeaderId As Integer = FetchClass.FetchTransIdForApprovalBorrow
-                            Dim PropertyCode As String = row.Cells(0).Value.ToString
-                            Dim Quanity As String = row.Cells(2).Value.ToString
-                            Dim Borrowee As String = row.Cells(7).Value.ToString
-                            Dim DateBorrow As String = row.Cells(4).Value.ToString
-                            Dim DateTobeReturn As String = row.Cells(5).Value.ToString
-                            Dim Remarks As String = row.Cells(6).Value.ToString
-                            InsertionClass.SaveBorrowDetail(PropertyCode, Decimal.Parse(Quanity), Integer.Parse(Borrowee), Date.Parse(DateBorrow), Date.Parse(DateTobeReturn), Remarks, HeaderId)
-                            UpdateClass.UpdateInventoryBorrower(PropertyCode, Integer.Parse(Borrowee))
-                        End If
-                    Next
-                    RequestRegister.display()
-                    MessageBox.Show("Successfully Recorded", "Notification", MessageBoxButtons.OK, MessageBoxIcon.Information)
-                    SimpleButton2.Text = "Close"
-                    If TextBox3.Text = "TRANSFER OWNERSHIP" Then
-                        '' type1 for update to be re-use it is a condition on update
-                        'Dim type1 As Integer = 2
-                        'UpdateClass.UpdateStatusReqHeader(headerid, type1)
-                        'InsertionClass.SaveProcurementHeader(TextBox1.Text, Home.EmployeeID, DateTimePicker1.Value)
+                        Dim HeaderId As Integer = FetchClass.FetchTransIdForApprovalBorrow
+                        Dim PropertyCode As String = row.Cells(0).Value.ToString
+                        Dim Quanity As String = row.Cells(2).Value.ToString
+                        Dim Borrowee As String = row.Cells(7).Value.ToString
+                        Dim DateBorrow As String = row.Cells(4).Value.ToString
+                        Dim DateTobeReturn As String = row.Cells(5).Value.ToString
+                        Dim Remarks As String = row.Cells(6).Value.ToString
+                        InsertionClass.SaveBorrowDetail(PropertyCode, Decimal.Parse(Quanity), Integer.Parse(Borrowee), Date.Parse(DateBorrow), Date.Parse(DateTobeReturn), Remarks, HeaderId)
+                        UpdateClass.UpdateInventoryBorrower(PropertyCode, Integer.Parse(Borrowee))
+                    End If
+                Next
+                RequestRegister.display()
+                MessageBox.Show("Successfully Recorded", "Notification", MessageBoxButtons.OK, MessageBoxIcon.Information)
+                SimpleButton2.Text = "Close"
 
-                        'For Each row As DataGridViewRow In dgv.Rows
 
-                        '    If Not row.IsNewRow Then
+            ElseIf TextBox3.Text = "TRANSFER OWNERSHIP" Then
+                '    ' type1 for update to be re-use it is a condition on update
 
-                        '        Dim HeaderId As Integer = FetchClass.FetchTransIdForApproval
-                        '        Dim AssetCode As String = row.Cells(1).Value.ToString
-                        '        Dim ItemClass As String = row.Cells(2).Value.ToString
-                        '        Dim RequestFor As String = row.Cells(8).Value.ToString
-                        '        Dim Quantity As String = row.Cells(4).Value.ToString
-                        '        Dim Remarks As String = row.Cells(5).Value.ToString
-                        '        Dim State As String = row.Cells(6).Value.ToString
-                        '        InsertionClass.SaveProcurementDetail(AssetCode, ItemClass, RequestFor, Quantity, Remarks, State, HeaderId)
+                Dim type1 As Integer = 2
+                UpdateClass.UpdateStatusReqHeader(headerid, type1)
+                InsertionClass.SaveTransferHeader(TextBox1.Text, DateTimePicker1.Value)
 
-                        '    End If
-                        'Next
-                        'RequestRegister.display()
-                        'MessageBox.Show("Successfully Recorded", "Notification", MessageBoxButtons.OK, MessageBoxIcon.Information)
-                        'SimpleButton2.Text = "Close"
+                For Each row As DataGridViewRow In dgv.Rows
+
+                    If Not row.IsNewRow Then
+
+                        Dim HeaderId As Integer = FetchClass.FetchTransIdForApprovalTransfer(TextBox1.Text)
+                        Dim PC As String = row.Cells(0).Value.ToString
+                        Dim Status As String = "Closed"
+                        Dim OLd As Integer = row.Cells(6).Value
+                        Dim NewOwner As Integer = row.Cells(6).Value.ToString
+                        InsertionClass.SaveTransferDetail()
 
                     End If
-
-                End If
-
-
-
-
-            ElseIf SimpleButton2.Text = "Close" Then
-                closingform()
+                Next
+                RequestRegister.display()
+                MessageBox.Show("Successfully Recorded", "Notification", MessageBoxButtons.OK, MessageBoxIcon.Information)
+                SimpleButton2.Text = "Close"
 
             End If
 
 
-        Catch ex As Exception
-            MsgBox("Error.For Approval.01")
-        End Try
+
+
+        ElseIf SimpleButton2.Text = "Close" Then
+            closingform()
+
+            End If
+
+
+        'Catch ex As Exception
+        '    MsgBox("Error.For Approval.01")
+        'End Try
 
     End Sub
 

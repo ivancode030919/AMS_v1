@@ -140,6 +140,7 @@ Partial Class frmDeploymentRegister
         Me.Label2.Size = New System.Drawing.Size(62, 17)
         Me.Label2.TabIndex = 28
         Me.Label2.Text = "Runner"
+        Me.Label2.Visible = False
         '
         'frmDeploymentRegister
         '

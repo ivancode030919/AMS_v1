@@ -38,8 +38,6 @@
     End Sub
 
     Private Sub Button1_Click(sender As Object, e As EventArgs) Handles Button1.Click
-
-
         Dim trueCount As Integer = 0
 
         For Each row As DataGridViewRow In dgv.Rows
@@ -52,12 +50,7 @@
             End If
         Next
 
-        If TextBox2.Text = String.Empty Then
-
-            MessageBox.Show("Please Select to Runner", "Notification")
-
-        ElseIf trueCount = 0 Then
-
+        If trueCount = 0 Then
             MessageBox.Show("Please Select to Deploy Items", "Notification")
         Else
             Dim result As DialogResult = MessageBox.Show("Do you want to Deploy this " & trueCount & " Items?", "Confirmation", MessageBoxButtons.YesNo, MessageBoxIcon.Question)

@@ -255,14 +255,6 @@
         frmDeplyment.Show()
     End Sub
 
-    Private Sub AccordionControlElement55_Click(sender As Object, e As EventArgs) Handles AccordionControlElement55.Click
-
-    End Sub
-
-    Private Sub AccordionControlElement18_Click(sender As Object, e As EventArgs) Handles AccordionControlElement18.Click
-
-    End Sub
-
     Private Sub AccordionControlElement40_Click(sender As Object, e As EventArgs) Handles AccordionControlElement40.Click
         Me.IsMdiContainer = True
         frmDeploymentRegister.MdiParent = Me
@@ -271,4 +263,11 @@
         frmDeploymentRegister.Show()
     End Sub
 
+    Private Sub AccordionControlElement33_Click(sender As Object, e As EventArgs) Handles AccordionControlElement33.Click
+        Me.IsMdiContainer = True
+        FrmRecvItems.MdiParent = Me
+        PictureBox1.SendToBack()
+        FrmRecvItems.BringToFront()
+        FrmRecvItems.Show()
+    End Sub
 End Class
