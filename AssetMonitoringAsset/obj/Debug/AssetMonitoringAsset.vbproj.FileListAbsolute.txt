@@ -1160,3 +1160,4 @@ D:\IVAN FILES\25.) GitHub\AMS\AMS_v1\AssetMonitoringAsset\obj\Debug\AssetMonitor
 D:\IVAN FILES\25.) GitHub\AMS\AMS_v1\AssetMonitoringAsset\obj\Debug\AssetMonitoringAsset.frmDeploymentRegister.resources
 D:\IVAN FILES\25.) GitHub\AMS\AMS_v1\AssetMonitoringAsset\obj\Debug\AssetMonitoringAsset.frmDeploymentRegisterDetail.resources
 D:\IVAN FILES\25.) GitHub\AMS\AMS_v1\AssetMonitoringAsset\obj\Debug\AssetMonitoringAsset.FrmRecvItems.resources
+D:\IVAN FILES\25.) GitHub\AMS\AMS_v1\AssetMonitoringAsset\obj\Debug\AssetMonitoringAsset.frmTransferOwnerShip.resources

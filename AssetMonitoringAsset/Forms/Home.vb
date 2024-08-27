@@ -270,4 +270,13 @@
         FrmRecvItems.BringToFront()
         FrmRecvItems.Show()
     End Sub
+
+
+    Private Sub AccordionControlElement42_Click(sender As Object, e As EventArgs) Handles AccordionControlElement42.Click
+        Me.IsMdiContainer = True
+        ReceivRegister.MdiParent = Me
+        PictureBox1.SendToBack()
+        ReceivRegister.BringToFront()
+        ReceivRegister.Show()
+    End Sub
 End Class

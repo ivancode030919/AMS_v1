@@ -51,10 +51,16 @@
             ElseIf modty = 5 Then
 
                 With frmDeplyment
-                    .BorrowerID = selectedrow.Cells(0).Value
+                    .RunnerID = selectedrow.Cells(0).Value
                     .TextBox2.Text = selectedrow.Cells(1).Value.ToString
                 End With
 
+            ElseIf modty = 6 Then
+
+                With FrmRecvItems
+                    .BorrowerID = selectedrow.Cells(0).Value
+                    .TextBox1.Text = selectedrow.Cells(1).Value.ToString
+                End With
             End If
 
             Me.Close()

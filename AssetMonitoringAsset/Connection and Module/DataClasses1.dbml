@@ -316,70 +316,6 @@
       <Column Name="AssetHeaderID" Type="System.Int32" DbType="Int" CanBeNull="true" />
     </Type>
   </Table>
-  <Table Name="dbo.tblBorrowDetail" Member="tblBorrowDetails">
-    <Type Name="tblBorrowDetail">
-      <Column Name="id" Type="System.Int32" DbType="Int NOT NULL IDENTITY" IsPrimaryKey="true" IsDbGenerated="true" CanBeNull="false" />
-      <Column Name="PropertyCode" Type="System.String" DbType="VarChar(MAX)" CanBeNull="true" />
-      <Column Name="Quantity" Type="System.Double" DbType="Float" CanBeNull="true" />
-      <Column Name="Borrowee" Type="System.Int32" DbType="Int" CanBeNull="true" />
-      <Column Name="DateFrom" Type="System.DateTime" DbType="Date" CanBeNull="true" />
-      <Column Name="DateTo" Type="System.DateTime" DbType="Date" CanBeNull="true" />
-      <Column Name="Remarks" Type="System.String" DbType="VarChar(MAX)" CanBeNull="true" />
-      <Column Name="HeaderID" Type="System.Int32" DbType="Int" CanBeNull="true" />
-      <Column Name="IsReturn" Type="System.Boolean" DbType="Bit" CanBeNull="true" />
-      <Column Name="IsReturnDate" Type="System.DateTime" DbType="DateTime" CanBeNull="true" />
-      <Column Name="ReturnBy" Type="System.Int32" DbType="Int" CanBeNull="true" />
-      <Column Name="IsReceivedByBorrowee" Type="System.Boolean" DbType="Bit" CanBeNull="true" />
-      <Column Name="IsReceivedByBorroweeDate" Type="System.DateTime" DbType="DateTime" CanBeNull="true" />
-      <Column Name="Runner" Type="System.Int32" DbType="Int" CanBeNull="true" />
-    </Type>
-  </Table>
-  <Table Name="dbo.tblDeploymentDetail" Member="tblDeploymentDetails">
-    <Type Name="tblDeploymentDetail">
-      <Column Name="id" Type="System.Int32" DbType="Int NOT NULL IDENTITY" IsPrimaryKey="true" IsDbGenerated="true" CanBeNull="false" />
-      <Column Name="PropertyCode" Type="System.String" DbType="VarChar(100)" CanBeNull="true" />
-      <Column Name="Transid" Type="System.Int32" DbType="Int" CanBeNull="true" />
-      <Column Name="DateDeployed" Type="System.DateTime" DbType="DateTime" CanBeNull="true" />
-    </Type>
-  </Table>
-  <Table Name="dbo.tblDeploymentHeader" Member="tblDeploymentHeaders">
-    <Type Name="tblDeploymentHeader">
-      <Column Name="id" Type="System.Int32" DbType="Int NOT NULL IDENTITY" IsPrimaryKey="true" IsDbGenerated="true" CanBeNull="false" />
-      <Column Name="DeploymentID" Type="System.String" DbType="VarChar(100)" CanBeNull="true" />
-      <Column Name="Date" Type="System.DateTime" DbType="DateTime" CanBeNull="true" />
-      <Column Name="DeyployedBy" Type="System.Int32" DbType="Int" CanBeNull="true" />
-      <Column Name="Runner" Type="System.Int32" DbType="Int" CanBeNull="true" />
-    </Type>
-  </Table>
-  <Table Name="dbo.tblAssetInventory" Member="tblAssetInventories">
-    <Type Name="tblAssetInventory">
-      <Column Name="InvID" Type="System.Int32" DbType="Int NOT NULL IDENTITY" IsPrimaryKey="true" IsDbGenerated="true" CanBeNull="false" />
-      <Column Name="AssetCode" Type="System.Int32" DbType="Int" CanBeNull="true" />
-      <Column Name="Class" Type="System.String" DbType="VarChar(MAX)" CanBeNull="true" />
-      <Column Name="PropertyCode" Type="System.String" DbType="VarChar(MAX)" CanBeNull="true" />
-      <Column Name="Des" Type="System.String" DbType="VarChar(MAX)" CanBeNull="true" />
-      <Column Name="Qty" Type="System.Double" DbType="Float" CanBeNull="true" />
-      <Column Name="Keeper" Type="System.Int32" DbType="Int" CanBeNull="true" />
-      <Column Name="Owner" Type="System.Int32" DbType="Int" CanBeNull="true" />
-      <Column Name="Borrower" Type="System.Int32" DbType="Int" CanBeNull="true" />
-      <Column Name="Reference" Type="System.String" DbType="VarChar(MAX)" CanBeNull="true" />
-      <Column Name="Referenceno" Type="System.String" DbType="VarChar(MAX)" CanBeNull="true" />
-      <Column Name="borrowerStat" Type="System.String" DbType="VarChar(MAX)" CanBeNull="true" />
-      <Column Name="Status1" Type="System.String" DbType="VarChar(MAX)" CanBeNull="true" />
-      <Column Name="Status2" Type="System.String" DbType="VarChar(MAX)" CanBeNull="true" />
-      <Column Name="Condition" Type="System.String" DbType="VarChar(MAX)" CanBeNull="true" />
-      <Column Name="IsChildSeries" Type="System.Int32" DbType="Int" CanBeNull="true" />
-      <Column Name="Deployed" Type="System.Boolean" DbType="Bit" CanBeNull="true" />
-      <Column Name="ReceivedByRequestor" Type="System.Boolean" DbType="Bit" CanBeNull="true" />
-      <Column Name="DateDeployed" Type="System.DateTime" DbType="DateTime" CanBeNull="true" />
-      <Column Name="DateRequestorRecv" Type="System.DateTime" DbType="DateTime" CanBeNull="true" />
-      <Column Name="Returned" Type="System.Boolean" DbType="Bit" CanBeNull="true" />
-      <Column Name="IsChild" Type="System.Boolean" DbType="Bit" CanBeNull="true" />
-      <Column Name="IsParent" Type="System.Boolean" DbType="Bit" CanBeNull="true" />
-      <Column Name="DeployBy" Type="System.Int32" DbType="Int" CanBeNull="true" />
-      <Column Name="RecvBy" Type="System.Int32" DbType="Int" CanBeNull="true" />
-    </Type>
-  </Table>
   <Table Name="dbo.tblTransferDetails" Member="tblTransferDetails">
     <Type Name="tblTransferDetail">
       <Column Name="TransferId" Type="System.Int32" DbType="Int NOT NULL IDENTITY" IsPrimaryKey="true" IsDbGenerated="true" CanBeNull="false" />
@@ -397,6 +333,76 @@
       <Column Name="Date" Type="System.DateTime" DbType="Date" CanBeNull="true" />
       <Column Name="Status" Type="System.String" DbType="VarChar(10)" CanBeNull="true" />
       <Column Name="ReqID" Type="System.String" DbType="VarChar(50)" CanBeNull="true" />
+    </Type>
+  </Table>
+  <Table Name="dbo.tblAssetInventory" Member="tblAssetInventories">
+    <Type Name="tblAssetInventory">
+      <Column Name="InvID" Type="System.Int32" DbType="Int NOT NULL IDENTITY" IsPrimaryKey="true" IsDbGenerated="true" CanBeNull="false" />
+      <Column Name="AssetCode" Type="System.Int32" DbType="Int" CanBeNull="true" />
+      <Column Name="Class" Type="System.String" DbType="VarChar(100)" CanBeNull="true" />
+      <Column Name="PropertyCode" Type="System.String" DbType="VarChar(100)" CanBeNull="true" />
+      <Column Name="Des" Type="System.String" DbType="VarChar(200)" CanBeNull="true" />
+      <Column Name="Qty" Type="System.Double" DbType="Float" CanBeNull="true" />
+      <Column Name="Keeper" Type="System.Int32" DbType="Int" CanBeNull="true" />
+      <Column Name="Owner" Type="System.Int32" DbType="Int" CanBeNull="true" />
+      <Column Name="Borrower" Type="System.Int32" DbType="Int" CanBeNull="true" />
+      <Column Name="Reference" Type="System.String" DbType="VarChar(100)" CanBeNull="true" />
+      <Column Name="Referenceno" Type="System.String" DbType="VarChar(100)" CanBeNull="true" />
+      <Column Name="borrowerStat" Type="System.String" DbType="VarChar(100)" CanBeNull="true" />
+      <Column Name="Status1" Type="System.String" DbType="VarChar(100)" CanBeNull="true" />
+      <Column Name="Status2" Type="System.String" DbType="VarChar(100)" CanBeNull="true" />
+      <Column Name="Condition" Type="System.String" DbType="VarChar(100)" CanBeNull="true" />
+      <Column Name="IsChildSeries" Type="System.Int32" DbType="Int" CanBeNull="true" />
+      <Column Name="Deployed" Type="System.Boolean" DbType="Bit" CanBeNull="true" />
+      <Column Name="ReceivedByRequestor" Type="System.Boolean" DbType="Bit" CanBeNull="true" />
+      <Column Name="DateDeployed" Type="System.DateTime" DbType="DateTime" CanBeNull="true" />
+      <Column Name="DateRequestorRecv" Type="System.DateTime" DbType="DateTime" CanBeNull="true" />
+      <Column Name="Returned" Type="System.Boolean" DbType="Bit" CanBeNull="true" />
+      <Column Name="IsChild" Type="System.Boolean" DbType="Bit" CanBeNull="true" />
+      <Column Name="IsParent" Type="System.Boolean" DbType="Bit" CanBeNull="true" />
+      <Column Name="DeployBy" Type="System.Int32" DbType="Int" CanBeNull="true" />
+      <Column Name="RecvBy" Type="System.Int32" DbType="Int" CanBeNull="true" />
+      <Column Name="RequestNumber" Type="System.String" DbType="VarChar(100)" CanBeNull="true" />
+    </Type>
+  </Table>
+  <Table Name="dbo.tblDeploymentHeader" Member="tblDeploymentHeaders">
+    <Type Name="tblDeploymentHeader">
+      <Column Name="id" Type="System.Int32" DbType="Int NOT NULL IDENTITY" IsPrimaryKey="true" IsDbGenerated="true" CanBeNull="false" />
+      <Column Name="DeploymentID" Type="System.String" DbType="VarChar(100)" CanBeNull="true" />
+      <Column Name="Date" Type="System.DateTime" DbType="DateTime" CanBeNull="true" />
+      <Column Name="DeyployedBy" Type="System.Int32" DbType="Int" CanBeNull="true" />
+      <Column Name="Runner" Type="System.Int32" DbType="Int" CanBeNull="true" />
+      <Column Name="[Transaction]" Member="Transaction" Type="System.String" DbType="VarChar(100)" CanBeNull="true" />
+    </Type>
+  </Table>
+  <Table Name="dbo.tblDeploymentDetail" Member="tblDeploymentDetails">
+    <Type Name="tblDeploymentDetail">
+      <Column Name="id" Type="System.Int32" DbType="Int NOT NULL IDENTITY" IsPrimaryKey="true" IsDbGenerated="true" CanBeNull="false" />
+      <Column Name="PropertyCode" Type="System.String" DbType="VarChar(100)" CanBeNull="true" />
+      <Column Name="Transid" Type="System.Int32" DbType="Int" CanBeNull="true" />
+      <Column Name="DateDeployed" Type="System.DateTime" DbType="DateTime" CanBeNull="true" />
+      <Column Name="RequestNumber" Type="System.String" DbType="VarChar(100)" CanBeNull="true" />
+    </Type>
+  </Table>
+  <Table Name="dbo.tblBorrowDetail" Member="tblBorrowDetails">
+    <Type Name="tblBorrowDetail">
+      <Column Name="id" Type="System.Int32" DbType="Int NOT NULL IDENTITY" IsPrimaryKey="true" IsDbGenerated="true" CanBeNull="false" />
+      <Column Name="PropertyCode" Type="System.String" DbType="VarChar(MAX)" CanBeNull="true" />
+      <Column Name="Quantity" Type="System.Double" DbType="Float" CanBeNull="true" />
+      <Column Name="Borrowee" Type="System.Int32" DbType="Int" CanBeNull="true" />
+      <Column Name="DateFrom" Type="System.DateTime" DbType="Date" CanBeNull="true" />
+      <Column Name="DateTo" Type="System.DateTime" DbType="Date" CanBeNull="true" />
+      <Column Name="Remarks" Type="System.String" DbType="VarChar(MAX)" CanBeNull="true" />
+      <Column Name="HeaderID" Type="System.Int32" DbType="Int" CanBeNull="true" />
+      <Column Name="IsReturn" Type="System.Boolean" DbType="Bit" CanBeNull="true" />
+      <Column Name="IsReturnDate" Type="System.DateTime" DbType="DateTime" CanBeNull="true" />
+      <Column Name="ReturnBy" Type="System.Int32" DbType="Int" CanBeNull="true" />
+      <Column Name="IsReceivedByBorrowee" Type="System.Boolean" DbType="Bit" CanBeNull="true" />
+      <Column Name="IsReceivedByBorroweeDate" Type="System.DateTime" DbType="DateTime" CanBeNull="true" />
+      <Column Name="Runner" Type="System.Int32" DbType="Int" CanBeNull="true" />
+      <Column Name="IsDeployed" Type="System.Boolean" DbType="Bit" CanBeNull="true" />
+      <Column Name="IsDeployedDate" Type="System.DateTime" DbType="DateTime" CanBeNull="true" />
+      <Column Name="IsDeployeRunner" Type="System.Int32" DbType="Int" CanBeNull="true" />
     </Type>
   </Table>
   <Function Name="dbo.spNewAsset" Method="spNewAsset">

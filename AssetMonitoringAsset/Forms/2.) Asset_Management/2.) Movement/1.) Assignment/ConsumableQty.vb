@@ -61,7 +61,7 @@
 
                 End If
 
-                InsertionClass.SaveAssetInventory(ItemCode, ItemClass, PropertyCode, ItemDescription, Double.Parse(Qtytxt.Text), NewOwner, NewOwner, 0, Reference, referenceno, "Not Allowed", 0, 0, ComboBox1.Text, lastChildSeries, True, False)
+                InsertionClass.SaveAssetInventory(ItemCode, ItemClass, PropertyCode, ItemDescription, Double.Parse(Qtytxt.Text), NewOwner, NewOwner, 0, Reference, referenceno, "Not Allowed", 0, 0, ComboBox1.Text, lastChildSeries, True, False, "000000")
 
                 With Assignment1.dgv
                     .Rows(rowToEdit).Cells(4).Value = Qtytxt.Text

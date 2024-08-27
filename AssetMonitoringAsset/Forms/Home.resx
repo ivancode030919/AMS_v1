@@ -173,6 +173,9 @@
   <data name="AccordionControlElement33.Text" xml:space="preserve">
     <value>Receive Item</value>
   </data>
+  <data name="AccordionControlElement42.Text" xml:space="preserve">
+    <value>Register</value>
+  </data>
   <data name="AccordionControlElement18.Text" xml:space="preserve">
     <value>Receive</value>
   </data>
@@ -190,6 +193,9 @@
   </data>
   <data name="AccordionControlElement51.Text" xml:space="preserve">
     <value>Transfer List</value>
+  </data>
+  <data name="AccordionControlElement41.Text" xml:space="preserve">
+    <value>Return</value>
   </data>
   <data name="AccordionControlElement49.Text" xml:space="preserve">
     <value>Transfer Ownership</value>
@@ -3578,6 +3584,12 @@
   <data name="&gt;&gt;AccordionControlElement33.Type" xml:space="preserve">
     <value>DevExpress.XtraBars.Navigation.AccordionControlElement, DevExpress.XtraBars.v24.1, Version=24.1.3.0, Culture=neutral, PublicKeyToken=b88d1754d700e49a</value>
   </data>
+  <data name="&gt;&gt;AccordionControlElement42.Name" xml:space="preserve">
+    <value>AccordionControlElement42</value>
+  </data>
+  <data name="&gt;&gt;AccordionControlElement42.Type" xml:space="preserve">
+    <value>DevExpress.XtraBars.Navigation.AccordionControlElement, DevExpress.XtraBars.v24.1, Version=24.1.3.0, Culture=neutral, PublicKeyToken=b88d1754d700e49a</value>
+  </data>
   <data name="&gt;&gt;AccordionControlElement34.Name" xml:space="preserve">
     <value>AccordionControlElement34</value>
   </data>
@@ -3612,6 +3624,12 @@
     <value>AccordionControlElement51</value>
   </data>
   <data name="&gt;&gt;AccordionControlElement51.Type" xml:space="preserve">
+    <value>DevExpress.XtraBars.Navigation.AccordionControlElement, DevExpress.XtraBars.v24.1, Version=24.1.3.0, Culture=neutral, PublicKeyToken=b88d1754d700e49a</value>
+  </data>
+  <data name="&gt;&gt;AccordionControlElement41.Name" xml:space="preserve">
+    <value>AccordionControlElement41</value>
+  </data>
+  <data name="&gt;&gt;AccordionControlElement41.Type" xml:space="preserve">
     <value>DevExpress.XtraBars.Navigation.AccordionControlElement, DevExpress.XtraBars.v24.1, Version=24.1.3.0, Culture=neutral, PublicKeyToken=b88d1754d700e49a</value>
   </data>
   <data name="&gt;&gt;AccordionControlElement52.Name" xml:space="preserve">

@@ -193,7 +193,7 @@
 
     'Display Request Register(For Approval) Details in 
     Public Shared Function FetchsRequstRegister(ByVal stat1 As Integer, ByVal date1 As Date, date2 As Date) As Object
-        Dim stat2 As String
+        Dim stat2 As String = ""
 
         If stat1 = 1 Then
             stat2 = "OPEN"
@@ -203,8 +203,6 @@
             stat2 = "CLOSED"
         ElseIf stat1 = 4 Then
             stat2 = "CANCELLED"
-        Else
-            stat2 = ""
         End If
 
         If Home.UserType = "ADMIN" Then
@@ -587,7 +585,7 @@
                                 Join o In db.tblEmployees On s.Borrower Equals o.EmployeeID
                                 Join y In db.tblBorrowDetails On s.PropertyCode Equals y.PropertyCode
                                 Where (Not s.PropertyCode.StartsWith("CNR") And Not s.PropertyCode.StartsWith("CRE")) And
-                                (s.PropertyCode.Contains(PC)) And (s.Des.Contains(Descrip)) And (s.Returned = False)
+                                (s.PropertyCode.Contains(PC)) And (s.Des.Contains(Descrip)) And (s.Returned = False) And (y.IsReceivedByBorrowee = True)
                                 Let Owner = g.LastName + ", " + g.FirstName Let Borrower = o.LastName + ", " + o.FirstName
                                 Let Description = s.Des Let Status = s.borrowerStat Let Quantity = s.Qty Let DateBorrowed = y.DateFrom & "  -to-  " & y.DateTo
                                 Select y.id, s.PropertyCode, Description, Quantity, Owner, Borrower, DateBorrowed).Distinct
@@ -638,51 +636,72 @@
 
 
     'For Deployment Display
-    Public Shared Function ViewForDeployment() As Object
+    Public Shared Function ViewForDeploymentProcurement() As Object
 
         Dim queryUserType = (From s In db.tblUsers
                              Where s.EmployeeID = Home.EmployeeID
                              Select s.UserType).FirstOrDefault
 
-        If queryUserType = "ADMIN" Then
+        If Home.UserType = "ADMIN" Then
 
             Dim DeployItems = (From s In db.tblAssetInventories
                                Join d In db.tblEmployees On s.Owner Equals d.EmployeeID
                                Where s.Deployed = False And s.ReceivedByRequestor = False
                                Let Description = s.Des Let Name = d.LastName + ", " + d.FirstName
-                               Select s.PropertyCode, Description, Name, s.Reference, s.Referenceno, s.Deployed, s.InvID)
+                               Select s.PropertyCode, Description, Name, s.Reference, s.Referenceno, s.Deployed, s.InvID, s.RequestNumber)
             Return DeployItems
 
-        ElseIf queryUserType = "DPC" Then
+        ElseIf Home.UserType = "DPC" Then
 
             Dim DeployItems = (From s In db.tblAssetInventories
                                Join d In db.tblEmployees On s.Owner Equals d.EmployeeID
                                Where (d.DepartmentID = Home.DepartmentID) And s.Deployed = False And s.ReceivedByRequestor = False
                                Let Description = s.Des Let Name = d.LastName + ", " + d.FirstName
-                               Select s.PropertyCode, Description, Name, s.Reference, s.Referenceno, s.Deployed, s.InvID)
+                               Select s.PropertyCode, Description, Name, s.Reference, s.Referenceno, s.Deployed, s.InvID, s.RequestNumber)
             Return DeployItems
 
-        ElseIf queryUserType = "BPC" Then
+        ElseIf Home.UserType = "BPC" Then
 
             Dim DeployItems = (From s In db.tblAssetInventories
                                Join d In db.tblEmployees On s.Owner Equals d.EmployeeID
                                Join l In db.tblDepartments On d.DepartmentID Equals l.DepartmentID
                                Where (l.location = "Within" AndAlso l.DepartmentID <> 2) And (s.Deployed = False And s.ReceivedByRequestor = False)
                                Let Description = s.Des Let Name = d.LastName + ", " + d.FirstName
-                               Select s.PropertyCode, Description, Name, s.Reference, s.Referenceno, s.Deployed, s.InvID)
+                               Select s.PropertyCode, Description, Name, s.Reference, s.Referenceno, s.Deployed, s.InvID, s.RequestNumber)
             Return DeployItems
 
-        ElseIf queryUserType = "SPC" Then
+        ElseIf Home.UserType = "SPC" Then
 
             Dim DeployItems = (From s In db.tblAssetInventories
                                Join d In db.tblEmployees On s.Owner Equals d.EmployeeID
                                Where d.SectionID = Home.SectionID And s.Deployed = False And s.ReceivedByRequestor = False
                                Let Description = s.Des Let Name = d.LastName + ", " + d.FirstName
-                               Select s.PropertyCode, Description, Name, s.Reference, s.Referenceno, s.Deployed, s.InvID)
+                               Select s.PropertyCode, Description, Name, s.Reference, s.Referenceno, s.Deployed, s.InvID, s.RequestNumber)
 
             Return DeployItems
 
+        ElseIf Home.UserType = "MANAGER" Then
+
+            Dim DeployItems = (From s In db.tblAssetInventories
+                               Join d In db.tblEmployees On s.Owner Equals d.EmployeeID
+                               Where (d.DepartmentID = Home.DepartmentID) And s.Deployed = False And s.ReceivedByRequestor = False
+                               Let Description = s.Des Let Name = d.LastName + ", " + d.FirstName
+                               Select s.PropertyCode, Description, Name, s.Reference, s.Referenceno, s.Deployed, s.InvID, s.RequestNumber)
+            Return DeployItems
+
         End If
+
+    End Function
+
+    Public Shared Function ViewForDeploymentBorrow() As Object
+
+        Dim DeployItems = (From s In db.tblAssetInventories
+                           Join i In db.tblBorrowDetails On s.PropertyCode Equals i.PropertyCode
+                           Join d In db.tblEmployees On i.Borrowee Equals d.EmployeeID
+                           Where i.IsDeployed = False
+                           Let Name = d.LastName + ", " + d.FirstName
+                           Select i.PropertyCode, s.Des, Name, i.DateFrom, i.DateTo, i.id, s.RequestNumber)
+        Return DeployItems
 
     End Function
 
@@ -705,58 +724,128 @@
         Dim querysection = (From s In db.tblDeploymentDetails
                             Join d In db.tblAssetInventories On s.PropertyCode Equals d.PropertyCode
                             Join f In db.tblEmployees On d.Owner Equals f.EmployeeID
+                            Where s.Transid = transid
                             Let name = f.LastName + ", " + f.FirstName
-                            Select s.PropertyCode, d.Des, name, s.DateDeployed)
+                            Select s.PropertyCode, d.Des, name, s.DateDeployed, d.RequestNumber)
         Return querysection
 
     End Function
 
     'For Receive By End User
-    Public Shared Function ViewForReceiveEndUser() As Object
+    Public Shared Function ViewForReceiveEndUser(Type As String) As Object
 
-        Dim queryUserType = (From s In db.tblUsers
-                             Where s.EmployeeID = Home.EmployeeID
-                             Select s.UserType).FirstOrDefault
+        If Type = "Procurement" Then
 
-        If queryUserType = "ADMIN" Then
+            If Home.UserType = "ADMIN" Then
 
-            Dim DeployItems = (From s In db.tblAssetInventories
-                               Join d In db.tblEmployees On s.Owner Equals d.EmployeeID
-                               Where s.ReceivedByRequestor = False And s.ReceivedByRequestor = False And s.Deployed = True
-                               Let Description = s.Des Let Name = d.LastName + ", " + d.FirstName
-                               Select s.PropertyCode, Description, Name, s.Reference, s.Referenceno, s.ReceivedByRequestor, s.InvID)
-            Return DeployItems
+                Dim DeployItems = (From s In db.tblAssetInventories
+                                   Join d In db.tblEmployees On s.Owner Equals d.EmployeeID
+                                   Where (s.ReceivedByRequestor = False) And (s.ReceivedByRequestor = False) And (s.Deployed = True)
+                                   Let Description = s.Des Let Name = d.LastName + ", " + d.FirstName
+                                   Select s.PropertyCode, Description, Name, s.Reference, s.Referenceno, s.ReceivedByRequestor, s.InvID)
+                Return DeployItems
 
-        ElseIf queryUserType = "DPC" Then
+            ElseIf Home.UserType = "DPC" Then
 
-            Dim DeployItems = (From s In db.tblAssetInventories
-                               Join d In db.tblEmployees On s.Owner Equals d.EmployeeID
-                               Where (d.DepartmentID = Home.DepartmentID) And s.ReceivedByRequestor = False And s.ReceivedByRequestor = False And s.Deployed = True
-                               Let Description = s.Des Let Name = d.LastName + ", " + d.FirstName
-                               Select s.PropertyCode, Description, Name, s.Reference, s.Referenceno, s.Deployed, s.InvID)
-            Return DeployItems
+                Dim DeployItems = (From s In db.tblAssetInventories
+                                   Join d In db.tblEmployees On s.Owner Equals d.EmployeeID
+                                   Where (d.DepartmentID = Home.DepartmentID) And s.ReceivedByRequestor = False And s.ReceivedByRequestor = False And s.Deployed = True
+                                   Let Description = s.Des Let Name = d.LastName + ", " + d.FirstName
+                                   Select s.PropertyCode, Description, Name, s.Reference, s.Referenceno, s.Deployed, s.InvID)
+                Return DeployItems
 
-        ElseIf queryUserType = "BPC" Then
+            ElseIf Home.UserType = "BPC" Then
 
-            Dim DeployItems = (From s In db.tblAssetInventories
-                               Join d In db.tblEmployees On s.Owner Equals d.EmployeeID
-                               Join l In db.tblDepartments On d.DepartmentID Equals l.DepartmentID
-                               Where (l.location = "Within" AndAlso l.DepartmentID <> 2) And (s.ReceivedByRequestor = False And s.ReceivedByRequestor = False And s.Deployed = True)
-                               Let Description = s.Des Let Name = d.LastName + ", " + d.FirstName
-                               Select s.PropertyCode, Description, Name, s.Reference, s.Referenceno, s.Deployed, s.InvID)
-            Return DeployItems
+                Dim DeployItems = (From s In db.tblAssetInventories
+                                   Join d In db.tblEmployees On s.Owner Equals d.EmployeeID
+                                   Join l In db.tblDepartments On d.DepartmentID Equals l.DepartmentID
+                                   Where (l.location = "Within" AndAlso l.DepartmentID <> 2) And (s.ReceivedByRequestor = False And s.ReceivedByRequestor = False And s.Deployed = True)
+                                   Let Description = s.Des Let Name = d.LastName + ", " + d.FirstName
+                                   Select s.PropertyCode, Description, Name, s.Reference, s.Referenceno, s.Deployed, s.InvID)
+                Return DeployItems
 
-        ElseIf queryUserType = "SPC" Then
+            ElseIf Home.UserType = "SPC" Then
 
-            Dim DeployItems = (From s In db.tblAssetInventories
-                               Join d In db.tblEmployees On s.Owner Equals d.EmployeeID
-                               Where d.SectionID = Home.SectionID And s.ReceivedByRequestor = False And s.ReceivedByRequestor = False And s.Deployed = True
-                               Let Description = s.Des Let Name = d.LastName + ", " + d.FirstName
-                               Select s.PropertyCode, Description, Name, s.Reference, s.Referenceno, s.Deployed, s.InvID)
+                Dim DeployItems = (From s In db.tblAssetInventories
+                                   Join d In db.tblEmployees On s.Owner Equals d.EmployeeID
+                                   Where (d.SectionID = Home.SectionID) And s.ReceivedByRequestor = False And s.ReceivedByRequestor = False And s.Deployed = True
+                                   Let Description = s.Des Let Name = d.LastName + ", " + d.FirstName
+                                   Select s.PropertyCode, Description, Name, s.Reference, s.Referenceno, s.Deployed, s.InvID)
 
-            Return DeployItems
+                Return DeployItems
+
+            ElseIf Home.UserType = "MANAGER" Then
+
+
+                Dim DeployItems = (From s In db.tblAssetInventories
+                                   Join d In db.tblEmployees On s.Owner Equals d.EmployeeID
+                                   Where (d.DepartmentID = Home.DepartmentID) And s.ReceivedByRequestor = False And s.ReceivedByRequestor = False And s.Deployed = True
+                                   Let Description = s.Des Let Name = d.LastName + ", " + d.FirstName
+                                   Select s.PropertyCode, Description, Name, s.Reference, s.Referenceno, s.Deployed, s.InvID)
+                Return DeployItems
+
+            End If
+
+        ElseIf Type = "Borrow" Then
+
+            If Home.UserType = "ADMIN" Then
+
+                Dim RecvBorrowed = (From p In db.tblBorrowDetails
+                                    Join o In db.tblAssetInventories On p.PropertyCode Equals o.PropertyCode
+                                    Join i In db.tblEmployees On p.Borrowee Equals i.EmployeeID
+                                    Where (p.IsReceivedByBorrowee = False Or p.IsReceivedByBorrowee Is Nothing)
+                                    Let Name = i.LastName + ", " + i.FirstName
+                                    Select p.PropertyCode, o.Des, Name, p.DateFrom, p.DateTo, p.Remarks, p.id)
+                Return RecvBorrowed
+
+            ElseIf Home.UserType = "DPC" Then
+
+                Dim RecvBorrowed = (From p In db.tblBorrowDetails
+                                    Join o In db.tblAssetInventories On p.PropertyCode Equals o.PropertyCode
+                                    Join i In db.tblEmployees On p.Borrowee Equals i.EmployeeID
+                                    Where (i.DepartmentID = Home.DepartmentID) And (p.IsReceivedByBorrowee = False Or p.IsReceivedByBorrowee Is Nothing)
+                                    Let Name = i.LastName + ", " + i.FirstName
+                                    Select p.PropertyCode, o.Des, Name, p.DateFrom, p.DateTo, p.Remarks, p.id)
+                Return RecvBorrowed
+
+            ElseIf Home.UserType = "BPC" Then
+
+                Dim RecvBorrowed = (From p In db.tblBorrowDetails
+                                    Join o In db.tblAssetInventories On p.PropertyCode Equals o.PropertyCode
+                                    Join i In db.tblEmployees On p.Borrowee Equals i.EmployeeID
+                                    Join l In db.tblDepartments On i.DepartmentID Equals l.DepartmentID
+                                    Where (l.location = "Within" AndAlso l.DepartmentID <> 2) And (p.IsReceivedByBorrowee = False Or p.IsReceivedByBorrowee Is Nothing)
+                                    Let Name = i.LastName + ", " + i.FirstName
+                                    Select p.PropertyCode, o.Des, Name, p.DateFrom, p.DateTo, p.Remarks, p.id)
+                Return RecvBorrowed
+
+            ElseIf Home.UserType = "SPC" Then
+
+                Dim RecvBorrowed = (From p In db.tblBorrowDetails
+                                    Join o In db.tblAssetInventories On p.PropertyCode Equals o.PropertyCode
+                                    Join i In db.tblEmployees On p.Borrowee Equals i.EmployeeID
+                                    Where i.SectionID = Home.SectionID And (p.IsReceivedByBorrowee = False Or p.IsReceivedByBorrowee Is Nothing)
+                                    Let Name = i.LastName + ", " + i.FirstName
+                                    Select p.PropertyCode, o.Des, Name, p.DateFrom, p.DateTo, p.Remarks, p.id)
+                Return RecvBorrowed
+
+            ElseIf Home.UserType = "MANAGER" Then
+
+                Dim RecvBorrowed = (From p In db.tblBorrowDetails
+                                    Join o In db.tblAssetInventories On p.PropertyCode Equals o.PropertyCode
+                                    Join i In db.tblEmployees On p.Borrowee Equals i.EmployeeID
+                                    Where (i.DepartmentID = Home.DepartmentID) And (p.IsReceivedByBorrowee = False Or p.IsReceivedByBorrowee Is Nothing)
+                                    Let Name = i.LastName + ", " + i.FirstName
+                                    Select p.PropertyCode, o.Des, Name, p.DateFrom, p.DateTo, p.Remarks, p.id)
+                Return RecvBorrowed
+
+            End If
+
+
+        ElseIf Type = "Transfer Ownership" Then
 
         End If
+
 
     End Function
 End Class

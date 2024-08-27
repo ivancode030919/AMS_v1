@@ -147,7 +147,7 @@ Partial Class UserAdd
         '
         Me.ComboBox1.Font = New System.Drawing.Font("Arial", 11.25!)
         Me.ComboBox1.FormattingEnabled = True
-        Me.ComboBox1.Items.AddRange(New Object() {"BPC", "SPC", "DPC", "ADMIN"})
+        Me.ComboBox1.Items.AddRange(New Object() {"BPC", "SPC", "DPC", "ADMIN", "MANAGER"})
         Me.ComboBox1.Location = New System.Drawing.Point(19, 230)
         Me.ComboBox1.Name = "ComboBox1"
         Me.ComboBox1.Size = New System.Drawing.Size(164, 25)

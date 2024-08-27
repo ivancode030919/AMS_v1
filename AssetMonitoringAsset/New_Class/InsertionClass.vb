@@ -156,7 +156,8 @@ Public Class InsertionClass
                                          ByVal Status1 As String,
                                          ByVal Status2 As String,
                                          ByVal con As String, ByVal IsChildS As Integer,
-                                         ByVal IsChild As Boolean, ByVal IsParent As Boolean)
+                                         ByVal IsChild As Boolean, ByVal IsParent As Boolean,
+                                         RequestNUmber As String)
         'Try
         Dim post As Table(Of tblAssetInventory) = InsertionClass.GetInventory
         Dim p As New tblAssetInventory With
@@ -182,7 +183,8 @@ Public Class InsertionClass
                 .ReceivedByRequestor = 0,
                 .DeployBy = 777,
                 .RecvBy = 777,
-                .Returned = True
+                .Returned = True,
+                .RequestNumber = RequestNUmber
                 }
         post.InsertOnSubmit(p)
         post.Context.SubmitChanges()
@@ -731,7 +733,8 @@ Public Class InsertionClass
            .DateTo = DateTo,
            .Remarks = Remarks,
            .HeaderID = HeaderID,
-           .IsReturn = False
+           .IsReturn = False,
+           .IsDeployed = False
                         }
             post.InsertOnSubmit(p)
             post.Context.SubmitChanges()
@@ -767,14 +770,11 @@ Public Class InsertionClass
 
             Dim p As New tblTransferDetail With
                 {
-           .PropertyCode = PropertyCode,
-           .Quantity = Quantity,
-           .Borrowee = Borrowee,
-           .DateFrom = DateFrom,
-           .DateTo = DateTo,
-           .Remarks = Remarks,
-           .HeaderID = HeaderID,
-           .IsReturn = False
+        .AssetCode = PropertyCode,
+        .Status = "",
+        .TransferHeaderId = TrasheaderID,
+        .OldOwner = OldOnwer,
+        .NewOwner = NewOwner
                         }
             post.InsertOnSubmit(p)
             post.Context.SubmitChanges()
@@ -849,7 +849,7 @@ Public Class InsertionClass
     End Sub
 
     'Save Deployment Header
-    Public Shared Sub SaveDeploymentHeader(DepID As String, runner As Integer)
+    Public Shared Sub SaveDeploymentHeader(DepID As String, runner As Integer, Transaction As String)
         Try
             Dim post As Table(Of tblDeploymentHeader) = InsertionClass.GetDeploymentHeader
             Dim p As New tblDeploymentHeader With
@@ -857,7 +857,8 @@ Public Class InsertionClass
             .DeploymentID = DepID,
             .DeyployedBy = Home.EmployeeID,
             .[Date] = Date.Now,
-            .Runner = runner
+            .Runner = runner,
+            .Transaction = Transaction
                 }
             post.InsertOnSubmit(p)
             post.Context.SubmitChanges()
@@ -868,14 +869,15 @@ Public Class InsertionClass
     End Sub
 
     'Save Deployment Detail
-    Public Shared Sub SaveDeploymentDetail(PC As String, transactionID As Integer)
+    Public Shared Sub SaveDeploymentDetail(PC As String, transactionID As Integer, Reqnumber As String)
         Try
             Dim post As Table(Of tblDeploymentDetail) = InsertionClass.GetDeploymentDetail
             Dim p As New tblDeploymentDetail With
                 {
             .PropertyCode = PC,
             .Transid = transactionID,
-            .DateDeployed = Date.Now
+            .DateDeployed = Date.Now,
+            .RequestNumber = Reqnumber
                 }
             post.InsertOnSubmit(p)
             post.Context.SubmitChanges()

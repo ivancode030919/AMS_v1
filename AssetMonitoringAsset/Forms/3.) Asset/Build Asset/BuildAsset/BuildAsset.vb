@@ -152,7 +152,7 @@
                     Dim headerid As Integer = FetchClass.FetchHeaderID
 
                     InsertionClass.SaveAssetInventory(Integer.Parse(AssetCode), Class1, PropertyCode, Des, Double.Parse(Qty), Integer.Parse(Keeper),
-                                                       Integer.Parse(Owner), Integer.Parse(Borrower), Ref, Refno, BorrowerStat, stat1, stat2, Condition, 0, False, True)
+                                                       Integer.Parse(Owner), Integer.Parse(Borrower), Ref, Refno, BorrowerStat, stat1, stat2, Condition, 0, False, True, "000000")
 
                     InsertionClass.SaveBuildDetail(Integer.Parse(AssetCode), Class1, PropertyCode, Des, Double.Parse(Qty), Integer.Parse(Keeper),
                                                        Integer.Parse(Owner), Integer.Parse(Borrower), Ref, Refno, BorrowerStat, stat1, stat2, Condition, headerid)

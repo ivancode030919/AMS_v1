@@ -218,36 +218,36 @@
         'Try
         If SimpleButton2.Text = "Record" Then
 
-                If TextBox3.Text = "PROCURE" Then
+            If TextBox3.Text = "PROCURE" Then
 
-                    ' type1 for update to be re-use it is a condition on update
-                    Dim type1 As Integer = 2
-                    UpdateClass.UpdateStatusReqHeader(headerid, type1)
-                    InsertionClass.SaveProcurementHeader(TextBox1.Text, Home.EmployeeID, DateTimePicker1.Value)
+                ' type1 for update to be re-use it is a condition on update
+                Dim type1 As Integer = 2
+                UpdateClass.UpdateStatusReqHeader(headerid, type1)
+                InsertionClass.SaveProcurementHeader(TextBox1.Text, Home.EmployeeID, DateTimePicker1.Value)
 
-                    For Each row As DataGridViewRow In dgv.Rows
+                For Each row As DataGridViewRow In dgv.Rows
 
-                        If Not row.IsNewRow Then
+                    If Not row.IsNewRow Then
 
-                            Dim HeaderId As Integer = FetchClass.FetchTransIdForApproval
-                            Dim AssetCode As String = row.Cells(1).Value.ToString
-                            Dim ItemClass As String = row.Cells(2).Value.ToString
-                            Dim RequestFor As String = row.Cells(8).Value.ToString
-                            Dim Quantity As String = row.Cells(4).Value.ToString
-                            Dim Remarks As String = row.Cells(5).Value.ToString
-                            Dim State As String = row.Cells(6).Value.ToString
-                            InsertionClass.SaveProcurementDetail(AssetCode, ItemClass, Integer.Parse(RequestFor), Double.Parse(Quantity), Remarks, State, HeaderId)
+                        Dim HeaderId As Integer = FetchClass.FetchTransIdForApproval
+                        Dim AssetCode As String = row.Cells(1).Value.ToString
+                        Dim ItemClass As String = row.Cells(2).Value.ToString
+                        Dim RequestFor As String = row.Cells(8).Value.ToString
+                        Dim Quantity As String = row.Cells(4).Value.ToString
+                        Dim Remarks As String = row.Cells(5).Value.ToString
+                        Dim State As String = row.Cells(6).Value.ToString
+                        InsertionClass.SaveProcurementDetail(AssetCode, ItemClass, Integer.Parse(RequestFor), Double.Parse(Quantity), Remarks, State, HeaderId)
 
-                        End If
+                    End If
 
-                    Next
-                    RequestRegister.display()
-                    MessageBox.Show("Successfully Recorded", "Notification", MessageBoxButtons.OK, MessageBoxIcon.Information)
-                    SimpleButton2.Text = "Close"
+                Next
+                RequestRegister.display()
+                MessageBox.Show("Successfully Recorded", "Notification", MessageBoxButtons.OK, MessageBoxIcon.Information)
+                SimpleButton2.Text = "Close"
 
-                End If
+            End If
 
-            ElseIf SimpleButton2.Text = "Approve" Then
+        ElseIf SimpleButton2.Text = "Approve" Then
 
             If TextBox3.Text = "BORROW" Then
 
@@ -292,7 +292,7 @@
                         Dim Status As String = "Closed"
                         Dim OLd As Integer = row.Cells(6).Value
                         Dim NewOwner As Integer = row.Cells(6).Value.ToString
-                        InsertionClass.SaveTransferDetail()
+                        InsertionClass.SaveTransferDetail(PC, HeaderId, OLd, NewOwner)
 
                     End If
                 Next
@@ -302,13 +302,9 @@
 
             End If
 
-
-
-
         ElseIf SimpleButton2.Text = "Close" Then
             closingform()
-
-            End If
+        End If
 
 
         'Catch ex As Exception

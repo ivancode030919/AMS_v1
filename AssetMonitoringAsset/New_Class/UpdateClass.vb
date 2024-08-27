@@ -317,7 +317,8 @@
         End Try
     End Sub
 
-    Public Shared Sub UpdateDeployment(PropertyCode As String, InvId As Integer)
+    Public Shared Sub UpdateDeploymentProcurement(PropertyCode As String, InvId As Integer)
+
         Try
             Dim updateDeployment = (From p In db.GetTable(Of tblAssetInventory)()
                                     Where p.InvID = InvId And p.PropertyCode = PropertyCode
@@ -334,15 +335,16 @@
 
     End Sub
 
-    Public Shared Sub UpdateReceive(PropertyCode As String, InvId As Integer)
+    Public Shared Sub UpdateDeploymentBorrow(PropertyCode As String, InvId As Integer, Runner As Integer)
+
         Try
-            Dim updateDeployment = (From p In db.GetTable(Of tblAssetInventory)()
-                                    Where p.InvID = InvId And p.PropertyCode = PropertyCode
+            Dim updateDeployment = (From p In db.GetTable(Of tblBorrowDetail)()
+                                    Where p.id = InvId And p.PropertyCode = PropertyCode
                                     Select p).FirstOrDefault()
 
-            updateDeployment.ReceivedByRequestor = True
-            updateDeployment.DateRequestorRecv = DateAndTime.Now
-            updateDeployment.RecvBy = Home.EmployeeID
+            updateDeployment.IsDeployed = True
+            updateDeployment.IsDeployedDate = DateAndTime.Now
+            updateDeployment.IsDeployeRunner = Runner
 
             db.SubmitChanges()
         Catch ex As Exception
@@ -350,4 +352,40 @@
         End Try
 
     End Sub
+
+    Public Shared Sub UpdateReceivePROCUREMENT(PropertyCode As String, InvId As Integer, Receiver As Integer)
+        Try
+            Dim updateDeployment = (From p In db.GetTable(Of tblAssetInventory)()
+                                    Where p.InvID = InvId And p.PropertyCode = PropertyCode
+                                    Select p).FirstOrDefault()
+
+            updateDeployment.ReceivedByRequestor = True
+            updateDeployment.DateRequestorRecv = DateAndTime.Now
+            updateDeployment.RecvBy = Receiver
+
+            db.SubmitChanges()
+        Catch ex As Exception
+            MsgBox("Error.U.31")
+        End Try
+
+    End Sub
+
+    Public Shared Sub UpdateReceiveBorrow(PropertyCode As String, InvId As Integer, Runner As Integer)
+        Try
+            Dim updateDeployment = (From p In db.GetTable(Of tblBorrowDetail)()
+                                    Where p.id = InvId And p.PropertyCode = PropertyCode
+                                    Select p).FirstOrDefault()
+
+            updateDeployment.IsReceivedByBorrowee = True
+            updateDeployment.IsReceivedByBorroweeDate = DateAndTime.Now
+            updateDeployment.Runner = Runner
+
+            db.SubmitChanges()
+        Catch ex As Exception
+            MsgBox("Error.U.31")
+        End Try
+
+    End Sub
+
+
 End Class

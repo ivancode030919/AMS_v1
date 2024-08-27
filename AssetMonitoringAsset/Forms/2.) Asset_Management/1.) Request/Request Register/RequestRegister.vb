@@ -2,12 +2,12 @@
 
     Private stat1 As Integer
     Private Sub RequestRegister_Load(sender As Object, e As EventArgs) Handles MyBase.Load
+        stat1 = 1
         display()
         RadioButton1.Checked = True
     End Sub
 
     Public Sub display()
-        stat1 = 1
         dgv.DataSource = ViewClass.FetchsRequstRegister(stat1, DateTimePicker1.Value, DateTimePicker2.Value)
 
         With dgv

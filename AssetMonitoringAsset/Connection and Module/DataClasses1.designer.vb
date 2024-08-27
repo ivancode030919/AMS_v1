@@ -187,30 +187,6 @@ Partial Public Class DataClasses1DataContext
     End Sub
   Partial Private Sub Deletetblmasterlistdetail(instance As tblmasterlistdetail)
     End Sub
-  Partial Private Sub InserttblBorrowDetail(instance As tblBorrowDetail)
-    End Sub
-  Partial Private Sub UpdatetblBorrowDetail(instance As tblBorrowDetail)
-    End Sub
-  Partial Private Sub DeletetblBorrowDetail(instance As tblBorrowDetail)
-    End Sub
-  Partial Private Sub InserttblDeploymentDetail(instance As tblDeploymentDetail)
-    End Sub
-  Partial Private Sub UpdatetblDeploymentDetail(instance As tblDeploymentDetail)
-    End Sub
-  Partial Private Sub DeletetblDeploymentDetail(instance As tblDeploymentDetail)
-    End Sub
-  Partial Private Sub InserttblDeploymentHeader(instance As tblDeploymentHeader)
-    End Sub
-  Partial Private Sub UpdatetblDeploymentHeader(instance As tblDeploymentHeader)
-    End Sub
-  Partial Private Sub DeletetblDeploymentHeader(instance As tblDeploymentHeader)
-    End Sub
-  Partial Private Sub InserttblAssetInventory(instance As tblAssetInventory)
-    End Sub
-  Partial Private Sub UpdatetblAssetInventory(instance As tblAssetInventory)
-    End Sub
-  Partial Private Sub DeletetblAssetInventory(instance As tblAssetInventory)
-    End Sub
   Partial Private Sub InserttblTransferDetail(instance As tblTransferDetail)
     End Sub
   Partial Private Sub UpdatetblTransferDetail(instance As tblTransferDetail)
@@ -222,6 +198,30 @@ Partial Public Class DataClasses1DataContext
   Partial Private Sub UpdatetblTransferHeader(instance As tblTransferHeader)
     End Sub
   Partial Private Sub DeletetblTransferHeader(instance As tblTransferHeader)
+    End Sub
+  Partial Private Sub InserttblAssetInventory(instance As tblAssetInventory)
+    End Sub
+  Partial Private Sub UpdatetblAssetInventory(instance As tblAssetInventory)
+    End Sub
+  Partial Private Sub DeletetblAssetInventory(instance As tblAssetInventory)
+    End Sub
+  Partial Private Sub InserttblDeploymentHeader(instance As tblDeploymentHeader)
+    End Sub
+  Partial Private Sub UpdatetblDeploymentHeader(instance As tblDeploymentHeader)
+    End Sub
+  Partial Private Sub DeletetblDeploymentHeader(instance As tblDeploymentHeader)
+    End Sub
+  Partial Private Sub InserttblDeploymentDetail(instance As tblDeploymentDetail)
+    End Sub
+  Partial Private Sub UpdatetblDeploymentDetail(instance As tblDeploymentDetail)
+    End Sub
+  Partial Private Sub DeletetblDeploymentDetail(instance As tblDeploymentDetail)
+    End Sub
+  Partial Private Sub InserttblBorrowDetail(instance As tblBorrowDetail)
+    End Sub
+  Partial Private Sub UpdatetblBorrowDetail(instance As tblBorrowDetail)
+    End Sub
+  Partial Private Sub DeletetblBorrowDetail(instance As tblBorrowDetail)
     End Sub
   #End Region
 	
@@ -406,30 +406,6 @@ Partial Public Class DataClasses1DataContext
 		End Get
 	End Property
 	
-	Public ReadOnly Property tblBorrowDetails() As System.Data.Linq.Table(Of tblBorrowDetail)
-		Get
-			Return Me.GetTable(Of tblBorrowDetail)
-		End Get
-	End Property
-	
-	Public ReadOnly Property tblDeploymentDetails() As System.Data.Linq.Table(Of tblDeploymentDetail)
-		Get
-			Return Me.GetTable(Of tblDeploymentDetail)
-		End Get
-	End Property
-	
-	Public ReadOnly Property tblDeploymentHeaders() As System.Data.Linq.Table(Of tblDeploymentHeader)
-		Get
-			Return Me.GetTable(Of tblDeploymentHeader)
-		End Get
-	End Property
-	
-	Public ReadOnly Property tblAssetInventories() As System.Data.Linq.Table(Of tblAssetInventory)
-		Get
-			Return Me.GetTable(Of tblAssetInventory)
-		End Get
-	End Property
-	
 	Public ReadOnly Property tblTransferDetails() As System.Data.Linq.Table(Of tblTransferDetail)
 		Get
 			Return Me.GetTable(Of tblTransferDetail)
@@ -439,6 +415,30 @@ Partial Public Class DataClasses1DataContext
 	Public ReadOnly Property tblTransferHeaders() As System.Data.Linq.Table(Of tblTransferHeader)
 		Get
 			Return Me.GetTable(Of tblTransferHeader)
+		End Get
+	End Property
+	
+	Public ReadOnly Property tblAssetInventories() As System.Data.Linq.Table(Of tblAssetInventory)
+		Get
+			Return Me.GetTable(Of tblAssetInventory)
+		End Get
+	End Property
+	
+	Public ReadOnly Property tblDeploymentHeaders() As System.Data.Linq.Table(Of tblDeploymentHeader)
+		Get
+			Return Me.GetTable(Of tblDeploymentHeader)
+		End Get
+	End Property
+	
+	Public ReadOnly Property tblDeploymentDetails() As System.Data.Linq.Table(Of tblDeploymentDetail)
+		Get
+			Return Me.GetTable(Of tblDeploymentDetail)
+		End Get
+	End Property
+	
+	Public ReadOnly Property tblBorrowDetails() As System.Data.Linq.Table(Of tblBorrowDetail)
+		Get
+			Return Me.GetTable(Of tblBorrowDetail)
 		End Get
 	End Property
 	
@@ -6399,1222 +6399,6 @@ Partial Public Class tblmasterlistdetail
 	End Sub
 End Class
 
-<Global.System.Data.Linq.Mapping.TableAttribute(Name:="dbo.tblBorrowDetail")>  _
-Partial Public Class tblBorrowDetail
-	Implements System.ComponentModel.INotifyPropertyChanging, System.ComponentModel.INotifyPropertyChanged
-	
-	Private Shared emptyChangingEventArgs As PropertyChangingEventArgs = New PropertyChangingEventArgs(String.Empty)
-	
-	Private _id As Integer
-	
-	Private _PropertyCode As String
-	
-	Private _Quantity As System.Nullable(Of Double)
-	
-	Private _Borrowee As System.Nullable(Of Integer)
-	
-	Private _DateFrom As System.Nullable(Of Date)
-	
-	Private _DateTo As System.Nullable(Of Date)
-	
-	Private _Remarks As String
-	
-	Private _HeaderID As System.Nullable(Of Integer)
-	
-	Private _IsReturn As System.Nullable(Of Boolean)
-	
-	Private _IsReturnDate As System.Nullable(Of Date)
-	
-	Private _ReturnBy As System.Nullable(Of Integer)
-	
-	Private _IsReceivedByBorrowee As System.Nullable(Of Boolean)
-	
-	Private _IsReceivedByBorroweeDate As System.Nullable(Of Date)
-	
-	Private _Runner As System.Nullable(Of Integer)
-	
-    #Region "Extensibility Method Definitions"
-    Partial Private Sub OnLoaded()
-    End Sub
-    Partial Private Sub OnValidate(action As System.Data.Linq.ChangeAction)
-    End Sub
-    Partial Private Sub OnCreated()
-    End Sub
-    Partial Private Sub OnidChanging(value As Integer)
-    End Sub
-    Partial Private Sub OnidChanged()
-    End Sub
-    Partial Private Sub OnPropertyCodeChanging(value As String)
-    End Sub
-    Partial Private Sub OnPropertyCodeChanged()
-    End Sub
-    Partial Private Sub OnQuantityChanging(value As System.Nullable(Of Double))
-    End Sub
-    Partial Private Sub OnQuantityChanged()
-    End Sub
-    Partial Private Sub OnBorroweeChanging(value As System.Nullable(Of Integer))
-    End Sub
-    Partial Private Sub OnBorroweeChanged()
-    End Sub
-    Partial Private Sub OnDateFromChanging(value As System.Nullable(Of Date))
-    End Sub
-    Partial Private Sub OnDateFromChanged()
-    End Sub
-    Partial Private Sub OnDateToChanging(value As System.Nullable(Of Date))
-    End Sub
-    Partial Private Sub OnDateToChanged()
-    End Sub
-    Partial Private Sub OnRemarksChanging(value As String)
-    End Sub
-    Partial Private Sub OnRemarksChanged()
-    End Sub
-    Partial Private Sub OnHeaderIDChanging(value As System.Nullable(Of Integer))
-    End Sub
-    Partial Private Sub OnHeaderIDChanged()
-    End Sub
-    Partial Private Sub OnIsReturnChanging(value As System.Nullable(Of Boolean))
-    End Sub
-    Partial Private Sub OnIsReturnChanged()
-    End Sub
-    Partial Private Sub OnIsReturnDateChanging(value As System.Nullable(Of Date))
-    End Sub
-    Partial Private Sub OnIsReturnDateChanged()
-    End Sub
-    Partial Private Sub OnReturnByChanging(value As System.Nullable(Of Integer))
-    End Sub
-    Partial Private Sub OnReturnByChanged()
-    End Sub
-    Partial Private Sub OnIsReceivedByBorroweeChanging(value As System.Nullable(Of Boolean))
-    End Sub
-    Partial Private Sub OnIsReceivedByBorroweeChanged()
-    End Sub
-    Partial Private Sub OnIsReceivedByBorroweeDateChanging(value As System.Nullable(Of Date))
-    End Sub
-    Partial Private Sub OnIsReceivedByBorroweeDateChanged()
-    End Sub
-    Partial Private Sub OnRunnerChanging(value As System.Nullable(Of Integer))
-    End Sub
-    Partial Private Sub OnRunnerChanged()
-    End Sub
-    #End Region
-	
-	Public Sub New()
-		MyBase.New
-		OnCreated
-	End Sub
-	
-	<Global.System.Data.Linq.Mapping.ColumnAttribute(Storage:="_id", AutoSync:=AutoSync.OnInsert, DbType:="Int NOT NULL IDENTITY", IsPrimaryKey:=true, IsDbGenerated:=true)>  _
-	Public Property id() As Integer
-		Get
-			Return Me._id
-		End Get
-		Set
-			If ((Me._id = value)  _
-						= false) Then
-				Me.OnidChanging(value)
-				Me.SendPropertyChanging
-				Me._id = value
-				Me.SendPropertyChanged("id")
-				Me.OnidChanged
-			End If
-		End Set
-	End Property
-	
-	<Global.System.Data.Linq.Mapping.ColumnAttribute(Storage:="_PropertyCode", DbType:="VarChar(MAX)")>  _
-	Public Property PropertyCode() As String
-		Get
-			Return Me._PropertyCode
-		End Get
-		Set
-			If (String.Equals(Me._PropertyCode, value) = false) Then
-				Me.OnPropertyCodeChanging(value)
-				Me.SendPropertyChanging
-				Me._PropertyCode = value
-				Me.SendPropertyChanged("PropertyCode")
-				Me.OnPropertyCodeChanged
-			End If
-		End Set
-	End Property
-	
-	<Global.System.Data.Linq.Mapping.ColumnAttribute(Storage:="_Quantity", DbType:="Float")>  _
-	Public Property Quantity() As System.Nullable(Of Double)
-		Get
-			Return Me._Quantity
-		End Get
-		Set
-			If (Me._Quantity.Equals(value) = false) Then
-				Me.OnQuantityChanging(value)
-				Me.SendPropertyChanging
-				Me._Quantity = value
-				Me.SendPropertyChanged("Quantity")
-				Me.OnQuantityChanged
-			End If
-		End Set
-	End Property
-	
-	<Global.System.Data.Linq.Mapping.ColumnAttribute(Storage:="_Borrowee", DbType:="Int")>  _
-	Public Property Borrowee() As System.Nullable(Of Integer)
-		Get
-			Return Me._Borrowee
-		End Get
-		Set
-			If (Me._Borrowee.Equals(value) = false) Then
-				Me.OnBorroweeChanging(value)
-				Me.SendPropertyChanging
-				Me._Borrowee = value
-				Me.SendPropertyChanged("Borrowee")
-				Me.OnBorroweeChanged
-			End If
-		End Set
-	End Property
-	
-	<Global.System.Data.Linq.Mapping.ColumnAttribute(Storage:="_DateFrom", DbType:="Date")>  _
-	Public Property DateFrom() As System.Nullable(Of Date)
-		Get
-			Return Me._DateFrom
-		End Get
-		Set
-			If (Me._DateFrom.Equals(value) = false) Then
-				Me.OnDateFromChanging(value)
-				Me.SendPropertyChanging
-				Me._DateFrom = value
-				Me.SendPropertyChanged("DateFrom")
-				Me.OnDateFromChanged
-			End If
-		End Set
-	End Property
-	
-	<Global.System.Data.Linq.Mapping.ColumnAttribute(Storage:="_DateTo", DbType:="Date")>  _
-	Public Property DateTo() As System.Nullable(Of Date)
-		Get
-			Return Me._DateTo
-		End Get
-		Set
-			If (Me._DateTo.Equals(value) = false) Then
-				Me.OnDateToChanging(value)
-				Me.SendPropertyChanging
-				Me._DateTo = value
-				Me.SendPropertyChanged("DateTo")
-				Me.OnDateToChanged
-			End If
-		End Set
-	End Property
-	
-	<Global.System.Data.Linq.Mapping.ColumnAttribute(Storage:="_Remarks", DbType:="VarChar(MAX)")>  _
-	Public Property Remarks() As String
-		Get
-			Return Me._Remarks
-		End Get
-		Set
-			If (String.Equals(Me._Remarks, value) = false) Then
-				Me.OnRemarksChanging(value)
-				Me.SendPropertyChanging
-				Me._Remarks = value
-				Me.SendPropertyChanged("Remarks")
-				Me.OnRemarksChanged
-			End If
-		End Set
-	End Property
-	
-	<Global.System.Data.Linq.Mapping.ColumnAttribute(Storage:="_HeaderID", DbType:="Int")>  _
-	Public Property HeaderID() As System.Nullable(Of Integer)
-		Get
-			Return Me._HeaderID
-		End Get
-		Set
-			If (Me._HeaderID.Equals(value) = false) Then
-				Me.OnHeaderIDChanging(value)
-				Me.SendPropertyChanging
-				Me._HeaderID = value
-				Me.SendPropertyChanged("HeaderID")
-				Me.OnHeaderIDChanged
-			End If
-		End Set
-	End Property
-	
-	<Global.System.Data.Linq.Mapping.ColumnAttribute(Storage:="_IsReturn", DbType:="Bit")>  _
-	Public Property IsReturn() As System.Nullable(Of Boolean)
-		Get
-			Return Me._IsReturn
-		End Get
-		Set
-			If (Me._IsReturn.Equals(value) = false) Then
-				Me.OnIsReturnChanging(value)
-				Me.SendPropertyChanging
-				Me._IsReturn = value
-				Me.SendPropertyChanged("IsReturn")
-				Me.OnIsReturnChanged
-			End If
-		End Set
-	End Property
-	
-	<Global.System.Data.Linq.Mapping.ColumnAttribute(Storage:="_IsReturnDate", DbType:="DateTime")>  _
-	Public Property IsReturnDate() As System.Nullable(Of Date)
-		Get
-			Return Me._IsReturnDate
-		End Get
-		Set
-			If (Me._IsReturnDate.Equals(value) = false) Then
-				Me.OnIsReturnDateChanging(value)
-				Me.SendPropertyChanging
-				Me._IsReturnDate = value
-				Me.SendPropertyChanged("IsReturnDate")
-				Me.OnIsReturnDateChanged
-			End If
-		End Set
-	End Property
-	
-	<Global.System.Data.Linq.Mapping.ColumnAttribute(Storage:="_ReturnBy", DbType:="Int")>  _
-	Public Property ReturnBy() As System.Nullable(Of Integer)
-		Get
-			Return Me._ReturnBy
-		End Get
-		Set
-			If (Me._ReturnBy.Equals(value) = false) Then
-				Me.OnReturnByChanging(value)
-				Me.SendPropertyChanging
-				Me._ReturnBy = value
-				Me.SendPropertyChanged("ReturnBy")
-				Me.OnReturnByChanged
-			End If
-		End Set
-	End Property
-	
-	<Global.System.Data.Linq.Mapping.ColumnAttribute(Storage:="_IsReceivedByBorrowee", DbType:="Bit")>  _
-	Public Property IsReceivedByBorrowee() As System.Nullable(Of Boolean)
-		Get
-			Return Me._IsReceivedByBorrowee
-		End Get
-		Set
-			If (Me._IsReceivedByBorrowee.Equals(value) = false) Then
-				Me.OnIsReceivedByBorroweeChanging(value)
-				Me.SendPropertyChanging
-				Me._IsReceivedByBorrowee = value
-				Me.SendPropertyChanged("IsReceivedByBorrowee")
-				Me.OnIsReceivedByBorroweeChanged
-			End If
-		End Set
-	End Property
-	
-	<Global.System.Data.Linq.Mapping.ColumnAttribute(Storage:="_IsReceivedByBorroweeDate", DbType:="DateTime")>  _
-	Public Property IsReceivedByBorroweeDate() As System.Nullable(Of Date)
-		Get
-			Return Me._IsReceivedByBorroweeDate
-		End Get
-		Set
-			If (Me._IsReceivedByBorroweeDate.Equals(value) = false) Then
-				Me.OnIsReceivedByBorroweeDateChanging(value)
-				Me.SendPropertyChanging
-				Me._IsReceivedByBorroweeDate = value
-				Me.SendPropertyChanged("IsReceivedByBorroweeDate")
-				Me.OnIsReceivedByBorroweeDateChanged
-			End If
-		End Set
-	End Property
-	
-	<Global.System.Data.Linq.Mapping.ColumnAttribute(Storage:="_Runner", DbType:="Int")>  _
-	Public Property Runner() As System.Nullable(Of Integer)
-		Get
-			Return Me._Runner
-		End Get
-		Set
-			If (Me._Runner.Equals(value) = false) Then
-				Me.OnRunnerChanging(value)
-				Me.SendPropertyChanging
-				Me._Runner = value
-				Me.SendPropertyChanged("Runner")
-				Me.OnRunnerChanged
-			End If
-		End Set
-	End Property
-	
-	Public Event PropertyChanging As PropertyChangingEventHandler Implements System.ComponentModel.INotifyPropertyChanging.PropertyChanging
-	
-	Public Event PropertyChanged As PropertyChangedEventHandler Implements System.ComponentModel.INotifyPropertyChanged.PropertyChanged
-	
-	Protected Overridable Sub SendPropertyChanging()
-		If ((Me.PropertyChangingEvent Is Nothing)  _
-					= false) Then
-			RaiseEvent PropertyChanging(Me, emptyChangingEventArgs)
-		End If
-	End Sub
-	
-	Protected Overridable Sub SendPropertyChanged(ByVal propertyName As [String])
-		If ((Me.PropertyChangedEvent Is Nothing)  _
-					= false) Then
-			RaiseEvent PropertyChanged(Me, New PropertyChangedEventArgs(propertyName))
-		End If
-	End Sub
-End Class
-
-<Global.System.Data.Linq.Mapping.TableAttribute(Name:="dbo.tblDeploymentDetail")>  _
-Partial Public Class tblDeploymentDetail
-	Implements System.ComponentModel.INotifyPropertyChanging, System.ComponentModel.INotifyPropertyChanged
-	
-	Private Shared emptyChangingEventArgs As PropertyChangingEventArgs = New PropertyChangingEventArgs(String.Empty)
-	
-	Private _id As Integer
-	
-	Private _PropertyCode As String
-	
-	Private _Transid As System.Nullable(Of Integer)
-	
-	Private _DateDeployed As System.Nullable(Of Date)
-	
-    #Region "Extensibility Method Definitions"
-    Partial Private Sub OnLoaded()
-    End Sub
-    Partial Private Sub OnValidate(action As System.Data.Linq.ChangeAction)
-    End Sub
-    Partial Private Sub OnCreated()
-    End Sub
-    Partial Private Sub OnidChanging(value As Integer)
-    End Sub
-    Partial Private Sub OnidChanged()
-    End Sub
-    Partial Private Sub OnPropertyCodeChanging(value As String)
-    End Sub
-    Partial Private Sub OnPropertyCodeChanged()
-    End Sub
-    Partial Private Sub OnTransidChanging(value As System.Nullable(Of Integer))
-    End Sub
-    Partial Private Sub OnTransidChanged()
-    End Sub
-    Partial Private Sub OnDateDeployedChanging(value As System.Nullable(Of Date))
-    End Sub
-    Partial Private Sub OnDateDeployedChanged()
-    End Sub
-    #End Region
-	
-	Public Sub New()
-		MyBase.New
-		OnCreated
-	End Sub
-	
-	<Global.System.Data.Linq.Mapping.ColumnAttribute(Storage:="_id", AutoSync:=AutoSync.OnInsert, DbType:="Int NOT NULL IDENTITY", IsPrimaryKey:=true, IsDbGenerated:=true)>  _
-	Public Property id() As Integer
-		Get
-			Return Me._id
-		End Get
-		Set
-			If ((Me._id = value)  _
-						= false) Then
-				Me.OnidChanging(value)
-				Me.SendPropertyChanging
-				Me._id = value
-				Me.SendPropertyChanged("id")
-				Me.OnidChanged
-			End If
-		End Set
-	End Property
-	
-	<Global.System.Data.Linq.Mapping.ColumnAttribute(Storage:="_PropertyCode", DbType:="VarChar(100)")>  _
-	Public Property PropertyCode() As String
-		Get
-			Return Me._PropertyCode
-		End Get
-		Set
-			If (String.Equals(Me._PropertyCode, value) = false) Then
-				Me.OnPropertyCodeChanging(value)
-				Me.SendPropertyChanging
-				Me._PropertyCode = value
-				Me.SendPropertyChanged("PropertyCode")
-				Me.OnPropertyCodeChanged
-			End If
-		End Set
-	End Property
-	
-	<Global.System.Data.Linq.Mapping.ColumnAttribute(Storage:="_Transid", DbType:="Int")>  _
-	Public Property Transid() As System.Nullable(Of Integer)
-		Get
-			Return Me._Transid
-		End Get
-		Set
-			If (Me._Transid.Equals(value) = false) Then
-				Me.OnTransidChanging(value)
-				Me.SendPropertyChanging
-				Me._Transid = value
-				Me.SendPropertyChanged("Transid")
-				Me.OnTransidChanged
-			End If
-		End Set
-	End Property
-	
-	<Global.System.Data.Linq.Mapping.ColumnAttribute(Storage:="_DateDeployed", DbType:="DateTime")>  _
-	Public Property DateDeployed() As System.Nullable(Of Date)
-		Get
-			Return Me._DateDeployed
-		End Get
-		Set
-			If (Me._DateDeployed.Equals(value) = false) Then
-				Me.OnDateDeployedChanging(value)
-				Me.SendPropertyChanging
-				Me._DateDeployed = value
-				Me.SendPropertyChanged("DateDeployed")
-				Me.OnDateDeployedChanged
-			End If
-		End Set
-	End Property
-	
-	Public Event PropertyChanging As PropertyChangingEventHandler Implements System.ComponentModel.INotifyPropertyChanging.PropertyChanging
-	
-	Public Event PropertyChanged As PropertyChangedEventHandler Implements System.ComponentModel.INotifyPropertyChanged.PropertyChanged
-	
-	Protected Overridable Sub SendPropertyChanging()
-		If ((Me.PropertyChangingEvent Is Nothing)  _
-					= false) Then
-			RaiseEvent PropertyChanging(Me, emptyChangingEventArgs)
-		End If
-	End Sub
-	
-	Protected Overridable Sub SendPropertyChanged(ByVal propertyName As [String])
-		If ((Me.PropertyChangedEvent Is Nothing)  _
-					= false) Then
-			RaiseEvent PropertyChanged(Me, New PropertyChangedEventArgs(propertyName))
-		End If
-	End Sub
-End Class
-
-<Global.System.Data.Linq.Mapping.TableAttribute(Name:="dbo.tblDeploymentHeader")>  _
-Partial Public Class tblDeploymentHeader
-	Implements System.ComponentModel.INotifyPropertyChanging, System.ComponentModel.INotifyPropertyChanged
-	
-	Private Shared emptyChangingEventArgs As PropertyChangingEventArgs = New PropertyChangingEventArgs(String.Empty)
-	
-	Private _id As Integer
-	
-	Private _DeploymentID As String
-	
-	Private _Date As System.Nullable(Of Date)
-	
-	Private _DeyployedBy As System.Nullable(Of Integer)
-	
-	Private _Runner As System.Nullable(Of Integer)
-	
-    #Region "Extensibility Method Definitions"
-    Partial Private Sub OnLoaded()
-    End Sub
-    Partial Private Sub OnValidate(action As System.Data.Linq.ChangeAction)
-    End Sub
-    Partial Private Sub OnCreated()
-    End Sub
-    Partial Private Sub OnidChanging(value As Integer)
-    End Sub
-    Partial Private Sub OnidChanged()
-    End Sub
-    Partial Private Sub OnDeploymentIDChanging(value As String)
-    End Sub
-    Partial Private Sub OnDeploymentIDChanged()
-    End Sub
-    Partial Private Sub OnDateChanging(value As System.Nullable(Of Date))
-    End Sub
-    Partial Private Sub OnDateChanged()
-    End Sub
-    Partial Private Sub OnDeyployedByChanging(value As System.Nullable(Of Integer))
-    End Sub
-    Partial Private Sub OnDeyployedByChanged()
-    End Sub
-    Partial Private Sub OnRunnerChanging(value As System.Nullable(Of Integer))
-    End Sub
-    Partial Private Sub OnRunnerChanged()
-    End Sub
-    #End Region
-	
-	Public Sub New()
-		MyBase.New
-		OnCreated
-	End Sub
-	
-	<Global.System.Data.Linq.Mapping.ColumnAttribute(Storage:="_id", AutoSync:=AutoSync.OnInsert, DbType:="Int NOT NULL IDENTITY", IsPrimaryKey:=true, IsDbGenerated:=true)>  _
-	Public Property id() As Integer
-		Get
-			Return Me._id
-		End Get
-		Set
-			If ((Me._id = value)  _
-						= false) Then
-				Me.OnidChanging(value)
-				Me.SendPropertyChanging
-				Me._id = value
-				Me.SendPropertyChanged("id")
-				Me.OnidChanged
-			End If
-		End Set
-	End Property
-	
-	<Global.System.Data.Linq.Mapping.ColumnAttribute(Storage:="_DeploymentID", DbType:="VarChar(100)")>  _
-	Public Property DeploymentID() As String
-		Get
-			Return Me._DeploymentID
-		End Get
-		Set
-			If (String.Equals(Me._DeploymentID, value) = false) Then
-				Me.OnDeploymentIDChanging(value)
-				Me.SendPropertyChanging
-				Me._DeploymentID = value
-				Me.SendPropertyChanged("DeploymentID")
-				Me.OnDeploymentIDChanged
-			End If
-		End Set
-	End Property
-	
-	<Global.System.Data.Linq.Mapping.ColumnAttribute(Name:="Date", Storage:="_Date", DbType:="DateTime")>  _
-	Public Property [Date]() As System.Nullable(Of Date)
-		Get
-			Return Me._Date
-		End Get
-		Set
-			If (Me._Date.Equals(value) = false) Then
-				Me.OnDateChanging(value)
-				Me.SendPropertyChanging
-				Me._Date = value
-				Me.SendPropertyChanged("[Date]")
-				Me.OnDateChanged
-			End If
-		End Set
-	End Property
-	
-	<Global.System.Data.Linq.Mapping.ColumnAttribute(Storage:="_DeyployedBy", DbType:="Int")>  _
-	Public Property DeyployedBy() As System.Nullable(Of Integer)
-		Get
-			Return Me._DeyployedBy
-		End Get
-		Set
-			If (Me._DeyployedBy.Equals(value) = false) Then
-				Me.OnDeyployedByChanging(value)
-				Me.SendPropertyChanging
-				Me._DeyployedBy = value
-				Me.SendPropertyChanged("DeyployedBy")
-				Me.OnDeyployedByChanged
-			End If
-		End Set
-	End Property
-	
-	<Global.System.Data.Linq.Mapping.ColumnAttribute(Storage:="_Runner", DbType:="Int")>  _
-	Public Property Runner() As System.Nullable(Of Integer)
-		Get
-			Return Me._Runner
-		End Get
-		Set
-			If (Me._Runner.Equals(value) = false) Then
-				Me.OnRunnerChanging(value)
-				Me.SendPropertyChanging
-				Me._Runner = value
-				Me.SendPropertyChanged("Runner")
-				Me.OnRunnerChanged
-			End If
-		End Set
-	End Property
-	
-	Public Event PropertyChanging As PropertyChangingEventHandler Implements System.ComponentModel.INotifyPropertyChanging.PropertyChanging
-	
-	Public Event PropertyChanged As PropertyChangedEventHandler Implements System.ComponentModel.INotifyPropertyChanged.PropertyChanged
-	
-	Protected Overridable Sub SendPropertyChanging()
-		If ((Me.PropertyChangingEvent Is Nothing)  _
-					= false) Then
-			RaiseEvent PropertyChanging(Me, emptyChangingEventArgs)
-		End If
-	End Sub
-	
-	Protected Overridable Sub SendPropertyChanged(ByVal propertyName As [String])
-		If ((Me.PropertyChangedEvent Is Nothing)  _
-					= false) Then
-			RaiseEvent PropertyChanged(Me, New PropertyChangedEventArgs(propertyName))
-		End If
-	End Sub
-End Class
-
-<Global.System.Data.Linq.Mapping.TableAttribute(Name:="dbo.tblAssetInventory")>  _
-Partial Public Class tblAssetInventory
-	Implements System.ComponentModel.INotifyPropertyChanging, System.ComponentModel.INotifyPropertyChanged
-	
-	Private Shared emptyChangingEventArgs As PropertyChangingEventArgs = New PropertyChangingEventArgs(String.Empty)
-	
-	Private _InvID As Integer
-	
-	Private _AssetCode As System.Nullable(Of Integer)
-	
-	Private _Class As String
-	
-	Private _PropertyCode As String
-	
-	Private _Des As String
-	
-	Private _Qty As System.Nullable(Of Double)
-	
-	Private _Keeper As System.Nullable(Of Integer)
-	
-	Private _Owner As System.Nullable(Of Integer)
-	
-	Private _Borrower As System.Nullable(Of Integer)
-	
-	Private _Reference As String
-	
-	Private _Referenceno As String
-	
-	Private _borrowerStat As String
-	
-	Private _Status1 As String
-	
-	Private _Status2 As String
-	
-	Private _Condition As String
-	
-	Private _IsChildSeries As System.Nullable(Of Integer)
-	
-	Private _Deployed As System.Nullable(Of Boolean)
-	
-	Private _ReceivedByRequestor As System.Nullable(Of Boolean)
-	
-	Private _DateDeployed As System.Nullable(Of Date)
-	
-	Private _DateRequestorRecv As System.Nullable(Of Date)
-	
-	Private _Returned As System.Nullable(Of Boolean)
-	
-	Private _IsChild As System.Nullable(Of Boolean)
-	
-	Private _IsParent As System.Nullable(Of Boolean)
-	
-	Private _DeployBy As System.Nullable(Of Integer)
-	
-	Private _RecvBy As System.Nullable(Of Integer)
-	
-    #Region "Extensibility Method Definitions"
-    Partial Private Sub OnLoaded()
-    End Sub
-    Partial Private Sub OnValidate(action As System.Data.Linq.ChangeAction)
-    End Sub
-    Partial Private Sub OnCreated()
-    End Sub
-    Partial Private Sub OnInvIDChanging(value As Integer)
-    End Sub
-    Partial Private Sub OnInvIDChanged()
-    End Sub
-    Partial Private Sub OnAssetCodeChanging(value As System.Nullable(Of Integer))
-    End Sub
-    Partial Private Sub OnAssetCodeChanged()
-    End Sub
-    Partial Private Sub OnClassChanging(value As String)
-    End Sub
-    Partial Private Sub OnClassChanged()
-    End Sub
-    Partial Private Sub OnPropertyCodeChanging(value As String)
-    End Sub
-    Partial Private Sub OnPropertyCodeChanged()
-    End Sub
-    Partial Private Sub OnDesChanging(value As String)
-    End Sub
-    Partial Private Sub OnDesChanged()
-    End Sub
-    Partial Private Sub OnQtyChanging(value As System.Nullable(Of Double))
-    End Sub
-    Partial Private Sub OnQtyChanged()
-    End Sub
-    Partial Private Sub OnKeeperChanging(value As System.Nullable(Of Integer))
-    End Sub
-    Partial Private Sub OnKeeperChanged()
-    End Sub
-    Partial Private Sub OnOwnerChanging(value As System.Nullable(Of Integer))
-    End Sub
-    Partial Private Sub OnOwnerChanged()
-    End Sub
-    Partial Private Sub OnBorrowerChanging(value As System.Nullable(Of Integer))
-    End Sub
-    Partial Private Sub OnBorrowerChanged()
-    End Sub
-    Partial Private Sub OnReferenceChanging(value As String)
-    End Sub
-    Partial Private Sub OnReferenceChanged()
-    End Sub
-    Partial Private Sub OnReferencenoChanging(value As String)
-    End Sub
-    Partial Private Sub OnReferencenoChanged()
-    End Sub
-    Partial Private Sub OnborrowerStatChanging(value As String)
-    End Sub
-    Partial Private Sub OnborrowerStatChanged()
-    End Sub
-    Partial Private Sub OnStatus1Changing(value As String)
-    End Sub
-    Partial Private Sub OnStatus1Changed()
-    End Sub
-    Partial Private Sub OnStatus2Changing(value As String)
-    End Sub
-    Partial Private Sub OnStatus2Changed()
-    End Sub
-    Partial Private Sub OnConditionChanging(value As String)
-    End Sub
-    Partial Private Sub OnConditionChanged()
-    End Sub
-    Partial Private Sub OnIsChildSeriesChanging(value As System.Nullable(Of Integer))
-    End Sub
-    Partial Private Sub OnIsChildSeriesChanged()
-    End Sub
-    Partial Private Sub OnDeployedChanging(value As System.Nullable(Of Boolean))
-    End Sub
-    Partial Private Sub OnDeployedChanged()
-    End Sub
-    Partial Private Sub OnReceivedByRequestorChanging(value As System.Nullable(Of Boolean))
-    End Sub
-    Partial Private Sub OnReceivedByRequestorChanged()
-    End Sub
-    Partial Private Sub OnDateDeployedChanging(value As System.Nullable(Of Date))
-    End Sub
-    Partial Private Sub OnDateDeployedChanged()
-    End Sub
-    Partial Private Sub OnDateRequestorRecvChanging(value As System.Nullable(Of Date))
-    End Sub
-    Partial Private Sub OnDateRequestorRecvChanged()
-    End Sub
-    Partial Private Sub OnReturnedChanging(value As System.Nullable(Of Boolean))
-    End Sub
-    Partial Private Sub OnReturnedChanged()
-    End Sub
-    Partial Private Sub OnIsChildChanging(value As System.Nullable(Of Boolean))
-    End Sub
-    Partial Private Sub OnIsChildChanged()
-    End Sub
-    Partial Private Sub OnIsParentChanging(value As System.Nullable(Of Boolean))
-    End Sub
-    Partial Private Sub OnIsParentChanged()
-    End Sub
-    Partial Private Sub OnDeployByChanging(value As System.Nullable(Of Integer))
-    End Sub
-    Partial Private Sub OnDeployByChanged()
-    End Sub
-    Partial Private Sub OnRecvByChanging(value As System.Nullable(Of Integer))
-    End Sub
-    Partial Private Sub OnRecvByChanged()
-    End Sub
-    #End Region
-	
-	Public Sub New()
-		MyBase.New
-		OnCreated
-	End Sub
-	
-	<Global.System.Data.Linq.Mapping.ColumnAttribute(Storage:="_InvID", AutoSync:=AutoSync.OnInsert, DbType:="Int NOT NULL IDENTITY", IsPrimaryKey:=true, IsDbGenerated:=true)>  _
-	Public Property InvID() As Integer
-		Get
-			Return Me._InvID
-		End Get
-		Set
-			If ((Me._InvID = value)  _
-						= false) Then
-				Me.OnInvIDChanging(value)
-				Me.SendPropertyChanging
-				Me._InvID = value
-				Me.SendPropertyChanged("InvID")
-				Me.OnInvIDChanged
-			End If
-		End Set
-	End Property
-	
-	<Global.System.Data.Linq.Mapping.ColumnAttribute(Storage:="_AssetCode", DbType:="Int")>  _
-	Public Property AssetCode() As System.Nullable(Of Integer)
-		Get
-			Return Me._AssetCode
-		End Get
-		Set
-			If (Me._AssetCode.Equals(value) = false) Then
-				Me.OnAssetCodeChanging(value)
-				Me.SendPropertyChanging
-				Me._AssetCode = value
-				Me.SendPropertyChanged("AssetCode")
-				Me.OnAssetCodeChanged
-			End If
-		End Set
-	End Property
-	
-	<Global.System.Data.Linq.Mapping.ColumnAttribute(Name:="Class", Storage:="_Class", DbType:="VarChar(MAX)")>  _
-	Public Property [Class]() As String
-		Get
-			Return Me._Class
-		End Get
-		Set
-			If (String.Equals(Me._Class, value) = false) Then
-				Me.OnClassChanging(value)
-				Me.SendPropertyChanging
-				Me._Class = value
-				Me.SendPropertyChanged("[Class]")
-				Me.OnClassChanged
-			End If
-		End Set
-	End Property
-	
-	<Global.System.Data.Linq.Mapping.ColumnAttribute(Storage:="_PropertyCode", DbType:="VarChar(MAX)")>  _
-	Public Property PropertyCode() As String
-		Get
-			Return Me._PropertyCode
-		End Get
-		Set
-			If (String.Equals(Me._PropertyCode, value) = false) Then
-				Me.OnPropertyCodeChanging(value)
-				Me.SendPropertyChanging
-				Me._PropertyCode = value
-				Me.SendPropertyChanged("PropertyCode")
-				Me.OnPropertyCodeChanged
-			End If
-		End Set
-	End Property
-	
-	<Global.System.Data.Linq.Mapping.ColumnAttribute(Storage:="_Des", DbType:="VarChar(MAX)")>  _
-	Public Property Des() As String
-		Get
-			Return Me._Des
-		End Get
-		Set
-			If (String.Equals(Me._Des, value) = false) Then
-				Me.OnDesChanging(value)
-				Me.SendPropertyChanging
-				Me._Des = value
-				Me.SendPropertyChanged("Des")
-				Me.OnDesChanged
-			End If
-		End Set
-	End Property
-	
-	<Global.System.Data.Linq.Mapping.ColumnAttribute(Storage:="_Qty", DbType:="Float")>  _
-	Public Property Qty() As System.Nullable(Of Double)
-		Get
-			Return Me._Qty
-		End Get
-		Set
-			If (Me._Qty.Equals(value) = false) Then
-				Me.OnQtyChanging(value)
-				Me.SendPropertyChanging
-				Me._Qty = value
-				Me.SendPropertyChanged("Qty")
-				Me.OnQtyChanged
-			End If
-		End Set
-	End Property
-	
-	<Global.System.Data.Linq.Mapping.ColumnAttribute(Storage:="_Keeper", DbType:="Int")>  _
-	Public Property Keeper() As System.Nullable(Of Integer)
-		Get
-			Return Me._Keeper
-		End Get
-		Set
-			If (Me._Keeper.Equals(value) = false) Then
-				Me.OnKeeperChanging(value)
-				Me.SendPropertyChanging
-				Me._Keeper = value
-				Me.SendPropertyChanged("Keeper")
-				Me.OnKeeperChanged
-			End If
-		End Set
-	End Property
-	
-	<Global.System.Data.Linq.Mapping.ColumnAttribute(Storage:="_Owner", DbType:="Int")>  _
-	Public Property Owner() As System.Nullable(Of Integer)
-		Get
-			Return Me._Owner
-		End Get
-		Set
-			If (Me._Owner.Equals(value) = false) Then
-				Me.OnOwnerChanging(value)
-				Me.SendPropertyChanging
-				Me._Owner = value
-				Me.SendPropertyChanged("Owner")
-				Me.OnOwnerChanged
-			End If
-		End Set
-	End Property
-	
-	<Global.System.Data.Linq.Mapping.ColumnAttribute(Storage:="_Borrower", DbType:="Int")>  _
-	Public Property Borrower() As System.Nullable(Of Integer)
-		Get
-			Return Me._Borrower
-		End Get
-		Set
-			If (Me._Borrower.Equals(value) = false) Then
-				Me.OnBorrowerChanging(value)
-				Me.SendPropertyChanging
-				Me._Borrower = value
-				Me.SendPropertyChanged("Borrower")
-				Me.OnBorrowerChanged
-			End If
-		End Set
-	End Property
-	
-	<Global.System.Data.Linq.Mapping.ColumnAttribute(Storage:="_Reference", DbType:="VarChar(MAX)")>  _
-	Public Property Reference() As String
-		Get
-			Return Me._Reference
-		End Get
-		Set
-			If (String.Equals(Me._Reference, value) = false) Then
-				Me.OnReferenceChanging(value)
-				Me.SendPropertyChanging
-				Me._Reference = value
-				Me.SendPropertyChanged("Reference")
-				Me.OnReferenceChanged
-			End If
-		End Set
-	End Property
-	
-	<Global.System.Data.Linq.Mapping.ColumnAttribute(Storage:="_Referenceno", DbType:="VarChar(MAX)")>  _
-	Public Property Referenceno() As String
-		Get
-			Return Me._Referenceno
-		End Get
-		Set
-			If (String.Equals(Me._Referenceno, value) = false) Then
-				Me.OnReferencenoChanging(value)
-				Me.SendPropertyChanging
-				Me._Referenceno = value
-				Me.SendPropertyChanged("Referenceno")
-				Me.OnReferencenoChanged
-			End If
-		End Set
-	End Property
-	
-	<Global.System.Data.Linq.Mapping.ColumnAttribute(Storage:="_borrowerStat", DbType:="VarChar(MAX)")>  _
-	Public Property borrowerStat() As String
-		Get
-			Return Me._borrowerStat
-		End Get
-		Set
-			If (String.Equals(Me._borrowerStat, value) = false) Then
-				Me.OnborrowerStatChanging(value)
-				Me.SendPropertyChanging
-				Me._borrowerStat = value
-				Me.SendPropertyChanged("borrowerStat")
-				Me.OnborrowerStatChanged
-			End If
-		End Set
-	End Property
-	
-	<Global.System.Data.Linq.Mapping.ColumnAttribute(Storage:="_Status1", DbType:="VarChar(MAX)")>  _
-	Public Property Status1() As String
-		Get
-			Return Me._Status1
-		End Get
-		Set
-			If (String.Equals(Me._Status1, value) = false) Then
-				Me.OnStatus1Changing(value)
-				Me.SendPropertyChanging
-				Me._Status1 = value
-				Me.SendPropertyChanged("Status1")
-				Me.OnStatus1Changed
-			End If
-		End Set
-	End Property
-	
-	<Global.System.Data.Linq.Mapping.ColumnAttribute(Storage:="_Status2", DbType:="VarChar(MAX)")>  _
-	Public Property Status2() As String
-		Get
-			Return Me._Status2
-		End Get
-		Set
-			If (String.Equals(Me._Status2, value) = false) Then
-				Me.OnStatus2Changing(value)
-				Me.SendPropertyChanging
-				Me._Status2 = value
-				Me.SendPropertyChanged("Status2")
-				Me.OnStatus2Changed
-			End If
-		End Set
-	End Property
-	
-	<Global.System.Data.Linq.Mapping.ColumnAttribute(Storage:="_Condition", DbType:="VarChar(MAX)")>  _
-	Public Property Condition() As String
-		Get
-			Return Me._Condition
-		End Get
-		Set
-			If (String.Equals(Me._Condition, value) = false) Then
-				Me.OnConditionChanging(value)
-				Me.SendPropertyChanging
-				Me._Condition = value
-				Me.SendPropertyChanged("Condition")
-				Me.OnConditionChanged
-			End If
-		End Set
-	End Property
-	
-	<Global.System.Data.Linq.Mapping.ColumnAttribute(Storage:="_IsChildSeries", DbType:="Int")>  _
-	Public Property IsChildSeries() As System.Nullable(Of Integer)
-		Get
-			Return Me._IsChildSeries
-		End Get
-		Set
-			If (Me._IsChildSeries.Equals(value) = false) Then
-				Me.OnIsChildSeriesChanging(value)
-				Me.SendPropertyChanging
-				Me._IsChildSeries = value
-				Me.SendPropertyChanged("IsChildSeries")
-				Me.OnIsChildSeriesChanged
-			End If
-		End Set
-	End Property
-	
-	<Global.System.Data.Linq.Mapping.ColumnAttribute(Storage:="_Deployed", DbType:="Bit")>  _
-	Public Property Deployed() As System.Nullable(Of Boolean)
-		Get
-			Return Me._Deployed
-		End Get
-		Set
-			If (Me._Deployed.Equals(value) = false) Then
-				Me.OnDeployedChanging(value)
-				Me.SendPropertyChanging
-				Me._Deployed = value
-				Me.SendPropertyChanged("Deployed")
-				Me.OnDeployedChanged
-			End If
-		End Set
-	End Property
-	
-	<Global.System.Data.Linq.Mapping.ColumnAttribute(Storage:="_ReceivedByRequestor", DbType:="Bit")>  _
-	Public Property ReceivedByRequestor() As System.Nullable(Of Boolean)
-		Get
-			Return Me._ReceivedByRequestor
-		End Get
-		Set
-			If (Me._ReceivedByRequestor.Equals(value) = false) Then
-				Me.OnReceivedByRequestorChanging(value)
-				Me.SendPropertyChanging
-				Me._ReceivedByRequestor = value
-				Me.SendPropertyChanged("ReceivedByRequestor")
-				Me.OnReceivedByRequestorChanged
-			End If
-		End Set
-	End Property
-	
-	<Global.System.Data.Linq.Mapping.ColumnAttribute(Storage:="_DateDeployed", DbType:="DateTime")>  _
-	Public Property DateDeployed() As System.Nullable(Of Date)
-		Get
-			Return Me._DateDeployed
-		End Get
-		Set
-			If (Me._DateDeployed.Equals(value) = false) Then
-				Me.OnDateDeployedChanging(value)
-				Me.SendPropertyChanging
-				Me._DateDeployed = value
-				Me.SendPropertyChanged("DateDeployed")
-				Me.OnDateDeployedChanged
-			End If
-		End Set
-	End Property
-	
-	<Global.System.Data.Linq.Mapping.ColumnAttribute(Storage:="_DateRequestorRecv", DbType:="DateTime")>  _
-	Public Property DateRequestorRecv() As System.Nullable(Of Date)
-		Get
-			Return Me._DateRequestorRecv
-		End Get
-		Set
-			If (Me._DateRequestorRecv.Equals(value) = false) Then
-				Me.OnDateRequestorRecvChanging(value)
-				Me.SendPropertyChanging
-				Me._DateRequestorRecv = value
-				Me.SendPropertyChanged("DateRequestorRecv")
-				Me.OnDateRequestorRecvChanged
-			End If
-		End Set
-	End Property
-	
-	<Global.System.Data.Linq.Mapping.ColumnAttribute(Storage:="_Returned", DbType:="Bit")>  _
-	Public Property Returned() As System.Nullable(Of Boolean)
-		Get
-			Return Me._Returned
-		End Get
-		Set
-			If (Me._Returned.Equals(value) = false) Then
-				Me.OnReturnedChanging(value)
-				Me.SendPropertyChanging
-				Me._Returned = value
-				Me.SendPropertyChanged("Returned")
-				Me.OnReturnedChanged
-			End If
-		End Set
-	End Property
-	
-	<Global.System.Data.Linq.Mapping.ColumnAttribute(Storage:="_IsChild", DbType:="Bit")>  _
-	Public Property IsChild() As System.Nullable(Of Boolean)
-		Get
-			Return Me._IsChild
-		End Get
-		Set
-			If (Me._IsChild.Equals(value) = false) Then
-				Me.OnIsChildChanging(value)
-				Me.SendPropertyChanging
-				Me._IsChild = value
-				Me.SendPropertyChanged("IsChild")
-				Me.OnIsChildChanged
-			End If
-		End Set
-	End Property
-	
-	<Global.System.Data.Linq.Mapping.ColumnAttribute(Storage:="_IsParent", DbType:="Bit")>  _
-	Public Property IsParent() As System.Nullable(Of Boolean)
-		Get
-			Return Me._IsParent
-		End Get
-		Set
-			If (Me._IsParent.Equals(value) = false) Then
-				Me.OnIsParentChanging(value)
-				Me.SendPropertyChanging
-				Me._IsParent = value
-				Me.SendPropertyChanged("IsParent")
-				Me.OnIsParentChanged
-			End If
-		End Set
-	End Property
-	
-	<Global.System.Data.Linq.Mapping.ColumnAttribute(Storage:="_DeployBy", DbType:="Int")>  _
-	Public Property DeployBy() As System.Nullable(Of Integer)
-		Get
-			Return Me._DeployBy
-		End Get
-		Set
-			If (Me._DeployBy.Equals(value) = false) Then
-				Me.OnDeployByChanging(value)
-				Me.SendPropertyChanging
-				Me._DeployBy = value
-				Me.SendPropertyChanged("DeployBy")
-				Me.OnDeployByChanged
-			End If
-		End Set
-	End Property
-	
-	<Global.System.Data.Linq.Mapping.ColumnAttribute(Storage:="_RecvBy", DbType:="Int")>  _
-	Public Property RecvBy() As System.Nullable(Of Integer)
-		Get
-			Return Me._RecvBy
-		End Get
-		Set
-			If (Me._RecvBy.Equals(value) = false) Then
-				Me.OnRecvByChanging(value)
-				Me.SendPropertyChanging
-				Me._RecvBy = value
-				Me.SendPropertyChanged("RecvBy")
-				Me.OnRecvByChanged
-			End If
-		End Set
-	End Property
-	
-	Public Event PropertyChanging As PropertyChangingEventHandler Implements System.ComponentModel.INotifyPropertyChanging.PropertyChanging
-	
-	Public Event PropertyChanged As PropertyChangedEventHandler Implements System.ComponentModel.INotifyPropertyChanged.PropertyChanged
-	
-	Protected Overridable Sub SendPropertyChanging()
-		If ((Me.PropertyChangingEvent Is Nothing)  _
-					= false) Then
-			RaiseEvent PropertyChanging(Me, emptyChangingEventArgs)
-		End If
-	End Sub
-	
-	Protected Overridable Sub SendPropertyChanged(ByVal propertyName As [String])
-		If ((Me.PropertyChangedEvent Is Nothing)  _
-					= false) Then
-			RaiseEvent PropertyChanged(Me, New PropertyChangedEventArgs(propertyName))
-		End If
-	End Sub
-End Class
-
 <Global.System.Data.Linq.Mapping.TableAttribute(Name:="dbo.tblTransferDetails")>  _
 Partial Public Class tblTransferDetail
 	Implements System.ComponentModel.INotifyPropertyChanging, System.ComponentModel.INotifyPropertyChanged
@@ -7914,6 +6698,1354 @@ Partial Public Class tblTransferHeader
 				Me._ReqID = value
 				Me.SendPropertyChanged("ReqID")
 				Me.OnReqIDChanged
+			End If
+		End Set
+	End Property
+	
+	Public Event PropertyChanging As PropertyChangingEventHandler Implements System.ComponentModel.INotifyPropertyChanging.PropertyChanging
+	
+	Public Event PropertyChanged As PropertyChangedEventHandler Implements System.ComponentModel.INotifyPropertyChanged.PropertyChanged
+	
+	Protected Overridable Sub SendPropertyChanging()
+		If ((Me.PropertyChangingEvent Is Nothing)  _
+					= false) Then
+			RaiseEvent PropertyChanging(Me, emptyChangingEventArgs)
+		End If
+	End Sub
+	
+	Protected Overridable Sub SendPropertyChanged(ByVal propertyName As [String])
+		If ((Me.PropertyChangedEvent Is Nothing)  _
+					= false) Then
+			RaiseEvent PropertyChanged(Me, New PropertyChangedEventArgs(propertyName))
+		End If
+	End Sub
+End Class
+
+<Global.System.Data.Linq.Mapping.TableAttribute(Name:="dbo.tblAssetInventory")>  _
+Partial Public Class tblAssetInventory
+	Implements System.ComponentModel.INotifyPropertyChanging, System.ComponentModel.INotifyPropertyChanged
+	
+	Private Shared emptyChangingEventArgs As PropertyChangingEventArgs = New PropertyChangingEventArgs(String.Empty)
+	
+	Private _InvID As Integer
+	
+	Private _AssetCode As System.Nullable(Of Integer)
+	
+	Private _Class As String
+	
+	Private _PropertyCode As String
+	
+	Private _Des As String
+	
+	Private _Qty As System.Nullable(Of Double)
+	
+	Private _Keeper As System.Nullable(Of Integer)
+	
+	Private _Owner As System.Nullable(Of Integer)
+	
+	Private _Borrower As System.Nullable(Of Integer)
+	
+	Private _Reference As String
+	
+	Private _Referenceno As String
+	
+	Private _borrowerStat As String
+	
+	Private _Status1 As String
+	
+	Private _Status2 As String
+	
+	Private _Condition As String
+	
+	Private _IsChildSeries As System.Nullable(Of Integer)
+	
+	Private _Deployed As System.Nullable(Of Boolean)
+	
+	Private _ReceivedByRequestor As System.Nullable(Of Boolean)
+	
+	Private _DateDeployed As System.Nullable(Of Date)
+	
+	Private _DateRequestorRecv As System.Nullable(Of Date)
+	
+	Private _Returned As System.Nullable(Of Boolean)
+	
+	Private _IsChild As System.Nullable(Of Boolean)
+	
+	Private _IsParent As System.Nullable(Of Boolean)
+	
+	Private _DeployBy As System.Nullable(Of Integer)
+	
+	Private _RecvBy As System.Nullable(Of Integer)
+	
+	Private _RequestNumber As String
+	
+    #Region "Extensibility Method Definitions"
+    Partial Private Sub OnLoaded()
+    End Sub
+    Partial Private Sub OnValidate(action As System.Data.Linq.ChangeAction)
+    End Sub
+    Partial Private Sub OnCreated()
+    End Sub
+    Partial Private Sub OnInvIDChanging(value As Integer)
+    End Sub
+    Partial Private Sub OnInvIDChanged()
+    End Sub
+    Partial Private Sub OnAssetCodeChanging(value As System.Nullable(Of Integer))
+    End Sub
+    Partial Private Sub OnAssetCodeChanged()
+    End Sub
+    Partial Private Sub OnClassChanging(value As String)
+    End Sub
+    Partial Private Sub OnClassChanged()
+    End Sub
+    Partial Private Sub OnPropertyCodeChanging(value As String)
+    End Sub
+    Partial Private Sub OnPropertyCodeChanged()
+    End Sub
+    Partial Private Sub OnDesChanging(value As String)
+    End Sub
+    Partial Private Sub OnDesChanged()
+    End Sub
+    Partial Private Sub OnQtyChanging(value As System.Nullable(Of Double))
+    End Sub
+    Partial Private Sub OnQtyChanged()
+    End Sub
+    Partial Private Sub OnKeeperChanging(value As System.Nullable(Of Integer))
+    End Sub
+    Partial Private Sub OnKeeperChanged()
+    End Sub
+    Partial Private Sub OnOwnerChanging(value As System.Nullable(Of Integer))
+    End Sub
+    Partial Private Sub OnOwnerChanged()
+    End Sub
+    Partial Private Sub OnBorrowerChanging(value As System.Nullable(Of Integer))
+    End Sub
+    Partial Private Sub OnBorrowerChanged()
+    End Sub
+    Partial Private Sub OnReferenceChanging(value As String)
+    End Sub
+    Partial Private Sub OnReferenceChanged()
+    End Sub
+    Partial Private Sub OnReferencenoChanging(value As String)
+    End Sub
+    Partial Private Sub OnReferencenoChanged()
+    End Sub
+    Partial Private Sub OnborrowerStatChanging(value As String)
+    End Sub
+    Partial Private Sub OnborrowerStatChanged()
+    End Sub
+    Partial Private Sub OnStatus1Changing(value As String)
+    End Sub
+    Partial Private Sub OnStatus1Changed()
+    End Sub
+    Partial Private Sub OnStatus2Changing(value As String)
+    End Sub
+    Partial Private Sub OnStatus2Changed()
+    End Sub
+    Partial Private Sub OnConditionChanging(value As String)
+    End Sub
+    Partial Private Sub OnConditionChanged()
+    End Sub
+    Partial Private Sub OnIsChildSeriesChanging(value As System.Nullable(Of Integer))
+    End Sub
+    Partial Private Sub OnIsChildSeriesChanged()
+    End Sub
+    Partial Private Sub OnDeployedChanging(value As System.Nullable(Of Boolean))
+    End Sub
+    Partial Private Sub OnDeployedChanged()
+    End Sub
+    Partial Private Sub OnReceivedByRequestorChanging(value As System.Nullable(Of Boolean))
+    End Sub
+    Partial Private Sub OnReceivedByRequestorChanged()
+    End Sub
+    Partial Private Sub OnDateDeployedChanging(value As System.Nullable(Of Date))
+    End Sub
+    Partial Private Sub OnDateDeployedChanged()
+    End Sub
+    Partial Private Sub OnDateRequestorRecvChanging(value As System.Nullable(Of Date))
+    End Sub
+    Partial Private Sub OnDateRequestorRecvChanged()
+    End Sub
+    Partial Private Sub OnReturnedChanging(value As System.Nullable(Of Boolean))
+    End Sub
+    Partial Private Sub OnReturnedChanged()
+    End Sub
+    Partial Private Sub OnIsChildChanging(value As System.Nullable(Of Boolean))
+    End Sub
+    Partial Private Sub OnIsChildChanged()
+    End Sub
+    Partial Private Sub OnIsParentChanging(value As System.Nullable(Of Boolean))
+    End Sub
+    Partial Private Sub OnIsParentChanged()
+    End Sub
+    Partial Private Sub OnDeployByChanging(value As System.Nullable(Of Integer))
+    End Sub
+    Partial Private Sub OnDeployByChanged()
+    End Sub
+    Partial Private Sub OnRecvByChanging(value As System.Nullable(Of Integer))
+    End Sub
+    Partial Private Sub OnRecvByChanged()
+    End Sub
+    Partial Private Sub OnRequestNumberChanging(value As String)
+    End Sub
+    Partial Private Sub OnRequestNumberChanged()
+    End Sub
+    #End Region
+	
+	Public Sub New()
+		MyBase.New
+		OnCreated
+	End Sub
+	
+	<Global.System.Data.Linq.Mapping.ColumnAttribute(Storage:="_InvID", AutoSync:=AutoSync.OnInsert, DbType:="Int NOT NULL IDENTITY", IsPrimaryKey:=true, IsDbGenerated:=true)>  _
+	Public Property InvID() As Integer
+		Get
+			Return Me._InvID
+		End Get
+		Set
+			If ((Me._InvID = value)  _
+						= false) Then
+				Me.OnInvIDChanging(value)
+				Me.SendPropertyChanging
+				Me._InvID = value
+				Me.SendPropertyChanged("InvID")
+				Me.OnInvIDChanged
+			End If
+		End Set
+	End Property
+	
+	<Global.System.Data.Linq.Mapping.ColumnAttribute(Storage:="_AssetCode", DbType:="Int")>  _
+	Public Property AssetCode() As System.Nullable(Of Integer)
+		Get
+			Return Me._AssetCode
+		End Get
+		Set
+			If (Me._AssetCode.Equals(value) = false) Then
+				Me.OnAssetCodeChanging(value)
+				Me.SendPropertyChanging
+				Me._AssetCode = value
+				Me.SendPropertyChanged("AssetCode")
+				Me.OnAssetCodeChanged
+			End If
+		End Set
+	End Property
+	
+	<Global.System.Data.Linq.Mapping.ColumnAttribute(Name:="Class", Storage:="_Class", DbType:="VarChar(100)")>  _
+	Public Property [Class]() As String
+		Get
+			Return Me._Class
+		End Get
+		Set
+			If (String.Equals(Me._Class, value) = false) Then
+				Me.OnClassChanging(value)
+				Me.SendPropertyChanging
+				Me._Class = value
+				Me.SendPropertyChanged("[Class]")
+				Me.OnClassChanged
+			End If
+		End Set
+	End Property
+	
+	<Global.System.Data.Linq.Mapping.ColumnAttribute(Storage:="_PropertyCode", DbType:="VarChar(100)")>  _
+	Public Property PropertyCode() As String
+		Get
+			Return Me._PropertyCode
+		End Get
+		Set
+			If (String.Equals(Me._PropertyCode, value) = false) Then
+				Me.OnPropertyCodeChanging(value)
+				Me.SendPropertyChanging
+				Me._PropertyCode = value
+				Me.SendPropertyChanged("PropertyCode")
+				Me.OnPropertyCodeChanged
+			End If
+		End Set
+	End Property
+	
+	<Global.System.Data.Linq.Mapping.ColumnAttribute(Storage:="_Des", DbType:="VarChar(200)")>  _
+	Public Property Des() As String
+		Get
+			Return Me._Des
+		End Get
+		Set
+			If (String.Equals(Me._Des, value) = false) Then
+				Me.OnDesChanging(value)
+				Me.SendPropertyChanging
+				Me._Des = value
+				Me.SendPropertyChanged("Des")
+				Me.OnDesChanged
+			End If
+		End Set
+	End Property
+	
+	<Global.System.Data.Linq.Mapping.ColumnAttribute(Storage:="_Qty", DbType:="Float")>  _
+	Public Property Qty() As System.Nullable(Of Double)
+		Get
+			Return Me._Qty
+		End Get
+		Set
+			If (Me._Qty.Equals(value) = false) Then
+				Me.OnQtyChanging(value)
+				Me.SendPropertyChanging
+				Me._Qty = value
+				Me.SendPropertyChanged("Qty")
+				Me.OnQtyChanged
+			End If
+		End Set
+	End Property
+	
+	<Global.System.Data.Linq.Mapping.ColumnAttribute(Storage:="_Keeper", DbType:="Int")>  _
+	Public Property Keeper() As System.Nullable(Of Integer)
+		Get
+			Return Me._Keeper
+		End Get
+		Set
+			If (Me._Keeper.Equals(value) = false) Then
+				Me.OnKeeperChanging(value)
+				Me.SendPropertyChanging
+				Me._Keeper = value
+				Me.SendPropertyChanged("Keeper")
+				Me.OnKeeperChanged
+			End If
+		End Set
+	End Property
+	
+	<Global.System.Data.Linq.Mapping.ColumnAttribute(Storage:="_Owner", DbType:="Int")>  _
+	Public Property Owner() As System.Nullable(Of Integer)
+		Get
+			Return Me._Owner
+		End Get
+		Set
+			If (Me._Owner.Equals(value) = false) Then
+				Me.OnOwnerChanging(value)
+				Me.SendPropertyChanging
+				Me._Owner = value
+				Me.SendPropertyChanged("Owner")
+				Me.OnOwnerChanged
+			End If
+		End Set
+	End Property
+	
+	<Global.System.Data.Linq.Mapping.ColumnAttribute(Storage:="_Borrower", DbType:="Int")>  _
+	Public Property Borrower() As System.Nullable(Of Integer)
+		Get
+			Return Me._Borrower
+		End Get
+		Set
+			If (Me._Borrower.Equals(value) = false) Then
+				Me.OnBorrowerChanging(value)
+				Me.SendPropertyChanging
+				Me._Borrower = value
+				Me.SendPropertyChanged("Borrower")
+				Me.OnBorrowerChanged
+			End If
+		End Set
+	End Property
+	
+	<Global.System.Data.Linq.Mapping.ColumnAttribute(Storage:="_Reference", DbType:="VarChar(100)")>  _
+	Public Property Reference() As String
+		Get
+			Return Me._Reference
+		End Get
+		Set
+			If (String.Equals(Me._Reference, value) = false) Then
+				Me.OnReferenceChanging(value)
+				Me.SendPropertyChanging
+				Me._Reference = value
+				Me.SendPropertyChanged("Reference")
+				Me.OnReferenceChanged
+			End If
+		End Set
+	End Property
+	
+	<Global.System.Data.Linq.Mapping.ColumnAttribute(Storage:="_Referenceno", DbType:="VarChar(100)")>  _
+	Public Property Referenceno() As String
+		Get
+			Return Me._Referenceno
+		End Get
+		Set
+			If (String.Equals(Me._Referenceno, value) = false) Then
+				Me.OnReferencenoChanging(value)
+				Me.SendPropertyChanging
+				Me._Referenceno = value
+				Me.SendPropertyChanged("Referenceno")
+				Me.OnReferencenoChanged
+			End If
+		End Set
+	End Property
+	
+	<Global.System.Data.Linq.Mapping.ColumnAttribute(Storage:="_borrowerStat", DbType:="VarChar(100)")>  _
+	Public Property borrowerStat() As String
+		Get
+			Return Me._borrowerStat
+		End Get
+		Set
+			If (String.Equals(Me._borrowerStat, value) = false) Then
+				Me.OnborrowerStatChanging(value)
+				Me.SendPropertyChanging
+				Me._borrowerStat = value
+				Me.SendPropertyChanged("borrowerStat")
+				Me.OnborrowerStatChanged
+			End If
+		End Set
+	End Property
+	
+	<Global.System.Data.Linq.Mapping.ColumnAttribute(Storage:="_Status1", DbType:="VarChar(100)")>  _
+	Public Property Status1() As String
+		Get
+			Return Me._Status1
+		End Get
+		Set
+			If (String.Equals(Me._Status1, value) = false) Then
+				Me.OnStatus1Changing(value)
+				Me.SendPropertyChanging
+				Me._Status1 = value
+				Me.SendPropertyChanged("Status1")
+				Me.OnStatus1Changed
+			End If
+		End Set
+	End Property
+	
+	<Global.System.Data.Linq.Mapping.ColumnAttribute(Storage:="_Status2", DbType:="VarChar(100)")>  _
+	Public Property Status2() As String
+		Get
+			Return Me._Status2
+		End Get
+		Set
+			If (String.Equals(Me._Status2, value) = false) Then
+				Me.OnStatus2Changing(value)
+				Me.SendPropertyChanging
+				Me._Status2 = value
+				Me.SendPropertyChanged("Status2")
+				Me.OnStatus2Changed
+			End If
+		End Set
+	End Property
+	
+	<Global.System.Data.Linq.Mapping.ColumnAttribute(Storage:="_Condition", DbType:="VarChar(100)")>  _
+	Public Property Condition() As String
+		Get
+			Return Me._Condition
+		End Get
+		Set
+			If (String.Equals(Me._Condition, value) = false) Then
+				Me.OnConditionChanging(value)
+				Me.SendPropertyChanging
+				Me._Condition = value
+				Me.SendPropertyChanged("Condition")
+				Me.OnConditionChanged
+			End If
+		End Set
+	End Property
+	
+	<Global.System.Data.Linq.Mapping.ColumnAttribute(Storage:="_IsChildSeries", DbType:="Int")>  _
+	Public Property IsChildSeries() As System.Nullable(Of Integer)
+		Get
+			Return Me._IsChildSeries
+		End Get
+		Set
+			If (Me._IsChildSeries.Equals(value) = false) Then
+				Me.OnIsChildSeriesChanging(value)
+				Me.SendPropertyChanging
+				Me._IsChildSeries = value
+				Me.SendPropertyChanged("IsChildSeries")
+				Me.OnIsChildSeriesChanged
+			End If
+		End Set
+	End Property
+	
+	<Global.System.Data.Linq.Mapping.ColumnAttribute(Storage:="_Deployed", DbType:="Bit")>  _
+	Public Property Deployed() As System.Nullable(Of Boolean)
+		Get
+			Return Me._Deployed
+		End Get
+		Set
+			If (Me._Deployed.Equals(value) = false) Then
+				Me.OnDeployedChanging(value)
+				Me.SendPropertyChanging
+				Me._Deployed = value
+				Me.SendPropertyChanged("Deployed")
+				Me.OnDeployedChanged
+			End If
+		End Set
+	End Property
+	
+	<Global.System.Data.Linq.Mapping.ColumnAttribute(Storage:="_ReceivedByRequestor", DbType:="Bit")>  _
+	Public Property ReceivedByRequestor() As System.Nullable(Of Boolean)
+		Get
+			Return Me._ReceivedByRequestor
+		End Get
+		Set
+			If (Me._ReceivedByRequestor.Equals(value) = false) Then
+				Me.OnReceivedByRequestorChanging(value)
+				Me.SendPropertyChanging
+				Me._ReceivedByRequestor = value
+				Me.SendPropertyChanged("ReceivedByRequestor")
+				Me.OnReceivedByRequestorChanged
+			End If
+		End Set
+	End Property
+	
+	<Global.System.Data.Linq.Mapping.ColumnAttribute(Storage:="_DateDeployed", DbType:="DateTime")>  _
+	Public Property DateDeployed() As System.Nullable(Of Date)
+		Get
+			Return Me._DateDeployed
+		End Get
+		Set
+			If (Me._DateDeployed.Equals(value) = false) Then
+				Me.OnDateDeployedChanging(value)
+				Me.SendPropertyChanging
+				Me._DateDeployed = value
+				Me.SendPropertyChanged("DateDeployed")
+				Me.OnDateDeployedChanged
+			End If
+		End Set
+	End Property
+	
+	<Global.System.Data.Linq.Mapping.ColumnAttribute(Storage:="_DateRequestorRecv", DbType:="DateTime")>  _
+	Public Property DateRequestorRecv() As System.Nullable(Of Date)
+		Get
+			Return Me._DateRequestorRecv
+		End Get
+		Set
+			If (Me._DateRequestorRecv.Equals(value) = false) Then
+				Me.OnDateRequestorRecvChanging(value)
+				Me.SendPropertyChanging
+				Me._DateRequestorRecv = value
+				Me.SendPropertyChanged("DateRequestorRecv")
+				Me.OnDateRequestorRecvChanged
+			End If
+		End Set
+	End Property
+	
+	<Global.System.Data.Linq.Mapping.ColumnAttribute(Storage:="_Returned", DbType:="Bit")>  _
+	Public Property Returned() As System.Nullable(Of Boolean)
+		Get
+			Return Me._Returned
+		End Get
+		Set
+			If (Me._Returned.Equals(value) = false) Then
+				Me.OnReturnedChanging(value)
+				Me.SendPropertyChanging
+				Me._Returned = value
+				Me.SendPropertyChanged("Returned")
+				Me.OnReturnedChanged
+			End If
+		End Set
+	End Property
+	
+	<Global.System.Data.Linq.Mapping.ColumnAttribute(Storage:="_IsChild", DbType:="Bit")>  _
+	Public Property IsChild() As System.Nullable(Of Boolean)
+		Get
+			Return Me._IsChild
+		End Get
+		Set
+			If (Me._IsChild.Equals(value) = false) Then
+				Me.OnIsChildChanging(value)
+				Me.SendPropertyChanging
+				Me._IsChild = value
+				Me.SendPropertyChanged("IsChild")
+				Me.OnIsChildChanged
+			End If
+		End Set
+	End Property
+	
+	<Global.System.Data.Linq.Mapping.ColumnAttribute(Storage:="_IsParent", DbType:="Bit")>  _
+	Public Property IsParent() As System.Nullable(Of Boolean)
+		Get
+			Return Me._IsParent
+		End Get
+		Set
+			If (Me._IsParent.Equals(value) = false) Then
+				Me.OnIsParentChanging(value)
+				Me.SendPropertyChanging
+				Me._IsParent = value
+				Me.SendPropertyChanged("IsParent")
+				Me.OnIsParentChanged
+			End If
+		End Set
+	End Property
+	
+	<Global.System.Data.Linq.Mapping.ColumnAttribute(Storage:="_DeployBy", DbType:="Int")>  _
+	Public Property DeployBy() As System.Nullable(Of Integer)
+		Get
+			Return Me._DeployBy
+		End Get
+		Set
+			If (Me._DeployBy.Equals(value) = false) Then
+				Me.OnDeployByChanging(value)
+				Me.SendPropertyChanging
+				Me._DeployBy = value
+				Me.SendPropertyChanged("DeployBy")
+				Me.OnDeployByChanged
+			End If
+		End Set
+	End Property
+	
+	<Global.System.Data.Linq.Mapping.ColumnAttribute(Storage:="_RecvBy", DbType:="Int")>  _
+	Public Property RecvBy() As System.Nullable(Of Integer)
+		Get
+			Return Me._RecvBy
+		End Get
+		Set
+			If (Me._RecvBy.Equals(value) = false) Then
+				Me.OnRecvByChanging(value)
+				Me.SendPropertyChanging
+				Me._RecvBy = value
+				Me.SendPropertyChanged("RecvBy")
+				Me.OnRecvByChanged
+			End If
+		End Set
+	End Property
+	
+	<Global.System.Data.Linq.Mapping.ColumnAttribute(Storage:="_RequestNumber", DbType:="VarChar(100)")>  _
+	Public Property RequestNumber() As String
+		Get
+			Return Me._RequestNumber
+		End Get
+		Set
+			If (String.Equals(Me._RequestNumber, value) = false) Then
+				Me.OnRequestNumberChanging(value)
+				Me.SendPropertyChanging
+				Me._RequestNumber = value
+				Me.SendPropertyChanged("RequestNumber")
+				Me.OnRequestNumberChanged
+			End If
+		End Set
+	End Property
+	
+	Public Event PropertyChanging As PropertyChangingEventHandler Implements System.ComponentModel.INotifyPropertyChanging.PropertyChanging
+	
+	Public Event PropertyChanged As PropertyChangedEventHandler Implements System.ComponentModel.INotifyPropertyChanged.PropertyChanged
+	
+	Protected Overridable Sub SendPropertyChanging()
+		If ((Me.PropertyChangingEvent Is Nothing)  _
+					= false) Then
+			RaiseEvent PropertyChanging(Me, emptyChangingEventArgs)
+		End If
+	End Sub
+	
+	Protected Overridable Sub SendPropertyChanged(ByVal propertyName As [String])
+		If ((Me.PropertyChangedEvent Is Nothing)  _
+					= false) Then
+			RaiseEvent PropertyChanged(Me, New PropertyChangedEventArgs(propertyName))
+		End If
+	End Sub
+End Class
+
+<Global.System.Data.Linq.Mapping.TableAttribute(Name:="dbo.tblDeploymentHeader")>  _
+Partial Public Class tblDeploymentHeader
+	Implements System.ComponentModel.INotifyPropertyChanging, System.ComponentModel.INotifyPropertyChanged
+	
+	Private Shared emptyChangingEventArgs As PropertyChangingEventArgs = New PropertyChangingEventArgs(String.Empty)
+	
+	Private _id As Integer
+	
+	Private _DeploymentID As String
+	
+	Private _Date As System.Nullable(Of Date)
+	
+	Private _DeyployedBy As System.Nullable(Of Integer)
+	
+	Private _Runner As System.Nullable(Of Integer)
+	
+	Private _Transaction As String
+	
+    #Region "Extensibility Method Definitions"
+    Partial Private Sub OnLoaded()
+    End Sub
+    Partial Private Sub OnValidate(action As System.Data.Linq.ChangeAction)
+    End Sub
+    Partial Private Sub OnCreated()
+    End Sub
+    Partial Private Sub OnidChanging(value As Integer)
+    End Sub
+    Partial Private Sub OnidChanged()
+    End Sub
+    Partial Private Sub OnDeploymentIDChanging(value As String)
+    End Sub
+    Partial Private Sub OnDeploymentIDChanged()
+    End Sub
+    Partial Private Sub OnDateChanging(value As System.Nullable(Of Date))
+    End Sub
+    Partial Private Sub OnDateChanged()
+    End Sub
+    Partial Private Sub OnDeyployedByChanging(value As System.Nullable(Of Integer))
+    End Sub
+    Partial Private Sub OnDeyployedByChanged()
+    End Sub
+    Partial Private Sub OnRunnerChanging(value As System.Nullable(Of Integer))
+    End Sub
+    Partial Private Sub OnRunnerChanged()
+    End Sub
+    Partial Private Sub OnTransactionChanging(value As String)
+    End Sub
+    Partial Private Sub OnTransactionChanged()
+    End Sub
+    #End Region
+	
+	Public Sub New()
+		MyBase.New
+		OnCreated
+	End Sub
+	
+	<Global.System.Data.Linq.Mapping.ColumnAttribute(Storage:="_id", AutoSync:=AutoSync.OnInsert, DbType:="Int NOT NULL IDENTITY", IsPrimaryKey:=true, IsDbGenerated:=true)>  _
+	Public Property id() As Integer
+		Get
+			Return Me._id
+		End Get
+		Set
+			If ((Me._id = value)  _
+						= false) Then
+				Me.OnidChanging(value)
+				Me.SendPropertyChanging
+				Me._id = value
+				Me.SendPropertyChanged("id")
+				Me.OnidChanged
+			End If
+		End Set
+	End Property
+	
+	<Global.System.Data.Linq.Mapping.ColumnAttribute(Storage:="_DeploymentID", DbType:="VarChar(100)")>  _
+	Public Property DeploymentID() As String
+		Get
+			Return Me._DeploymentID
+		End Get
+		Set
+			If (String.Equals(Me._DeploymentID, value) = false) Then
+				Me.OnDeploymentIDChanging(value)
+				Me.SendPropertyChanging
+				Me._DeploymentID = value
+				Me.SendPropertyChanged("DeploymentID")
+				Me.OnDeploymentIDChanged
+			End If
+		End Set
+	End Property
+	
+	<Global.System.Data.Linq.Mapping.ColumnAttribute(Name:="Date", Storage:="_Date", DbType:="DateTime")>  _
+	Public Property [Date]() As System.Nullable(Of Date)
+		Get
+			Return Me._Date
+		End Get
+		Set
+			If (Me._Date.Equals(value) = false) Then
+				Me.OnDateChanging(value)
+				Me.SendPropertyChanging
+				Me._Date = value
+				Me.SendPropertyChanged("[Date]")
+				Me.OnDateChanged
+			End If
+		End Set
+	End Property
+	
+	<Global.System.Data.Linq.Mapping.ColumnAttribute(Storage:="_DeyployedBy", DbType:="Int")>  _
+	Public Property DeyployedBy() As System.Nullable(Of Integer)
+		Get
+			Return Me._DeyployedBy
+		End Get
+		Set
+			If (Me._DeyployedBy.Equals(value) = false) Then
+				Me.OnDeyployedByChanging(value)
+				Me.SendPropertyChanging
+				Me._DeyployedBy = value
+				Me.SendPropertyChanged("DeyployedBy")
+				Me.OnDeyployedByChanged
+			End If
+		End Set
+	End Property
+	
+	<Global.System.Data.Linq.Mapping.ColumnAttribute(Storage:="_Runner", DbType:="Int")>  _
+	Public Property Runner() As System.Nullable(Of Integer)
+		Get
+			Return Me._Runner
+		End Get
+		Set
+			If (Me._Runner.Equals(value) = false) Then
+				Me.OnRunnerChanging(value)
+				Me.SendPropertyChanging
+				Me._Runner = value
+				Me.SendPropertyChanged("Runner")
+				Me.OnRunnerChanged
+			End If
+		End Set
+	End Property
+	
+	<Global.System.Data.Linq.Mapping.ColumnAttribute(Name:="[Transaction]", Storage:="_Transaction", DbType:="VarChar(100)")>  _
+	Public Property Transaction() As String
+		Get
+			Return Me._Transaction
+		End Get
+		Set
+			If (String.Equals(Me._Transaction, value) = false) Then
+				Me.OnTransactionChanging(value)
+				Me.SendPropertyChanging
+				Me._Transaction = value
+				Me.SendPropertyChanged("Transaction")
+				Me.OnTransactionChanged
+			End If
+		End Set
+	End Property
+	
+	Public Event PropertyChanging As PropertyChangingEventHandler Implements System.ComponentModel.INotifyPropertyChanging.PropertyChanging
+	
+	Public Event PropertyChanged As PropertyChangedEventHandler Implements System.ComponentModel.INotifyPropertyChanged.PropertyChanged
+	
+	Protected Overridable Sub SendPropertyChanging()
+		If ((Me.PropertyChangingEvent Is Nothing)  _
+					= false) Then
+			RaiseEvent PropertyChanging(Me, emptyChangingEventArgs)
+		End If
+	End Sub
+	
+	Protected Overridable Sub SendPropertyChanged(ByVal propertyName As [String])
+		If ((Me.PropertyChangedEvent Is Nothing)  _
+					= false) Then
+			RaiseEvent PropertyChanged(Me, New PropertyChangedEventArgs(propertyName))
+		End If
+	End Sub
+End Class
+
+<Global.System.Data.Linq.Mapping.TableAttribute(Name:="dbo.tblDeploymentDetail")>  _
+Partial Public Class tblDeploymentDetail
+	Implements System.ComponentModel.INotifyPropertyChanging, System.ComponentModel.INotifyPropertyChanged
+	
+	Private Shared emptyChangingEventArgs As PropertyChangingEventArgs = New PropertyChangingEventArgs(String.Empty)
+	
+	Private _id As Integer
+	
+	Private _PropertyCode As String
+	
+	Private _Transid As System.Nullable(Of Integer)
+	
+	Private _DateDeployed As System.Nullable(Of Date)
+	
+	Private _RequestNumber As String
+	
+    #Region "Extensibility Method Definitions"
+    Partial Private Sub OnLoaded()
+    End Sub
+    Partial Private Sub OnValidate(action As System.Data.Linq.ChangeAction)
+    End Sub
+    Partial Private Sub OnCreated()
+    End Sub
+    Partial Private Sub OnidChanging(value As Integer)
+    End Sub
+    Partial Private Sub OnidChanged()
+    End Sub
+    Partial Private Sub OnPropertyCodeChanging(value As String)
+    End Sub
+    Partial Private Sub OnPropertyCodeChanged()
+    End Sub
+    Partial Private Sub OnTransidChanging(value As System.Nullable(Of Integer))
+    End Sub
+    Partial Private Sub OnTransidChanged()
+    End Sub
+    Partial Private Sub OnDateDeployedChanging(value As System.Nullable(Of Date))
+    End Sub
+    Partial Private Sub OnDateDeployedChanged()
+    End Sub
+    Partial Private Sub OnRequestNumberChanging(value As String)
+    End Sub
+    Partial Private Sub OnRequestNumberChanged()
+    End Sub
+    #End Region
+	
+	Public Sub New()
+		MyBase.New
+		OnCreated
+	End Sub
+	
+	<Global.System.Data.Linq.Mapping.ColumnAttribute(Storage:="_id", AutoSync:=AutoSync.OnInsert, DbType:="Int NOT NULL IDENTITY", IsPrimaryKey:=true, IsDbGenerated:=true)>  _
+	Public Property id() As Integer
+		Get
+			Return Me._id
+		End Get
+		Set
+			If ((Me._id = value)  _
+						= false) Then
+				Me.OnidChanging(value)
+				Me.SendPropertyChanging
+				Me._id = value
+				Me.SendPropertyChanged("id")
+				Me.OnidChanged
+			End If
+		End Set
+	End Property
+	
+	<Global.System.Data.Linq.Mapping.ColumnAttribute(Storage:="_PropertyCode", DbType:="VarChar(100)")>  _
+	Public Property PropertyCode() As String
+		Get
+			Return Me._PropertyCode
+		End Get
+		Set
+			If (String.Equals(Me._PropertyCode, value) = false) Then
+				Me.OnPropertyCodeChanging(value)
+				Me.SendPropertyChanging
+				Me._PropertyCode = value
+				Me.SendPropertyChanged("PropertyCode")
+				Me.OnPropertyCodeChanged
+			End If
+		End Set
+	End Property
+	
+	<Global.System.Data.Linq.Mapping.ColumnAttribute(Storage:="_Transid", DbType:="Int")>  _
+	Public Property Transid() As System.Nullable(Of Integer)
+		Get
+			Return Me._Transid
+		End Get
+		Set
+			If (Me._Transid.Equals(value) = false) Then
+				Me.OnTransidChanging(value)
+				Me.SendPropertyChanging
+				Me._Transid = value
+				Me.SendPropertyChanged("Transid")
+				Me.OnTransidChanged
+			End If
+		End Set
+	End Property
+	
+	<Global.System.Data.Linq.Mapping.ColumnAttribute(Storage:="_DateDeployed", DbType:="DateTime")>  _
+	Public Property DateDeployed() As System.Nullable(Of Date)
+		Get
+			Return Me._DateDeployed
+		End Get
+		Set
+			If (Me._DateDeployed.Equals(value) = false) Then
+				Me.OnDateDeployedChanging(value)
+				Me.SendPropertyChanging
+				Me._DateDeployed = value
+				Me.SendPropertyChanged("DateDeployed")
+				Me.OnDateDeployedChanged
+			End If
+		End Set
+	End Property
+	
+	<Global.System.Data.Linq.Mapping.ColumnAttribute(Storage:="_RequestNumber", DbType:="VarChar(100)")>  _
+	Public Property RequestNumber() As String
+		Get
+			Return Me._RequestNumber
+		End Get
+		Set
+			If (String.Equals(Me._RequestNumber, value) = false) Then
+				Me.OnRequestNumberChanging(value)
+				Me.SendPropertyChanging
+				Me._RequestNumber = value
+				Me.SendPropertyChanged("RequestNumber")
+				Me.OnRequestNumberChanged
+			End If
+		End Set
+	End Property
+	
+	Public Event PropertyChanging As PropertyChangingEventHandler Implements System.ComponentModel.INotifyPropertyChanging.PropertyChanging
+	
+	Public Event PropertyChanged As PropertyChangedEventHandler Implements System.ComponentModel.INotifyPropertyChanged.PropertyChanged
+	
+	Protected Overridable Sub SendPropertyChanging()
+		If ((Me.PropertyChangingEvent Is Nothing)  _
+					= false) Then
+			RaiseEvent PropertyChanging(Me, emptyChangingEventArgs)
+		End If
+	End Sub
+	
+	Protected Overridable Sub SendPropertyChanged(ByVal propertyName As [String])
+		If ((Me.PropertyChangedEvent Is Nothing)  _
+					= false) Then
+			RaiseEvent PropertyChanged(Me, New PropertyChangedEventArgs(propertyName))
+		End If
+	End Sub
+End Class
+
+<Global.System.Data.Linq.Mapping.TableAttribute(Name:="dbo.tblBorrowDetail")>  _
+Partial Public Class tblBorrowDetail
+	Implements System.ComponentModel.INotifyPropertyChanging, System.ComponentModel.INotifyPropertyChanged
+	
+	Private Shared emptyChangingEventArgs As PropertyChangingEventArgs = New PropertyChangingEventArgs(String.Empty)
+	
+	Private _id As Integer
+	
+	Private _PropertyCode As String
+	
+	Private _Quantity As System.Nullable(Of Double)
+	
+	Private _Borrowee As System.Nullable(Of Integer)
+	
+	Private _DateFrom As System.Nullable(Of Date)
+	
+	Private _DateTo As System.Nullable(Of Date)
+	
+	Private _Remarks As String
+	
+	Private _HeaderID As System.Nullable(Of Integer)
+	
+	Private _IsReturn As System.Nullable(Of Boolean)
+	
+	Private _IsReturnDate As System.Nullable(Of Date)
+	
+	Private _ReturnBy As System.Nullable(Of Integer)
+	
+	Private _IsReceivedByBorrowee As System.Nullable(Of Boolean)
+	
+	Private _IsReceivedByBorroweeDate As System.Nullable(Of Date)
+	
+	Private _Runner As System.Nullable(Of Integer)
+	
+	Private _IsDeployed As System.Nullable(Of Boolean)
+	
+	Private _IsDeployedDate As System.Nullable(Of Date)
+	
+	Private _IsDeployeRunner As System.Nullable(Of Integer)
+	
+    #Region "Extensibility Method Definitions"
+    Partial Private Sub OnLoaded()
+    End Sub
+    Partial Private Sub OnValidate(action As System.Data.Linq.ChangeAction)
+    End Sub
+    Partial Private Sub OnCreated()
+    End Sub
+    Partial Private Sub OnidChanging(value As Integer)
+    End Sub
+    Partial Private Sub OnidChanged()
+    End Sub
+    Partial Private Sub OnPropertyCodeChanging(value As String)
+    End Sub
+    Partial Private Sub OnPropertyCodeChanged()
+    End Sub
+    Partial Private Sub OnQuantityChanging(value As System.Nullable(Of Double))
+    End Sub
+    Partial Private Sub OnQuantityChanged()
+    End Sub
+    Partial Private Sub OnBorroweeChanging(value As System.Nullable(Of Integer))
+    End Sub
+    Partial Private Sub OnBorroweeChanged()
+    End Sub
+    Partial Private Sub OnDateFromChanging(value As System.Nullable(Of Date))
+    End Sub
+    Partial Private Sub OnDateFromChanged()
+    End Sub
+    Partial Private Sub OnDateToChanging(value As System.Nullable(Of Date))
+    End Sub
+    Partial Private Sub OnDateToChanged()
+    End Sub
+    Partial Private Sub OnRemarksChanging(value As String)
+    End Sub
+    Partial Private Sub OnRemarksChanged()
+    End Sub
+    Partial Private Sub OnHeaderIDChanging(value As System.Nullable(Of Integer))
+    End Sub
+    Partial Private Sub OnHeaderIDChanged()
+    End Sub
+    Partial Private Sub OnIsReturnChanging(value As System.Nullable(Of Boolean))
+    End Sub
+    Partial Private Sub OnIsReturnChanged()
+    End Sub
+    Partial Private Sub OnIsReturnDateChanging(value As System.Nullable(Of Date))
+    End Sub
+    Partial Private Sub OnIsReturnDateChanged()
+    End Sub
+    Partial Private Sub OnReturnByChanging(value As System.Nullable(Of Integer))
+    End Sub
+    Partial Private Sub OnReturnByChanged()
+    End Sub
+    Partial Private Sub OnIsReceivedByBorroweeChanging(value As System.Nullable(Of Boolean))
+    End Sub
+    Partial Private Sub OnIsReceivedByBorroweeChanged()
+    End Sub
+    Partial Private Sub OnIsReceivedByBorroweeDateChanging(value As System.Nullable(Of Date))
+    End Sub
+    Partial Private Sub OnIsReceivedByBorroweeDateChanged()
+    End Sub
+    Partial Private Sub OnRunnerChanging(value As System.Nullable(Of Integer))
+    End Sub
+    Partial Private Sub OnRunnerChanged()
+    End Sub
+    Partial Private Sub OnIsDeployedChanging(value As System.Nullable(Of Boolean))
+    End Sub
+    Partial Private Sub OnIsDeployedChanged()
+    End Sub
+    Partial Private Sub OnIsDeployedDateChanging(value As System.Nullable(Of Date))
+    End Sub
+    Partial Private Sub OnIsDeployedDateChanged()
+    End Sub
+    Partial Private Sub OnIsDeployeRunnerChanging(value As System.Nullable(Of Integer))
+    End Sub
+    Partial Private Sub OnIsDeployeRunnerChanged()
+    End Sub
+    #End Region
+	
+	Public Sub New()
+		MyBase.New
+		OnCreated
+	End Sub
+	
+	<Global.System.Data.Linq.Mapping.ColumnAttribute(Storage:="_id", AutoSync:=AutoSync.OnInsert, DbType:="Int NOT NULL IDENTITY", IsPrimaryKey:=true, IsDbGenerated:=true)>  _
+	Public Property id() As Integer
+		Get
+			Return Me._id
+		End Get
+		Set
+			If ((Me._id = value)  _
+						= false) Then
+				Me.OnidChanging(value)
+				Me.SendPropertyChanging
+				Me._id = value
+				Me.SendPropertyChanged("id")
+				Me.OnidChanged
+			End If
+		End Set
+	End Property
+	
+	<Global.System.Data.Linq.Mapping.ColumnAttribute(Storage:="_PropertyCode", DbType:="VarChar(MAX)")>  _
+	Public Property PropertyCode() As String
+		Get
+			Return Me._PropertyCode
+		End Get
+		Set
+			If (String.Equals(Me._PropertyCode, value) = false) Then
+				Me.OnPropertyCodeChanging(value)
+				Me.SendPropertyChanging
+				Me._PropertyCode = value
+				Me.SendPropertyChanged("PropertyCode")
+				Me.OnPropertyCodeChanged
+			End If
+		End Set
+	End Property
+	
+	<Global.System.Data.Linq.Mapping.ColumnAttribute(Storage:="_Quantity", DbType:="Float")>  _
+	Public Property Quantity() As System.Nullable(Of Double)
+		Get
+			Return Me._Quantity
+		End Get
+		Set
+			If (Me._Quantity.Equals(value) = false) Then
+				Me.OnQuantityChanging(value)
+				Me.SendPropertyChanging
+				Me._Quantity = value
+				Me.SendPropertyChanged("Quantity")
+				Me.OnQuantityChanged
+			End If
+		End Set
+	End Property
+	
+	<Global.System.Data.Linq.Mapping.ColumnAttribute(Storage:="_Borrowee", DbType:="Int")>  _
+	Public Property Borrowee() As System.Nullable(Of Integer)
+		Get
+			Return Me._Borrowee
+		End Get
+		Set
+			If (Me._Borrowee.Equals(value) = false) Then
+				Me.OnBorroweeChanging(value)
+				Me.SendPropertyChanging
+				Me._Borrowee = value
+				Me.SendPropertyChanged("Borrowee")
+				Me.OnBorroweeChanged
+			End If
+		End Set
+	End Property
+	
+	<Global.System.Data.Linq.Mapping.ColumnAttribute(Storage:="_DateFrom", DbType:="Date")>  _
+	Public Property DateFrom() As System.Nullable(Of Date)
+		Get
+			Return Me._DateFrom
+		End Get
+		Set
+			If (Me._DateFrom.Equals(value) = false) Then
+				Me.OnDateFromChanging(value)
+				Me.SendPropertyChanging
+				Me._DateFrom = value
+				Me.SendPropertyChanged("DateFrom")
+				Me.OnDateFromChanged
+			End If
+		End Set
+	End Property
+	
+	<Global.System.Data.Linq.Mapping.ColumnAttribute(Storage:="_DateTo", DbType:="Date")>  _
+	Public Property DateTo() As System.Nullable(Of Date)
+		Get
+			Return Me._DateTo
+		End Get
+		Set
+			If (Me._DateTo.Equals(value) = false) Then
+				Me.OnDateToChanging(value)
+				Me.SendPropertyChanging
+				Me._DateTo = value
+				Me.SendPropertyChanged("DateTo")
+				Me.OnDateToChanged
+			End If
+		End Set
+	End Property
+	
+	<Global.System.Data.Linq.Mapping.ColumnAttribute(Storage:="_Remarks", DbType:="VarChar(MAX)")>  _
+	Public Property Remarks() As String
+		Get
+			Return Me._Remarks
+		End Get
+		Set
+			If (String.Equals(Me._Remarks, value) = false) Then
+				Me.OnRemarksChanging(value)
+				Me.SendPropertyChanging
+				Me._Remarks = value
+				Me.SendPropertyChanged("Remarks")
+				Me.OnRemarksChanged
+			End If
+		End Set
+	End Property
+	
+	<Global.System.Data.Linq.Mapping.ColumnAttribute(Storage:="_HeaderID", DbType:="Int")>  _
+	Public Property HeaderID() As System.Nullable(Of Integer)
+		Get
+			Return Me._HeaderID
+		End Get
+		Set
+			If (Me._HeaderID.Equals(value) = false) Then
+				Me.OnHeaderIDChanging(value)
+				Me.SendPropertyChanging
+				Me._HeaderID = value
+				Me.SendPropertyChanged("HeaderID")
+				Me.OnHeaderIDChanged
+			End If
+		End Set
+	End Property
+	
+	<Global.System.Data.Linq.Mapping.ColumnAttribute(Storage:="_IsReturn", DbType:="Bit")>  _
+	Public Property IsReturn() As System.Nullable(Of Boolean)
+		Get
+			Return Me._IsReturn
+		End Get
+		Set
+			If (Me._IsReturn.Equals(value) = false) Then
+				Me.OnIsReturnChanging(value)
+				Me.SendPropertyChanging
+				Me._IsReturn = value
+				Me.SendPropertyChanged("IsReturn")
+				Me.OnIsReturnChanged
+			End If
+		End Set
+	End Property
+	
+	<Global.System.Data.Linq.Mapping.ColumnAttribute(Storage:="_IsReturnDate", DbType:="DateTime")>  _
+	Public Property IsReturnDate() As System.Nullable(Of Date)
+		Get
+			Return Me._IsReturnDate
+		End Get
+		Set
+			If (Me._IsReturnDate.Equals(value) = false) Then
+				Me.OnIsReturnDateChanging(value)
+				Me.SendPropertyChanging
+				Me._IsReturnDate = value
+				Me.SendPropertyChanged("IsReturnDate")
+				Me.OnIsReturnDateChanged
+			End If
+		End Set
+	End Property
+	
+	<Global.System.Data.Linq.Mapping.ColumnAttribute(Storage:="_ReturnBy", DbType:="Int")>  _
+	Public Property ReturnBy() As System.Nullable(Of Integer)
+		Get
+			Return Me._ReturnBy
+		End Get
+		Set
+			If (Me._ReturnBy.Equals(value) = false) Then
+				Me.OnReturnByChanging(value)
+				Me.SendPropertyChanging
+				Me._ReturnBy = value
+				Me.SendPropertyChanged("ReturnBy")
+				Me.OnReturnByChanged
+			End If
+		End Set
+	End Property
+	
+	<Global.System.Data.Linq.Mapping.ColumnAttribute(Storage:="_IsReceivedByBorrowee", DbType:="Bit")>  _
+	Public Property IsReceivedByBorrowee() As System.Nullable(Of Boolean)
+		Get
+			Return Me._IsReceivedByBorrowee
+		End Get
+		Set
+			If (Me._IsReceivedByBorrowee.Equals(value) = false) Then
+				Me.OnIsReceivedByBorroweeChanging(value)
+				Me.SendPropertyChanging
+				Me._IsReceivedByBorrowee = value
+				Me.SendPropertyChanged("IsReceivedByBorrowee")
+				Me.OnIsReceivedByBorroweeChanged
+			End If
+		End Set
+	End Property
+	
+	<Global.System.Data.Linq.Mapping.ColumnAttribute(Storage:="_IsReceivedByBorroweeDate", DbType:="DateTime")>  _
+	Public Property IsReceivedByBorroweeDate() As System.Nullable(Of Date)
+		Get
+			Return Me._IsReceivedByBorroweeDate
+		End Get
+		Set
+			If (Me._IsReceivedByBorroweeDate.Equals(value) = false) Then
+				Me.OnIsReceivedByBorroweeDateChanging(value)
+				Me.SendPropertyChanging
+				Me._IsReceivedByBorroweeDate = value
+				Me.SendPropertyChanged("IsReceivedByBorroweeDate")
+				Me.OnIsReceivedByBorroweeDateChanged
+			End If
+		End Set
+	End Property
+	
+	<Global.System.Data.Linq.Mapping.ColumnAttribute(Storage:="_Runner", DbType:="Int")>  _
+	Public Property Runner() As System.Nullable(Of Integer)
+		Get
+			Return Me._Runner
+		End Get
+		Set
+			If (Me._Runner.Equals(value) = false) Then
+				Me.OnRunnerChanging(value)
+				Me.SendPropertyChanging
+				Me._Runner = value
+				Me.SendPropertyChanged("Runner")
+				Me.OnRunnerChanged
+			End If
+		End Set
+	End Property
+	
+	<Global.System.Data.Linq.Mapping.ColumnAttribute(Storage:="_IsDeployed", DbType:="Bit")>  _
+	Public Property IsDeployed() As System.Nullable(Of Boolean)
+		Get
+			Return Me._IsDeployed
+		End Get
+		Set
+			If (Me._IsDeployed.Equals(value) = false) Then
+				Me.OnIsDeployedChanging(value)
+				Me.SendPropertyChanging
+				Me._IsDeployed = value
+				Me.SendPropertyChanged("IsDeployed")
+				Me.OnIsDeployedChanged
+			End If
+		End Set
+	End Property
+	
+	<Global.System.Data.Linq.Mapping.ColumnAttribute(Storage:="_IsDeployedDate", DbType:="DateTime")>  _
+	Public Property IsDeployedDate() As System.Nullable(Of Date)
+		Get
+			Return Me._IsDeployedDate
+		End Get
+		Set
+			If (Me._IsDeployedDate.Equals(value) = false) Then
+				Me.OnIsDeployedDateChanging(value)
+				Me.SendPropertyChanging
+				Me._IsDeployedDate = value
+				Me.SendPropertyChanged("IsDeployedDate")
+				Me.OnIsDeployedDateChanged
+			End If
+		End Set
+	End Property
+	
+	<Global.System.Data.Linq.Mapping.ColumnAttribute(Storage:="_IsDeployeRunner", DbType:="Int")>  _
+	Public Property IsDeployeRunner() As System.Nullable(Of Integer)
+		Get
+			Return Me._IsDeployeRunner
+		End Get
+		Set
+			If (Me._IsDeployeRunner.Equals(value) = false) Then
+				Me.OnIsDeployeRunnerChanging(value)
+				Me.SendPropertyChanging
+				Me._IsDeployeRunner = value
+				Me.SendPropertyChanged("IsDeployeRunner")
+				Me.OnIsDeployeRunnerChanged
 			End If
 		End Set
 	End Property

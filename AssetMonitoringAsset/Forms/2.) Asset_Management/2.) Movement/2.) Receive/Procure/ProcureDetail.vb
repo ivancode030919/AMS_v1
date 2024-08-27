@@ -1,10 +1,9 @@
 ﻿Public Class ProcureDetail
     Public transid As Integer
     Public Colindex As Integer
-
     Private Sub ProcureDetail_Load(sender As Object, e As EventArgs) Handles MyBase.Load
-
         display()
+
     End Sub
 
     Public Sub display()
@@ -153,7 +152,7 @@
 
                     If PropertyCodeCount = 0 Then
 
-                        InsertionClass.SaveAssetInventory(Itemcode, ItemClass, PropertyCode, Description, Double.Parse(qty), Integer.Parse(owner), Integer.Parse(owner), 0, reference, referenceno, "Not Allowed", 0, 0, "New Item: Good", 0, False, True)
+                        InsertionClass.SaveAssetInventory(Itemcode, ItemClass, PropertyCode, Description, Double.Parse(qty), Integer.Parse(owner), Integer.Parse(owner), 0, reference, referenceno, "Not Allowed", 0, 0, "New Item: Good", 0, False, True, TextBox1.Text)
                         MessageBox.Show("Successfully Recorded", "Notification", MessageBoxButtons.OK, MessageBoxIcon.Information)
 
                     Else

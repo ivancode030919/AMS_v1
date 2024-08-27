@@ -43,9 +43,9 @@ Partial Class BorrowList
         Me.GroupBox2.Controls.Add(Me.Label3)
         Me.GroupBox2.Controls.Add(Me.TextBox1)
         Me.GroupBox2.Font = New System.Drawing.Font("Arial Rounded MT Bold", 11.25!)
-        Me.GroupBox2.Location = New System.Drawing.Point(12, 8)
+        Me.GroupBox2.Location = New System.Drawing.Point(12, -2)
         Me.GroupBox2.Name = "GroupBox2"
-        Me.GroupBox2.Size = New System.Drawing.Size(1092, 79)
+        Me.GroupBox2.Size = New System.Drawing.Size(1092, 89)
         Me.GroupBox2.TabIndex = 26
         Me.GroupBox2.TabStop = False
         Me.GroupBox2.Text = "Filter"
@@ -141,8 +141,11 @@ Partial Class BorrowList
         Me.Controls.Add(Me.GroupBox2)
         Me.Controls.Add(Me.PanelControl2)
         Me.IconOptions.ShowIcon = False
+        Me.MaximizeBox = False
+        Me.MinimizeBox = False
         Me.Name = "BorrowList"
         Me.Padding = New System.Windows.Forms.Padding(5)
+        Me.ShowInTaskbar = False
         Me.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen
         Me.WindowState = System.Windows.Forms.FormWindowState.Maximized
         Me.GroupBox2.ResumeLayout(False)

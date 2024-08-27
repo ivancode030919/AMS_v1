@@ -154,22 +154,28 @@
     <Compile Include="Forms\2.%29 Asset_Management\2.%29 Movement\1.%29 Assignment\ConsumableQty.vb">
       <SubType>Form</SubType>
     </Compile>
-    <Compile Include="Forms\2.%29 Asset_Management\2.%29 Movement\2.%29 Receive\Deployment\frmDeploymentRegister.Designer.vb">
+    <Compile Include="Forms\2.%29 Asset_Management\2.%29 Movement\2.%29 Receive\ReceivRegister.Designer.vb">
+      <DependentUpon>ReceivRegister.vb</DependentUpon>
+    </Compile>
+    <Compile Include="Forms\2.%29 Asset_Management\2.%29 Movement\2.%29 Receive\ReceivRegister.vb">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Forms\2.%29 Asset_Management\2.%29 Movement\5.%29 Deployment\Deployment\frmDeploymentRegister.Designer.vb">
       <DependentUpon>frmDeploymentRegister.vb</DependentUpon>
     </Compile>
-    <Compile Include="Forms\2.%29 Asset_Management\2.%29 Movement\2.%29 Receive\Deployment\frmDeploymentRegister.vb">
+    <Compile Include="Forms\2.%29 Asset_Management\2.%29 Movement\5.%29 Deployment\Deployment\frmDeploymentRegister.vb">
       <SubType>Form</SubType>
     </Compile>
-    <Compile Include="Forms\2.%29 Asset_Management\2.%29 Movement\2.%29 Receive\Deployment\frmDeploymentRegisterDetail.Designer.vb">
+    <Compile Include="Forms\2.%29 Asset_Management\2.%29 Movement\5.%29 Deployment\Deployment\frmDeploymentRegisterDetail.Designer.vb">
       <DependentUpon>frmDeploymentRegisterDetail.vb</DependentUpon>
     </Compile>
-    <Compile Include="Forms\2.%29 Asset_Management\2.%29 Movement\2.%29 Receive\Deployment\frmDeploymentRegisterDetail.vb">
+    <Compile Include="Forms\2.%29 Asset_Management\2.%29 Movement\5.%29 Deployment\Deployment\frmDeploymentRegisterDetail.vb">
       <SubType>Form</SubType>
     </Compile>
-    <Compile Include="Forms\2.%29 Asset_Management\2.%29 Movement\2.%29 Receive\Deployment\frmDeplyment.Designer.vb">
+    <Compile Include="Forms\2.%29 Asset_Management\2.%29 Movement\5.%29 Deployment\Deployment\frmDeplyment.Designer.vb">
       <DependentUpon>frmDeplyment.vb</DependentUpon>
     </Compile>
-    <Compile Include="Forms\2.%29 Asset_Management\2.%29 Movement\2.%29 Receive\Deployment\frmDeplyment.vb">
+    <Compile Include="Forms\2.%29 Asset_Management\2.%29 Movement\5.%29 Deployment\Deployment\frmDeplyment.vb">
       <SubType>Form</SubType>
     </Compile>
     <Compile Include="Forms\2.%29 Asset_Management\2.%29 Movement\2.%29 Receive\Procure\ProcureDetail.Designer.vb">
@@ -590,13 +596,16 @@
     <EmbeddedResource Include="Forms\2.%29 Asset_Management\2.%29 Movement\1.%29 Assignment\ConsumableQty.resx">
       <DependentUpon>ConsumableQty.vb</DependentUpon>
     </EmbeddedResource>
-    <EmbeddedResource Include="Forms\2.%29 Asset_Management\2.%29 Movement\2.%29 Receive\Deployment\frmDeploymentRegister.resx">
+    <EmbeddedResource Include="Forms\2.%29 Asset_Management\2.%29 Movement\2.%29 Receive\ReceivRegister.resx">
+      <DependentUpon>ReceivRegister.vb</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Forms\2.%29 Asset_Management\2.%29 Movement\5.%29 Deployment\Deployment\frmDeploymentRegister.resx">
       <DependentUpon>frmDeploymentRegister.vb</DependentUpon>
     </EmbeddedResource>
-    <EmbeddedResource Include="Forms\2.%29 Asset_Management\2.%29 Movement\2.%29 Receive\Deployment\frmDeploymentRegisterDetail.resx">
+    <EmbeddedResource Include="Forms\2.%29 Asset_Management\2.%29 Movement\5.%29 Deployment\Deployment\frmDeploymentRegisterDetail.resx">
       <DependentUpon>frmDeploymentRegisterDetail.vb</DependentUpon>
     </EmbeddedResource>
-    <EmbeddedResource Include="Forms\2.%29 Asset_Management\2.%29 Movement\2.%29 Receive\Deployment\frmDeplyment.resx">
+    <EmbeddedResource Include="Forms\2.%29 Asset_Management\2.%29 Movement\5.%29 Deployment\Deployment\frmDeplyment.resx">
       <DependentUpon>frmDeplyment.vb</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="Forms\2.%29 Asset_Management\2.%29 Movement\2.%29 Receive\Procure\ProcureDetail.resx">
@@ -631,6 +640,9 @@
     </EmbeddedResource>
     <EmbeddedResource Include="Forms\2.%29 Asset_Management\2.%29 Movement\2.%29 Receive\RecvItems\FrmRecvItems.resx">
       <DependentUpon>FrmRecvItems.vb</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Forms\2.%29 Asset_Management\2.%29 Movement\3.%29 TransferOwnership\frmTransferOwnerShip.resx">
+      <DependentUpon>frmTransferOwnerShip.vb</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="Forms\2.%29 Asset_Management\2.%29 Movement\4.%29 Borrow\BorrowDetails.resx">
       <DependentUpon>BorrowDetails.vb</DependentUpon>
